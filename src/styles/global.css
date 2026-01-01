@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
+/* Variables */
 :root {
   --color-accent: #ff8c00;
   --color-accent-dark: #cc7000;
@@ -7,8 +8,8 @@
   --color-gray: #757575;
   --color-gray-light: #fff8f0;
   --color-gray-dark: #333333;
-  --font-title: 'Playfair Display Variable', serif;
-  --font-sans: 'DM Sans Variable', sans-serif;
+  --font-title: 'Metropolis', sans-serif;
+  --font-sans: 'Inter Variable', sans-serif;
 }
 
 body {
@@ -49,6 +50,7 @@ h4,
 h5,
 h6 {
   color: rgb(var(--color-gray-dark));
+  font-family: var(--font-title);
 }
 
 a {
