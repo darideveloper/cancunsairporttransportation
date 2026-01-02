@@ -25,5 +25,5 @@ Create a single `Header` component that handles both desktop and mobile layouts.
 - **Routing**: Logo should link to `/${lang}/` for language-aware navigation
 - **Accessibility**: All interactive elements must have proper ARIA labels from translations
 - **SEO**: Use semantic HTML5 elements (`<header>`, `<nav>`) and unique IDs for all interactive elements
-- **Styling**: Strictly use variables from `src/styles/global.css` (`--color-accent`, `--font-title`, etc.) for all custom styles
+- **Styling**: strictly use Tailwind CSS classes. Do NOT use `<style>` blocks or side-by-side CSS files. Use project theme variables via Tailwind utilities (e.g., `text-accent`, `bg-gray-light`, `font-title`).
 - **Existing Components**: Reuse `LangLink.astro` and `ContactItem.astro` from TopBar where applicable

@@ -18,10 +18,12 @@ Cancun Airport Transportation is a specialized booking platform for private shut
 ### Code Style
 - **TypeScript**: Strict typing preferred for all data models (Pricing, Locations, Reservations).
 - **Naming**: PascalCase for React/Astro components, camelCase for variables and functions.
-- **Styling**: Favor Tailwind utility classes; use CSS variables in `global.css` for brand-consistent colors.
-  - **Core Variables**:
-    - Colors: `var(--color-accent)`, `var(--color-black)`, `var(--color-gray)`, `var(--color-gray-light)`, `var(--color-gray-dark)`
-    - Fonts: `var(--font-title)`, `var(--font-sans)`
+- **Styling**:
+  - Always use Tailwind CSS utility classes.
+  - **Forbidden**: Do NOT use `<style>` blocks in Astro/React components.
+  - **Core Variables** (Available as Tailwind utilities):
+    - Colors: `text/bg/border-accent`, `*-black`, `*-gray`, `*-gray-light`, `*-gray-dark`
+    - Fonts: `font-title`, `font-sans`
 - **Imports**: Clean imports, grouping internal and external libraries.
 
 ### Architecture Patterns
