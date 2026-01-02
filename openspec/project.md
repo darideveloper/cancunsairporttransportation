@@ -25,6 +25,18 @@ Cancun Airport Transportation is a specialized booking platform for private shut
 - **Islands Architecture**: Use React only for interactive elements (Booking Widget, Pricing Calculator). Keep the rest as static Astro components.
 - **Translation Wrapper**: Use a helper or `t()` function linked to `src/messages/`.
 - **Layouts**: Centralized `Layout.astro` for SEO and global assets.
+- **Reuse First**: Always check `src/components/` (Atoms, Molecules, Organisms) before creating new components.
+- **Evolution over Duplication**: If an existing component partially meets a requirement, refactor it with new props/slots rather than duplicating.
+
+## SEO & Accessibility Standards
+- **Semantic HTML**: Mandatory use of `<header>`, `<main>`, `<footer>`, `<section>`, `<article>`, and `<nav>`.
+- **Heading Hierarchy**: Enforce a logical `h1` through `h6` structure; only one `h1` per page.
+- **ARIA Labels**: Mandatory `aria-label` for all interactive elements lacking visible text (e.g., social icons, icon-only buttons).
+- **Interactive Attributes**: Every interactive element MUST have a unique, descriptive `id`.
+- **Micro-formats**: Use `tel:` for phone links and `mailto:` for email links.
+- **Language Crawling**: Use standard `<a>` tags for language switching to ensure search engine discoverability.
+- **Metadata**: Every route must have a unique `<title>` and `<meta name="description">`.
+
 
 ### Testing Strategy
 - Focus on end-to-end testing for the booking funnel (Reservation process).
