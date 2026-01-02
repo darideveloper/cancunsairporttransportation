@@ -1,7 +1,4 @@
 ---
-// Components
-import Button from './base/Button.astro'
-
 // Props
 interface Props {
   href: string
@@ -15,9 +12,7 @@ const { href, target = '_self', class: className } = Astro.props
 <a
   href={href}
   target={target}
-  class={`${className} whitespace-nowrap`}
+  class={`${className} btn px-6 py-5 rounded-lg text-sm text-center bg-accent text-white whitespace-nowrap`}
 >
-  <Button variant='primary'>
-    <slot />
-  </Button>
+  <slot />
 </a>

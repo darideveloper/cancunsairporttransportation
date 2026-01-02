@@ -1,0 +1,16 @@
+---
+interface Props {
+  link: string
+  label: string
+  class?: string
+}
+
+const { link, label, class: className } = Astro.props
+---
+
+<a
+  href={link}
+  class={`p-2 lg:p-4 hover:no-underline! hover:bg-accent/10 rounded-lg text-black lg:text-accent-dark hover:scale-105 inline-block text-center ${className || ''}`}
+>
+  {label}
+</a>

@@ -8,28 +8,27 @@ import { IoClose as CloseIcon } from 'react-icons/io5'
 
 // Components
 import Logo from '../atoms/Logo.astro'
-import LinkNav from '../atoms/LinkNav.astro'
 import ButtonCta from '../atoms/ButtonCta.astro'
+import NavLinks from './NavLinks.astro'
+import NavLink from '../atoms/NavLink.astro'
+
+// Styles
+import { MOBILE_MENU_STYLES as MOBILE_STYLES } from '../../styles/menu'
 
 // Lang
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
-// Data
-const links = [
-  {
-    key: 'cancun',
-    link: '/',
-  },
-  {
-    key: 'carmen',
-    link: '/transportation-from-cancun-airport-to-playa-del-carmen',
-  },
-  {
-    key: 'tulum',
-    link: '/cancun-to-tulum-shuttle',
-  },
+// Constants & Data
+const CTA_LINK = '/contact'
+const CTA_LABEL = t('globalSections.menubar.cta')
+
+const contactPhones = [
+  { link: 'tel:+529983870435', label: '+52 (998) 387-0435' },
+  { link: 'tel:+19299991258', label: '+1 (929) 999-1258' },
 ]
+
+const translateLink = lang === 'es' ? '/en' : '/es'
 ---
 
 <div
@@ -40,32 +39,29 @@ const links = [
   <Logo />
 
   <!-- navigation -->
-  <nav>
-    <ul class='gap-0 lg:gap-2 w-9/12 mx-auto lg:w-auto hidden lg:flex'>
-      {
-        links.map((link) => (
-          <li class='inline-block'>
-            <LinkNav
-              link={link.link}
-              label={t(`globalSections.menubar.nav.${link.key}`)}
-            />
-          </li>
-        ))
-      }
-    </ul>
+  <nav
+    aria-label={t('globalSections.menubar.nav.ariaLabel') || 'Main Navigation'}
+  >
+    <NavLinks
+      lang={lang}
+      mode='desktop'
+    />
   </nav>
 
   <!-- cta -->
   <ButtonCta
-    href='/contact'
+    href={CTA_LINK}
     class='hidden lg:block'
   >
-    {t('globalSections.menubar.cta')}
+    {CTA_LABEL}
   </ButtonCta>
 
   <!-- mobile menu open button -->
   <button
     id='menu-open-button'
+    aria-label='Open main menu'
+    aria-expanded='false'
+    aria-controls='menu-bar-mobile'
     class='text-yellow cursor-pointer text-3xl inline-block lg:hidden border-2 border-yellow p-3 rounded-xl'
   >
     <MenuIcon />
@@ -78,6 +74,7 @@ const links = [
 <div
   class='absolute top-0 left-0 translate-x-full z-10 bg-white w-full transition-transform duration-300 ease-in-out'
   id='menu-bar-mobile'
+  aria-hidden='true'
 >
   <div class='px-4 flex justify-between w-full py-8'>
     <!-- Top "Menu" text -->
@@ -91,6 +88,8 @@ const links = [
     <!-- Close button -->
     <button
       id='menu-close-button'
+      aria-label='Close menu'
+      aria-controls='menu-bar-mobile'
       class='text-blue cursor-pointer text-4xl inline-block lg:hidden border-2 border-blue p-2 rounded-xl'
     >
       <CloseIcon />
@@ -98,65 +97,49 @@ const links = [
   </div>
 
   <!-- Duplicate nav -->
-  <nav>
-    <ul class='gap-0 lg:gap-2 w-full mx-auto lg:w-auto'>
-      {
-        links.map((link) => (
-          <li class='block border-t border-gray/40 py-4 px-4'>
-            <a
-              href={link.link}
-              class='block'
-            >
-              {t(`globalSections.menubar.nav.${link.key}`)}
-            </a>
-          </li>
-        ))
-      }
-      <li class='block border-t border-gray/40 py-4 px-4'>
+  <nav aria-label='Mobile Navigation'>
+    <NavLinks
+      lang={lang}
+      mode='mobile'
+    >
+      <!-- Mobile Extras -->
+      <li class={MOBILE_STYLES.li}>
         <p><strong>{t('globalSections.menubar.translateWebsite')}</strong></p>
       </li>
-      <li class='block border-t border-gray/40 py-4 px-4'>
-        <a
-          href={lang === 'es' ? '/en' : '/es'}
-          class='block'
-        >
-          {t('globalSections.menubar.translateWebsiteText')}
-        </a>
+      <li class={MOBILE_STYLES.li}>
+        <NavLink
+          link={translateLink}
+          label={t('globalSections.menubar.translateWebsiteText')}
+          class={MOBILE_STYLES.link}
+        />
       </li>
-      <li class='block border-t border-gray/40 py-4 px-4'>
+      <li class={MOBILE_STYLES.li}>
         <p>
           <strong>{t('globalSections.menubar.customerService.title')}</strong>
         </p>
-        {t('globalSections.menubar.customerService.body')}
+        <p class='mt-2'>{t('globalSections.menubar.customerService.body')}</p>
       </li>
 
-      <!-- <a href="tel:+529983870435" title="Mexico phone | Cancun Airport Transportation">+52 (998) 387-0435</a> -->
-      <!-- <a href="tel:+19299991258" title="Phone USA &amp; Canada | Cancun Airport Transportation">+1 (929) 999-1258</a> -->
-      <li class='block border-t border-gray/40 py-4 px-4'>
-        <a
-          href={'tel:+529983870435'}
-          class='block'
-        >
-          +52 (998) 387-0435
-        </a>
-      </li>
-      <li class='block border-t border-gray/40 py-4 px-4'>
-        <a
-          href={'tel:+19299991258'}
-          class='block'
-        >
-          +1 (929) 999-1258
-        </a>
-      </li>
-    </ul>
+      {
+        contactPhones.map((phone) => (
+          <li class={MOBILE_STYLES.li}>
+            <NavLink
+              link={phone.link}
+              label={phone.label}
+              class={MOBILE_STYLES.link}
+            />
+          </li>
+        ))
+      }
+    </NavLinks>
   </nav>
 
   <!-- cta -->
   <ButtonCta
-    href='/contact'
-    class='mx-4 inline-block w-11/12 my-10 bg-yellow'
+    href={CTA_LINK}
+    class='mx-4 inline-block w-11/12 my-10 bg-yellow hover:bg-yellow-dark text-black! font-bold'
   >
-    {t('globalSections.menubar.cta')}
+    {CTA_LABEL}
   </ButtonCta>
 </div>
 
@@ -166,16 +149,27 @@ const links = [
     const menuOpenButton = document.getElementById('menu-open-button')
     const menuCloseButton = document.getElementById('menu-close-button')
 
-    if (menuOpenButton && menuBarMobile) {
-      menuOpenButton.addEventListener('click', () => {
+    const toggleMenu = (show: boolean) => {
+      if (!menuBarMobile || !menuOpenButton) return
+
+      if (show) {
         menuBarMobile.classList.remove('translate-x-full')
-      })
+        menuBarMobile.setAttribute('aria-hidden', 'false')
+        menuOpenButton.setAttribute('aria-expanded', 'true')
+        // Focus trap logic could go here
+      } else {
+        menuBarMobile.classList.add('translate-x-full')
+        menuBarMobile.setAttribute('aria-hidden', 'true')
+        menuOpenButton.setAttribute('aria-expanded', 'false')
+      }
     }
 
-    if (menuCloseButton && menuBarMobile) {
-      menuCloseButton.addEventListener('click', () => {
-        menuBarMobile.classList.add('translate-x-full')
-      })
+    if (menuOpenButton) {
+      menuOpenButton.addEventListener('click', () => toggleMenu(true))
+    }
+
+    if (menuCloseButton) {
+      menuCloseButton.addEventListener('click', () => toggleMenu(false))
     }
   })
 </script>

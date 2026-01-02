@@ -11,12 +11,13 @@ import logo from '../../assets/images/logo.svg'
 // Lang
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
+const { class: className } = Astro.props
 ---
 
 <a
   href={`/${lang}/`}
   aria-label={t('branding.businessName')}
-  class='flex items-center w-60'
+  class={`flex items-center ${className || 'w-60'}`}
 >
   <Image
     src={logo}
