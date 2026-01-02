@@ -23,12 +23,13 @@ The mobile menu state (open/closed) will be managed locally using React `useStat
 - **Desktop (`>= lg`)**: Inline navigation and CTA button.
 
 ### Styling
-- **Fonts**: Metropolis for navigation links and titles; Inter for body text in mobile menu.
+- **Fonts**: Use `var(--font-title)` (Metropolis) for navigation links and titles; `var(--font-sans)` (Inter Variable) for body text in mobile menu.
 - **Colors**: 
-  - Nav Links: Brownish gold (from image, approximately `--color-accent`).
-  - CTA Button: Orange (similar to logo accent).
-  - Background: White.
-  - Overlay: Semi-transparent or solid white as seen in the mockup.
+  - Nav Links: Use `var(--color-accent)` (#894700) for active/link states.
+  - Text: Use `var(--color-black)` for primary text and `var(--color-gray-dark)` for headings.
+  - Background: White or `var(--color-gray-light)` (#f9fafb) for subtle backgrounds.
+  - CTA Button: Use `var(--color-accent)` as the primary brand color.
+  - Borders/Dividers: Use `var(--color-gray)` or `var(--color-gray-light)` where appropriate.
 
 ### Internationalization
 
