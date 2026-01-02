@@ -1,6 +1,7 @@
 ---
 // Libs
 import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+import { SOCIAL_LINKS } from '../../lib/constants'
 
 // Components
 import LangLink from '../atoms/LangLink.astro'
@@ -41,12 +42,12 @@ const t = useTranslations(lang)
     <div class='items-center gap-3 hidden md:flex'>
       <SocialIcon
         Icon={FaFacebook}
-        href='https://facebook.com'
+        href={SOCIAL_LINKS.facebook}
         label={t('globalSections.topbar.facebookAriaLabel')}
       />
       <SocialIcon
         Icon={FaInstagram}
-        href='https://instagram.com'
+        href={SOCIAL_LINKS.instagram}
         label={t('globalSections.topbar.instagramAriaLabel')}
       />
     </div>
