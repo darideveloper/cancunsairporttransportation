@@ -2,6 +2,10 @@
 // Libs
 import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
 
+// Icons
+import { TiThMenu as MenuIcon } from 'react-icons/ti'
+import { IoClose as CloseIcon } from 'react-icons/io5'
+
 // Components
 import Logo from '../atoms/Logo.astro'
 import LinkNav from '../atoms/LinkNav.astro'
@@ -30,14 +34,17 @@ const links = [
 
 <div
   id='menu-bar'
-  class='flex justify-between items-center container max-w-[1750px]! mx-auto py-4 debug'
+  class='flex justify-between items-center container max-w-[1750px]! mx-auto py-4'
 >
+  <!-- logo -->
   <Logo />
+
+  <!-- navigation -->
   <nav>
-    <ul class='flex gap-2'>
+    <ul class='gap-0 lg:gap-2 w-9/12 mx-auto lg:w-auto hidden lg:flex'>
       {
         links.map((link) => (
-          <li>
+          <li class='inline-block'>
             <LinkNav
               link={link.link}
               label={t(`globalSections.menubar.nav.${link.key}`)}
@@ -47,7 +54,121 @@ const links = [
       }
     </ul>
   </nav>
-  <ButtonCta href='/contact'>
+
+  <!-- cta -->
+  <ButtonCta
+    href='/contact'
+    class='hidden lg:block'
+  >
+    {t('globalSections.menubar.cta')}
+  </ButtonCta>
+
+  <!-- mobile menu open button -->
+  <button
+    id='menu-open-button'
+    class='text-yellow cursor-pointer text-3xl inline-block lg:hidden border-2 border-yellow p-3 rounded-xl'
+  >
+    <MenuIcon />
+  </button>
+</div>
+
+<!-- mobile menu bar -->
+
+<!-- menu top bar -->
+<div
+  class='absolute top-0 left-0 translate-x-full z-10 bg-white w-full transition-transform duration-300 ease-in-out'
+  id='menu-bar-mobile'
+>
+  <div class='px-4 flex justify-between w-full py-8'>
+    <!-- Top "Menu" text -->
+    <div class='menu-text flex items-center justify-center gap-4'>
+      <MenuIcon className='text-2xl text-blue' />
+      <p class='text-xl'>
+        {t('globalSections.menubar.topSection.text')}
+      </p>
+    </div>
+
+    <!-- Close button -->
+    <button
+      id='menu-close-button'
+      class='text-blue cursor-pointer text-4xl inline-block lg:hidden border-2 border-blue p-2 rounded-xl'
+    >
+      <CloseIcon />
+    </button>
+  </div>
+
+  <!-- Duplicate nav -->
+  <nav>
+    <ul class='gap-0 lg:gap-2 w-full mx-auto lg:w-auto'>
+      {
+        links.map((link) => (
+          <li class='block border-t border-gray/40 py-4 px-4'>
+            <a
+              href={link.link}
+              class='block'
+            >
+              {t(`globalSections.menubar.nav.${link.key}`)}
+            </a>
+          </li>
+        ))
+      }
+      <li class='block border-t border-gray/40 py-4 px-4'>
+        <p><strong>Translate website</strong></p>
+      </li>
+      <li class='block border-t border-gray/40 py-4 px-4'>
+        <a
+          href={'/es'}
+          class='block'
+        >
+          Español
+        </a>
+      </li>
+      <li class='block border-t border-gray/40 py-4 px-4'>
+        <p><strong>Customer service</strong></p>
+        For more information about your reservation, please contact us, we will help
+        you!
+      </li>
+
+      <!-- <a href="tel:+529983870435" title="Mexico phone | Cancun Airport Transportation">+52 (998) 387-0435</a> -->
+      <!-- <a href="tel:+19299991258" title="Phone USA &amp; Canada | Cancun Airport Transportation">+1 (929) 999-1258</a> -->
+      <li class='block border-t border-gray/40 py-4 px-4'>
+        <a
+          href={'tel:+529983870435'}
+          class='block'
+        >
+          +52 (998) 387-0435
+        </a>
+      </li>
+      <li class='block border-t border-gray/40 py-4 px-4'>
+        <a
+          href={'tel:+19299991258'}
+          class='block'
+        >
+          +1 (929) 999-1258
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- cta -->
+  <ButtonCta
+    href='/contact'
+    class='mx-4 inline-block w-11/12 my-10 bg-yellow'
+  >
     {t('globalSections.menubar.cta')}
   </ButtonCta>
 </div>
+
+<script is:inline>
+  const menuBarMobile = document.getElementById('menu-bar-mobile')
+  const menuOpenButton = document.getElementById('menu-open-button')
+  const menuCloseButton = document.getElementById('menu-close-button')
+
+  menuOpenButton.addEventListener('click', () => {
+    menuBarMobile.classList.remove('translate-x-full')
+  })
+
+  menuCloseButton.addEventListener('click', () => {
+    menuBarMobile.classList.add('translate-x-full')
+  })
+</script>

@@ -18,7 +18,12 @@
                 "carmen": "Cancun a Playa del Carmen",
                 "tulum": "Cancun a Tulum"
             },
-            "cta": "Mi Reservación"
+            "cta": "Mi Reservación",
+            "topSection": {
+                "text": "Menú"
+            },
+            "translateWebsite": "Traducir sitio web",
+            "translateWebsiteText": "English"
         }
     },
     "pages": {

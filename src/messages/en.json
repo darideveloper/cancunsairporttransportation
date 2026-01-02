@@ -18,7 +18,12 @@
                 "carmen": "Playa del Carmen Transfers",
                 "tulum": "Cancun to Tulum Shuttle"
             },
-            "cta": "My Booking"
+            "cta": "My Booking",
+            "topSection": {
+                "text": "Menu"
+            },
+            "translateWebsite": "Translate website",
+            "translateWebsiteText": "Español"
         }
     },
     "pages": {
