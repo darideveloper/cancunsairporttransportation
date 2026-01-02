@@ -1,0 +1,20 @@
+---
+interface Props {
+  label: string
+  phone: string
+}
+
+const { label, phone } = Astro.props
+// Clean phone for tel link
+const cleanPhone = phone.replace(/[^\d+]/g, '')
+---
+
+<div class='flex items-center gap-1 sm:gap-2'>
+  <span class='opacity-80'>{label}:</span>
+  <a
+    href={`tel:${cleanPhone}`}
+    class='hover:text-brand-primary transition-colors font-medium'
+  >
+    {phone}
+  </a>
+</div>

@@ -1,0 +1,54 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+
+// Components
+import LangLink from '../atoms/LangLink.astro'
+import ContactItem from '../atoms/ContactItem.astro'
+import SocialIcon from '../atoms/SocialIcon.astro'
+
+// Icons
+import { FaFacebook, FaInstagram } from 'react-icons/fa6'
+
+// Lang
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<section
+  aria-label='Utility navigation'
+  class='w-full bg-gray-light px-4 py-4 sm:px-6'
+>
+  <div class='mx-auto flex flex-row justify-between items-center gap-2'>
+    <!-- Left: Lang Selector -->
+    <div class='flex items-center'>
+      <LangLink />
+    </div>
+
+    <!-- Center: Contact Info -->
+    <div class='hidden sm:flex flex-col items-end md:items-center gap-0'>
+      <ContactItem
+        label={t('globalSections.topbar.mexicoPhone')}
+        phone='+52 (998) 387-0435'
+      />
+      <ContactItem
+        label={t('globalSections.topbar.usaCanadaPhone')}
+        phone='+1 (929) 999-1258'
+      />
+    </div>
+
+    <!-- Right: Socials -->
+    <div class='items-center gap-3 hidden md:flex'>
+      <SocialIcon
+        Icon={FaFacebook}
+        href='https://facebook.com'
+        label='Follow us on Facebook'
+      />
+      <SocialIcon
+        Icon={FaInstagram}
+        href='https://instagram.com'
+        label='Follow us on Instagram'
+      />
+    </div>
+  </div>
+</section>

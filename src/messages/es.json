@@ -2,6 +2,12 @@
     "branding": {
         "businessName": "Transporte Cancún Aeropuerto"
     },
-    "globalSections": {},
+    "globalSections": {
+        "topbar": {
+            "languageLabel": "Idioma",
+            "mexicoPhone": "México y resto del mundo",
+            "usaCanadaPhone": "EUA / Canadá"
+        }
+    },
     "pages": {}
 }

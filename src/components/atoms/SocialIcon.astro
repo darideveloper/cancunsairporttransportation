@@ -1,0 +1,19 @@
+---
+interface Props {
+  Icon: any
+  href: string
+  label: string
+}
+
+const { Icon, href, label } = Astro.props
+---
+
+<a
+  href={href}
+  target='_blank'
+  rel='noopener noreferrer'
+  aria-label={label}
+  class=''
+>
+  <Icon className='text-black hover:text-accent transition-colors text-2xl' />
+</a>

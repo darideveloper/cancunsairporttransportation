@@ -2,6 +2,12 @@
     "branding": {
         "businessName": "Cancun Airport Transportation"
     },
-    "globalSections": {},
+    "globalSections": {
+        "topbar": {
+            "languageLabel": "Language",
+            "mexicoPhone": "Mexico & Rest of the world",
+            "usaCanadaPhone": "USA / Canada"
+        }
+    },
     "pages": {}
 }
