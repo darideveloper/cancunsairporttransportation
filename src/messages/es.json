@@ -18,19 +18,24 @@
                 "carmen": "Cancun a Playa del Carmen",
                 "tulum": "Cancun a Tulum"
             },
-            "cta": "Mi Reservación",
+            "cta": "Mi reserva",
             "topSection": {
                 "text": "Menú"
             },
-            "translateWebsite": "Traducir sitio web",
-            "translateWebsiteText": "English"
+            "translateWebsite": "Traducir sitio",
+            "translateWebsiteText": "English",
+            "customerService": {
+                "title": "Atención a clientes",
+                "body": "Para más información sobre tu reservación, comunícate con nosotros. ¡Te ayudaremos!"
+            }
         }
     },
     "pages": {
         "home": {
             "title": "Transporte Cancún Aeropuerto | Sitio Oficial",
             "description": "Reserva tu transporte en el aeropuerto de Cancún con las mejores tarifas. Servicio de traslado privado, seguro y confiable a cualquier hotel en Cancún y la Riviera Maya.",
-            "keywords": "transporte aeropuerto cancun, traslado cancun, transporte privado cancun"
+            "keywords": "transporte aeropuerto cancun, traslado cancun, transporte privado cancun",
+            "welcome": "Hola mundo"
         }
     }
 }

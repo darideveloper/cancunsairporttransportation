@@ -113,20 +113,21 @@ const links = [
         ))
       }
       <li class='block border-t border-gray/40 py-4 px-4'>
-        <p><strong>Translate website</strong></p>
+        <p><strong>{t('globalSections.menubar.translateWebsite')}</strong></p>
       </li>
       <li class='block border-t border-gray/40 py-4 px-4'>
         <a
-          href={'/es'}
+          href={lang === 'es' ? '/en' : '/es'}
           class='block'
         >
-          Español
+          {t('globalSections.menubar.translateWebsiteText')}
         </a>
       </li>
       <li class='block border-t border-gray/40 py-4 px-4'>
-        <p><strong>Customer service</strong></p>
-        For more information about your reservation, please contact us, we will help
-        you!
+        <p>
+          <strong>{t('globalSections.menubar.customerService.title')}</strong>
+        </p>
+        {t('globalSections.menubar.customerService.body')}
       </li>
 
       <!-- <a href="tel:+529983870435" title="Mexico phone | Cancun Airport Transportation">+52 (998) 387-0435</a> -->
@@ -159,16 +160,22 @@ const links = [
   </ButtonCta>
 </div>
 
-<script is:inline>
-  const menuBarMobile = document.getElementById('menu-bar-mobile')
-  const menuOpenButton = document.getElementById('menu-open-button')
-  const menuCloseButton = document.getElementById('menu-close-button')
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const menuBarMobile = document.getElementById('menu-bar-mobile')
+    const menuOpenButton = document.getElementById('menu-open-button')
+    const menuCloseButton = document.getElementById('menu-close-button')
 
-  menuOpenButton.addEventListener('click', () => {
-    menuBarMobile.classList.remove('translate-x-full')
-  })
+    if (menuOpenButton && menuBarMobile) {
+      menuOpenButton.addEventListener('click', () => {
+        menuBarMobile.classList.remove('translate-x-full')
+      })
+    }
 
-  menuCloseButton.addEventListener('click', () => {
-    menuBarMobile.classList.add('translate-x-full')
+    if (menuCloseButton && menuBarMobile) {
+      menuCloseButton.addEventListener('click', () => {
+        menuBarMobile.classList.add('translate-x-full')
+      })
+    }
   })
 </script>
