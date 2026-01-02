@@ -27,7 +27,9 @@ const t = useTranslations(lang)
     </div>
 
     <!-- Center: Contact Info -->
-    <div class='hidden sm:flex flex-col items-end md:items-center gap-0'>
+    <div
+      class='hidden gap-0 md:gap-4 sm:flex flex-col md:flex-row items-end md:items-center'
+    >
       <ContactItem
         label={t('globalSections.topbar.mexicoPhone')}
         phone='+52 (998) 387-0435'
