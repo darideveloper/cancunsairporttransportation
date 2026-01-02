@@ -16,7 +16,7 @@ const t = useTranslations(lang)
 ---
 
 <section
-  aria-label='Utility navigation'
+  aria-label={t('globalSections.topbar.utilityNavLabel')}
   class='w-full bg-gray-light px-4 py-4 sm:px-6'
 >
   <div class='mx-auto flex flex-row justify-between items-center gap-2'>
@@ -42,12 +42,12 @@ const t = useTranslations(lang)
       <SocialIcon
         Icon={FaFacebook}
         href='https://facebook.com'
-        label='Follow us on Facebook'
+        label={t('globalSections.topbar.facebookAriaLabel')}
       />
       <SocialIcon
         Icon={FaInstagram}
         href='https://instagram.com'
-        label='Follow us on Instagram'
+        label={t('globalSections.topbar.instagramAriaLabel')}
       />
     </div>
   </div>

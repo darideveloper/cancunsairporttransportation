@@ -6,7 +6,11 @@
         "topbar": {
             "languageLabel": "Language",
             "mexicoPhone": "Mexico & Rest of the world",
-            "usaCanadaPhone": "USA / Canada"
+            "usaCanadaPhone": "USA / Canada",
+            "utilityNavLabel": "Utility navigation",
+            "facebookAriaLabel": "Follow us on Facebook",
+            "instagramAriaLabel": "Follow us on Instagram",
+            "switchLanguage": "Switch to"
         }
     },
     "pages": {}
