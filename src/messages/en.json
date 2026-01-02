@@ -11,6 +11,14 @@
             "facebookAriaLabel": "Follow us on Facebook",
             "instagramAriaLabel": "Follow us on Instagram",
             "switchLanguage": "Switch to"
+        },
+        "menubar": {
+            "nav": {
+                "cancun": "Cancun Airport Transportation",
+                "carmen": "Playa del Carmen Transfers",
+                "tulum": "Cancun to Tulum Shuttle"
+            },
+            "cta": "My Booking"
         }
     },
     "pages": {

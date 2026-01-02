@@ -1,6 +1,8 @@
 ---
 // Libs
 import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+
+// Data
 import { SOCIAL_LINKS } from '../../lib/constants'
 
 // Components
@@ -18,7 +20,7 @@ const t = useTranslations(lang)
 
 <section
   aria-label={t('globalSections.topbar.utilityNavLabel')}
-  class='w-full bg-gray-light px-4 py-4 sm:px-6'
+  class='w-full bg-gray-light px-4 py-4 sm:px-6 text-sm'
 >
   <div class='mx-auto flex flex-row justify-between items-center gap-2'>
     <!-- Left: Lang Selector -->

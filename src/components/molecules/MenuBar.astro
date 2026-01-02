@@ -1,5 +1,31 @@
 ---
+// Libs
+import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+
+// Components
 import Logo from '../atoms/Logo.astro'
+import LinkNav from '../atoms/LinkNav.astro'
+import ButtonCta from '../atoms/ButtonCta.astro'
+
+// Lang
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+// Data
+const links = [
+  {
+    key: 'cancun',
+    link: '/',
+  },
+  {
+    key: 'carmen',
+    link: '/transportation-from-cancun-airport-to-playa-del-carmen',
+  },
+  {
+    key: 'tulum',
+    link: '/cancun-to-tulum-shuttle',
+  },
+]
 ---
 
 <div
@@ -7,4 +33,21 @@ import Logo from '../atoms/Logo.astro'
   class='flex justify-between items-center container max-w-[1750px]! mx-auto py-4 debug'
 >
   <Logo />
+  <nav>
+    <ul class='flex gap-2'>
+      {
+        links.map((link) => (
+          <li>
+            <LinkNav
+              link={link.link}
+              label={t(`globalSections.menubar.nav.${link.key}`)}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <ButtonCta href='/contact'>
+    {t('globalSections.menubar.cta')}
+  </ButtonCta>
 </div>

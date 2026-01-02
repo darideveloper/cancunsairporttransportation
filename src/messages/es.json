@@ -6,11 +6,19 @@
         "topbar": {
             "languageLabel": "Idioma",
             "mexicoPhone": "México y resto del mundo",
-            "usaCanadaPhone": "EUA / Canadá",
+            "usaCanadaPhone": "USA / Canadá",
             "utilityNavLabel": "Navegación de utilidad",
             "facebookAriaLabel": "Síguenos en Facebook",
             "instagramAriaLabel": "Síguenos en Instagram",
             "switchLanguage": "Cambiar a"
+        },
+        "menubar": {
+            "nav": {
+                "cancun": "Taxi Aeropuerto Cancún",
+                "carmen": "Cancun a Playa del Carmen",
+                "tulum": "Cancun a Tulum"
+            },
+            "cta": "Mi Reservación"
         }
     },
     "pages": {

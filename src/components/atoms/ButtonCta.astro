@@ -1,0 +1,21 @@
+---
+// Components
+import Button from './base/Button.astro'
+
+// Props
+interface Props {
+  href: string
+  target?: string
+}
+
+const { href, target = '_self' } = Astro.props
+---
+
+<a
+  href={href}
+  target={target}
+>
+  <Button variant='primary'>
+    <slot />
+  </Button>
+</a>
