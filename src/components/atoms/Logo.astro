@@ -1,0 +1,25 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+
+// Components
+import { Image } from 'astro:assets'
+
+// Assets
+import logo from '../../assets/images/logo.svg'
+
+// Lang
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<a
+  href={`/${lang}/`}
+  aria-label={t('branding.businessName')}
+  class='flex items-center w-60'
+>
+  <Image
+    src={logo}
+    alt={`${t('branding.businessName')} logo`}
+  />
+</a>
