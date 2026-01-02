@@ -21,23 +21,24 @@ const {
 } = Astro.props as Props
 
 // Libs
-import { useTranslations } from '../../../i18n/utils'
+import { useTranslations } from '../../../lib/i18n/utils'
 
 // i18n
 const t = useTranslations((lang as 'en' | 'es') || 'en')
 
 // Data
-import { domain } from '../../../data/setup'
-import { email, socialNetworks } from '../../../data/contact'
-import { googleMapsLink } from '../../../data/contact'
+const SITE_URL = import.meta.env.SITE_URL
+// import { email, socialNetworks } from '../../../data/contact'
+// import { googleMapsLink } from '../../../data/contact'
 
 // Get page metadata from i18n
-const title = 'Ella Skin & Spa Wellness'
-const pageName = t(`meta.${currentPage}.page`) || currentPage
-const description = t(`meta.${currentPage}.description`) || baseDescription
+const businessName =
+  t('branding.businessName') || 'Cancun Airport Transportation'
+const pageName = t(`pages.${currentPage}.title`) || currentPage
+const description = t(`pages.${currentPage}.description`) || baseDescription
 const image = '/imgs/logo.webp'
 const twitterHandle = '@DeveloperDari'
-let keywords = t(`meta.${currentPage}.keywords`) || baseKeywords
+let keywords = t(`pages.${currentPage}.keywords`) || baseKeywords
 
 // Split keywords into an array if it's a string
 const keywordsContent = Array.isArray(keywords) ? keywords.join(', ') : keywords
@@ -47,7 +48,7 @@ let pageTitle
 if (currentPage == 'home') {
   pageTitle = pageName
 } else if (useTagLine) {
-  pageTitle = `${pageName} | ${title}`
+  pageTitle = `${pageName} | ${businessName}`
 } else {
   pageTitle = pageName
 }
@@ -56,28 +57,28 @@ if (currentPage == 'home') {
 const pageSlug = currentPage === 'home' ? '' : `/${currentPage}`
 
 // Canonical URL for this language
-const canonicalUrl = `${domain}/${lang}${pageSlug}`
+const canonicalUrl = `${SITE_URL}/${lang}${pageSlug}`
 
 // Alternate URLs
 const alternateUrls = {
-  en: `${domain}/en${pageSlug}`,
-  es: `${domain}/es${pageSlug}`,
+  en: `${SITE_URL}/en${pageSlug}`,
+  es: `${SITE_URL}/es${pageSlug}`,
 }
 
 // Generate data
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': jsonType || 'LocalBusiness',
-  '@id': `${domain}#localbusiness`,
+  '@id': `${SITE_URL}#localbusiness`,
   name: pageTitle,
   description: description,
   url: canonicalUrl,
-  logo: `${domain}/imgs/logo.webp`,
-  image: `${domain}/imgs/logo.webp`,
-  email: email,
+  logo: `${SITE_URL}/imgs/logo.webp`,
+  image: `${SITE_URL}/imgs/logo.webp`,
+  // email: email,
   serviceArea: ['Yucatan', 'Mexico'],
-  hasMap: googleMapsLink,
-  sameAs: [...socialNetworks.map((social) => social.link)],
+  // hasMap: googleMapsLink,
+  // sameAs: [...socialNetworks.map((social) => social.link)],
   areaServed: [
     { '@type': 'AdministrativeArea', name: 'Yucatan' },
     { '@type': 'Country', name: 'Mexico' },

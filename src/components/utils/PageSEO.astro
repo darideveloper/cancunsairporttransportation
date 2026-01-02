@@ -10,12 +10,12 @@ const { currentPage, lang } = Astro.props as Props
 import BaseSEO from './base/BaseSEO.astro'
 
 // Libs
-import { useTranslations } from '../../i18n/utils'
+import { useTranslations } from '../../lib/i18n/utils'
 
 // Data
-import { domain } from '../../data/setup'
-import { phoneUnformatted, addressElems } from '../../data/contact'
-import { servicesData } from '../../data/servcies'
+const SITE_URL = import.meta.env.SITE_URL
+// import { phoneUnformatted, addressElems } from '../../data/contact'
+// import { servicesData } from '../../data/servcies'
 
 // i18n
 const t = useTranslations((lang as 'en' | 'es') || 'en')
@@ -26,7 +26,7 @@ const extraJson = {
   priceRange: '$',
 
   // Contact
-  telephone: phoneUnformatted,
+  // telephone: phoneUnformatted,
 
   // Hours
   openingHours: ['Mo-Fr 10:00-20:00', 'Sa 11:00-17:00'],
@@ -46,23 +46,23 @@ const extraJson = {
   ],
 
   // Services
-  makesOffer: [
-    ...Object.keys(servicesData).map((serviceKey) => ({
-      '@type': 'Offer',
-      name: t(`services.cards.${serviceKey}.name`)?.replaceAll('*', ''),
-      description: t(`services.cards.${serviceKey}.description`)?.replaceAll(
-        '*',
-        ''
-      ),
-      url: `${domain}/${lang}#service-${serviceKey.toLowerCase()}`,
-    })),
-  ],
+  // makesOffer: [
+  //   ...Object.keys(servicesData).map((serviceKey) => ({
+  //     '@type': 'Offer',
+  //     name: t(`services.cards.${serviceKey}.name`)?.replaceAll('*', ''),
+  //     description: t(`services.cards.${serviceKey}.description`)?.replaceAll(
+  //       '*',
+  //       ''
+  //     ),
+  //     url: `${SITE_URL}/${lang}#service-${serviceKey.toLowerCase()}`,
+  //   })),
+  // ],
 
   // Founder
   foundingDate: '2022',
   founder: {
     '@type': 'Person',
-    name: 'Ella Skin & Spa Wellness Team',
+    name: t('branding.businessName'),
   },
 
   // rating
@@ -73,10 +73,10 @@ const extraJson = {
   },
 
   // Location
-  address: {
-    '@type': 'PostalAddress',
-    ...addressElems,
-  },
+  // address: {
+  //   '@type': 'PostalAddress',
+  //   ...addressElems,
+  // },
   geo: {
     '@type': 'GeoCoordinates',
     latitude: 20.9984621,

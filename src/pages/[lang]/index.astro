@@ -8,6 +8,7 @@ import { getStaticPathsLangs } from '../../lib/utils'
 
 // i18n
 export const getStaticPaths = getStaticPathsLangs
+import PageSEO from '../../components/utils/PageSEO.astro'
 
 interface Props {
   lang: string
@@ -19,6 +20,12 @@ const t = useTranslations(lang)
 ---
 
 <Layout>
+  <slot name='seo'>
+    <PageSEO
+      currentPage='home'
+      lang={lang}
+    />
+  </slot>
   <h1 class='text-3xl text-red-500 h-[120vh] block w-full debug'>
     {t('branding.businessName')}
   </h1>
