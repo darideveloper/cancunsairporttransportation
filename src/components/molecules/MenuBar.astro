@@ -69,13 +69,12 @@ const translateLink = lang === 'es' ? '/en' : '/es'
 </div>
 
 <!-- mobile menu bar -->
-
-<!-- menu top bar -->
 <div
-  class='fixed top-0 left-0 h-screen overflow-y-auto translate-x-full z-50 bg-white transition-transform duration-300 ease-in-out w-full'
+  class='fixed top-0 left-0 h-screen overflow-y-auto translate-x-full z-50 bg-white transition-transform duration-300 ease-in-out w-full invisible'
   id='menu-bar-mobile'
   aria-hidden='true'
 >
+  <!-- menu top bar -->
   <div class='px-4 flex justify-between w-full py-8'>
     <!-- Top "Menu" text -->
     <div class='menu-text flex items-center justify-center gap-4'>
@@ -149,10 +148,15 @@ const translateLink = lang === 'es' ? '/en' : '/es'
     const menuOpenButton = document.getElementById('menu-open-button')
     const menuCloseButton = document.getElementById('menu-close-button')
 
+    let menuTimeout: ReturnType<typeof setTimeout>
+
     const toggleMenu = (show: boolean) => {
       if (!menuBarMobile || !menuOpenButton) return
 
+      clearTimeout(menuTimeout)
+
       if (show) {
+        menuBarMobile.classList.remove('invisible')
         menuBarMobile.classList.remove('translate-x-full')
         menuBarMobile.setAttribute('aria-hidden', 'false')
         menuOpenButton.setAttribute('aria-expanded', 'true')
@@ -161,6 +165,11 @@ const translateLink = lang === 'es' ? '/en' : '/es'
         menuBarMobile.classList.add('translate-x-full')
         menuBarMobile.setAttribute('aria-hidden', 'true')
         menuOpenButton.setAttribute('aria-expanded', 'false')
+
+        // Wait for the transition to finish before hiding the element
+        menuTimeout = setTimeout(() => {
+          menuBarMobile.classList.add('invisible')
+        }, 300)
       }
     }
 
