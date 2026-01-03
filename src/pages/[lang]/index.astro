@@ -9,7 +9,12 @@ import { getStaticPathsLangs } from '../../lib/utils'
 // i18n
 export const getStaticPaths = getStaticPathsLangs
 import PageSEO from '../../components/utils/PageSEO.astro'
+import BannerImage from '../../components/atoms/BannerImage.astro'
 
+// Images
+const bannerSrc = '/images/home-banner.webp'
+
+// Props
 interface Props {
   lang: string
 }
@@ -20,13 +25,17 @@ const t = useTranslations(lang)
 ---
 
 <Layout>
-  <slot name='seo'>
-    <PageSEO
-      currentPage='home'
-      lang={lang}
-    />
-  </slot>
-  <h1 class='text-3xl font-bold'>
-    {t('branding.businessName')}
-  </h1>
+  <PageSEO
+    currentPage='home'
+    lang={lang}
+    slot='seo'
+  />
+  <BannerImage
+    src={bannerSrc}
+    alt='Banner'
+  >
+    <h1 class='text-5xl font-bold w-11/12 mx-auto'>
+      Transporte Cancún Aeropuerto
+    </h1>
+  </BannerImage>
 </Layout>
