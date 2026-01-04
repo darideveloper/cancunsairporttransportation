@@ -15,13 +15,21 @@ const translations = t('booking')
 interface Props {
   defaultFrom?: string
   defaultTo?: string
+  title?: string
 }
 
-const { defaultFrom, defaultTo } = Astro.props
+const { defaultFrom, defaultTo, title } = Astro.props
 ---
 
 <section class='w-full flex justify-center'>
   <form class='px-8 py-6 bg-accent rounded-xl container mx-12 w-11/12'>
+    {
+      title && (
+        <h1 class='text-3xl font-bold text-center mb-4 text-balance'>
+          {title}
+        </h1>
+      )
+    }
     <!-- Controls -->
     <header class='text-sm flex w-full justify-between gap-4'>
       <TripTypeControls
@@ -45,5 +53,12 @@ const { defaultFrom, defaultTo } = Astro.props
       defaultTo={defaultTo}
       client:load
     />
+    <footer>
+      <SubmitButton
+        label={translations.submit}
+        client:load
+        className='block md:hidden w-full mt-4'
+      />
+    </footer>
   </form>
 </section>
