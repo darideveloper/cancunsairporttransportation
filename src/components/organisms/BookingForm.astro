@@ -16,12 +16,13 @@ interface Props {
   defaultFrom?: string
   defaultTo?: string
   title?: string
+  class?: string
 }
 
-const { defaultFrom, defaultTo, title } = Astro.props
+const { defaultFrom, defaultTo, title, class: className } = Astro.props
 ---
 
-<section class='w-full flex justify-center'>
+<section class={`w-full flex justify-center ${className}`}>
   <form class='px-8 py-6 bg-accent rounded-xl container mx-12 w-11/12'>
     {
       title && (
