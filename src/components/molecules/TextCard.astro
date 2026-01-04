@@ -5,7 +5,7 @@ import H2 from '../atoms/H2.astro'
 
 // Props
 interface Props {
-  id?: string
+  id: string
   title: string
   image: ImageMetadata
   alt: string
@@ -13,6 +13,7 @@ interface Props {
   height?: number
   class?: string
   classImage?: string
+  reverse?: boolean
 }
 
 const {
@@ -24,16 +25,20 @@ const {
   height,
   class: className = '',
   classImage = '',
+  reverse = false,
 } = Astro.props
+
+const titleId = `${id}-title`
 ---
 
 <section
   id={id}
-  class={`${className} grid gap-4 container text-left`}
+  aria-labelledby={titleId}
+  class={`${className} grid md:grid-cols-2 gap-4 container text-left items-center`}
 >
-  <div>
-    <H2>{title}</H2>
-    <div class='[direction:ltr]'>
+  <div class={`flex flex-col gap-4 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
+    <H2 id={titleId}>{title}</H2>
+    <div>
       <slot />
     </div>
   </div>
@@ -43,6 +48,6 @@ const {
     title={alt}
     width={width}
     height={height}
-    class={`w-full h-full object-cover rounded-xl ${classImage}`}
+    class={`w-full h-full object-cover rounded-xl ${classImage} ${reverse ? 'md:order-1' : 'md:order-2'}`}
   />
 </section>

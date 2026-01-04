@@ -2,11 +2,16 @@
 // Props
 interface Props {
   class?: string
+  id?: string
 }
 
-const { class: className } = Astro.props
+const { class: className, id = '', ...props } = Astro.props
 ---
 
-<h2 class={`text-xl font-bold ${className}`}>
+<h2
+  class={`text-xl font-bold ${className}`}
+  id={id}
+  {...props}
+>
   <slot />
 </h2>
