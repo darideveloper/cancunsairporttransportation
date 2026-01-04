@@ -15,10 +15,13 @@ import PageSEO from '../../components/utils/PageSEO.astro'
 import BannerImage from '../../components/atoms/BannerImage.astro'
 import BookingForm from '../../components/organisms/BookingForm.astro'
 import TextCard from '../../components/molecules/TextCard.astro'
+import H2 from '../../components/atoms/H2.astro'
+import { Image } from 'astro:assets'
 
 // Images
 const bannerSrc = '/images/home-banner.webp'
 import safeTripBookingImg from '../../assets/images/trip-advisor.webp'
+import cancunAirportTransportationImg from '../../assets/images/reliable-company.webp'
 
 // Props
 interface Props {
@@ -64,4 +67,19 @@ const safeTripBookContent = await marked.parse(t('safeTripBooking.text'))
       class='markdown'
     />
   </TextCard>
+
+  <!-- Banner CTA -->
+  <section id='cancun-airport-transportation container'>
+    <div class='content'>
+      <H2>{t('cancun-airport-transportation.title')}</H2>
+      <p>marked.parse({t('cancun-airport-transportation.text')}</p>
+    </div>
+    <Image
+      src={cancunAirportTransportationImg}
+      alt={t('cancun-airport-transportation.imageAlt')}
+      title={t('cancun-airport-transportation.imageTitle')}
+      width={350}
+      height={550}
+    />
+  </section>
 </Layout>

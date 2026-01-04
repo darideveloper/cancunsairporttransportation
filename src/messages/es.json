@@ -62,5 +62,12 @@
         "imageAlt": "Transporte Aeropuerto Cancun by Go Transfers",
         "text": "¿Estás emocionado por comenzar tus vacaciones en Cancún? ¡No olvides algo importante! Así es, todavía tienes que reservar tu servicio de transporte privado y transporte en Cancún y la Riviera Maya.\n\n\nPero no te preocupes, ¡aún estás a tiempo! Puedes reservar tu servicio de transporte privado, transporte de lujo, o transporte de grupo, asegurándote de que todo lo que necesitas hacer es esperar tu vuelo y la recepción cálida y amable de nuestros conductores de Transporte del Aeropuerto de Cancún.\n\n\nCon más de 10 años de experiencia en la prestación de servicios de transporte, estamos dedicados a ofrecer un transporte seguro y confiable para todos nuestros clientes. Nuestros conductores se capacitan a una formación continua para asegurar que usted reciba un servicio de primera clase. No se demore, reserve ahora con Cancun Airport Transportation por Go."
     },
-    "cancun-airport-transportation": {}
+    "cancun-airport-transportation": {
+        "title": "Transportación Aeropuerto Cancun",
+        "text": "Proporcionamos transportación privada desde y hacia tu hotel, condominio o casa en cualquier destino de Cancún o la Riviera Maya, ya sea de Ida o de Vuelta.\n\nComo nuestro nombre es Cancun Airport Transportation by Go, usted podría pensar que sólo hacemos traslados desde el Aeropuerto de Cancún.",
+        "imageAlt": "Furgoneta de transporte, detrás una persona sonriendo porque encontró un transporte seguro y confiable.",
+        "imageTitle": "Cómo llegar desde el Aeropuerto de Cancún",
+        "cta1": "Reservar ahora",
+        "cta2": "Todos los destinos"
+    }
 }
