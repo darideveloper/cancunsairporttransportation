@@ -1,33 +1,16 @@
 ---
+// Libs
+import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+
+// Components
 import TripTypeControls from '../molecules/booking/TripTypeControls'
 import CurrencyControls from '../molecules/booking/CurrencyControls'
 import SubmitButton from '../molecules/booking/SubmitButton'
 import BookingFields from './BookingFields'
 
-interface BookingTranslations {
-  tripType: {
-    oneWay: string
-    roundTrip: string
-  }
-  currency: {
-    usd: string
-    mxn: string
-  }
-  labels: {
-    leavingFrom: string
-    goingTo: string
-    pickupDate: string
-    pickupTime: string
-    passengers: string
-  }
-  submit: string
-}
-
-interface Props {
-  translations: BookingTranslations
-}
-
-const { translations } = Astro.props
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const translations = t('booking')
 ---
 
 <section class='w-full flex justify-center'>
