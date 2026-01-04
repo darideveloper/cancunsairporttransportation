@@ -2,10 +2,7 @@
 import TripTypeControls from '../molecules/booking/TripTypeControls'
 import CurrencyControls from '../molecules/booking/CurrencyControls'
 import SubmitButton from '../molecules/booking/SubmitButton'
-import LocationSelect from '../atoms/form/LocationSelect'
-import DateInput from '../atoms/form/DateInput'
-import TimeInput from '../atoms/form/TimeInput'
-import PassengerInput from '../atoms/form/PassengerInput'
+import BookingFields from './BookingFields'
 
 interface BookingTranslations {
   tripType: {
@@ -52,42 +49,9 @@ const { translations } = Astro.props
       />
     </header>
     <!-- Fields -->
-    <div class='grid grid-cols-1 sm:grid-cols-6 lg:grid-cols-18 gap-4 py-4'>
-      <div class='sm:col-span-3 lg:col-span-5'>
-        <LocationSelect
-          id='location-from'
-          label={translations.labels.leavingFrom}
-          client:load
-        />
-      </div>
-      <div class='sm:col-span-3 lg:col-span-5'>
-        <LocationSelect
-          id='location-to'
-          label={translations.labels.goingTo}
-          client:load
-        />
-      </div>
-      <div class='sm:col-span-2 lg:col-span-3'>
-        <DateInput
-          id='pickup-date'
-          label={translations.labels.pickupDate}
-          client:load
-        />
-      </div>
-      <div class='sm:col-span-2 lg:col-span-3'>
-        <TimeInput
-          id='pickup-time'
-          label={translations.labels.pickupTime}
-          client:load
-        />
-      </div>
-      <div class='sm:col-span-2 lg:col-span-2'>
-        <PassengerInput
-          id='passengers'
-          label={translations.labels.passengers}
-          client:load
-        />
-      </div>
-    </div>
+    <BookingFields
+      translations={translations}
+      client:load
+    />
   </form>
 </section>

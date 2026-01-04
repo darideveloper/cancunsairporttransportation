@@ -1,51 +1,40 @@
 // Libs
 import clsx from 'clsx'
+import { useSearchFormStore } from '../../../store/search-form'
 import { startTransition } from 'react'
 
-type Currency = 'USD' | 'MXN'
-
 interface Props {
-  value?: Currency
-  onChange?: (val: Currency) => void
   labels: {
     usd: string
     mxn: string
   }
 }
 
-export default function CurrencyControls({
-  value = 'MXN',
-  onChange,
-  labels,
-}: Props) {
-  const handleSelect = (val: Currency) => {
+export default function CurrencyControls({ labels }: Props) {
+  const { currency, setCurrency } = useSearchFormStore()
+
+  const handleSelect = (val: 'USD' | 'MXN') => {
     startTransition(() => {
-      onChange?.(val)
+      setCurrency(val)
     })
   }
 
-  const options: { id: Currency; label: string }[] = [
+  const options: { id: 'USD' | 'MXN'; label: string }[] = [
     { id: 'USD', label: labels.usd },
     { id: 'MXN', label: labels.mxn },
   ]
 
-  // dummy state
-  const selected = value || 'MXN'
-
   return (
-    <div className='w-42 flex items-center justify-center'>
+    <div className='border-b w-full flex justify-end'>
       {options.map((option) => (
         <button
           key={option.id}
           type='button'
           onClick={() => handleSelect(option.id)}
-          aria-pressed={selected === option.id}
+          aria-pressed={currency === option.id}
           className={clsx(
-            'px-5 py-4 cursor-pointer',
-            selected === option.id
-              ? 'bg-black text-white'
-              : 'bg-white text-black',
-            option.id === 'USD' ? 'rounded-l-md' : 'rounded-r-md'
+            'px-2 sm:px-4 py-4 cursor-pointer w-1/2 max-w-32',
+            currency === option.id && 'border-b-2'
           )}
         >
           {option.label}
