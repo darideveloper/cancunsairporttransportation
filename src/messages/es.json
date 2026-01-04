@@ -30,6 +30,22 @@
             }
         }
     },
+    "baseSections": {
+        "bannerCta": {
+            "imageAlt": "Camioneta de transporte, detrás una persona sonriendo porque encontró un transporte seguro y confiable.",
+            "imageTitle": "Cómo llegar desde el Aeropuerto de Cancún",
+            "buttons": {
+                "primary": {
+                    "text": "Reservar ahora",
+                    "href": "#"
+                },
+                "secondary": {
+                    "text": "Todos los destinos",
+                    "href": "/destinos"
+                }
+            }
+        }
+    },
     "pages": {
         "home": {
             "title": "Transporte Cancún Aeropuerto | Sitio Oficial",
@@ -64,18 +80,6 @@
     },
     "cancunAirportTransportation": {
         "title": "Transportación Aeropuerto Cancun",
-        "text": "Proporcionamos transportación privada desde y hacia tu hotel, condominio o casa en cualquier destino de Cancún o la Riviera Maya, ya sea de Ida o de Vuelta.\n\nComo nuestro nombre es Cancun Airport Transportation by Go, usted podría pensar que sólo hacemos traslados desde el Aeropuerto de Cancún.",
-        "imageAlt": "Furgoneta de transporte, detrás una persona sonriendo porque encontró un transporte seguro y confiable.",
-        "imageTitle": "Cómo llegar desde el Aeropuerto de Cancún",
-        "buttons": {
-            "primary": {
-                "text": "Reservar ahora",
-                "href": "#"
-            },
-            "secondary": {
-                "text": "Todos los destinos",
-                "href": "/destinos"
-            }
-        }
+        "text": "Proporcionamos transportación privada desde y hacia tu hotel, condominio o casa en cualquier destino de Cancún o la Riviera Maya, ya sea de Ida o de Vuelta.\n\nComo nuestro nombre es Cancun Airport Transportation by Go, usted podría pensar que sólo hacemos traslados desde el Aeropuerto de Cancún."
     }
 }

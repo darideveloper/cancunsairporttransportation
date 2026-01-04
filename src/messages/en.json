@@ -30,6 +30,22 @@
             }
         }
     },
+    "baseSections": {
+        "bannerCta": {
+            "imageAlt": "Transport van, behind a person smiling because he found a safe and reliable transport.",
+            "imageTitle": "How to get from Cancun Airport",
+            "buttons": {
+                "primary": {
+                    "text": "Book now",
+                    "href": "#"
+                },
+                "secondary": {
+                    "text": "All destinations",
+                    "href": "/destinations"
+                }
+            }
+        }
+    },
     "pages": {
         "home": {
             "title": "Cancun Airport Transportation | Official Website",
@@ -64,18 +80,6 @@
     },
     "cancunAirportTransportation": {
         "title": "Cancun Airport Transportation",
-        "text": "We will provide private transportation to and from your Hotel, Condo or house in any destination in Cancun or the Riviera Maya, either One Way or Round Trip.\n\nAs our name is Cancun Airport Transportation, you might think we only do transfers from the Cancun Airport.",
-        "imageAlt": "Transport van, behind a person smiling because he found a safe and reliable transport.",
-        "imageTitle": "How to get from Cancun Airport",
-        "buttons": {
-            "primary": {
-                "text": "Book now",
-                "href": "#"
-            },
-            "secondary": {
-                "text": "All destinations",
-                "href": "/destinations"
-            }
-        }
+        "text": "We will provide private transportation to and from your Hotel, Condo or house in any destination in Cancun or the Riviera Maya, either One Way or Round Trip.\n\nAs our name is Cancun Airport Transportation, you might think we only do transfers from the Cancun Airport."
     }
 }

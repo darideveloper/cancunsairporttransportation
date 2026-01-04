@@ -15,14 +15,12 @@ import PageSEO from '../../components/utils/PageSEO.astro'
 import BannerImage from '../../components/atoms/BannerImage.astro'
 import BookingForm from '../../components/organisms/BookingForm.astro'
 import TextCard from '../../components/molecules/TextCard.astro'
-import H2 from '../../components/atoms/H2.astro'
+import BannerCta from '../../components/organisms/BannerCta.astro'
 import { Image } from 'astro:assets'
-import ButtonCta from '../../components/atoms/ButtonCta.astro'
 
 // Images
 const bannerSrc = '/images/home-banner.webp'
 import safeTripBookingImg from '../../assets/images/trip-advisor.webp'
-import cancunAirportTransportationImg from '../../assets/images/reliable-company.webp'
 
 // Props
 interface Props {
@@ -36,16 +34,6 @@ const t = useTranslations(lang)
 const safeTripBookContent = await marked.parse(t('safeTripBooking.text'))
 
 // Data
-const cancunAirportTransportationButtons = [
-  {
-    id: 'primary',
-    variant: 'orange',
-  },
-  {
-    id: 'secondary',
-    variant: 'grayDark',
-  },
-]
 ---
 
 <Layout>
@@ -82,43 +70,9 @@ const cancunAirportTransportationButtons = [
   </TextCard>
 
   <!-- Banner CTA -->
-  <section
-    id='cancun-airport-transportation'
-    class='text-white container mt-12'
-  >
-    <div
-      class='bg-black px-6 py-8 rounded-lg flex items-center justify-between relative'
-    >
-      <div class='texts w-full sm:w-1/2 md:w-9/12'>
-        <H2>{t('cancunAirportTransportation.title')}</H2>
-        <div
-          set:html={marked.parse(t('cancunAirportTransportation.text'))}
-          class='markdown'
-        />
-        <div class='flex gap-3 flex-col md:flex-row'>
-          {
-            cancunAirportTransportationButtons.map((button) => (
-              <ButtonCta
-                href={t(
-                  `cancunAirportTransportation.buttons.${button.id}.href`
-                )}
-                variant={button.variant as 'orange' | 'grayDark'}
-                class='px-8 w-full md:w-auto inline-block'
-              >
-                {t(`cancunAirportTransportation.buttons.${button.id}.text`)}
-              </ButtonCta>
-            ))
-          }
-        </div>
-      </div>
-      <Image
-        src={cancunAirportTransportationImg}
-        alt={t('cancunAirportTransportation.imageAlt')}
-        title={t('cancunAirportTransportation.imageTitle')}
-        width={350}
-        height={550}
-        class='h-full md:h-[110%] w-auto absolute right-0 bottom-0 hidden sm:block'
-      />
-    </div>
-  </section>
+  <BannerCta
+    title={t('cancunAirportTransportation.title')}
+    text={t('cancunAirportTransportation.text')}
+    lang={lang}
+  />
 </Layout>
