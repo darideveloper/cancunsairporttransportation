@@ -1,18 +1,35 @@
 ---
+import { clsx } from 'clsx'
+
 // Props
 interface Props {
   href: string
   target?: string
   class?: string
+  variant?: 'primary' | 'secondary'
 }
 
-const { href, target = '_self', class: className } = Astro.props
+const {
+  href,
+  target = '_self',
+  class: className,
+  variant = 'primary',
+} = Astro.props
+
+const variants = {
+  primary: 'bg-accent text-white',
+  secondary: 'bg-black text-white',
+}
 ---
 
 <a
   href={href}
   target={target}
-  class={`${className} btn px-6 py-5 rounded-lg text-sm text-center bg-accent text-white whitespace-nowrap`}
+  class={clsx(
+    'btn px-6 py-5 rounded-lg text-sm text-center whitespace-nowrap transition-all hover:scale-105',
+    variants[variant],
+    className
+  )}
 >
   <slot />
 </a>
