@@ -7,6 +7,7 @@ interface Props {
   value?: string
   onChange?: (val: string) => void
   disabled?: boolean
+  required?: boolean
 }
 
 export default function LocationSelect({
@@ -16,6 +17,7 @@ export default function LocationSelect({
   value,
   onChange,
   disabled,
+  required,
 }: Props) {
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     onChange?.(e.target.value)
@@ -29,6 +31,7 @@ export default function LocationSelect({
         value={value || ''}
         onChange={handleChange}
         disabled={disabled}
+        required={required}
         className={disabled ? 'opacity-50 cursor-not-allowed' : ''}
       >
         <option
@@ -40,6 +43,7 @@ export default function LocationSelect({
         <option value='cun'>Cancun Airport (CUN)</option>
         <option value='hotel-zone'>Hotel Zone</option>
         <option value='playa-mujeres'>Playa Mujeres</option>
+        <option value='merida'>Mérida</option>
       </select>
     </div>
   )

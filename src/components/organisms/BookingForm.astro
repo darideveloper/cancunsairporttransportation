@@ -11,6 +11,13 @@ import BookingFields from './BookingFields'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const translations = t('booking')
+
+interface Props {
+  defaultFrom?: string
+  defaultTo?: string
+}
+
+const { defaultFrom, defaultTo } = Astro.props
 ---
 
 <section class='w-full flex justify-center'>
@@ -34,6 +41,8 @@ const translations = t('booking')
     <!-- Fields -->
     <BookingFields
       translations={translations}
+      defaultFrom={defaultFrom}
+      defaultTo={defaultTo}
       client:load
     />
   </form>

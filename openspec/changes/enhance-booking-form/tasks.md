@@ -1,0 +1,6 @@
+- [x] Add `required` prop to `LocationSelect` component <!-- id: 0 -->
+- [x] Update `BookingFields` to validate "Leaving from" <!-- id: 1 -->
+- [x] Implement default props in `BookingFields` <!-- id: 2 -->
+- [x] Update `BookingForm.astro` to pass defaults <!-- id: 3 -->
+- [x] Manual Check: Validation of required field <!-- id: 4 -->
+- [x] Manual Check: Default values <!-- id: 5 -->

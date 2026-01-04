@@ -1,4 +1,4 @@
-// import { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useSearchFormStore } from '../../store/search-form'
 import LocationSelect from '../atoms/form/LocationSelect'
 import DateInput from '../atoms/form/DateInput'
@@ -15,14 +15,16 @@ interface Props {
       passengers: string
     }
   }
+  defaultFrom?: string
+  defaultTo?: string
 }
 
-export default function BookingFields({ translations }: Props) {
+export default function BookingFields({
+  translations,
+  defaultFrom,
+  defaultTo,
+}: Props) {
   const state = useSearchFormStore()
-
-  //   useEffect(() => {
-  //     console.log('SearchForm State:', state)
-  //   }, [state])
 
   const {
     tripType,
@@ -42,15 +44,55 @@ export default function BookingFields({ translations }: Props) {
     setPassengers,
   } = state
 
+  useEffect(() => {
+    // Initialize defaults if not set
+    if (!locationFrom && defaultFrom) {
+      setLocationFrom(defaultFrom)
+    }
+    if (!locationTo && defaultTo) {
+      setLocationTo(defaultTo)
+    }
+
+    // Initialize date/time if not set
+    if (!departureDate) {
+      const now = new Date()
+      // YYYY-MM-DD
+      const dateStr = now.toISOString().split('T')[0]
+      setDepartureDate(dateStr)
+    }
+
+    if (!departureTime) {
+      const now = new Date()
+      // HH:MM
+      const timeStr = now.toLocaleTimeString('en-GB', {
+        hour: '2-digit',
+        minute: '2-digit',
+      })
+      setDepartureTime(timeStr)
+    }
+  }, [
+    defaultFrom,
+    defaultTo,
+    locationFrom,
+    locationTo,
+    departureDate,
+    departureTime,
+    setLocationFrom,
+    setLocationTo,
+    setDepartureDate,
+    setDepartureTime,
+  ])
+
   return (
     <div className='grid grid-cols-1 sm:grid-cols-6 lg:grid-cols-18 gap-4 py-4'>
       {/* Departure Trip */}
       <div className='sm:col-span-3 lg:col-span-5'>
         <LocationSelect
           id='location-from'
-          label={translations.labels.leavingFrom}
+          label={`${translations.labels.leavingFrom} *`}
           value={locationFrom}
           onChange={setLocationFrom}
+          required={true}
         />
       </div>
       <div className='sm:col-span-3 lg:col-span-5'>
