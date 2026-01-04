@@ -36,7 +36,7 @@ const { translations } = Astro.props
 <section class='w-full flex justify-center'>
   <form class='px-8 py-6 bg-accent rounded-xl container mx-12 w-11/12'>
     <!-- Controls -->
-    <div class='text-sm flex w-full justify-between gap-4'>
+    <header class='text-sm flex w-full justify-between gap-4'>
       <TripTypeControls
         labels={translations.tripType}
         client:load
@@ -50,34 +50,44 @@ const { translations } = Astro.props
         client:load
         className='hidden md:block'
       />
-    </div>
+    </header>
     <!-- Fields -->
-    <div>
-      <LocationSelect
-        id='location-from'
-        label={translations.labels.leavingFrom}
-        client:load
-      />
-      <LocationSelect
-        id='location-to'
-        label={translations.labels.goingTo}
-        client:load
-      />
-      <DateInput
-        id='pickup-date'
-        label={translations.labels.pickupDate}
-        client:load
-      />
-      <TimeInput
-        id='pickup-time'
-        label={translations.labels.pickupTime}
-        client:load
-      />
-      <PassengerInput
-        id='passengers'
-        label={translations.labels.passengers}
-        client:load
-      />
+    <div class='grid grid-cols-1 sm:grid-cols-6 lg:grid-cols-18 gap-4 py-4'>
+      <div class='sm:col-span-3 lg:col-span-5'>
+        <LocationSelect
+          id='location-from'
+          label={translations.labels.leavingFrom}
+          client:load
+        />
+      </div>
+      <div class='sm:col-span-3 lg:col-span-5'>
+        <LocationSelect
+          id='location-to'
+          label={translations.labels.goingTo}
+          client:load
+        />
+      </div>
+      <div class='sm:col-span-2 lg:col-span-3'>
+        <DateInput
+          id='pickup-date'
+          label={translations.labels.pickupDate}
+          client:load
+        />
+      </div>
+      <div class='sm:col-span-2 lg:col-span-3'>
+        <TimeInput
+          id='pickup-time'
+          label={translations.labels.pickupTime}
+          client:load
+        />
+      </div>
+      <div class='sm:col-span-2 lg:col-span-2'>
+        <PassengerInput
+          id='passengers'
+          label={translations.labels.passengers}
+          client:load
+        />
+      </div>
     </div>
   </form>
 </section>

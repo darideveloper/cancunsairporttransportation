@@ -12,7 +12,7 @@ export default function LocationSelect({
   placeholder = 'Select location',
 }: Props) {
   return (
-    <div>
+    <div className='input-container'>
       <label htmlFor={id}>{label}</label>
       <select
         id={id}

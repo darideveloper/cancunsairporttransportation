@@ -5,7 +5,7 @@ interface Props {
 
 export default function DateInput({ id, label }: Props) {
   return (
-    <div>
+    <div className='input-container'>
       <label htmlFor={id}>{label}</label>
       <input
         type='date'

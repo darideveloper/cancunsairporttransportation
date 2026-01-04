@@ -12,7 +12,7 @@ export default function PassengerInput({
   max = 20,
 }: Props) {
   return (
-    <div>
+    <div className='input-container'>
       <label htmlFor={id}>{label}</label>
       <input
         type='number'

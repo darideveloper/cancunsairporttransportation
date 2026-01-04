@@ -114,3 +114,18 @@ a,
 button {
   cursor: pointer;
 }
+
+/* Global inputs */
+.input-container {
+  @apply inline-block w-full;
+}
+
+input,
+textarea,
+select {
+  @apply bg-white px-4 py-3 rounded-sm w-full;
+}
+
+label {
+  @apply text-sm font-semibold block my-1;
+}
