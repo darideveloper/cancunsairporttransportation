@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 import { useSearchFormStore } from '../../store/search-form'
 import LocationSelect from '../atoms/form/LocationSelect'
 import DateInput from '../atoms/form/DateInput'
@@ -20,9 +20,9 @@ interface Props {
 export default function BookingFields({ translations }: Props) {
   const state = useSearchFormStore()
 
-  useEffect(() => {
-    console.log('SearchForm State:', state)
-  }, [state])
+  //   useEffect(() => {
+  //     console.log('SearchForm State:', state)
+  //   }, [state])
 
   const {
     tripType,

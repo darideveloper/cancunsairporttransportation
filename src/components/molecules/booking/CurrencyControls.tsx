@@ -25,7 +25,7 @@ export default function CurrencyControls({ labels }: Props) {
   ]
 
   return (
-    <div className='border-b w-full flex justify-end'>
+    <div className='w-42 flex items-center justify-center'>
       {options.map((option) => (
         <button
           key={option.id}
@@ -33,8 +33,11 @@ export default function CurrencyControls({ labels }: Props) {
           onClick={() => handleSelect(option.id)}
           aria-pressed={currency === option.id}
           className={clsx(
-            'px-2 sm:px-4 py-4 cursor-pointer w-1/2 max-w-32',
-            currency === option.id && 'border-b-2'
+            'px-5 py-4 cursor-pointer',
+            currency === option.id
+              ? 'bg-black text-white'
+              : 'bg-white text-black',
+            option.id === 'USD' ? 'rounded-l-md' : 'rounded-r-md'
           )}
         >
           {option.label}
