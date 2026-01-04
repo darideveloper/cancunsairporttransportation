@@ -62,12 +62,20 @@
         "imageAlt": "Cancun Airport Transportation by Go Transfers",
         "text": "Are you excited to kick off your vacation in Cancun? Don't forget something important! That's right—you still need to book your private shuttle and transportation service in Cancun and the Riviera Maya. \n\n\nBut don't worry, there's still time! You can book your private transportation service, luxury transportation, or group transportation, ensuring that all you need to do is look forward to your flight and the warm, friendly reception from our Cancun Airport Transportation drivers.\n\n\nWith over 15 years of experience in providing shuttle services, we are dedicated to offering safe and reliable transportation for all our customers. Our drivers undergo continuous training to ensure you receive first-class service. Don't delay—book now with Cancun Airport Transportation by Go."
     },
-    "cancun-airport-transportation": {
+    "cancunAirportTransportation": {
         "title": "Cancun Airport Transportation",
         "text": "We will provide private transportation to and from your Hotel, Condo or house in any destination in Cancun or the Riviera Maya, either One Way or Round Trip.\n\nAs our name is Cancun Airport Transportation, you might think we only do transfers from the Cancun Airport.",
         "imageAlt": "Transport van, behind a person smiling because he found a safe and reliable transport.",
         "imageTitle": "How to get from Cancun Airport",
-        "cta1": "Book now",
-        "cta2": "All destinations"
+        "buttons": {
+            "primary": {
+                "text": "Book now",
+                "href": "#"
+            },
+            "secondary": {
+                "text": "All destinations",
+                "href": "/destinations"
+            }
+        }
     }
 }
