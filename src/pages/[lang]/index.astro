@@ -5,16 +5,20 @@ import Layout from '../../layouts/Layout.astro'
 // Libs
 import { useTranslations } from '../../lib/i18n/utils'
 import { getStaticPathsLangs } from '../../lib/utils'
+import { marked } from 'marked'
 
 // i18n
 export const getStaticPaths = getStaticPathsLangs
+
+// Components
 import PageSEO from '../../components/utils/PageSEO.astro'
 import BannerImage from '../../components/atoms/BannerImage.astro'
-
 import BookingForm from '../../components/organisms/BookingForm.astro'
+import TextCard from '../../components/atoms/TextCard.astro'
 
 // Images
 const bannerSrc = '/images/home-banner.webp'
+import safeTripBookingImg from '../../assets/images/trip-advisor.webp'
 
 // Props
 interface Props {
@@ -23,7 +27,10 @@ interface Props {
 
 // Get language from params or props
 const { lang } = (Astro.params as any) || (Astro.props as any)
+
+// Tranlation texts
 const t = useTranslations(lang)
+const safeTripBookContent = await marked.parse(t('safeTripBooking.text'))
 ---
 
 <Layout>
@@ -32,10 +39,7 @@ const t = useTranslations(lang)
     lang={lang}
     slot='seo'
   />
-  <BannerImage
-    src={bannerSrc}
-    alt='Banner'
-  >
+  <BannerImage src={bannerSrc}>
     <h1 class='text-5xl font-bold w-11/12 mx-auto'>
       {t('pages.home.bannerTitle')}
     </h1>
@@ -45,4 +49,19 @@ const t = useTranslations(lang)
     defaultTo='merida'
     class='-mt-28'
   />
+  <TextCard
+    id='safe-trip-booking'
+    title={t('safeTripBooking.title')}
+    image={safeTripBookingImg}
+    alt={t('safeTripBooking.imageAlt')}
+    width={700}
+    height={400}
+    class='grid-cols-1 md:grid-cols-2 my-12 [direction:rtl]'
+    classImage='object-right'
+  >
+    <div
+      set:html={safeTripBookContent}
+      class='markdown'
+    />
+  </TextCard>
 </Layout>

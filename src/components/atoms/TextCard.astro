@@ -1,0 +1,49 @@
+---
+// Components
+import { Image } from 'astro:assets'
+
+// Props
+interface Props {
+  id?: string
+  title: string
+  image: ImageMetadata
+  alt: string
+  width?: number
+  height?: number
+  class?: string
+  classImage?: string
+}
+
+const {
+  id = '',
+  title,
+  image,
+  alt,
+  width,
+  height,
+  class: className = '',
+  classImage = '',
+} = Astro.props
+---
+
+<section
+  id={id}
+  class={`${className} grid gap-4 container text-left`}
+>
+  <div>
+    <h2 class='text-xl font-bold'>
+      {title}
+    </h2>
+    <div class='[direction:ltr]'>
+      <slot />
+    </div>
+  </div>
+  <Image
+    src={image}
+    alt={alt}
+    title={alt}
+    width={width}
+    height={height}
+    class={`w-full h-full object-cover rounded-xl ${classImage}`}
+  />
+</section>

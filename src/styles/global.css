@@ -57,12 +57,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.container {
-  max-width: 1350px;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
 .debug {
   border: 1px solid red;
 }
@@ -107,6 +101,8 @@ a {
   margin-right: auto;
   margin-left: auto;
   max-width: 1200px;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 /* Pointer in links and buttons */
@@ -128,4 +124,9 @@ select {
 
 label {
   @apply text-sm font-semibold block my-1;
+}
+
+/* Markdown global styles */
+.markdown p {
+  @apply my-4 text-sm;
 }
