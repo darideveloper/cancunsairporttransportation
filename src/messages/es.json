@@ -38,5 +38,23 @@
             "bannerTitle": "Transporte Cancún Aeropuerto",
             "welcome": "Hola mundo"
         }
+    },
+    "booking": {
+        "tripType": {
+            "oneWay": "Sencillo",
+            "roundTrip": "Redondo"
+        },
+        "currency": {
+            "usd": "USD",
+            "mxn": "MXN"
+        },
+        "labels": {
+            "leavingFrom": "Origen",
+            "goingTo": "Destino",
+            "pickupDate": "Fecha de llegada",
+            "pickupTime": "Hora de llegada",
+            "passengers": "Pasajeros"
+        },
+        "submit": "Buscar"
     }
 }

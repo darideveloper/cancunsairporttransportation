@@ -1,0 +1,83 @@
+---
+import TripTypeControls from '../molecules/booking/TripTypeControls'
+import CurrencyControls from '../molecules/booking/CurrencyControls'
+import SubmitButton from '../molecules/booking/SubmitButton'
+import LocationSelect from '../atoms/form/LocationSelect'
+import DateInput from '../atoms/form/DateInput'
+import TimeInput from '../atoms/form/TimeInput'
+import PassengerInput from '../atoms/form/PassengerInput'
+
+interface BookingTranslations {
+  tripType: {
+    oneWay: string
+    roundTrip: string
+  }
+  currency: {
+    usd: string
+    mxn: string
+  }
+  labels: {
+    leavingFrom: string
+    goingTo: string
+    pickupDate: string
+    pickupTime: string
+    passengers: string
+  }
+  submit: string
+}
+
+interface Props {
+  translations: BookingTranslations
+}
+
+const { translations } = Astro.props
+---
+
+<section class='w-full flex justify-center'>
+  <form class='px-8 py-6 bg-accent rounded-xl container mx-12 w-11/12'>
+    <!-- Controls -->
+    <div class='text-sm flex w-full justify-between gap-4'>
+      <TripTypeControls
+        labels={translations.tripType}
+        client:load
+      />
+      <CurrencyControls
+        labels={translations.currency}
+        client:load
+      />
+      <SubmitButton
+        label={translations.submit}
+        client:load
+        className='hidden md:block'
+      />
+    </div>
+    <!-- Fields -->
+    <div>
+      <LocationSelect
+        id='location-from'
+        label={translations.labels.leavingFrom}
+        client:load
+      />
+      <LocationSelect
+        id='location-to'
+        label={translations.labels.goingTo}
+        client:load
+      />
+      <DateInput
+        id='pickup-date'
+        label={translations.labels.pickupDate}
+        client:load
+      />
+      <TimeInput
+        id='pickup-time'
+        label={translations.labels.pickupTime}
+        client:load
+      />
+      <PassengerInput
+        id='passengers'
+        label={translations.labels.passengers}
+        client:load
+      />
+    </div>
+  </form>
+</section>

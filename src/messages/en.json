@@ -38,5 +38,23 @@
             "bannerTitle": "Cancun Airport Transportation",
             "welcome": "Hello world"
         }
+    },
+    "booking": {
+        "tripType": {
+            "oneWay": "One Way",
+            "roundTrip": "Round Trip"
+        },
+        "currency": {
+            "usd": "USD",
+            "mxn": "MXN"
+        },
+        "labels": {
+            "leavingFrom": "Leaving from",
+            "goingTo": "Going to",
+            "pickupDate": "Pickup date",
+            "pickupTime": "Pickup time",
+            "passengers": "Passengers"
+        },
+        "submit": "Search"
     }
 }

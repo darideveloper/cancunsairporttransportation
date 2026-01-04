@@ -36,11 +36,11 @@
 @theme {
   --color-accent: #ff8400;
   --color-accent-dark: #894700;
-  --color-black: #222222;
+  --color-black: #16161d;
   --color-gray: #757575;
   --color-gray-light: #f9fafb;
   --color-gray-dark: #333333;
-  --color-blue: #007bff;
+  --color-blue: #0056b1;
   --color-yellow: #fdc90d;
   --font-title: 'Metropolis', sans-serif;
   --font-sans: 'Inter Variable', sans-serif;
@@ -100,4 +100,17 @@ a {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent);
+}
+
+/* Container */
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
+}
+
+/* Pointer in links and buttons */
+a,
+button {
+  cursor: pointer;
 }
