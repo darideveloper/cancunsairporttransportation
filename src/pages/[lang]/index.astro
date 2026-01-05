@@ -16,7 +16,9 @@ import BannerImage from '../../components/atoms/BannerImage.astro'
 import BookingForm from '../../components/organisms/BookingForm.astro'
 import TextCard from '../../components/molecules/TextCard.astro'
 import BannerCta from '../../components/organisms/BannerCta.astro'
+import BannerStats from '../../components/organisms/BannerStats.astro'
 import PricingCard from '../../components/molecules/PricingCard.astro'
+import { Image } from 'astro:assets'
 
 // Images
 const bannerSrc = '/images/home-banner.webp'
@@ -111,17 +113,12 @@ const pricingTransportation = [
     </div>
 
     <ul
-      class='grid grid-cols-1 md:grid-cols-3 md:flex-row gap-8 justify-center items-end mt-12'
+      class='mt-12 grid grid-cols-1 items-end justify-center gap-8 md:grid-cols-3 md:flex-row'
     >
       {
         pricingTransportation.map((card) => (
           <li>
             <PricingCard
-              imageFile={card.image}
-              imageAlt={t(`pricingTransportation.cards.${card.key}.imageAlt`)}
-              imageTitle={t(
-                `pricingTransportation.cards.${card.key}.imageTitle`
-              )}
               title={t(`pricingTransportation.cards.${card.key}.title`)}
               price={t(`pricingTransportation.cards.${card.key}.price`)}
               ctaLink='#'
@@ -129,7 +126,16 @@ const pricingTransportation = [
               bestSeller={card.bestSeller}
               currency={lang === 'es' ? 'mxn' : 'usd'}
             >
+              <Image
+                slot='image'
+                src={card.image}
+                alt={t(`pricingTransportation.cards.${card.key}.imageAlt`)}
+                title={t(`pricingTransportation.cards.${card.key}.imageTitle`)}
+                loading='lazy'
+                class='mx-auto w-9/12'
+              />
               <div
+                slot='content'
                 set:html={marked.parse(
                   t(`pricingTransportation.cards.${card.key}.description`)
                 )}
@@ -141,4 +147,6 @@ const pricingTransportation = [
       }
     </ul>
   </section>
+
+  <BannerStats />
 </Layout>
