@@ -1,9 +1,8 @@
-# Spec: Transportation Translations
+# translations Specification
 
-Define the requirements for the localized transportation service information.
-
-## MODIFIED Requirements
-
+## Purpose
+TBD - created by archiving change update-transportation-texts. Update Purpose after archive.
+## Requirements
 ### Requirement: Localized Service Details
 The system MUST provide localized titles, descriptions, prices, and image metadata for each transportation service type.
 
@@ -30,3 +29,4 @@ When viewed in English
 Then the `alt` and `title` tags MUST be "Private service in Suburban"
 When viewed in Spanish
 Then the `alt` and `title` tags MUST be "Servicio privado en Suburban"
+
