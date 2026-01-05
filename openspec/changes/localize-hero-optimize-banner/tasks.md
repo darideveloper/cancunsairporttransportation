@@ -1,6 +1,0 @@
-- [ ] Add `heroTitle` key to `src/messages/en.json` (value: "Cancun Airport Transportation") <!-- id: add-en-translation -->
-- [ ] Add `heroTitle` key to `src/messages/es.json` (value: "Transporte Cancún Aeropuerto") <!-- id: add-es-translation -->
-- [ ] Update `src/components/atoms/BannerImage.astro` to accept `ImageMetadata` and use `<Image />` component with `absolute inset-0 -z-10` styling <!-- id: update-banner-component -->
-- [ ] Update `src/pages/[lang]/index.astro` to import `home-banner.webp` from `src/assets/images` and pass it to `BannerImage` <!-- id: update-index-image-import -->
-- [ ] Update `src/pages/[lang]/index.astro` to use `t('pages.home.heroTitle')` for the h1 tag <!-- id: update-index-translation -->
-- [ ] Verify build and check `src/pages/[lang]/index.astro` for hardcoded strings <!-- id: verify-changes -->
