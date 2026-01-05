@@ -1,14 +1,14 @@
 // @ts-check
 
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
-import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx'
+import sitemap from '@astrojs/sitemap'
+import { defineConfig } from 'astro/config'
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite'
 
-import react from '@astrojs/react';
+import react from '@astrojs/react'
 
-import showTailwindcssBreakpoint from 'astro-show-tailwindcss-breakpoint';
+import showTailwindcssBreakpoint from 'astro-show-tailwindcss-breakpoint'
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,4 +23,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-});
+})
