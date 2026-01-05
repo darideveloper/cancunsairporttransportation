@@ -1,8 +1,9 @@
 ---
 import { clsx } from 'clsx'
+import type { HTMLAttributes } from 'astro/types'
 
 // Props
-interface Props {
+interface Props extends HTMLAttributes<'a'> {
   href: string
   target?: string
   class?: string
@@ -14,6 +15,7 @@ const {
   target = '_self',
   class: className,
   variant = 'orange',
+  ...rest
 } = Astro.props
 
 const variants = {
@@ -33,6 +35,7 @@ const variants = {
     variants[variant],
     className
   )}
+  {...rest}
 >
   <slot />
 </a>

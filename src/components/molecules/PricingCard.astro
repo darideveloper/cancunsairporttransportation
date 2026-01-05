@@ -38,13 +38,17 @@ const formattedPrice = new Intl.NumberFormat('en-US', {
 }).format(typeof price === 'string' ? parseFloat(price) : price)
 ---
 
-<article>
+<article class='pricing-card'>
   {/* Best Seller Badge */}
   {
     bestSeller && (
-      <div>
+      <div
+        class='badge-best-seller'
+        role='status'
+        aria-label='Recommendation: Most Popular'
+      >
         <span>MostPopular</span>
-        <FaStar />
+        <FaStar aria-hidden='true' />
       </div>
     )
   }
@@ -60,6 +64,7 @@ const formattedPrice = new Intl.NumberFormat('en-US', {
               src={imageFile}
               alt={imageAlt}
               title={imageTitle}
+              loading='lazy'
             />
           </div>
         </>
@@ -70,6 +75,7 @@ const formattedPrice = new Intl.NumberFormat('en-US', {
               src={imageFile}
               alt={imageAlt}
               title={imageTitle}
+              loading='lazy'
             />
           </div>
           <h3>{title}</h3>
@@ -78,20 +84,34 @@ const formattedPrice = new Intl.NumberFormat('en-US', {
     }
 
     {/* Price Section */}
-    <div>
-      <span>Price from</span>
-      <span>{formattedPrice}</span>
-      <span>{currency}</span>
+    <div
+      class='price-section'
+      aria-label={`Price starts from ${formattedPrice} ${currency}`}
+    >
+      <span aria-hidden='true'>Price from</span>
+      <span
+        class='price-value'
+        aria-hidden='true'
+        >{formattedPrice}</span
+      >
+      <span
+        class='price-currency'
+        aria-hidden='true'
+        >{currency}</span
+      >
     </div>
 
     {/* Dynamic Content */}
-    <div>
+    <div class='content'>
       <slot />
     </div>
 
     {/* CTA Button */}
-    <div>
-      <ButtonCta href={ctaLink}>
+    <div class='cta-container'>
+      <ButtonCta
+        href={ctaLink}
+        aria-label={`${ctaText} for ${title}`}
+      >
         {ctaText}
       </ButtonCta>
     </div>

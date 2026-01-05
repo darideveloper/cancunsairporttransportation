@@ -90,43 +90,49 @@ const safeTripBookContent = await marked.parse(t('safeTripBooking.text'))
       </p>
     </div>
 
-    <div>
-      <PricingCard
-        imageFile={luxuryImg}
-        imageAlt={t('pricingTransportation.cards.luxury.imageAlt')}
-        imageTitle={t('pricingTransportation.cards.luxury.imageTitle')}
-        title={t('pricingTransportation.cards.luxury.title')}
-        price={t('pricingTransportation.cards.luxury.price')}
-        ctaLink='#'
-        ctaText={t('pricingTransportation.cards.luxury.ctaText')}
-      >
-        {t('pricingTransportation.cards.luxury.description')}
-      </PricingCard>
+    <ul class='flex flex-col md:flex-row gap-8 justify-center mt-12'>
+      <li>
+        <PricingCard
+          imageFile={luxuryImg}
+          imageAlt={t('pricingTransportation.cards.luxury.imageAlt')}
+          imageTitle={t('pricingTransportation.cards.luxury.imageTitle')}
+          title={t('pricingTransportation.cards.luxury.title')}
+          price={t('pricingTransportation.cards.luxury.price')}
+          ctaLink='#'
+          ctaText={t('pricingTransportation.cards.luxury.ctaText')}
+        >
+          {t('pricingTransportation.cards.luxury.description')}
+        </PricingCard>
+      </li>
 
-      <PricingCard
-        imageFile={privateImg}
-        imageAlt={t('pricingTransportation.cards.private.imageAlt')}
-        imageTitle={t('pricingTransportation.cards.private.imageTitle')}
-        title={t('pricingTransportation.cards.private.title')}
-        price={t('pricingTransportation.cards.private.price')}
-        ctaLink='#'
-        ctaText={t('pricingTransportation.cards.private.ctaText')}
-        bestSeller={true}
-      >
-        {t('pricingTransportation.cards.private.description')}
-      </PricingCard>
+      <li>
+        <PricingCard
+          imageFile={privateImg}
+          imageAlt={t('pricingTransportation.cards.private.imageAlt')}
+          imageTitle={t('pricingTransportation.cards.private.imageTitle')}
+          title={t('pricingTransportation.cards.private.title')}
+          price={t('pricingTransportation.cards.private.price')}
+          ctaLink='#'
+          ctaText={t('pricingTransportation.cards.private.ctaText')}
+          bestSeller={true}
+        >
+          {t('pricingTransportation.cards.private.description')}
+        </PricingCard>
+      </li>
 
-      <PricingCard
-        imageFile={groupImg}
-        imageAlt={t('pricingTransportation.cards.group.imageAlt')}
-        imageTitle={t('pricingTransportation.cards.group.imageTitle')}
-        title={t('pricingTransportation.cards.group.title')}
-        price={t('pricingTransportation.cards.group.price')}
-        ctaLink='#'
-        ctaText={t('pricingTransportation.cards.group.ctaText')}
-      >
-        {t('pricingTransportation.cards.group.description')}
-      </PricingCard>
-    </div>
+      <li>
+        <PricingCard
+          imageFile={groupImg}
+          imageAlt={t('pricingTransportation.cards.group.imageAlt')}
+          imageTitle={t('pricingTransportation.cards.group.imageTitle')}
+          title={t('pricingTransportation.cards.group.title')}
+          price={t('pricingTransportation.cards.group.price')}
+          ctaLink='#'
+          ctaText={t('pricingTransportation.cards.group.ctaText')}
+        >
+          {t('pricingTransportation.cards.group.description')}
+        </PricingCard>
+      </li>
+    </ul>
   </section>
 </Layout>
