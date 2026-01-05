@@ -44,6 +44,30 @@
                     "href": "/destinos"
                 }
             }
+        },
+        "bannerStats": {
+            "title": "¿Por qué elegirnos?",
+            "description": "Brindando un servicio de primer nivel por más de 15 años en Cancún y la Riviera Maya.",
+            "stats": {
+                "clients": {
+                    "counter": "100k+",
+                    "text": "Clientes Felices",
+                    "imageAlt": "Icono representando clientes felices",
+                    "imageTitle": "Icono Clientes Felices"
+                },
+                "experience": {
+                    "counter": "15+",
+                    "text": "Años de Experiencia",
+                    "imageAlt": "Icono representando años de experiencia",
+                    "imageTitle": "Icono Años de Experiencia"
+                },
+                "support": {
+                    "counter": "24/7",
+                    "text": "Soporte al Cliente",
+                    "imageAlt": "Icono representando soporte al cliente",
+                    "imageTitle": "Icono Soporte al Cliente"
+                }
+            }
         }
     },
     "pages": {

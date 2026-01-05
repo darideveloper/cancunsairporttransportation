@@ -1,0 +1,69 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+
+// Components
+import { Image } from 'astro:assets'
+import H2 from '../atoms/H2.astro'
+
+// Images
+import reliableCompanyImg from '../../assets/images/reliable-company.webp'
+
+// Lang
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const stats = [
+  {
+    key: 'clients',
+    image: reliableCompanyImg,
+  },
+  {
+    key: 'experience',
+    image: reliableCompanyImg,
+  },
+  {
+    key: 'support',
+    image: reliableCompanyImg,
+  },
+]
+---
+
+<section
+  id='banner-stats'
+  aria-labelledby='banner-stats-title'
+  class=''
+>
+  <div class=''>
+    <H2
+      id='banner-stats-title'
+      class=''
+    >
+      {t('baseSections.bannerStats.title')}
+    </H2>
+    <p class=''>
+      {t('baseSections.bannerStats.description')}
+    </p>
+  </div>
+
+  <div class=''>
+    {
+      stats.map((stat) => (
+        <div class=''>
+          <div class=''>
+            <Image
+              src={stat.image}
+              alt={t(`baseSections.bannerStats.stats.${stat.key}.imageAlt`)}
+              title={t(`baseSections.bannerStats.stats.${stat.key}.imageTitle`)}
+              class=''
+            />
+          </div>
+          <p class=''>
+            {t(`baseSections.bannerStats.stats.${stat.key}.counter`)}
+          </p>
+          <p class=''>{t(`baseSections.bannerStats.stats.${stat.key}.text`)}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

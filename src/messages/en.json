@@ -44,6 +44,30 @@
                     "href": "/destinations"
                 }
             }
+        },
+        "bannerStats": {
+            "title": "Why Choose Us?",
+            "description": "Providing top-notch service for over 15 years in Cancun and the Riviera Maya.",
+            "stats": {
+                "clients": {
+                    "counter": "100k+",
+                    "text": "Happy Clients",
+                    "imageAlt": "Icon representing happy clients",
+                    "imageTitle": "Happy Clients Icon"
+                },
+                "experience": {
+                    "counter": "15+",
+                    "text": "Years Experience",
+                    "imageAlt": "Icon representing years of experience",
+                    "imageTitle": "Years of Experience Icon"
+                },
+                "support": {
+                    "counter": "24/7",
+                    "text": "Customer Support",
+                    "imageAlt": "Icon representing customer support",
+                    "imageTitle": "Customer Support Icon"
+                }
+            }
         }
     },
     "pages": {
