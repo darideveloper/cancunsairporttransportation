@@ -88,27 +88,30 @@
         "cards": {
             "luxury": {
                 "title": "Luxury Transportation",
-                "imageAlt": "Luxury SUV for private transportation in Cancun",
-                "imageTitle": "Luxury SUV",
-                "price": "150",
-                "ctaText": "Book Luxury",
-                "description": "Travel in style with our high-end SUVs, perfect for couples or small families seeking extra comfort."
+                "imageAlt": "Private service in Suburban",
+                "imageTitle": "Private service in Suburban",
+                "price": "84.00",
+                "ctaText": "Book now",
+                "description": "Elevate your shuttle experience with our luxury transfer service, taking you to and from Cancun Airport to your hotel in Cancun or the Riviera Maya. Our luxury service accommodates 1 to 5 passengers in a Suburban or a similar high-end vehicle.\n\n* Private Service\n* Includes airport taxes and traveler's insurance\n* 24H service hours",
+                "bestSeller": false
             },
             "private": {
                 "title": "Private Transportation",
-                "imageAlt": "Standard van for private transportation in Cancun",
-                "imageTitle": "Standard Van",
-                "price": "45",
-                "ctaText": "Book Private",
-                "description": "Our most popular service. A private van just for you and your companions, directly to your hotel."
+                "imageAlt": "Private service in a Minivan",
+                "imageTitle": "Private service in a Minivan",
+                "price": "29.99",
+                "ctaText": "Book now",
+                "description": "Our transportation and private transfer service is one of the most popular and affordable options in Cancun and the Riviera Maya. We offer spacious, air-conditioned, safe, and clean vehicles that can accommodate 1 to 8 people comfortably.\n\n* Private Service\n* Includes airport taxes and traveler's insurance\n* 24H service hours",
+                "bestSeller": true
             },
             "group": {
                 "title": "Group Transportation",
-                "imageAlt": "Large van for group transportation in Cancun",
-                "imageTitle": "Large Van",
-                "price": "90",
-                "ctaText": "Book Group",
-                "description": "Ideal for large families or groups of friends traveling together. Spacious and comfortable."
+                "imageAlt": "Private service for Groups",
+                "imageTitle": "Private service for Groups",
+                "price": "84.00",
+                "ctaText": "Book now",
+                "description": "Traveling with a group of more than 8 passengers? Save money and book our group transportation service. Our spacious and safe vehicles can accommodate up to 16 passengers, ensuring everyone travels comfortably together.\n\n* Private Service\n* Includes airport taxes and traveler's insurance\n* 24H service hours",
+                "bestSeller": false
             }
         }
     }

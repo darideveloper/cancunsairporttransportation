@@ -30,12 +30,6 @@ const {
   reverse = false,
   currency = 'usd',
 } = Astro.props
-
-const formattedPrice = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: currency.toUpperCase(),
-  minimumFractionDigits: 2,
-}).format(typeof price === 'string' ? parseFloat(price) : price)
 ---
 
 <article
@@ -82,7 +76,7 @@ const formattedPrice = new Intl.NumberFormat('en-US', {
   {/* Price Section */}
   <div
     class='price-section text-blue flex items-center justify-center gap-2'
-    aria-label={`Price starts from ${formattedPrice} ${currency}`}
+    aria-label={`Price starts from ${price} ${currency}`}
   >
     <span
       aria-hidden='true'
@@ -97,7 +91,7 @@ const formattedPrice = new Intl.NumberFormat('en-US', {
         class='price-value'
         aria-hidden='true'
       >
-        {formattedPrice}
+        {price}
       </span>
       <span
         class='price-currency uppercase'

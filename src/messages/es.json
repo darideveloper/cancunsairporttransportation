@@ -84,31 +84,34 @@
     },
     "pricingTransportation": {
         "title": "Nuestros Servicios de Transporte",
-        "text": "Consulta nuestras diferentes opciones de transporte para tu próximo viaje.",
+        "text": "Transporte privado",
         "cards": {
             "luxury": {
                 "title": "Transporte de Lujo",
-                "imageAlt": "SUV de lujo para transporte privado en Cancún",
-                "imageTitle": "SUV de Lujo",
-                "price": "150",
-                "ctaText": "Reservar Lujo",
-                "description": "Viaja con estilo en nuestras SUVs de gama alta, perfectas para parejas o familias pequeñas que buscan comodidad extra."
+                "imageAlt": "Servicio privado en Suburban",
+                "imageTitle": "Servicio privado en Suburban",
+                "price": "1512.00",
+                "ctaText": "Reservar",
+                "description": "Eleve su experiencia de transporte con nuestro servicio de traslado de lujo, que le llevará desde y hacia el aeropuerto de Cancún a su hotel en Cancún o la Riviera Maya. Nuestro servicio de lujo acomoda de 1 a 5 pasajeros en una Suburban o un vehículo similar de alta gama.\n\n* Servicio privado\n* Incluye tasas de aeropuerto y seguro del viajero\n* Servicio 24H",
+                "bestSeller": false
             },
             "private": {
-                "title": "Transporte Privado",
-                "imageAlt": "Camioneta estándar para transporte privado en Cancún",
-                "imageTitle": "Camioneta Estándar",
-                "price": "45",
-                "ctaText": "Reservar Privado",
-                "description": "Nuestro servicio más popular. Una camioneta privada solo para ti y tus acompañantes, directo a tu hotel."
+                "title": "Transporte privado",
+                "imageAlt": "Servicio privado en Minivan",
+                "imageTitle": "Servicio privado en Minivan",
+                "price": "539.82",
+                "ctaText": "Reservar",
+                "description": "Nuestro servicio de transporte y traslado privado es una de las opciones más populares y asequibles en Cancún y la Riviera Maya. Ofrecemos vehículos espaciosos, con aire acondicionado, seguros y limpios que pueden acomodar de 1 a 8 personas cómodamente.\n\n* Servicio privado\n* Incluye tasas de aeropuerto y seguro del viajero\n* Servicio 24H",
+                "bestSeller": true
             },
             "group": {
-                "title": "Transporte de Grupo",
-                "imageAlt": "Camioneta grande para transporte de grupo en Cancún",
-                "imageTitle": "Camioneta Grande",
-                "price": "90",
-                "ctaText": "Reservar Grupo",
-                "description": "Ideal para familias grandes o grupos de amigos que viajan juntos. Espacioso y cómodo."
+                "title": "Transporte de grupos",
+                "imageAlt": "Servicio privado para Grupos",
+                "imageTitle": "Servicio privado para Grupos",
+                "price": "1512.00",
+                "ctaText": "Reservar",
+                "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros, asegurando que todos viajen cómodamente juntos.\n\n* Servicio privado\n* Incluye tasas de aeropuerto y seguro del viajero\n* Servicio 24H",
+                "bestSeller": false
             }
         }
     }
