@@ -46,26 +46,23 @@
             }
         },
         "bannerStats": {
-            "title": "Why Choose Us?",
-            "description": "Providing top-notch service for over 15 years in Cancun and the Riviera Maya.",
+            "title": "With more than a decade of experience",
+            "description": "Offering you the best transportation service for you and your family, so you can enjoy the Riviera Maya.",
             "stats": {
                 "clients": {
-                    "counter": "100k+",
                     "text": "Happy Clients",
                     "imageAlt": "Icon representing happy clients",
-                    "imageTitle": "Happy Clients Icon"
+                    "imageTitle": "Happy Clients"
                 },
-                "experience": {
-                    "counter": "15+",
-                    "text": "Years Experience",
-                    "imageAlt": "Icon representing years of experience",
-                    "imageTitle": "Years of Experience Icon"
+                "transportation": {
+                    "text": "Operated Transportation",
+                    "imageAlt": "Icon representing operated transportation",
+                    "imageTitle": "Operated Transportation"
                 },
-                "support": {
-                    "counter": "24/7",
-                    "text": "Customer Support",
-                    "imageAlt": "Icon representing customer support",
-                    "imageTitle": "Customer Support Icon"
+                "destinations": {
+                    "text": "Available destinations",
+                    "imageAlt": "Icon representing available destinations",
+                    "imageTitle": "Available destinations"
                 }
             }
         }

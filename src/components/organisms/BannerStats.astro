@@ -7,7 +7,9 @@ import { Image } from 'astro:assets'
 import H2 from '../atoms/H2.astro'
 
 // Images
-import reliableCompanyImg from '../../assets/images/reliable-company.webp'
+import happyClientsImg from '../../assets/images/icons/happy-clients.svg'
+import officeImg from '../../assets/images/icons/office.svg'
+import mapPointImg from '../../assets/images/icons/map-point.svg'
 
 // Lang
 const lang = getLangFromUrl(Astro.url)
@@ -16,15 +18,18 @@ const t = useTranslations(lang)
 const stats = [
   {
     key: 'clients',
-    image: reliableCompanyImg,
+    image: happyClientsImg,
+    counter: '21k+',
   },
   {
-    key: 'experience',
-    image: reliableCompanyImg,
+    key: 'transportation',
+    image: officeImg,
+    counter: '21,517',
   },
   {
-    key: 'support',
-    image: reliableCompanyImg,
+    key: 'destinations',
+    image: mapPointImg,
+    counter: '10,622',
   },
 ]
 ---
@@ -58,9 +63,7 @@ const stats = [
               class=''
             />
           </div>
-          <p class=''>
-            {t(`baseSections.bannerStats.stats.${stat.key}.counter`)}
-          </p>
+          <p class=''>{stat.counter}</p>
           <p class=''>{t(`baseSections.bannerStats.stats.${stat.key}.text`)}</p>
         </div>
       ))
