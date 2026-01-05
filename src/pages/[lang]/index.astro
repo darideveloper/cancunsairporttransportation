@@ -16,11 +16,14 @@ import BannerImage from '../../components/atoms/BannerImage.astro'
 import BookingForm from '../../components/organisms/BookingForm.astro'
 import TextCard from '../../components/molecules/TextCard.astro'
 import BannerCta from '../../components/organisms/BannerCta.astro'
-import { Image } from 'astro:assets'
+import PricingCard from '../../components/molecules/PricingCard.astro'
 
 // Images
 const bannerSrc = '/images/home-banner.webp'
 import safeTripBookingImg from '../../assets/images/trip-advisor.webp'
+import luxuryImg from '../../assets/images/reliable-company.webp'
+import privateImg from '../../assets/images/home-banner.webp'
+import groupImg from '../../assets/images/trip-advisor.webp'
 
 // Props
 interface Props {
@@ -75,4 +78,55 @@ const safeTripBookContent = await marked.parse(t('safeTripBooking.text'))
     text={t('cancunAirportTransportation.text')}
     lang={lang}
   />
+
+  <!-- Pricing transportation -->
+  <section id='pricing-transportation'>
+    <div>
+      <h2>
+        {t('pricingTransportation.title')}
+      </h2>
+      <p>
+        {t('pricingTransportation.text')}
+      </p>
+    </div>
+
+    <div>
+      <PricingCard
+        imageFile={luxuryImg}
+        imageAlt={t('pricingTransportation.cards.luxury.imageAlt')}
+        imageTitle={t('pricingTransportation.cards.luxury.imageTitle')}
+        title={t('pricingTransportation.cards.luxury.title')}
+        price={t('pricingTransportation.cards.luxury.price')}
+        ctaLink='#'
+        ctaText={t('pricingTransportation.cards.luxury.ctaText')}
+      >
+        {t('pricingTransportation.cards.luxury.description')}
+      </PricingCard>
+
+      <PricingCard
+        imageFile={privateImg}
+        imageAlt={t('pricingTransportation.cards.private.imageAlt')}
+        imageTitle={t('pricingTransportation.cards.private.imageTitle')}
+        title={t('pricingTransportation.cards.private.title')}
+        price={t('pricingTransportation.cards.private.price')}
+        ctaLink='#'
+        ctaText={t('pricingTransportation.cards.private.ctaText')}
+        bestSeller={true}
+      >
+        {t('pricingTransportation.cards.private.description')}
+      </PricingCard>
+
+      <PricingCard
+        imageFile={groupImg}
+        imageAlt={t('pricingTransportation.cards.group.imageAlt')}
+        imageTitle={t('pricingTransportation.cards.group.imageTitle')}
+        title={t('pricingTransportation.cards.group.title')}
+        price={t('pricingTransportation.cards.group.price')}
+        ctaLink='#'
+        ctaText={t('pricingTransportation.cards.group.ctaText')}
+      >
+        {t('pricingTransportation.cards.group.description')}
+      </PricingCard>
+    </div>
+  </section>
 </Layout>

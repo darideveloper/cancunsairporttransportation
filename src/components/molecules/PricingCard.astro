@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets'
+import { FaStar } from 'react-icons/fa'
+import ButtonCta from '../atoms/ButtonCta.astro'
+import { clsx } from 'clsx'
+import type { ImageMetadata } from 'astro'
+
+interface Props {
+  imageFile: ImageMetadata
+  imageAlt: string
+  imageTitle?: string
+  title: string
+  bestSeller?: boolean
+  price: number | string
+  ctaLink: string
+  ctaText: string
+  reverse?: boolean
+  currency?: 'usd' | 'mxn'
+}
+
+const {
+  imageFile,
+  imageAlt,
+  imageTitle,
+  title,
+  bestSeller = false,
+  price,
+  ctaLink,
+  ctaText,
+  reverse = false,
+  currency = 'usd',
+} = Astro.props
+
+const formattedPrice = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: currency.toUpperCase(),
+  minimumFractionDigits: 0,
+}).format(typeof price === 'string' ? parseFloat(price) : price)
+---
+
+<article>
+  {/* Best Seller Badge */}
+  {
+    bestSeller && (
+      <div>
+        <span>MostPopular</span>
+        <FaStar />
+      </div>
+    )
+  }
+
+  <div>
+    {/* Layout Order Logic */}
+    {
+      reverse ? (
+        <>
+          <h3>{title}</h3>
+          <div>
+            <Image
+              src={imageFile}
+              alt={imageAlt}
+              title={imageTitle}
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <div>
+            <Image
+              src={imageFile}
+              alt={imageAlt}
+              title={imageTitle}
+            />
+          </div>
+          <h3>{title}</h3>
+        </>
+      )
+    }
+
+    {/* Price Section */}
+    <div>
+      <span>Price from</span>
+      <span>{formattedPrice}</span>
+      <span>{currency}</span>
+    </div>
+
+    {/* Dynamic Content */}
+    <div>
+      <slot />
+    </div>
+
+    {/* CTA Button */}
+    <div>
+      <ButtonCta href={ctaLink}>
+        {ctaText}
+      </ButtonCta>
+    </div>
+  </div>
+</article>

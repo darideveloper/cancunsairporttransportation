@@ -81,5 +81,35 @@
     "cancunAirportTransportation": {
         "title": "Transportación Aeropuerto Cancun",
         "text": "Proporcionamos transportación privada desde y hacia tu hotel, condominio o casa en cualquier destino de Cancún o la Riviera Maya, ya sea de Ida o de Vuelta.\n\nComo nuestro nombre es Cancun Airport Transportation by Go, usted podría pensar que sólo hacemos traslados desde el Aeropuerto de Cancún."
+    },
+    "pricingTransportation": {
+        "title": "Nuestros Servicios de Transporte",
+        "text": "Consulta nuestras diferentes opciones de transporte para tu próximo viaje.",
+        "cards": {
+            "luxury": {
+                "title": "Transporte de Lujo",
+                "imageAlt": "SUV de lujo para transporte privado en Cancún",
+                "imageTitle": "SUV de Lujo",
+                "price": "150",
+                "ctaText": "Reservar Lujo",
+                "description": "Viaja con estilo en nuestras SUVs de gama alta, perfectas para parejas o familias pequeñas que buscan comodidad extra."
+            },
+            "private": {
+                "title": "Transporte Privado",
+                "imageAlt": "Camioneta estándar para transporte privado en Cancún",
+                "imageTitle": "Camioneta Estándar",
+                "price": "45",
+                "ctaText": "Reservar Privado",
+                "description": "Nuestro servicio más popular. Una camioneta privada solo para ti y tus acompañantes, directo a tu hotel."
+            },
+            "group": {
+                "title": "Transporte de Grupo",
+                "imageAlt": "Camioneta grande para transporte de grupo en Cancún",
+                "imageTitle": "Camioneta Grande",
+                "price": "90",
+                "ctaText": "Reservar Grupo",
+                "description": "Ideal para familias grandes o grupos de amigos que viajan juntos. Espacioso y cómodo."
+            }
+        }
     }
 }

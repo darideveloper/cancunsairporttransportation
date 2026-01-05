@@ -81,5 +81,35 @@
     "cancunAirportTransportation": {
         "title": "Cancun Airport Transportation",
         "text": "We will provide private transportation to and from your Hotel, Condo or house in any destination in Cancun or the Riviera Maya, either One Way or Round Trip.\n\nAs our name is Cancun Airport Transportation, you might think we only do transfers from the Cancun Airport."
+    },
+    "pricingTransportation": {
+        "title": "Our Transportation Services",
+        "text": "List of our transportation services",
+        "cards": {
+            "luxury": {
+                "title": "Luxury Transportation",
+                "imageAlt": "Luxury SUV for private transportation in Cancun",
+                "imageTitle": "Luxury SUV",
+                "price": "150",
+                "ctaText": "Book Luxury",
+                "description": "Travel in style with our high-end SUVs, perfect for couples or small families seeking extra comfort."
+            },
+            "private": {
+                "title": "Private Transportation",
+                "imageAlt": "Standard van for private transportation in Cancun",
+                "imageTitle": "Standard Van",
+                "price": "45",
+                "ctaText": "Book Private",
+                "description": "Our most popular service. A private van just for you and your companions, directly to your hotel."
+            },
+            "group": {
+                "title": "Group Transportation",
+                "imageAlt": "Large van for group transportation in Cancun",
+                "imageTitle": "Large Van",
+                "price": "90",
+                "ctaText": "Book Group",
+                "description": "Ideal for large families or groups of friends traveling together. Spacious and comfortable."
+            }
+        }
     }
 }
