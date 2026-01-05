@@ -34,86 +34,91 @@ const {
 const formattedPrice = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: currency.toUpperCase(),
-  minimumFractionDigits: 0,
+  minimumFractionDigits: 2,
 }).format(typeof price === 'string' ? parseFloat(price) : price)
 ---
 
-<article class='pricing-card'>
-  {/* Best Seller Badge */}
-  {
-    bestSeller && (
-      <div
-        class='badge-best-seller'
-        role='status'
-        aria-label='Recommendation: Most Popular'
-      >
-        <span>MostPopular</span>
-        <FaStar aria-hidden='true' />
-      </div>
-    )
-  }
-
-  <div>
-    {/* Layout Order Logic */}
+<article
+  class={clsx(
+    'pricing-card flex flex-col items-center justify-center gap-4 p-4 rounded-xl border bg-gray-light',
+    bestSeller ? 'border-accent' : 'border-gray-dark/20'
+  )}
+>
+  <header>
+    {/* Best Seller Badge */}
     {
-      reverse ? (
-        <>
-          <h3>{title}</h3>
-          <div>
-            <Image
-              src={imageFile}
-              alt={imageAlt}
-              title={imageTitle}
-              loading='lazy'
-            />
-          </div>
-        </>
-      ) : (
-        <>
-          <div>
-            <Image
-              src={imageFile}
-              alt={imageAlt}
-              title={imageTitle}
-              loading='lazy'
-            />
-          </div>
-          <h3>{title}</h3>
-        </>
+      bestSeller && (
+        <div
+          class='badge-best-seller text-blue flex items-center justify-center gap-2 mb-3'
+          role='status'
+          aria-label='Recommendation: Most Popular'
+        >
+          <FaStar aria-hidden='true' />
+          <span>MostPopular</span>
+        </div>
       )
     }
 
-    {/* Price Section */}
     <div
-      class='price-section'
-      aria-label={`Price starts from ${formattedPrice} ${currency}`}
+      class={clsx(
+        `title-image text-center flex items-center justify-center gap-2`,
+        reverse ? 'flex-col-reverse' : 'flex-col'
+      )}
     >
-      <span aria-hidden='true'>Price from</span>
+      {/* Layout Order Logic (title and image with optional reverse) */}
+      <h3 class='text-lg font-bold'>{title}</h3>
+      <div>
+        <Image
+          src={imageFile}
+          alt={imageAlt}
+          title={imageTitle}
+          loading='lazy'
+          class='w-full'
+        />
+      </div>
+    </div>
+  </header>
+
+  {/* Price Section */}
+  <div
+    class='price-section text-blue flex items-center justify-center gap-2'
+    aria-label={`Price starts from ${formattedPrice} ${currency}`}
+  >
+    <span
+      aria-hidden='true'
+      class='inline-block text-xs'
+    >
+      Price
+      <br />
+      from
+    </span>
+    <span class='text-3xl font-bold'>
       <span
         class='price-value'
         aria-hidden='true'
-        >{formattedPrice}</span
       >
+        {formattedPrice}
+      </span>
       <span
-        class='price-currency'
+        class='price-currency uppercase'
         aria-hidden='true'
-        >{currency}</span
       >
-    </div>
-
-    {/* Dynamic Content */}
-    <div class='content'>
-      <slot />
-    </div>
-
-    {/* CTA Button */}
-    <div class='cta-container'>
-      <ButtonCta
-        href={ctaLink}
-        aria-label={`${ctaText} for ${title}`}
-      >
-        {ctaText}
-      </ButtonCta>
-    </div>
+        {currency}
+      </span>
+    </span>
   </div>
+
+  {/* Dynamic Content */}
+  <slot />
+
+  <footer class='cta-container w-full'>
+    {/* CTA Button */}
+    <ButtonCta
+      href={ctaLink}
+      aria-label={`${ctaText} for ${title}`}
+      class='w-full inline-block'
+    >
+      {ctaText}
+    </ButtonCta>
+  </footer>
 </article>
