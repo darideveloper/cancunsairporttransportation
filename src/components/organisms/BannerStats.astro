@@ -37,36 +37,42 @@ const stats = [
 <section
   id='banner-stats'
   aria-labelledby='banner-stats-title'
-  class=''
+  class='bg-accent/10 w-full'
 >
-  <div class=''>
-    <H2
-      id='banner-stats-title'
-      class=''
-    >
-      {t('baseSections.bannerStats.title')}
-    </H2>
-    <p class=''>
-      {t('baseSections.bannerStats.description')}
-    </p>
-  </div>
+  <div
+    class='container mt-12 flex flex-col gap-6 px-4 py-3 md:flex-row md:px-8 md:py-6'
+  >
+    <div class='flex flex-col items-center justify-center md:flex-col'>
+      <H2
+        id='banner-stats-title'
+        class='w-full text-left'
+      >
+        {t('baseSections.bannerStats.title')}
+      </H2>
+      <p class='text-sm'>
+        {t('baseSections.bannerStats.description')}
+      </p>
+    </div>
 
-  <div class=''>
-    {
-      stats.map((stat) => (
-        <div class=''>
-          <div class=''>
+    <div class='my-4 flex flex-col gap-4 sm:flex-row'>
+      {
+        stats.map((stat) => (
+          <div class='flex w-full flex-col items-center justify-center gap-1 bg-white p-2 text-center md:w-32 lg:w-42'>
             <Image
               src={stat.image}
               alt={t(`baseSections.bannerStats.stats.${stat.key}.imageAlt`)}
               title={t(`baseSections.bannerStats.stats.${stat.key}.imageTitle`)}
               class=''
+              width={40}
+              height={40}
             />
+            <h3 class='my-0 py-0 text-xl font-bold'>{stat.counter}</h3>
+            <p class='my-0 py-0 text-sm'>
+              {t(`baseSections.bannerStats.stats.${stat.key}.text`)}
+            </p>
           </div>
-          <p class=''>{stat.counter}</p>
-          <p class=''>{t(`baseSections.bannerStats.stats.${stat.key}.text`)}</p>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </div>
 </section>
