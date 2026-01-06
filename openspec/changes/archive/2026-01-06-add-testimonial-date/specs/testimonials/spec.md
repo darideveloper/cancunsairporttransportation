@@ -1,6 +1,6 @@
 # Spec: Date Display
 
-## MODIFIED Requirements
+## ADDED Requirements
 
 ### Requirement: Date Prop
 The `Testimonial` component MUST accept a `date` prop as a string.
