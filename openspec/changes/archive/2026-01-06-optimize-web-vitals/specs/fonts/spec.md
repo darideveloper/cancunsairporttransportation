@@ -1,6 +1,6 @@
 # Spec: Font Optimization
 
-## MODIFIED Requirements
+## ADDED Requirements
 
 ### Requirement: Single Source of Truth for Fonts
 The system SHALL use a single method for loading fonts to avoid double-downloads and race conditions.

@@ -1,0 +1,106 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+
+// Components
+import H2 from '../atoms/H2.astro'
+import Testimonial from '../molecules/Testimonial.astro'
+
+// Images
+import client1Img from '../../assets/images/testimonials/client-1.png'
+import client2Img from '../../assets/images/testimonials/client-2.png'
+import client3Img from '../../assets/images/testimonials/client-3.png'
+
+// Lang
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const testimonials = [
+  {
+    key: 'item1',
+    image: client1Img,
+    date: '01/2026',
+  },
+  {
+    key: 'item2',
+    image: client2Img,
+    date: '12/2025',
+  },
+  {
+    key: 'item3',
+    image: client3Img,
+    date: '11/2025',
+  },
+]
+
+// JSON-LD Structured Data
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: testimonials.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: t(`baseSections.testimonials.items.${item.key}.name`),
+      },
+      reviewBody: t(`baseSections.testimonials.items.${item.key}.text`),
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: t(`baseSections.testimonials.items.${item.key}.stars`),
+        bestRating: '5',
+      },
+      datePublished: item.date,
+      publisher: {
+        '@type': 'Organization',
+        name: t('branding.businessName'),
+      },
+    },
+  })),
+}
+---
+
+<section
+  id='testimonials'
+  aria-labelledby='testimonials-title'
+  class='bg-gray-50 py-16'
+>
+  <div class='container px-4 md:px-8'>
+    <div class='mb-12 text-center'>
+      <H2
+        id='testimonials-title'
+        class='mb-4'
+      >
+        {t('baseSections.testimonials.title')}
+      </H2>
+      <p class='mx-auto max-w-2xl text-lg text-gray-600'>
+        {t('baseSections.testimonials.description')}
+      </p>
+    </div>
+
+    <div class='grid grid-cols-1 gap-8 md:grid-cols-3'>
+      {
+        testimonials.map((item) => (
+          <Testimonial
+            name={t(`baseSections.testimonials.items.${item.key}.name`)}
+            text={t(`baseSections.testimonials.items.${item.key}.text`)}
+            image={item.image}
+            imageAlt={t(`baseSections.testimonials.items.${item.key}.imageAlt`)}
+            imageTitle={t(
+              `baseSections.testimonials.items.${item.key}.imageTitle`
+            )}
+            stars={t(`baseSections.testimonials.items.${item.key}.stars`)}
+            date={item.date}
+          />
+        ))
+      }
+    </div>
+  </div>
+
+  <script
+    type='application/ld+json'
+    set:html={JSON.stringify(jsonLd)}
+  />
+</section>

@@ -1,0 +1,7 @@
+- [x] Update `Testimonial` molecule to accept and display `date` [x]
+    - [x] Add `date` to `Props` [x]
+    - [x] Render `date` before `name` [x]
+- [x] Update `Testimonials` organism to provide `date` [x]
+    - [x] Define `testimonialDates` data [x]
+    - [x] Pass `date` to child components [x]
+- [x] Validate implementation [x]

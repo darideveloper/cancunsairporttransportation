@@ -1,0 +1,96 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  name: string
+  text: string
+  image: ImageMetadata
+  imageAlt: string
+  imageTitle: string
+  stars: string
+  date: string
+  class?: string
+}
+
+const {
+  name,
+  text,
+  image,
+  imageAlt,
+  imageTitle,
+  stars,
+  date,
+  class: className,
+} = Astro.props
+---
+
+<figure
+  class=''
+  aria-roledescription='testimonial'
+  role='group'
+  itemscope
+  itemtype='https://schema.org/Review'
+>
+  <blockquote
+    class=''
+    itemprop='reviewBody'
+  >
+    <p class=''>{text}</p>
+  </blockquote>
+  <figcaption class=''>
+    <div
+      class=''
+      itemprop='image'
+    >
+      <Image
+        src={image}
+        alt={imageAlt}
+        title={imageTitle}
+        width={60}
+        height={60}
+        loading='lazy'
+        decoding='async'
+        class=''
+      />
+    </div>
+    <div
+      class=''
+      itemprop='author'
+      itemscope
+      itemtype='https://schema.org/Person'
+    >
+      <cite
+        class=''
+        itemprop='name'
+      >
+        <time
+          class='mr-2 font-bold text-gray-400 not-italic'
+          itemprop='datePublished'
+          >{date}</time
+        >
+        {name}</cite
+      >
+      <div
+        class=''
+        aria-label={`${stars} out of 5 stars`}
+        itemprop='reviewRating'
+        itemscope
+        itemtype='https://schema.org/Rating'
+      >
+        <meta
+          itemprop='ratingValue'
+          content={stars}
+        />
+        <meta
+          itemprop='bestRating'
+          content='5'
+        />
+        {
+          Array.from({ length: parseInt(stars) }).map((_) => (
+            <span aria-hidden='true'>★</span>
+          ))
+        }
+      </div>
+    </div>
+  </figcaption>
+</figure>

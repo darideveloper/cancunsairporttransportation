@@ -65,6 +65,33 @@
                     "imageTitle": "Available destinations"
                 }
             }
+        },
+        "testimonials": {
+            "title": "What Our Clients Say",
+            "description": "Read about the experiences of our happy travelers who have used our Cancun Airport Transportation services.",
+            "items": {
+                "item1": {
+                    "name": "John Doe",
+                    "text": "Great service! Very punctual and professional. The van was clean and the drive to our hotel in Playa del Carmen was very smooth.",
+                    "imageAlt": "John Doe, a satisfied client of Cancun Airport Transportation",
+                    "imageTitle": "John Doe Testimonial",
+                    "stars": "5"
+                },
+                "item2": {
+                    "name": "Maria Garcia",
+                    "text": "Excellent private shuttle. The driver was waiting for us with a sign and helped us with all our luggage. Highly recommended!",
+                    "imageAlt": "Maria Garcia, smiling after her transportation service in Cancun",
+                    "imageTitle": "Maria Garcia Testimonial",
+                    "stars": "5"
+                },
+                "item3": {
+                    "name": "David Smith",
+                    "text": "Reliable and safe. We traveled with our kids and felt very comfortable throughout the journey. Will definitely book again.",
+                    "imageAlt": "David Smith, happy with the family transportation service",
+                    "imageTitle": "David Smith Testimonial",
+                    "stars": "5"
+                }
+            }
         }
     },
     "pages": {
