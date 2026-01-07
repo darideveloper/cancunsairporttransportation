@@ -1,6 +1,6 @@
 # Testimonials Content
 
-## MODIFIED Requirements
+## ADDED Requirements
 
 ### Requirement: Content Accuracy
 The Testimonials section MUST display recent and authentic customer reviews as provided by the client.
