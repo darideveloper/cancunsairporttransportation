@@ -67,28 +67,28 @@
             }
         },
         "testimonials": {
-            "title": "Lo Que Dicen Nuestros Clientes",
-            "description": "Lee sobre las experiencias de nuestros viajeros felices que han utilizado nuestros servicios de transporte en el Aeropuerto de Cancún.",
+            "title": "Comentarios de nuestros clientes",
+            "description": "Descubra por qué nuestros clientes eligen a Cancun Airport Transportation por Go",
             "items": {
                 "item1": {
-                    "name": "John Doe",
-                    "text": "¡Gran servicio! Muy puntual y profesional. La camioneta estaba limpia y el trayecto a nuestro hotel en Playa del Carmen fue muy tranquilo.",
-                    "imageAlt": "John Doe, un cliente satisfecho de Transporte Aeropuerto Cancún",
-                    "imageTitle": "Testimonio de John Doe",
+                    "name": "Juan P.",
+                    "text": "Contraté el servicio de transporte para ir de Cancún a Tulum y quedé impresionado con la puntualidad y profesionalismo del conductor. El vehículo estaba en excelentes condiciones y el viaje fue muy cómodo. Recomiendo este servicio a mis amigos y familiares.",
+                    "imageAlt": "Comentarios de nuestros clientes Juan P.",
+                    "imageTitle": "Comentarios de nuestros clientes Juan P.",
                     "stars": "5"
                 },
                 "item2": {
-                    "name": "Maria Garcia",
-                    "text": "Excelente transporte privado. El conductor nos estaba esperando con un letrero y nos ayudó con todo nuestro equipaje. ¡Muy recomendable!",
-                    "imageAlt": "Maria Garcia, sonriendo después de su servicio de transporte en Cancún",
-                    "imageTitle": "Testimonio de Maria Garcia",
+                    "name": "Ana G.",
+                    "text": "Nuestro traslado desde el aeropuerto de Cancún a nuestro hotel en Playa del Carmen fue perfecto. El conductor era amable y nos dio excelentes recomendaciones sobre lugares para visitar. Además, el precio era muy razonable. ¡Excelente servicio!",
+                    "imageAlt": "Comentarios de nuestros clientes Ana G.",
+                    "imageTitle": "Comentarios de nuestros clientes Ana G.",
                     "stars": "5"
                 },
                 "item3": {
-                    "name": "David Smith",
-                    "text": "Confiable y seguro. Viajamos con nuestros hijos y nos sentimos muy cómodos durante todo el trayecto. Sin duda volveremos a reservar.",
-                    "imageAlt": "David Smith, feliz con el servicio de transporte familiar",
-                    "imageTitle": "Testimonio de David Smith",
+                    "name": "Carlos R.",
+                    "text": "Utilicé este servicio para un viaje de un día a Chichen Itza y todo fue maravilloso. El conductor fue puntual, el vehículo era muy cómodo y limpio, y el viaje fue seguro. Nos encantó la experiencia y volveremos a utilizar este servicio en el futuro.",
+                    "imageAlt": "Comentarios de nuestros clientes Carlos R.",
+                    "imageTitle": "Comentarios de nuestros clientes Carlos R.",
                     "stars": "5"
                 }
             }

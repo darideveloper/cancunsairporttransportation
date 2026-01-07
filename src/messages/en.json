@@ -67,28 +67,28 @@
             }
         },
         "testimonials": {
-            "title": "What Our Clients Say",
-            "description": "Read about the experiences of our happy travelers who have used our Cancun Airport Transportation services.",
+            "title": "Comments from our customers",
+            "description": "Discover why our customers choose Cancun Airport Transportation by Go",
             "items": {
                 "item1": {
-                    "name": "John Doe",
-                    "text": "Great service! Very punctual and professional. The van was clean and the drive to our hotel in Playa del Carmen was very smooth.",
-                    "imageAlt": "John Doe, a satisfied client of Cancun Airport Transportation",
-                    "imageTitle": "John Doe Testimonial",
+                    "name": "Juan P.",
+                    "text": "I hired the transportation service to go from Cancun to Tulum and was impressed with the punctuality and professionalism of the driver. The vehicle was in excellent condition and the trip was very comfortable. I will recommend this service to my friends and family.",
+                    "imageAlt": "Comment from our customer Juan P.",
+                    "imageTitle": "Comment from our customer Juan P.",
                     "stars": "5"
                 },
                 "item2": {
-                    "name": "Maria Garcia",
-                    "text": "Excellent private shuttle. The driver was waiting for us with a sign and helped us with all our luggage. Highly recommended!",
-                    "imageAlt": "Maria Garcia, smiling after her transportation service in Cancun",
-                    "imageTitle": "Maria Garcia Testimonial",
+                    "name": "Ana G.",
+                    "text": "Our transfer from Cancun airport to our hotel in Playa del Carmen was perfect. The driver was amiable and gave us excellent recommendations on places to visit. Also, the price was very reasonable. Excellent service!",
+                    "imageAlt": "Comment from our customer Ana G.",
+                    "imageTitle": "Comment from our customer Ana G.",
                     "stars": "5"
                 },
                 "item3": {
-                    "name": "David Smith",
-                    "text": "Reliable and safe. We traveled with our kids and felt very comfortable throughout the journey. Will definitely book again.",
-                    "imageAlt": "David Smith, happy with the family transportation service",
-                    "imageTitle": "David Smith Testimonial",
+                    "name": "Carlos R.",
+                    "text": "I used this service for a day trip to Chichen Itza and everything was wonderful. The driver was on time, the vehicle was very comfortable and clean, and the ride was safe. We loved the experience and will use this service again in the future.",
+                    "imageAlt": "Comment from our customer Carlos R.",
+                    "imageTitle": "Comment from our customer Carlos R.",
                     "stars": "5"
                 }
             }

@@ -7,29 +7,35 @@ import H2 from '../atoms/H2.astro'
 import Testimonial from '../molecules/Testimonial.astro'
 
 // Images
-import client1Img from '../../assets/images/testimonials/client-1.png'
-import client2Img from '../../assets/images/testimonials/client-2.png'
-import client3Img from '../../assets/images/testimonials/client-3.png'
+import client1Img from '../../assets/images/clients/1.webp'
+import client2Img from '../../assets/images/clients/2.webp'
+import client3Img from '../../assets/images/clients/3.webp'
 
 // Lang
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
+// Date
+const today = new Date()
+const month = String(today.getMonth() + 1).padStart(2, '0')
+const year = today.getFullYear()
+const currentDate = `${month}/${year}`
+
 const testimonials = [
   {
     key: 'item1',
     image: client1Img,
-    date: '01/2026',
+    date: currentDate,
   },
   {
     key: 'item2',
     image: client2Img,
-    date: '12/2025',
+    date: currentDate,
   },
   {
     key: 'item3',
     image: client3Img,
-    date: '11/2025',
+    date: currentDate,
   },
 ]
 
