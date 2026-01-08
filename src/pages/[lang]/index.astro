@@ -27,6 +27,9 @@ import safeTripBookingImg from "../../assets/images/trip-advisor.webp";
 import luxuryVehicleImg from "../../assets/images/vehicles/luxury.webp";
 import privateVehicleImg from "../../assets/images/vehicles/standard.webp";
 import groupVehicleImg from "../../assets/images/vehicles/groups.webp";
+import tulumImg from "../../assets/images/destinations/tulum.jpg";
+import playaImg from "../../assets/images/destinations/playa-del-carmen.jpg";
+import cancunImg from "../../assets/images/destinations/cancun.jpg";
 
 // Props
 interface Props {
@@ -55,6 +58,21 @@ const pricingTransportation = [
     key: "group",
     image: groupVehicleImg,
     bestSeller: false,
+  },
+];
+
+const destinations = [
+  {
+    id: "tulum",
+    image: tulumImg,
+  },
+  {
+    id: "playa",
+    image: playaImg,
+  },
+  {
+    id: "cancun",
+    image: cancunImg,
   },
 ];
 ---
@@ -144,6 +162,58 @@ const pricingTransportation = [
         ))
       }
     </ul>
+  </section>
+
+  <!-- Destinations -->
+  <section class="destinations-elements container my-20">
+    <div class="top text-center">
+      <h2 class="text-3xl font-bold">{t("pages.home.destinations.title")}</h2>
+      <p class="mt-4">{t("pages.home.destinations.text")}</p>
+    </div>
+
+    <ul class="middle mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+      {
+        destinations.map((dest) => (
+          <li>
+            <PricingCard
+              title={t(`pages.home.destinations.cards.${dest.id}.title`)}
+              price={t(`pages.home.destinations.cards.${dest.id}.price`)}
+              ctaLink={t(`pages.home.destinations.cards.${dest.id}.link`)}
+              ctaText={t(`pages.home.destinations.cards.${dest.id}.ctaText`)}
+              currency={lang === "es" ? "mxn" : "usd"}
+              bestSeller={false}
+              reverse={true}
+            >
+              <Image
+                slot="image"
+                src={dest.image}
+                alt={t(`pages.home.destinations.cards.${dest.id}.title`)}
+                width={300}
+                height={300}
+                class="w-[calc(100% + 4rem)] mx-auto -mt-4 rounded-t-lg"
+              />
+              <div
+                slot="content"
+                set:html={marked.parse(
+                  t(`pages.home.destinations.cards.${dest.id}.description`),
+                )}
+                class="markdown text-sm"
+              />
+            </PricingCard>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="bottom mt-12 text-center">
+      <a
+        href={t("pages.home.destinations.viewMoreLink")}
+        class="btn bg-accent inline-block rounded-lg px-6 py-3 font-bold text-white transition hover:opacity-90"
+        title={t("pages.home.destinations.viewMore")}
+      >
+        {t("pages.home.destinations.viewMore")}
+      </a>
+    </div>
   </section>
 
   <BannerStats />
