@@ -1,120 +1,116 @@
 ---
 // Layout
-import Layout from '../../layouts/Layout.astro'
+import Layout from "../../layouts/Layout.astro";
 
 // Libs
-import { useTranslations } from '../../lib/i18n/utils'
-import { getStaticPathsLangs } from '../../lib/utils'
-import { marked } from 'marked'
+import { useTranslations } from "../../lib/i18n/utils";
+import { getStaticPathsLangs } from "../../lib/utils";
+import { marked } from "marked";
 
 // i18n
-export const getStaticPaths = getStaticPathsLangs
+export const getStaticPaths = getStaticPathsLangs;
 
 // Components
-import PageSEO from '../../components/utils/PageSEO.astro'
-import BannerImage from '../../components/atoms/BannerImage.astro'
-import BookingForm from '../../components/organisms/BookingForm.astro'
-import TextCard from '../../components/molecules/TextCard.astro'
-import BannerCta from '../../components/organisms/BannerCta.astro'
-import BannerStats from '../../components/organisms/BannerStats.astro'
-import PricingCard from '../../components/molecules/PricingCard.astro'
-import Testimonials from '../../components/organisms/Testimonials.astro'
-import { Image } from 'astro:assets'
+import PageSEO from "../../components/utils/PageSEO.astro";
+import BannerImage from "../../components/atoms/BannerImage.astro";
+import BookingForm from "../../components/organisms/BookingForm.astro";
+import TextCard from "../../components/molecules/TextCard.astro";
+import BannerCta from "../../components/organisms/BannerCta.astro";
+import BannerStats from "../../components/organisms/BannerStats.astro";
+import PricingCard from "../../components/molecules/PricingCard.astro";
+import Testimonials from "../../components/organisms/Testimonials.astro";
+import { Image } from "astro:assets";
 
 // Images
-const bannerSrc = '/images/home-banner.webp'
-import safeTripBookingImg from '../../assets/images/trip-advisor.webp'
-import luxuryVehicleImg from '../../assets/images/vehicles/luxury.webp'
-import privateVehicleImg from '../../assets/images/vehicles/standard.webp'
-import groupVehicleImg from '../../assets/images/vehicles/groups.webp'
+const bannerSrc = "/images/home-banner.webp";
+import safeTripBookingImg from "../../assets/images/trip-advisor.webp";
+import luxuryVehicleImg from "../../assets/images/vehicles/luxury.webp";
+import privateVehicleImg from "../../assets/images/vehicles/standard.webp";
+import groupVehicleImg from "../../assets/images/vehicles/groups.webp";
 
 // Props
 interface Props {
-  lang: string
+  lang: string;
 }
 // Get language from params or props
-const { lang } = (Astro.params as any) || (Astro.props as any)
+const { lang } = (Astro.params as any) || (Astro.props as any);
 
 // Tranlation texts
-const t = useTranslations(lang)
-const safeTripBookContent = await marked.parse(t('safeTripBooking.text'))
+const t = useTranslations(lang);
+const safeTripBookContent = await marked.parse(t("safeTripBooking.text"));
 
 // Data
 const pricingTransportation = [
   {
-    key: 'luxury',
+    key: "luxury",
     image: luxuryVehicleImg,
     bestSeller: false,
   },
   {
-    key: 'private',
+    key: "private",
     image: privateVehicleImg,
     bestSeller: true,
   },
   {
-    key: 'group',
+    key: "group",
     image: groupVehicleImg,
     bestSeller: false,
   },
-]
+];
 ---
 
 <Layout>
-  <PageSEO
-    currentPage='home'
-    lang={lang}
-    slot='seo'
-  />
+  <PageSEO currentPage="home" lang={lang} slot="seo" />
   <BannerImage src={bannerSrc}>
-    <h1 class='mx-auto w-11/12 text-5xl font-bold'>
-      {t('pages.home.bannerTitle')}
+    <h1 class="mx-auto w-11/12 text-5xl font-bold">
+      {t("pages.home.bannerTitle")}
     </h1>
   </BannerImage>
   <BookingForm
-    defaultFrom='cun'
-    defaultTo='merida'
-    class='-mt-28'
+    id="booking-form"
+    defaultFrom="cun"
+    defaultTo="merida"
+    class="-mt-28"
   />
   <TextCard
-    id='safe-trip-booking'
-    title={t('safeTripBooking.title')}
+    id="safe-trip-booking"
+    title={t("safeTripBooking.title")}
     image={safeTripBookingImg}
-    alt={t('safeTripBooking.imageAlt')}
+    alt={t("safeTripBooking.imageAlt")}
     width={700}
     height={400}
-    class='mt-12'
-    classImage='object-right'
+    class="mt-12"
+    classImage="object-right"
     reverse={true}
   >
-    <div
-      set:html={safeTripBookContent}
-      class='markdown'
-    />
+    <div set:html={safeTripBookContent} class="markdown" />
   </TextCard>
 
   <!-- Banner CTA -->
   <BannerCta
-    title={t('cancunAirportTransportation.title')}
-    text={t('cancunAirportTransportation.text')}
+    title={t("cancunAirportTransportation.title")}
+    text={t("cancunAirportTransportation.text")}
     lang={lang}
   />
 
   <!-- Pricing transportation -->
   <section
-    id='pricing-transportation'
-    class='container'
+    id="pricing-transportation"
+    class="container"
+    aria-labelledby="pricing-transportation-heading"
   >
     <div>
-      <h2>
-        {t('pricingTransportation.title')}
+      <h2 id="pricing-transportation-heading">
+        {t("pricingTransportation.title")}
       </h2>
       <p>
-        {t('pricingTransportation.text')}
+        {t("pricingTransportation.text")}
       </p>
     </div>
 
     <ul
-      class='mt-12 grid grid-cols-1 items-end justify-center gap-8 md:grid-cols-3 md:flex-row'
+      class="mt-12 grid grid-cols-1 items-end justify-center gap-8 md:grid-cols-3 md:flex-row"
+      role="list"
     >
       {
         pricingTransportation.map((card) => (
@@ -122,25 +118,26 @@ const pricingTransportation = [
             <PricingCard
               title={t(`pricingTransportation.cards.${card.key}.title`)}
               price={t(`pricingTransportation.cards.${card.key}.price`)}
-              ctaLink='#'
+              ctaLink="#booking-form"
               ctaText={t(`pricingTransportation.cards.${card.key}.ctaText`)}
               bestSeller={card.bestSeller}
-              currency={lang === 'es' ? 'mxn' : 'usd'}
+              currency={lang === "es" ? "mxn" : "usd"}
             >
               <Image
-                slot='image'
+                slot="image"
                 src={card.image}
                 alt={t(`pricingTransportation.cards.${card.key}.imageAlt`)}
                 title={t(`pricingTransportation.cards.${card.key}.imageTitle`)}
-                loading='lazy'
-                class='mx-auto w-9/12'
+                loading="lazy"
+                decoding="async"
+                class="mx-auto w-9/12"
               />
               <div
-                slot='content'
+                slot="content"
                 set:html={marked.parse(
-                  t(`pricingTransportation.cards.${card.key}.description`)
+                  t(`pricingTransportation.cards.${card.key}.description`),
                 )}
-                class='markdown'
+                class="markdown"
               />
             </PricingCard>
           </li>
