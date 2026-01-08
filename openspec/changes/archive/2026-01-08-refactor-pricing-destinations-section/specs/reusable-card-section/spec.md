@@ -2,6 +2,8 @@
 
 ## ADDED Requirements
 
+### Requirement: Card Grid Section Component
+
 #### Scenario: Render Pricing Section
 Given a list of pricing items and a configuration
 When the `CardGridSection` is rendered with `pricingTransportation` data
