@@ -7,7 +7,7 @@ interface Props extends HTMLAttributes<"a"> {
   href: string;
   target?: string;
   class?: string;
-  variant?: "orange" | "blue" | "black" | "gray" | "grayDark";
+  variant?: "orange" | "blue" | "blueGhost" | "black" | "gray" | "grayDark";
 }
 
 const {
@@ -22,6 +22,7 @@ const {
 const variants = {
   orange: "bg-accent text-black",
   blue: "bg-blue text-white",
+  blueGhost: "bg-blue/10 border border-blue text-blue",
   black: "bg-black text-white",
   gray: "bg-gray text-white",
   grayDark: "bg-gray-dark text-white",
@@ -36,7 +37,7 @@ const computedRel =
   target={target}
   rel={computedRel}
   class={clsx(
-    "btn px-6 py-5 rounded-lg text-sm text-center whitespace-nowrap transition-transform hover:scale-105",
+    "btn inline-block px-6 py-5 rounded-lg text-sm text-center whitespace-nowrap transition-transform hover:scale-105",
     variants[variant],
     className,
   )}

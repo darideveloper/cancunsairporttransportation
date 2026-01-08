@@ -19,6 +19,7 @@ import BannerCta from "../../components/organisms/BannerCta.astro";
 import BannerStats from "../../components/organisms/BannerStats.astro";
 import PricingCard from "../../components/molecules/PricingCard.astro";
 import SectionHeading from "../../components/molecules/SectionHeading.astro";
+import ButtonCta from "../../components/atoms/ButtonCta.astro";
 import Testimonials from "../../components/organisms/Testimonials.astro";
 import { Image } from "astro:assets";
 
@@ -31,6 +32,7 @@ import groupVehicleImg from "../../assets/images/vehicles/groups.webp";
 import tulumImg from "../../assets/images/destinations/tulum.webp";
 import playaImg from "../../assets/images/destinations/playa-del-carmen.webp";
 import cancunImg from "../../assets/images/destinations/cancun.webp";
+import customClientImg from "../../assets/images/clients/custom-client.jpg";
 
 // Props
 interface Props {
@@ -42,6 +44,9 @@ const { lang } = (Astro.params as any) || (Astro.props as any);
 // Tranlation texts
 const t = useTranslations(lang);
 const safeTripBookContent = await marked.parse(t("safeTripBooking.text"));
+const whyChooseUsContent = await marked.parse(
+  t("baseSections.whyChooseUs.text"),
+);
 
 // Data
 const pricingTransportation = [
@@ -216,14 +221,29 @@ const destinations = [
       }
     </ul>
 
-    <div class="bottom mt-12 text-center">
-      <a
+    <div class="bottom mt-4 scale-90 text-center">
+      <ButtonCta
         href={t("pages.home.destinations.viewMoreLink")}
-        class="btn bg-accent inline-block rounded-lg px-6 py-3 font-bold text-white transition hover:opacity-90"
+        variant="blueGhost"
         title={t("pages.home.destinations.viewMore")}
       >
         {t("pages.home.destinations.viewMore")}
-      </a>
+      </ButtonCta>
     </div>
   </section>
+
+  <!-- Why Choose Us -->
+  <TextCard
+    id="why-choose-us"
+    title={t("baseSections.whyChooseUs.title")}
+    image={customClientImg}
+    alt={t("baseSections.whyChooseUs.imageAlt")}
+    width={500}
+    height={500}
+    class="bg-accent/10 mt-12 mb-12 py-12"
+    classImage="object-top"
+    reverse={true}
+  >
+    <div set:html={whyChooseUsContent} class="markdown" />
+  </TextCard>
 </Layout>
