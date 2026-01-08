@@ -1,0 +1,7 @@
+- [ ] Create `src/components/organisms/CardGridSection.astro` <!-- id: create-component -->
+- [ ] Implement prop interface for `CardGridSection` to support both use cases (Pricing and Destinations) <!-- id: impl-interface -->
+- [ ] Move "Pricing transportation" logic from `index.astro` to `CardGridSection` <!-- id: refactor-pricing -->
+- [ ] Move "Destinations" logic from `index.astro` to `CardGridSection` <!-- id: refactor-destinations -->
+- [ ] Verify `CardGridSection` matches the original visual output for Pricing <!-- id: verify-pricing -->
+- [ ] Verify `CardGridSection` matches the original visual output for Destinations <!-- id: verify-destinations -->
+- [ ] Ensure all ARIA labels and SEO tags are preserved <!-- id: verify-seo -->

@@ -1,0 +1,4 @@
+- [ ] Create `SectionHeading` component
+- [ ] Refactor "Pricing transportation" section in `index.astro`
+- [ ] Refactor "Destinations" section in `index.astro`
+- [ ] Verify alignment and styling of both sections

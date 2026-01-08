@@ -191,5 +191,11 @@
                 "bestSeller": false
             }
         }
+    },
+    "components": {
+        "pricingCard": {
+            "mostPopular": "Most Popular",
+            "priceFrom": "Price from"
+        }
     }
 }

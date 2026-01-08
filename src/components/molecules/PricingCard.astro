@@ -1,7 +1,13 @@
 ---
-import { FaStar } from "react-icons/fa";
+// Libs
+import clsx from "clsx";
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+
+// Components
 import ButtonCta from "../atoms/ButtonCta.astro";
-import { clsx } from "clsx";
+
+// Icons
+import { FaStar } from "react-icons/fa";
 
 interface Props {
   title: string;
@@ -24,6 +30,9 @@ const {
   currency = "usd",
   class: className = "",
 } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <article
@@ -43,7 +52,7 @@ const {
           aria-label="Recommendation: Most Popular"
         >
           <FaStar aria-hidden="true" />
-          <span>MostPopular</span>
+          <span>{t("components.pricingCard.mostPopular")}</span>
         </div>
       )
     }
@@ -71,9 +80,7 @@ const {
     aria-label={`Price starts from ${price} ${currency}`}
   >
     <span aria-hidden="true" class="inline-block text-xs">
-      Price
-      <br class="block md:hidden lg:block" />
-      from
+      {t("components.pricingCard.priceFrom")}
     </span>
     <span class="text-center text-3xl font-bold">
       <span class="price-value" aria-hidden="true">
