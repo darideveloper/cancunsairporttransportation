@@ -2,6 +2,7 @@
 // Libs
 import clsx from "clsx";
 import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { marked } from "marked";
 
 // Components
 import ButtonCta from "../atoms/ButtonCta.astro";
@@ -79,14 +80,23 @@ const t = useTranslations(lang);
     role="group"
     aria-label={`Price starts from ${price} ${currency}`}
   >
-    <span aria-hidden="true" class="inline-block text-xs">
-      {t("components.pricingCard.priceFrom")}
+    <span
+      aria-hidden="true"
+      class="inline-block text-center text-xs lg:text-right"
+    >
+      {
+        t("components.pricingCard.priceFrom")
+          .split(" ")
+          .map((word: string) => (
+            <span class="m-0.5 block md:inline lg:block">{word}</span>
+          ))
+      }
     </span>
-    <span class="text-center text-3xl font-bold">
-      <span class="price-value" aria-hidden="true">
+    <span class="text-center text-3xl font-bold lg:text-left">
+      <span class="price-value" aria-hidden="true" class="">
         ${price}
       </span>
-      <span class="price-currency uppercase" aria-hidden="true">
+      <span class="price-currency uppercase" aria-hidden="true" class="">
         {currency}
       </span>
     </span>
