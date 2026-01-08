@@ -115,12 +115,13 @@ const destinations = [
   <!-- Pricing transportation -->
   <section
     id="pricing-transportation"
-    class="container"
+    class="container mt-12"
     aria-labelledby="pricing-transportation-heading"
   >
     <SectionHeading
       id="pricing-transportation-heading"
       title={t("pricingTransportation.title")}
+      class="text-center"
     >
       <p>
         {t("pricingTransportation.text")}
@@ -128,7 +129,7 @@ const destinations = [
     </SectionHeading>
 
     <ul
-      class="mt-12 grid grid-cols-1 items-end justify-center gap-8 md:grid-cols-3 md:flex-row"
+      class="mt-4 grid grid-cols-1 items-end justify-center gap-8 md:grid-cols-3 md:flex-row"
       role="list"
     >
       {
@@ -165,6 +166,9 @@ const destinations = [
       }
     </ul>
   </section>
+
+  <BannerStats />
+  <Testimonials />
 
   <!-- Destinations -->
   <section class="destinations-elements container my-20">
@@ -222,7 +226,4 @@ const destinations = [
       </a>
     </div>
   </section>
-
-  <BannerStats />
-  <Testimonials />
 </Layout>
