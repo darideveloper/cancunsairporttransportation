@@ -18,6 +18,7 @@ import TextCard from "../../components/molecules/TextCard.astro";
 import BannerCta from "../../components/organisms/BannerCta.astro";
 import BannerStats from "../../components/organisms/BannerStats.astro";
 import PricingCard from "../../components/molecules/PricingCard.astro";
+import SectionHeading from "../../components/molecules/SectionHeading.astro";
 import Testimonials from "../../components/organisms/Testimonials.astro";
 import { Image } from "astro:assets";
 
@@ -117,14 +118,14 @@ const destinations = [
     class="container"
     aria-labelledby="pricing-transportation-heading"
   >
-    <div>
-      <h2 id="pricing-transportation-heading">
-        {t("pricingTransportation.title")}
-      </h2>
+    <SectionHeading
+      id="pricing-transportation-heading"
+      title={t("pricingTransportation.title")}
+    >
       <p>
         {t("pricingTransportation.text")}
       </p>
-    </div>
+    </SectionHeading>
 
     <ul
       class="mt-12 grid grid-cols-1 items-end justify-center gap-8 md:grid-cols-3 md:flex-row"
@@ -167,10 +168,12 @@ const destinations = [
 
   <!-- Destinations -->
   <section class="destinations-elements container my-20">
-    <div class="top text-center">
-      <h2 class="text-3xl font-bold">{t("pages.home.destinations.title")}</h2>
-      <p class="mt-4">{t("pages.home.destinations.text")}</p>
-    </div>
+    <SectionHeading
+      class="top text-center"
+      title={t("pages.home.destinations.title")}
+    >
+      <p>{t("pages.home.destinations.text")}</p>
+    </SectionHeading>
 
     <ul
       class="middle mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-4 lg:gap-8"

@@ -1,4 +1,4 @@
-- [ ] Create `SectionHeading` component
-- [ ] Refactor "Pricing transportation" section in `index.astro`
-- [ ] Refactor "Destinations" section in `index.astro`
-- [ ] Verify alignment and styling of both sections
+- [x] Create `SectionHeading` component
+- [x] Refactor "Pricing transportation" section in `index.astro`
+- [x] Refactor "Destinations" section in `index.astro`
+- [x] Verify alignment and styling of both sections

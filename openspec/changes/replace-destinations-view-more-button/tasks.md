@@ -1,0 +1,3 @@
+- [ ] Import `ButtonCta` in `src/pages/[lang]/index.astro`
+- [ ] Replace `<a>` tag with `ButtonCta` component in `src/pages/[lang]/index.astro`
+- [ ] Verify change in browser

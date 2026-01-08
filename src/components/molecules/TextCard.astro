@@ -1,34 +1,34 @@
 ---
 // Components
-import { Image } from 'astro:assets'
-import H2 from '../atoms/H2.astro'
+import { Image } from "astro:assets";
+import SectionHeading from "./SectionHeading.astro";
 
 // Props
 interface Props {
-  id: string
-  title: string
-  image: ImageMetadata
-  alt: string
-  width?: number
-  height?: number
-  class?: string
-  classImage?: string
-  reverse?: boolean
+  id: string;
+  title: string;
+  image: ImageMetadata;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  classImage?: string;
+  reverse?: boolean;
 }
 
 const {
-  id = '',
+  id = "",
   title,
   image,
   alt,
   width,
   height,
-  class: className = '',
-  classImage = '',
+  class: className = "",
+  classImage = "",
   reverse = false,
-} = Astro.props
+} = Astro.props;
 
-const titleId = `${id}-title`
+const titleId = `${id}-title`;
 ---
 
 <section
@@ -36,11 +36,10 @@ const titleId = `${id}-title`
   aria-labelledby={titleId}
   class={`${className} grid md:grid-cols-2 gap-4 container text-left items-center`}
 >
-  <div class={`flex flex-col gap-4 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
-    <H2 id={titleId}>{title}</H2>
-    <div>
+  <div class={`flex flex-col gap-4 ${reverse ? "md:order-2" : "md:order-1"}`}>
+    <SectionHeading id={titleId} title={title}>
       <slot />
-    </div>
+    </SectionHeading>
   </div>
   <Image
     src={image}
@@ -48,6 +47,6 @@ const titleId = `${id}-title`
     title={alt}
     width={width}
     height={height}
-    class={`w-full h-full object-cover rounded-xl ${classImage} ${reverse ? 'md:order-1' : 'md:order-2'}`}
+    class={`w-full h-full object-cover rounded-xl ${classImage} ${reverse ? "md:order-1" : "md:order-2"}`}
   />
 </section>

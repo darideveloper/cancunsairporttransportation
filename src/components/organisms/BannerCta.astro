@@ -1,60 +1,55 @@
 ---
-import { Image } from 'astro:assets'
-import { marked } from 'marked'
-import ButtonCta from '../atoms/ButtonCta.astro'
-import H2 from '../atoms/H2.astro'
-import cancunAirportTransportationImg from '../../assets/images/reliable-company.webp'
-import { useTranslations } from '../../lib/i18n/utils'
+import { Image } from "astro:assets";
+import { marked } from "marked";
+import ButtonCta from "../atoms/ButtonCta.astro";
+import SectionHeading from "../molecules/SectionHeading.astro";
+import cancunAirportTransportationImg from "../../assets/images/reliable-company.webp";
+import { useTranslations } from "../../lib/i18n/utils";
 
 interface Props {
-  title: string
-  text: string
-  lang: 'es' | 'en'
+  title: string;
+  text: string;
+  lang: "es" | "en";
 }
 
-const { title, text, lang } = Astro.props
-const t = useTranslations(lang)
+const { title, text, lang } = Astro.props;
+const t = useTranslations(lang);
 
 const buttons = [
-  { id: 'primary', variant: 'orange' },
-  { id: 'secondary', variant: 'grayDark' },
-]
+  { id: "primary", variant: "orange" },
+  { id: "secondary", variant: "grayDark" },
+];
 ---
 
-<section
-  id='cancun-airport-transportation'
-  class='text-white container mt-12'
->
+<section id="cancun-airport-transportation" class="container mt-12 text-white">
   <div
-    class='bg-black px-6 py-8 rounded-lg flex items-center justify-between relative'
+    class="relative flex items-center justify-between rounded-lg bg-black px-6 py-8"
   >
-    <div class='texts w-full sm:w-1/2 md:w-9/12'>
-      <H2>{title}</H2>
-      <div
-        set:html={marked.parse(text)}
-        class='markdown'
-      />
-      <div class='flex gap-3 flex-col md:flex-row'>
-        {
-          buttons.map((button) => (
-            <ButtonCta
-              href={t(`baseSections.bannerCta.buttons.${button.id}.href`)}
-              variant={button.variant as 'orange' | 'grayDark'}
-              class='px-8 w-full md:w-auto inline-block'
-            >
-              {t(`baseSections.bannerCta.buttons.${button.id}.text`)}
-            </ButtonCta>
-          ))
-        }
-      </div>
+    <div class="texts w-full sm:w-1/2 md:w-9/12">
+      <SectionHeading title={title}>
+        <div set:html={marked.parse(text)} class="markdown" />
+        <div class="mt-4 flex flex-col gap-3 md:flex-row">
+          {
+            buttons.map((button) => (
+              <ButtonCta
+                href={t(`baseSections.bannerCta.buttons.${button.id}.href`)}
+                variant={button.variant as "orange" | "grayDark"}
+                class="inline-block w-full px-8 md:w-auto"
+              >
+                {t(`baseSections.bannerCta.buttons.${button.id}.text`)}
+              </ButtonCta>
+            ))
+          }
+        </div>
+      </SectionHeading>
     </div>
     <Image
       src={cancunAirportTransportationImg}
-      alt={t('baseSections.bannerCta.imageAlt')}
-      title={t('baseSections.bannerCta.imageTitle')}
+      alt={t("baseSections.bannerCta.imageAlt")}
+      title={t("baseSections.bannerCta.imageTitle")}
       width={350}
       height={550}
-      class='h-full md:h-[110%] w-auto absolute right-0 bottom-0 hidden sm:block'
+      class="absolute right-0 bottom-0 hidden h-full w-auto sm:block md:h-[110%]"
     />
   </div>
 </section>
