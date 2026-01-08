@@ -1,15 +1,16 @@
 ---
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
+import { FaStar } from "react-icons/fa";
 
 interface Props {
-  name: string
-  text: string
-  image: ImageMetadata
-  imageAlt: string
-  imageTitle: string
-  stars: string
-  date: string
-  class?: string
+  name: string;
+  text: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  imageTitle: string;
+  stars: string;
+  date: string;
+  class?: string;
 }
 
 const {
@@ -21,73 +22,54 @@ const {
   stars,
   date,
   class: className,
-} = Astro.props
+} = Astro.props;
 ---
 
 <figure
-  class=''
-  aria-roledescription='testimonial'
-  role='group'
+  class={`flex flex-col-reverse bg-gray/10 border-2 border-gray/20 p-4 justify-end rounded-lg ${className}`}
+  aria-roledescription="testimonial"
+  role="group"
   itemscope
-  itemtype='https://schema.org/Review'
+  itemtype="https://schema.org/Review"
 >
-  <blockquote
-    class=''
-    itemprop='reviewBody'
-  >
-    <p class=''>{text}</p>
+  <blockquote class="" itemprop="reviewBody">
+    <p class="mt-4 text-sm">{text}</p>
   </blockquote>
-  <figcaption class=''>
-    <div
-      class=''
-      itemprop='image'
-    >
+  <figcaption class="flex gap-4">
+    <div class="" itemprop="image">
       <Image
         src={image}
         alt={imageAlt}
         title={imageTitle}
-        width={60}
-        height={60}
-        loading='lazy'
-        decoding='async'
-        class=''
+        width={70}
+        height={70}
+        loading="lazy"
+        decoding="async"
+        class="rounded-full"
       />
     </div>
     <div
-      class=''
-      itemprop='author'
+      class="flex flex-col"
+      itemprop="author"
       itemscope
-      itemtype='https://schema.org/Person'
+      itemtype="https://schema.org/Person"
     >
-      <cite
-        class=''
-        itemprop='name'
-      >
-        <time
-          class='mr-2 font-bold text-gray-400 not-italic'
-          itemprop='datePublished'
-          >{date}</time
-        >
-        {name}</cite
-      >
+      <cite class="flex flex-col text-lg not-italic" itemprop="name">
+        <time class="text-gray text-sm" itemprop="datePublished">{date}</time>
+        {name}
+      </cite>
       <div
-        class=''
+        class=""
         aria-label={`${stars} out of 5 stars`}
-        itemprop='reviewRating'
+        itemprop="reviewRating"
         itemscope
-        itemtype='https://schema.org/Rating'
+        itemtype="https://schema.org/Rating"
       >
-        <meta
-          itemprop='ratingValue'
-          content={stars}
-        />
-        <meta
-          itemprop='bestRating'
-          content='5'
-        />
+        <meta itemprop="ratingValue" content={stars} />
+        <meta itemprop="bestRating" content="5" />
         {
           Array.from({ length: parseInt(stars) }).map((_) => (
-            <span aria-hidden='true'>★</span>
+            <FaStar className="inline-block text-green-400" />
           ))
         }
       </div>

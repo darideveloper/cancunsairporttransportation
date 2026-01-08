@@ -1,92 +1,89 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 
 // Components
-import H2 from '../atoms/H2.astro'
-import Testimonial from '../molecules/Testimonial.astro'
+import H2 from "../atoms/H2.astro";
+import Testimonial from "../molecules/Testimonial.astro";
 
 // Images
-import client1Img from '../../assets/images/clients/1.webp'
-import client2Img from '../../assets/images/clients/2.webp'
-import client3Img from '../../assets/images/clients/3.webp'
+import client1Img from "../../assets/images/clients/1.webp";
+import client2Img from "../../assets/images/clients/2.webp";
+import client3Img from "../../assets/images/clients/3.webp";
 
 // Lang
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 // Date
-const today = new Date()
-const month = String(today.getMonth() + 1).padStart(2, '0')
-const year = today.getFullYear()
-const currentDate = `${month}/${year}`
+const today = new Date();
+const month = String(today.getMonth() + 1).padStart(2, "0");
+const year = today.getFullYear();
+const currentDate = `${month}/${year}`;
 
 const testimonials = [
   {
-    key: 'item1',
+    key: "item1",
     image: client1Img,
     date: currentDate,
   },
   {
-    key: 'item2',
+    key: "item2",
     image: client2Img,
     date: currentDate,
   },
   {
-    key: 'item3',
+    key: "item3",
     image: client3Img,
     date: currentDate,
   },
-]
+];
 
 // JSON-LD Structured Data
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
+  "@context": "https://schema.org",
+  "@type": "ItemList",
   itemListElement: testimonials.map((item, index) => ({
-    '@type': 'ListItem',
+    "@type": "ListItem",
     position: index + 1,
     item: {
-      '@type': 'Review',
+      "@type": "Review",
       author: {
-        '@type': 'Person',
+        "@type": "Person",
         name: t(`baseSections.testimonials.items.${item.key}.name`),
       },
       reviewBody: t(`baseSections.testimonials.items.${item.key}.text`),
       reviewRating: {
-        '@type': 'Rating',
+        "@type": "Rating",
         ratingValue: t(`baseSections.testimonials.items.${item.key}.stars`),
-        bestRating: '5',
+        bestRating: "5",
       },
       datePublished: item.date,
       publisher: {
-        '@type': 'Organization',
-        name: t('branding.businessName'),
+        "@type": "Organization",
+        name: t("branding.businessName"),
       },
     },
   })),
-}
+};
 ---
 
 <section
-  id='testimonials'
-  aria-labelledby='testimonials-title'
-  class='bg-gray-50 py-16'
+  id="testimonials"
+  aria-labelledby="testimonials-title"
+  class="bg-gray-50 py-16"
 >
-  <div class='container px-4 md:px-8'>
-    <div class='mb-12 text-center'>
-      <H2
-        id='testimonials-title'
-        class='mb-4'
-      >
-        {t('baseSections.testimonials.title')}
+  <div class="container px-4 md:px-8">
+    <div class="mb-4 text-center">
+      <H2 id="testimonials-title" class="">
+        {t("baseSections.testimonials.title")}
       </H2>
-      <p class='mx-auto max-w-2xl text-lg text-gray-600'>
-        {t('baseSections.testimonials.description')}
+      <p class="text-md mx-auto max-w-2xl text-gray-600">
+        {t("baseSections.testimonials.description")}
       </p>
     </div>
 
-    <div class='grid grid-cols-1 gap-8 md:grid-cols-3'>
+    <div class="grid grid-cols-1 gap-7 md:grid-cols-3">
       {
         testimonials.map((item) => (
           <Testimonial
@@ -95,7 +92,7 @@ const jsonLd = {
             image={item.image}
             imageAlt={t(`baseSections.testimonials.items.${item.key}.imageAlt`)}
             imageTitle={t(
-              `baseSections.testimonials.items.${item.key}.imageTitle`
+              `baseSections.testimonials.items.${item.key}.imageTitle`,
             )}
             stars={t(`baseSections.testimonials.items.${item.key}.stars`)}
             date={item.date}
@@ -105,8 +102,5 @@ const jsonLd = {
     </div>
   </div>
 
-  <script
-    type='application/ld+json'
-    set:html={JSON.stringify(jsonLd)}
-  />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </section>
