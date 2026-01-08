@@ -1,17 +1,17 @@
 ---
-import { FaStar } from 'react-icons/fa'
-import ButtonCta from '../atoms/ButtonCta.astro'
-import { clsx } from 'clsx'
-import type { ImageMetadata } from 'astro'
+import { FaStar } from "react-icons/fa";
+import ButtonCta from "../atoms/ButtonCta.astro";
+import { clsx } from "clsx";
 
 interface Props {
-  title: string
-  bestSeller?: boolean
-  price: number | string
-  ctaLink: string
-  ctaText: string
-  reverse?: boolean
-  currency?: 'usd' | 'mxn'
+  title: string;
+  bestSeller?: boolean;
+  price: number | string;
+  ctaLink: string;
+  ctaText: string;
+  reverse?: boolean;
+  currency?: "usd" | "mxn";
+  class?: string;
 }
 
 const {
@@ -21,14 +21,16 @@ const {
   ctaLink,
   ctaText,
   reverse = false,
-  currency = 'usd',
-} = Astro.props
+  currency = "usd",
+  class: className = "",
+} = Astro.props;
 ---
 
 <article
   class={clsx(
-    'pricing-card flex flex-col items-center justify-center gap-4 p-4 rounded-xl border bg-gray-light',
-    bestSeller ? 'border-accent' : 'border-gray-dark/20'
+    "pricing-card flex flex-col items-center justify-between gap-4 rounded-xl border bg-gray-light h-full",
+    bestSeller ? "border-accent" : "border-gray-dark/20",
+    className,
   )}
 >
   <header>
@@ -36,11 +38,11 @@ const {
     {
       bestSeller && (
         <div
-          class='badge-best-seller text-blue mb-3 flex items-center justify-center gap-2'
-          role='status'
-          aria-label='Recommendation: Most Popular'
+          class="badge-best-seller text-blue mb-3 flex items-center justify-center gap-2"
+          role="status"
+          aria-label="Recommendation: Most Popular"
         >
-          <FaStar aria-hidden='true' />
+          <FaStar aria-hidden="true" />
           <span>MostPopular</span>
         </div>
       )
@@ -48,57 +50,52 @@ const {
 
     <div
       class={clsx(
-        `title-image text-center flex items-center justify-center gap-2`,
-        reverse ? 'flex-col-reverse' : 'flex-col'
+        `title-image flex items-start justify-center gap-2`,
+        reverse ? "flex-col-reverse" : "flex-col",
       )}
     >
       {/* Layout Order Logic (title and image with optional reverse) */}
-      <h3 class='text-lg font-bold'>{title}</h3>
+      <h3 class={clsx("text-md px-4 font-bold text-center w-full")}>
+        {title}
+      </h3>
       <div>
-        <slot name='image' />
+        <slot name="image" />
       </div>
     </div>
   </header>
 
   {/* Price Section */}
   <div
-    class='price-section text-blue flex items-center justify-center gap-2'
-    role='group'
+    class="price-section text-blue flex flex-row items-center justify-center gap-2 px-4 md:flex-col lg:flex-row"
+    role="group"
     aria-label={`Price starts from ${price} ${currency}`}
   >
-    <span
-      aria-hidden='true'
-      class='inline-block text-xs'
-    >
+    <span aria-hidden="true" class="inline-block text-xs">
       Price
-      <br />
+      <br class="block md:hidden lg:block" />
       from
     </span>
-    <span class='text-3xl font-bold'>
-      <span
-        class='price-value'
-        aria-hidden='true'
-      >
-        {price}
+    <span class="text-center text-3xl font-bold">
+      <span class="price-value" aria-hidden="true">
+        ${price}
       </span>
-      <span
-        class='price-currency uppercase'
-        aria-hidden='true'
-      >
+      <span class="price-currency uppercase" aria-hidden="true">
         {currency}
       </span>
     </span>
   </div>
 
   {/* Dynamic Content */}
-  <slot name='content' />
+  <div class="px-4">
+    <slot name="content" />
+  </div>
 
-  <footer class='cta-container w-full'>
+  <footer class="cta-container -mt-2 w-full px-4 pb-4">
     {/* CTA Button */}
     <ButtonCta
       href={ctaLink}
       aria-label={`${ctaText} for ${title}`}
-      class='inline-block w-full'
+      class="inline-block w-full"
     >
       {ctaText}
     </ButtonCta>

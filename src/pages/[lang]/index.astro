@@ -27,9 +27,9 @@ import safeTripBookingImg from "../../assets/images/trip-advisor.webp";
 import luxuryVehicleImg from "../../assets/images/vehicles/luxury.webp";
 import privateVehicleImg from "../../assets/images/vehicles/standard.webp";
 import groupVehicleImg from "../../assets/images/vehicles/groups.webp";
-import tulumImg from "../../assets/images/destinations/tulum.jpg";
-import playaImg from "../../assets/images/destinations/playa-del-carmen.jpg";
-import cancunImg from "../../assets/images/destinations/cancun.jpg";
+import tulumImg from "../../assets/images/destinations/tulum.webp";
+import playaImg from "../../assets/images/destinations/playa-del-carmen.webp";
+import cancunImg from "../../assets/images/destinations/cancun.webp";
 
 // Props
 interface Props {
@@ -140,6 +140,7 @@ const destinations = [
               ctaText={t(`pricingTransportation.cards.${card.key}.ctaText`)}
               bestSeller={card.bestSeller}
               currency={lang === "es" ? "mxn" : "usd"}
+              class="pt-4"
             >
               <Image
                 slot="image"
@@ -171,7 +172,9 @@ const destinations = [
       <p class="mt-4">{t("pages.home.destinations.text")}</p>
     </div>
 
-    <ul class="middle mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+    <ul
+      class="middle mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-4 lg:gap-8"
+    >
       {
         destinations.map((dest) => (
           <li>
@@ -183,21 +186,22 @@ const destinations = [
               currency={lang === "es" ? "mxn" : "usd"}
               bestSeller={false}
               reverse={true}
+              class="hover:border-accent text-center transition-all duration-300 md:text-left"
             >
               <Image
                 slot="image"
                 src={dest.image}
                 alt={t(`pages.home.destinations.cards.${dest.id}.title`)}
-                width={300}
-                height={300}
-                class="w-[calc(100% + 4rem)] mx-auto -mt-4 rounded-t-lg"
+                width={700}
+                height={700}
+                class="mx-auto aspect-4/3 w-full rounded-t-lg object-cover md:aspect-12/11 lg:aspect-4/3"
               />
               <div
                 slot="content"
                 set:html={marked.parse(
                   t(`pages.home.destinations.cards.${dest.id}.description`),
                 )}
-                class="markdown text-sm"
+                class="markdown text-justify text-sm"
               />
             </PricingCard>
           </li>
