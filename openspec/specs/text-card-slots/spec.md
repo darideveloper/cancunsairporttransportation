@@ -1,7 +1,8 @@
-# Text Card Slots Spec
+# text-card-slots Specification
 
-## MODIFIED Requirements
-
+## Purpose
+TBD - created by archiving change refactor-text-card-slots. Update Purpose after archive.
+## Requirements
 ### Requirement: Support Image Slot
 The `TextCard` component MUST support a named `image` slot for passing image content while respecting the layout direction (reversed or standard).
 
@@ -22,3 +23,4 @@ The `TextCard` component MUST remove support for the legacy `image`, `alt`, `wid
 Given the `TextCard` component definition
 When inspecting the Props interface
 Then `image`, `alt`, `width`, `height`, and `classImage` are not present.
+
