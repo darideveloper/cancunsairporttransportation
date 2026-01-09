@@ -99,14 +99,17 @@ const destinations = [
   <TextCard
     id="safe-trip-booking"
     title={t("safeTripBooking.title")}
-    image={safeTripBookingImg}
-    alt={t("safeTripBooking.imageAlt")}
-    width={700}
-    height={400}
     class="mt-12"
-    classImage="object-right"
     reverse={true}
   >
+    <Image
+      slot="image"
+      src={safeTripBookingImg}
+      alt={t("safeTripBooking.imageAlt")}
+      width={700}
+      height={400}
+      class="h-full w-full rounded-xl object-cover object-right"
+    />
     <div set:html={safeTripBookContent} class="markdown" />
   </TextCard>
 
@@ -236,14 +239,17 @@ const destinations = [
   <TextCard
     id="why-choose-us"
     title={t("baseSections.whyChooseUs.title")}
-    image={customClientImg}
-    alt={t("baseSections.whyChooseUs.imageAlt")}
-    width={500}
-    height={500}
     class="bg-accent/10 mt-12 mb-12 py-12"
-    classImage="object-top"
     reverse={true}
   >
+    <Image
+      slot="image"
+      src={customClientImg}
+      alt={t("baseSections.whyChooseUs.imageAlt")}
+      width={500}
+      height={500}
+      class="h-full w-full rounded-xl object-cover object-top"
+    />
     <div set:html={whyChooseUsContent} class="markdown" />
   </TextCard>
 </Layout>
