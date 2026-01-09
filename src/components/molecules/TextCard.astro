@@ -7,10 +7,9 @@ interface Props {
   id: string;
   title: string;
   class?: string;
-  reverse?: boolean;
 }
 
-const { id = "", title, class: className = "", reverse = false } = Astro.props;
+const { id = "", title, class: className = "" } = Astro.props;
 
 const titleId = `${id}-title`;
 ---
@@ -18,14 +17,12 @@ const titleId = `${id}-title`;
 <section
   id={id}
   aria-labelledby={titleId}
-  class={`${className} grid md:grid-cols-2 gap-4 container text-left items-center`}
+  class={`${className} gap-4 container`}
 >
-  <div class={`flex flex-col gap-4 ${reverse ? "md:order-2" : "md:order-1"}`}>
+  <slot name="image" />
+  <div class={`flex flex-col gap-4`}>
     <SectionHeading id={titleId} title={title}>
       <slot />
     </SectionHeading>
-  </div>
-  <div class={`${reverse ? "md:order-1" : "md:order-2"}`}>
-    <slot name="image" />
   </div>
 </section>

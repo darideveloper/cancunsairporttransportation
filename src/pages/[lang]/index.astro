@@ -32,7 +32,7 @@ import groupVehicleImg from "../../assets/images/vehicles/groups.webp";
 import tulumImg from "../../assets/images/destinations/tulum.webp";
 import playaImg from "../../assets/images/destinations/playa-del-carmen.webp";
 import cancunImg from "../../assets/images/destinations/cancun.webp";
-import customClientImg from "../../assets/images/clients/custom-client.jpg";
+import customClientImg from "../../assets/images/clients/custom-client.webp";
 
 // Props
 interface Props {
@@ -99,8 +99,7 @@ const destinations = [
   <TextCard
     id="safe-trip-booking"
     title={t("safeTripBooking.title")}
-    class="mt-12"
-    reverse={true}
+    class="mt-12 grid grid-cols-1 items-center justify-center md:grid-cols-2"
   >
     <Image
       slot="image"
@@ -108,7 +107,7 @@ const destinations = [
       alt={t("safeTripBooking.imageAlt")}
       width={700}
       height={400}
-      class="h-full w-full rounded-xl object-cover object-right"
+      class="object-right2 h-full w-full rounded-xl object-cover"
     />
     <div set:html={safeTripBookContent} class="markdown" />
   </TextCard>
@@ -236,20 +235,21 @@ const destinations = [
   </section>
 
   <!-- Why Choose Us -->
-  <TextCard
-    id="why-choose-us"
-    title={t("baseSections.whyChooseUs.title")}
-    class="bg-accent/10 mt-12 mb-12 py-12"
-    reverse={true}
-  >
-    <Image
-      slot="image"
-      src={customClientImg}
-      alt={t("baseSections.whyChooseUs.imageAlt")}
-      width={500}
-      height={500}
-      class="h-full w-full rounded-xl object-cover object-top"
-    />
-    <div set:html={whyChooseUsContent} class="markdown" />
-  </TextCard>
+  <div class="bg-accent/5 mt-12 py-12">
+    <TextCard
+      id="why-choose-us"
+      title={t("baseSections.whyChooseUs.title")}
+      class="flex flex-col items-center justify-center md:flex-row"
+    >
+      <Image
+        slot="image"
+        src={customClientImg}
+        alt={t("baseSections.whyChooseUs.imageAlt")}
+        width={500}
+        height={500}
+        class="h-full w-full rounded-xl object-cover object-right md:w-1/2 lg:w-1/3"
+      />
+      <div set:html={whyChooseUsContent} class="markdown text-justify" />
+    </TextCard>
+  </div>
 </Layout>
