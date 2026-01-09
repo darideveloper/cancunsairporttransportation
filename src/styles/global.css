@@ -14,25 +14,6 @@
     U+FFFD;
 }
 
-/* Metropolis - Local */
-@font-face {
-  font-family: "Metropolis";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url("/fonts/metropolis/metropolis-latin-400-normal.woff2")
-    format("woff2");
-}
-
-@font-face {
-  font-family: "Metropolis";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 700;
-  src: url("/fonts/metropolis/metropolis-latin-700-normal.woff2")
-    format("woff2");
-}
-
 /* Variables */
 @theme {
   --color-accent: #ff8400;
