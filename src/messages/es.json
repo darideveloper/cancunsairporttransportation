@@ -385,6 +385,14 @@
             }
         }
     },
+    "reliableService": {
+        "title": "Servicio de Transporte Confiable",
+        "description": "Con más de 10 años de experiencia en la prestación de servicios de transporte privado, Cancun Airport Transportation por Go es la empresa número 1 en traslados del Aeropuerto de Cancún a hoteles en Cancún y Riviera Maya.\n\nCancun Airport Transportation ofrece servicios privados, seguros y confiables de transporte del aeropuerto de Cancun a su hotel o alojamiento en la Zona Hotelera de Cancún, Centro de Cancún, Playa Mujeres, Puerto Morelos, Playa del Carmen, Puerto Aventuras, Akumal, Tulum o cualquier parte de la Riviera Maya.",
+        "cta": {
+            "label": "Fotos de Clientes",
+            "sublabel": "Ver más fotos de clientes"
+        }
+    },
     "components": {
         "pricingCard": {
             "mostPopular": "Más Popular",

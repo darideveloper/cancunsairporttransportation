@@ -1,0 +1,8 @@
+- [x] Add translation keys to `src/messages/en.json` and `src/messages/es.json` under `reliableService` (Title, Description, CTA Label/Sublabel)
+- [x] Check/Add `client-app-es` image to `src/assets/images/clients/` (or use placeholder if missing)
+- [x] Implement new section in `src/pages/[lang]/index.astro`:
+    - [x] Import `FaImages` from `react-icons/fa`
+    - [x] Use `TextCard` with `id="reliable-transportation"` and `flex-row-reverse` layout
+    - [x] Render description with `marked`
+    - [x] Implement `ButtonCta` with Icon+Text layout
+- [x] Verify responsive design (Desktop: Text Left/Image Right)

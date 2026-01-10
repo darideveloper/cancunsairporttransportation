@@ -34,6 +34,10 @@ import tulumImg from "../../assets/images/destinations/tulum.webp";
 import playaImg from "../../assets/images/destinations/playa-del-carmen.webp";
 import cancunImg from "../../assets/images/destinations/cancun.webp";
 import customClientImg from "../../assets/images/clients/custom-client.webp";
+import clientAppEsImg from "../../assets/images/clients/client-app-es.webp";
+
+// Icons
+import { FaImages } from "react-icons/fa";
 
 // Props
 interface Props {
@@ -47,6 +51,9 @@ const t = useTranslations(lang);
 const safeTripBookContent = await marked.parse(t("safeTripBooking.text"));
 const whyChooseUsContent = await marked.parse(
   t("baseSections.whyChooseUs.text"),
+);
+const reliableServiceContent = await marked.parse(
+  t("reliableService.description"),
 );
 
 // Data
@@ -261,4 +268,43 @@ const destinations = [
     </SectionHeading>
     <RatesTable />
   </section>
+
+  <!-- Reliable Transportation Service -->
+  <div class="mt-12 py-12">
+    <TextCard
+      id="reliable-transportation"
+      title={t("reliableService.title")}
+      class="flex flex-col-reverse items-center gap-8 md:flex-row-reverse"
+    >
+      <Image
+        slot="image"
+        src={clientAppEsImg}
+        alt={t("reliableService.title")}
+        width={600}
+        height={600}
+        class="h-full w-full rounded-xl object-cover md:w-1/2"
+      />
+      <div class="flex flex-col gap-8">
+        <div set:html={reliableServiceContent} class="markdown" />
+        <ButtonCta
+          href="#"
+          variant="blue"
+          title={t("reliableService.title")}
+          class="w-fit"
+        >
+          <div class="flex items-center gap-3 text-left">
+            <FaImages className="text-3xl" />
+            <div class="flex flex-col leading-tight">
+              <span class="text-lg font-bold"
+                >{t("reliableService.cta.label")}</span
+              >
+              <span class="text-xs font-light"
+                >{t("reliableService.cta.sublabel")}</span
+              >
+            </div>
+          </div>
+        </ButtonCta>
+      </div>
+    </TextCard>
+  </div>
 </Layout>

@@ -31,9 +31,27 @@ Given I view the Spanish version of the site
 Then the section should display text in Spanish
 
 ### Requirement: Image
-The section MUST display an appropriate image (e.g., `reliable-company.webp` or similar) via the `TextCard` image slot.
+The section MUST display the client photos image (`client-app-es.png` or `webp`) via the `TextCard` image slot.
 
 #### Scenario: Image Display
 Given I inspect the section
-Then I should see an image rendered in the image slot
+Then I should see the client photos image rendered in the image slot
 And it should have an appropriate alt text
+
+### Requirement: CTA Button
+The section MUST use `ButtonCta` for the "Client Photos" link.
+Start with a `react-icons` photo icon (e.g., `FaImages`).
+Display the label and sublabel in a flex column.
+
+#### Scenario: Verify CTA Layout
+Given I verify the button
+Then I should see a photo icon
+And I should see the main label text
+And I should see the sublabel text
+
+### Requirement: Markdown Content
+The description text MUST be rendered using markdown to support multiple paragraphs.
+
+#### Scenario: Verify Content Formatting
+Given I inspect the description
+Then it should be rendered as HTML from markdown content
