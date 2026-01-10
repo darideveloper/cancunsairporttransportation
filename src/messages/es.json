@@ -99,24 +99,36 @@
             "text": "Con muchas agencias privadas de traslados en Cancún, es importante saber por qué nos destacamos.\n\nEn Cancun Airport Transportation por Go, entendemos que después de un largo vuelo, lo último que quiere es esperar en el aeropuerto para llegar a su hotel y comenzar sus vacaciones. Sabemos que está cansado de un vuelo de dos horas o más, y lo último que quiere es lidiar con largas filas de taxis o esperar casi una hora para el transporte público, lidiando con el ruido y los movimientos de otros pasajeros.\n\nPor eso nuestro servicio de traslado es perfecto para usted: Ofrecemos precios más bajos que nuestros competidores, un servicio de primera clase y el compromiso de asegurarnos de que disfrute de sus vacaciones al máximo. Por estas razones y más, elíjanos para sus necesidades de transporte."
         },
         "faqSection": {
-            "title": "Preguntas Frecuentes",
-            "description": "Todo lo que necesitas saber sobre nuestro servicio de Transporte Aeropuerto Cancún.",
+            "title": "Preguntas frecuentes sobre el transporte en el aeropuerto de Cancún",
+            "description": "Te ayudamos a despejar tus dudas sobre nuestros servicios de transporte",
             "items": {
-                "howToBook": {
-                    "question": "¿Cómo reservo?",
-                    "answer": "Puede reservar fácilmente a través de nuestro sitio web utilizando el formulario de búsqueda."
+                "whyBook": {
+                    "question": "¿Por qué reservar con Cancun Airport Transportation por Go?",
+                    "answer": "Cancun Airport Transportation by Go Transfers ofrece traslados convenientes y confiables entre el Aeropuerto Internacional de Cancún (CUN) y varios destinos en los alrededores, incluyendo hoteles, resorts y atracciones turísticas."
                 },
-                "rates": {
-                    "question": "¿Las tarifas son por persona?",
-                    "answer": "No, todas nuestras tarifas son por vehículo, no por persona."
+                "howToBook": {
+                    "question": "¿Cómo reservar un servicio de transportación en el aeropuerto de Cancún?",
+                    "answer": "La reserva con Cancun Airport Transportation por Go se realiza normalmente en línea a través de nuestra página web. Alternativamente, puede llamarnos directamente para hacer una reservación."
+                },
+                "vehicleTypes": {
+                    "question": "¿Qué tipos de vehículos están disponibles para el servicio de transportación?",
+                    "answer": "Los tipos de vehículos disponibles para el servicio de transportación del Aeropuerto de Cancún puede variar dependiendo del servicio de transporte. Las opciones comunes incluyen camionetas privadas, vehículos de lujo, e incluso mini autobuses para el servicio de grupo."
+                },
+                "cost": {
+                    "question": "¿Cuánto cuesta el servicio de transportación de Cancun Airport Transportation por Go?",
+                    "answer": "El costo de la Transportación en el Aeropuerto de Cancún puede variar dependiendo de factores como la distancia del traslado, el tipo de vehículo seleccionado y el número de pasajeros."
+                },
+                "safe": {
+                    "question": "¿Son seguros los servicios de Cancun Airport Transportation por Go Transfers?",
+                    "answer": "Sí, los servicios de Transporte del Aeropuerto de Cancún de buena reputación dan prioridad a la seguridad de los pasajeros y mantienen sus vehículos con los más altos estándares."
+                },
+                "changes": {
+                    "question": "¿Puedo hacer cambios a mi reservación de Transportación en el Aeropuerto de Cancún?",
+                    "answer": "Si, usted puede. Puede modificar su reservación contactando a nuestro equipo de servicio al cliente con anticipación."
                 },
                 "flightDelay": {
-                    "question": "¿Qué pasa si mi vuelo se retrasa?",
-                    "answer": "No se preocupe, monitoreamos todos los vuelos. Nuestro conductor lo estará esperando cuando aterrice."
-                },
-                "meetingPoint": {
-                    "question": "¿Dondé encuentro al conductor?",
-                    "answer": "Nuestro personal lo estará esperando fuera de la terminal con un letrero con su nombre."
+                    "question": "¿Qué debo hacer si mi vuelo se retrasa o cancela?",
+                    "answer": "Si tu vuelo se retrasa o cancela, es crucial que nos informes lo antes posible para reprogramar su traslado. Podemos ajustar el servicio, pero le pedimos que se ponga en contacto con nosotros lo antes posible."
                 }
             }
         }
@@ -419,6 +431,28 @@
         "pricingCard": {
             "mostPopular": "Más Popular",
             "priceFrom": "Precio desde"
+        }
+    },
+    "transportationServices": {
+        "title": "Servicios de Transportación en el Aeropuerto de Cancún",
+        "description": "En Cancun Airport Transportation por Go Transfers, ofrecemos vehículos modernos y cómodos para asegurar traslados suaves y confiables desde el Aeropuerto de Cancún. Puede reservar fácilmente cualquiera de nuestros servicios a través de nuestro sitio web.\n\nAdemás de los traslados al aeropuerto, proporcionamos soluciones integrales de transporte para llevarlo a cualquier lugar de Cancún y la Riviera Maya. Nuestra amplia gama de servicios está diseñada para satisfacer todas sus necesidades de viaje.",
+        "items": {
+            "airportToHotel": {
+                "title": "Aeropuerto a Hotel",
+                "text": "¿Visita el Caribe y necesita transporte a su hotel o de regreso al aeropuerto? Este servicio es perfecto para usted."
+            },
+            "hotelToHotel": {
+                "title": "Hotel a Hotel",
+                "text": "¿Necesita cambiar de hotel durante su estancia en Cancún? Le tenemos cubierto con nuestro transporte sin interrupciones de hotel a hotel."
+            },
+            "hotelToRestaurant": {
+                "title": "Hotel a Restaurante",
+                "text": "Cuando está de vacaciones, lo último por lo que quiere preocuparse es por conducir, especialmente si planea disfrutar de unas copas. Permítanos llevarle a su restaurante y de vuelta a su hotel con seguridad."
+            },
+            "hotelToPark": {
+                "title": "Hotel a Parque",
+                "text": "¿Planea visitar Xcaret, Xel-Ha, Xoximilco o el Museo Maya de Cancún? Cancun Transfer Services puede llevarle a cualquiera de estos increíbles parques."
+            }
         }
     }
 }

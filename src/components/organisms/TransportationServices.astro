@@ -1,0 +1,52 @@
+---
+import { useTranslations } from "../../lib/i18n/utils";
+import SectionHeading from "../molecules/SectionHeading.astro";
+import ServiceCard from "../molecules/ServiceCard.astro";
+import { FaPlane, FaBed, FaUtensils, FaTree } from "react-icons/fa";
+
+const { lang } = Astro.params as { lang: string };
+const t = useTranslations(lang as "en" | "es");
+
+const services = [
+  {
+    key: "airportToHotel",
+    icon: FaPlane,
+  },
+  {
+    key: "hotelToHotel",
+    icon: FaBed,
+  },
+  {
+    key: "hotelToRestaurant",
+    icon: FaUtensils,
+  },
+  {
+    key: "hotelToPark",
+    icon: FaTree,
+  },
+];
+---
+
+<section
+  class="container mt-12 py-12"
+  id="transportation-services"
+  aria-label={t("transportationServices.title")}
+>
+  <SectionHeading title={t("transportationServices.title")} class="text-center">
+    <p>
+      {t("transportationServices.description")}
+    </p>
+  </SectionHeading>
+
+  <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+    {
+      services.map((service) => (
+        <ServiceCard
+          title={t(`transportationServices.items.${service.key}.title`)}
+          text={t(`transportationServices.items.${service.key}.text`)}
+          Icon={service.icon}
+        />
+      ))
+    }
+  </div>
+</section>

@@ -24,6 +24,7 @@ import ButtonCta from "../../components/atoms/ButtonCta.astro";
 import Testimonials from "../../components/organisms/Testimonials.astro";
 import FaqItem from "../../components/molecules/FaqItem";
 import { Image } from "astro:assets";
+import TransportationServices from "../../components/organisms/TransportationServices.astro";
 
 // Images
 const bannerSrc = "/images/home-banner.webp";
@@ -58,7 +59,15 @@ const reliableServiceContent = await marked.parse(
 );
 
 // Data
-const faqKeys = ["howToBook", "rates", "flightDelay", "meetingPoint"];
+const faqKeys = [
+  "whyBook",
+  "howToBook",
+  "vehicleTypes",
+  "cost",
+  "safe",
+  "changes",
+  "flightDelay",
+];
 const faqs = faqKeys.map((key) => ({
   question: t(`baseSections.faqSection.items.${key}.question`),
   answer: t(`baseSections.faqSection.items.${key}.answer`),
@@ -332,4 +341,6 @@ const destinations = [
       }
     </div>
   </section>
+
+  <TransportationServices />
 </Layout>

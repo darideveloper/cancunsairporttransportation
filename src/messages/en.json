@@ -18,7 +18,7 @@
                 "carmen": "Playa del Carmen Transfers",
                 "tulum": "Cancun to Tulum Shuttle"
             },
-            "cta": "My reservation",
+            "cta": "My Booking",
             "topSection": {
                 "text": "Menu"
             },
@@ -99,24 +99,36 @@
             "text": "With many private transfer agencies in Cancun, it’s important to know why we stand out.\n\nAt Cancun Airport Transportation by Go, we understand that after a long flight, the last thing you want is to wait at the airport to get to your hotel and start your vacation. We know you’re tired from a flight of two hours or more, and the last thing you want is to deal with long taxi lines or wait nearly an hour for public transportation, dealing with the noise and movements of other passengers.\n\nThat’s why our transfer service is perfect for you: We offer lower prices than our competitors, first-class service, and a commitment to ensuring you enjoy your vacation to the fullest. For these reasons and more, choose us for your transportation needs."
         },
         "faqSection": {
-            "title": "Frequently Asked Questions",
-            "description": "Everything you need to know about our Cancun Airport Transportation service.",
+            "title": "Cancun Airport Transportation Faqs",
+            "description": "We help you to clear your doubts about our transportation services",
             "items": {
-                "howToBook": {
-                    "question": "How do I book?",
-                    "answer": "You can book easily through our website using the search form."
+                "whyBook": {
+                    "question": "Why book with Cancun Airport Transportation by Go?",
+                    "answer": "Cancun Airport Transportation by Go Transfers offers convenient and reliable transfers between Cancun International Airport (CUN) and various destinations in the surrounding area, including hotels, resorts, and tourist attractions."
                 },
-                "rates": {
-                    "question": "Are the rates per person?",
-                    "answer": "No, all our rates are per vehicle, not per person."
+                "howToBook": {
+                    "question": "How do I book a Cancun Airport Transportation?",
+                    "answer": "Booking with Cancun Airport Transportation by Go is typically done online through their website. Alternatively, you can call us directly to make a reservation."
+                },
+                "vehicleTypes": {
+                    "question": "What types of vehicles are available for Cancun Airport Transportation?",
+                    "answer": "The types of vehicles available for Cancun Airport Transportation can vary depending on the shuttle service. Common options include private vans, luxury vehicles, and even mini buses for group service."
+                },
+                "cost": {
+                    "question": "How much does a Cancun Airport Transportation cost?",
+                    "answer": "The cost of Cancun Airport Transportation can vary based on factors such as the distance of the transfer, the type of vehicle selected, and the number of passengers."
+                },
+                "safe": {
+                    "question": "Are Cancun Airport Transportations safe?",
+                    "answer": "Yes, reputable Cancun Airport Transportation services prioritize passenger safety and maintain their vehicles to the highest standards."
+                },
+                "changes": {
+                    "question": "Can I make changes to my Cancun Airport Transportation reservation?",
+                    "answer": "Yes, you can. You can modify your reservation by contacting our customer service team in advance."
                 },
                 "flightDelay": {
-                    "question": "What happens if my flight is delayed?",
-                    "answer": "Don't worry, we monitor all flights. Our driver will be waiting for you when you land."
-                },
-                "meetingPoint": {
-                    "question": "Where do I find the driver?",
-                    "answer": "Our staff will be waiting for you outside the terminal with a sign with your name."
+                    "question": "What should I do if my flight is delayed or canceled?",
+                    "answer": "If your flight is delayed or canceled, it’s crucial to inform us as soon as possible to reschedule your transfer. We can adjust the service, but we ask that you contact us promptly."
                 }
             }
         }
@@ -419,6 +431,28 @@
         "pricingCard": {
             "mostPopular": "Most Popular",
             "priceFrom": "Price from"
+        }
+    },
+    "transportationServices": {
+        "title": "Cancun Airport Transportation Services",
+        "description": "At Cancun Airport Transportation by Go Transfers, we offer modern and comfortable vehicles to ensure smooth and reliable transfers from Cancun Airport. You can easily book any of our services through our website.\n\nIn addition to airport transfers, we provide comprehensive transportation solutions to take you anywhere in Cancun and the Riviera Maya. Our wide range of services is designed to meet all your travel needs.",
+        "items": {
+            "airportToHotel": {
+                "title": "Airport to Hotel",
+                "text": "Visiting the Caribbean and need transportation to your hotel or back to the airport? This service is perfect for you."
+            },
+            "hotelToHotel": {
+                "title": "Hotel to Hotel",
+                "text": "Need to switch hotels during your stay in Cancun? We've got you covered with our seamless hotel-to-hotel transportation."
+            },
+            "hotelToRestaurant": {
+                "title": "Hotel to Restaurant",
+                "text": "When you're on vacation, the last thing you want to worry about is driving, especially if you plan to enjoy a few drinks. Let us take you to your restaurant and back to your hotel safely."
+            },
+            "hotelToPark": {
+                "title": "Hotel to Park",
+                "text": "Planning to visit Xcaret, Xel-Ha, Xoximilco, or the Mayan Museum in Cancun? Cancun Transfer Services can take you to any of these amazing parks."
+            }
         }
     }
 }
