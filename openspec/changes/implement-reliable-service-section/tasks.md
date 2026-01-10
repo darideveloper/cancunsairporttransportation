@@ -1,0 +1,4 @@
+- [ ] Update translation files (`en.json`, `es.json`) with new content
+- [ ] Import and prepare image asset in `index.astro`
+- [ ] Implement new section in `src/pages/[lang]/index.astro` using `TextCard`
+- [ ] Verify responsive design and SEO tags

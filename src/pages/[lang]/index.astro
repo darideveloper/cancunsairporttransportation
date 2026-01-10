@@ -18,6 +18,7 @@ import TextCard from "../../components/molecules/TextCard.astro";
 import BannerCta from "../../components/organisms/BannerCta.astro";
 import BannerStats from "../../components/organisms/BannerStats.astro";
 import PricingCard from "../../components/molecules/PricingCard.astro";
+import RatesTable from "../../components/molecules/RatesTable.astro";
 import SectionHeading from "../../components/molecules/SectionHeading.astro";
 import ButtonCta from "../../components/atoms/ButtonCta.astro";
 import Testimonials from "../../components/organisms/Testimonials.astro";
@@ -252,4 +253,12 @@ const destinations = [
       <div set:html={whyChooseUsContent} class="markdown text-justify" />
     </TextCard>
   </div>
+
+  <!-- Rates Table -->
+  <section class="container mt-12" id="rates-table">
+    <SectionHeading title={t("ratesTable.title")} class="mb-8 text-center">
+      <p>{t("ratesTable.description")}</p>
+    </SectionHeading>
+    <RatesTable />
+  </section>
 </Layout>

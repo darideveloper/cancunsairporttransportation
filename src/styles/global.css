@@ -23,6 +23,7 @@
   --color-gray-light: #f9fafb;
   --color-gray-dark: #333333;
   --color-blue: #0056b1;
+  --color-blue-dark: #425466;
   --color-yellow: #fdc90d;
   --font-title: "Metropolis", sans-serif;
   --font-sans: "Inter Variable", sans-serif;
@@ -61,7 +62,8 @@ a {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 /* Track */

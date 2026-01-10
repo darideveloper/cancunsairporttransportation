@@ -197,6 +197,194 @@
             }
         }
     },
+    "ratesTable": {
+        "title": "Cancun Airport Transportation Rates",
+        "description": "Transportation Service Prices by Destinations",
+        "headers": {
+            "destination": "Destination",
+            "private": "Private Taxi",
+            "luxury": "Luxury Taxi",
+            "group": "Taxi for Groups",
+            "oneWay": "One Way",
+            "roundTrip": "Round Trip",
+            "pax1to8": "1-8 passengers",
+            "pax1to5": "1-5 passengers",
+            "pax1to16": "1-16 passengers"
+        },
+        "destinations": {
+            "cancunDowntown": {
+                "name": "Cancun Downtown",
+                "privateOw": "$29.99 USD",
+                "privateRt": "$59.99 USD",
+                "luxuryOw": "$84.00 USD",
+                "luxuryRt": "$160.00 USD",
+                "groupOw": "$84.00 USD",
+                "groupRt": "$160.00 USD"
+            },
+            "cancunZone": {
+                "name": "Cancun Hotel Zone",
+                "privateOw": "$29.99 USD",
+                "privateRt": "$59.99 USD",
+                "luxuryOw": "$84.00 USD",
+                "luxuryRt": "$160.00 USD",
+                "groupOw": "$84.00 USD",
+                "groupRt": "$160.00 USD"
+            },
+            "puertoMorelos": {
+                "name": "Puerto Morelos",
+                "privateOw": "$53.00 USD",
+                "privateRt": "$101.00 USD",
+                "luxuryOw": "$110.00 USD",
+                "luxuryRt": "$209.00 USD",
+                "groupOw": "$110.00 USD",
+                "groupRt": "$209.00 USD"
+            },
+            "playaMujeres": {
+                "name": "Playa Mujeres",
+                "privateOw": "$55.00 USD",
+                "privateRt": "$105.00 USD",
+                "luxuryOw": "$120.00 USD",
+                "luxuryRt": "$230.00 USD",
+                "groupOw": "$120.00 USD",
+                "groupRt": "$230.00 USD"
+            },
+            "puertoJuarez": {
+                "name": "Puerto Juárez",
+                "privateOw": "$53.00 USD",
+                "privateRt": "$101.00 USD",
+                "luxuryOw": "$120.00 USD",
+                "luxuryRt": "$230.00 USD",
+                "groupOw": "$120.00 USD",
+                "groupRt": "$230.00 USD"
+            },
+            "playaDelCarmen": {
+                "name": "Playa del Carmen",
+                "privateOw": "$69.99 USD",
+                "privateRt": "$134.98 USD",
+                "luxuryOw": "$145.00 USD",
+                "luxuryRt": "$280.00 USD",
+                "groupOw": "$145.00 USD",
+                "groupRt": "$280.00 USD"
+            },
+            "costaMujeres": {
+                "name": "Costa Mujeres",
+                "privateOw": "$60.00 USD",
+                "privateRt": "$115.00 USD",
+                "luxuryOw": "$145.00 USD",
+                "luxuryRt": "$280.00 USD",
+                "groupOw": "$145.00 USD",
+                "groupRt": "$280.00 USD"
+            },
+            "cozumel": {
+                "name": "Cozumel",
+                "privateOw": "$69.99 USD",
+                "privateRt": "$134.98 USD",
+                "luxuryOw": "$145.00 USD",
+                "luxuryRt": "$280.00 USD",
+                "groupOw": "$145.00 USD",
+                "groupRt": "$280.00 USD"
+            },
+            "puertoAventuras": {
+                "name": "Puerto Aventuras",
+                "privateOw": "$93.00 USD",
+                "privateRt": "$181.00 USD",
+                "luxuryOw": "$170.00 USD",
+                "luxuryRt": "$330.00 USD",
+                "groupOw": "$170.00 USD",
+                "groupRt": "$330.00 USD"
+            },
+            "akumal": {
+                "name": "Akumal",
+                "privateOw": "$108.00 USD",
+                "privateRt": "$211.00 USD",
+                "luxuryOw": "$235.00 USD",
+                "luxuryRt": "$460.00 USD",
+                "groupOw": "$235.00 USD",
+                "groupRt": "$460.00 USD"
+            },
+            "tulum": {
+                "name": "Tulum",
+                "privateOw": "$129.00 USD",
+                "privateRt": "$253.00 USD",
+                "luxuryOw": "$305.00 USD",
+                "luxuryRt": "$595.00 USD",
+                "groupOw": "$305.00 USD",
+                "groupRt": "$595.00 USD"
+            },
+            "mahahual": {
+                "name": "Mahahual",
+                "privateOw": "$544.00 USD",
+                "privateRt": "$1083.00 USD",
+                "luxuryOw": "$1088.00 USD",
+                "luxuryRt": "$2170.00 USD",
+                "groupOw": "$1088.00 USD",
+                "groupRt": "$2170.00 USD"
+            },
+            "holbox": {
+                "name": "Holbox",
+                "privateOw": "$255.00 USD",
+                "privateRt": "$500.00 USD",
+                "luxuryOw": "$505.00 USD",
+                "luxuryRt": "$985.00 USD",
+                "groupOw": "$505.00 USD",
+                "groupRt": "$985.00 USD"
+            },
+            "valladolid": {
+                "name": "Valladolid",
+                "privateOw": "$344.00 USD",
+                "privateRt": "$683.00 USD",
+                "luxuryOw": "$688.00 USD",
+                "luxuryRt": "$1370.00 USD",
+                "groupOw": "$688.00 USD",
+                "groupRt": "$1370.00 USD"
+            },
+            "merida": {
+                "name": "Merida",
+                "privateOw": "$525.00 USD",
+                "privateRt": "$1045.00 USD",
+                "luxuryOw": "$995.00 USD",
+                "luxuryRt": "$1960.00 USD",
+                "groupOw": "$995.00 USD",
+                "groupRt": "$1960.00 USD"
+            },
+            "bacalar": {
+                "name": "Bacalar",
+                "privateOw": "$544.00 USD",
+                "privateRt": "$1083.00 USD",
+                "luxuryOw": "$1088.00 USD",
+                "luxuryRt": "$2170.00 USD",
+                "groupOw": "$1088.00 USD",
+                "groupRt": "$2170.00 USD"
+            },
+            "coba": {
+                "name": "Coba",
+                "privateOw": "$344.00 USD",
+                "privateRt": "$683.00 USD",
+                "luxuryOw": "$688.00 USD",
+                "luxuryRt": "$1370.00 USD",
+                "groupOw": "$688.00 USD",
+                "groupRt": "$1370.00 USD"
+            },
+            "tulumHotelZone": {
+                "name": "Tulum Hotel Zone",
+                "privateOw": "$139.00 USD",
+                "privateRt": "$263.00 USD",
+                "luxuryOw": "$355.00 USD",
+                "luxuryRt": "$690.00 USD",
+                "groupOw": "$355.00 USD",
+                "groupRt": "$690.00 USD"
+            },
+            "tulumAirport": {
+                "name": "Tulum Airport",
+                "privateOw": "$321.00 USD",
+                "privateRt": "$574.00 USD",
+                "luxuryOw": "N/A",
+                "luxuryRt": "N/A",
+                "groupOw": "N/A",
+                "groupRt": "N/A"
+            }
+        }
+    },
     "components": {
         "pricingCard": {
             "mostPopular": "Most Popular",

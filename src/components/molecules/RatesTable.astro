@@ -1,0 +1,125 @@
+---
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import clsx from "clsx";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Get headers translation object
+const headers = t("ratesTable.headers") as Record<string, string>;
+
+// Get destinations translation object and convert to array for iteration
+const destinationsObj = t("ratesTable.destinations") as Record<
+  string,
+  {
+    name: string;
+    privateOw: string;
+    privateRt: string;
+    luxuryOw: string;
+    luxuryRt: string;
+    groupOw: string;
+    groupRt: string;
+  }
+>;
+const destinations = Object.values(destinationsObj);
+
+const SERVICE_TIERS = [
+  {
+    id: "private",
+    label: headers.private,
+    pax: headers.pax1to8,
+    owKey: "privateOw",
+    rtKey: "privateRt",
+  },
+  {
+    id: "luxury",
+    label: headers.luxury,
+    pax: headers.pax1to5,
+    owKey: "luxuryOw",
+    rtKey: "luxuryRt",
+  },
+  {
+    id: "group",
+    label: headers.group,
+    pax: headers.pax1to16,
+    owKey: "groupOw",
+    rtKey: "groupRt",
+  },
+];
+
+const STICKY_SHADOW_CLASSES =
+  "after:absolute after:inset-y-0 after:right-0 after:w-4 after:translate-x-full after:bg-linear-to-r after:from-black/5 after:to-transparent after:content-[''] after:pointer-events-none lg:after:hidden";
+---
+
+<div class="w-full overflow-x-auto rounded-xl">
+  <table
+    class="w-full min-w-[800px] border-collapse text-left text-xs sm:text-sm"
+  >
+    <thead class="sticky top-0 z-10 font-bold">
+      <tr>
+        <th
+          scope="col"
+          class={clsx(
+            "text-blue-dark border-gray/50 sticky left-0 z-30 border-t border-b bg-white px-2 py-4 text-center align-bottom font-bold md:px-6",
+            STICKY_SHADOW_CLASSES,
+          )}
+          rowspan="2"
+        >
+          {headers.destination}
+        </th>
+        {
+          SERVICE_TIERS.map((tier) => (
+            <th
+              scope="colgroup"
+              class="text-blue-dark border-gray/50 border-t border-b bg-white px-6 py-4 text-center font-bold"
+              colspan="2"
+            >
+              {tier.label} <br /> {tier.pax}
+            </th>
+          ))
+        }
+      </tr>
+      <tr>
+        {
+          SERVICE_TIERS.map(() =>
+            [headers.oneWay, headers.roundTrip].map((label) => (
+              <th
+                scope="col"
+                class="text-blue-dark border-gray/50 border-b bg-white px-6 py-4 text-center font-bold tracking-wider capitalize"
+              >
+                {label}
+              </th>
+            )),
+          )
+        }
+      </tr>
+    </thead>
+    <tbody
+      class="[&>tr:not(:first-child)>*]:border-gray-light [&>tr:not(:first-child)>*]:border-t"
+    >
+      {
+        destinations.map((dest, index) => (
+          <tr class={clsx(index % 2 === 0 ? "bg-white" : "bg-gray/10")}>
+            <th
+              scope="row"
+              class={clsx(
+                "sticky left-0 z-20 border-0 px-2 py-4 font-medium whitespace-nowrap text-gray-900 md:px-6",
+                index % 2 === 0 ? "bg-white" : "bg-[#F1F1F1]",
+                STICKY_SHADOW_CLASSES,
+              )}
+            >
+              {dest.name}
+            </th>
+            {SERVICE_TIERS.map((tier) =>
+              [tier.owKey, tier.rtKey].map((key) => (
+                <td class="border-gray-light border-0 px-4 py-4 text-center whitespace-nowrap">
+                  {dest[key as keyof typeof dest]}
+                </td>
+              )),
+            )}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

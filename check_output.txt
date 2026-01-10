@@ -1,0 +1,109 @@
+13:06:03 [content] Syncing content
+13:06:03 [WARN] [glob-loader] The base directory "/mnt/hd/develop/astro/cancunsairporttransportation/src/content/blog/" does not exist.
+13:06:03 [content] Synced content
+13:06:03 [types] Generated 685ms
+13:06:03 [check] Getting diagnostics for Astro files in /mnt/hd/develop/astro/cancunsairporttransportation...
+[96msrc/components/molecules/PricingCard.astro[0m:[93m5[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'marked' is declared but its value is never read.
+
+[7m5[0m import { marked } from "marked";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/organisms/Testimonials.astro[0m:[93m101[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m101[0m   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+[7m   [0m [93m          ~~~~[0m
+
+[96msrc/components/utils/BlogSEO.astro[0m:[93m13[0m:[93m24[0m - [91merror[0m[90m ts(2307): [0mCannot find module '../../data/setup' or its corresponding type declarations.
+
+[7m13[0m import { domain } from '../../data/setup'
+[7m  [0m [91m                       ~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/utils/PageSEO.astro[0m:[93m16[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'SITE_URL' is declared but its value is never read.
+
+[7m16[0m const SITE_URL = import.meta.env.SITE_URL
+[7m  [0m [93m      ~~~~~~~~[0m
+
+[96msrc/components/utils/base/BaseSEO.astro[0m:[93m167[0m:[93m3[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m167[0m   type='application/ld+json'
+[7m   [0m [93m  ~~~~[0m
+
+[96msrc/layouts/Layout.astro[0m:[93m10[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m10[0m const { lang } = Astro.params || 'en'
+[7m  [0m [93m      ~~~~~~~~[0m
+
+[96msrc/pages/[lang]/temp.astro[0m:[93m65[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'destinations' is declared but its value is never read.
+
+[7m65[0m const destinations = [
+[7m  [0m [93m      ~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m47[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'pricingTransportation' is declared but its value is never read.
+
+[7m47[0m const pricingTransportation = [
+[7m  [0m [93m      ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m44[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'safeTripBookContent' is declared but its value is never read.
+
+[7m44[0m const safeTripBookContent = await marked.parse(t("safeTripBooking.text"));
+[7m  [0m [93m      ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m27[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'safeTripBookingImg' is declared but its value is never read.
+
+[7m27[0m import safeTripBookingImg from "../../assets/images/trip-advisor.webp";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m26[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'bannerSrc' is declared but its value is never read.
+
+[7m26[0m const bannerSrc = "/images/home-banner.webp";
+[7m  [0m [93m      ~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m23[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Image' is declared but its value is never read.
+
+[7m23[0m import { Image } from "astro:assets";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m22[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Testimonials' is declared but its value is never read.
+
+[7m22[0m import Testimonials from "../../components/organisms/Testimonials.astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m21[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'SectionHeading' is declared but its value is never read.
+
+[7m21[0m import SectionHeading from "../../components/molecules/SectionHeading.astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m20[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'PricingCard' is declared but its value is never read.
+
+[7m20[0m import PricingCard from "../../components/molecules/PricingCard.astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m19[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'BannerStats' is declared but its value is never read.
+
+[7m19[0m import BannerStats from "../../components/organisms/BannerStats.astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m18[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'BannerCta' is declared but its value is never read.
+
+[7m18[0m import BannerCta from "../../components/organisms/BannerCta.astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m17[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'TextCard' is declared but its value is never read.
+
+[7m17[0m import TextCard from "../../components/molecules/TextCard.astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m16[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'BookingForm' is declared but its value is never read.
+
+[7m16[0m import BookingForm from "../../components/organisms/BookingForm.astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m15[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'BannerImage' is declared but its value is never read.
+
+[7m15[0m import BannerImage from "../../components/atoms/BannerImage.astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/[lang]/temp.astro[0m:[93m14[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'PageSEO' is declared but its value is never read.
+
+[7m14[0m import PageSEO from "../../components/utils/PageSEO.astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+Result (50 files): 
+- 1 error
+- 0 warnings
+- 20 hints
+

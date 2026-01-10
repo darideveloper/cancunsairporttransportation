@@ -1,0 +1,4 @@
+- [x] Apply `sticky` and `left-0` classes to the first `th` in `thead` and first `th` in `tbody` rows <!-- id: 1 -->
+- [x] Add specific `z-index` classes: `z-20` for the first column, `z-30` for the top-left intersection cell <!-- id: 2 -->
+- [x] Ensure background colors are explicitly set on the sticky cells (inheriting or matching the row color) <!-- id: 3 -->
+- [x] Verify standard mobile viewport behavior <!-- id: 4 -->
