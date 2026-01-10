@@ -97,6 +97,28 @@
             "title": "Why use Cancun Airport Transportation by Go Transfers",
             "imageAlt": "Our happy customers",
             "text": "With many private transfer agencies in Cancun, it’s important to know why we stand out.\n\nAt Cancun Airport Transportation by Go, we understand that after a long flight, the last thing you want is to wait at the airport to get to your hotel and start your vacation. We know you’re tired from a flight of two hours or more, and the last thing you want is to deal with long taxi lines or wait nearly an hour for public transportation, dealing with the noise and movements of other passengers.\n\nThat’s why our transfer service is perfect for you: We offer lower prices than our competitors, first-class service, and a commitment to ensuring you enjoy your vacation to the fullest. For these reasons and more, choose us for your transportation needs."
+        },
+        "faqSection": {
+            "title": "Frequently Asked Questions",
+            "description": "Everything you need to know about our Cancun Airport Transportation service.",
+            "items": {
+                "howToBook": {
+                    "question": "How do I book?",
+                    "answer": "You can book easily through our website using the search form."
+                },
+                "rates": {
+                    "question": "Are the rates per person?",
+                    "answer": "No, all our rates are per vehicle, not per person."
+                },
+                "flightDelay": {
+                    "question": "What happens if my flight is delayed?",
+                    "answer": "Don't worry, we monitor all flights. Our driver will be waiting for you when you land."
+                },
+                "meetingPoint": {
+                    "question": "Where do I find the driver?",
+                    "answer": "Our staff will be waiting for you outside the terminal with a sign with your name."
+                }
+            }
         }
     },
     "pages": {

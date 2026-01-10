@@ -97,6 +97,28 @@
             "title": "Por qué utilizar Cancun Airport Transportation by Go Transfers",
             "imageAlt": "Nuestros clientes felices",
             "text": "Con muchas agencias privadas de traslados en Cancún, es importante saber por qué nos destacamos.\n\nEn Cancun Airport Transportation por Go, entendemos que después de un largo vuelo, lo último que quiere es esperar en el aeropuerto para llegar a su hotel y comenzar sus vacaciones. Sabemos que está cansado de un vuelo de dos horas o más, y lo último que quiere es lidiar con largas filas de taxis o esperar casi una hora para el transporte público, lidiando con el ruido y los movimientos de otros pasajeros.\n\nPor eso nuestro servicio de traslado es perfecto para usted: Ofrecemos precios más bajos que nuestros competidores, un servicio de primera clase y el compromiso de asegurarnos de que disfrute de sus vacaciones al máximo. Por estas razones y más, elíjanos para sus necesidades de transporte."
+        },
+        "faqSection": {
+            "title": "Preguntas Frecuentes",
+            "description": "Todo lo que necesitas saber sobre nuestro servicio de Transporte Aeropuerto Cancún.",
+            "items": {
+                "howToBook": {
+                    "question": "¿Cómo reservo?",
+                    "answer": "Puede reservar fácilmente a través de nuestro sitio web utilizando el formulario de búsqueda."
+                },
+                "rates": {
+                    "question": "¿Las tarifas son por persona?",
+                    "answer": "No, todas nuestras tarifas son por vehículo, no por persona."
+                },
+                "flightDelay": {
+                    "question": "¿Qué pasa si mi vuelo se retrasa?",
+                    "answer": "No se preocupe, monitoreamos todos los vuelos. Nuestro conductor lo estará esperando cuando aterrice."
+                },
+                "meetingPoint": {
+                    "question": "¿Dondé encuentro al conductor?",
+                    "answer": "Nuestro personal lo estará esperando fuera de la terminal con un letrero con su nombre."
+                }
+            }
         }
     },
     "pages": {
