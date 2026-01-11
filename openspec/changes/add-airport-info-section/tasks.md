@@ -1,17 +1,17 @@
 ## 1. Preparation
-- [ ] Add translation keys for Airport Information section in `src/messages/en.json` and `src/messages/es.json` <!-- id: 0 -->
+- [ ] Add translation keys for Locations section in `src/messages/en.json` and `src/messages/es.json` <!-- id: 0 -->
 
 ## 2. Component Updates
-- [ ] Update `InfoIconCard.astro` to accept and render `buttonText` prop <!-- id: 1 -->
+- [ ] Update `InfoIconCard.astro` to accept and render `buttomText` prop <!-- id: 1 -->
 
 ## 3. New Component Implementation
-- [ ] Create `AirportInfo.astro` in `src/components/organisms/` <!-- id: 2 -->
+- [ ] Create `Locations.astro` in `src/components/organisms/` <!-- id: 2 -->
     - [ ] Implement Contact Info sub-section <!-- id: 3 -->
     - [ ] Implement Map sub-section <!-- id: 4 -->
     - [ ] Implement Transportation Times sub-section <!-- id: 5 -->
 
 ## 4. Integration
-- [ ] Import and use `AirportInfo` in `src/pages/[lang]/index.astro` <!-- id: 6 -->
+- [ ] Import and use `Locations` in `src/pages/[lang]/index.astro` <!-- id: 6 -->
 
 ## 5. Validation
 - [ ] Verify semantic HTML and ARIA labels <!-- id: 7 -->

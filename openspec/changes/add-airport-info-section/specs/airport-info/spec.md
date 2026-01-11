@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
-### Requirement: Airport Information Section
-The application MUST display a section containing airport contact information, a location map, and transportation times.
+### Requirement: Locations Section
+The application MUST display a section containing contact information, a location map, and transportation times.
 
 #### Scenario: Display contact information
 - **GIVEN** a user is on the landing page
@@ -18,8 +18,8 @@ The application MUST display a section containing airport contact information, a
 - **THEN** they SHOULD see travel times and distances to major destinations (Cancun, Isla Mujeres, Playa del Carmen, Tulum).
 
 ### Requirement: Enhanced InfoIconCard
-The `InfoIconCard` component MUST support displaying a text label next to the bottom icon.
+The `InfoIconCard` component MUST support displaying a text label before the bottom icon.
 
-#### Scenario: Display buttonText
-- **GIVEN** `buttonText` prop is provided to `InfoIconCard`
-- **THEN** the text SHOULD be rendered next to the `BottomIcon` (if present).
+#### Scenario: Display buttomText
+- **GIVEN** `buttomText` prop is provided to `InfoIconCard`
+- **THEN** the text SHOULD be rendered before the `BottomIcon` (if present).

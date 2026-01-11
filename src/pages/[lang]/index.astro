@@ -22,12 +22,12 @@ import RatesTable from "../../components/molecules/RatesTable.astro";
 import SectionHeading from "../../components/molecules/SectionHeading.astro";
 import ButtonCta from "../../components/atoms/ButtonCta.astro";
 import Testimonials from "../../components/organisms/Testimonials.astro";
-import FaqItem from "../../components/molecules/FaqItem";
+import FaqItem from "../../components/molecules/FaqItem.astro";
 import { Image } from "astro:assets";
 import TransportationServices from "../../components/organisms/TransportationServices.astro";
 
 // Images
-const bannerSrc = "/images/home-banner.webp";
+import homeBannerImg from "../../assets/images/home-banner.webp";
 import safeTripBookingImg from "../../assets/images/trip-advisor.webp";
 import luxuryVehicleImg from "../../assets/images/vehicles/luxury.webp";
 import privateVehicleImg from "../../assets/images/vehicles/standard.webp";
@@ -110,7 +110,7 @@ const destinations = [
 <Layout>
   <PageSEO currentPage="home" lang={lang} slot="seo" />
   <BannerImage
-    src={bannerSrc}
+    src={homeBannerImg}
     alt={t("pages.home.bannerAlt")}
     title={t("pages.home.bannerImageTitle")}
   >
@@ -133,8 +133,8 @@ const destinations = [
       slot="image"
       src={safeTripBookingImg}
       alt={t("safeTripBooking.title")}
-      width={700}
-      height={400}
+      width={610}
+      height={377}
       loading="eager"
       decoding="async"
       class="object-right2 h-full w-full rounded-xl object-cover"
@@ -366,7 +366,7 @@ const destinations = [
     <div class="flex flex-col gap-4">
       {
         faqs.map((faq) => (
-          <FaqItem client:load question={faq.question} answer={faq.answer} />
+          <FaqItem question={faq.question} answer={faq.answer} />
         ))
       }
     </div>
