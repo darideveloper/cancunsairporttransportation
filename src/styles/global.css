@@ -34,7 +34,7 @@ body {
   width: 100vw;
   height: 100%;
   overflow-x: hidden;
-  @apply bg-white;
+  @apply text-gray-dark bg-white;
 }
 
 html {
