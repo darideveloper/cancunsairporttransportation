@@ -13,7 +13,7 @@ export const getStaticPaths = getStaticPathsLangs;
 // Components
 import PageSEO from "../../components/utils/PageSEO.astro";
 import BannerImage from "../../components/atoms/BannerImage.astro";
-import BookingForm from "../../components/organisms/BookingForm.astro";
+import BookingForm from "../../components/organisms/BookingForm";
 import TextCard from "../../components/molecules/TextCard.astro";
 import BannerCta from "../../components/organisms/BannerCta.astro";
 import BannerStats from "../../components/organisms/BannerStats.astro";
@@ -118,12 +118,17 @@ const destinations = [
       {t("pages.home.bannerTitle")}
     </h1>
   </BannerImage>
-  <BookingForm
+  <section
     id="booking-form"
-    defaultFrom="cun"
-    defaultTo="merida"
-    class="-mt-28"
-  />
+    class="container -mt-28 flex w-full justify-center"
+  >
+    <BookingForm
+      translations={t("booking")}
+      defaultFrom="cun"
+      defaultTo="merida"
+      client:idle
+    />
+  </section>
   <TextCard
     id="safe-trip-booking"
     title={t("safeTripBooking.title")}
@@ -133,9 +138,9 @@ const destinations = [
       slot="image"
       src={safeTripBookingImg}
       alt={t("safeTripBooking.title")}
-      widths={[348, 610, safeTripBookingImg.width]}
+      widths={[348, 696, 1220, safeTripBookingImg.width]}
       sizes="(max-width: 768px) 348px, (max-width: 1024px) 450px, 610px"
-      quality={80}
+      quality={60}
       format="avif"
       loading="eager"
       decoding="async"
@@ -190,7 +195,7 @@ const destinations = [
                 title={t(`pricingTransportation.cards.${card.key}.imageTitle`)}
                 widths={[200, 400, card.image.width]}
                 sizes="(max-width: 768px) 200px, 400px"
-                quality={80}
+                quality={60}
                 format="avif"
                 loading="lazy"
                 decoding="async"
@@ -248,7 +253,7 @@ const destinations = [
                 alt={t(`pages.home.destinations.cards.${dest.id}.title`)}
                 widths={[300, 600, dest.image.width]}
                 sizes="(max-width: 768px) 300px, 600px"
-                quality={80}
+                quality={60}
                 format="avif"
                 loading="lazy"
                 decoding="async"
@@ -291,7 +296,7 @@ const destinations = [
         alt={t("baseSections.whyChooseUs.imageAlt")}
         widths={[400, 800, customClientImg.width]}
         sizes="(max-width: 768px) 400px, 800px"
-        quality={80}
+        quality={60}
         format="avif"
         loading="lazy"
         decoding="async"
@@ -330,7 +335,7 @@ const destinations = [
         alt={t("reliableService.title")}
         widths={[400, 800, clientAppEsImg.width]}
         sizes="(max-width: 768px) 400px, 800px"
-        quality={80}
+        quality={60}
         format="avif"
         loading="lazy"
         decoding="async"
