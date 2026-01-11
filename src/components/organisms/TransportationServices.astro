@@ -1,7 +1,14 @@
 ---
 import { useTranslations } from "../../lib/i18n/utils";
-import InfoIconCard from "./InfoIconCard.astro";
-import { FaPlane, FaBed, FaUtensils, FaTree } from "react-icons/fa";
+import SectionHeading from "../molecules/SectionHeading.astro";
+import InfoIconCard from "../molecules/InfoIconCard.astro";
+import {
+  FaPlane,
+  FaBed,
+  FaUtensils,
+  FaTree,
+  FaArrowDown,
+} from "react-icons/fa";
 
 const { lang } = Astro.params as { lang: string };
 const t = useTranslations(lang as "en" | "es");
@@ -28,12 +35,40 @@ const services = [
     Icon: FaTree,
   },
 ];
+
+const title = t("transportationServices.title");
+const description = t("transportationServices.description");
+const id = "transportation-services";
 ---
 
-<InfoIconCard
-  title={t("transportationServices.title")}
-  description={t("transportationServices.description")}
-  items={services}
-  class="mt-12 py-12"
-  id="transportation-services"
-/>
+<section class="container mx-auto mt-12 px-4 py-12" id={id} aria-label={title}>
+  <div class="mb-16 flex flex-col items-center justify-center text-center">
+    <div class="flex max-w-3xl flex-col items-center justify-center gap-6">
+      <SectionHeading title={title} class="text-center">
+        {
+          description && (
+            <p class="mt-4 text-lg text-gray-600 md:text-xl">{description}</p>
+          )
+        }
+      </SectionHeading>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+    {
+      services.map((item) => (
+        <InfoIconCard
+          title={item.title}
+          text={item.text}
+          BottomIcon={item.Icon}
+        />
+      ))
+    }
+  </div>
+
+  <div class="mt-16 flex justify-center">
+    <div class="bg-accent/5 animate-bounce rounded-full p-4">
+      <FaArrowDown className="text-accent text-4xl" aria-hidden="true" />
+    </div>
+  </div>
+</section>

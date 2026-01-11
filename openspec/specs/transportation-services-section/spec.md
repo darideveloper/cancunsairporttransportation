@@ -1,15 +1,17 @@
 # transportation-services-section Specification
 
 ## Purpose
-TBD - created by archiving change create-transportation-services-section. Update Purpose after archive.
-## Requirements
-### Requirement: Architecture: Self-contained Components
-The `TransportationServices.astro` organism MUST be self-contained, retrieving its own data and translations.
+This specification defines the "Transportation Services" section on the homepage, which showcases the range of transfer options available to customers.
 
-#### Scenario: Checking component initialization
+## Requirements
+### Requirement: Architecture: Separation of Concerns
+The `TransportationServices.astro` organism MUST manage the section layout, retrieving its own data and translations. Individual services MUST be rendered using the `InfoIconCard.astro` molecule.
+
+#### Scenario: Checking component responsibilities
 Given I inspect the organism `TransportationServices.astro`
 Then it should not depend on props for language or data
-And it must retrieve translations internally using `getLangFromUrl` and `useTranslations`.
+And it must retrieve translations internally using `useTranslations`
+And it must render the `SectionHeading` and a loop of `InfoIconCard` molecules.
 
 ### Requirement: The homepage must display a "Transportation Services" section
 The homepage MUST feature a dedicated section showcasing the various transportation services offered.
@@ -17,14 +19,14 @@ The homepage MUST feature a dedicated section showcasing the various transportat
 #### Scenario: Viewing the services section
 Given a user visits the homepage
 Then they should see a section titled "Cancun Airport Transportation Services" (or localized equivalent)
-And the section should contain introductory text and 4 service cards.
+And the section should contain a description and 4 service cards.
 
-### Requirement: Service Cards must display title, description, and icon
-Each service card MUST clearly present the service title, a brief description, and a representing icon.
+### Requirement: InfoIconCard molecule usage
+Each service card MUST be an instance of the `InfoIconCard` molecule, presenting the service title, a brief description, and a representing icon.
 
-#### Scenario: Inspecting a service card
+#### Scenario: Inspecting an InfoIconCard
 Given the transportation services section is visible
-When I inspect a service card
+When I inspect an `InfoIconCard`
 Then it should be wrapped in an `article` tag
 And it must contain an `h3` heading for the title
 And it must contain a paragraph for the description
