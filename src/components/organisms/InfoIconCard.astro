@@ -1,0 +1,69 @@
+---
+import SectionHeading from "../molecules/SectionHeading.astro";
+import ServiceCard from "../molecules/ServiceCard.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  items: {
+    title: string;
+    text: string;
+    Icon: any;
+  }[];
+  class?: string;
+  titleColor?: string;
+  TopIcon?: any;
+  BottomIcon?: any;
+  id?: string;
+}
+
+const {
+  title,
+  description,
+  items,
+  class: className = "",
+  titleColor,
+  TopIcon,
+  BottomIcon,
+  id = title.toLowerCase().replace(/\s+/g, "-"),
+} = Astro.props;
+---
+
+<section class={`container mx-auto ${className}`} id={id} aria-label={title}>
+  <div class="flex flex-col items-center justify-center text-center">
+    <div class="mb-4 flex items-center justify-center gap-4">
+      {TopIcon && <TopIcon className="text-4xl text-accent" />}
+      <SectionHeading title={title} class="text-center">
+        {description && <p>{description}</p>}
+      </SectionHeading>
+    </div>
+  </div>
+
+  <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+    {
+      items.map((item) => (
+        <ServiceCard title={item.title} text={item.text} Icon={item.Icon} />
+      ))
+    }
+  </div>
+
+  {
+    BottomIcon && (
+      <div class="mt-12 flex justify-center">
+        <BottomIcon className="text-5xl text-accent" />
+      </div>
+    )
+  }
+</section>
+
+{
+  titleColor && (
+    <style is:global define:vars={{ titleColor }}>
+      {`
+      #${id} h2 {
+        color: var(--titleColor) !important;
+      }
+    `}
+    </style>
+  )
+}

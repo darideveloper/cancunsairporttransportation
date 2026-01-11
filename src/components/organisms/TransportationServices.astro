@@ -1,7 +1,6 @@
 ---
 import { useTranslations } from "../../lib/i18n/utils";
-import SectionHeading from "../molecules/SectionHeading.astro";
-import ServiceCard from "../molecules/ServiceCard.astro";
+import InfoIconCard from "./InfoIconCard.astro";
 import { FaPlane, FaBed, FaUtensils, FaTree } from "react-icons/fa";
 
 const { lang } = Astro.params as { lang: string };
@@ -9,44 +8,32 @@ const t = useTranslations(lang as "en" | "es");
 
 const services = [
   {
-    key: "airportToHotel",
-    icon: FaPlane,
+    title: t("transportationServices.items.airportToHotel.title"),
+    text: t("transportationServices.items.airportToHotel.text"),
+    Icon: FaPlane,
   },
   {
-    key: "hotelToHotel",
-    icon: FaBed,
+    title: t("transportationServices.items.hotelToHotel.title"),
+    text: t("transportationServices.items.hotelToHotel.text"),
+    Icon: FaBed,
   },
   {
-    key: "hotelToRestaurant",
-    icon: FaUtensils,
+    title: t("transportationServices.items.hotelToRestaurant.title"),
+    text: t("transportationServices.items.hotelToRestaurant.text"),
+    Icon: FaUtensils,
   },
   {
-    key: "hotelToPark",
-    icon: FaTree,
+    title: t("transportationServices.items.hotelToPark.title"),
+    text: t("transportationServices.items.hotelToPark.text"),
+    Icon: FaTree,
   },
 ];
 ---
 
-<section
-  class="container mt-12 py-12"
+<InfoIconCard
+  title={t("transportationServices.title")}
+  description={t("transportationServices.description")}
+  items={services}
+  class="mt-12 py-12"
   id="transportation-services"
-  aria-label={t("transportationServices.title")}
->
-  <SectionHeading title={t("transportationServices.title")} class="text-center">
-    <p>
-      {t("transportationServices.description")}
-    </p>
-  </SectionHeading>
-
-  <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-    {
-      services.map((service) => (
-        <ServiceCard
-          title={t(`transportationServices.items.${service.key}.title`)}
-          text={t(`transportationServices.items.${service.key}.text`)}
-          Icon={service.icon}
-        />
-      ))
-    }
-  </div>
-</section>
+/>
