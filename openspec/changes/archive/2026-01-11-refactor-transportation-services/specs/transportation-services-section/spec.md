@@ -2,7 +2,7 @@
 
 ## MODIFIED Requirements
 
-### Requirement: Architecture: Self-contained Components
+### Requirement: Architecture: Separation of Concerns
 The `TransportationServices.astro` organism MUST be self-contained, retrieving its own data and translations. It is responsible for the section layout, including heading and decorations.
 
 #### Scenario: Checking component initialization
@@ -11,7 +11,7 @@ Then it should not depend on props for language or data
 And it must retrieve translations internally using `getLangFromUrl` and `useTranslations`
 And it must render the `SectionHeading` and `InfoIconCard` loop.
 
-### Requirement: Service Cards must display title, description, and icon
+### Requirement: InfoIconCard molecule usage
 Each service card MUST clearly present the service title, a brief description, and a representing icon using the `InfoIconCard` molecule.
 
 #### Scenario: Inspecting a service card
