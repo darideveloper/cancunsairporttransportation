@@ -2,10 +2,6 @@
 // Styles
 import "../styles/global.css";
 
-// Fonts
-import "@fontsource/metropolis";
-import "@fontsource-variable/inter";
-
 // i18n
 const { lang } = Astro.params || "en";
 
@@ -23,6 +19,12 @@ if (!currentPage || currentPage === "en" || currentPage === "es") {
 
 // Sections
 import Header from "../components/organisms/Header.astro";
+
+interface Props {
+  preloadImage?: string;
+}
+
+const { preloadImage } = Astro.props;
 ---
 
 <!doctype html>
@@ -58,6 +60,17 @@ import Header from "../components/organisms/Header.astro";
 
     <!-- SEO Slot -->
     <slot name="seo" />
+
+    {
+      preloadImage && (
+        <link
+          rel="preload"
+          as="image"
+          href={preloadImage}
+          fetchpriority="high"
+        />
+      )
+    }
   </head>
   <body>
     <Header />
