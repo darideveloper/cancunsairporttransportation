@@ -21,10 +21,11 @@ const { src, alt, title } = Astro.props;
     title={title}
     widths={[600, 1200, src.width]}
     sizes="100vw"
-    quality={85}
+    quality={60}
     format="avif"
     loading="eager"
     fetchpriority="high"
+    decoding="sync"
     class="absolute inset-0 h-full w-full object-cover object-center"
   />
   <div

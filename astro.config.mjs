@@ -20,6 +20,10 @@ export default defineConfig({
     showTailwindcssBreakpoint(),
   ],
 
+  build: {
+    inlineStylesheets: "always",
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
