@@ -55,11 +55,14 @@ const {
       itemtype="https://schema.org/Person"
     >
       <cite class="flex flex-col text-lg not-italic" itemprop="name">
-        <time class="text-gray text-sm" itemprop="datePublished">{date}</time>
+        <time class="text-gray-dark text-sm" itemprop="datePublished"
+          >{date}</time
+        >
         {name}
       </cite>
       <div
         class=""
+        role="img"
         aria-label={`${stars} out of 5 stars`}
         itemprop="reviewRating"
         itemscope

@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
+
 // Props
 interface Props {
-  src: string;
+  src: any;
   alt: string;
   title: string;
 }
@@ -13,10 +15,11 @@ const { src, alt, title } = Astro.props;
   id="banner-image"
   class="relative -z-10 mx-auto h-[500px] w-[98%] overflow-hidden rounded-xl"
 >
-  <img
+  <Image
     src={src}
     alt={alt}
     title={title}
+    loading="eager"
     fetchpriority="high"
     class="absolute inset-0 h-full w-full object-cover object-center"
   />

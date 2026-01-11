@@ -1,68 +1,68 @@
 ---
 // Styles
-import '../styles/global.css'
+import "../styles/global.css";
 
 // Fonts
-import '@fontsource/metropolis'
-import '@fontsource-variable/inter'
+import "@fontsource/metropolis";
+import "@fontsource-variable/inter";
 
 // i18n
-const { lang } = Astro.params || 'en'
+const { lang } = Astro.params || "en";
 
 // Animations / Transitions
-import { ClientRouter } from 'astro:transitions'
+import { ClientRouter } from "astro:transitions";
 
 // Get current page
-const segments = Astro.url.pathname.split('/').filter(Boolean)
-const last = segments.at(-1)
+const segments = Astro.url.pathname.split("/").filter(Boolean);
+const last = segments.at(-1);
 
-let currentPage = last
-if (!currentPage || currentPage === 'en' || currentPage === 'es') {
-  currentPage = 'home'
+let currentPage = last;
+if (!currentPage || currentPage === "en" || currentPage === "es") {
+  currentPage = "home";
 }
 
 // Sections
-import Header from '../components/organisms/Header.astro'
+import Header from "../components/organisms/Header.astro";
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta
-      name='viewport'
-      content='width=device-width'
-    />
-    <link
-      rel='icon'
-      type='image/x-icon'
-      href='/favicon.ico'
-    />
-    <meta
-      name='generator'
-      content={Astro.generator}
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
 
     <!-- Preconnect to external origins -->
-    <link
-      rel='preconnect'
-      href='https://maps.googleapis.com'
-    />
-    <link
-      rel='preconnect'
-      href='https://maps.gstatic.com'
-    />
+    <link rel="preconnect" href="https://maps.googleapis.com" />
+    <link rel="preconnect" href="https://maps.gstatic.com" />
 
     <!-- Pages transition -->
     <ClientRouter />
 
+    <!-- Preload critical fonts -->
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/metropolis-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <!-- SEO Slot -->
-    <slot name='seo' />
+    <slot name="seo" />
   </head>
   <body>
     <Header />
 
-    <main class:list={['font-sans']}>
+    <main class:list={["font-sans"]}>
       <slot />
     </main>
     <!-- <Footer /> -->
