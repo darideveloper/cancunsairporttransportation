@@ -139,6 +139,8 @@
             "description": "Reserva tu transporte en el aeropuerto de Cancún con las mejores tarifas. Servicio de traslado privado, seguro y confiable a cualquier hotel en Cancún y la Riviera Maya.",
             "keywords": "transporte aeropuerto cancun, traslado cancun, transporte privado cancun",
             "bannerTitle": "Transporte Cancún Aeropuerto",
+            "bannerAlt": "Una flota de camionetas de transporte del aeropuerto de Cancún estacionadas en una terminal, listas para recoger pasajeros.",
+            "bannerImageTitle": "Servicio de transporte profesional en Cancún",
             "welcome": "Hola mundo",
             "destinations": {
                 "title": "Transportación del Aeropuerto de Cancún a la Zona Hotelera y más destinos",
