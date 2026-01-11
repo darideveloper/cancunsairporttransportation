@@ -34,11 +34,11 @@ const { defaultFrom, defaultTo, title, class: className, id } = Astro.props;
     }
     <!-- Controls -->
     <header class="flex w-full justify-between gap-4 text-sm">
-      <TripTypeControls labels={translations.tripType} client:load />
-      <CurrencyControls labels={translations.currency} client:load />
+      <TripTypeControls labels={translations.tripType} client:idle />
+      <CurrencyControls labels={translations.currency} client:idle />
       <SubmitButton
         label={translations.submit}
-        client:load
+        client:idle
         className="hidden md:block"
       />
     </header>
@@ -47,12 +47,12 @@ const { defaultFrom, defaultTo, title, class: className, id } = Astro.props;
       translations={translations}
       defaultFrom={defaultFrom}
       defaultTo={defaultTo}
-      client:load
+      client:idle
     />
     <footer>
       <SubmitButton
         label={translations.submit}
-        client:load
+        client:idle
         className="mt-4 block w-full md:hidden"
       />
     </footer>
