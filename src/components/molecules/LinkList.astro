@@ -1,34 +1,66 @@
 ---
 interface Props {
   title: string;
-  links: {
+  items: {
     text: string;
-    href: string;
+    href?: string; // Generic items might not have links (e.g. address)
     target?: string;
     rel?: string;
+    title?: string; // Optional label (e.g. "PHONE", "EMAIL")
   }[];
 }
 
-const { title, links } = Astro.props;
+const { title, items } = Astro.props;
 ---
 
 <div>
-  <h3 class="font-title text-gray-dark mb-4 text-sm font-bold tracking-wider">
+  <h3 class="font-title text-gray-dark mb-2 text-sm font-bold tracking-wider">
     {title}
   </h3>
   <nav aria-label={`${title} navigation`}>
     <ul class="flex flex-col gap-2">
       {
-        links.map((link) => (
+        items.map((item: any) => (
           <li>
-            <a
-              href={link.href}
-              target={link.target}
-              rel={link.rel}
-              class="text-gray-dark hover:text-blue font-medium transition-colors"
-            >
-              {link.text}
-            </a>
+            {item.href ? (
+              <a
+                href={item.href}
+                target={item.target}
+                rel={item.rel}
+                class:list={[
+                  "transition-colors duration-300",
+                  item.title
+                    ? "group flex flex-col"
+                    : "text-accent-dark hover:text-accent text-sm font-medium",
+                ]}
+              >
+                {item.title && (
+                  <span class="text-gray group-hover:text-blue text-xs font-bold tracking-tighter uppercase transition-colors">
+                    {item.title}
+                  </span>
+                )}
+                <span
+                  class:list={[
+                    item.title
+                      ? "text-gray-dark group-hover:text-blue text-base font-bold tracking-tight"
+                      : "",
+                  ]}
+                >
+                  {item.text}
+                </span>
+              </a>
+            ) : (
+              <div class="flex flex-col">
+                {item.title && (
+                  <span class="text-gray text-xs font-bold tracking-tighter uppercase">
+                    {item.title}
+                  </span>
+                )}
+                <p class="text-gray-dark text-sm leading-relaxed italic">
+                  {item.text}
+                </p>
+              </div>
+            )}
           </li>
         ))
       }

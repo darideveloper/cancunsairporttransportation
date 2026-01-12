@@ -5,7 +5,6 @@ import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 // Components
 import Logo from "../atoms/Logo.astro";
 import LinkList from "../molecules/LinkList.astro";
-import ContactCard from "../molecules/ContactCard.astro";
 import BottomBar from "../molecules/BottomBar.astro";
 
 // Lang
@@ -62,36 +61,44 @@ const socialLinks = [
       </div>
 
       <!-- Column 2: Destinations -->
-      <div class="flex flex-col gap-6 lg:col-span-2">
+      <div class="flex flex-col gap-4 lg:col-span-2">
         <LinkList
           title={columns.destinations.title}
-          links={columns.destinations.links}
+          items={columns.destinations.links}
         />
       </div>
 
       <!-- Column 3: Services & Information -->
-      <div class="flex flex-col gap-8 lg:col-span-2">
+      <div class="flex flex-col gap-4 lg:col-span-2">
         <LinkList
           title={columns.services.title}
-          links={columns.services.links}
+          items={columns.services.links}
         />
         <LinkList
           title={columns.information.title}
-          links={columns.information.links}
+          items={columns.information.links}
         />
       </div>
 
       <!-- Column 4: Contact & More -->
-      <div class="flex flex-col gap-8 lg:col-span-2">
-        <ContactCard
+      <div class="flex flex-col gap-4 lg:col-span-2">
+        <LinkList
           title={columns.contact.title}
-          address={columns.contact.address}
-          phones={columns.contact.phones}
-          email={columns.contact.email}
+          items={[
+            {
+              text: columns.contact.email.value,
+              href: columns.contact.email.href,
+            },
+            ...columns.contact.phones.map((phone: any) => ({
+              title: phone.label,
+              text: phone.value,
+              href: phone.href,
+            })),
+          ]}
         />
         <LinkList
           title={columns.moreServices.title}
-          links={[
+          items={[
             {
               text: columns.moreServices.text,
               href: columns.moreServices.href,

@@ -153,12 +153,3 @@ label {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
 }
-
-/* Sections styles */
-footer a {
-  color: var(--color-accent);
-}
-
-footer a:hover {
-  color: var(--color-accent-dark);
-}
