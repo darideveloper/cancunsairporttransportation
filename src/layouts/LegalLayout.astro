@@ -1,0 +1,27 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<Layout>
+  <Fragment slot="seo">
+    <title>{title} | Cancun Airport Transportation</title>
+    <meta name="description" content={description} />
+  </Fragment>
+
+  <div class="container mx-auto px-4 py-12 md:py-16">
+    <article
+      class="prose prose-lg prose-slate prose-headings:font-title prose-a:text-accent hover:prose-a:text-accent-dark mx-auto max-w-3xl"
+    >
+      <h1 class="text-gray-dark font-bold">{title}</h1>
+      <p class="text-gray mb-8 text-xl">{description}</p>
+      <slot />
+    </article>
+  </div>
+</Layout>

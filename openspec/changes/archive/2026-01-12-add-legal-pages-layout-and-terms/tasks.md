@@ -1,0 +1,9 @@
+- [x] Install `@tailwindcss/typography` <!-- id: 7 -->
+- [x] Create `src/content/config.ts` and define `legal` collection <!-- id: 0 -->
+- [x] Create `src/content/legal/en/terms-and-conditions.mdx` <!-- id: 1 -->
+- [x] Create `src/content/legal/es/terms-and-conditions.mdx` <!-- id: 2 -->
+- [x] Create `src/layouts/LegalLayout.astro` (implement SEO slot & prose styling) <!-- id: 3 -->
+- [x] Create `src/pages/[lang]/terms-and-conditions.astro` <!-- id: 4 -->
+- [x] Add translation keys for Terms page titles if needed (optional) <!-- id: 5 -->
+- [x] Add link to Terms and Conditions in `src/components/molecules/BottomBar.astro` <!-- id: 8 -->
+- [x] Verify build and rendering <!-- id: 6 -->

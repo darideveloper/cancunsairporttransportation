@@ -39,7 +39,9 @@ const t = useTranslations(lang);
 <article
   class={clsx(
     "pricing-card flex flex-col items-center justify-between gap-4 rounded-xl border h-full",
-    bestSeller ? "border-accent" : "border-gray-dark/20",
+    bestSeller
+      ? "border-accent bg-accent/10"
+      : "border-gray-dark/20 bg-gray/10",
     className,
   )}
 >

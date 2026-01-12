@@ -1,0 +1,118 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+
+// Components
+import Logo from "../atoms/Logo.astro";
+import LinkList from "../molecules/LinkList.astro";
+import BottomBar from "../molecules/BottomBar.astro";
+
+// Lang
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const footerMessages = t("globalSections.footer");
+const columns = footerMessages.columns;
+
+const socialLinks = [
+  {
+    text: footerMessages.social.facebook,
+    href: "https://www.facebook.com/gotransfers.us",
+    label: footerMessages.social.facebook,
+  },
+  {
+    text: footerMessages.social.instagram,
+    href: "https://www.instagram.com/gotransfers.us",
+    label: footerMessages.social.instagram,
+  },
+];
+---
+
+<footer
+  class="bg-gray-light border-gray/70 mt-12 border-t pt-12 text-center md:text-left"
+>
+  <div class="container">
+    <section class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-9">
+      <!-- Column 1: Logo, Tagline, Social -->
+      <div
+        class="flex flex-col justify-start gap-8 md:gap-4 lg:col-span-3 lg:justify-between"
+      >
+        <div class="flex flex-col items-center gap-2 md:items-start">
+          <Logo />
+          <p
+            class="text-gray mx-auto mt-2 w-11/12 text-center text-base leading-relaxed md:mx-0 md:text-left"
+          >
+            {footerMessages.tagline}
+          </p>
+        </div>
+        <ul class="flex justify-center gap-4 md:justify-start">
+          {
+            socialLinks.map((social) => (
+              <li>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                >
+                  {social.text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Column 2: Destinations -->
+      <div class="flex flex-col gap-8 md:gap-4 lg:col-span-2">
+        <LinkList
+          title={columns.destinations.title}
+          items={columns.destinations.links}
+        />
+      </div>
+
+      <!-- Column 3: Services & Information -->
+      <div class="flex flex-col gap-8 md:gap-4 lg:col-span-2">
+        <LinkList
+          title={columns.services.title}
+          items={columns.services.links}
+        />
+        <LinkList
+          title={columns.information.title}
+          items={columns.information.links}
+        />
+      </div>
+
+      <!-- Column 4: Contact & More -->
+      <div class="flex flex-col gap-8 md:gap-4 lg:col-span-2">
+        <LinkList
+          title={columns.contact.title}
+          items={[
+            {
+              text: columns.contact.email.value,
+              href: columns.contact.email.href,
+            },
+            ...columns.contact.phones.map((phone: any) => ({
+              title: phone.label,
+              text: phone.value,
+              href: phone.href,
+            })),
+          ]}
+        />
+        <LinkList
+          title={columns.moreServices.title}
+          items={[
+            {
+              text: columns.moreServices.text,
+              href: columns.moreServices.href,
+              target: "_blank",
+              rel: "noopener noreferrer",
+            },
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Bottom Bar -->
+    <BottomBar />
+  </div>
+</footer>

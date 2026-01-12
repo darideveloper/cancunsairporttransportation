@@ -1,6 +1,6 @@
 # Spec Delta: Performance Optimization
 
-## MODIFIED Requirements
+## ADDED Requirements
 
 ### Requirement: Image Optimization
 The system SHALL use Astro's `<Image />` component for all above-the-fold assets to ensure proper compression, format conversion, and attribute optimization.

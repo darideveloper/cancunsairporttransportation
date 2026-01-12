@@ -12,6 +12,112 @@
             "instagramAriaLabel": "Síguenos en Instagram",
             "switchLanguage": "Cambiar a"
         },
+        "footer": {
+            "tagline": "Más de una década de experiencia, ofrecemos el traslado más seguro, veloz y confiable en Cancún.",
+            "social": {
+                "facebook": "Facebook",
+                "instagram": "Instagram"
+            },
+            "columns": {
+                "destinations": {
+                    "title": "Destinos",
+                    "links": [
+                        {
+                            "text": "Taxi Aeropuerto Cancún",
+                            "href": "/es"
+                        },
+                        {
+                            "text": "Cancun a Playa del Carmen",
+                            "href": "/es/transportacion-cancun-a-playa-del-carmen"
+                        },
+                        {
+                            "text": "Cancun a Tulum",
+                            "href": "/es/traslado-cancun-tulum"
+                        },
+                        {
+                            "text": "Cancun a Akumal",
+                            "href": "/es/transporte-cancun-akumal"
+                        },
+                        {
+                            "text": "Transporte de Cancún a Mérida",
+                            "href": "/es/traslado-de-cancun-a-merida"
+                        },
+                        {
+                            "text": "Destinos",
+                            "href": "/es/destinos"
+                        }
+                    ]
+                },
+                "services": {
+                    "title": "Servicios",
+                    "links": [
+                        {
+                            "text": "Transportación estándar",
+                            "href": "/es/transporte-privado-cancun"
+                        },
+                        {
+                            "text": "Transportación de lujo",
+                            "href": "/es/transporte-de-lujo-cancun"
+                        },
+                        {
+                            "text": "Trasportation para grupos pequeños",
+                            "href": "/es/transporte-para-grupos-cancun"
+                        },
+                        {
+                            "text": "Taxi Aeropuerto Cancún",
+                            "href": "/es/taxi-aeropuerto-cancun"
+                        }
+                    ]
+                },
+                "information": {
+                    "title": "Información",
+                    "links": [
+                        {
+                            "text": "Contactanos",
+                            "href": "/es/contacto"
+                        },
+                        {
+                            "text": "Términos y condiciones",
+                            "href": "/es/terminos-y-condiciones"
+                        },
+                        {
+                            "text": "Políticas de privacidad",
+                            "href": "/es/privacidad"
+                        }
+                    ]
+                },
+                "contact": {
+                    "title": "Contáctanos",
+                    "email": {
+                        "label": "bookings@gotransfers.us",
+                        "value": "bookings@gotransfers.us",
+                        "href": "mailto:bookings@gotransfers.us"
+                    },
+                    "phones": [
+                        {
+                            "label": "Desde USA & Canada",
+                            "value": "+1 (929) 999-1258",
+                            "href": "tel:+19299991258"
+                        },
+                        {
+                            "label": "México & Resto del múndo",
+                            "value": "+52 (998) 387-0435",
+                            "href": "tel:+529983870435"
+                        }
+                    ]
+                },
+                "moreServices": {
+                    "title": "Más servicios",
+                    "text": "Caribbean Transfers Cancun",
+                    "href": "https://caribbean-transfers.com/es"
+                }
+            },
+            "bottomBar": {
+                "copyright": "Copyright © 2026 All Rights Reserved.",
+                "terms": "Términos y condiciones",
+                "privacy": "Políticas de privacidad"
+            }
+        },
         "menubar": {
             "nav": {
                 "cancun": "Taxi Aeropuerto Cancún",
@@ -455,6 +561,52 @@
                 "title": "Hotel a Parque",
                 "text": "¿Planea visitar Xcaret, Xel-Ha, Xoximilco o el Museo Maya de Cancún? Cancun Transfer Services puede llevarle a cualquiera de estos increíbles parques."
             }
+        }
+    },
+    "locations": {
+        "title": "Información sobre la ubicación de Cancun Airport Transportation",
+        "contacts": {
+            "usaCanada": {
+                "label": "Desde USA / Canada",
+                "value": "+1 (929) 999-1258"
+            },
+            "address": {
+                "label": "Dirección",
+                "value": "Av. Prol. La Luna 132, 77533 Cancún, Q.R."
+            },
+            "mexicoRest": {
+                "label": "México & Resto del mundo",
+                "value": "+52 (998) 387-0435"
+            }
+        },
+        "transportationTimes": {
+            "title": "Tiempo de transporte a los principales lugares",
+            "items": [
+                {
+                    "id": "cancun",
+                    "title": "Cancún",
+                    "text": "El tiempo de transporte desde el Aeropuerto de Cancún hasta el centro de Cancún es de aproximadamente 20 minutos. Los tiempos de viaje pueden variar debido a las condiciones del tráfico.",
+                    "bottomText": "Distancia: 21 km"
+                },
+                {
+                    "id": "isla-mujeres",
+                    "title": "Isla Mujeres",
+                    "text": "El tiempo de transporte desde el Aeropuerto de Cancún hasta el Ferry de Isla Mujeres es de aproximadamente 35 minutes. Los tiempos de viaje pueden variar debido a las condiciones del tráfico.",
+                    "bottomText": "Distancia: 24 km"
+                },
+                {
+                    "id": "playa-del-carmen",
+                    "title": "Playa del Carmen",
+                    "text": "El tiempo de transporte desde el Aeropuerto de Cancún a Playa del Carmen es de aproximadamente 55 minutos. Los tiempos de viaje pueden variar debido a las condiciones del tráfico.",
+                    "bottomText": "Distancia: 54 km"
+                },
+                {
+                    "id": "tulum",
+                    "title": "Tulum",
+                    "text": "El tiempo de transporte desde el Aeropuerto de Cancún a Tulum es de aproximadamente 2 horas. Los tiempos de viaje pueden variar debido a las condiciones del tráfico.",
+                    "bottomText": "Distancia: 119 km"
+                }
+            ]
         }
     }
 }

@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  items: {
+    text: string;
+    href?: string; // Generic items might not have links (e.g. address)
+    target?: string;
+    rel?: string;
+    title?: string; // Optional label (e.g. "PHONE", "EMAIL")
+  }[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<div>
+  <h3 class="font-title text-gray-dark mb-2 text-sm font-bold tracking-wider">
+    {title}
+  </h3>
+  <nav aria-label={`${title} navigation`}>
+    <ul class="flex flex-col gap-2">
+      {
+        items.map((item: any) => (
+          <li>
+            {item.href ? (
+              <a
+                href={item.href}
+                target={item.target}
+                rel={item.rel}
+                class:list={[
+                  "transition-colors duration-300",
+                  item.title && "group flex flex-col",
+                  "text-accent-dark hover:text-accent text-sm font-medium",
+                ]}
+              >
+                {item.title && <span class="text-gray mt-1">{item.title}</span>}
+                <span>{item.text}</span>
+              </a>
+            ) : (
+              <div class="flex flex-col">
+                {item.title && (
+                  <span class="text-gray text-xs font-bold tracking-tighter uppercase">
+                    {item.title}
+                  </span>
+                )}
+                <p class="text-gray-dark text-sm leading-relaxed italic">
+                  {item.text}
+                </p>
+              </div>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>

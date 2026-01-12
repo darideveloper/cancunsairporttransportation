@@ -1,9 +1,8 @@
-# Capability: Accessibility Fixes
+# accessibility-fixes Specification
 
-Requirements for accessibility fixes in the testimonial component and general layout.
-
-## MODIFIED Requirements
-
+## Purpose
+TBD - created by archiving change fix-accessibility-issues. Update Purpose after archive.
+## Requirements
 ### Requirement: Proper ARIA Role for Rating
 The rating `div` in the `Testimonial` component MUST use `role="img"` to properly support the `aria-label` attribute.
 
@@ -27,3 +26,4 @@ The application MUST have a default text color on the `body` or `main` element t
 - Given any page using the main `Layout`
 - When standard text (e.g., in a `p` tag) is rendered without explicit overrides
 - Then it inherits a high-contrast color like `text-gray-dark` or `text-black`.
+
