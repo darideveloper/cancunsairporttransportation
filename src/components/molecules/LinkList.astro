@@ -29,25 +29,12 @@ const { title, items } = Astro.props;
                 rel={item.rel}
                 class:list={[
                   "transition-colors duration-300",
-                  item.title
-                    ? "group flex flex-col"
-                    : "text-accent-dark hover:text-accent text-sm font-medium",
+                  item.title && "group flex flex-col",
+                  "text-accent-dark hover:text-accent text-sm font-medium",
                 ]}
               >
-                {item.title && (
-                  <span class="text-gray group-hover:text-blue text-xs font-bold tracking-tighter uppercase transition-colors">
-                    {item.title}
-                  </span>
-                )}
-                <span
-                  class:list={[
-                    item.title
-                      ? "text-gray-dark group-hover:text-blue text-base font-bold tracking-tight"
-                      : "",
-                  ]}
-                >
-                  {item.text}
-                </span>
+                {item.title && <span class="text-gray mt-1">{item.title}</span>}
+                <span>{item.text}</span>
               </a>
             ) : (
               <div class="flex flex-col">

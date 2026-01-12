@@ -1,23 +1,21 @@
 ---
-interface Props {
-  lang: string;
-  footerMessages: any;
-}
+// Libs
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 
-const { lang, footerMessages } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const footerMessages = t("globalSections.footer");
+
 const currentYear = new Date().getFullYear();
 const copyright = footerMessages.bottomBar.copyright.replace(
   "{year}",
   currentYear.toString(),
 );
 const terms = footerMessages.bottomBar.terms;
-const privacy = footerMessages.bottomBar.privacy;
 ---
 
 <div class="mt-12 border-t border-gray-200 py-8">
-  <div
-    class="container flex flex-col items-center justify-between gap-6 md:flex-row"
-  >
+  <div class="flex flex-col items-center justify-between gap-6 p-0 md:flex-row">
     <p class="text-gray text-center text-sm md:text-left">
       {copyright}
     </p>
@@ -29,14 +27,6 @@ const privacy = footerMessages.bottomBar.privacy;
             class="text-gray hover:text-blue text-sm font-medium transition-colors"
           >
             {terms}
-          </a>
-        </li>
-        <li>
-          <a
-            href={`/${lang}/`}
-            class="text-gray hover:text-blue text-sm font-medium transition-colors"
-          >
-            {privacy}
           </a>
         </li>
       </ul>
