@@ -586,25 +586,25 @@
                     "id": "cancun",
                     "title": "Cancun",
                     "text": "The transportation time from Cancun Airport to downtown Cancun is approximately 20 minutes. Travel times may vary due to traffic conditions.",
-                    "buttomText": "Distance: 21 km"
+                    "bottomText": "Distance: 21 km"
                 },
                 {
                     "id": "isla-mujeres",
                     "title": "Isla Mujeres",
                     "text": "The transportation time from Cancun Airport to the Isla Mujeres Ferry is approximately 35 minutes. Travel times may vary due to traffic conditions.",
-                    "buttomText": "Distance: 24 km"
+                    "bottomText": "Distance: 24 km"
                 },
                 {
                     "id": "playa-del-carmen",
                     "title": "Playa del Carmen",
                     "text": "The transportation time from Cancun Airport to Playa del Carmen is approximately 55 minutes. Travel times may vary due to traffic conditions.",
-                    "buttomText": "Distance: 54 km"
+                    "bottomText": "Distance: 54 km"
                 },
                 {
                     "id": "tulum",
                     "title": "Tulum",
                     "text": "The transportation time from Cancun Airport to Tulum is approximately 2 hours. Travel times may vary due to traffic conditions.",
-                    "buttomText": "Distance: 119 km"
+                    "bottomText": "Distance: 119 km"
                 }
             ]
         }

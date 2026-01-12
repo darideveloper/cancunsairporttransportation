@@ -4,11 +4,11 @@ interface Props {
   text: string;
   TitleIcon?: any;
   BottomIcon?: any;
-  buttomText?: string;
+  bottomText?: string;
   href?: string;
 }
 
-const { title, text, TitleIcon, BottomIcon, buttomText, href } = Astro.props;
+const { title, text, TitleIcon, BottomIcon, bottomText, href } = Astro.props;
 const id = `info-card-${title
   .toLowerCase()
   .trim()
@@ -36,10 +36,10 @@ const id = `info-card-${title
     }
   </p>
   {
-    (BottomIcon || buttomText) && (
+    (BottomIcon || bottomText) && (
       <div class="mt-auto flex w-full items-center justify-between border-t border-gray-50 pt-4">
-        {buttomText && (
-          <span class="text-accent text-sm font-semibold">{buttomText}</span>
+        {bottomText && (
+          <span class="text-accent text-sm font-semibold">{bottomText}</span>
         )}
         {BottomIcon && (
           <BottomIcon
