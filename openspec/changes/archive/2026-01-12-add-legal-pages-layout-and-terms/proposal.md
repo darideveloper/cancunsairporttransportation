@@ -11,6 +11,7 @@ To implement a "Terms and Conditions" page rendered from a `.mdx` file, ensuring
   - Displays a large H1 title.
   - Displays a description text designed to sit under the title.
   - Wraps the main content in a container optimized for readability (wide text support).
+  - Handles SEO metadata (title, description) via `Layout` slots.
 
 ### Pages
 - **[NEW]** `src/pages/[lang]/terms-and-conditions.astro`: A dynamic page that:
@@ -22,6 +23,7 @@ To implement a "Terms and Conditions" page rendered from a `.mdx` file, ensuring
 - **[NEW]** `src/content/config.ts`: Configuration for the new `legal` content collection.
 - **[NEW]** `src/content/legal/en/terms-and-conditions.mdx`: English content for Terms and Conditions.
 - **[NEW]** `src/content/legal/es/terms-and-conditions.mdx`: Spanish content template for Terms and Conditions.
+- **[UPDATE]** `src/components/molecules/BottomBar.astro`: Add link to `/terms-and-conditions`.
 
 ## Verification
 - **Build Verification**: Run `npm run build` to ensure static paths are generated correctly.

@@ -11,6 +11,7 @@ Content is currently managed via JSON translations, but `project.md` suggests MD
 We will introduce Astro Content Collections to manage legal documents.
 - **Collection Name**: `legal`
 - **Location**: `src/content/legal/`
+- **Dependencies**: `@tailwindcss/typography` (install if missing for beautiful text rendering)
 - **Structure**:
   - `src/content/legal/en/terms-and-conditions.mdx`
   - `src/content/legal/es/terms-and-conditions.mdx` (optional/placeholder for now but adhering to structure)
@@ -18,6 +19,8 @@ We will introduce Astro Content Collections to manage legal documents.
   - `title`: string
   - `description`: string
   - `lang`: 'en' | 'es' (derived from id or explicit field)
+  - `updated_at`: date (optional, to display "Last Updated")
+  - **Content Rule**: The MDX body should **NOT** include the main H1 title or the page description introduction, as these are rendered by `LegalLayout` to ensure consistent styling.
 
 ### 2. Layout Layer: `LegalLayout.astro`
 A new layout component `src/layouts/LegalLayout.astro`.
@@ -25,13 +28,15 @@ A new layout component `src/layouts/LegalLayout.astro`.
   - `title`: string
   - `description`: string
 - **Structure**:
-  - Wraps content in the main `Layout` (to include Header/Footer).
+  - Wraps content in the main `Layout`.
+  - **SEO**: Fills the `seo` slot of `Layout` with `<title>` and `<meta name="description">`.
   - Renders a wrapper `<article>` or `<main>` with limited width (prose) for readability.
   - Renders Title (H1) prominently.
   - Renders Description below title.
   - Renders `<slot />` for the MDX content.
 - **Styling**:
-  - Use Tailwind Typpgraphy (`prose`) if available or custom styles for readability (big size as requested).
+  - Use Tailwind Typography (`prose` class) to automatically style the markdown content (headings, lists, paragraphs) for high readability.
+  - Container should be centered with a max-width (e.g., `max-w-3xl`) to ensure comfortable line length.
 
 ### 3. Page Layer: `terms-and-conditions.astro`
 A new page `src/pages/[lang]/terms-and-conditions.astro`.
@@ -57,6 +62,9 @@ A new page `src/pages/[lang]/terms-and-conditions.astro`.
   - *rejected*: Doesn't support the `[lang]` dynamic routing easily without duplication or complex config.
 - **JSON Content**:
   - *rejected*: User specifically requested `.mdx`.
+60: 
+61: ### 5. Navigation
+62: - Update `Footer` or `BottomBar` to include a link to `/terms-and-conditions`.
 
 ## Dependencies
 - `astro:content`: Built-in.
