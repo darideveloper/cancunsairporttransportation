@@ -19,6 +19,7 @@ if (!currentPage || currentPage === "en" || currentPage === "es") {
 
 // Sections
 import Header from "../components/organisms/Header.astro";
+import Footer from "../components/organisms/Footer.astro";
 
 interface Props {
   preloadImage?: string;
@@ -78,6 +79,7 @@ const { preloadImage } = Astro.props;
     <main class:list={["font-sans"]}>
       <slot />
     </main>
-    <!-- <Footer /> -->
+
+    <Footer />
   </body>
 </html>

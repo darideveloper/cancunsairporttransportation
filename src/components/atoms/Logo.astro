@@ -1,27 +1,28 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 
 // Components
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
 
 // Assets
-import logo from '../../assets/images/logo.svg'
+import logo from "../../assets/images/logo.svg";
 
 // Lang
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
-const { class: className } = Astro.props
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { class: className } = Astro.props;
 ---
 
 <a
   href={`/${lang}/`}
-  aria-label={t('branding.businessName')}
-  class={`flex items-center ${className || 'w-52 sm:w-60'}`}
+  aria-label={t("branding.businessName")}
+  class={`flex items-center ${className || "w-52 sm:w-60"}`}
 >
   <Image
     src={logo}
-    alt={`${t('branding.businessName')} logo`}
-    title={t('branding.businessName')}
+    alt={`${t("branding.businessName")} logo`}
+    title={t("branding.businessName")}
+    class="w-full"
   />
 </a>

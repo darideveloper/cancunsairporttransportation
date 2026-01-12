@@ -1,0 +1,7 @@
+- [ ] Create `src/content/config.ts` and define `legal` collection <!-- id: 0 -->
+- [ ] Create `src/content/legal/en/terms-and-conditions.mdx` <!-- id: 1 -->
+- [ ] Create `src/content/legal/es/terms-and-conditions.mdx` <!-- id: 2 -->
+- [ ] Create `src/layouts/LegalLayout.astro` <!-- id: 3 -->
+- [ ] Create `src/pages/[lang]/terms-and-conditions.astro` <!-- id: 4 -->
+- [ ] Add translation keys for Terms page titles if needed (optional) <!-- id: 5 -->
+- [ ] Verify build and rendering <!-- id: 6 -->

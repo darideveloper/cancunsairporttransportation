@@ -1,17 +1,6 @@
-# content Specification
+# Footer Content Requirements
 
-## Purpose
-TBD - created by archiving change update-safe-trip-translations. Update Purpose after archive.
-## Requirements
-### Requirement: Localization of Safe Trip Booking
-- The application MUST provide Spanish translations for the "Safe Trip Booking" section.
-
-#### Scenario: User views Safe Trip section in Spanish
-- GIVEN the user is on the Spanish version of the homepage (`/es`)
-- WHEN they scroll to the "Safe Trip Booking" component
-- THEN the title MUST be "Viaja seguro y reserva con Cancun Airport Transportation by Go Transfers"
-- AND the text MUST be the spanish booking description provided
-- AND the image alt text MUST be "Transporte Aeropuerto Cancun by Go Transfers"
+## ADDED Requirements
 
 ### Requirement: Update English Footer Content
 The footer MUST display the correct English content as provided by the stakeholder, including logo, tagline, social links, navigation columns, and contact details.
@@ -60,6 +49,7 @@ The footer MUST display the correct Spanish content as provided by the stakehold
 - **And** the "Contáctanos" column with localized labels ("Desde USA...", "México & Resto...").
 - **And** a "Más servicios" link to `https://caribbean-transfers.com/es`
 
+
 ### Requirement: Footer Structure
 The footer structure MUST be adjusted to accommodate any new content elements, such as the "More services" link, and follow the responsive grid design (9 columns on desktop).
 
@@ -67,4 +57,3 @@ The footer structure MUST be adjusted to accommodate any new content elements, s
 - **Given** the current layout
 - **When** rendering the columns
 - **Then** the structure should accommodate the "More services" link in the 4th column (Contact column) in the grid which might have variable column spans (e.g. 9 cols on large screens).
-

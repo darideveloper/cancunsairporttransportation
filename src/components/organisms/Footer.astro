@@ -1,0 +1,113 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+
+// Components
+import Logo from "../atoms/Logo.astro";
+import LinkList from "../molecules/LinkList.astro";
+import ContactCard from "../molecules/ContactCard.astro";
+import BottomBar from "../molecules/BottomBar.astro";
+
+// Lang
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const footerMessages = t("globalSections.footer");
+const columns = footerMessages.columns;
+
+const socialLinks = [
+  {
+    text: footerMessages.social.facebook,
+    href: "https://www.facebook.com/gotransfers.us",
+    label: footerMessages.social.facebook,
+  },
+  {
+    text: footerMessages.social.instagram,
+    href: "https://www.instagram.com/gotransfers.us",
+    label: footerMessages.social.instagram,
+  },
+];
+---
+
+<footer
+  class="bg-gray-light border-gray/70 mt-12 border-t pt-12 text-center md:text-left"
+>
+  <div class="container">
+    <section class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-9">
+      <!-- Column 1: Logo, Tagline, Social -->
+      <div
+        class="flex flex-col justify-start gap-2 lg:col-span-3 lg:justify-between"
+      >
+        <div class="flex flex-col items-center gap-2 md:items-start">
+          <Logo />
+          <p
+            class="text-gray mx-auto mt-2 w-11/12 text-center text-base leading-relaxed md:mx-0 md:text-left"
+          >
+            {footerMessages.tagline}
+          </p>
+        </div>
+        <div class="flex justify-center gap-4 md:justify-start">
+          {
+            socialLinks.map((social) => (
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+              >
+                {social.text}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Column 2: Destinations -->
+      <div class="flex flex-col gap-6 lg:col-span-2">
+        <LinkList
+          title={columns.destinations.title}
+          links={columns.destinations.links}
+        />
+      </div>
+
+      <!-- Column 3: Services & Information -->
+      <div class="flex flex-col gap-8 lg:col-span-2">
+        <LinkList
+          title={columns.services.title}
+          links={columns.services.links}
+        />
+        <LinkList
+          title={columns.information.title}
+          links={columns.information.links}
+        />
+      </div>
+
+      <!-- Column 4: Contact & More -->
+      <div class="flex flex-col gap-8 lg:col-span-2">
+        <ContactCard
+          title={columns.contact.title}
+          address={columns.contact.address}
+          phones={columns.contact.phones}
+          email={columns.contact.email}
+        />
+        <div>
+          <h3
+            class="font-title text-gray-dark mb-6 text-lg font-bold tracking-wider uppercase"
+          >
+            {columns.moreServices.title}
+          </h3>
+          <a
+            href={columns.moreServices.href}
+            class="text-gray-dark hover:text-blue font-medium transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {columns.moreServices.text}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Bar -->
+    <BottomBar lang={lang} footerMessages={footerMessages} />
+  </div>
+</footer>

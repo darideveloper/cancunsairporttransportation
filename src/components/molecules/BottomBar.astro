@@ -1,0 +1,45 @@
+---
+interface Props {
+  lang: string;
+  footerMessages: any;
+}
+
+const { lang, footerMessages } = Astro.props;
+const currentYear = new Date().getFullYear();
+const copyright = footerMessages.bottomBar.copyright.replace(
+  "{year}",
+  currentYear.toString(),
+);
+const terms = footerMessages.bottomBar.terms;
+const privacy = footerMessages.bottomBar.privacy;
+---
+
+<div class="mt-12 border-t border-gray-200 py-8">
+  <div
+    class="container flex flex-col items-center justify-between gap-6 md:flex-row"
+  >
+    <p class="text-gray text-center text-sm md:text-left">
+      {copyright}
+    </p>
+    <nav aria-label="Secondary navigation">
+      <ul class="flex flex-wrap justify-center gap-6">
+        <li>
+          <a
+            href={`/${lang}/`}
+            class="text-gray hover:text-blue text-sm font-medium transition-colors"
+          >
+            {terms}
+          </a>
+        </li>
+        <li>
+          <a
+            href={`/${lang}/`}
+            class="text-gray hover:text-blue text-sm font-medium transition-colors"
+          >
+            {privacy}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

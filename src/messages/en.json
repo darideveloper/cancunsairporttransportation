@@ -12,6 +12,112 @@
             "instagramAriaLabel": "Follow us on Instagram",
             "switchLanguage": "Switch to"
         },
+        "footer": {
+            "tagline": "More than a decade of experience, we offer the safest, fastest and most reliable transfer in Cancun.",
+            "social": {
+                "facebook": "Facebook",
+                "instagram": "Instagram"
+            },
+            "columns": {
+                "destinations": {
+                    "title": "Destinations",
+                    "links": [
+                        {
+                            "text": "Cancun Airport Transportation",
+                            "href": "/"
+                        },
+                        {
+                            "text": "Playa del Carmen Transfers",
+                            "href": "/transportation-from-cancun-airport-to-playa-del-carmen"
+                        },
+                        {
+                            "text": "Cancun to Tulum Shuttle",
+                            "href": "/cancun-to-tulum-shuttle"
+                        },
+                        {
+                            "text": "Cancun to Akumal",
+                            "href": "/cancun-to-akumal-shuttle"
+                        },
+                        {
+                            "text": "Transportation from Cancun to Merida",
+                            "href": "/transportation-from-cancun-to-merida"
+                        },
+                        {
+                            "text": "Destinations",
+                            "href": "/destinations"
+                        }
+                    ]
+                },
+                "services": {
+                    "title": "Services",
+                    "links": [
+                        {
+                            "text": "Standar Transportation",
+                            "href": "/private-airport-transfer-cancun"
+                        },
+                        {
+                            "text": "Luxury Trasportation",
+                            "href": "/luxury-transportation-cancun"
+                        },
+                        {
+                            "text": "Small Group Trasportation",
+                            "href": "/group-transfers-cancun"
+                        },
+                        {
+                            "text": "Cancun Airport Taxi",
+                            "href": "/cancun-airport-taxi"
+                        }
+                    ]
+                },
+                "information": {
+                    "title": "Information",
+                    "links": [
+                        {
+                            "text": "Contact us",
+                            "href": "/contact"
+                        },
+                        {
+                            "text": "Terms and conditions",
+                            "href": "/terms-and-conditions"
+                        },
+                        {
+                            "text": "Privacy policies",
+                            "href": "/privacy"
+                        }
+                    ]
+                },
+                "contact": {
+                    "title": "Contact",
+                    "email": {
+                        "label": "bookings@gotransfers.us",
+                        "value": "bookings@gotransfers.us",
+                        "href": "mailto:bookings@gotransfers.us"
+                    },
+                    "phones": [
+                        {
+                            "label": "From USA & Canada",
+                            "value": "+1 (929) 999-1258",
+                            "href": "tel:+19299991258"
+                        },
+                        {
+                            "label": "Mexico & Rest of the world",
+                            "value": "+52 (998) 387-0435",
+                            "href": "tel:+529983870435"
+                        }
+                    ]
+                },
+                "moreServices": {
+                    "title": "More services",
+                    "text": "Caribbean Transfers Cancun",
+                    "href": "https://caribbean-transfers.com"
+                }
+            },
+            "bottomBar": {
+                "copyright": "Copyright © 2026 All Rights Reserved.",
+                "terms": "Terms and conditions",
+                "privacy": "Privacy policies"
+            }
+        },
         "menubar": {
             "nav": {
                 "cancun": "Cancun Airport Transportation",
