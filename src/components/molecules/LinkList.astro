@@ -4,6 +4,8 @@ interface Props {
   links: {
     text: string;
     href: string;
+    target?: string;
+    rel?: string;
   }[];
 }
 
@@ -11,18 +13,18 @@ const { title, links } = Astro.props;
 ---
 
 <div>
-  <h3
-    class="font-title text-gray-dark mb-6 text-lg font-bold tracking-wider uppercase"
-  >
+  <h3 class="font-title text-gray-dark mb-4 text-sm font-bold tracking-wider">
     {title}
   </h3>
   <nav aria-label={`${title} navigation`}>
-    <ul class="flex flex-col gap-3">
+    <ul class="flex flex-col gap-2">
       {
         links.map((link) => (
           <li>
             <a
               href={link.href}
+              target={link.target}
+              rel={link.rel}
               class="text-gray-dark hover:text-blue font-medium transition-colors"
             >
               {link.text}

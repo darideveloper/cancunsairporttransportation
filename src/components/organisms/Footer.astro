@@ -89,21 +89,17 @@ const socialLinks = [
           phones={columns.contact.phones}
           email={columns.contact.email}
         />
-        <div>
-          <h3
-            class="font-title text-gray-dark mb-6 text-lg font-bold tracking-wider uppercase"
-          >
-            {columns.moreServices.title}
-          </h3>
-          <a
-            href={columns.moreServices.href}
-            class="text-gray-dark hover:text-blue font-medium transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {columns.moreServices.text}
-          </a>
-        </div>
+        <LinkList
+          title={columns.moreServices.title}
+          links={[
+            {
+              text: columns.moreServices.text,
+              href: columns.moreServices.href,
+              target: "_blank",
+              rel: "noopener noreferrer",
+            },
+          ]}
+        />
       </div>
     </section>
 
