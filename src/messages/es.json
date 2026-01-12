@@ -456,5 +456,51 @@
                 "text": "¿Planea visitar Xcaret, Xel-Ha, Xoximilco o el Museo Maya de Cancún? Cancun Transfer Services puede llevarle a cualquiera de estos increíbles parques."
             }
         }
+    },
+    "locations": {
+        "title": "Información sobre la ubicación de Cancun Airport Transportation",
+        "contacts": {
+            "usaCanada": {
+                "label": "Desde USA / Canada",
+                "value": "+1 (929) 999-1258"
+            },
+            "address": {
+                "label": "Dirección",
+                "value": "Av. Prol. La Luna 132, 77533 Cancún, Q.R."
+            },
+            "mexicoRest": {
+                "label": "México & Resto del mundo",
+                "value": "+52 (998) 387-0435"
+            }
+        },
+        "transportationTimes": {
+            "title": "Tiempo de transporte a los principales lugares",
+            "items": [
+                {
+                    "id": "cancun",
+                    "title": "Cancún",
+                    "text": "El tiempo de transporte desde el Aeropuerto de Cancún hasta el centro de Cancún es de aproximadamente 20 minutos. Los tiempos de viaje pueden variar debido a las condiciones del tráfico.",
+                    "buttomText": "Distancia: 21 km"
+                },
+                {
+                    "id": "isla-mujeres",
+                    "title": "Isla Mujeres",
+                    "text": "El tiempo de transporte desde el Aeropuerto de Cancún hasta el Ferry de Isla Mujeres es de aproximadamente 35 minutos. Los tiempos de viaje pueden variar debido a las condiciones del tráfico.",
+                    "buttomText": "Distancia: 24 km"
+                },
+                {
+                    "id": "playa-del-carmen",
+                    "title": "Playa del Carmen",
+                    "text": "El tiempo de transporte desde el Aeropuerto de Cancún a Playa del Carmen es de aproximadamente 55 minutos. Los tiempos de viaje pueden variar debido a las condiciones del tráfico.",
+                    "buttomText": "Distancia: 54 km"
+                },
+                {
+                    "id": "tulum",
+                    "title": "Tulum",
+                    "text": "El tiempo de transporte desde el Aeropuerto de Cancún a Tulum es de aproximadamente 2 horas. Los tiempos de viaje pueden variar debido a las condiciones del tráfico.",
+                    "buttomText": "Distancia: 119 km"
+                }
+            ]
+        }
     }
 }

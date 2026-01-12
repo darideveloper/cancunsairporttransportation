@@ -456,5 +456,51 @@
                 "text": "Planning to visit Xcaret, Xel-Ha, Xoximilco, or the Mayan Museum in Cancun? Cancun Transfer Services can take you to any of these amazing parks."
             }
         }
+    },
+    "locations": {
+        "title": "Information about Cancun Airport Transportation Location",
+        "contacts": {
+            "usaCanada": {
+                "label": "From USA / Canada",
+                "value": "+1 (929) 999-1258"
+            },
+            "address": {
+                "label": "Address",
+                "value": "Av. Prol. La Luna 132, 77533 Cancún, Q.R."
+            },
+            "mexicoRest": {
+                "label": "México & Rest of the world",
+                "value": "+52 (998) 387-0435"
+            }
+        },
+        "transportationTimes": {
+            "title": "Transportation Time to the main locations",
+            "items": [
+                {
+                    "id": "cancun",
+                    "title": "Cancun",
+                    "text": "The transportation time from Cancun Airport to downtown Cancun is approximately 20 minutes. Travel times may vary due to traffic conditions.",
+                    "buttomText": "Distance: 21 km"
+                },
+                {
+                    "id": "isla-mujeres",
+                    "title": "Isla Mujeres",
+                    "text": "The transportation time from Cancun Airport to the Isla Mujeres Ferry is approximately 35 minutes. Travel times may vary due to traffic conditions.",
+                    "buttomText": "Distance: 24 km"
+                },
+                {
+                    "id": "playa-del-carmen",
+                    "title": "Playa del Carmen",
+                    "text": "The transportation time from Cancun Airport to Playa del Carmen is approximately 55 minutes. Travel times may vary due to traffic conditions.",
+                    "buttomText": "Distance: 54 km"
+                },
+                {
+                    "id": "tulum",
+                    "title": "Tulum",
+                    "text": "The transportation time from Cancun Airport to Tulum is approximately 2 hours. Travel times may vary due to traffic conditions.",
+                    "buttomText": "Distance: 119 km"
+                }
+            ]
+        }
     }
 }
