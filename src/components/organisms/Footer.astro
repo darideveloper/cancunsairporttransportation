@@ -44,20 +44,22 @@ const socialLinks = [
             {footerMessages.tagline}
           </p>
         </div>
-        <div class="flex justify-center gap-4 md:justify-start">
+        <ul class="flex justify-center gap-4 md:justify-start">
           {
             socialLinks.map((social) => (
-              <a
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-              >
-                {social.text}
-              </a>
+              <li>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                >
+                  {social.text}
+                </a>
+              </li>
             ))
           }
-        </div>
+        </ul>
       </div>
 
       <!-- Column 2: Destinations -->
