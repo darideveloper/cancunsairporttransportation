@@ -1,0 +1,80 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Logo from "../components/atoms/Logo.astro";
+import ButtonCta from "../components/atoms/ButtonCta.astro";
+import { useTranslations } from "../lib/i18n/utils";
+
+const t = useTranslations("en");
+const tEs = useTranslations("es");
+
+const title = t("pages.404.title");
+const heading = t("pages.404.heading");
+const message = t("pages.404.message");
+const cta = t("pages.404.cta");
+
+// Pre-compute Spanish values for client-side injection
+const esValues = {
+  title: tEs("pages.404.title"),
+  heading: tEs("pages.404.heading"),
+  message: tEs("pages.404.message"),
+  cta: tEs("pages.404.cta"),
+};
+---
+
+<Layout>
+  <Fragment slot="seo">
+    <title id="seo-title">{title}</title>
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="The page you are looking for does not exist."
+    />
+  </Fragment>
+
+  <section
+    class="container mx-auto flex min-h-[60vh] flex-col items-center justify-center gap-8 px-4 py-20 text-center"
+  >
+    <div class="scale-125">
+      <Logo />
+    </div>
+
+    <div class="space-y-4">
+      <h1
+        id="error-heading"
+        class="text-gray-dark font-title text-4xl font-bold md:text-5xl"
+      >
+        {heading}
+      </h1>
+      <p id="error-message" class="max-w-md text-lg text-gray-500">
+        {message}
+      </p>
+    </div>
+
+    <ButtonCta id="error-cta" href="/" variant="orange"> {cta} </ButtonCta>
+  </section>
+
+  <script define:vars={{ esValues }} is:inline>
+    // Simple client-side check for 404s served as static HTML
+    const pathname = window.location.pathname;
+    if (pathname.startsWith("/es/") || pathname === "/es") {
+      document.documentElement.lang = "es";
+
+      // Update title
+      const titleEl = document.getElementById("seo-title");
+      if (titleEl) document.title = esValues.title;
+
+      // Update visible content
+      const headingEl = document.getElementById("error-heading");
+      if (headingEl) headingEl.textContent = esValues.heading;
+
+      const messageEl = document.getElementById("error-message");
+      if (messageEl) messageEl.textContent = esValues.message;
+
+      const ctaEl = document.getElementById("error-cta");
+      if (ctaEl) {
+        ctaEl.textContent = esValues.cta;
+        ctaEl.setAttribute("href", "/es/");
+      }
+    }
+  </script>
+</Layout>

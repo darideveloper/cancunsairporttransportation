@@ -1,9 +1,102 @@
----
-title: "Términos y Condiciones"
-description: "Estos son los términos y condiciones para los servicios de Cancun Airport Transportation by Go en la Riviera Maya:"
-lang: "es"
-updated_at: "2026-01-13"
----
+# Design: Update Terms Content
+
+## Proposed Content Strategy
+The provided HTML content will be converted to Semantic Markdown (MDX) to ensure best practices for accessibility and SEO.
+
+### Key Optimizations
+1.  **Semantic Hierarchy**: Use `##` (H2) for main sections like "Cancellation and refund policy" and "Disclaimer of Liability". Use lists (`-`) for itemized points.
+2.  **Contact Links**: Ensure email addresses use `mailto:` and phone numbers use `tel:` schemas.
+3.  **Emphasis**: Use `**` for bold text as specified.
+4.  **Accessibility**: Add descriptive link text where possible.
+
+## English Content (Source)
+
+When purchasing any of our services, with any form of payment or type of currency, the client will accept the Terms and Conditions described below and agree that the information recorded in the purchase ticket is correct for the desired service.
+
+As a result of fulfilling our services for Tourist Transportation in the Riviera Maya (trading as **Cancun Airport Transportation by Go**), we commit to refunding 100% of the payment for the return service to the client in the event that the service has not been fulfilled on time, in the right place and manner due to our responsibility according to what is established in the purchase ticket.
+
+To verify the status of your service unit, any questions, comments, cancellations, confirmations, or clarifications about your transportation service, you can contact us from **7:00 AM to 11:00 PM** at **+52 (998) 387-0435** from Mexico and **+1 (929) 999-1258** from USA or send an email to **[bookings@gotransfers.us](mailto:bookings@gotransfers.us)**
+
+Due to heavy traffic, weather conditions and road accidents, whose responsibility is beyond our operation, "The Company" has a maximum waiting time for the unit to reach the customer of 40 minutes after the time agreed on the purchase ticket. After this waiting period, the customer may request a claim for non-compliance of the service.
+
+The company is not responsible for refunds related to air transportation, lodging, food, entrance fees to tours, activities and/or archaeological sites, any other damage or interest.
+
+The company has the option to omit reimbursements and instead offer open credits in case of weather conditions, natural disasters, pandemics, wars, total or partial road closures due to strikes, work stoppages or demonstrations, road blockages due to traffic accidents or natural disasters, port and airport closures, Once "the company" has provided the transportation service, it will be considered accepted and used by the client; therefore, this service will not be refundable for any reason.
+
+The client whose name appears on the purchase ticket will be the only one authorized to present questions, clarifications, cancellations, or request a refund.
+
+For any questions and/or clarifications and/or refund requests, the passenger must have and present the original purchase ticket at all times, which must be in good condition, without alterations, and with the folio perfectly legible.
+
+In all our services, our units have the facility to wait for the client for a period not exceeding 15 minutes at the indicated location on their Ticket. After this waiting time, the unit will withdraw, leaving no right to any refund. Reporting the service as "No show".
+
+For Hotel pickup service, the passenger must wait in the Hotel Lobby with their Check Out completed for the requested transportation at the confirmed time by the carrier.
+
+For Home Pickup service, the client must confirm the exact address and GPS location of their service. **They will have up to 24 hours before the scheduled Pick Up time to confirm the location, date, and time.** If the service is not confirmed within that time frame, it will be considered a Type C canceled service without any responsibility for "the company".
+
+If the "Pick Up service to be confirmed" option is selected when purchasing the service, the client will have up to 24 hours before the scheduled Pick Up time to confirm the location, date, and time. If the service is not confirmed within that time frame, it will be considered a Type C canceled service without any responsibility for "the company".
+
+Cancun Airport:
+- If the flight arrives between 11 PM and 5 AM cash arrivals must be paid in full.
+- All departures to Cancun Airport must be paid in full.
+
+Tulum Airport:
+- All arrivals and Departures must be paid in full.
+
+General:
+- All Hotel-Hotel transfer services must be paid in full.
+
+## Cancellation and refund policy:
+
+Any request for cancellation must be informed in writing by e-mail to our Customer Service Department, mentioning your reservation number.
+
+- To cancel your reservation, you should contact the email bookings@gotransfers.us customer service department with your reservation number and the reason of the cancellation
+- If you acquired the Economical rate you are only eligible for open-credit
+- If you acquired the PLUS rate you can get a full refund if you cancel 24 hours in advance.
+- In case of a NO SHOW, NO refund apply.
+
+In case of applying a refund, the customer will receive his money in the same form in which the payment was made or apply an open credit.
+
+All clarifications, claims or refund requests for purchases made in cash must be requested by phone. The clarification, claim or refund request will be evaluated before being confirmed or rejected and the resolution will be given via email or telephone.
+
+All clarifications, claims or refund requests for purchases made with payment by card must be requested exclusively through the email [bookings@gotransfers.us](mailto:bookings@gotransfers.us) during business hours, Monday to Friday from 9am to 6pm. If sent outside of those hours, the request will be considered on the next business day. The clarification, claim or refund request will be evaluated before being confirmed or rejected and the resolution will be sent by the same means to the email from which it originated.
+
+In order to request a refund of any form of payment, amount or destination, the customer must present their official identification.
+
+In the case of a refund to a card, "the company" must receive an image of the official identification by mail to process it.
+
+Any authorization for a refund to a card starts via email when the request is sent; thereafter, it is necessary for the customer to print, sign and scan the "Refund Authorization Letter" and the image of the customer's identification, with the return being effective via bank transfer from 2 weeks after the reception of the necessary documentation and information.
+
+To request an invoice, the customer must send the necessary billing information via email and mention at the time of contracting our service that they want an invoice.
+
+The customer must send the following information: Purchase ID (Located on the Ticket), Federal Taxpayer Registry key, full name of the Physical or Moral Person, place and date of issuance, total amount indicated on the Ticket, type of currency in which the payment was made, form of payment, billing address (city, state, country and postal code), contact phone number. Invoices will be sent within the next 3 business days to the same email it was requested from.
+
+The company reserves the right to provide the service and/or make any type of refund when the passenger user is in an alcoholic state, altered due to the consumption of harmful substances, or shows moral and/or physical aggression towards any of our customers and/or collaborators and/or facilities and/or work tools.
+
+The foregoing in accordance with Article 58, second paragraph, of the Federal Consumer Protection Law.
+
+## Disclaimer of Liability declares that:
+
+The photos shown on our website are representative only and do not guarantee an accurate representation of your arrival.
+
+The travel service descriptions are updated to the best of our knowledge, but do not guarantee that everything will be exactly the same upon arrival.
+
+We reserve the right to refuse any client at any time.
+
+Any complaints or written notices must be received no later than fourteen (10) days after returning from said trip.
+
+Caribbean Transfers is not responsible for any claims, costs, or expenses incurred due to forgotten items, personal or third-party injuries, accidents or death, loss or damage to personal property, loss of enjoyment, anger, disappointment, distress, or frustration, whether mental or physical, resulting from the following: illness, theft, labor disputes, mechanical failure, quarantine, government action, weather, excessive vehicular traffic due to maintenance work, road repairs, vehicle accidents, or any other type of accident or cause beyond its direct control.
+
+The client's failure to obtain the required documentation for their trip, such as, but not limited to, passports, visas, and certificates, in which case you are not entitled to any refund.
+
+If the client fails to follow instructions, including, but not limited to, airport departure times, check-in and check-out times and dates at hotels, the policy is: ⁠Cancellation or change of services for any reason.
+
+We reserve the right to cancel or change services at our discretion, and we will try to replace them with similar services. If we have to completely cancel your reservation, our liability is limited to the return of all monies paid to Caribbean Transfers.
+
+A full refund will not be possible in situations where the trip has to be canceled, interrupted, and/or postponed for reasons beyond our control (beyond our control, such as, but not limited to, weather, hurricanes, earthquakes, acts of terrorism, etc.) and where contractual obligations with our creditors do not allow you to obtain a refund of the amount paid or payable to the creditor on behalf of the client.
+
+## Spanish Content (Source)
+
+Estos son los términos y condiciones para los servicios de Cancun Airport Transportation by Go en la Riviera Maya:
 
 Al comprar cualquiera de nuestros servicios, con cualquier forma de pago o tipo de moneda, el cliente acepta los Términos y Condiciones descritos a continuación y está de acuerdo en que la información registrada en el boleto de compra es correcta para el servicio deseado.
 
@@ -30,16 +123,13 @@ Para el servicio de recogida en casas vacacionales, el cliente debe confirmar la
 Si se selecciona la opción "Recogida por confirmar" al comprar el servicio, el cliente tendrá hasta 24 horas antes de la hora programada de recogida para confirmar la ubicación, la fecha y la hora. Si el servicio no se confirma dentro de ese plazo, se considerará un servicio cancelado de Tipo C sin responsabilidad alguna para "la compañía".
 
 Aeropuerto de Cancún:
-
 - Si el vuelo llega entre las 11 PM y 5 AM las llegadas en efectivo deberán ser pagadas en su totalidad.
 - Toda salida hacia el Aeropuerto de Cancún deberá ser pagada en su totalidad.
 
 Aeropuerto de Tulum:
-
 - Toda llegada y Salida deberá ser pagada en su totalidad.
 
 General:
-
 - Todo servicio de traslado Hotel-Hotel deberá ser pagado en su totalidad.
 
 ## Política de cancelación y reembolso
