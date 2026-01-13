@@ -240,6 +240,12 @@
         }
     },
     "pages": {
+        "404": {
+            "title": "404 - Page Not Found",
+            "heading": "Page Not Found",
+            "message": "Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.",
+            "cta": "Return to Home"
+        },
         "home": {
             "title": "Cancun Airport Transportation | Official Website",
             "description": "Book your Cancun Airport Transportation with the best rates. Private, safe and reliable shuttle service to any hotel in Cancun and the Riviera Maya.",
@@ -277,6 +283,9 @@
                     }
                 }
             }
+        },
+        "playaDelCarmen": {
+            "title": "Transportation from Cancun to Playa del Carmen"
         }
     },
     "booking": {

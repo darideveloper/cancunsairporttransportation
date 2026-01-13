@@ -240,6 +240,12 @@
         }
     },
     "pages": {
+        "404": {
+            "title": "404 - Página No Encontrada",
+            "heading": "Página No Encontrada",
+            "message": "Lo sentimos, no pudimos encontrar la página que buscas. Pudo haber sido movida o eliminada.",
+            "cta": "Volver al Inicio"
+        },
         "home": {
             "title": "Transporte Cancún Aeropuerto | Sitio Oficial",
             "description": "Reserva tu transporte en el aeropuerto de Cancún con las mejores tarifas. Servicio de traslado privado, seguro y confiable a cualquier hotel en Cancún y la Riviera Maya.",
@@ -277,6 +283,9 @@
                     }
                 }
             }
+        },
+        "playaDelCarmen": {
+            "title": "Transportación de Cancún a Playa del Carmen"
         }
     },
     "booking": {
