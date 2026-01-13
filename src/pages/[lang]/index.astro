@@ -326,11 +326,11 @@ const destinations = [
   <hr class="my-12" />
 
   <!-- Reliable Transportation Service -->
-  <div class="mt-12 py-12">
+  <div class="mt-12 py-12 bg-[#f5f7fa]">
     <TextCard
       id="reliable-transportation"
       title={t("reliableService.title")}
-      class="flex flex-col-reverse items-center gap-8 md:flex-row-reverse"
+      class="flex flex-col-reverse items-center gap-8 md:flex-row-reverse text-justify md:text-left"
     >
       <Image
         slot="image"
@@ -350,13 +350,13 @@ const destinations = [
           href="#booking-form"
           variant="blue"
           title={t("reliableService.title")}
-          class="w-fit"
+          class="w-full"
           aria-label={`${t("reliableService.cta.label")} - ${t("reliableService.cta.sublabel")}`}
         >
-          <div class="flex items-center gap-3 text-left">
+          <div class="flex items-center justify-center gap-3 text-justify">
             <FaImages className="text-3xl" />
             <div class="flex flex-col leading-tight">
-              <span class="text-lg font-bold"
+              <span class="text-lg"
                 >{t("reliableService.cta.label")}</span
               >
               <span class="text-xs font-light"
