@@ -20,3 +20,6 @@ The current `Testimonials.astro` component hardcodes the testimonials data and t
     *   Retrieve the new translations.
     *   Construct the `testimonials` data array.
     *   Pass the dynamic data to the `<Testimonials />` component.
+
+## Constraints
+*   **Zero Regression on Index Page**: The default behavior of the `Testimonials` component usage on the main landing page (Index) must remain identical. No text, images, or structure should change on the Index page. The new dynamic behavior is strictly for the Playa del Carmen page and others opting in.

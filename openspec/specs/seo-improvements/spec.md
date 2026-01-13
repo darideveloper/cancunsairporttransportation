@@ -1,7 +1,8 @@
-# Spec: SEO Improvements
+# seo-improvements Specification
 
-## MODIFIED Requirements
-
+## Purpose
+TBD - created by archiving change enhance-seo-and-404-ux. Update Purpose after archive.
+## Requirements
 ### Requirement: Layout Language Attribute
 The global layout MUST dynamically reflect the active language in the HTML tag to ensure correct locale detection by browsers and assistive technology.
 
@@ -27,3 +28,4 @@ The 404 error page MUST provide a safe, accessible, and user-friendly path back 
 #### Scenario: Accessible Labels
 - **Given** the "Return to Home" button has clear visible text
 - **Then** it MUST NOT have a redundant `aria-label` attribute that repeats the visible text
+

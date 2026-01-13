@@ -15,3 +15,6 @@ The stakeholder requested a content update for the "Destinations" section specif
     - `src/messages/en.json`
     - `src/messages/es.json`
     - `src/pages/[lang]/transportation-from-cancun-airport-to-playa-del-carmen.astro`
+
+## Constraints
+*   **Zero Regression on Index Page**: The changes must be isolated to the Playa del Carmen page. The destination cards on the Index page must retain their current content, translation keys, and appearance. Do not modify shared translation keys if it affects the Index page; create new specific keys instead.

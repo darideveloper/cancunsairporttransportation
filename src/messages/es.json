@@ -2,6 +2,18 @@
     "branding": {
         "businessName": "Transporte Cancún Aeropuerto"
     },
+    "shared": {
+        "pricingCard": {
+            "priceFrom": "Precio desde",
+            "bookNow": "Reservar",
+            "mostPopular": "Más Vendido",
+            "features": {
+                "privateService": "Servicio privado",
+                "taxesIncluded": "Incluye impuestos de aeropuerto y seguro del viajero",
+                "service24h": "Servicio 24H"
+            }
+        }
+    },
     "globalSections": {
         "topbar": {
             "languageLabel": "Idioma",
@@ -285,7 +297,46 @@
             }
         },
         "playaDelCarmen": {
-            "title": "Transportación de Cancún a Playa del Carmen"
+            "title": "Transportación de Cancún a Playa del Carmen",
+            "safeTrip": {
+                "title": "Transportación desde Cancún a Playa del Carmen, segura y confiable",
+                "description": "Con más de 10 años brindando servicios de transportación de Cancún a Playa del Carmen de la manera más segura, rápida y confiable, Cancun Airport Transportation por Go, es la empresa más honesta y confiable.\n\nNuestra misión principal es ofrecer los mejores servicios de transporte. Aseguramos un viaje cómodo y seguro desde el aeropuerto a cualquier destino en la Riviera Maya.\n\nEntre nuestra diversa gama de servicios, usted puede elegir el que mejor se adapte a sus necesidades, ya sea un viaje de ida o de ida y vuelta. Simplemente póngase en contacto con nuestro centro de llamadas, donde nuestro amable personal estará encantado de ayudarle con cualquier información adicional que pueda necesitar."
+            },
+            "reliableService": {
+                "title": "Transportación desde Cancún a Playa del Carmen, segura y confiable",
+                "description": "Con más de 10 años brindando servicios de transportación de Cancún a Playa del Carmen de la manera más segura, rápida y confiable, Cancun Airport Transportation por Go, es la empresa más honesta y confiable.\n\nNuestra misión principal es ofrecer los mejores servicios de transporte. Aseguramos un viaje cómodo y seguro desde el aeropuerto a cualquier destino en la Riviera Maya.\n\nEntre nuestra diversa gama de servicios, usted puede elegir el que mejor se adapte a sus necesidades, ya sea un viaje de ida o de ida y vuelta. Simplemente póngase en contacto con nuestro centro de llamadas, donde nuestro amable personal estará encantado de ayudarle con cualquier información adicional que pueda necesitar."
+            },
+            "pricing": {
+                "title": "Servicios de transporte desde y hacia Playa del Carmen",
+                "subtitle": "Lista de nuestros servicios de transporte",
+                "cards": {
+                    "luxury": {
+                        "title": "Transportación de Lujo de Cancún a Playa del Carmen",
+                        "price": "$2610.00 MXN",
+                        "description": "Eleve su experiencia de transportación entre el Aeropuerto de Cancún y Playa del Carmen con nuestro servicio de transportación de lujo. Diseñado para 1 a 5 pasajeros, disfrute de la comodidad y el lujo de una Suburban o vehículo similar.",
+                        "imageAlt": "Transportación de Lujo",
+                        "imageTitle": "Transportación de Lujo"
+                    },
+                    "private": {
+                        "title": "Transportación Privada de Cancún a Playa del Carmen",
+                        "price": "$1259.82 MXN",
+                        "description": "Nuestro servicio de transportación del Aeropuerto de Cancún a Playa del Carmen es la opción más popular y económica en la Riviera Maya. Ofrecemos vehículos espaciosos, con aire acondicionado, seguros y limpios que acomodan grupos de 1 a 8 personas.",
+                        "imageAlt": "Transportación Privada",
+                        "imageTitle": "Transportación Privada"
+                    },
+                    "group": {
+                        "title": "Transportación de Cancún a Playa del Carmen para Grupos",
+                        "price": "$2610.00 MXN",
+                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos, con capacidad para hasta 16 pasajeros. Disfrute de un viaje cómodo y seguro en nuestros espaciosos vehículos.",
+                        "imageAlt": "Transportación para Grupos",
+                        "imageTitle": "Transportación para Grupos"
+                    }
+                }
+            },
+            "howToMove": {
+                "title": "¿Cómo trasladarse a Playa del Carmen desde Cancún?",
+                "content": "Para trasladarse a Playa del Carmen desde el Aeropuerto de Cancún, la opción más conveniente es reservar un transporte privado con antelación. Esto le garantiza que un conductor estará esperándole a su llegada, evitando largas filas y tiempos de espera innecesarios.\n\nPlaya del Carmen se encuentra aproximadamente a 55 minutos del aeropuerto. El viaje por la carretera federal es directo y ofrece vistas interesantes de la región. Nuestros conductores conocen bien la ruta y las condiciones del tráfico para asegurar un viaje eficiente.\n\nOfrecemos diferentes tipos de vehículos para adaptarse a sus necesidades, desde autos estándar para parejas o familias pequeñas, hasta vans espaciosas para grupos grandes. Todos nuestros vehículos cuentan con seguro y permisos federales para operar en el aeropuerto.\n\nAl reservar con nosotros, usted obtiene la tranquilidad de un precio fijo, sin cargos ocultos ni sorpresas. Además, nuestro servicio de atención al cliente está disponible para ayudarle con cualquier duda o cambio en su itinerario.\n\nNo deje su traslado al azar. Confíe en expertos locales para su transporte y comience sus vacaciones de la mejor manera posible."
+            }
         }
     },
     "booking": {
