@@ -7,32 +7,47 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <Layout>
   <Fragment slot="seo">
     <title>{title} | Cancun Airport Transportation</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
   </Fragment>
 
-  <section class="w-full">
+  <div class="w-full">
     <header class="bg-accent mx-auto w-full pt-12 pb-32">
       <div class="container">
         <h1
+          id="legal-title"
           class="text-left text-2xl font-bold text-white! md:text-center md:text-5xl"
         >
           {title}
         </h1>
-        <p class="mb-8 text-xl text-white">{description}</p>
+        <p class="mt-2 mb-8 text-2xl text-white">{description}</p>
       </div>
     </header>
 
     <article
+      aria-labelledby="legal-title"
       class="prose prose-slate prose-headings:font-title prose-a:text-accent hover:prose-a:text-accent-dark max-h-auto -m-24 mx-auto mb-24 block w-full max-w-4xl rounded-2xl border border-white bg-white pb-12 shadow-xl"
     >
       <div class="content container mx-auto max-w-3xl">
         <slot />
       </div>
     </article>
-  </section>
+  </div>
 </Layout>
