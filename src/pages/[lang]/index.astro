@@ -109,7 +109,10 @@ const destinations = [
 ---
 
 <Layout preloadImage={homeBannerImg.src}>
+  <!-- Page SEO -->
   <PageSEO currentPage="home" lang={lang} slot="seo" />
+
+  <!-- Hero -->
   <BannerImage
     src={homeBannerImg}
     alt={t("pages.home.bannerAlt")}
@@ -119,17 +122,17 @@ const destinations = [
       {t("pages.home.bannerTitle")}
     </h1>
   </BannerImage>
-  <section
-    id="booking-form"
-    class="container -mt-28 flex w-full justify-center"
-  >
-    <BookingForm
-      translations={t("booking")}
-      defaultFrom="cun"
-      defaultTo="merida"
-      client:idle
-    />
-  </section>
+
+  <!-- Form -->
+  <BookingForm
+    translations={t("booking")}
+    defaultFrom="cun"
+    defaultTo="merida"
+    client:idle
+    className="-mt-28"
+  />
+
+  <!-- Banner with image and text -->
   <TextCard
     id="safe-trip-booking"
     title={t("safeTripBooking.title")}
@@ -216,7 +219,10 @@ const destinations = [
     </ul>
   </section>
 
+  <!-- Company stats -->
   <BannerStats />
+
+  <!-- Clients testimonials -->
   <Testimonials />
 
   <!-- Destinations -->
