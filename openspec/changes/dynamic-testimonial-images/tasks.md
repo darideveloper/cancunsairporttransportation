@@ -1,0 +1,4 @@
+- [x] Modify `Testimonials.astro` to accept `images` prop (array of ImageMetadata) <!-- id: 0 -->
+- [x] Update `transportation-from-cancun-airport-to-playa-del-carmen.astro` to import and pass page-specific images <!-- id: 1 -->
+- [x] Verify images are correct on Playa del Carmen page <!-- id: 2 -->
+- [x] Verify fallback images still work on Home page <!-- id: 3 -->

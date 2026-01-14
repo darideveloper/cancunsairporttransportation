@@ -1,0 +1,6 @@
+- [x] Refactor `Testimonials.astro` to accept `page` prop <!-- id: 0 -->
+- [x] Update `en.json` with `pages.playaDelCarmen.testimonials` <!-- id: 1 -->
+- [x] Update `es.json` with `pages.playaDelCarmen.testimonials` <!-- id: 2 -->
+- [x] Update `transportation-from-cancun-airport-to-playa-del-carmen.astro` to pass `page="playaDelCarmen"` to `<Testimonials />` <!-- id: 3 -->
+- [x] Verify Testimonials rendering on Playa del Carmen page <!-- id: 4 -->
+- [x] Verify Testimonials rendering on Home page (regression test) <!-- id: 5 -->

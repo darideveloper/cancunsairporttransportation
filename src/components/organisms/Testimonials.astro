@@ -15,26 +15,41 @@ import client3Img from "../../assets/images/clients/3.webp";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+// Props
+// Props
+interface Props {
+  page?: string;
+  images?: ImageMetadata[];
+}
+const { page, images } = Astro.props;
+
+// Translation path
+const basePath = page
+  ? `pages.${page}.testimonials`
+  : "pages.home.testimonials";
+
 // Date
 const today = new Date();
 const month = String(today.getMonth() + 1).padStart(2, "0");
 const year = today.getFullYear();
 const currentDate = `${month}/${year}`;
 
+const currentImages = images || [client1Img, client2Img, client3Img];
+
 const testimonials = [
   {
     key: "item1",
-    image: client1Img,
+    image: currentImages[0],
     date: currentDate,
   },
   {
     key: "item2",
-    image: client2Img,
+    image: currentImages[1],
     date: currentDate,
   },
   {
     key: "item3",
-    image: client3Img,
+    image: currentImages[2],
     date: currentDate,
   },
 ];
@@ -50,12 +65,12 @@ const jsonLd = {
       "@type": "Review",
       author: {
         "@type": "Person",
-        name: t(`global.sections.testimonials.items.${item.key}.name`),
+        name: t(`${basePath}.items.${item.key}.name`),
       },
-      reviewBody: t(`global.sections.testimonials.items.${item.key}.text`),
+      reviewBody: t(`${basePath}.items.${item.key}.text`),
       reviewRating: {
         "@type": "Rating",
-        ratingValue: t(`global.sections.testimonials.items.${item.key}.stars`),
+        ratingValue: t(`${basePath}.items.${item.key}.stars`),
         bestRating: "5",
       },
       datePublished: item.date,
@@ -72,10 +87,10 @@ const jsonLd = {
   <div class="container px-4 md:px-8">
     <div class="mb-4 text-center">
       <H2 id="testimonials-title" class="">
-        {t("global.sections.testimonials.title")}
+        {t(`${basePath}.title`)}
       </H2>
       <p class="text-md mx-auto max-w-2xl text-gray-600">
-        {t("global.sections.testimonials.description")}
+        {t(`${basePath}.description`)}
       </p>
     </div>
 
@@ -83,16 +98,12 @@ const jsonLd = {
       {
         testimonials.map((item) => (
           <Testimonial
-            name={t(`global.sections.testimonials.items.${item.key}.name`)}
-            text={t(`global.sections.testimonials.items.${item.key}.text`)}
+            name={t(`${basePath}.items.${item.key}.name`)}
+            text={t(`${basePath}.items.${item.key}.text`)}
             image={item.image}
-            imageAlt={t(
-              `global.sections.testimonials.items.${item.key}.imageAlt`,
-            )}
-            imageTitle={t(
-              `global.sections.testimonials.items.${item.key}.imageTitle`,
-            )}
-            stars={t(`global.sections.testimonials.items.${item.key}.stars`)}
+            imageAlt={t(`${basePath}.items.${item.key}.imageAlt`)}
+            imageTitle={t(`${basePath}.items.${item.key}.imageTitle`)}
+            stars={t(`${basePath}.items.${item.key}.stars`)}
             date={item.date}
           />
         ))

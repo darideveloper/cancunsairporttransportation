@@ -423,33 +423,6 @@
                     }
                 }
             },
-            "testimonials": {
-                "title": "Comentarios de nuestros clientes",
-                "description": "Descubra por qué nuestros clientes eligen a Cancun Airport Transportation por Go",
-                "items": {
-                    "item1": {
-                        "name": "Juan P.",
-                        "text": "Contraté el servicio de transporte para ir de Cancún a Tulum y quedé impresionado con la puntualidad y profesionalismo del conductor. El vehículo estaba en excelentes condiciones y el viaje fue muy cómodo. Recomiendo este servicio a mis amigos y familiares.",
-                        "imageAlt": "Comentarios de nuestros clientes Juan P.",
-                        "imageTitle": "Comentarios de nuestros clientes Juan P.",
-                        "stars": "5"
-                    },
-                    "item2": {
-                        "name": "Ana G.",
-                        "text": "Nuestro traslado desde el aeropuerto de Cancún a nuestro hotel en Playa del Carmen fue perfecto. El conductor era amable y nos dio excelentes recomendaciones sobre lugares para visitar. Además, el precio era muy razonable. ¡Excelente servicio!",
-                        "imageAlt": "Comentarios de nuestros clientes Ana G.",
-                        "imageTitle": "Comentarios de nuestros clientes Ana G.",
-                        "stars": "5"
-                    },
-                    "item3": {
-                        "name": "Carlos R.",
-                        "text": "Utilicé este servicio para un viaje de un día a Chichen Itza y todo fue maravilloso. El conductor fue puntual, el vehículo era muy cómodo y limpio, y el viaje fue seguro. Nos encantó la experiencia y volveremos a utilizar este servicio en el futuro.",
-                        "imageAlt": "Comentarios de nuestros clientes Carlos R.",
-                        "imageTitle": "Comentarios de nuestros clientes Carlos R.",
-                        "stars": "5"
-                    }
-                }
-            },
             "whyChooseUs": {
                 "title": "Por qué utilizar Cancun Airport Transportation by Go Transfers",
                 "imageAlt": "Nuestros clientes felices",
@@ -618,10 +591,64 @@
                         "link": "/es"
                     }
                 }
+            },
+            "testimonials": {
+                "title": "Comentarios de nuestros clientes",
+                "description": "Descubra por qué nuestros clientes eligen a Cancun Airport Transportation por Go",
+                "items": {
+                    "item1": {
+                        "name": "Juan P.",
+                        "text": "Contraté el servicio de transporte para ir de Cancún a Tulum y quedé impresionado con la puntualidad y profesionalismo del conductor. El vehículo estaba en excelentes condiciones y el viaje fue muy cómodo. Recomiendo este servicio a mis amigos y familiares.",
+                        "imageAlt": "Comentarios de nuestros clientes Juan P.",
+                        "imageTitle": "Comentarios de nuestros clientes Juan P.",
+                        "stars": "5"
+                    },
+                    "item2": {
+                        "name": "Ana G.",
+                        "text": "Nuestro traslado desde el aeropuerto de Cancún a nuestro hotel en Playa del Carmen fue perfecto. El conductor era amable y nos dio excelentes recomendaciones sobre lugares para visitar. Además, el precio era muy razonable. ¡Excelente servicio!",
+                        "imageAlt": "Comentarios de nuestros clientes Ana G.",
+                        "imageTitle": "Comentarios de nuestros clientes Ana G.",
+                        "stars": "5"
+                    },
+                    "item3": {
+                        "name": "Carlos R.",
+                        "text": "Utilicé este servicio para un viaje de un día a Chichen Itza y todo fue maravilloso. El conductor fue puntual, el vehículo era muy cómodo y limpio, y el viaje fue seguro. Nos encantó la experiencia y volveremos a utilizar este servicio en el futuro.",
+                        "imageAlt": "Comentarios de nuestros clientes Carlos R.",
+                        "imageTitle": "Comentarios de nuestros clientes Carlos R.",
+                        "stars": "5"
+                    }
+                }
             }
         },
         "playaDelCarmen": {
             "title": "Transportación de Cancún a Playa del Carmen",
+            "testimonials": {
+                "title": "Testimonios de nuestros clientes en Playa del Carmen",
+                "description": "Vea lo que dicen nuestros clientes sobre nuestro servicio en Playa del Carmen",
+                "items": {
+                    "item1": {
+                        "name": "Sarah M.",
+                        "text": "El servicio a Playa del Carmen fue excepcional. El conductor nos estaba esperando eficientemente y la camioneta estaba limpia y fresca.",
+                        "imageAlt": "Testimonio de Sarah M.",
+                        "imageTitle": "Testimonio de Sarah M.",
+                        "stars": "5"
+                    },
+                    "item2": {
+                        "name": "Michael T.",
+                        "text": "Traslado muy confiable. Reservamos un viaje redondo a Playa del Carmen y ambas veces el servicio fue puntual y profesional.",
+                        "imageAlt": "Testimonio de Michael T.",
+                        "imageTitle": "Testimonio de Michael T.",
+                        "stars": "5"
+                    },
+                    "item3": {
+                        "name": "Jessica L.",
+                        "text": "¡Gran experiencia! El conductor nos ayudó con el equipaje y nos dio excelentes consejos para Playa del Carmen. Muy recomendable.",
+                        "imageAlt": "Testimonio de Jessica L.",
+                        "imageTitle": "Testimonio de Jessica L.",
+                        "stars": "5"
+                    }
+                }
+            },
             "safeTrip": {
                 "title": "Transportación desde Cancún a Playa del Carmen, segura y confiable",
                 "description": "Con más de 10 años brindando servicios de transportación de Cancún a Playa del Carmen de la manera más segura, rápida y confiable, Cancun Airport Transportation por Go, es la empresa más honesta y confiable.\n\nNuestra misión principal es ofrecer los mejores servicios de transporte. Aseguramos un viaje cómodo y seguro desde el aeropuerto a cualquier destino en la Riviera Maya.\n\nEntre nuestra diversa gama de servicios, usted puede elegir el que mejor se adapte a sus necesidades, ya sea un viaje de ida o de ida y vuelta. Simplemente póngase en contacto con nuestro centro de llamadas, donde nuestro amable personal estará encantado de ayudarle con cualquier información adicional que pueda necesitar."
