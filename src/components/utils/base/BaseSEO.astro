@@ -1,7 +1,6 @@
 ---
 interface Props {
   currentPage: string; // Current page
-  lang: string; // Language parameter
   jsonType: string; // Type of the page
   extraJson?: Record<string, any>; // Extra JSON data
   baseDescription?: string; // Description of the page (optional, to ignore i18n)
@@ -11,7 +10,6 @@ interface Props {
 }
 const {
   currentPage,
-  lang,
   jsonType,
   extraJson = {},
   baseDescription = "",
@@ -19,6 +17,8 @@ const {
   author = "Dari Dev's Team",
   useTagLine = true,
 } = Astro.props as Props;
+
+const { lang } = Astro.params as { lang: "en" | "es" };
 
 // Libs
 import { useTranslations } from "../../../lib/i18n/utils";
