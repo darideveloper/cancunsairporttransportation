@@ -508,7 +508,7 @@
                         "imageTitle": "Servicio privado en Suburban",
                         "price": "1512.00",
                         "ctaText": "Reservar",
-                        "description": "Eleve su experiencia de transporte con nuestro servicio de traslado de lujo, que le llevará desde y hacia el aeropuerto de Cancún a su hotel en Cancún o la Riviera Maya. Nuestro servicio de lujo acomoda de 1 a 5 pasajeros en una Suburban o un vehículo similar de alta gama.\n\n* Servicio privado\n* Incluye tasas de aeropuerto y seguro del viajero\n* Servicio 24H",
+                        "description": "Eleve su experiencia de transporte con nuestro servicio de traslado de lujo, que le llevará desde y hacia el aeropuerto de Cancún a su hotel en Cancún o la Riviera Maya. Nuestro servicio de lujo acomoda de 1 a 5 pasajeros en una Suburban o un vehículo similar de alta gama.",
                         "bestSeller": false
                     },
                     "private": {
@@ -517,7 +517,7 @@
                         "imageTitle": "Servicio privado en Minivan",
                         "price": "539.82",
                         "ctaText": "Reservar",
-                        "description": "Nuestro servicio de transporte y traslado privado es una de las opciones más populares y asequibles en Cancún y la Riviera Maya. Ofrecemos vehículos espaciosos, con aire acondicionado, seguros y limpios que pueden acomodar de 1 a 8 personas cómodamente.\n\n* Servicio privado\n* Incluye tasas de aeropuerto y seguro del viajero\n* Servicio 24H",
+                        "description": "Nuestro servicio de transporte y traslado privado es una de las opciones más populares y asequibles en Cancún y la Riviera Maya. Ofrecemos vehículos espaciosos, con aire acondicionado, seguros y limpios que pueden acomodar de 1 a 8 personas cómodamente.",
                         "bestSeller": true
                     },
                     "group": {
@@ -526,7 +526,7 @@
                         "imageTitle": "Servicio privado para Grupos",
                         "price": "1512.00",
                         "ctaText": "Reservar",
-                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros, asegurando que todos viajen cómodamente juntos.\n\n* Servicio privado\n* Incluye tasas de aeropuerto y seguro del viajero\n* Servicio 24H",
+                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros, asegurando que todos viajen cómodamente juntos.",
                         "bestSeller": false
                     }
                 }

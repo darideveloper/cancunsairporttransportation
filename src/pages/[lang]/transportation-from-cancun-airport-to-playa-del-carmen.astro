@@ -204,9 +204,13 @@ const destinations = [
                 <div
                   slot="content"
                   set:html={marked.parse(
-                    t(
-                      `global.sections.pricingServices.cards.${card.key}.description`,
-                    ),
+                    `${t(
+                      `pages.playaDelCarmen.pricing.cards.${card.key}.description`,
+                    )}\n\n* ${t(
+                      "global.ui.pricingCard.features.privateService",
+                    )}\n* ${t(
+                      "global.ui.pricingCard.features.taxesIncluded",
+                    )}\n* ${t("global.ui.pricingCard.features.service24h")}`,
                   )}
                   class="markdown"
                 />
