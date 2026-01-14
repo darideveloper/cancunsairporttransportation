@@ -46,17 +46,17 @@ const id = "transportation-services";
 
   <div class="mb-16 flex flex-col items-center justify-center text-center">
     <div class="flex max-w-3xl flex-col items-center justify-center gap-6">
-      <SectionHeading title={title} class="text-center">
+      <SectionHeading title={title} class="text-center font-bolder ">
         {
           description && (
-            <p class="mt-4 text-lg text-gray-600 md:text-xl text-left">{description}</p>
+            <p class="mt-4 text-lg text-gray-600 md:text-xl text-justify md:text-left !text-sm">{description}</p>
           )
         }
       </SectionHeading>
     </div>
   </div>
 
-  <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+  <div class="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-4 ">
     {
       services.map((item) => (
         <InfoIconCard
