@@ -19,7 +19,6 @@ Given I am on the Home page (or any page without specific testimonials defined)
 And no `page` prop is passed to the component
 Then I should see testimonials fetched from `pages.home.testimonials` (formerly global)
 
-## MODIFIED Requirements
 
 ### Requirement: Testimonials Component Logic
 The `Testimonials.astro` component logic MUST be updated to support dynamic paths.

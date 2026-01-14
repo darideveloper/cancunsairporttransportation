@@ -627,24 +627,24 @@
                 "description": "Vea lo que dicen nuestros clientes sobre nuestro servicio en Playa del Carmen",
                 "items": {
                     "item1": {
-                        "name": "Sarah M.",
-                        "text": "El servicio a Playa del Carmen fue excepcional. El conductor nos estaba esperando eficientemente y la camioneta estaba limpia y fresca.",
-                        "imageAlt": "Testimonio de Sarah M.",
-                        "imageTitle": "Testimonio de Sarah M.",
+                        "name": "John P.",
+                        "text": "¡Excelente servicio! Desde el momento en que llegué al aeropuerto de Cancún, todo fue muy fácil y rápido. El conductor fue muy amable y profesional.",
+                        "imageAlt": "Comentarios de nuestros clientes John P.",
+                        "imageTitle": "Comentarios de nuestros clientes John P.",
                         "stars": "5"
                     },
                     "item2": {
-                        "name": "Michael T.",
-                        "text": "Traslado muy confiable. Reservamos un viaje redondo a Playa del Carmen y ambas veces el servicio fue puntual y profesional.",
-                        "imageAlt": "Testimonio de Michael T.",
-                        "imageTitle": "Testimonio de Michael T.",
+                        "name": "Ana G.",
+                        "text": "Reservé el servicio de transporte con Go Transfers para mi viaje a Playa del Carmen y no podría estar más contenta.",
+                        "imageAlt": "Comentarios de nuestros clientes Ana G.",
+                        "imageTitle": "Comentarios de nuestros clientes Ana G.",
                         "stars": "5"
                     },
                     "item3": {
-                        "name": "Jessica L.",
-                        "text": "¡Gran experiencia! El conductor nos ayudó con el equipaje y nos dio excelentes consejos para Playa del Carmen. Muy recomendable.",
-                        "imageAlt": "Testimonio de Jessica L.",
-                        "imageTitle": "Testimonio de Jessica L.",
+                        "name": "Carlos R.",
+                        "text": "Mi experiencia con Go Transfers fue excelente. El proceso de reserva fue muy fácil y la comunicación fue clara y eficaz.",
+                        "imageAlt": "Comentarios de nuestros clientes Carlos R.",
+                        "imageTitle": "Comentarios de nuestros clientes Carlos R.",
                         "stars": "5"
                     }
                 }

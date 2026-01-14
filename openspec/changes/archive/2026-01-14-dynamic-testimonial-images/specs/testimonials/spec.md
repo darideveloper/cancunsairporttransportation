@@ -1,6 +1,7 @@
 # Testimonials Image Support
 
-## MODIFIED Requirements
+
+## ADDED Requirements
 
 ### Requirement: Dynamic Image Rendering
 The `Testimonials` component MUST support rendering dynamic images passed via props, enabling different pages to show different client photos.

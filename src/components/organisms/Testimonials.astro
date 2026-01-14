@@ -7,19 +7,16 @@ import H2 from "../atoms/H2.astro";
 import Testimonial from "../molecules/Testimonial.astro";
 
 // Images
-import client1Img from "../../assets/images/clients/1.webp";
-import client2Img from "../../assets/images/clients/2.webp";
-import client3Img from "../../assets/images/clients/3.webp";
+// Images are passed via props
 
 // Lang
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // Props
-// Props
 interface Props {
   page?: string;
-  images?: ImageMetadata[];
+  images: ImageMetadata[];
 }
 const { page, images } = Astro.props;
 
@@ -34,7 +31,7 @@ const month = String(today.getMonth() + 1).padStart(2, "0");
 const year = today.getFullYear();
 const currentDate = `${month}/${year}`;
 
-const currentImages = images || [client1Img, client2Img, client3Img];
+const currentImages = images;
 
 const testimonials = [
   {
