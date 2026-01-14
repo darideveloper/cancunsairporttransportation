@@ -26,13 +26,11 @@ import FaqItem from "../../components/molecules/FaqItem.astro";
 import { Image } from "astro:assets";
 import TransportationServices from "../../components/organisms/TransportationServices.astro";
 import Locations from "../../components/organisms/Locations.astro";
+import PricingSection from "../../components/organisms/PricingSection.astro";
 
 // Images
 import homeBannerImg from "../../assets/images/home-banner.webp";
 import safeTripBookingImg from "../../assets/images/destinations/playa-del-carmen/trip-advisor.webp";
-import luxuryVehicleImg from "../../assets/images/vehicles/luxury.webp";
-import privateVehicleImg from "../../assets/images/vehicles/standard.webp";
-import groupVehicleImg from "../../assets/images/vehicles/groups.webp";
 import tulumImg from "../../assets/images/destinations/tulum.webp";
 import playaImg from "../../assets/images/destinations/playa-del-carmen.webp";
 import cancunImg from "../../assets/images/destinations/cancun.webp";
@@ -47,10 +45,10 @@ import { FaImages } from "react-icons/fa";
 
 // Props
 interface Props {
-  lang: string;
+  lang: "en" | "es";
 }
 // Get language from params or props
-const { lang } = (Astro.params as any) || (Astro.props as any);
+const { lang } = Astro.params as { lang: "en" | "es" };
 
 // Tranlation texts
 const t = useTranslations(lang);
@@ -79,24 +77,6 @@ const faqs = faqKeys.map((key) => ({
   answer: t(`global.sections.faq.items.${key}.answer`),
 }));
 
-const pricingTransportation = [
-  {
-    key: "luxury",
-    image: luxuryVehicleImg,
-    bestSeller: false,
-  },
-  {
-    key: "private",
-    image: privateVehicleImg,
-    bestSeller: true,
-  },
-  {
-    key: "group",
-    image: groupVehicleImg,
-    bestSeller: false,
-  },
-];
-
 const destinations = [
   {
     id: "tulum",
@@ -115,7 +95,7 @@ const destinations = [
 
 <Layout preloadImage={homeBannerImg.src}>
   <!-- Page SEO -->
-  <PageSEO currentPage="home" lang={lang} slot="seo" />
+  <PageSEO currentPage="home" slot="seo" />
 
   <!-- Form -->
   <BookingForm
@@ -151,79 +131,7 @@ const destinations = [
   </TextCard>
 
   <!-- Pricing transportation -->
-  <section
-    id="pricing-transportation"
-    class="container mt-12"
-    aria-labelledby="pricing-transportation-heading"
-  >
-    <SectionHeading
-      id="pricing-transportation-heading"
-      title={t("pages.playaDelCarmen.pricing.title")}
-      class="text-center"
-    >
-      <p>
-        {t("pages.playaDelCarmen.pricing.subtitle")}
-      </p>
-    </SectionHeading>
-
-    <ul
-      class="mt-4 grid grid-cols-1 items-end justify-center gap-8 md:grid-cols-3 md:flex-row"
-      role="list"
-    >
-      {
-        pricingTransportation.map((card) => {
-          return (
-            <li>
-              <PricingCard
-                title={t(
-                  `pages.playaDelCarmen.pricing.cards.${card.key}.title`,
-                )}
-                price={t(
-                  `pages.playaDelCarmen.pricing.cards.${card.key}.price`,
-                )}
-                ctaLink="#booking-form"
-                ctaText={t("global.ui.pricingCard.bookNow")}
-                bestSeller={card.bestSeller}
-                currency={lang === "es" ? "mxn" : "usd"}
-                class="pt-4"
-              >
-                <Image
-                  slot="image"
-                  src={card.image}
-                  alt={t(
-                    `pages.playaDelCarmen.pricing.cards.${card.key}.imageAlt`,
-                  )}
-                  title={t(
-                    `pages.playaDelCarmen.pricing.cards.${card.key}.imageTitle`,
-                  )}
-                  widths={[200, 400, card.image.width]}
-                  sizes="(max-width: 768px) 200px, 400px"
-                  quality={60}
-                  format="avif"
-                  loading="lazy"
-                  decoding="async"
-                  class="mx-auto w-9/12"
-                />
-                <div
-                  slot="content"
-                  set:html={marked.parse(
-                    `${t(
-                      `pages.playaDelCarmen.pricing.cards.${card.key}.description`,
-                    )}\n\n* ${t(
-                      "global.ui.pricingCard.features.privateService",
-                    )}\n* ${t(
-                      "global.ui.pricingCard.features.taxesIncluded",
-                    )}\n* ${t("global.ui.pricingCard.features.service24h")}`,
-                  )}
-                  class="markdown"
-                />
-              </PricingCard>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </section>
+  <PricingSection page="playaDelCarmen" />
 
   <!-- How to move -->
   <div class="bg-accent/5 mt-12 py-12">
@@ -262,9 +170,9 @@ const destinations = [
     <SectionHeading
       id="destinations-heading"
       class="top text-center"
-      title={t("pages.home.destinations.title")}
+      title={t("pages.playaDelCarmen.destinations.title")}
     >
-      <p>{t("pages.home.destinations.text")}</p>
+      <p>{t("pages.playaDelCarmen.destinations.text")}</p>
     </SectionHeading>
 
     <ul
@@ -274,10 +182,18 @@ const destinations = [
         destinations.map((dest) => (
           <li>
             <PricingCard
-              title={t(`pages.home.destinations.cards.${dest.id}.title`)}
-              price={t(`pages.home.destinations.cards.${dest.id}.price`)}
-              ctaLink={t(`pages.home.destinations.cards.${dest.id}.link`)}
-              ctaText={t(`pages.home.destinations.cards.${dest.id}.ctaText`)}
+              title={t(
+                `pages.playaDelCarmen.destinations.cards.${dest.id}.title`,
+              )}
+              price={t(
+                `pages.playaDelCarmen.destinations.cards.${dest.id}.price`,
+              )}
+              ctaLink={t(
+                `pages.playaDelCarmen.destinations.cards.${dest.id}.link`,
+              )}
+              ctaText={t(
+                `pages.playaDelCarmen.destinations.cards.${dest.id}.ctaText`,
+              )}
               currency={lang === "es" ? "mxn" : "usd"}
               bestSeller={false}
               reverse={true}
@@ -298,7 +214,9 @@ const destinations = [
               <div
                 slot="content"
                 set:html={marked.parse(
-                  t(`pages.home.destinations.cards.${dest.id}.description`),
+                  t(
+                    `pages.playaDelCarmen.destinations.cards.${dest.id}.description`,
+                  ),
                 )}
                 class="markdown text-justify text-sm"
               />
@@ -320,11 +238,7 @@ const destinations = [
   </section>
 
   <!-- Banner CTA -->
-  <BannerCta
-    title={t("global.sections.airportTransportIntro.title")}
-    text={t("global.sections.airportTransportIntro.text")}
-    lang={lang}
-  />
+  <BannerCta page="playaDelCarmen" />
 
   <!-- Rates Table -->
   <section

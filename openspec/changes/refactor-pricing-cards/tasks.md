@@ -1,0 +1,5 @@
+- [x] Update `src/messages/en.json` and `src/messages/es.json` to move image/price data to global and remove from pages if redundant.
+- [x] Create/Update `src/components/organisms/PricingSection.astro` to implement the hybrid data source logic.
+- [x] Refactor `src/pages/[lang]/transportation-from-cancun-airport-to-playa-del-carmen.astro` to use the new component/logic.
+- [x] Refactor `src/pages/[lang]/index.astro` to use the new component/logic (if applicable/requested, usually good for consistency).
+- [x] Verify both pages render correctly with the correct data mix.

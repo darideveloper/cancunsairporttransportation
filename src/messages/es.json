@@ -467,40 +467,28 @@
                 "imageAlt": "Transporte Aeropuerto Cancun by Go Transfers",
                 "text": "¿Estás emocionado por comenzar tus vacaciones en Cancún? ¡No olvides algo importante! Así es, todavía tienes que reservar tu servicio de transporte privado y transporte en Cancún y la Riviera Maya.\n\n\nPero no te preocupes, ¡aún estás a tiempo! Puedes reservar tu servicio de transporte privado, transporte de lujo, o transporte de grupo, asegurándote de que todo lo que necesitas hacer es esperar tu vuelo y la recepción cálida y amable de nuestros conductores de Transporte del Aeropuerto de Cancún.\n\n\nCon más de 10 años de experiencia en la prestación de servicios de transporte, estamos dedicados a ofrecer un transporte seguro y confiable para todos nuestros clientes. Nuestros conductores se capacitan a una formación continua para asegurar que usted reciba un servicio de primera clase. No se demore, reserve ahora con Cancun Airport Transportation por Go."
             },
-            "airportTransportIntro": {
-                "title": "Transportación Aeropuerto Cancun",
-                "text": "Proporcionamos transportación privada desde y hacia tu hotel, condominio o casa en cualquier destino de Cancún o la Riviera Maya, ya sea de Ida o de Vuelta.\n\nComo nuestro nombre es Cancun Airport Transportation by Go, usted podría pensar que sólo hacemos traslados desde el Aeropuerto de Cancún."
-            },
             "pricingServices": {
-                "title": "Nuestros Servicios de Transporte",
-                "text": "Transporte privado",
                 "cards": {
                     "luxury": {
-                        "title": "Transporte de Lujo",
                         "imageAlt": "Servicio privado en Suburban",
                         "imageTitle": "Servicio privado en Suburban",
                         "price": "1512.00",
-                        "ctaText": "Reservar",
-                        "description": "Eleve su experiencia de transporte con nuestro servicio de traslado de lujo, que le llevará desde y hacia el aeropuerto de Cancún a su hotel en Cancún o la Riviera Maya. Nuestro servicio de lujo acomoda de 1 a 5 pasajeros en una Suburban o un vehículo similar de alta gama.",
-                        "bestSeller": false
+                        "bestSeller": false,
+                        "ctaText": "Reservar"
                     },
                     "private": {
-                        "title": "Transporte privado",
                         "imageAlt": "Servicio privado en Minivan",
                         "imageTitle": "Servicio privado en Minivan",
                         "price": "539.82",
-                        "ctaText": "Reservar",
-                        "description": "Nuestro servicio de transporte y traslado privado es una de las opciones más populares y asequibles en Cancún y la Riviera Maya. Ofrecemos vehículos espaciosos, con aire acondicionado, seguros y limpios que pueden acomodar de 1 a 8 personas cómodamente.",
-                        "bestSeller": true
+                        "bestSeller": true,
+                        "ctaText": "Reservar"
                     },
                     "group": {
-                        "title": "Transporte de grupos",
                         "imageAlt": "Servicio privado para Grupos",
                         "imageTitle": "Servicio privado para Grupos",
                         "price": "1512.00",
-                        "ctaText": "Reservar",
-                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros, asegurando que todos viajen cómodamente juntos.",
-                        "bestSeller": false
+                        "bestSeller": false,
+                        "ctaText": "Reservar"
                     }
                 }
             },
@@ -618,10 +606,63 @@
                         "stars": "5"
                     }
                 }
+            },
+            "pricing": {
+                "title": "Nuestros Servicios de Transporte",
+                "subtitle": "Transporte privado",
+                "cards": {
+                    "luxury": {
+                        "title": "Transporte de Lujo",
+                        "description": "Eleve su experiencia de transporte con nuestro servicio de traslado de lujo, que le llevará desde y hacia el aeropuerto de Cancún a su hotel en Cancún o la Riviera Maya. Nuestro servicio de lujo acomoda de 1 a 5 pasajeros en una Suburban o un vehículo similar de alta gama."
+                    },
+                    "private": {
+                        "title": "Transporte privado",
+                        "description": "Nuestro servicio de transporte y traslado privado es una de las opciones más populares y asequibles en Cancún y la Riviera Maya. Ofrecemos vehículos espaciosos, con aire acondicionado, seguros y limpios que pueden acomodar de 1 a 8 personas cómodamente."
+                    },
+                    "group": {
+                        "title": "Transporte de grupos",
+                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros, asegurando que todos viajen cómodamente juntos."
+                    }
+                }
+            },
+            "bannerCta": {
+                "title": "Transportación Aeropuerto Cancun",
+                "text": "Proporcionamos transportación privada desde y hacia tu hotel, condominio o casa en cualquier destino de Cancún o la Riviera Maya, ya sea de Ida o de Vuelta.\n\nComo nuestro nombre es Cancun Airport Transportation by Go, usted podría pensar que sólo hacemos traslados desde el Aeropuerto de Cancún."
             }
         },
         "playaDelCarmen": {
             "title": "Transportación de Cancún a Playa del Carmen",
+            "destinations": {
+                "title": "Traslados desde y hacia Playa del Carmen",
+                "text": "Ofrecemos el servicio de transporte más completo a cualquier hotel o destino en Playa del Carmen o viceversa, desde cualquier destino en la Riviera Maya o el Aeropuerto, brindamos un servicio completo listo para llevarlo a su hotel o atracción favorita en Playa del Carmen.",
+                "cards": {
+                    "tulum": {
+                        "title": "Transporte a Tulum",
+                        "price": "2322.00",
+                        "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a Akumal. El tiempo estimado de traslado de Cancún a Akumal es de 1 hora y 40 minutos.",
+                        "ctaText": "Reservar",
+                        "link": "/es/traslado-cancun-tulum"
+                    },
+                    "playa": {
+                        "title": "Transporte a Playa del Carmen",
+                        "price": "1259.82",
+                        "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a Playa del Carmen. El tiempo estimado de traslado desde Cancún es de 55 minutos.",
+                        "ctaText": "Reservar",
+                        "link": "/es/transportacion-cancun-a-playa-del-carmen"
+                    },
+                    "cancun": {
+                        "title": "Transporte a Cancún",
+                        "price": "539.82",
+                        "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a la Zona Hotelera. El tiempo estimado de traslado del Aeropuerto a la Zona Hotelera es de 30 minutos.",
+                        "ctaText": "Reservar",
+                        "link": "/es"
+                    }
+                }
+            },
+            "bannerCta": {
+                "title": "Transportación de Cancún a Playa del Carmen por Cancun Airport Transportation",
+                "text": "Playa del Carmen, un destino de playa de renombre mundial, se encuentra justo al sur de Cancún a lo largo de la impresionante costa del Caribe mexicano. Esta encantadora ciudad cuenta con una gran variedad de alojamientos, incluyendo hoteles boutique, lujosos resorts y acogedores Airbnbs, todo ello en medio de hermosas playas, exuberantes selvas, magníficos restaurantes y excelentes oportunidades de compras.\n\nTanto si se viaja en familia como en solitario, Playa del Carmen ofrece un sinfín de atracciones. Para un transporte sin problemas desde Cancún, opte por Cancun Airport Transportation por Go. Nuestros amables recepcionistas y conductores profesionales proporcionan un servicio excepcional y atención a su llegada.\n\nEl trayecto de Cancún a Playa del Carmen suele durar entre 60 y 90 minutos.\n\nYa sea que esté planeando una escapada romántica o unas vacaciones familiares, Playa del Carmen es un destino ideal. Si usted se está preguntando cómo llegar desde el aeropuerto de Cancún a Playa del Carmen, elija Cancun Airport Transportation para el servicio de transporte más fiable y económico. Viaje con facilidad y comodidad, sabiendo que está en buenas manos."
+            },
             "testimonials": {
                 "title": "Testimonios de nuestros clientes en Playa del Carmen",
                 "description": "Vea lo que dicen nuestros clientes sobre nuestro servicio en Playa del Carmen",
@@ -663,24 +704,15 @@
                 "cards": {
                     "luxury": {
                         "title": "Transportación de Lujo de Cancún a Playa del Carmen",
-                        "price": "2610.00",
-                        "description": "Eleve su experiencia de transportación entre el Aeropuerto de Cancún y Playa del Carmen con nuestro servicio de transportación de lujo. Diseñado para 1 a 5 pasajeros, disfrute de la comodidad y el lujo de una Suburban o vehículo similar.",
-                        "imageAlt": "Transportación de Lujo",
-                        "imageTitle": "Transportación de Lujo"
+                        "description": "Eleve su experiencia de transportación entre el Aeropuerto de Cancún y Playa del Carmen con nuestro servicio de transportación de lujo. Diseñado para 1 a 5 pasajeros, disfrute de la comodidad y el lujo de una Suburban o vehículo similar."
                     },
                     "private": {
                         "title": "Transportación Privada de Cancún a Playa del Carmen",
-                        "price": "1259.82",
-                        "description": "Nuestro servicio de transportación del Aeropuerto de Cancún a Playa del Carmen es la opción más popular y económica en la Riviera Maya. Ofrecemos vehículos espaciosos, con aire acondicionado, seguros y limpios que acomodan grupos de 1 a 8 personas.",
-                        "imageAlt": "Transportación Privada",
-                        "imageTitle": "Transportación Privada"
+                        "description": "Nuestro servicio de transportación del Aeropuerto de Cancún a Playa del Carmen es la opción más popular y económica en la Riviera Maya. Ofrecemos vehículos espaciosos, con aire acondicionado, seguros y limpios que acomodan grupos de 1 a 8 personas."
                     },
                     "group": {
                         "title": "Transportación de Cancún a Playa del Carmen para Grupos",
-                        "price": "2610.00",
-                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos, con capacidad para hasta 16 pasajeros. Disfrute de un viaje cómodo y seguro en nuestros espaciosos vehículos.",
-                        "imageAlt": "Transportación para Grupos",
-                        "imageTitle": "Transportación para Grupos"
+                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos, con capacidad para hasta 16 pasajeros. Disfrute de un viaje cómodo y seguro en nuestros espaciosos vehículos."
                     }
                 }
             },
