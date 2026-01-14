@@ -15,29 +15,45 @@ const t = useTranslations(lang as "en" | "es");
 
 const services = [
   {
-    title: t("transportationServices.items.airportToHotel.title"),
-    text: t("transportationServices.items.airportToHotel.text"),
+    title: t(
+      "global.sections.transportationServicesList.items.airportToHotel.title",
+    ),
+    text: t(
+      "global.sections.transportationServicesList.items.airportToHotel.text",
+    ),
     Icon: FaPlane,
   },
   {
-    title: t("transportationServices.items.hotelToHotel.title"),
-    text: t("transportationServices.items.hotelToHotel.text"),
+    title: t(
+      "global.sections.transportationServicesList.items.hotelToHotel.title",
+    ),
+    text: t(
+      "global.sections.transportationServicesList.items.hotelToHotel.text",
+    ),
     Icon: FaBed,
   },
   {
-    title: t("transportationServices.items.hotelToRestaurant.title"),
-    text: t("transportationServices.items.hotelToRestaurant.text"),
+    title: t(
+      "global.sections.transportationServicesList.items.hotelToRestaurant.title",
+    ),
+    text: t(
+      "global.sections.transportationServicesList.items.hotelToRestaurant.text",
+    ),
     Icon: FaUtensils,
   },
   {
-    title: t("transportationServices.items.hotelToPark.title"),
-    text: t("transportationServices.items.hotelToPark.text"),
+    title: t(
+      "global.sections.transportationServicesList.items.hotelToPark.title",
+    ),
+    text: t(
+      "global.sections.transportationServicesList.items.hotelToPark.text",
+    ),
     Icon: FaTree,
   },
 ];
 
-const title = t("transportationServices.title");
-const description = t("transportationServices.description");
+const title = t("global.sections.transportationServicesList.title");
+const description = t("global.sections.transportationServicesList.description");
 const id = "transportation-services";
 ---
 

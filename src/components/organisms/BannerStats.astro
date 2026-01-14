@@ -1,75 +1,72 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 
 // Components
-import { Image } from 'astro:assets'
-import H2 from '../atoms/H2.astro'
+import { Image } from "astro:assets";
+import H2 from "../atoms/H2.astro";
 
 // Images
-import happyClientsImg from '../../assets/images/icons/happy-clients.svg'
-import officeImg from '../../assets/images/icons/office.svg'
-import mapPointImg from '../../assets/images/icons/map-point.svg'
+import happyClientsImg from "../../assets/images/icons/happy-clients.svg";
+import officeImg from "../../assets/images/icons/office.svg";
+import mapPointImg from "../../assets/images/icons/map-point.svg";
 
 // Lang
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const stats = [
   {
-    key: 'clients',
+    key: "clients",
     image: happyClientsImg,
-    counter: '21k+',
+    counter: "21k+",
   },
   {
-    key: 'transportation',
+    key: "transportation",
     image: officeImg,
-    counter: '21,517',
+    counter: "21,517",
   },
   {
-    key: 'destinations',
+    key: "destinations",
     image: mapPointImg,
-    counter: '10,622',
+    counter: "10,622",
   },
-]
+];
 ---
 
 <section
-  id='banner-stats'
-  aria-labelledby='banner-stats-title'
-  class='bg-accent/10 w-full'
+  id="banner-stats"
+  aria-labelledby="banner-stats-title"
+  class="bg-accent/10 w-full"
 >
   <div
-    class='container mt-12 flex flex-col gap-6 px-4 py-3 md:flex-row md:px-8 md:py-6'
+    class="container mt-12 flex flex-col gap-6 px-4 py-3 md:flex-row md:px-8 md:py-6"
   >
-    <div class='flex flex-col items-center justify-center md:flex-col'>
-      <H2
-        id='banner-stats-title'
-        class='w-full text-left'
-      >
-        {t('baseSections.bannerStats.title')}
+    <div class="flex flex-col gap-4 md:w-1/2">
+      <H2 id="banner-stats-title" class="text-left">
+        {t("global.sections.bannerStats.title")}
       </H2>
-      <p class='text-sm'>
-        {t('baseSections.bannerStats.description')}
+      <p class="text-gray-600">
+        {t("global.sections.bannerStats.description")}
       </p>
     </div>
 
-    <div class='my-4 flex flex-col gap-4 sm:flex-row'>
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 md:w-1/2 md:grid-cols-3">
       {
         stats.map((stat) => (
-          <div class='flex w-full flex-col items-center justify-center gap-1 bg-white p-2 text-center md:w-32 lg:w-42'>
+          <div class="flex flex-col items-center justify-center gap-2 text-center">
             <Image
               src={stat.image}
-              alt={t(`baseSections.bannerStats.stats.${stat.key}.imageAlt`)}
-              title={t(`baseSections.bannerStats.stats.${stat.key}.imageTitle`)}
-              class=''
-              width={40}
-              height={40}
+              alt={t(`global.sections.bannerStats.stats.${stat.key}.imageAlt`)}
+              title={t(
+                `global.sections.bannerStats.stats.${stat.key}.imageTitle`,
+              )}
+              class="h-12 w-12"
             />
-            <h3 class='my-0 py-0 text-xl font-bold'>{stat.counter}</h3>
-            <p class='my-0 py-0 text-sm'>
-              {t(`baseSections.bannerStats.stats.${stat.key}.text`)}
-            </p>
+            <span class="text-3xl font-bold text-blue-900">{stat.counter}</span>
+            <span class="text-sm text-gray-600">
+              {t(`global.sections.bannerStats.stats.${stat.key}.text`)}
+            </span>
           </div>
         ))
       }

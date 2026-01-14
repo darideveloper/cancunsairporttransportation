@@ -1,58 +1,58 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 
 // Data
-import { SOCIAL_LINKS } from '../../lib/constants'
+import { SOCIAL_LINKS } from "../../lib/constants";
 
 // Components
-import LangLink from '../atoms/LangLink.astro'
-import ContactItem from '../atoms/ContactItem.astro'
-import SocialIcon from '../atoms/SocialIcon.astro'
+import LangLink from "../atoms/LangLink.astro";
+import ContactItem from "../atoms/ContactItem.astro";
+import SocialIcon from "../atoms/SocialIcon.astro";
 
 // Icons
-import { FaFacebook, FaInstagram } from 'react-icons/fa6'
+import { FaFacebook, FaInstagram } from "react-icons/fa6";
 
 // Lang
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section
-  aria-label={t('globalSections.topbar.utilityNavLabel')}
-  class='w-full bg-gray-light px-4 py-4 sm:px-6 text-sm'
+  aria-label={t("global.topbar.utilityNavLabel")}
+  class="bg-gray-light w-full px-4 py-4 text-sm sm:px-6"
 >
-  <div class='mx-auto flex flex-row justify-between items-center gap-2'>
+  <div class="mx-auto flex flex-row items-center justify-between gap-2">
     <!-- Left: Lang Selector -->
-    <div class='flex items-center'>
+    <div class="flex items-center">
       <LangLink />
     </div>
 
     <!-- Center: Contact Info -->
     <div
-      class='hidden gap-0 md:gap-4 sm:flex flex-col md:flex-row items-end md:items-center'
+      class="hidden flex-col items-end gap-0 sm:flex md:flex-row md:items-center md:gap-4"
     >
       <ContactItem
-        label={t('globalSections.topbar.mexicoPhone')}
-        phone='+52 (998) 387-0435'
+        label={t("global.topbar.mexicoPhone")}
+        phone="+52 (998) 387-0435"
       />
       <ContactItem
-        label={t('globalSections.topbar.usaCanadaPhone')}
-        phone='+1 (929) 999-1258'
+        label={t("global.topbar.usaCanadaPhone")}
+        phone="+1 (929) 999-1258"
       />
     </div>
 
     <!-- Right: Socials -->
-    <div class='items-center gap-3 hidden lg:flex'>
+    <div class="hidden items-center gap-3 lg:flex">
       <SocialIcon
         Icon={FaFacebook}
         href={SOCIAL_LINKS.facebook}
-        label={t('globalSections.topbar.facebookAriaLabel')}
+        label={t("global.topbar.facebookAriaLabel")}
       />
       <SocialIcon
         Icon={FaInstagram}
         href={SOCIAL_LINKS.instagram}
-        label={t('globalSections.topbar.instagramAriaLabel')}
+        label={t("global.topbar.instagramAriaLabel")}
       />
     </div>
   </div>

@@ -50,18 +50,18 @@ const jsonLd = {
       "@type": "Review",
       author: {
         "@type": "Person",
-        name: t(`baseSections.testimonials.items.${item.key}.name`),
+        name: t(`global.sections.testimonials.items.${item.key}.name`),
       },
-      reviewBody: t(`baseSections.testimonials.items.${item.key}.text`),
+      reviewBody: t(`global.sections.testimonials.items.${item.key}.text`),
       reviewRating: {
         "@type": "Rating",
-        ratingValue: t(`baseSections.testimonials.items.${item.key}.stars`),
+        ratingValue: t(`global.sections.testimonials.items.${item.key}.stars`),
         bestRating: "5",
       },
       datePublished: item.date,
       publisher: {
         "@type": "Organization",
-        name: t("branding.businessName"),
+        name: t("global.branding.businessName"),
       },
     },
   })),
@@ -72,10 +72,10 @@ const jsonLd = {
   <div class="container px-4 md:px-8">
     <div class="mb-4 text-center">
       <H2 id="testimonials-title" class="">
-        {t("baseSections.testimonials.title")}
+        {t("global.sections.testimonials.title")}
       </H2>
       <p class="text-md mx-auto max-w-2xl text-gray-600">
-        {t("baseSections.testimonials.description")}
+        {t("global.sections.testimonials.description")}
       </p>
     </div>
 
@@ -83,14 +83,16 @@ const jsonLd = {
       {
         testimonials.map((item) => (
           <Testimonial
-            name={t(`baseSections.testimonials.items.${item.key}.name`)}
-            text={t(`baseSections.testimonials.items.${item.key}.text`)}
+            name={t(`global.sections.testimonials.items.${item.key}.name`)}
+            text={t(`global.sections.testimonials.items.${item.key}.text`)}
             image={item.image}
-            imageAlt={t(`baseSections.testimonials.items.${item.key}.imageAlt`)}
-            imageTitle={t(
-              `baseSections.testimonials.items.${item.key}.imageTitle`,
+            imageAlt={t(
+              `global.sections.testimonials.items.${item.key}.imageAlt`,
             )}
-            stars={t(`baseSections.testimonials.items.${item.key}.stars`)}
+            imageTitle={t(
+              `global.sections.testimonials.items.${item.key}.imageTitle`,
+            )}
+            stars={t(`global.sections.testimonials.items.${item.key}.stars`)}
             date={item.date}
           />
         ))

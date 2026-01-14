@@ -1,6 +1,6 @@
 # Content
 
-## MODIFIED Requirements
+## ADDED Requirements
 
 ### Requirement: Playa del Carmen Page Content
 

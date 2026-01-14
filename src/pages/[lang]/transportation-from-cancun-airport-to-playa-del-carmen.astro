@@ -72,8 +72,8 @@ const faqKeys = [
   "flightDelay",
 ];
 const faqs = faqKeys.map((key) => ({
-  question: t(`baseSections.faqSection.items.${key}.question`),
-  answer: t(`baseSections.faqSection.items.${key}.answer`),
+  question: t(`global.sections.faq.items.${key}.question`),
+  answer: t(`global.sections.faq.items.${key}.answer`),
 }));
 
 const pricingTransportation = [
@@ -116,7 +116,7 @@ const destinations = [
 
   <!-- Form -->
   <BookingForm
-    translations={t("booking")}
+    translations={t("global.booking")}
     defaultFrom="cun"
     defaultTo="merida"
     client:idle
@@ -169,14 +169,6 @@ const destinations = [
     >
       {
         pricingTransportation.map((card) => {
-          const featuresList = `
-* ${t("shared.pricingCard.features.privateService")}
-* ${t("shared.pricingCard.features.taxesIncluded")}
-* ${t("shared.pricingCard.features.service24h")}
-`;
-          const description =
-            t(`pages.playaDelCarmen.pricing.cards.${card.key}.description`) +
-            featuresList;
           return (
             <li>
               <PricingCard
@@ -187,14 +179,10 @@ const destinations = [
                   `pages.playaDelCarmen.pricing.cards.${card.key}.price`,
                 )}
                 ctaLink="#booking-form"
-                ctaText={t("shared.pricingCard.bookNow")}
+                ctaText={t("global.ui.pricingCard.bookNow")}
                 bestSeller={card.bestSeller}
                 currency={lang === "es" ? "mxn" : "usd"}
                 class="pt-4"
-                labels={{
-                  bestSeller: t("shared.pricingCard.mostPopular"),
-                  priceFrom: t("shared.pricingCard.priceFrom"),
-                }}
               >
                 <Image
                   slot="image"
@@ -215,7 +203,11 @@ const destinations = [
                 />
                 <div
                   slot="content"
-                  set:html={marked.parse(description)}
+                  set:html={marked.parse(
+                    t(
+                      `global.sections.pricingServices.cards.${card.key}.description`,
+                    ),
+                  )}
                   class="markdown"
                 />
               </PricingCard>
@@ -319,8 +311,8 @@ const destinations = [
 
   <!-- Banner CTA -->
   <BannerCta
-    title={t("cancunAirportTransportation.title")}
-    text={t("cancunAirportTransportation.text")}
+    title={t("global.sections.airportTransportIntro.title")}
+    text={t("global.sections.airportTransportIntro.text")}
     lang={lang}
   />
 
@@ -332,10 +324,10 @@ const destinations = [
   >
     <SectionHeading
       id="rates-table-heading"
-      title={t("ratesTable.title")}
+      title={t("global.ratesTable.title")}
       class="mb-8 text-center"
     >
-      <p>{t("ratesTable.description")}</p>
+      <p>{t("global.ratesTable.description")}</p>
     </SectionHeading>
     <RatesTable />
   </section>
@@ -372,10 +364,10 @@ const destinations = [
             <FaImages className="text-3xl" />
             <div class="flex flex-col leading-tight">
               <span class="text-lg font-bold"
-                >{t("reliableService.cta.label")}</span
+                >{t("global.sections.reliableService.cta.label")}</span
               >
               <span class="text-xs font-light"
-                >{t("reliableService.cta.sublabel")}</span
+                >{t("global.sections.reliableService.cta.sublabel")}</span
               >
             </div>
           </div>
@@ -392,10 +384,10 @@ const destinations = [
   >
     <SectionHeading
       id="faq-section-heading"
-      title={t("baseSections.faqSection.title")}
+      title={t("global.sections.faq.title")}
       class="mb-8 text-center"
     >
-      <p>{t("baseSections.faqSection.description")}</p>
+      <p>{t("global.sections.faq.description")}</p>
     </SectionHeading>
 
     <div class="flex flex-col gap-4">

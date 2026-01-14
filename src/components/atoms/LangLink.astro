@@ -1,30 +1,30 @@
 ---
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
-import { languages } from '../../lib/i18n/ui'
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { languages } from "../../lib/i18n/ui";
 
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
-const isSpanish = lang === 'es'
-const targetLang = isSpanish ? 'en' : 'es'
-const label = languages[targetLang]
-const currentRoute = Astro.url.pathname
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const isSpanish = lang === "es";
+const targetLang = isSpanish ? "en" : "es";
+const label = languages[targetLang];
+const currentRoute = Astro.url.pathname;
 
 // Simple route switcher for /[lang]/...
-const segments = currentRoute.split('/').filter(Boolean)
-if (segments.length > 0 && (segments[0] === 'en' || segments[0] === 'es')) {
-  segments[0] = targetLang
+const segments = currentRoute.split("/").filter(Boolean);
+if (segments.length > 0 && (segments[0] === "en" || segments[0] === "es")) {
+  segments[0] = targetLang;
 } else {
-  segments.unshift(targetLang)
+  segments.unshift(targetLang);
 }
-const targetUrl = `/${segments.join('/')}/`
+const targetUrl = `/${segments.join("/")}/`;
 ---
 
-<div class='flex items-center gap-1 text-inherit'>
-  <span>{t('globalSections.topbar.languageLabel')}:</span>
+<div class="flex items-center gap-1 text-inherit">
+  <span>{t("global.topbar.languageLabel")}:</span>
   <a
     href={targetUrl}
-    class='hover:text-brand-primary transition-colors font-medium border-b border-transparent hover:border-brand-primary text-accent-dark'
-    title={`${t('globalSections.topbar.switchLanguage')} ${label}`}
+    class="hover:text-brand-primary hover:border-brand-primary text-accent-dark border-b border-transparent font-medium transition-colors"
+    title={`${t("global.topbar.switchLanguage")} ${label}`}
   >
     {label}
   </a>

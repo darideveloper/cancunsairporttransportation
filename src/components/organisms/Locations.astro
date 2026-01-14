@@ -9,25 +9,27 @@ const t = useTranslations(lang as "en" | "es");
 
 const contactItems = [
   {
-    title: t("locations.contacts.usaCanada.label"),
-    text: t("locations.contacts.usaCanada.value"),
+    title: t("global.locations.contacts.usaCanada.label"),
+    text: t("global.locations.contacts.usaCanada.value"),
     Icon: FaMapMarkerAlt,
-    href: `tel:${t("locations.contacts.usaCanada.value").replace(/[^0-9+]/g, "")}`,
+    href: `tel:${t("global.locations.contacts.usaCanada.value").replace(/[^0-9+]/g, "")}`,
   },
   {
-    title: t("locations.contacts.mexicoRest.label"),
-    text: t("locations.contacts.mexicoRest.value"),
+    title: t("global.locations.contacts.mexicoRest.label"),
+    text: t("global.locations.contacts.mexicoRest.value"),
     Icon: FaMapMarkerAlt,
-    href: `tel:${t("locations.contacts.mexicoRest.value").replace(/[^0-9+]/g, "")}`,
+    href: `tel:${t("global.locations.contacts.mexicoRest.value").replace(/[^0-9+]/g, "")}`,
   },
   {
-    title: t("locations.contacts.address.label"),
-    text: t("locations.contacts.address.value"),
+    title: t("global.locations.contacts.address.label"),
+    text: t("global.locations.contacts.address.value"),
     Icon: FaMapMarkerAlt,
   },
 ];
 
-const transportationTimes = t("locations.transportationTimes.items") as Array<{
+const transportationTimes = t(
+  "global.locations.transportationTimes.items",
+) as Array<{
   id: string;
   title: string;
   text: string;
@@ -38,10 +40,10 @@ const transportationTimes = t("locations.transportationTimes.items") as Array<{
 <section
   class="container mx-auto px-4 py-16"
   id="locations"
-  aria-label={t("locations.title")}
+  aria-label={t("global.locations.title")}
 >
   <div class="mb-12 text-center">
-    <SectionHeading title={t("locations.title")} />
+    <SectionHeading title={t("global.locations.title")} />
   </div>
 
   <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -68,12 +70,12 @@ const transportationTimes = t("locations.transportationTimes.items") as Array<{
         style="border:0;"
         allowfullscreen=""
         loading="lazy"
-        title={t("locations.title")}
-        aria-label={t("locations.title")}></iframe>
+        title={t("global.locations.title")}
+        aria-label={t("global.locations.title")}></iframe>
     </div>
 
     <SectionHeading
-      title={t("locations.transportationTimes.title")}
+      title={t("global.locations.transportationTimes.title")}
       class="mt-2 text-center"
     />
     <div class="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-4">
