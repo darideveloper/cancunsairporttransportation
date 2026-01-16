@@ -2,7 +2,7 @@
 import { useTranslations } from "../../lib/i18n/utils";
 import SectionHeading from "../molecules/SectionHeading.astro";
 import InfoIconCard from "../molecules/InfoIconCard.astro";
-import { FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const { lang } = Astro.params as { lang: string };
 const t = useTranslations(lang as "en" | "es");
@@ -54,6 +54,7 @@ const transportationTimes = t(
           text={item.text}
           TitleIcon={item.Icon}
           href={item.href}
+          class="bg-gray-light"
         />
       ))
     }
@@ -85,7 +86,8 @@ const transportationTimes = t(
             title={item.title}
             text={item.text}
             bottomText={item.bottomText}
-            BottomIcon={FaClock}
+            BottomIcon={FaMapMarkerAlt}
+            class="bg-white"
           />
         ))
       }
