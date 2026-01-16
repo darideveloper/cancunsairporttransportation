@@ -150,6 +150,13 @@ const destinations = [
   <!-- Clients testimonials -->
   <Testimonials page={page} images={[client1Img, client2Img, client3Img]} />
 
+  <!-- Client Gallery -->
+  <ClientGallery
+    title={t("global.sections.clientGallery.title")}
+    subtitle={t("global.sections.clientGallery.subtitle")}
+    images={[client1Img, client2Img, client3Img, client4Img]}
+  />
+
   <!-- Destinations -->
   <section
     class="destinations-elements container mt-12"
@@ -287,13 +294,6 @@ const destinations = [
       </div>
     </TextCard>
   </div>
-
-  <!-- Client Gallery -->
-  <ClientGallery
-    title={t("global.sections.clientGallery.title")}
-    subtitle={t("global.sections.clientGallery.subtitle")}
-    images={[client1Img, client2Img, client3Img, client4Img]}
-  />
 
   <!-- FAQs -->
   <FaqSection page={page} />
