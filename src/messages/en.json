@@ -470,24 +470,18 @@
                 }
             },
             "transportationServicesList": {
-                "title": "Cancun Airport Transportation Services",
-                "description": "At Cancun Airport Transportation by Go Transfers, we offer modern and comfortable vehicles to ensure smooth and reliable transfers from Cancun Airport. You can easily book any of our services through our website.\n\nIn addition to airport transfers, we provide comprehensive transportation solutions to take you anywhere in Cancun and the Riviera Maya. Our wide range of services is designed to meet all your travel needs.",
                 "items": {
                     "airportToHotel": {
-                        "title": "Airport to Hotel",
-                        "text": "Visiting the Caribbean and need transportation to your hotel or back to the airport? This service is perfect for you."
+                        "title": "Airport to Hotel"
                     },
                     "hotelToHotel": {
-                        "title": "Hotel to Hotel",
-                        "text": "Need to switch hotels during your stay in Cancun? We've got you covered with our seamless hotel-to-hotel transportation."
+                        "title": "Hotel to Hotel"
                     },
                     "hotelToRestaurant": {
-                        "title": "Hotel to Restaurant",
-                        "text": "When you're on vacation, the last thing you want to worry about is driving, especially if you plan to enjoy a few drinks. Let us take you to your restaurant and back to your hotel safely."
+                        "title": "Hotel to Restaurant"
                     },
                     "hotelToPark": {
-                        "title": "Hotel to Park",
-                        "text": "Planning to visit Xcaret, Xel-Ha, Xoximilco, or the Mayan Museum in Cancun? Cancun Transfer Services can take you to any of these amazing parks."
+                        "title": "Hotel to Park"
                     }
                 }
             }
@@ -597,6 +591,24 @@
             "bannerCta": {
                 "title": "Cancun Airport Transportation",
                 "text": "We will provide private transportation to and from your Hotel, Condo or house in any destination in Cancun or the Riviera Maya, either One Way or Round Trip.\n\nAs our name is Cancun Airport Transportation, you might think we only do transfers from the Cancun Airport."
+            },
+            "transportationServices": {
+                "title": "Cancun Airport Transportation Services",
+                "description": "At Cancun Airport Transportation by Go Transfers, we offer modern and comfortable vehicles to ensure smooth and reliable transfers from Cancun Airport. You can easily book any of our services through our website.\n\nIn addition to airport transfers, we provide comprehensive transportation solutions to take you anywhere in Cancun and the Riviera Maya. Our wide range of services is designed to meet all your travel needs.",
+                "items": {
+                    "airportToHotel": {
+                        "text": "Visiting the Caribbean and need transportation to your hotel or back to the airport? This service is perfect for you."
+                    },
+                    "hotelToHotel": {
+                        "text": "Need to switch hotels during your stay in Cancun? We've got you covered with our seamless hotel-to-hotel transportation."
+                    },
+                    "hotelToRestaurant": {
+                        "text": "When you're on vacation, the last thing you want to worry about is driving, especially if you plan to enjoy a few drinks. Let us take you to your restaurant and back to your hotel safely."
+                    },
+                    "hotelToPark": {
+                        "text": "Planning to visit Xcaret, Xel-Ha, Xoximilco, or the Mayan Museum in Cancun? Cancun Transfer Services can take you to any of these amazing parks."
+                    }
+                }
             },
             "faq": {
                 "title": "Cancun Airport Transportation Faqs",
@@ -736,6 +748,24 @@
                     "travelTime": {
                         "question": "How long is the travel time to Playa del Carmen?",
                         "answer": "The travel time from Cancun Airport to Playa del Carmen is approximately 55 minutes, depending on traffic."
+                    }
+                }
+            },
+            "transportationServices": {
+                "title": "Transportation Services in Playa del Carmen",
+                "description": "We offer the most complete and efficient transportation services in Playa del Carmen. Whether you need to go to the airport, your hotel, or any attraction, we are here to help you.",
+                "items": {
+                    "airportToHotel": {
+                        "text": "Need a transfer to or from the airport in Playa del Carmen? Our reliable service ensures you arrive on time and comfortably."
+                    },
+                    "hotelToHotel": {
+                        "text": "Move between hotels in the Playa del Carmen area with ease. We handle the logistics so you can enjoy your stay."
+                    },
+                    "hotelToRestaurant": {
+                        "text": "Going out for dinner in Playa del Carmen? Forget about parking or driving; we'll take you to the best restaurants and back safely."
+                    },
+                    "hotelToPark": {
+                        "text": "Visiting the theme parks near Playa del Carmen like Xcaret or Xenses? We provide direct transportation for you and your group."
                     }
                 }
             }
