@@ -43,6 +43,9 @@ import clientAppEsImg from "../../assets/images/clients/client-app-es.webp";
 // Icons
 import { FaImages } from "react-icons/fa";
 
+// Page data
+const page = "playaDelCarmen";
+
 // Props
 interface Props {
   lang: "en" | "es";
@@ -117,7 +120,7 @@ const destinations = [
   </TextCard>
 
   <!-- Pricing transportation -->
-  <PricingSection page="playaDelCarmen" />
+  <PricingSection page={page} />
 
   <!-- How to move -->
   <div class="bg-accent/5 mt-12 py-12">
@@ -143,10 +146,7 @@ const destinations = [
   </div>
 
   <!-- Clients testimonials -->
-  <Testimonials
-    page="playaDelCarmen"
-    images={[client1Img, client2Img, client3Img]}
-  />
+  <Testimonials page={page} images={[client1Img, client2Img, client3Img]} />
 
   <!-- Destinations -->
   <section
@@ -224,7 +224,7 @@ const destinations = [
   </section>
 
   <!-- Banner CTA -->
-  <BannerCta page="playaDelCarmen" imageClass="sm:w-1/2 md:w-4/12 h-auto" />
+  <BannerCta page={page} imageClass="sm:w-1/2 md:w-4/12 h-auto" />
 
   <!-- Rates Table -->
   <section
@@ -287,8 +287,8 @@ const destinations = [
   </div>
 
   <!-- FAQs -->
-  <FaqSection page="playaDelCarmen" />
+  <FaqSection page={page} />
 
-  <TransportationServices page="playaDelCarmen" />
+  <TransportationServices page={page} />
   <Locations />
 </Layout>

@@ -43,6 +43,9 @@ import clientAppEsImg from "../../assets/images/clients/client-app-es.webp";
 // Icons
 import { FaImages } from "react-icons/fa";
 
+// Page data
+const page = "home";
+
 // Props
 interface Props {
   lang: "en" | "es";
@@ -81,7 +84,7 @@ const destinations = [
 
 <Layout preloadImage={homeBannerImg.src}>
   <!-- Page SEO -->
-  <PageSEO currentPage="home" slot="seo" />
+  <PageSEO currentPage={page} slot="seo" />
 
   <!-- Hero -->
   <BannerImage
@@ -125,10 +128,10 @@ const destinations = [
   </TextCard>
 
   <!-- Banner CTA -->
-  <BannerCta page="home" imageClass="sm:w-1/2 h-[115%] md:w-auto md:h-[120%]" />
+  <BannerCta page={page} imageClass="sm:w-1/2 h-[115%] md:w-auto md:h-[120%]" />
 
   <!-- Pricing transportation -->
-  <PricingSection page="home" />
+  <PricingSection page={page} />
 
   <!-- Company stats -->
   <BannerStats />
@@ -286,8 +289,8 @@ const destinations = [
   </div>
 
   <!-- FAQs -->
-  <FaqSection page="home" />
+  <FaqSection page={page} />
 
-  <TransportationServices page="home" />
+  <TransportationServices page={page} />
   <Locations />
 </Layout>
