@@ -441,21 +441,18 @@
                     "luxury": {
                         "imageAlt": "Private service in Suburban",
                         "imageTitle": "Private service in Suburban",
-                        "price": "84.00",
                         "bestSeller": false,
                         "ctaText": "Book now"
                     },
                     "private": {
                         "imageAlt": "Private service in a Minivan",
                         "imageTitle": "Private service in a Minivan",
-                        "price": "29.99",
                         "bestSeller": true,
                         "ctaText": "Book now"
                     },
                     "group": {
                         "imageAlt": "Private service for Groups",
                         "imageTitle": "Private service for Groups",
-                        "price": "84.00",
                         "bestSeller": false,
                         "ctaText": "Book now"
                     }
@@ -576,14 +573,17 @@
                 "cards": {
                     "luxury": {
                         "title": "Luxury Transportation",
+                        "price": "84.00",
                         "description": "Elevate your shuttle experience with our luxury transfer service, taking you to and from Cancun Airport to your hotel in Cancun or the Riviera Maya. Our luxury service accommodates 1 to 5 passengers in a Suburban or a similar high-end vehicle."
                     },
                     "private": {
                         "title": "Private Transportation",
+                        "price": "29.99",
                         "description": "Our transportation and private transfer service is one of the most popular and affordable options in Cancun and the Riviera Maya. We offer spacious, air-conditioned, safe, and clean vehicles that can accommodate 1 to 8 people comfortably."
                     },
                     "group": {
                         "title": "Group Transportation",
+                        "price": "84.00",
                         "description": "Traveling with a group of more than 8 passengers? Save money and book our group transportation service. Our spacious and safe vehicles can accommodate up to 16 passengers, ensuring everyone travels comfortably together."
                     }
                 }
@@ -678,8 +678,8 @@
                 "text": "Playa del Carmen, a renowned beach destination globally, is located just south of Cancun along the stunning Mexican Caribbean coast. This charming town features an array of accommodations, including boutique hotels, luxurious resorts, and cozy Airbnbs, all set amidst beautiful beaches, lush jungles, superb dining, and excellent shopping opportunities.\n\nWhether traveling with family or solo, Playa del Carmen offers a wealth of attractions. For seamless transportation from Cancun, opt for Cancun Airport Shuttle Services. Our friendly greeters and professional drivers provide exceptional service and attention when you arrive.\n\nThe drive from Cancun to Playa del Carmen typically takes between 60 to 90 minutes.\n\nWhether you’re planning a romantic escape or a family holiday, Playa del Carmen is an ideal destination. If you’re wondering how to get from Cancun Airport to Playa del Carmen, choose Cancun Airport Shuttle for the most reliable and budget-friendly shuttle service. Travel with ease and comfort, knowing you’re in capable hands."
             },
             "testimonials": {
-                "title": "Testimonials from our customers in Playa del Carmen",
-                "description": "See what our clients say about our service in Playa del Carmen",
+                "title": "Our clients reviews - Cancun to Playa del Carmen",
+                "description": "Discover why our customers choose Cancun Airport Transportation by Go",
                 "items": {
                     "item1": {
                         "name": "John P.",
@@ -718,14 +718,17 @@
                 "cards": {
                     "luxury": {
                         "title": "Cancun to Playa del Carmen Luxury Transportation",
+                        "price": "145.00",
                         "description": "Elevate your transportation experience between Cancun Airport to Playa del Carmen with our luxury transportation service. Designed for 1 to 5 passengers, enjoy the comfort and luxury of a Suburban or similar vehicle."
                     },
                     "private": {
                         "title": "Private Transportation from Cancun to Playa del Carmen",
+                        "price": "69.99",
                         "description": "Our transportation service from Cancun Airport to Playa del Carmen is the most popular and affordable option in the Riviera Maya. We offer spacious, air-conditioned, safe, and clean vehicles that accommodate groups ranging from 1 to 8 people."
                     },
                     "group": {
                         "title": "Cancun to Playa del Carmen Group Transportation",
+                        "price": "145.00",
                         "description": "Traveling with a group of more than 8 passengers? Save money and book our group transportation service, accommodating up to 16 passengers. Enjoy a comfortable and safe journey in our spacious vehicles."
                     }
                 }
