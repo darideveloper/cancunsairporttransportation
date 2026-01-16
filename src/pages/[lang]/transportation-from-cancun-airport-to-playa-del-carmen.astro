@@ -22,7 +22,7 @@ import RatesTable from "../../components/molecules/RatesTable.astro";
 import SectionHeading from "../../components/molecules/SectionHeading.astro";
 import ButtonCta from "../../components/atoms/ButtonCta.astro";
 import Testimonials from "../../components/organisms/Testimonials.astro";
-import FaqItem from "../../components/molecules/FaqItem.astro";
+import FaqSection from "../../components/organisms/FaqSection.astro";
 import { Image } from "astro:assets";
 import TransportationServices from "../../components/organisms/TransportationServices.astro";
 import Locations from "../../components/organisms/Locations.astro";
@@ -63,20 +63,6 @@ const reliableServiceContent = await marked.parse(
 );
 
 // Data
-const faqKeys = [
-  "whyBook",
-  "howToBook",
-  "vehicleTypes",
-  "cost",
-  "safe",
-  "changes",
-  "flightDelay",
-];
-const faqs = faqKeys.map((key) => ({
-  question: t(`global.sections.faq.items.${key}.question`),
-  answer: t(`global.sections.faq.items.${key}.answer`),
-}));
-
 const destinations = [
   {
     id: "tulum",
@@ -301,27 +287,7 @@ const destinations = [
   </div>
 
   <!-- FAQs -->
-  <section
-    class="container mt-12"
-    id="faq-section"
-    aria-labelledby="faq-section-heading"
-  >
-    <SectionHeading
-      id="faq-section-heading"
-      title={t("global.sections.faq.title")}
-      class="mb-8 text-center"
-    >
-      <p>{t("global.sections.faq.description")}</p>
-    </SectionHeading>
-
-    <div class="flex flex-col gap-4">
-      {
-        faqs.map((faq) => (
-          <FaqItem question={faq.question} answer={faq.answer} />
-        ))
-      }
-    </div>
-  </section>
+  <FaqSection page="playaDelCarmen" />
 
   <TransportationServices />
   <Locations />

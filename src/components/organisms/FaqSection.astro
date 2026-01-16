@@ -1,0 +1,43 @@
+---
+import { useTranslations } from "../../lib/i18n/utils";
+import SectionHeading from "../molecules/SectionHeading.astro";
+import FaqItem from "../molecules/FaqItem.astro";
+
+interface Props {
+  page: string; // e.g., "home", "playaDelCarmen"
+}
+
+const { page } = Astro.props;
+const { lang } = Astro.params as { lang: "en" | "es" };
+const t = useTranslations(lang);
+
+const title = t(`pages.${page}.faq.title`);
+const description = t("global.sections.faq.description");
+const faqItems = t(`pages.${page}.faq.items`) as any;
+const faqKeys = Object.keys(faqItems);
+---
+
+<section
+  class="container mt-12"
+  id="faq-section"
+  aria-labelledby="faq-section-heading"
+>
+  <SectionHeading
+    id="faq-section-heading"
+    title={title}
+    class="mb-8 text-center"
+  >
+    <p>{description}</p>
+  </SectionHeading>
+
+  <div class="flex flex-col gap-4">
+    {
+      faqKeys.map((key) => (
+        <FaqItem
+          question={faqItems[key].question}
+          answer={faqItems[key].answer}
+        />
+      ))
+    }
+  </div>
+</section>
