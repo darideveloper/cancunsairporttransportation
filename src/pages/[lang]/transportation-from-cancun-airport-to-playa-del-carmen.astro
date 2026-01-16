@@ -27,6 +27,7 @@ import { Image } from "astro:assets";
 import TransportationServices from "../../components/organisms/TransportationServices.astro";
 import Locations from "../../components/organisms/Locations.astro";
 import PricingSection from "../../components/organisms/PricingSection.astro";
+import ClientGallery from "../../components/organisms/ClientGallery.astro";
 
 // Images
 import homeBannerImg from "../../assets/images/home-banner.webp";
@@ -38,6 +39,7 @@ import howToMoveImg from "../../assets/images/destinations/playa-del-carmen/dest
 import client1Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_1.webp";
 import client2Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_2.webp";
 import client3Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_3.webp";
+import client4Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_4.webp";
 import clientAppEsImg from "../../assets/images/clients/client-app-es.webp";
 
 // Icons
@@ -285,6 +287,13 @@ const destinations = [
       </div>
     </TextCard>
   </div>
+
+  <!-- Client Gallery -->
+  <ClientGallery
+    title={t("global.sections.clientGallery.title")}
+    subtitle={t("global.sections.clientGallery.subtitle")}
+    images={[client1Img, client2Img, client3Img, client4Img]}
+  />
 
   <!-- FAQs -->
   <FaqSection page={page} />
