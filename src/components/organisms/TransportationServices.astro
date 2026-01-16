@@ -57,20 +57,31 @@ const description = t("global.sections.transportationServicesList.description");
 const id = "transportation-services";
 ---
 
-<section class="container mx-auto mt-12 px-4 py-12" id={id} aria-label={title}>
+<section
+  class="relative container mx-auto mt-12 px-4 py-12"
+  id={id}
+  aria-label={title}
+>
+  <div
+    class="absolute top-0 left-1/2 -z-10 h-[60%] w-screen -translate-x-1/2 bg-[#fff9f2]"
+  >
+  </div>
+
   <div class="mb-16 flex flex-col items-center justify-center text-center">
     <div class="flex max-w-3xl flex-col items-center justify-center gap-6">
-      <SectionHeading title={title} class="text-center">
+      <SectionHeading title={title} class="font-bolder text-center">
         {
           description && (
-            <p class="mt-4 text-lg text-gray-600 md:text-xl">{description}</p>
+            <p class="mt-4 text-justify !text-sm text-lg text-gray-600 md:text-left md:text-xl">
+              {description}
+            </p>
           )
         }
       </SectionHeading>
     </div>
   </div>
 
-  <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+  <div class="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-4">
     {
       services.map((item) => (
         <InfoIconCard
