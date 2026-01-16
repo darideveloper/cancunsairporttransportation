@@ -1,6 +1,6 @@
 # Spec: Dynamic FAQ Section
 
-## MODIFIED Requirements
+## ADDED Requirements
 ### [faq-section](file:///develop/astro/cancunsairporttransportation/openspec/specs/faq-section/spec.md)
 
 ### Requirement: The FAQ section must support dynamic content loading based on the current page.
