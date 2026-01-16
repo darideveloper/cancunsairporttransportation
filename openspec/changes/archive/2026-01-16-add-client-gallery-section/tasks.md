@@ -1,0 +1,13 @@
+- [x] Create `src/components/organisms/ClientGallery.astro`.
+- [x] Implement props interface (`title`, `subtitle`, `images`).
+- [x] Implement layout using `SectionHeading` and Tailwind Grid.
+- [x] Ensure `astro:assets` Image component usage.
+- [x] Add `clientGallery` section keys to `src/messages/en.json`.
+- [x] Add `clientGallery` section keys to `src/messages/es.json`.
+- [x] Include `title` and `subtitle`.
+- [x] Import images in `src/pages/[lang]/transportation-from-cancun-airport-to-playa-del-carmen.astro`.
+- [x] Import `ClientGallery` component.
+- [x] Add component markup with props after "Why Choose Us" section.
+- [x] Verify standard grid layout (4 cols desktop).
+- [x] Verify responsive beavhiour.
+- [x] Verify correct images and text are displayed.

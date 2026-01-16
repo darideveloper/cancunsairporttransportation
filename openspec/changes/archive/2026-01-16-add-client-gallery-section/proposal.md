@@ -11,3 +11,12 @@ Create a new "ClientGallery" section to display client photos in a grid layout a
 
 ## Context
 The user wants to showcase client photos on specific destination pages to build trust. This section will be static (no zoom/hover effects required initially) and completely data-driven (props for images, i18n for text).
+
+### Final Texts
+**English:**
+- **Title:** Gallery Of Customer
+- **Subtitle:** Find out how our customers are enjoying their time with us.
+
+**Spanish:**
+- **Title:** Galería de clientes
+- **Subtitle:** Descubra cómo nuestros clientes disfrutan de su tiempo con nosotros.
