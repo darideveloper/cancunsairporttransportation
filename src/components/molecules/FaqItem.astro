@@ -1,4 +1,8 @@
 ---
+// Icons
+import { FaAngleRight } from "react-icons/fa6";
+
+// Props
 interface Props {
   question: string;
   answer: string;
@@ -7,31 +11,16 @@ interface Props {
 const { question, answer } = Astro.props;
 ---
 
-<details class="group border-b border-gray-200 py-4">
+<details class="group bg-gray-light my-2 rounded-lg p-6" open>
   <summary
-    class="flex cursor-pointer list-none items-center justify-between text-lg font-medium text-gray-900 focus:outline-none"
+    class="text-md flex cursor-pointer list-none items-center justify-start font-medium text-black transition-colors duration-300 focus:outline-none"
   >
-    <span>{question}</span>
-    <span
-      class="ml-6 shrink-0 transition-transform duration-200 group-open:rotate-180"
-    >
-      <svg
-        class="h-6 w-6 text-gray-400"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 9l-7 7-7-7"></path>
-      </svg>
-    </span>
+    <FaAngleRight
+      className="mr-2 h-4 w-4 text-black transition-transform duration-300 group-open:-rotate-90"
+    />
+    <h3>{question}</h3>
   </summary>
-  <div class="mt-4 text-gray-600">
-    <p>{answer}</p>
-  </div>
+  <p class="text-gray border-blue mx-4 mt-2 border-l-3 pl-4">{answer}</p>
 </details>
 
 <style>
