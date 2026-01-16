@@ -2,65 +2,70 @@
 import { useTranslations } from "../../lib/i18n/utils";
 import SectionHeading from "../molecules/SectionHeading.astro";
 import InfoIconCard from "../molecules/InfoIconCard.astro";
-import {
-  FaPlane,
-  FaBed,
-  FaUtensils,
-  FaTree,
-  FaArrowDown,
-} from "react-icons/fa";
+import { FaPlane, FaBed, FaUtensils, FaTree } from "react-icons/fa";
+import { marked } from "marked";
 
-const { lang } = Astro.params as { lang: string };
-const t = useTranslations(lang as "en" | "es");
+interface Props {
+  page?: string;
+}
 
-const services = [
-  {
-    title: t("transportationServices.items.airportToHotel.title"),
-    text: t("transportationServices.items.airportToHotel.text"),
-    Icon: FaPlane,
-  },
-  {
-    title: t("transportationServices.items.hotelToHotel.title"),
-    text: t("transportationServices.items.hotelToHotel.text"),
-    Icon: FaBed,
-  },
-  {
-    title: t("transportationServices.items.hotelToRestaurant.title"),
-    text: t("transportationServices.items.hotelToRestaurant.text"),
-    Icon: FaUtensils,
-  },
-  {
-    title: t("transportationServices.items.hotelToPark.title"),
-    text: t("transportationServices.items.hotelToPark.text"),
-    Icon: FaTree,
-  },
+const { page = "home" } = Astro.props;
+const { lang } = Astro.params as { lang: "en" | "es" };
+const t = useTranslations(lang);
+
+const serviceKeys = [
+  { key: "airportToHotel", Icon: FaPlane },
+  { key: "hotelToHotel", Icon: FaBed },
+  { key: "hotelToRestaurant", Icon: FaUtensils },
+  { key: "hotelToPark", Icon: FaTree },
 ];
 
-const title = t("transportationServices.title");
-const description = t("transportationServices.description");
+const services = serviceKeys.map(({ key, Icon }) => ({
+  title: t(`global.sections.transportationServicesList.items.${key}.title`),
+  text: t(`pages.${page}.transportationServices.items.${key}.text`),
+  Icon,
+}));
+
+const title = t(`pages.${page}.transportationServices.title`);
+const description = t(`pages.${page}.transportationServices.description`);
 const id = "transportation-services";
 ---
 
-<section class="container mx-auto mt-12 px-4 py-12" id={id} aria-label={title}>
-  <div class="mb-16 flex flex-col items-center justify-center text-center">
-    <div class="flex max-w-3xl flex-col items-center justify-center gap-6">
-      <SectionHeading title={title} class="text-center">
+<section
+  class="relative container mx-auto mt-12 px-4 py-12"
+  id={id}
+  aria-label={title}
+>
+  <div
+    class="absolute top-0 left-1/2 -z-10 h-[60%] w-screen -translate-x-1/2 bg-[#fff9f2]"
+  >
+  </div>
+
+  <div class="mb-8 flex flex-col items-center justify-center text-center">
+    <div class="flex flex-col items-center justify-center gap-6">
+      <SectionHeading title={title} class="font-bolder text-center">
         {
           description && (
-            <p class="mt-4 text-lg text-gray-600 md:text-xl">{description}</p>
+            <div
+              set:html={marked.parse(description)}
+              class="markdown mt-4 text-justify text-sm text-gray-600 md:text-left"
+            />
           )
         }
       </SectionHeading>
     </div>
   </div>
 
-  <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+  <div
+    class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"
+  >
     {
       services.map((item) => (
         <InfoIconCard
           title={item.title}
           text={item.text}
           BottomIcon={item.Icon}
+          class="bg-white"
         />
       ))
     }

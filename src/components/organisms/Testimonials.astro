@@ -7,13 +7,23 @@ import H2 from "../atoms/H2.astro";
 import Testimonial from "../molecules/Testimonial.astro";
 
 // Images
-import client1Img from "../../assets/images/clients/1.webp";
-import client2Img from "../../assets/images/clients/2.webp";
-import client3Img from "../../assets/images/clients/3.webp";
+// Images are passed via props
 
 // Lang
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+// Props
+interface Props {
+  page?: string;
+  images: ImageMetadata[];
+}
+const { page, images } = Astro.props;
+
+// Translation path
+const basePath = page
+  ? `pages.${page}.testimonials`
+  : "pages.home.testimonials";
 
 // Date
 const today = new Date();
@@ -21,20 +31,22 @@ const month = String(today.getMonth() + 1).padStart(2, "0");
 const year = today.getFullYear();
 const currentDate = `${month}/${year}`;
 
+const currentImages = images;
+
 const testimonials = [
   {
     key: "item1",
-    image: client1Img,
+    image: currentImages[0],
     date: currentDate,
   },
   {
     key: "item2",
-    image: client2Img,
+    image: currentImages[1],
     date: currentDate,
   },
   {
     key: "item3",
-    image: client3Img,
+    image: currentImages[2],
     date: currentDate,
   },
 ];
@@ -50,18 +62,18 @@ const jsonLd = {
       "@type": "Review",
       author: {
         "@type": "Person",
-        name: t(`baseSections.testimonials.items.${item.key}.name`),
+        name: t(`${basePath}.items.${item.key}.name`),
       },
-      reviewBody: t(`baseSections.testimonials.items.${item.key}.text`),
+      reviewBody: t(`${basePath}.items.${item.key}.text`),
       reviewRating: {
         "@type": "Rating",
-        ratingValue: t(`baseSections.testimonials.items.${item.key}.stars`),
+        ratingValue: t(`${basePath}.items.${item.key}.stars`),
         bestRating: "5",
       },
       datePublished: item.date,
       publisher: {
         "@type": "Organization",
-        name: t("branding.businessName"),
+        name: t("global.branding.businessName"),
       },
     },
   })),
@@ -72,10 +84,10 @@ const jsonLd = {
   <div class="container px-4 md:px-8">
     <div class="mb-4 text-center">
       <H2 id="testimonials-title" class="">
-        {t("baseSections.testimonials.title")}
+        {t(`${basePath}.title`)}
       </H2>
       <p class="text-md mx-auto max-w-2xl text-gray-600">
-        {t("baseSections.testimonials.description")}
+        {t(`${basePath}.description`)}
       </p>
     </div>
 
@@ -83,14 +95,12 @@ const jsonLd = {
       {
         testimonials.map((item) => (
           <Testimonial
-            name={t(`baseSections.testimonials.items.${item.key}.name`)}
-            text={t(`baseSections.testimonials.items.${item.key}.text`)}
+            name={t(`${basePath}.items.${item.key}.name`)}
+            text={t(`${basePath}.items.${item.key}.text`)}
             image={item.image}
-            imageAlt={t(`baseSections.testimonials.items.${item.key}.imageAlt`)}
-            imageTitle={t(
-              `baseSections.testimonials.items.${item.key}.imageTitle`,
-            )}
-            stars={t(`baseSections.testimonials.items.${item.key}.stars`)}
+            imageAlt={t(`${basePath}.items.${item.key}.imageAlt`)}
+            imageTitle={t(`${basePath}.items.${item.key}.imageTitle`)}
+            stars={t(`${basePath}.items.${item.key}.stars`)}
             date={item.date}
           />
         ))

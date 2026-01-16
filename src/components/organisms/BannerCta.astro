@@ -7,13 +7,16 @@ import cancunAirportTransportationImg from "../../assets/images/reliable-company
 import { useTranslations } from "../../lib/i18n/utils";
 
 interface Props {
-  title: string;
-  text: string;
-  lang: "es" | "en";
+  page: "home" | "playaDelCarmen";
+  imageClass?: string;
 }
 
-const { title, text, lang } = Astro.props;
+const { page, imageClass } = Astro.props;
+const { lang } = Astro.params as { lang: "es" | "en" };
 const t = useTranslations(lang);
+
+const title = t(`pages.${page}.bannerCta.title`);
+const text = t(`pages.${page}.bannerCta.text`);
 
 const buttons = [
   { id: "primary", variant: "orange" },
@@ -25,18 +28,18 @@ const buttons = [
   <div
     class="relative flex items-center justify-between rounded-lg bg-black px-6 py-8"
   >
-    <div class="texts w-full sm:w-1/2 md:w-9/12">
+    <div class="texts w-full sm:w-1/2 md:w-8/12">
       <SectionHeading title={title}>
         <div set:html={marked.parse(text)} class="markdown" />
         <div class="mt-4 flex flex-col gap-3 md:flex-row">
           {
             buttons.map((button) => (
               <ButtonCta
-                href={t(`baseSections.bannerCta.buttons.${button.id}.href`)}
+                href={t(`global.sections.bannerCta.buttons.${button.id}.href`)}
                 variant={button.variant as "orange" | "grayDark"}
                 class="inline-block w-full px-8 md:w-auto"
               >
-                {t(`baseSections.bannerCta.buttons.${button.id}.text`)}
+                {t(`global.sections.bannerCta.buttons.${button.id}.text`)}
               </ButtonCta>
             ))
           }
@@ -45,11 +48,11 @@ const buttons = [
     </div>
     <Image
       src={cancunAirportTransportationImg}
-      alt={t("baseSections.bannerCta.imageAlt")}
-      title={t("baseSections.bannerCta.imageTitle")}
+      alt={t("global.sections.bannerCta.imageAlt")}
+      title={t("global.sections.bannerCta.imageTitle")}
       width={350}
       height={550}
-      class="absolute right-0 bottom-0 hidden h-full w-auto sm:block md:h-[110%]"
+      class={`absolute right-0 bottom-0 hidden sm:block ${imageClass}`}
     />
   </div>
 </section>

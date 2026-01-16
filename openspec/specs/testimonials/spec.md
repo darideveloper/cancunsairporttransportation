@@ -87,3 +87,61 @@ The Testimonials section MUST display recent and authentic customer reviews as p
 - **Then** they should see the title "Comentarios de nuestros clientes"
 - **And** they should see the corresponding Spanish translations for the reviews.
 
+### Requirement: Page Specific Testimonials
+The Testimonials component MUST be able to display different content based on the page it is used on.
+
+#### Scenario: Displaying Playa del Carmen testimonials
+Given I am on the "Playa del Carmen" page
+When I view the Testimonials section
+Then I should see testimonials fetched from `pages.playaDelCarmen.testimonials`
+And the default global testimonials should not be shown
+
+### Requirement: Global Fallback (Home Page)
+The Testimonials component MUST support a default mode for pages where no specific testimonials are defined (e.g. Home).
+
+#### Scenario: Displaying Home/Global testimonials
+Given I am on the Home page (or any page without specific testimonials defined)
+And no `page` prop is passed to the component
+Then I should see testimonials fetched from `pages.home.testimonials` (formerly global)
+
+### Requirement: Testimonials Component Logic
+The `Testimonials.astro` component logic MUST be updated to support dynamic paths.
+
+#### Scenario: Constructing translation path
+Given the `Testimonials` component is rendered
+When a `page` prop is provided (e.g. "playaDelCarmen")
+Then the translation path should be `pages.playaDelCarmen.testimonials`
+When no `page` prop is provided
+Then the translation path should be `pages.home.testimonials`
+
+### Requirement: Translation Structure
+The translation files MUST be reorganized to support page-specific testimonials.
+
+#### Scenario: Translation keys location
+The `global.sections.testimonials` key should be moved to `pages.home.testimonials`.
+A new key `pages.playaDelCarmen.testimonials` should be added.
+
+### Requirement: Dynamic Image Rendering
+The `Testimonials` component MUST support rendering dynamic images passed via props, enabling different pages to show different client photos.
+
+#### Scenario: Displaying passed images
+Given the `Testimonials` component is rendered with an `images` prop containing a list of image objects
+When the component renders the testimonial items
+Then it MUST display the images from the `images` prop instead of the default images
+And the images MUST be mapped to the testimonials in order (e.g., image[0] for item1, image[1] for item2)
+
+#### Scenario: Fallback to default images
+Given the `Testimonials` component is rendered without an `images` prop
+When the component renders the testimonial items
+Then it MUST display the default/fallback images currently defined in the component
+
+### Requirement: Playa del Carmen Testimonial Content
+The testimonials on the Playa del Carmen page MUST display the specific content provided by the user.
+
+#### Scenario: Displaying new testimonials
+Given I am on the Playa del Carmen page
+When I view the Testimonials section
+Then I should see "John P.", "Ana G.", and "Carlos R."
+And the text should match the provided copy (e.g., "Excellent service! From the moment I arrived...")
+And the images should be the default client images (1, 2, 3)
+

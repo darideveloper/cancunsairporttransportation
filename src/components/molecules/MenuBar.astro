@@ -21,7 +21,7 @@ const t = useTranslations(lang);
 
 // Constants & Data
 const CTA_LINK = "/contact";
-const CTA_LABEL = t("globalSections.menubar.cta");
+const CTA_LABEL = t("global.menubar.cta");
 
 const contactPhones = [
   { link: "tel:+529983870435", label: "+52 (998) 387-0435" },
@@ -39,9 +39,7 @@ const translateLink = lang === "es" ? "/en" : "/es";
   <Logo />
 
   <!-- navigation -->
-  <nav
-    aria-label={t("globalSections.menubar.nav.ariaLabel") || "Main Navigation"}
-  >
+  <nav aria-label={t("global.menubar.nav.ariaLabel") || "Main Navigation"}>
     <NavLinks lang={lang} mode="desktop" />
   </nav>
 
@@ -74,7 +72,7 @@ const translateLink = lang === "es" ? "/en" : "/es";
     <div class="menu-text flex items-center justify-center gap-4">
       <MenuIcon className="text-blue text-2xl" />
       <p class="text-xl">
-        {t("globalSections.menubar.topSection.text")}
+        {t("global.menubar.topSection.text")}
       </p>
     </div>
 
@@ -94,20 +92,20 @@ const translateLink = lang === "es" ? "/en" : "/es";
     <NavLinks lang={lang} mode="mobile">
       <!-- Mobile Extras -->
       <li class={MOBILE_STYLES.li}>
-        <p><strong>{t("globalSections.menubar.translateWebsite")}</strong></p>
+        <p><strong>{t("global.menubar.translateWebsite")}</strong></p>
       </li>
       <li class={MOBILE_STYLES.li}>
         <NavLink
           link={translateLink}
-          label={t("globalSections.menubar.translateWebsiteText")}
+          label={t("global.menubar.translateWebsiteText")}
           class={MOBILE_STYLES.link}
         />
       </li>
       <li class={MOBILE_STYLES.li}>
         <p>
-          <strong>{t("globalSections.menubar.customerService.title")}</strong>
+          <strong>{t("global.menubar.customerService.title")}</strong>
         </p>
-        <p class="mt-2">{t("globalSections.menubar.customerService.body")}</p>
+        <p class="mt-2">{t("global.menubar.customerService.body")}</p>
       </li>
 
       {

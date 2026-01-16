@@ -16,13 +16,13 @@ const { class: className } = Astro.props;
 
 <a
   href={`/${lang}/`}
-  aria-label={t("branding.businessName")}
+  aria-label={t("global.branding.businessName")}
   class={`flex items-center ${className || "w-52 sm:w-60"}`}
 >
   <Image
     src={logo}
-    alt={`${t("branding.businessName")} logo`}
-    title={t("branding.businessName")}
+    alt={`${t("global.branding.businessName")} logo`}
+    title={t("global.branding.businessName")}
     class="w-full"
   />
 </a>

@@ -1,0 +1,95 @@
+---
+import { useTranslations } from "../../lib/i18n/utils";
+import SectionHeading from "../molecules/SectionHeading.astro";
+import PricingCard from "../molecules/PricingCard.astro";
+import { Image } from "astro:assets";
+import { marked } from "marked";
+
+// Images
+import luxuryVehicleImg from "../../assets/images/vehicles/luxury.webp";
+import privateVehicleImg from "../../assets/images/vehicles/standard.webp";
+import groupVehicleImg from "../../assets/images/vehicles/groups.webp";
+
+interface Props {
+  page: string; // e.g., "home", "playaDelCarmen"
+}
+
+const { page } = Astro.props;
+const { lang } = Astro.params as { lang: "en" | "es" };
+const t = useTranslations(lang);
+
+const pricingKeys = ["luxury", "private", "group"] as const;
+
+const vehicleImages = {
+  luxury: luxuryVehicleImg,
+  private: privateVehicleImg,
+  group: groupVehicleImg,
+};
+
+const title = t(`pages.${page}.pricing.title`);
+const subtitle = t(`pages.${page}.pricing.subtitle`);
+---
+
+<section
+  id="pricing-transportation"
+  class="container mt-12"
+  aria-labelledby="pricing-transportation-heading"
+>
+  <SectionHeading
+    id="pricing-transportation-heading"
+    title={title}
+    class="text-center"
+  >
+    <p>
+      {subtitle}
+    </p>
+  </SectionHeading>
+
+  <ul
+    class="mt-4 grid grid-cols-1 items-end justify-center gap-8 md:grid-cols-3 md:flex-row"
+    role="list"
+  >
+    {
+      pricingKeys.map((key) => {
+        const globalData = t(
+          `global.sections.pricingServices.cards.${key}`,
+        ) as any;
+        const pageData = t(`pages.${page}.pricing.cards.${key}`) as any;
+
+        return (
+          <li>
+            <PricingCard
+              title={pageData.title}
+              price={globalData.price}
+              ctaLink="#booking-form"
+              ctaText={globalData.ctaText}
+              bestSeller={globalData.bestSeller}
+              currency={lang === "es" ? "mxn" : "usd"}
+              class="pt-4"
+            >
+              <Image
+                slot="image"
+                src={vehicleImages[key]}
+                alt={globalData.imageAlt}
+                title={globalData.imageTitle}
+                widths={[200, 400]}
+                quality={60}
+                format="avif"
+                loading="lazy"
+                decoding="async"
+                class="mx-auto w-8/12"
+              />
+              <div
+                slot="content"
+                set:html={marked.parse(
+                  `${pageData.description}\n\n* ${t("global.ui.pricingCard.features.privateService")}\n* ${t("global.ui.pricingCard.features.taxesIncluded")}\n* ${t("global.ui.pricingCard.features.service24h")}`,
+                )}
+                class="markdown"
+              />
+            </PricingCard>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>

@@ -1,52 +1,52 @@
 ---
-import NavLink from '../atoms/NavLink.astro'
-import { MOBILE_MENU_STYLES } from '../../styles/menu'
-import { useTranslations } from '../../lib/i18n/utils'
+import NavLink from "../atoms/NavLink.astro";
+import { MOBILE_MENU_STYLES } from "../../styles/menu";
+import { useTranslations } from "../../lib/i18n/utils";
 
-import { ui } from '../../lib/i18n/ui'
+import { ui } from "../../lib/i18n/ui";
 
 interface Props {
-  lang: keyof typeof ui
-  mode?: 'desktop' | 'mobile'
+  lang: keyof typeof ui;
+  mode?: "desktop" | "mobile";
 }
 
-const { lang, mode = 'desktop' } = Astro.props
-const t = useTranslations(lang)
+const { lang, mode = "desktop" } = Astro.props;
+const t = useTranslations(lang);
 
 const links = [
   {
-    key: 'cancun',
-    link: '/',
+    key: "cancun",
+    link: "/",
   },
   {
-    key: 'carmen',
-    link: '/transportation-from-cancun-airport-to-playa-del-carmen',
+    key: "carmen",
+    link: "/transportation-from-cancun-airport-to-playa-del-carmen",
   },
   {
-    key: 'tulum',
-    link: '/cancun-to-tulum-shuttle',
+    key: "tulum",
+    link: "/cancun-to-tulum-shuttle",
   },
-]
+];
 ---
 
 <ul
   class:list={[
-    mode === 'desktop'
-      ? 'gap-0 lg:gap-2 w-9/12 mx-auto lg:w-auto hidden lg:flex'
-      : 'gap-0 lg:gap-2 w-full mx-auto lg:w-auto',
+    mode === "desktop"
+      ? "mx-auto hidden w-9/12 gap-0 lg:flex lg:w-auto lg:gap-2"
+      : "mx-auto w-full gap-0 lg:w-auto lg:gap-2",
   ]}
 >
   {
     links.map((link) => (
       <li
         class:list={[
-          mode === 'desktop' ? 'inline-block' : MOBILE_MENU_STYLES.li,
+          mode === "desktop" ? "inline-block" : MOBILE_MENU_STYLES.li,
         ]}
       >
         <NavLink
           link={link.link}
-          label={t(`globalSections.menubar.nav.${link.key}`)}
-          class={mode === 'mobile' ? MOBILE_MENU_STYLES.link : ''}
+          label={t(`global.menubar.nav.${link.key}`)}
+          class={mode === "mobile" ? MOBILE_MENU_STYLES.link : ""}
         />
       </li>
     ))

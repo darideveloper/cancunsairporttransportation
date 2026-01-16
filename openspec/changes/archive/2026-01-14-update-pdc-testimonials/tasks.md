@@ -1,0 +1,4 @@
+- [x] Update `en.json` `pages.playaDelCarmen.testimonials` with new content <!-- id: 0 -->
+- [x] Update `es.json` `pages.playaDelCarmen.testimonials` with new content <!-- id: 1 -->
+- [x] Update `transportation-from-cancun-airport-to-playa-del-carmen.astro` to remove `images` prop (revert to default images) <!-- id: 2 -->
+- [x] Verify Playa del Carmen page displays new text and default images <!-- id: 3 -->

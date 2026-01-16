@@ -10,7 +10,7 @@ import BottomBar from "../molecules/BottomBar.astro";
 // Lang
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const footerMessages = t("globalSections.footer");
+const footerMessages = t("global.footer");
 const columns = footerMessages.columns;
 
 const socialLinks = [
