@@ -653,6 +653,8 @@
             "destinations": {
                 "title": "Transfers to and from Playa del Carmen",
                 "text": "We offer the most complete transportation service to any hotel or destination in Playa del Carmen or vice versa, from any destination in the Riviera Maya or Airport, we provide a full service ready to take you to your hotel or favorite attraction in Playa del Carmen.",
+                "viewMore": "View more destinations",
+                "viewMoreLink": "/destinations",
                 "cards": {
                     "tulum": {
                         "title": "Transportation to Tulum",

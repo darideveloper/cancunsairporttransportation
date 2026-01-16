@@ -27,13 +27,11 @@ import { Image } from "astro:assets";
 import TransportationServices from "../../components/organisms/TransportationServices.astro";
 import Locations from "../../components/organisms/Locations.astro";
 import PricingSection from "../../components/organisms/PricingSection.astro";
+import Destinations from "../../components/organisms/Destinations.astro";
 
 // Images
 import homeBannerImg from "../../assets/images/home-banner.webp";
 import safeTripBookingImg from "../../assets/images/trip-advisor.webp";
-import tulumImg from "../../assets/images/destinations/tulum.webp";
-import playaImg from "../../assets/images/destinations/playa-del-carmen.webp";
-import cancunImg from "../../assets/images/destinations/cancun.webp";
 import customClientImg from "../../assets/images/clients/custom-client.webp";
 import client1Img from "../../assets/images/clients/1.webp";
 import client2Img from "../../assets/images/clients/2.webp";
@@ -66,20 +64,6 @@ const reliableServiceContent = await marked.parse(
 );
 
 // Data
-const destinations = [
-  {
-    id: "tulum",
-    image: tulumImg,
-  },
-  {
-    id: "playa",
-    image: playaImg,
-  },
-  {
-    id: "cancun",
-    image: cancunImg,
-  },
-];
 ---
 
 <Layout preloadImage={homeBannerImg.src}>
@@ -140,68 +124,7 @@ const destinations = [
   <Testimonials images={[client1Img, client2Img, client3Img]} />
 
   <!-- Destinations -->
-  <section
-    class="destinations-elements container mt-12"
-    aria-labelledby="destinations-heading"
-  >
-    <SectionHeading
-      id="destinations-heading"
-      class="top text-center"
-      title={t("pages.home.destinations.title")}
-    >
-      <p>{t("pages.home.destinations.text")}</p>
-    </SectionHeading>
-
-    <ul
-      class="middle mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-4 xl:gap-8"
-    >
-      {
-        destinations.map((dest) => (
-          <li>
-            <PricingCard
-              title={t(`pages.home.destinations.cards.${dest.id}.title`)}
-              price={t(`pages.home.destinations.cards.${dest.id}.price`)}
-              ctaLink={t(`pages.home.destinations.cards.${dest.id}.link`)}
-              ctaText={t(`pages.home.destinations.cards.${dest.id}.ctaText`)}
-              currency={lang === "es" ? "mxn" : "usd"}
-              bestSeller={false}
-              reverse={true}
-              class="hover:border-accent text-center transition-all duration-300 md:text-left"
-            >
-              <Image
-                slot="image"
-                src={dest.image}
-                alt={t(`pages.home.destinations.cards.${dest.id}.title`)}
-                widths={[300, 600, dest.image.width]}
-                quality={60}
-                format="avif"
-                loading="lazy"
-                decoding="async"
-                class="mx-auto aspect-2/1 w-full rounded-t-lg object-cover md:aspect-12/11 lg:aspect-4/3"
-              />
-              <div
-                slot="content"
-                set:html={marked.parse(
-                  t(`pages.home.destinations.cards.${dest.id}.description`),
-                )}
-                class="markdown text-justify text-sm"
-              />
-            </PricingCard>
-          </li>
-        ))
-      }
-    </ul>
-
-    <div class="bottom mt-4 scale-90 text-center">
-      <ButtonCta
-        href={t("pages.home.destinations.viewMoreLink")}
-        variant="blueGhost"
-        title={t("pages.home.destinations.viewMore")}
-      >
-        {t("pages.home.destinations.viewMore")}
-      </ButtonCta>
-    </div>
-  </section>
+  <Destinations page={page} />
 
   <!-- Why Choose Us -->
   <div class="bg-accent/5 mt-12 py-12">
