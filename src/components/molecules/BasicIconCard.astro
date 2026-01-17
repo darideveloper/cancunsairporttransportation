@@ -1,10 +1,12 @@
 ---
+// Libs
+import clsx from "clsx";
+
+// Props
 interface Props {
   title: string;
   text?: string;
   Icon?: any;
-  BottomIcon?: any;
-  bottomText?: string;
   href?: string;
   class?: string;
   iconClass?: string;
@@ -23,25 +25,26 @@ const id = `info-card-${title
   .trim()
   .replace(/[^a-z0-9]+/g, "-")
   .replace(/^-+|-+$/g, "")}`;
+
+const Container = href ? "a" : "div";
 ---
 
 <article
   class={`group ${className} flex flex-col items-start rounded-2xl p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-light`}
   aria-labelledby={id}
 >
-  <header class="mb-3 flex items-center gap-2">
-    {Icon && <Icon className={`text-3xl ${iconClass}`} aria-hidden="true" />}
-    <h3 class="text-md font-bold" id={id}>{title}</h3>
-  </header>
-  <p class="text-gray text-base leading-relaxed">
-    {
-      href ? (
-        <a href={href} class="hover:text-accent transition-colors duration-300">
-          {text}
-        </a>
-      ) : (
-        text
-      )
-    }
-  </p>
+  <Container href={href}>
+    <header class="mb-3 flex items-center gap-2">
+      {Icon && <Icon className={`text-3xl ${iconClass}`} aria-hidden="true" />}
+      <h3 class="text-md font-bold" id={id}>{title}</h3>
+    </header>
+    <p
+      class={clsx(
+        "text-gray text-base leading-relaxed",
+        href && "hover:text-accent transition-colors duration-300",
+      )}
+    >
+      {text}
+    </p>
+  </Container>
 </article>
