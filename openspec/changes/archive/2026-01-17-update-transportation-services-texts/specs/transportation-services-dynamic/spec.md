@@ -1,8 +1,7 @@
-# transportation-services-dynamic Specification
+# Spec: Page-Specific Transportation Service Titles
 
-## Purpose
-TBD - created by archiving change make-transportation-services-dynamic. Update Purpose after archive.
-## Requirements
+## MODIFIED Requirements
+
 ### Requirement: dynamic-transportation-loading
 The `TransportationServices` component MUST dynamically load content based on the provided `page` prop, allowing for page-specific overrides of item titles.
 
@@ -24,4 +23,3 @@ The `TransportationServices` component MUST dynamically load content based on th
 - **And** `pages.playaDelCarmen.transportationServices.items.{key}.title` is NOT defined
 - **When** the page is loaded
 - **Then** it should display the global title from `global.sections.transportationServicesList.items.{key}.title`.
-

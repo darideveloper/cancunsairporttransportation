@@ -36,8 +36,8 @@ interface Props {
 2. **Page Integration**:
    - Import `ClientGallery` in `transportation-from-cancun-airport-to-playa-del-carmen.astro`.
    - Import images from `src/assets/images/destinations/playa-del-carmen/gallery/*.webp`.
-   - Define translations for title and subtitle in `src/messages/{en,es}.json`.
-   - Pass data to component.
+   - Define translations for title and subtitle in `src/messages/{en,es}.json` under `global.sections.clientGallery`.
+   - Pass data to component using translation keys.
 
 ## Styling
 - Use Tailwind Grid: `grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`.

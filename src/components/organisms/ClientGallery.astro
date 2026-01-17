@@ -1,0 +1,39 @@
+---
+// Libs
+import { Image } from "astro:assets";
+
+// Components
+import SectionHeading from "../molecules/SectionHeading.astro";
+
+// Props
+interface Props {
+  title: string;
+  subtitle: string;
+  images: ImageMetadata[];
+}
+
+const { title, subtitle, images } = Astro.props;
+---
+
+<section id="client-gallery" aria-labelledby="gallery-title" class="py-12">
+  <div class="container px-4 md:px-8">
+    <SectionHeading title={title} id="gallery-title">
+      <p>{subtitle}</p>
+    </SectionHeading>
+
+    <div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        images.map((image, index) => (
+          <div class="overflow-hidden rounded-lg">
+            <Image
+              src={image}
+              alt={`Client photo ${index + 1}`}
+              title={`Client photo ${index + 1}`}
+              class="h-64 w-full object-cover transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

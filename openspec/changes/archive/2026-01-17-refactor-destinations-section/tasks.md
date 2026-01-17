@@ -1,0 +1,4 @@
+- [x] Create `src/components/organisms/Destinations.astro` component <!-- id: 0 -->
+- [x] Add missing translation keys (`viewMore`, `viewMoreLink`) to `pages.playaDelCarmen.destinations` in `en.json` and `es.json` <!-- id: 1 -->
+- [x] Update `src/pages/[lang]/index.astro` to use `Destinations` <!-- id: 2 -->
+- [x] Search for other pages using a similar destinations structure (e.g., `transportation-from-cancun-airport-to-playa-del-carmen.astro`) and refactor them <!-- id: 3 -->

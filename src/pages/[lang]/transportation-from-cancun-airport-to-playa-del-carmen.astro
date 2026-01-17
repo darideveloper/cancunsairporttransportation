@@ -27,17 +27,17 @@ import { Image } from "astro:assets";
 import TransportationServices from "../../components/organisms/TransportationServices.astro";
 import Locations from "../../components/organisms/Locations.astro";
 import PricingSection from "../../components/organisms/PricingSection.astro";
+import ClientGallery from "../../components/organisms/ClientGallery.astro";
+import Destinations from "../../components/organisms/Destinations.astro";
 
 // Images
 import homeBannerImg from "../../assets/images/home-banner.webp";
 import safeTripBookingImg from "../../assets/images/destinations/playa-del-carmen/trip-advisor.webp";
-import tulumImg from "../../assets/images/destinations/tulum.webp";
-import playaImg from "../../assets/images/destinations/playa-del-carmen.webp";
-import cancunImg from "../../assets/images/destinations/cancun.webp";
 import howToMoveImg from "../../assets/images/destinations/playa-del-carmen/destination.webp";
 import client1Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_1.webp";
 import client2Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_2.webp";
 import client3Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_3.webp";
+import client4Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_4.webp";
 import clientAppEsImg from "../../assets/images/clients/client-app-es.webp";
 
 // Icons
@@ -66,20 +66,6 @@ const reliableServiceContent = await marked.parse(
 );
 
 // Data
-const destinations = [
-  {
-    id: "tulum",
-    image: tulumImg,
-  },
-  {
-    id: "playa",
-    image: playaImg,
-  },
-  {
-    id: "cancun",
-    image: cancunImg,
-  },
-];
 ---
 
 <Layout preloadImage={homeBannerImg.src}>
@@ -148,80 +134,15 @@ const destinations = [
   <!-- Clients testimonials -->
   <Testimonials page={page} images={[client1Img, client2Img, client3Img]} />
 
+  <!-- Client Gallery -->
+  <ClientGallery
+    title={t("global.sections.clientGallery.title")}
+    subtitle={t("global.sections.clientGallery.subtitle")}
+    images={[client1Img, client2Img, client3Img, client4Img]}
+  />
+
   <!-- Destinations -->
-  <section
-    class="destinations-elements container mt-12"
-    aria-labelledby="destinations-heading"
-  >
-    <SectionHeading
-      id="destinations-heading"
-      class="top text-center"
-      title={t("pages.playaDelCarmen.destinations.title")}
-    >
-      <p>{t("pages.playaDelCarmen.destinations.text")}</p>
-    </SectionHeading>
-
-    <ul
-      class="middle mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-4 xl:gap-8"
-    >
-      {
-        destinations.map((dest) => (
-          <li>
-            <PricingCard
-              title={t(
-                `pages.playaDelCarmen.destinations.cards.${dest.id}.title`,
-              )}
-              price={t(
-                `pages.playaDelCarmen.destinations.cards.${dest.id}.price`,
-              )}
-              ctaLink={t(
-                `pages.playaDelCarmen.destinations.cards.${dest.id}.link`,
-              )}
-              ctaText={t(
-                `pages.playaDelCarmen.destinations.cards.${dest.id}.ctaText`,
-              )}
-              currency={lang === "es" ? "mxn" : "usd"}
-              bestSeller={false}
-              reverse={true}
-              class="hover:border-accent text-center transition-all duration-300 md:text-left"
-            >
-              <Image
-                slot="image"
-                src={dest.image}
-                alt={t(`pages.home.destinations.cards.${dest.id}.title`)}
-                widths={[300, 600, dest.image.width]}
-                sizes="(max-width: 768px) 300px, 600px"
-                quality={60}
-                format="avif"
-                loading="lazy"
-                decoding="async"
-                class="mx-auto aspect-2/1 w-full rounded-t-lg object-cover md:aspect-12/11 lg:aspect-4/3"
-              />
-              <div
-                slot="content"
-                set:html={marked.parse(
-                  t(
-                    `pages.playaDelCarmen.destinations.cards.${dest.id}.description`,
-                  ),
-                )}
-                class="markdown text-justify text-sm"
-              />
-            </PricingCard>
-          </li>
-        ))
-      }
-    </ul>
-
-    <div class="bottom mt-4 scale-90 text-center">
-      <ButtonCta
-        href={t("pages.home.destinations.viewMoreLink")}
-        variant="blueGhost"
-        title={t("pages.home.destinations.viewMore")}
-      >
-        {t("pages.home.destinations.viewMore")}
-      </ButtonCta>
-    </div>
-  </section>
+  <Destinations page={page} />
 
   <!-- Banner CTA -->
   <BannerCta page={page} imageClass="sm:w-1/2 md:w-4/12 h-auto" />
@@ -241,50 +162,6 @@ const destinations = [
     </SectionHeading>
     <RatesTable />
   </section>
-
-  <!-- Reliable Transportation Service -->
-  <div class="mt-12 py-12">
-    <TextCard
-      id="reliable-transportation"
-      title={t("pages.playaDelCarmen.reliableService.title")}
-      class="flex flex-col-reverse items-center gap-8 md:flex-row-reverse"
-    >
-      <Image
-        slot="image"
-        src={clientAppEsImg}
-        alt={t("pages.playaDelCarmen.reliableService.title")}
-        widths={[400, 800, clientAppEsImg.width]}
-        sizes="(max-width: 768px) 400px, 800px"
-        quality={60}
-        format="avif"
-        loading="lazy"
-        decoding="async"
-        class="h-full w-full rounded-xl object-cover md:w-1/2"
-      />
-      <div class="flex flex-col gap-8">
-        <div set:html={reliableServiceContent} class="markdown" />
-        <ButtonCta
-          href="#booking-form"
-          variant="blue"
-          title={t("pages.playaDelCarmen.reliableService.title")}
-          class="w-fit"
-          aria-label={t("pages.playaDelCarmen.reliableService.title")}
-        >
-          <div class="flex items-center gap-3 text-left">
-            <FaImages className="text-3xl" />
-            <div class="flex flex-col leading-tight">
-              <span class="text-lg font-bold"
-                >{t("global.sections.reliableService.cta.label")}</span
-              >
-              <span class="text-xs font-light"
-                >{t("global.sections.reliableService.cta.sublabel")}</span
-              >
-            </div>
-          </div>
-        </ButtonCta>
-      </div>
-    </TextCard>
-  </div>
 
   <!-- FAQs -->
   <FaqSection page={page} />
