@@ -20,11 +20,23 @@ const serviceKeys = [
   { key: "hotelToPark", Icon: FaTree },
 ];
 
-const services = serviceKeys.map(({ key, Icon }) => ({
-  title: t(`global.sections.transportationServicesList.items.${key}.title`),
-  text: t(`pages.${page}.transportationServices.items.${key}.text`),
-  Icon,
-}));
+const services = serviceKeys.map(({ key, Icon }) => {
+  const pageTitle = t(
+    `pages.${page}.transportationServices.items.${key}.title`,
+  );
+  const globalTitle = t(
+    `global.sections.transportationServicesList.items.${key}.title`,
+  );
+
+  return {
+    title:
+      pageTitle !== `pages.${page}.transportationServices.items.${key}.title`
+        ? pageTitle
+        : globalTitle,
+    text: t(`pages.${page}.transportationServices.items.${key}.text`),
+    Icon,
+  };
+});
 
 const title = t(`pages.${page}.transportationServices.title`);
 const description = t(`pages.${page}.transportationServices.description`);
