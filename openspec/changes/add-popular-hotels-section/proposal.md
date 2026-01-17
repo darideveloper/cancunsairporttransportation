@@ -7,7 +7,7 @@ Add a new section "Most Popular Hotels" to the bottom of the Playa del Carmen pa
 - **New Section**: A "Most Popular Hotels" section at the bottom of the page.
 - **Content**: Title, grid of cards, and a "View More" button.
 - **Data**: All text and links must be managed via `src/messages/{lang}.json`.
-- **Component**: Use `src/components/molecules/InfoIconCard.astro` for the cards.
+- **Component**: Create and use `src/components/molecules/BasicIconCard.astro` for the cards.
 - **Layout**: 3x3 grid on desktop (responsive).
 - **Interactivity**: Cards should link/scroll to the booking form. The "View More" button links to `/destinations` (or language equivalent).
 - **Icon**: Use a "hotel-location" icon (likely `FaMapMarkerAlt` or similar from `react-icons`) for the cards.
@@ -46,11 +46,17 @@ Add a new section "Most Popular Hotels" to the bottom of the Playa del Carmen pa
     - "Transportación del Aeropuerto de Cancún al Hyatt Zilara Riviera Maya"
 
 ### Components
+#### [NEW] [BasicIconCard.astro](file:///develop/astro/cancunsairporttransportation/src/components/molecules/BasicIconCard.astro)
+- New molecule component based on `InfoIconCard`.
+- Props: `title` (string), `icon` (Component), `href` (string, optional).
+- Renders an `<h3>` with `title` and the `icon`.
+- Simplified version of `InfoIconCard` without description or bottom section.
+
 #### [NEW] [PopularHotels.astro](file:///develop/astro/cancunsairporttransportation/src/components/organisms/PopularHotels.astro)
 - New organism component to render the section.
 - Fetches data from i18n.
-- Renders `SectionHeading` and a grid of `InfoIconCard`.
-- Handles the "link to form" logic (likely via ID anchor or script).
+- Renders `SectionHeading` and a grid of `BasicIconCard`.
+- Handles the "link to form" logic.
 
 ### Pages
 #### [MODIFY] [transportation-from-cancun-airport-to-playa-del-carmen.astro](file:///develop/astro/cancunsairporttransportation/src/pages/[lang]/transportation-from-cancun-airport-to-playa-del-carmen.astro)

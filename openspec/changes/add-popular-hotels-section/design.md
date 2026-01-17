@@ -2,36 +2,73 @@
 
 ## Component Structure
 
-We will create a new organism `PopularHotels.astro`.
+We will create a new molecule `BasicIconCard.astro` and a new organism `PopularHotels.astro`.
+
+### BasicIconCard.astro
+
+A simplified card component based on `InfoIconCard` but primarily for a title + icon link.
+
+```astro
+---
+interface Props {
+  title: string;
+  icon?: any; // Component type
+  href?: string;
+  class?: string;
+}
+
+const { title, icon: Icon, href, class: className } = Astro.props;
+---
+
+<a 
+  href={href} 
+  class={`bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-4 group border border-gray-light ${className}`}
+>
+  {Icon && <Icon class="text-accent text-2xl group-hover:scale-110 transition-transform duration-300" />}
+  <h3 class="text-gray-dark font-bold text-lg group-hover:text-accent transition-colors duration-300">
+    {title}
+  </h3>
+</a>
+```
+
+### PopularHotels.astro
 
 ```astro
 ---
 import SectionHeading from "../molecules/SectionHeading.astro";
-import InfoIconCard from "../molecules/InfoIconCard.astro";
+import BasicIconCard from "../molecules/BasicIconCard.astro";
 import ButtonCta from "../atoms/ButtonCta.astro";
 import { useTranslations } from "../../lib/i18n/utils";
-import { FaMapMarkerAlt } from "react-icons/fa"; // Using as "hotel-location" substitute
+import { FaMapMarkerAlt } from "react-icons/fa";
 
-const { page } = Astro.props; // or just hardcode for PD Carmen if specific, but passing page allows reuse logic if needed. 
-// However, the request is specific to this page and data structure is specific.
-// We will follow the pattern of other sections like FaqSection which takes `page` prop.
-
-const t = useTranslations(page === "playaDelCarmen" ? "es" : "en"); // Actually page prop usually is for key prefix, lang is from context/props.
-// Let's check how other components get lang. usually `Astro.currentLocale` or passed prop.
-// In `transportation-from-cancun-airport-to-playa-del-carmen.astro`, `lang` is passed to components or `t` is used.
-// Best pattern: Receive `lang` or use `useTranslations`.
+const { page } = Astro.props;
+const t = useTranslations(page === "playaDelCarmen" ? "es" : "en");
+const { popularHotels } = t.pages.playaDelCarmen;
 ---
 
-<section class="container most-popular-hotels text-center">
-  <SectionHeading ... />
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    {items.map(item => (
-      <a href="#booking-form" class="block"> <InfoIconCard ... /> </a>
-      // OR if InfoIconCard handles href:
-      <InfoIconCard href="#booking-form" ... />
+<section class="container mx-auto py-16 px-4">
+  <SectionHeading
+    title={popularHotels.title}
+    subtitle="" 
+    align="center"
+    class="mb-12"
+  />
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    {popularHotels.items.map((item) => (
+      <BasicIconCard 
+        title={item} 
+        icon={FaMapMarkerAlt} 
+        href="#booking-form"
+      />
     ))}
   </div>
-  <ButtonCta href={...} ... />
+
+  <div class="flex justify-center">
+    <ButtonCta href={popularHotels.viewMoreLink || "/destinations"} variant="primary">
+      {popularHotels.viewMore}
+    </ButtonCta>
+  </div>
 </section>
 ```
 
@@ -83,7 +120,8 @@ We will store this full text in the translation file.
 - **Grid**: `grid grid-cols-1 md:grid-cols-3 gap-8` (matching the user request "grid 3 x 3 (for desktop)"). 
 - **Icons**: The user provided an SVG usage `<use xlink:href="/assets/img/svg/icons.svg#hotel-location"></use>`. 
   - If we want to strictly follow the "InfoIconCard renders a top icon" instruction, we need to pass a component as `TitleIcon`. 
-  - `InfoIconCard` props: `TitleIcon?: any`. It renders `<TitleIcon class="..." />`.
+  - `BasicIconCard` props: `icon`, `title`, `href`.
+  - We can pass `FaMapMarkerAlt` as the `icon` prop.
   - We can create a small local component or wrapper to render the SVG `use` tag if we want to reuse the exact asset, OR use `react-icons`.
   - usage of `/assets/img/svg/icons.svg` implies an external sprite.
   - I will try to use `FaMapMarkerAlt` as a clean substitute, or if I can find the SVG code I can make a component. Given I cannot easily read the SVG sprite file content to extract the path (it's binary/static asset), `react-icons` is safer and consistent with other components like `FaImages`.
