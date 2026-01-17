@@ -9,7 +9,7 @@ const { currentPage } = Astro.props as Props;
 import BaseSEO from "./base/BaseSEO.astro";
 
 // Libs
-import { useTranslations } from "../../lib/i18n/utils";
+import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 
 // Data
 const SITE_URL = import.meta.env.SITE_URL;
@@ -17,8 +17,8 @@ const SITE_URL = import.meta.env.SITE_URL;
 // import { servicesData } from '../../data/servcies'
 
 // i18n
-const { lang } = Astro.params as { lang: "en" | "es" };
-const t = useTranslations(lang || "en");
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 // Extra JSON
 const extraJson = {

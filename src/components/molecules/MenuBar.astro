@@ -40,7 +40,7 @@ const translateLink = lang === "es" ? "/en" : "/es";
 
   <!-- navigation -->
   <nav aria-label={t("global.menubar.nav.ariaLabel") || "Main Navigation"}>
-    <NavLinks lang={lang} mode="desktop" />
+    <NavLinks mode="desktop" />
   </nav>
 
   <!-- cta -->
@@ -89,7 +89,7 @@ const translateLink = lang === "es" ? "/en" : "/es";
 
   <!-- Duplicate nav -->
   <nav aria-label="Mobile Navigation">
-    <NavLinks lang={lang} mode="mobile">
+    <NavLinks mode="mobile">
       <!-- Mobile Extras -->
       <li class={MOBILE_STYLES.li}>
         <p><strong>{t("global.menubar.translateWebsite")}</strong></p>

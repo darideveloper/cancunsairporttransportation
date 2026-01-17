@@ -18,13 +18,13 @@ const {
   useTagLine = true,
 } = Astro.props as Props;
 
-const { lang } = Astro.params as { lang: "en" | "es" };
-
 // Libs
-import { useTranslations } from "../../../lib/i18n/utils";
+import { useTranslations, getLangFromUrl } from "../../../lib/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
 
 // i18n
-const t = useTranslations((lang as "en" | "es") || "en");
+const t = useTranslations(lang);
 
 // Data
 const SITE_URL = import.meta.env.SITE_URL;

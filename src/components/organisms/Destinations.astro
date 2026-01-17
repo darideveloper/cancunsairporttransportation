@@ -1,6 +1,6 @@
 ---
 // Libs
-import { useTranslations } from "../../lib/i18n/utils";
+import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 import { marked } from "marked";
 
 // Components
@@ -22,7 +22,7 @@ interface Props {
 const { page } = Astro.props;
 
 // Get language
-const lang = Astro.currentLocale as "en" | "es";
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // Data

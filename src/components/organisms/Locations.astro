@@ -1,6 +1,7 @@
 ---
 // Libs
-import { useTranslations } from "../../lib/i18n/utils";
+// Libs
+import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 
 // Components
 import SectionHeading from "../molecules/SectionHeading.astro";
@@ -10,8 +11,8 @@ import BasicIconCard from "../molecules/BasicIconCard.astro";
 // Icons
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-const { lang } = Astro.params as { lang: string };
-const t = useTranslations(lang as "en" | "es");
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const contactItems = [
   {
