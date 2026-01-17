@@ -2,22 +2,15 @@
 interface Props {
   title: string;
   text: string;
-  TitleIcon?: any;
+  Icon?: any;
   BottomIcon?: any;
   bottomText?: string;
   href?: string;
   class?: string;
+  iconClass?: string;
 }
 
-const {
-  title,
-  text,
-  TitleIcon,
-  BottomIcon,
-  bottomText,
-  href,
-  class: className,
-} = Astro.props;
+const { title, text, Icon, href, class: className, iconClass } = Astro.props;
 const id = `info-card-${title
   .toLowerCase()
   .trim()
@@ -30,8 +23,8 @@ const id = `info-card-${title
   aria-labelledby={id}
 >
   <header class="mb-3 flex items-center gap-2">
-    {TitleIcon && <TitleIcon class="text-accent text-xl" aria-hidden="true" />}
-    <h3 class="text-accent-dark! text-md font-bold" id={id}>{title}</h3>
+    {Icon && <Icon className={`text-xl ${iconClass}`} aria-hidden="true" />}
+    <h3 class="text-md font-bold" id={id}>{title}</h3>
   </header>
   <p class="text-gray text-base leading-relaxed">
     {
@@ -44,19 +37,4 @@ const id = `info-card-${title
       )
     }
   </p>
-  {
-    (BottomIcon || bottomText) && (
-      <footer class="border-gray-light mt-auto flex w-full items-center justify-end border-t pt-4">
-        {bottomText && (
-          <span class="text-blue text-sm font-semibold">{bottomText}</span>
-        )}
-        {BottomIcon && (
-          <BottomIcon
-            className="ml-2 text-blue text-xl transition-colors duration-300"
-            aria-hidden="true"
-          />
-        )}
-      </footer>
-    )
-  }
 </article>
