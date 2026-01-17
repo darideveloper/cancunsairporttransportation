@@ -29,10 +29,7 @@ const services = serviceKeys.map(({ key, Icon }) => {
   );
 
   return {
-    title:
-      pageTitle !== `pages.${page}.transportationServices.items.${key}.title`
-        ? pageTitle
-        : globalTitle,
+    title: pageTitle || globalTitle,
     text: t(`pages.${page}.transportationServices.items.${key}.text`),
     Icon,
   };
