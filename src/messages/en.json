@@ -790,7 +790,7 @@
             },
             "transportationServices": {
                 "title": "Transportation Services in Playa del Carmen",
-                "description": "We offer the most complete and efficient transportation services in Playa del Carmen. Whether you need to go to the airport, your hotel, or any attraction, we are here to help you.",
+                "description": "",
                 "items": {
                     "airportToHotel": {
                         "text": "Need a transfer to or from the airport in Playa del Carmen? Our reliable service ensures you arrive on time and comfortably."
