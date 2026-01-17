@@ -805,6 +805,21 @@
                         "text": "Visiting the theme parks near Playa del Carmen like Xcaret or Xenses? We provide direct transportation for you and your group."
                     }
                 }
+            },
+            "popularHotels": {
+                "title": "Most popular hotels in Playa del Carmen",
+                "viewMore": "View More Hotels",
+                "viewMoreTitle": "View More Hotels",
+                "items": [
+                    "Transportation from Cancun Airport to ADO Playa Del Carmen",
+                    "Transportation from Cancun Airport to Hotel Xcaret Mexico",
+                    "Transportation from Cancun Airport to Grand Riviera Princess - All Inclusive",
+                    "Transportation from Cancun Airport to The Royal Haciendas All Suites Resort & Spa",
+                    "Transportation from Cancun Airport to Wyndham Garden Playa del Carmen",
+                    "Transportation from Cancun Airport to Hotel The Reef Playacar",
+                    "Transportation from Cancun Airport to hotel Thompson Playa del Carmen",
+                    "Transportation from Cancun Airport to Hyatt Zilara Riviera Maya"
+                ]
             }
         }
     }

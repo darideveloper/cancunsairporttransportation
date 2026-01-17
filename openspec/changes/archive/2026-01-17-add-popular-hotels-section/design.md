@@ -2,34 +2,17 @@
 
 ## Component Structure
 
-We will create a new molecule `BasicIconCard.astro` and a new organism `PopularHotels.astro`.
+We will use the existing molecule `BasicIconCard.astro` and create a new organism `PopularHotels.astro`.
 
 ### BasicIconCard.astro
 
-A simplified card component based on `InfoIconCard` but primarily for a title + icon link.
+We utilize the existing component at `src/components/molecules/BasicIconCard.astro`.
 
-```astro
----
-interface Props {
-  title: string;
-  icon?: any; // Component type
-  href?: string;
-  class?: string;
-}
-
-const { title, icon: Icon, href, class: className } = Astro.props;
----
-
-<a 
-  href={href} 
-  class={`bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-4 group border border-gray-light ${className}`}
->
-  {Icon && <Icon class="text-accent text-2xl group-hover:scale-110 transition-transform duration-300" />}
-  <h3 class="text-gray-dark font-bold text-lg group-hover:text-accent transition-colors duration-300">
-    {title}
-  </h3>
-</a>
-```
+**Props used:**
+- `title`: The hotel/transportation text (for uniqueness and heading).
+- `text`: The call to action text (links to booking form).
+- `Icon`: `FaMapMarkerAlt`.
+- `href`: `#booking-form`.
 
 ### PopularHotels.astro
 
@@ -57,9 +40,12 @@ const { popularHotels } = t.pages.playaDelCarmen;
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
     {popularHotels.items.map((item) => (
       <BasicIconCard 
-        title={item} 
-        icon={FaMapMarkerAlt} 
+        title={item}
+        text={t("global.ui.pricingCard.bookNow")} 
+        Icon={FaMapMarkerAlt} 
         href="#booking-form"
+        class="bg-white"
+        iconClass="text-accent"
       />
     ))}
   </div>
@@ -83,14 +69,14 @@ Structure:
   "viewMore": "View More Hotels",
   "viewMoreTitle": "View More Hotels", 
   "items": [
-    { "text": "Transportation from Cancun Airport to ADO Playa Del Carmen" },
-    { "text": "Transportation from Cancun Airport to Hotel Xcaret Mexico" },
-    { "text": "Transportation from Cancun Airport to Grand Riviera Princess - All Inclusive" },
-    { "text": "Transportation from Cancun Airport to The Royal Haciendas All Suites Resort & Spa" },
-    { "text": "Transportation from Cancun Airport to Wyndham Garden Playa del Carmen" },
-    { "text": "Transportation from Cancun Airport to Hotel The Reef Playacar" },
-    { "text": "Transportation from Cancun Airport to hotel Thompson Playa del Carmen" },
-    { "text": "Transportation from Cancun Airport to Hyatt Zilara Riviera Maya" }
+    "Transportation from Cancun Airport to ADO Playa Del Carmen",
+    "Transportation from Cancun Airport to Hotel Xcaret Mexico",
+    "Transportation from Cancun Airport to Grand Riviera Princess - All Inclusive",
+    "Transportation from Cancun Airport to The Royal Haciendas All Suites Resort & Spa",
+    "Transportation from Cancun Airport to Wyndham Garden Playa del Carmen",
+    "Transportation from Cancun Airport to Hotel The Reef Playacar",
+    "Transportation from Cancun Airport to hotel Thompson Playa del Carmen",
+    "Transportation from Cancun Airport to Hyatt Zilara Riviera Maya"
   ]
 }
 ```
@@ -102,14 +88,14 @@ Equivalent Spanish structure:
   "viewMore": "Ver más hoteles",
   "viewMoreTitle": "Ver más hoteles", 
   "items": [
-    { "text": "Transportación del Aeropuerto de Cancún al ADO Playa Del Carmen" },
-    { "text": "Transportación del Aeropuerto de Cancún al Hotel Xcaret México" },
-    { "text": "Transportación del Aeropuerto de Cancún al Grand Riviera Princess - All Inclusive" },
-    { "text": "Transportación del Aeropuerto de Cancún a The Royal Haciendas All Suites Resort & Spa" },
-    { "text": "Transportación del Aeropuerto de Cancún al hotel Wyndham Garden Playa del Carmen" },
-    { "text": "Transportación del Aeropuerto de Cancún al hotel The Reef Playacar" },
-    { "text": "Transportación del Aeropuerto de Cancún al hotel Thompson Playa del Carmen" },
-    { "text": "Transportación del Aeropuerto de Cancún al Hyatt Zilara Riviera Maya" }
+    "Transportación del Aeropuerto de Cancún al ADO Playa Del Carmen",
+    "Transportación del Aeropuerto de Cancún al Hotel Xcaret México",
+    "Transportación del Aeropuerto de Cancún al Grand Riviera Princess - All Inclusive",
+    "Transportación del Aeropuerto de Cancún a The Royal Haciendas All Suites Resort & Spa",
+    "Transportación del Aeropuerto de Cancún al hotel Wyndham Garden Playa del Carmen",
+    "Transportación del Aeropuerto de Cancún al hotel The Reef Playacar",
+    "Transportación del Aeropuerto de Cancún al hotel Thompson Playa del Carmen",
+    "Transportación del Aeropuerto de Cancún al Hyatt Zilara Riviera Maya"
   ]
 }
 ```

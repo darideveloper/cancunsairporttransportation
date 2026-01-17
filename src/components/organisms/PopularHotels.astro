@@ -1,0 +1,55 @@
+---
+// COmponents
+import SectionHeading from "../molecules/SectionHeading.astro";
+import BasicIconCard from "../molecules/BasicIconCard.astro";
+import ButtonCta from "../atoms/ButtonCta.astro";
+
+// Libs
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+
+// Icons
+import { FaHotel } from "react-icons/fa6";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang as "en" | "es");
+
+interface PopularHotelsData {
+  title: string;
+  viewMore: string;
+  viewMoreLink?: string;
+  items: string[];
+}
+
+const popularHotels = t(
+  "pages.playaDelCarmen.popularHotels",
+) as PopularHotelsData;
+---
+
+<section class="container mx-auto px-4 py-16">
+  <SectionHeading title={popularHotels.title} class="mb-12 text-center" />
+
+  <div class="mb-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      popularHotels.items.map((item: string) => (
+        <BasicIconCard
+          title={item}
+          Icon={FaHotel}
+          href="#booking-form"
+          class="flex items-center justify-center bg-white"
+          iconClass="text-accent"
+        />
+      ))
+    }
+    <div class="flex w-full justify-center sm:col-span-2 lg:col-span-1">
+      <ButtonCta
+        href={popularHotels.viewMoreLink || "/destinations"}
+        variant="orangeGhost"
+        class="flex! w-full items-center justify-center sm:w-auto lg:w-full"
+      >
+        <span class="inline-block">
+          {popularHotels.viewMore}
+        </span>
+      </ButtonCta>
+    </div>
+  </div>
+</section>

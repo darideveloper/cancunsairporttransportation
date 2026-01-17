@@ -1,7 +1,7 @@
 ---
 interface Props {
   title: string;
-  text: string;
+  text?: string;
   Icon?: any;
   BottomIcon?: any;
   bottomText?: string;
@@ -10,7 +10,14 @@ interface Props {
   iconClass?: string;
 }
 
-const { title, text, Icon, href, class: className, iconClass } = Astro.props;
+const {
+  title,
+  text = "",
+  Icon,
+  href,
+  class: className,
+  iconClass,
+} = Astro.props;
 const id = `info-card-${title
   .toLowerCase()
   .trim()
@@ -23,7 +30,7 @@ const id = `info-card-${title
   aria-labelledby={id}
 >
   <header class="mb-3 flex items-center gap-2">
-    {Icon && <Icon className={`text-xl ${iconClass}`} aria-hidden="true" />}
+    {Icon && <Icon className={`text-3xl ${iconClass}`} aria-hidden="true" />}
     <h3 class="text-md font-bold" id={id}>{title}</h3>
   </header>
   <p class="text-gray text-base leading-relaxed">

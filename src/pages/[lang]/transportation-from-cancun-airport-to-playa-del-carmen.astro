@@ -30,6 +30,8 @@ import PricingSection from "../../components/organisms/PricingSection.astro";
 import ClientGallery from "../../components/organisms/ClientGallery.astro";
 import Destinations from "../../components/organisms/Destinations.astro";
 
+import PopularHotels from "../../components/organisms/PopularHotels.astro";
+
 // Images
 import homeBannerImg from "../../assets/images/home-banner.webp";
 import safeTripBookingImg from "../../assets/images/destinations/playa-del-carmen/trip-advisor.webp";
@@ -167,5 +169,6 @@ const reliableServiceContent = await marked.parse(
   <FaqSection page={page} />
 
   <TransportationServices page={page} />
+  <PopularHotels page={page} />
   <Locations />
 </Layout>
