@@ -5,16 +5,13 @@ import Layout from "../../layouts/Layout.astro";
 // Libs
 import { useTranslations } from "../../lib/i18n/utils";
 import { getStaticPathsLangs } from "../../lib/utils";
-import { marked } from "marked";
 
 // i18n
 export const getStaticPaths = getStaticPathsLangs;
 
 // Components
-
 import PageSEO from "../../components/utils/PageSEO.astro";
-import SectionHeading from "../../components/molecules/SectionHeading.astro";
-import RatesTable from "../../components/molecules/RatesTable.astro";
+import RatesTable from "../../components/organisms/RatesTable.astro";
 import BookingForm from "../../components/organisms/BookingForm";
 import TextCardHalf from "../../components/organisms/TextCardHalf.astro";
 import TextCardSmall from "../../components/organisms/TextCardSmall.astro";
@@ -109,20 +106,7 @@ const t = useTranslations(lang);
   <BannerCta page={page} imageClass="sm:w-1/2 md:w-4/12 h-auto" />
 
   <!-- Rates Table -->
-  <section
-    class="container mt-12"
-    id="rates-table"
-    aria-labelledby="rates-table-heading"
-  >
-    <SectionHeading
-      id="rates-table-heading"
-      title={t("global.ratesTable.title")}
-      class="mb-8 text-center"
-    >
-      <p>{t("global.ratesTable.description")}</p>
-    </SectionHeading>
-    <RatesTable />
-  </section>
+  <RatesTable />
 
   <!-- FAQs -->
   <FaqSection page={page} />

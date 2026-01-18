@@ -15,8 +15,7 @@ import { Image } from "astro:assets";
 import PageSEO from "../../components/utils/PageSEO.astro";
 import BannerImage from "../../components/atoms/BannerImage.astro";
 import ButtonCta from "../../components/atoms/ButtonCta.astro";
-import SectionHeading from "../../components/molecules/SectionHeading.astro";
-import RatesTable from "../../components/molecules/RatesTable.astro";
+import RatesTable from "../../components/organisms/RatesTable.astro";
 import TextCard from "../../components/molecules/TextCard.astro";
 import BookingForm from "../../components/organisms/BookingForm";
 import TextCardHalf from "../../components/organisms/TextCardHalf.astro";
@@ -126,22 +125,7 @@ const reliableServiceContent = await marked.parse(
   </div>
 
   <!-- Rates Table -->
-  <section
-    class="container mt-12"
-    id="rates-table"
-    aria-labelledby="rates-table-heading"
-  >
-    <SectionHeading
-      id="rates-table-heading"
-      title={t("global.ratesTable.title")}
-      class="mb-8 text-center"
-    >
-      <p>{t("global.ratesTable.description")}</p>
-    </SectionHeading>
-    <RatesTable />
-  </section>
-
-  <hr class="my-12" />
+  <RatesTable />
 
   <!-- Reliable Transportation Service -->
   <div class="mt-12 bg-[#f5f7fa] py-12">

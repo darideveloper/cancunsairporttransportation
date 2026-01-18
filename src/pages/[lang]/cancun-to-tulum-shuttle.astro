@@ -11,20 +11,19 @@ export const getStaticPaths = getStaticPathsLangs;
 
 // Components
 import PageSEO from "../../components/utils/PageSEO.astro";
+import RatesTable from "../../components/organisms/RatesTable.astro";
 import BookingForm from "../../components/organisms/BookingForm";
 import TextCardHalf from "../../components/organisms/TextCardHalf.astro";
 import TextCardSmall from "../../components/organisms/TextCardSmall.astro";
 import PopularHotels from "../../components/organisms/PopularHotels.astro";
 import BannerStats from "../../components/organisms/BannerStats.astro";
-import BannerCta from "../../components/organisms/BannerCta.astro";
+import PricingSection from "../../components/organisms/PricingSection.astro";
 import Testimonials from "../../components/organisms/Testimonials.astro";
 import ClientGallery from "../../components/organisms/ClientGallery.astro";
 import Destinations from "../../components/organisms/Destinations.astro";
-import SectionHeading from "../../components/molecules/SectionHeading.astro";
-import RatesTable from "../../components/molecules/RatesTable.astro";
+import BannerCta from "../../components/organisms/BannerCta.astro";
 import FaqSection from "../../components/organisms/FaqSection.astro";
 import TransportationServices from "../../components/organisms/TransportationServices.astro";
-import PricingSection from "../../components/organisms/PricingSection.astro";
 
 // Images
 import safeTripBookingImg from "../../assets/images/destinations/tulum/trip-advisor.webp";
@@ -115,20 +114,7 @@ const t = useTranslations(lang);
   <BannerCta page={page} imageClass="sm:w-1/2 md:w-4/12 h-auto" />
 
   <!-- Rates Table -->
-  <section
-    class="container mt-12"
-    id="rates-table"
-    aria-labelledby="rates-table-heading"
-  >
-    <SectionHeading
-      id="rates-table-heading"
-      title={t("global.ratesTable.title")}
-      class="mb-8 text-center"
-    >
-      <p>{t("global.ratesTable.description")}</p>
-    </SectionHeading>
-    <RatesTable />
-  </section>
+  <RatesTable />
 
   <!-- FAQs -->
   <FaqSection page={page} />
