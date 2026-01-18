@@ -72,11 +72,11 @@ const reliableServiceContent = await marked.parse(
   <!-- Hero -->
   <BannerImage
     src={homeBannerImg}
-    alt={t("pages.home.bannerAlt")}
-    title={t("pages.home.bannerImageTitle")}
+    alt={t(`pages.${page}.bannerAlt`)}
+    title={t(`pages.${page}.bannerImageTitle`)}
   >
     <h1 class="mx-auto w-11/12 text-5xl font-bold">
-      {t("pages.home.bannerTitle")}
+      {t(`pages.${page}.bannerTitle`)}
     </h1>
   </BannerImage>
 

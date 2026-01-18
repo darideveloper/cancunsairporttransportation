@@ -50,13 +50,13 @@ const { lang } = Astro.params as { lang: "en" | "es" };
 // Tranlation texts
 const t = useTranslations(lang);
 const safeTripBookContent = await marked.parse(
-  t("pages.cancunToTulumShuttle.safeTrip.description"),
+  t(`pages.${page}.safeTrip.description`),
 );
 const howToMoveContent = await marked.parse(
-  t("pages.cancunToTulumShuttle.howToMove.content"),
+  t(`pages.${page}.howToMove.content`),
 );
 const reliableServiceContent = await marked.parse(
-  t("pages.cancunToTulumShuttle.reliableService.description"),
+  t(`pages.${page}.reliableService.description`),
 );
 
 // Data
@@ -64,7 +64,7 @@ const reliableServiceContent = await marked.parse(
 
 <Layout preloadImage={homeBannerImg.src}>
   <!-- Page SEO -->
-  <PageSEO currentPage="home" slot="seo" />
+  <PageSEO currentPage={page} slot="seo" />
 
   <!-- Form -->
   <BookingForm
@@ -72,7 +72,7 @@ const reliableServiceContent = await marked.parse(
     defaultFrom="cun"
     defaultTo="merida"
     client:idle
-    title={t("pages.cancunToTulumShuttle.title")}
+    title={t(`pages.${page}.title`)}
   />
 
   <!-- Company stats -->
@@ -81,13 +81,13 @@ const reliableServiceContent = await marked.parse(
   <!-- Banner with image and text -->
   <TextCard
     id="safe-trip-booking"
-    title={t("pages.cancunToTulumShuttle.safeTrip.title")}
+    title={t(`pages.${page}.safeTrip.title`)}
     class="mt-12 grid grid-cols-1 items-center justify-center md:grid-cols-2"
   >
     <Image
       slot="image"
       src={safeTripBookingImg}
-      alt={t("pages.cancunToTulumShuttle.safeTrip.title")}
+      alt={t(`pages.${page}.safeTrip.title`)}
       widths={[348, 696, 1220, safeTripBookingImg.width]}
       sizes="(max-width: 768px) 348px, (max-width: 1024px) 450px, 610px"
       quality={60}
@@ -106,13 +106,13 @@ const reliableServiceContent = await marked.parse(
   <div class="bg-accent/5 mt-12 py-12">
     <TextCard
       id="how-to-move"
-      title={t("pages.cancunToTulumShuttle.howToMove.title")}
+      title={t(`pages.${page}.howToMove.title`)}
       class="flex flex-col items-center justify-center md:flex-row"
     >
       <Image
         slot="image"
         src={howToMoveImg}
-        alt={t("pages.cancunToTulumShuttle.howToMove.title")}
+        alt={t(`pages.${page}.howToMove.title`)}
         widths={[400, 800, howToMoveImg.width]}
         sizes="(max-width: 768px) 400px, 800px"
         quality={60}
