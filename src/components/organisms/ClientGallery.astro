@@ -1,6 +1,7 @@
 ---
 // Libs
 import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 
 // Components
 import SectionHeading from "../molecules/SectionHeading.astro";
@@ -13,6 +14,9 @@ interface Props {
 }
 
 const { title, subtitle, images } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="client-gallery" aria-labelledby="gallery-title" class="py-12">
@@ -27,8 +31,12 @@ const { title, subtitle, images } = Astro.props;
           <div class="overflow-hidden rounded-lg">
             <Image
               src={image}
-              alt={`Client photo ${index + 1}`}
-              title={`Client photo ${index + 1}`}
+              alt={t("global.sections.clientGallery.imageAlt", {
+                index: String(index + 1),
+              })}
+              title={t("global.sections.clientGallery.imageTitle", {
+                index: String(index + 1),
+              })}
               class="h-64 w-full object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
