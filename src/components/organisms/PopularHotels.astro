@@ -13,6 +13,12 @@ import { FaHotel } from "react-icons/fa6";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang as "en" | "es");
 
+interface Props {
+  page: string;
+}
+
+const { page } = Astro.props;
+
 interface PopularHotelsData {
   title: string;
   viewMore: string;
@@ -20,9 +26,7 @@ interface PopularHotelsData {
   items: string[];
 }
 
-const popularHotels = t(
-  "pages.playaDelCarmen.popularHotels",
-) as PopularHotelsData;
+const popularHotels = t(`pages.${page}.popularHotels`) as PopularHotelsData;
 ---
 
 <section class="container mx-auto px-4 pt-12">

@@ -832,15 +832,15 @@
         "cancunToTulumShuttle": {
             "title": "Cancun to Tulum Shuttle | Cheapest Shuttle from Cancun to Tulum",
             "destinations": {
-                "title": "Transfers to and from Playa del Carmen",
-                "text": "We offer the most complete transportation service to any hotel or destination in Playa del Carmen or vice versa, from any destination in the Riviera Maya or Airport, we provide a full service ready to take you to your hotel or favorite attraction in Playa del Carmen.",
+                "title": "Shuttle from Cancun to Tulum",
+                "text": "We offer the most complete transportation service to any hotel or destination in Tulum or vice versa, from any destination in the Riviera Maya or Airport. We provide a full service ready to take you to your hotel or favorite attraction in Tulum.",
                 "viewMore": "View more destinations",
                 "viewMoreLink": "/destinations",
                 "cards": {
                     "tulum": {
                         "title": "Transportation to Tulum",
                         "price": "129.00",
-                        "description": "Enjoy a safe, fast, and reliable transfer service to Akumal. The estimated transfer time from Cancun to Akumal is 1 hour and 40 minutes.",
+                        "description": "Enjoy a safe, fast, and reliable transfer service to Tulum. The estimated transfer time from Cancun to Tulum is 1 hour and 40 minutes.",
                         "ctaText": "Book now",
                         "link": "/cancun-to-tulum-shuttle"
                     },
@@ -861,8 +861,8 @@
                 }
             },
             "bannerCta": {
-                "title": "Transportation from Cancun to Playa del Carmen by Cancun Airport Transportation",
-                "text": "Playa del Carmen, a renowned beach destination globally, is located just south of Cancun along the stunning Mexican Caribbean coast. This charming town features an array of accommodations, including boutique hotels, luxurious resorts, and cozy Airbnbs, all set amidst beautiful beaches, lush jungles, superb dining, and excellent shopping opportunities.\n\nWhether traveling with family or solo, Playa del Carmen offers a wealth of attractions. For seamless transportation from Cancun, opt for Cancun Airport Shuttle Services. Our friendly greeters and professional drivers provide exceptional service and attention when you arrive.\n\nThe drive from Cancun to Playa del Carmen typically takes between 60 to 90 minutes.\n\nWhether you’re planning a romantic escape or a family holiday, Playa del Carmen is an ideal destination. If you’re wondering how to get from Cancun Airport to Playa del Carmen, choose Cancun Airport Shuttle for the most reliable and budget-friendly shuttle service. Travel with ease and comfort, knowing you’re in capable hands."
+                "title": "Transportation from Cancun Airport to Tulum",
+                "text": "Tulum is located approximately 130 km (80 mi) south of Cancun Airport, a journey that typically takes around 2 hours. Known for its breathtaking Mayan ruins, Tulum is the perfect destination for those seeking an extraordinary vacation away from the hustle and bustle of city life. For your transportation from Cancun to Tulum, consider our service: Our Cancun Airport Transportation to Tulum is the most cost-effective option for transportation from Cancun Airport to Tulum.\n\nSit back, relax, and enjoy a secure and comfortable ride to Tulum in one of our reliable shuttle vans. With over a decade of experience, we specialize in providing top-notch airport transportation services to hotels in both Cancun and Tulum.\n\nExperience our Shuttle from Cancun to Tulum service at an incredible rate! Travel in luxury and style in one of our pristine Full-size SUV vehicles—the perfect way to start your vacation in the Mexican Caribbean.\n\nReserve your deluxe Tulum transportation from Cancun today!\n\nWe are proud to offer the most affordable shuttle transportation in Cancun and Tulum, with experienced drivers dedicated to ensuring safe and efficient travel to your hotel."
             },
             "testimonials": {
                 "title": "Comments from our customers",
@@ -989,19 +989,19 @@
                 }
             },
             "popularHotels": {
-                "title": "Most popular hotels in Playa del Carmen",
+                "title": "Most popular hotels in Tulum",
                 "viewMore": "View More Hotels",
                 "viewMoreTitle": "View More Hotels",
                 "viewMoreLink": "/destinations",
                 "items": [
-                    "Transportation from Cancun Airport to ADO Playa Del Carmen",
-                    "Transportation from Cancun Airport to Hotel Xcaret Mexico",
-                    "Transportation from Cancun Airport to Grand Riviera Princess - All Inclusive",
-                    "Transportation from Cancun Airport to The Royal Haciendas All Suites Resort & Spa",
-                    "Transportation from Cancun Airport to Wyndham Garden Playa del Carmen",
-                    "Transportation from Cancun Airport to Hotel The Reef Playacar",
-                    "Transportation from Cancun Airport to hotel Thompson Playa del Carmen",
-                    "Transportation from Cancun Airport to Hyatt Zilara Riviera Maya"
+                    "Transportation from Cancun Airport to Naay Tulum Boutique Hotel",
+                    "Transportation from Cancun Airport to Ahau Tulum",
+                    "Transportation from Cancun Airport to Be Tulum",
+                    "Transportation from Cancun Airport to Aldea Zama",
+                    "Transportation from Cancun Airport to Dreams Tulum Resort & Spa",
+                    "Transportation from Cancun Airport to Hotelito Azul Tulum",
+                    "Transportation from Cancun Airport to Selina Tulum Hotel",
+                    "Transportation from Cancun Airport to Nomade Tulum Hotel"
                 ]
             }
         }
