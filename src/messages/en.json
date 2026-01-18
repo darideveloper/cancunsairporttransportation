@@ -789,20 +789,24 @@
                 }
             },
             "transportationServices": {
-                "title": "Transportation Services in Playa del Carmen",
+                "title": "Shuttle from Cancun to Playa del Carmen",
                 "description": "",
                 "items": {
                     "airportToHotel": {
-                        "text": "Need a transfer to or from the airport in Playa del Carmen? Our reliable service ensures you arrive on time and comfortably."
+                        "title": "Airport to Hotel",
+                        "text": "You have come to enjoy the Caribbean and surely you need transportation to your Hotel or Airport, this service is ideal for you."
                     },
                     "hotelToHotel": {
-                        "text": "Move between hotels in the Playa del Carmen area with ease. We handle the logistics so you can enjoy your stay."
+                        "title": "Hotel to Hotel",
+                        "text": "Need to change from one hotel to another while in Cancun? We help you with this transportation from hotel to hotel."
                     },
                     "hotelToRestaurant": {
-                        "text": "Going out for dinner in Playa del Carmen? Forget about parking or driving; we'll take you to the best restaurants and back safely."
+                        "title": "Hotel to Restaurant",
+                        "text": "When you relax on your vacation, probably the least you want to do is drive, and even more, if you plan to drink! We can take you to your restaurant and return to your hotel."
                     },
                     "hotelToPark": {
-                        "text": "Visiting the theme parks near Playa del Carmen like Xcaret or Xenses? We provide direct transportation for you and your group."
+                        "title": "Hotel to Park",
+                        "text": "Are you visiting Xcaret or Xel Ha? Or probably Xoximilco or the Mayan Museum in Cancun. At Cancun Airport Transportation we can take you to any of these parks."
                     }
                 }
             },

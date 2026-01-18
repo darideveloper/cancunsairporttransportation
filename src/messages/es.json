@@ -781,39 +781,42 @@
                 }
             },
             "transportationServices": {
-                "title": "Servicios de Transportación en Playa del Carmen",
+                "title": "Traslado de Cancún a Playa del Carmen",
                 "description": "",
                 "items": {
                     "airportToHotel": {
-                        "text": "¿Necesitas un traslado desde o hacia el aeropuerto en Playa del Carmen? Nuestro servicio confiable asegura que llegues a tiempo y con comodidad."
+                        "title": "Aeropuerto a Hotel",
+                        "text": "Has venido a disfrutar del Caribe y seguramente necesitas transportación a tu Hotel o Aeropuerto, este servicio es ideal para ti."
                     },
                     "hotelToHotel": {
                         "title": "De Hotel a Hotel",
-                        "text": "Muévete entre hoteles en el área de Playa del Carmen con facilidad. Nosotros nos encargamos de la logística para que disfrutes tu estancia."
+                        "text": "¿Necesitas cambiar de un hotel a otro mientras estás en Cancún? Nosotros le ayudamos con este transporte de Hotel a Hotel."
                     },
                     "hotelToRestaurant": {
-                        "text": "¿Vas a cenar en Playa del Carmen? Olvídate de buscar estacionamiento o conducir; te llevaremos a los mejores restaurantes y de regreso con seguridad."
+                        "title": "De Hotel a Restaurante",
+                        "text": "Cuando se relaja en sus vacaciones, probablemente lo menos que quiere hacer es conducir, y aún más, ¡si planea beber! Podemos llevarlo a su restaurante y regresar a su hotel."
                     },
                     "hotelToPark": {
-                        "text": "¿Visitas los parques temáticos cerca de Playa del Carmen como Xcaret o Xenses? Ofrecemos transportación directa para ti y tu grupo."
+                        "title": "Hotel a Parque",
+                        "text": "¿Vas a visitar Xcaret o Xel Ha? O probablemente Xoximilco o el Museo Maya en Cancún. En Transportación del Aeropuerto de Cancún podemos llevarte a cualquiera de estos parques."
                     }
-                },
-                "popularHotels": {
-                    "title": "Hoteles más populares en Playa del Carmen",
-                    "viewMore": "Ver más hoteles",
-                    "viewMoreTitle": "Ver más hoteles",
-                    "viewMoreLink": "/es/destinos",
-                    "items": [
-                        "Transportación del Aeropuerto de Cancún al ADO Playa Del Carmen",
-                        "Transportación del Aeropuerto de Cancún al Hotel Xcaret México",
-                        "Transportación del Aeropuerto de Cancún al Grand Riviera Princess - All Inclusive",
-                        "Transportación del Aeropuerto de Cancún a The Royal Haciendas All Suites Resort & Spa",
-                        "Transportación del Aeropuerto de Cancún al hotel Wyndham Garden Playa del Carmen",
-                        "Transportación del Aeropuerto de Cancún al hotel The Reef Playacar",
-                        "Transportación del Aeropuerto de Cancún al hotel Thompson Playa del Carmen",
-                        "Transportación del Aeropuerto de Cancún al Hyatt Zilara Riviera Maya"
-                    ]
                 }
+            },
+            "popularHotels": {
+                "title": "Hoteles más populares en Playa del Carmen",
+                "viewMore": "Ver más hoteles",
+                "viewMoreTitle": "Ver más hoteles",
+                "viewMoreLink": "/es/destinos",
+                "items": [
+                    "Transportación del Aeropuerto de Cancún al ADO Playa Del Carmen",
+                    "Transportación del Aeropuerto de Cancún al Hotel Xcaret México",
+                    "Transportación del Aeropuerto de Cancún al Grand Riviera Princess - All Inclusive",
+                    "Transportación del Aeropuerto de Cancún a The Royal Haciendas All Suites Resort & Spa",
+                    "Transportación del Aeropuerto de Cancún al hotel Wyndham Garden Playa del Carmen",
+                    "Transportación del Aeropuerto de Cancún al hotel The Reef Playacar",
+                    "Transportación del Aeropuerto de Cancún al hotel Thompson Playa del Carmen",
+                    "Transportación del Aeropuerto de Cancún al Hyatt Zilara Riviera Maya"
+                ]
             }
         }
     }
