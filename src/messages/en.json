@@ -810,6 +810,7 @@
                 "title": "Most popular hotels in Playa del Carmen",
                 "viewMore": "View More Hotels",
                 "viewMoreTitle": "View More Hotels",
+                "viewMoreLink": "/destinations",
                 "items": [
                     "Transportation from Cancun Airport to ADO Playa Del Carmen",
                     "Transportation from Cancun Airport to Hotel Xcaret Mexico",
