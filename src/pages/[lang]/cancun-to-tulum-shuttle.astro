@@ -5,28 +5,26 @@ import Layout from "../../layouts/Layout.astro";
 // Libs
 import { useTranslations } from "../../lib/i18n/utils";
 import { getStaticPathsLangs } from "../../lib/utils";
-import { marked } from "marked";
 
 // i18n
 export const getStaticPaths = getStaticPathsLangs;
 
 // Components
-import { Image } from "astro:assets";
 import PageSEO from "../../components/utils/PageSEO.astro";
 import BookingForm from "../../components/organisms/BookingForm";
-import TextCard from "../../components/molecules/TextCard.astro";
-import BannerCta from "../../components/organisms/BannerCta.astro";
+import TextCardHalf from "../../components/organisms/TextCardHalf.astro";
+import TextCardSmall from "../../components/organisms/TextCardSmall.astro";
+import PopularHotels from "../../components/organisms/PopularHotels.astro";
 import BannerStats from "../../components/organisms/BannerStats.astro";
-import RatesTable from "../../components/molecules/RatesTable.astro";
-import SectionHeading from "../../components/molecules/SectionHeading.astro";
+import BannerCta from "../../components/organisms/BannerCta.astro";
 import Testimonials from "../../components/organisms/Testimonials.astro";
+import ClientGallery from "../../components/organisms/ClientGallery.astro";
+import Destinations from "../../components/organisms/Destinations.astro";
+import SectionHeading from "../../components/molecules/SectionHeading.astro";
+import RatesTable from "../../components/molecules/RatesTable.astro";
 import FaqSection from "../../components/organisms/FaqSection.astro";
 import TransportationServices from "../../components/organisms/TransportationServices.astro";
 import PricingSection from "../../components/organisms/PricingSection.astro";
-import ClientGallery from "../../components/organisms/ClientGallery.astro";
-import Destinations from "../../components/organisms/Destinations.astro";
-
-import PopularHotels from "../../components/organisms/PopularHotels.astro";
 
 // Images
 import homeBannerImg from "../../assets/images/home-banner.webp";
@@ -49,15 +47,6 @@ const { lang } = Astro.params as { lang: "en" | "es" };
 
 // Tranlation texts
 const t = useTranslations(lang);
-const safeTripBookContent = await marked.parse(
-  t(`pages.${page}.safeTrip.description`),
-);
-const howToMoveContent = await marked.parse(
-  t(`pages.${page}.howToMove.content`),
-);
-const reliableServiceContent = await marked.parse(
-  t(`pages.${page}.reliableService.description`),
-);
 
 // Data
 ---
@@ -79,50 +68,27 @@ const reliableServiceContent = await marked.parse(
   <BannerStats />
 
   <!-- Banner with image and text -->
-  <TextCard
+  <TextCardHalf
     id="safe-trip-booking"
-    title={t(`pages.${page}.safeTrip.title`)}
-    class="mt-12 grid grid-cols-1 items-center justify-center md:grid-cols-2"
-  >
-    <Image
-      slot="image"
-      src={safeTripBookingImg}
-      alt={t(`pages.${page}.safeTrip.title`)}
-      widths={[348, 696, 1220, safeTripBookingImg.width]}
-      sizes="(max-width: 768px) 348px, (max-width: 1024px) 450px, 610px"
-      quality={60}
-      format="avif"
-      loading="eager"
-      decoding="async"
-      class="h-full w-full rounded-xl object-cover object-right"
-    />
-    <div set:html={safeTripBookContent} class="markdown" />
-  </TextCard>
+    page={page}
+    section="safeTrip"
+    image={safeTripBookingImg}
+    imageClass="object-right"
+  />
 
   <!-- Pricing transportation -->
   <PricingSection page={page} />
 
   <!-- How to move -->
   <div class="bg-accent/5 mt-12 py-12">
-    <TextCard
+    <TextCardSmall
       id="how-to-move"
-      title={t(`pages.${page}.howToMove.title`)}
-      class="flex flex-col items-center justify-center md:flex-row"
-    >
-      <Image
-        slot="image"
-        src={howToMoveImg}
-        alt={t(`pages.${page}.howToMove.title`)}
-        widths={[400, 800, howToMoveImg.width]}
-        sizes="(max-width: 768px) 400px, 800px"
-        quality={60}
-        format="avif"
-        loading="lazy"
-        decoding="async"
-        class="h-full w-full rounded-xl object-cover object-right md:w-1/2 lg:w-1/3"
-      />
-      <div set:html={howToMoveContent} class="markdown text-justify" />
-    </TextCard>
+      page={page}
+      section="howToMove"
+      contentKey="content"
+      image={howToMoveImg}
+      imageClass="object-right"
+    />
   </div>
 
   <!-- Clients testimonials -->
