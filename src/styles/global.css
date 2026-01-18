@@ -154,3 +154,7 @@ label {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
 }
+
+.markdown a {
+  @apply text-accent;
+}

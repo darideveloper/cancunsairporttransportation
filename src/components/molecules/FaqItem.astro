@@ -20,7 +20,10 @@ const { question, answer } = Astro.props;
     />
     <h3>{question}</h3>
   </summary>
-  <p class="text-gray border-blue mx-4 mt-2 border-l-3 pl-4">{answer}</p>
+  <div
+    class="text-gray border-blue markdown mx-4 mt-2 border-l-3 pl-4"
+    set:html={answer}
+  />
 </details>
 
 <style>

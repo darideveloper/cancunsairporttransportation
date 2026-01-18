@@ -3,6 +3,8 @@ import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 import SectionHeading from "../molecules/SectionHeading.astro";
 import FaqItem from "../molecules/FaqItem.astro";
 
+import { marked } from "marked";
+
 interface Props {
   page: string; // e.g., "home", "playaDelCarmen"
 }
@@ -35,7 +37,7 @@ const faqKeys = Object.keys(faqItems);
       faqKeys.map((key) => (
         <FaqItem
           question={faqItems[key].question}
-          answer={faqItems[key].answer}
+          answer={marked.parse(faqItems[key].answer) as string}
         />
       ))
     }

@@ -926,43 +926,47 @@
                 "content": "- **Car Rental:** Renting a car at Cancun Airport gives you the flexibility to travel at your own pace.\n- **Bus:** ADO buses run frequently from Cancun to Tulum and are an economical option.\n- **Private Transportation:** Booking our private transportation is a convenient option, especially for groups or families. Private transportation can be arranged in advance and will take you directly from Cancun Airport to your hotel in Tulum. With Cancun Airport Transportation by Go, you can get the best transportation option from Cancun to Tulum."
             },
             "faq": {
-                "title": "Cancun to Playa del Carmen Transportation - Faqs",
+                "title": "Cancun to Tulum - Faqs",
                 "items": {
-                    "cost": {
-                        "question": "How much is Transportation from Cancun to Playa del Carmen?",
-                        "answer": "The cost of transportation from Cancun to Playa del Carmen can vary depending on the type of service you choose. Private shuttles typically range from $69.99 to 145 one way for a vehicle that can accommodate up to four passengers. Prices may fluctuate based on the season and the specific service provider."
-                    },
                     "safe": {
-                        "question": "Is Transportation from Cancun Airport to Playa del Carmen safe?",
-                        "answer": "Yes, transportation from Cancun Airport to Playa del Carmen is generally considered safe. Reputable shuttle services offer professional, experienced drivers and well-maintained vehicles, ensuring a secure and comfortable journey."
+                        "question": "Is the Transportation from Cancun Airport to Tulum Safe?",
+                        "answer": "Yes, the transportation service from Cancun to Tulum is generally considered safe. Providers often prioritize safety, with experienced drivers and well-maintained vehicles."
                     },
-                    "benefits": {
-                        "question": "What benefits can I get with a shuttle to Playa del Carmen from Cancun?",
-                        "answer": "Using a shuttle service offers several benefits including convenience, comfort, and reliability. Our shuttle provides direct transport to your hotel, air-conditioned vehicles, and fixed rates without hidden charges. Many services also offer 24/7 customer support and flight tracking to adjust pickup times in case of flight delays."
+                    "include": {
+                        "question": "What Does My Transportation from Cancun Airport to Tulum Include?",
+                        "answer": "Transportation from Cancun Airport to Tulum typically includes a direct transfer by car, van, or bus, depending on the service you choose. It often includes amenities like air conditioning, professional drivers, and sometimes Wi-Fi and water."
                     },
-                    "howToGet": {
-                        "question": "How do I get from Cancun Airport to Playa del Carmen?",
-                        "answer": "From Cancun Airport, you can reach Playa del Carmen by private shuttle, taxi, rental car, or ADO bus. The most convenient option is often a private shuttle, which can be booked in advance and will take you directly to your destination."
+                    "visit": {
+                        "question": "What Can I Visit When I Book the Shuttle in Tulum?",
+                        "answer": "When in Tulum, you can visit the Tulum Ruins, beautiful beaches like Playa Paraíso, cenotes such as Gran Cenote, and the Sian Ka’an Biosphere Reserve."
                     },
-                    "distance": {
-                        "question": "How far is Playa del Carmen from Cancun Airport?",
-                        "answer": "Playa del Carmen is approximately 55 kilometers (34 miles) south of Cancun Airport. The drive typically takes about 45 minutes to an hour, depending on traffic conditions."
+                    "duration": {
+                        "question": "How Long is the Shuttle from Cancun Airport to Tulum?",
+                        "answer": "The shuttle ride from Cancun Airport to Tulum typically takes about 2 hours, depending on traffic and the specific location of your drop-off in Tulum."
                     },
-                    "placesToVisit": {
-                        "question": "What places can I visit in Playa del Carmen with a shuttle from Cancun to Playa del Carmen?",
-                        "answer": "A shuttle can take you to various attractions in and around Playa del Carmen, including the vibrant Fifth Avenue for shopping and dining, eco-parks like Xcaret and Xel-Há, and nearby cenotes for swimming and snorkeling. You can also visit historic sites such as the Tulum ruins, which are about an hour away."
+                    "bestWay": {
+                        "question": "Is the Shuttle from Cancun Airport the Best Way to Get to Tulum?",
+                        "answer": "The shuttle is a convenient and reliable option, especially for those not wanting to drive themselves. It offers a good balance of cost, convenience, and comfort."
+                    },
+                    "options": {
+                        "question": "How Can I Go from Cancun to Tulum?",
+                        "answer": "Options include renting a car, taking a bus (such as ADO), booking a private or shared shuttle, or using a taxi or transfer service."
+                    },
+                    "activities": {
+                        "question": "What Activities Can I Do in Tulum?",
+                        "answer": "In Tulum, you can enjoy snorkeling, scuba diving, visiting cenotes, exploring the Mayan ruins, yoga classes, and dining at excellent restaurants."
                     },
                     "uber": {
-                        "question": "Is there an Uber in Playa del Carmen?",
-                        "answer": "As of my last update, Uber is not widely available in Playa del Carmen due to local regulations and opposition from taxi unions. It’s advisable to use local taxis or book private transportation through a reputable service."
+                        "question": "Is There Uber in Tulum?",
+                        "answer": "Uber is not available in Tulum. Local taxis and shuttles are commonly used for transportation."
                     },
                     "cheapest": {
-                        "question": "What is the cheapest airport shuttle from Cancun to Playa del Carmen?",
-                        "answer": "The cheapest shuttle is our shuttle: USD 69.99"
+                        "question": "What is the Cheapest Airport Shuttle from Cancun to Tulum?",
+                        "answer": "The cheapest shuttle from Cancun Airport to Tulum is our service: $129 USD per vehicle."
                     },
                     "otherDestinations": {
-                        "question": "What other destinations can I book for my shuttle service?",
-                        "answer": "We have several locations where you can find us, you can reach the most popular destination in Quintana Roo with us: Cancun Airport Transportation, Cancun to Tulum Shuttle."
+                        "question": "What Other Destinations Can I Book for My Shuttle Service?",
+                        "answer": "You can book shuttle services to various destinations like <a href=\"/\" title=\"Cancun Airport Transportation\">Cancun Airport Transportation</a> and <a href=\"/transportation-from-cancun-airport-to-playa-del-carmen\" title=\"Transportation from Cancun Airport to Playa del Carmen\">Transportation from Cancun Airport to Playa del Carmen</a>."
                     }
                 }
             },
