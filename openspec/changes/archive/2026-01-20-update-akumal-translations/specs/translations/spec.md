@@ -1,6 +1,6 @@
 # Update Akumal Translations
 
-## MODIFIED Requirements
+## ADDED Requirements
 
 ### Requirement: Update Akumal Shuttle Translations
 The translations for the Cancun to Akumal Shuttle page MUST be updated in both English and Spanish to reflect the new provided content.
