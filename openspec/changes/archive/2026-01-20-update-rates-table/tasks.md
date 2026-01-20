@@ -1,0 +1,3 @@
+- [x] Update `src/components/organisms/RatesTable.astro` to accept optional `page` prop.
+- [x] Implement conditional logic in `RatesTable.astro` to fetch `destinations` from `pages.{page}.ratesTable.destinations` if `page` is present, with fallback to global.
+- [x] Update `src/pages/[lang]/cancun-to-akumal-shuttle.astro` to pass `page={page}` to the `<RatesTable />` component.

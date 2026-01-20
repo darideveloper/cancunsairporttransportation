@@ -9,22 +9,43 @@ import SectionHeading from "../molecules/SectionHeading.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+// Props
+interface Props {
+  page?: string;
+}
+
+interface DestinationData {
+  name: string;
+  privateOw: string;
+  privateRt: string;
+  luxuryOw: string;
+  luxuryRt: string;
+  groupOw: string;
+  groupRt: string;
+}
+
+const { page } = Astro.props;
+
 // Get headers translation object
 const headers = t("global.ratesTable.headers") as Record<string, string>;
 
 // Get destinations translation object and convert to array for iteration
-const destinationsObj = t("global.ratesTable.destinations") as Record<
-  string,
-  {
-    name: string;
-    privateOw: string;
-    privateRt: string;
-    luxuryOw: string;
-    luxuryRt: string;
-    groupOw: string;
-    groupRt: string;
-  }
->;
+// Try to get page specific destinations first, then fallback to global
+let destinationsObj = page
+  ? (t(`pages.${page}.ratesTable.destinations`) as Record<
+      string,
+      DestinationData
+    >)
+  : undefined;
+
+// Fallback to global if page specific not found or page not provided
+if (!destinationsObj) {
+  destinationsObj = t("global.ratesTable.destinations") as Record<
+    string,
+    DestinationData
+  >;
+}
+
 const destinations = Object.values(destinationsObj);
 
 const SERVICE_TIERS = [
