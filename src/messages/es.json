@@ -824,27 +824,27 @@
         "cancunToAkumalShuttle": {
             "title": "Traslado de Cancún a Akumal | El Mejor Transporte desde el Aeropuerto de Cancún a Akumal",
             "destinations": {
-                "title": "Traslado de Cancún a Tulum",
-                "text": "Ofrecemos el servicio de transporte más completo a cualquier hotel o destino en Tulum o viceversa, desde cualquier destino en la Riviera Maya o el Aeropuerto. Brindamos un servicio completo listo para llevarlo a su hotel o atracción favorita en Tulum.",
+                "title": "Transporte de Cancún a Akumal",
+                "text": "Además de ofrecer un servicio inigualable de transporte de Cancún a Akumal, también ofrecemos servicio de transportación a toda la RIviera Maya, así estés en el punto más recóndito de la Riviera Maya, nosotros llegamos hasta ti. Brindamos servicios desde y hacia el aeropuerto de Cancún 24/7.",
                 "viewMore": "Ver más destinos",
                 "viewMoreLink": "/es/destinos",
                 "cards": {
                     "tulum": {
                         "title": "Transporte a Tulum",
                         "price": "2322.00",
-                        "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a Tulum. El tiempo estimado de traslado de Cancún a Tulum es de 1 hora y 40 minutos.",
+                        "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a Akumal. El tiempo estimado de traslado de Cancún a Akumal es de 1 hora y 40 minutos.",
                         "ctaText": "Reservar",
                         "link": "/es/traslado-cancun-tulum"
                     },
                     "playa": {
-                        "title": "Transporte a Playa del Carmen",
+                        "title": "Transportación a Playa del Carmen",
                         "price": "1259.82",
                         "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a Playa del Carmen. El tiempo estimado de traslado desde Cancún es de 55 minutos.",
                         "ctaText": "Reservar",
                         "link": "/es/transportacion-cancun-a-playa-del-carmen"
                     },
                     "cancun": {
-                        "title": "Transporte a Cancún",
+                        "title": "Transportación a Cancún",
                         "price": "539.82",
                         "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a la Zona Hotelera. El tiempo estimado de traslado del Aeropuerto a la Zona Hotelera es de 30 minutos.",
                         "ctaText": "Reservar",
@@ -853,32 +853,32 @@
                 }
             },
             "bannerCta": {
-                "title": "Transportación del Aeropuerto de Cancún a Tulum",
-                "text": "Tulum se encuentra aproximadamente a 130 km (80 millas) al sur del Aeropuerto de Cancún, un viaje que generalmente toma alrededor de 2 horas. Conocido por sus impresionantes ruinas mayas, Tulum es el destino perfecto para aquellos que buscan unas vacaciones extraordinarias lejos del ajetreo y el bullicio de la vida de la ciudad. Para su transporte de Cancún a Tulum, considere nuestro servicio: Nuestro Transporte del Aeropuerto de Cancún a Tulum es la opción más rentable para el transporte desde el Aeropuerto de Cancún a Tulum.\n\nSiéntese, relájese y disfrute de un viaje seguro y cómodo a Tulum en una de nuestras confiables camionetas. Con más de una década de experiencia, nos especializamos en brindar servicios de transporte aeroportuario de primer nivel a hoteles tanto en Cancún como en Tulum.\n\n¡Experimente nuestro servicio de Traslado de Cancún a Tulum a una tarifa increíble! Viaje con lujo y estilo en una de nuestras impecables camionetas SUV de tamaño completo, la manera perfecta de comenzar sus vacaciones en el Caribe Mexicano.\n\n¡Reserve hoy su transporte de lujo a Tulum desde Cancún!\n\nEstamos orgullosos de ofrecer el transporte más asequible en Cancún y Tulum, con conductores experimentados dedicados a garantizar un viaje seguro y eficiente a su hotel."
+                "title": "Transportación de Cancún a Akumal segura y confiable por Go Transfers",
+                "text": "Akumal, un paraíso de playa en la costa del Caribe Mexicano, es conocido por sus aguas cristalinas y su abundante vida marina, especialmente sus tortugas marinas. En este pintoresco pueblo, encontrarás una variedad de alojamientos que se adaptan a todos los gustos, desde lujosos resorts como Secrets Akumal Riviera Maya y Akumal Bay Beach & Wellness Resort, hasta encantadores hoteles boutique como Hotel Akumal Caribe y acogedores Airbnbs rodeados de naturaleza.\n\nPara llegar a este idílico destino, el servicio de Go Transfers es la opción ideal. Ofrecemos traslados privados desde el Aeropuerto de Cancún hasta Akumal, garantizando un viaje seguro y cómodo. Nuestro equipo de conductores profesionales y bilingües te recibirá con una sonrisa, asegurando que tu viaje, de aproximadamente 90 a 105 minutos, sea sin estrés y lleno de confort.\n\nYa sea que busques una escapada romántica, unas vacaciones familiares o un retiro tranquilo, Akumal es el lugar perfecto. Con Go Transfers, puedes confiar en un servicio de transporte confiable y económico, que te llevará directamente a la puerta de tu hotel."
             },
             "testimonials": {
-                "title": "Comentarios de nuestros clientes",
-                "description": "Descubra por qué nos eligen nuestros clientes",
+                "title": "Nuestro clientes recomienda nuestro servicio de traslado de Cancún a Akumal",
+                "description": "Cada cliente que prueba nuestro servicio nos recomienda",
                 "items": {
                     "item1": {
-                        "name": "Marco L.",
-                        "text": "Contraté el servicio de transporte para ir de Cancún a Tulum y quedé impresionado con la puntualidad y profesionalismo del conductor.",
-                        "imageAlt": "Comentarios de nuestros clientes Marco L.",
-                        "imageTitle": "Comentarios de nuestros clientes Marco L.",
+                        "name": "David K.",
+                        "text": "¡Excelente servicio! Desde el momento en que llegué al aeropuerto de Cancún, todo fue muy fácil y rápido. El conductor fue muy amable y profesional.",
+                        "imageAlt": "Comentarios de nuestros clientes David K.",
+                        "imageTitle": "Comentarios de nuestros clientes David K.",
                         "stars": "5"
                     },
                     "item2": {
-                        "name": "Sarah J.",
-                        "text": "Nuestro traslado desde el aeropuerto de Cancún a nuestro hotel en Tulum fue perfecto. El conductor fue amable y nos dio excelentes recomendaciones sobre lugares para visitar.",
-                        "imageAlt": "Comentarios de nuestros clientes Sarah J.",
-                        "imageTitle": "Comentarios de nuestros clientes Sarah J.",
+                        "name": "Sarah M.",
+                        "text": "Reservé el servicio de transporte con Go Transfers para mi viaje a Playa del Carmen y no podría estar más contenta.",
+                        "imageAlt": "Comentarios de nuestros clientes Sarah M.",
+                        "imageTitle": "Comentarios de nuestros clientes Sarah M.",
                         "stars": "5"
                     },
                     "item3": {
-                        "name": "David B.",
-                        "text": "Utilicé este servicio para una excursión de un día a Tulum y todo fue maravilloso. El conductor fue puntual, el vehículo era muy cómodo y limpio, y el viaje fue muy seguro.",
-                        "imageAlt": "Comentarios de nuestros clientes David B.",
-                        "imageTitle": "Comentarios de nuestros clientes David B.",
+                        "name": "James L.",
+                        "text": "Mi experiencia con Go Transfers fue excelente. El proceso de reserva fue muy fácil y la comunicación fue clara y eficaz.",
+                        "imageAlt": "Comentarios de nuestros clientes James L.",
+                        "imageTitle": "Comentarios de nuestros clientes James L.",
                         "stars": "5"
                     }
                 }
@@ -914,8 +914,8 @@
                 }
             },
             "howToMove": {
-                "title": "¿Cómo llegar del Aeropuerto de Cancún a Tulum?",
-                "content": "- **Alquiler de coches:** Alquilar un coche en el aeropuerto de Cancún le da la flexibilidad de viajar a su propio ritmo.\n- **Autobús:** Los autobuses ADO circulan con frecuencia de Cancún a Tulum y son una opción económica.\n- **Transporte privado:** Reservar nuestro transporte privado es una opción conveniente, especialmente para grupos o familias. El transporte privado se puede organizar con antelación y le llevará directamente desde el aeropuerto de Cancún a su hotel en Tulum. Con Cancun Airport Transportation by Go, puede obtener la mejor opción de transporte de Cancún a Tulum."
+                "title": "¿Cómo llegar de Cancún a Akumal?",
+                "content": "Akumal se encuentra a aproximadamente 105 kilómetros al sur de Cancún, lo que equivale a un trayecto de alrededor de 90 minutos en transportación terrestre. Este destino es famoso por sus playas tranquilas, aguas cristalinas y abundante vida marina. Es un lugar ideal para hacer snorkel, especialmente porque puedes nadar con tortugas en sus aguas cristalinas. Akumal ofrece un ambiente pacífico y relajante, lo que lo convierte en un gran escape de las áreas turísticas más concurridas.\n\nAl llegar al Aeropuerto de Cancún, tienes varias opciones para llegar a Akumal, incluyendo autobuses ADO, taxis, alquiler de autos, o nuestro servicio de transporte privado. Para aquellos que buscan una opción confiable y económica, Go Transfers ofrece tarifas competitivas para Akumal, así como para otros destinos populares como Playa del Carmen, Tulum y la Zona Hotelera de Cancún.\n\nLa forma más recomendable de llegar a cualquier atracción u hotel en Akumal es el servicio de traslado privado, ya que es directo, lo que significa que no hará paradas innecesarias, ni tendrás que tomar otros medios de transportación, sólo tienes que llegar al aeropuerto y tu traslado te llevará directamente hasta la puerta de tu hotel o en la entrada más cercana del destino que estás por visitar en Akumal.\n\nLa comunicación con nosotros es fácil, ya que nuestro equipo de atención al cliente y nuestros conductores son totalmente bilingües. Cuando reservas tu transporte con Go Transfers, nos encargamos de todo, asegurando que tu traslado de Cancún a Akumal sea seguro, eficiente y agradable."
             },
             "faq": {
                 "title": "Preguntas Frecuentes - Cancún a Tulum",
