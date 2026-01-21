@@ -70,19 +70,21 @@ const reliableServiceContent = await marked.parse(
     alt={t(`pages.${page}.bannerAlt`)}
     title={t(`pages.${page}.bannerImageTitle`)}
   >
-    <h1 class="mx-auto w-11/12 text-5xl font-bold">
+    <h1 class="mx-auto w-11/12 text-4xl font-bold md:text-5xl">
       {t(`pages.${page}.bannerTitle`)}
     </h1>
   </BannerImage>
 
   <!-- Form -->
-  <BookingForm
-    translations={t("global.booking")}
-    defaultFrom="cun"
-    defaultTo="merida"
-    client:idle
-    className="-mt-28"
-  />
+  <div class="@container">
+    <BookingForm
+      translations={t("global.booking")}
+      defaultFrom="cun"
+      defaultTo="merida"
+      client:idle
+      className="-mt-28"
+    />
+  </div>
 
   <!-- Banner with image and text -->
   <TextCardHalf

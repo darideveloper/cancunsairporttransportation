@@ -59,13 +59,15 @@ const t = useTranslations(lang);
   <PageSEO currentPage={page} slot="seo" />
 
   <!-- Form -->
-  <BookingForm
-    translations={t("global.booking")}
-    defaultFrom="cun"
-    defaultTo="merida"
-    client:idle
-    title={t(`pages.${page}.title`)}
-  />
+  <div class="@container">
+    <BookingForm
+      translations={t("global.booking")}
+      defaultFrom="cun"
+      defaultTo="merida"
+      client:idle
+      title={t(`pages.${page}.title`)}
+    />
+  </div>
 
   <!-- Company stats -->
   <BannerStats />
