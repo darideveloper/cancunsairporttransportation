@@ -35,16 +35,16 @@ import PrivateDetails from "../../components/organisms/PrivateDetails.astro";
 import homeBannerImg from "../../assets/images/home-banner.webp";
 import safeTripBookingImg from "../../assets/images/trip-advisor.webp";
 import customClientImg from "../../assets/images/clients/custom-client.webp";
-import client1Img from "../../assets/images/clients/1.webp";
-import client2Img from "../../assets/images/clients/2.webp";
-import client3Img from "../../assets/images/clients/3.webp";
+import privateClient1Img from "../../assets/images/clients/private-1.webp";
+import privateClient2Img from "../../assets/images/clients/private-2.webp";
+import privateClient3Img from "../../assets/images/clients/private-3.webp";
 import clientAppEsImg from "../../assets/images/clients/client-app-es.webp";
 
 // Icons
 import { FaImages } from "react-icons/fa";
 
 // Page data
-const page = "home";
+const page = "private";
 
 // Props
 interface Props {
@@ -55,11 +55,6 @@ const { lang } = Astro.params as { lang: "en" | "es" };
 
 // Tranlation texts
 const t = useTranslations(lang);
-const reliableServiceContent = await marked.parse(
-  t("global.sections.reliableService.description"),
-);
-
-// Data
 ---
 
 <Layout preloadImage={homeBannerImg.src}>
@@ -83,7 +78,10 @@ const reliableServiceContent = await marked.parse(
   <PrivateDetails />
 
   <!-- Clients testimonials -->
-  <Testimonials images={[client1Img, client2Img, client3Img]} />
+  <Testimonials
+    page={page}
+    images={[privateClient1Img, privateClient2Img, privateClient3Img]}
+  />
 
   <!-- FAQs -->
   <FaqSection page={page} />

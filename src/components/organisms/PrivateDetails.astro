@@ -74,6 +74,9 @@ const columns: TableColumn[] = [
     className: "",
   },
 ];
+
+const STICKY_SHADOW_CLASSES =
+  "after:absolute after:inset-y-0 after:right-0 after:w-4 after:translate-x-full after:bg-linear-to-r after:from-black/5 after:to-transparent after:content-[''] after:pointer-events-none lg:after:hidden";
 ---
 
 <section
@@ -88,41 +91,67 @@ const columns: TableColumn[] = [
       title={title}
       class="text-center md:text-left"
     >
-      <div class="text-justify md:text-left" set:html={descriptionHtml} />
+      <div
+        class="markdown text-justify md:text-left"
+        set:html={descriptionHtml}
+      />
     </SectionHeading>
 
     <!-- Table Section -->
     <div class="mx-auto mt-6 w-[98%] rounded-xl bg-white p-4 shadow-2xl">
       <!-- Title -->
-      <h3 class="my-4 text-2xl font-bold">{tableData.title}</h3>
+      <h3 class="my-4 text-center text-2xl font-bold md:text-left">
+        {tableData.title}
+      </h3>
 
       <!-- Responsive Table Wrapper -->
-      <table class="w-full">
-        <thead class="">
-          <tr class="border-gray-dark/20 border-t">
+      <div class="w-full overflow-x-auto rounded-xl">
+        <table class="w-full min-w-[800px]">
+          <thead class="">
+            <tr class="border-gray-dark/20 border-t">
+              {
+                columns.map((col, index) => (
+                  <th
+                    scope="col"
+                    class={clsx(
+                      "px-2 py-4 text-left",
+                      index === 0 && [
+                        "sticky left-0 z-30 bg-white",
+                        STICKY_SHADOW_CLASSES,
+                      ],
+                    )}
+                  >
+                    {col.header}
+                  </th>
+                ))
+              }
+            </tr>
+          </thead>
+          <tbody class="">
             {
-              columns.map((col) => (
-                <th scope="col" class="px-2 py-4 text-left">
-                  {col.header}
-                </th>
+              tableData.rows.map((row, rowIndex) => (
+                <tr class="border-gray-dark/20 odd:bg-blue/5 border-t even:bg-white">
+                  {columns.map((col, colIndex) => (
+                    <td
+                      class={clsx(
+                        col.className,
+                        "px-2 py-4",
+                        colIndex === 0 && [
+                          "sticky left-0 z-20",
+                          rowIndex % 2 === 0 ? "bg-[#F2F7FB]" : "bg-white", // Exact match for blue/5 (5% #0056b1 on white)
+                          STICKY_SHADOW_CLASSES,
+                        ],
+                      )}
+                    >
+                      {row[col.key]}
+                    </td>
+                  ))}
+                </tr>
               ))
             }
-          </tr>
-        </thead>
-        <tbody class="">
-          {
-            tableData.rows.map((row) => (
-              <tr class="border-gray-dark/20 odd:bg-blue/5 border-t">
-                {columns.map((col) => (
-                  <td class={clsx(col.className, "px-2 py-4")}>
-                    {row[col.key]}
-                  </td>
-                ))}
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
 
       <!-- CTA Button -->
       <ButtonCta href={cta.href} class="mt-6 w-full" variant="blue">
