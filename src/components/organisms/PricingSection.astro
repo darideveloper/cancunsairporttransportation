@@ -12,9 +12,10 @@ import groupVehicleImg from "../../assets/images/vehicles/groups.webp";
 
 interface Props {
   page: string; // e.g., "home", "playaDelCarmen"
+  isRegularGrid?: boolean;
 }
 
-const { page } = Astro.props;
+const { page, isRegularGrid = false } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -46,7 +47,7 @@ const subtitle = t(`pages.${page}.pricing.subtitle`);
   </SectionHeading>
 
   <ul
-    class="mt-4 grid grid-cols-1 items-end justify-center gap-8 md:grid-cols-3 md:flex-row"
+    class="mt-4 grid grid-cols-1 items-end justify-center gap-4 md:grid-cols-3 md:flex-row"
     role="list"
   >
     {
@@ -57,7 +58,7 @@ const subtitle = t(`pages.${page}.pricing.subtitle`);
         const pageData = t(`pages.${page}.pricing.cards.${key}`) as any;
 
         return (
-          <li>
+          <li class={`${isRegularGrid && "h-full"}`}>
             <PricingCard
               title={pageData.title}
               price={pageData.price}
