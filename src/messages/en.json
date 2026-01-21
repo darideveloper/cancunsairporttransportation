@@ -487,6 +487,22 @@
                 "subtitle": "Find out how our customers are enjoying their time with us.",
                 "imageAlt": "Client photo {index}",
                 "imageTitle": "Client photo {index}"
+            },
+            "includes": {
+                "title": "What's Included in Your Transfer?",
+                "image": "/images/includes-service-amenities.webp",
+                "imageAlt": "Professional transportation service showing included amenities",
+                "imageTitle": "Premium transportation service features",
+                "items": [
+                    "Professional bilingual driver",
+                    "Air-conditioned vehicle",
+                    "Flight monitoring and tracking",
+                    "Meet and greet service",
+                    "All taxes and tolls included",
+                    "24/7 customer support",
+                    "Free cancellation up to 24 hours",
+                    "Complimentary bottled water"
+                ]
             }
         },
         "ui": {
@@ -1352,6 +1368,63 @@
                     "Transportation from Cancun Airport to Doralba Inn Merida",
                     "Transportation from Cancun Airport to Hotel el Español Merida"
                 ]
+            }
+        },
+        "privateAirportTransfer": {
+            "privateDetails": {
+                "title": "Private Airport Transfer Details",
+                "description": "Our **private airport transfer service** offers the best rates and comfort for your journey. We provide professional drivers, modern vehicles, and 24/7 customer support.\n\nBook with confidence knowing you're getting the best service in Cancun.",
+                "table": {
+                    "title": "Service Pricing",
+                    "headers": {
+                        "arrival": "Arrival",
+                        "departure": "Departure",
+                        "oneWay": "One Way",
+                        "roundTrip": "Round Trip",
+                        "capacity": "Capacity"
+                    },
+                    "rows": [
+                        {
+                            "arrival": "Cancun Airport (CUN)",
+                            "departure": "Cancun Hotel Zone",
+                            "oneWay": "$29.99 USD",
+                            "roundTrip": "$59.99 USD",
+                            "capacity": "1-8 pax"
+                        },
+                        {
+                            "arrival": "Cancun Airport (CUN)",
+                            "departure": "Puerto Morelos",
+                            "oneWay": "$53.00 USD",
+                            "roundTrip": "$101.00 USD",
+                            "capacity": "1-8 pax"
+                        },
+                        {
+                            "arrival": "Cancun Airport (CUN)",
+                            "departure": "Playa del Carmen",
+                            "oneWay": "$69.99 USD",
+                            "roundTrip": "$134.98 USD",
+                            "capacity": "1-8 pax"
+                        },
+                        {
+                            "arrival": "Cancun Airport (CUN)",
+                            "departure": "Akumal",
+                            "oneWay": "$108.00 USD",
+                            "roundTrip": "$211.00 USD",
+                            "capacity": "1-8 pax"
+                        },
+                        {
+                            "arrival": "Cancun Airport (CUN)",
+                            "departure": "Tulum",
+                            "oneWay": "$129.00 USD",
+                            "roundTrip": "$253.00 USD",
+                            "capacity": "1-8 pax"
+                        }
+                    ]
+                },
+                "cta": {
+                    "text": "Book Now",
+                    "href": "#booking-form"
+                }
             }
         }
     }

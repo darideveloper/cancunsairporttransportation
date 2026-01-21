@@ -1,0 +1,118 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { marked } from "marked";
+
+// Components
+import SectionHeading from "../molecules/SectionHeading.astro";
+import ButtonCta from "../atoms/ButtonCta.astro";
+
+// Lang
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Data
+const content = t("pages.privateAirportTransfer.privateDetails") as any;
+const { title, description, table, cta } = content;
+const descriptionHtml = await marked.parse(description);
+
+// Table Data Interfaces
+interface TableRow {
+  arrival: string;
+  departure: string;
+  oneWay: string;
+  roundTrip: string;
+  capacity: string;
+}
+
+interface TableData {
+  title: string;
+  headers: {
+    arrival: string;
+    departure: string;
+    oneWay: string;
+    roundTrip: string;
+    capacity: string;
+  };
+  rows: TableRow[];
+}
+
+const tableData = table as TableData;
+---
+
+<section
+  id="private-details"
+  aria-labelledby="private-details-heading"
+  class="py-12 md:py-16 lg:py-20"
+>
+  <div class="container mx-auto px-4">
+    <!-- Title Section -->
+    <SectionHeading
+      id="private-details-heading"
+      title={title}
+      class="mb-8 text-center"
+    >
+      <div
+        class="prose prose-p:text-gray-dark prose-p:text-lg prose-strong:text-black max-w-none"
+        set:html={descriptionHtml}
+      />
+    </SectionHeading>
+
+    <!-- Table Section -->
+    <div class="mb-6">
+      <h3 class="mb-4 text-center text-xl font-bold">{tableData.title}</h3>
+    </div>
+
+    <!-- Responsive Table Wrapper -->
+    <div
+      class="border-gray/20 mb-8 w-full overflow-x-auto rounded-xl border shadow-sm"
+    >
+      <table class="w-full min-w-[600px] border-collapse bg-white">
+        <caption class="sr-only">{tableData.title}</caption>
+        <thead class="bg-gray/5 text-black">
+          <tr>
+            <th scope="col" class="px-6 py-4 text-left font-bold"
+              >{tableData.headers.arrival}</th
+            >
+            <th scope="col" class="px-6 py-4 text-left font-bold"
+              >{tableData.headers.departure}</th
+            >
+            <th scope="col" class="px-6 py-4 text-left font-bold"
+              >{tableData.headers.capacity}</th
+            >
+            <th scope="col" class="px-6 py-4 text-left font-bold"
+              >{tableData.headers.oneWay}</th
+            >
+            <th scope="col" class="px-6 py-4 text-left font-bold"
+              >{tableData.headers.roundTrip}</th
+            >
+          </tr>
+        </thead>
+        <tbody class="divide-gray/10 divide-y">
+          {
+            tableData.rows.map((row) => (
+              <tr class="hover:bg-gray/5 transition-colors">
+                <td class="text-gray-dark px-6 py-4 font-medium">
+                  {row.arrival}
+                </td>
+                <td class="text-gray-dark px-6 py-4 font-medium">
+                  {row.departure}
+                </td>
+                <td class="text-gray-dark px-6 py-4">{row.capacity}</td>
+                <td class="text-accent px-6 py-4 font-bold">{row.oneWay}</td>
+                <td class="text-accent px-6 py-4 font-bold">{row.roundTrip}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="mt-12 text-center">
+      <ButtonCta href={cta.href} class="min-w-[200px]">
+        {cta.text}
+      </ButtonCta>
+    </div>
+  </div>
+</section>

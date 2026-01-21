@@ -487,6 +487,22 @@
                 "subtitle": "Descubra cómo nuestros clientes disfrutan de su tiempo con nosotros.",
                 "imageAlt": "Foto del cliente {index}",
                 "imageTitle": "Foto del cliente {index}"
+            },
+            "includes": {
+                "title": "¿Qué Incluye Tu Traslado?",
+                "image": "/images/includes-service-amenities.webp",
+                "imageAlt": "Servicio de transporte profesional mostrando las comodidades incluidas",
+                "imageTitle": "Características del servicio de transporte premium",
+                "items": [
+                    "Conductor profesional bilingüe",
+                    "Vehículo con aire acondicionado",
+                    "Monitoreo y seguimiento de vuelos",
+                    "Servicio de recepción y bienvenida",
+                    "Todos los impuestos y peajes incluidos",
+                    "Atención al cliente 24/7",
+                    "Cancelación gratuita hasta 24 horas",
+                    "Agua embotellada de cortesía"
+                ]
             }
         },
         "ui": {
@@ -1344,6 +1360,63 @@
                     "Transporte del Aeropuerto de Cancún al Doralba Inn Merida",
                     "Transporte del Aeropuerto de Cancún al Hotel el Español Mérida"
                 ]
+            }
+        },
+        "privateAirportTransfer": {
+            "privateDetails": {
+                "title": "Detalles del Traslado Privado al Aeropuerto",
+                "description": "Nuestro **servicio de traslado privado al aeropuerto** ofrece las mejores tarifas y comodidad para su viaje. Brindamos conductores profesionales, vehículos modernos y atención al cliente 24/7.\n\nReserve con confianza sabiendo que está obteniendo el mejor servicio en Cancún.",
+                "table": {
+                    "title": "Precios del Servicio",
+                    "headers": {
+                        "arrival": "Llegada",
+                        "departure": "Salida",
+                        "oneWay": "Sencillo",
+                        "roundTrip": "Redondo",
+                        "capacity": "Capacidad"
+                    },
+                    "rows": [
+                        {
+                            "arrival": "Aeropuerto Cancún (CUN)",
+                            "departure": "Zona Hotelera",
+                            "oneWay": "$539.82 MXN",
+                            "roundTrip": "$1079.82 MXN",
+                            "capacity": "1-8 pax"
+                        },
+                        {
+                            "arrival": "Aeropuerto Cancún (CUN)",
+                            "departure": "Puerto Morelos",
+                            "oneWay": "$954.00 MXN",
+                            "roundTrip": "$1818.00 MXN",
+                            "capacity": "1-8 pax"
+                        },
+                        {
+                            "arrival": "Aeropuerto Cancún (CUN)",
+                            "departure": "Playa del Carmen",
+                            "oneWay": "$1259.82 MXN",
+                            "roundTrip": "$2429.64 MXN",
+                            "capacity": "1-8 pax"
+                        },
+                        {
+                            "arrival": "Aeropuerto Cancún (CUN)",
+                            "departure": "Akumal",
+                            "oneWay": "$1944.00 MXN",
+                            "roundTrip": "$3798.00 MXN",
+                            "capacity": "1-8 pax"
+                        },
+                        {
+                            "arrival": "Aeropuerto Cancún (CUN)",
+                            "departure": "Tulum",
+                            "oneWay": "$2322.00 MXN",
+                            "roundTrip": "$4554.00 MXN",
+                            "capacity": "1-8 pax"
+                        }
+                    ]
+                },
+                "cta": {
+                    "text": "Reservar Ahora",
+                    "href": "#booking-form"
+                }
             }
         }
     }
