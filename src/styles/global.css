@@ -95,8 +95,8 @@ a {
   margin-right: auto;
   margin-left: auto;
   max-width: 1200px;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 /* Pointer in links and buttons */
