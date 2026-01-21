@@ -919,7 +919,6 @@
             },
             "faq": {
                 "title": "Preguntas frecuentes sobre el servicio de Transportación a Akumal",
-                "description": "Te ayudamos a despejar todas tus dudas sobre nuestro servicio de traslado",
                 "items": {
                     "cost": {
                         "question": "¿Cuánto cuesta el transporte de Cancún a Akumal?",
@@ -1289,7 +1288,6 @@
             },
             "faq": {
                 "title": "Transporte de Cancún a Mérida - Preguntas frecuentes",
-                "description": "Te ayudamos a despejar todas tus dudas sobre nuestro servicio de traslado",
                 "items": {
                     "service24h": {
                         "question": "¿El servicio de transporte de Cancún a Mérida está disponible las 24 horas?",

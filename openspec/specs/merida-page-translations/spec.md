@@ -51,13 +51,13 @@ The Merida transportation page MUST show the correct localized FAQ content.
 Given the user is on the Merida transportation page in Spanish
 When they view the FAQ section
 Then the title MUST be "Transporte de Cancún a Mérida - Preguntas frecuentes"
-And the description MUST be "Te ayudamos a despejar todas tus dudas sobre nuestro servicio de traslado"
+And the description MUST be "Te ayudamos a despejar tus dudas sobre nuestros servicios de transporte"
 And it MUST display the 4 specific Merida items.
 
 #### Scenario: Merida English FAQs
 Given the user is on the Merida transportation page in English
 When they view the FAQ section
 Then the title MUST be "Cancun to Merida Transportation - FAQs"
-And the description MUST be "Rates for Transfer Services in Mérida and the Riviera Maya"
+And the description MUST be "We help you to clear your doubts about our transportation services"
 And it MUST display the 4 specific Merida items.
 

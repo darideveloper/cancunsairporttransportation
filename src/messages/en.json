@@ -927,7 +927,6 @@
             },
             "faq": {
                 "title": "Transfer from Cancun to Akumal",
-                "description": "Rates for Transfer Services in Akumal and the Riviera Maya",
                 "items": {
                     "cost": {
                         "question": "How much does transportation from Cancun to Akumal cost?",
@@ -1297,7 +1296,6 @@
             },
             "faq": {
                 "title": "Cancun to Merida Transportation - FAQs",
-                "description": "Rates for Transfer Services in Mérida and the Riviera Maya",
                 "items": {
                     "service24h": {
                         "question": "Is the Cancun to Merida shuttle service available 24/7?",
