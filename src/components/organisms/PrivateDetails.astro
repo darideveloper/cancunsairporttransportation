@@ -38,6 +38,41 @@ interface TableData {
 }
 
 const tableData = table as TableData;
+
+// Column Configuration
+interface TableColumn {
+  key: keyof TableRow;
+  header: string;
+  className: string;
+}
+
+const columns: TableColumn[] = [
+  {
+    key: "arrival",
+    header: tableData.headers.arrival,
+    className: "text-gray-dark px-6 py-4 font-medium",
+  },
+  {
+    key: "departure",
+    header: tableData.headers.departure,
+    className: "text-gray-dark px-6 py-4 font-medium",
+  },
+  {
+    key: "capacity",
+    header: tableData.headers.capacity,
+    className: "text-gray-dark px-6 py-4",
+  },
+  {
+    key: "oneWay",
+    header: tableData.headers.oneWay,
+    className: "text-accent px-6 py-4 font-bold",
+  },
+  {
+    key: "roundTrip",
+    header: tableData.headers.roundTrip,
+    className: "text-accent px-6 py-4 font-bold",
+  },
+];
 ---
 
 <section
@@ -71,36 +106,22 @@ const tableData = table as TableData;
         <caption class="sr-only">{tableData.title}</caption>
         <thead class="bg-gray/5 text-black">
           <tr>
-            <th scope="col" class="px-6 py-4 text-left font-bold"
-              >{tableData.headers.arrival}</th
-            >
-            <th scope="col" class="px-6 py-4 text-left font-bold"
-              >{tableData.headers.departure}</th
-            >
-            <th scope="col" class="px-6 py-4 text-left font-bold"
-              >{tableData.headers.capacity}</th
-            >
-            <th scope="col" class="px-6 py-4 text-left font-bold"
-              >{tableData.headers.oneWay}</th
-            >
-            <th scope="col" class="px-6 py-4 text-left font-bold"
-              >{tableData.headers.roundTrip}</th
-            >
+            {
+              columns.map((col) => (
+                <th scope="col" class="px-6 py-4 text-left font-bold">
+                  {col.header}
+                </th>
+              ))
+            }
           </tr>
         </thead>
         <tbody class="divide-gray/10 divide-y">
           {
             tableData.rows.map((row) => (
               <tr class="hover:bg-gray/5 transition-colors">
-                <td class="text-gray-dark px-6 py-4 font-medium">
-                  {row.arrival}
-                </td>
-                <td class="text-gray-dark px-6 py-4 font-medium">
-                  {row.departure}
-                </td>
-                <td class="text-gray-dark px-6 py-4">{row.capacity}</td>
-                <td class="text-accent px-6 py-4 font-bold">{row.oneWay}</td>
-                <td class="text-accent px-6 py-4 font-bold">{row.roundTrip}</td>
+                {columns.map((col) => (
+                  <td class={col.className}>{row[col.key]}</td>
+                ))}
               </tr>
             ))
           }
