@@ -2,6 +2,7 @@
 // Libs
 import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 import { marked } from "marked";
+import clsx from "clsx";
 
 // Components
 import SectionHeading from "../molecules/SectionHeading.astro";
@@ -78,28 +79,30 @@ const columns: TableColumn[] = [
 <section
   id="private-details"
   aria-labelledby="private-details-heading"
-  class=""
+  class="container mt-12"
 >
   <div class="">
     <!-- Title Section -->
-    <SectionHeading id="private-details-heading" title={title} class="">
-      <div class="" set:html={descriptionHtml} />
+    <SectionHeading
+      id="private-details-heading"
+      title={title}
+      class="text-center md:text-left"
+    >
+      <div class="text-justify md:text-left" set:html={descriptionHtml} />
     </SectionHeading>
 
     <!-- Table Section -->
-    <div class="">
-      <h3 class="">{tableData.title}</h3>
-    </div>
+    <div class="mx-auto mt-6 w-[98%] rounded-xl bg-white p-4 shadow-2xl">
+      <!-- Title -->
+      <h3 class="my-4 text-2xl font-bold">{tableData.title}</h3>
 
-    <!-- Responsive Table Wrapper -->
-    <div class="">
-      <table class="">
-        <caption class="">{tableData.title}</caption>
+      <!-- Responsive Table Wrapper -->
+      <table class="w-full">
         <thead class="">
-          <tr>
+          <tr class="border-gray-dark/20 border-t">
             {
               columns.map((col) => (
-                <th scope="col" class="">
+                <th scope="col" class="px-2 py-4 text-left">
                   {col.header}
                 </th>
               ))
@@ -109,20 +112,20 @@ const columns: TableColumn[] = [
         <tbody class="">
           {
             tableData.rows.map((row) => (
-              <tr class="">
+              <tr class="border-gray-dark/20 odd:bg-blue/5 border-t">
                 {columns.map((col) => (
-                  <td class={col.className}>{row[col.key]}</td>
+                  <td class={clsx(col.className, "px-2 py-4")}>
+                    {row[col.key]}
+                  </td>
                 ))}
               </tr>
             ))
           }
         </tbody>
       </table>
-    </div>
 
-    <!-- CTA Button -->
-    <div class="">
-      <ButtonCta href={cta.href} class="">
+      <!-- CTA Button -->
+      <ButtonCta href={cta.href} class="mt-6 w-full" variant="blue">
         {cta.text}
       </ButtonCta>
     </div>

@@ -490,7 +490,6 @@
             },
             "includes": {
                 "title": "¿Qué Incluye Tu Traslado?",
-                "image": "/images/includes-service-amenities.webp",
                 "imageAlt": "Servicio de transporte profesional mostrando las comodidades incluidas",
                 "imageTitle": "Características del servicio de transporte premium",
                 "items": [
