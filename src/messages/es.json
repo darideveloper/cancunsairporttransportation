@@ -1241,8 +1241,8 @@
                 }
             },
             "safeTrip": {
-                "title": "Transporte seguro y confiable de cancun a tulum",
-                "description": "Disfrute de un transporte confiable de Cancún a Tulum, que está listo para llevarlo a su destino deseado dentro de Cancún y la Riviera Maya. Ya sea un hotel, resort, aeropuerto, parque temático o sitio arqueológico, si está en el mapa, nuestro confiable equipo lo tiene cubierto.",
+                "title": "Traslado de Cancún a Mérida, seguro y confiable",
+                "description": "Con más de 10 años de experiencia ofreciendo servicios de transporte de Cancún a Mérida de la manera más segura, eficiente y confiable, Cancun Airport Transportation es la empresa más honesta y confiable en la que puedes depender.\n\nNuestro objetivo principal es brindar servicios de transporte de la más alta calidad, garantizando un viaje cómodo y seguro desde el aeropuerto hasta cualquier destino en la región de Yucatán.\n\nDe nuestra amplia variedad de servicios, puedes seleccionar la opción que mejor se adapte a tus necesidades, ya sea un viaje de ida o ida y vuelta. Solo comunícate con nuestro centro de llamadas, donde nuestro amable equipo estará encantado de ayudarte con cualquier detalle adicional o pregunta que puedas tener.",
                 "imageAlt": "Transporte Aeropuerto Cancun by Go Transfers"
             },
             "reliableService": {
@@ -1250,23 +1250,23 @@
                 "description": "Con más de 10 años brindando servicios de transportación de Cancún a Playa del Carmen de la manera más segura, rápida y confiable, Cancun Airport Transportation por Go, es la empresa más honesta y confiable.\n\nNuestra misión principal es ofrecer los mejores servicios de transporte. Aseguramos un viaje cómodo y seguro desde el aeropuerto a cualquier destino en la Riviera Maya.\n\nEntre nuestra diversa gama de servicios, usted puede elegir el que mejor se adapte a sus necesidades, ya sea un viaje de ida o de ida y vuelta. Simplemente póngase en contacto con nuestro centro de llamadas, donde nuestro amable personal estará encantado de ayudarle con cualquier información adicional que pueda necesitar."
             },
             "pricing": {
-                "title": "Traslado de ida y vuelta a Tulum",
+                "title": "Servicios de Transporte a Mérida",
                 "subtitle": "Lista de nuestros servicios de transporte",
                 "cards": {
                     "luxury": {
-                        "title": "Transporte de lujo de Cancún a Tulum",
-                        "price": "5490.00",
-                        "description": "Mejore su experiencia de viaje con nuestro servicio de traslado de lujo del Aeropuerto de Cancún a Tulum. Ideal para 1 a 5 pasajeros, este servicio ofrece confort premium en una Suburban o vehículo similar."
+                        "title": "Transporte de Lujo de Cancún a Mérida",
+                        "price": "17910.00",
+                        "description": "Mejore su viaje desde el Aeropuerto de Cancún a Mérida con nuestro servicio de transporte premium. Diseñado para 1 a 6 pasajeros, experimente lo último en confort y estilo con nuestra SUV de lujo o vehículo de alta gama similar."
                     },
                     "private": {
-                        "title": "Transportación Privada de Cancún a Tulum",
-                        "price": "2322.00",
-                        "description": "Nuestro servicio de transportación privada del Aeropuerto de Cancún a Tulum es una de las opciones más populares y económicas en la Riviera Maya. Este servicio acomoda de 1 a 8 personas en un vehículo espacioso, con aire acondicionado, seguro y limpio."
+                        "title": "Traslado Privado de Cancún a Mérida",
+                        "price": "9450.00",
+                        "description": "Nuestro servicio de traslado privado desde el Aeropuerto de Cancún a Mérida es la opción ideal para los viajeros que buscan comodidad y asequibilidad. Disfrute de un viaje relajante en nuestros vehículos modernos con aire acondicionado, diseñados para acomodar cómodamente a grupos de 1 a 10 pasajeros. La seguridad, la limpieza y la puntualidad son nuestras principales prioridades."
                     },
                     "group": {
-                        "title": "Transporte de grupos de Cancún a Tulum",
-                        "price": "5490.00",
-                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos del Aeropuerto de Cancún a Tulum. Este servicio puede acomodar hasta 16 pasajeros, asegurando que todos viajen cómodos y seguros."
+                        "title": "Transporte para Grupos Grandes de Cancún a Mérida",
+                        "price": "17910.00",
+                        "description": "¿Viaja con un grupo más grande? Nuestro rentable servicio de transporte para grupos es perfecto para grupos de hasta 20 pasajeros. Con vehículos espaciosos y bien mantenidos, garantizamos un viaje agradable y sin contratiempos para todos. Ahorre tiempo y dinero mientras viaja con comodidad y seguridad."
                     }
                 }
             },
