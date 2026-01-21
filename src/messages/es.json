@@ -588,23 +588,23 @@
                 }
             },
             "pricing": {
-                "title": "Otros servicios similares al transporte privado en Cancún",
-                "subtitle": "Lista de nuestros servicios de transporte",
+                "title": "Nuestros Servicios de Transporte",
+                "subtitle": "Transporte privado",
                 "cards": {
                     "luxury": {
-                        "title": "Transportación de Lujo",
+                        "title": "Transporte de Lujo",
                         "price": "1512.00",
-                        "description": "Mejore su experiencia de viaje con nuestro servicio de traslado premium, proporcionando transporte sin problemas entre el aeropuerto de Cancún y su hotel en Cancún o la Riviera Maya. Nuestro servicio de primer nivel atiende de 1 a 5 pasajeros en una Suburban o un vehículo de lujo comparable, garantizando comodidad y estilo durante todo su viaje."
+                        "description": "Eleve su experiencia de transporte con nuestro servicio de traslado de lujo, que le llevará desde y hacia el aeropuerto de Cancún a su hotel en Cancún o la Riviera Maya. Nuestro servicio de lujo acomoda de 1 a 5 pasajeros en una Suburban o un vehículo similar de alta gama."
                     },
                     "private": {
-                        "title": "Servicio de Taxi",
-                        "price": "664.81",
-                        "description": "Viaje cómodamente en un servicio privado totalmente equipado para un máximo de 3 pasajeros. El servicio es privado, sin esperas ni paradas continuas."
+                        "title": "Transporte privado",
+                        "price": "539.82",
+                        "description": "Nuestro servicio de transporte y traslado privado es una de las opciones más populares y asequibles en Cancún y la Riviera Maya. Ofrecemos vehículos espaciosos, con aire acondicionado, seguros y limpios que pueden acomodar de 1 a 8 personas cómodamente."
                     },
                     "group": {
                         "title": "Transporte de grupos",
                         "price": "1512.00",
-                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero reservando nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros, asegurando que todos disfruten juntos de un viaje cómodo y conveniente."
+                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros, asegurando que todos viajen cómodamente juntos."
                     }
                 }
             },
@@ -665,6 +665,7 @@
             }
         },
         "private": {
+            "title": "Transportación de lujo en Cancún Aeropuerto",
             "faq": {
                 "title": "Transportación Privada desde el Aeropuerto de Cancún - FAQS",
                 "items": {
@@ -710,6 +711,27 @@
                         "imageAlt": "Comentarios de nuestros clientes Miguel B.",
                         "imageTitle": "Comentarios de nuestros clientes Miguel B.",
                         "stars": "5"
+                    }
+                }
+            },
+            "pricing": {
+                "title": "Otros servicios similares al transporte privado en Cancún",
+                "subtitle": "Lista de nuestros servicios de transporte",
+                "cards": {
+                    "luxury": {
+                        "title": "Transportación de Lujo",
+                        "price": "1512.00",
+                        "description": "Mejore su experiencia de viaje con nuestro servicio de traslado premium, proporcionando transporte sin problemas entre el aeropuerto de Cancún y su hotel en Cancún o la Riviera Maya. Nuestro servicio de primer nivel atiende de 1 a 5 pasajeros en una Suburban o un vehículo de lujo comparable, garantizando comodidad y estilo durante todo su viaje."
+                    },
+                    "private": {
+                        "title": "Servicio de Taxi",
+                        "price": "664.81",
+                        "description": "Viaje cómodamente en un servicio privado totalmente equipado para un máximo de 3 pasajeros. El servicio es privado, sin esperas ni paradas continuas."
+                    },
+                    "group": {
+                        "title": "Transporte de grupos",
+                        "price": "1512.00",
+                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero reservando nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros, asegurando que todos disfruten juntos de un viaje cómodo y conveniente."
                     }
                 }
             }

@@ -588,23 +588,23 @@
                 }
             },
             "pricing": {
-                "title": "Other services similar to private transportation in Cancun",
+                "title": "Our Transportation Services",
                 "subtitle": "List of our transportation services",
                 "cards": {
                     "luxury": {
                         "title": "Luxury Transportation",
                         "price": "84.00",
-                        "description": "Enhance your travel experience with our premium transfer service, providing seamless transportation between Cancun Airport and your hotel in Cancun or the Riviera Maya. Our top-tier service caters to 1 to 5 passengers in a Suburban or a comparable luxury vehicle, ensuring comfort and style throughout your journey."
+                        "description": "Elevate your shuttle experience with our luxury transfer service, taking you to and from Cancun Airport to your hotel in Cancun or the Riviera Maya. Our luxury service accommodates 1 to 5 passengers in a Suburban or a similar high-end vehicle."
                     },
                     "private": {
-                        "title": "Taxi Service",
-                        "price": "34.99",
-                        "description": "Travel comfortably in a fully equipped private service for up to 3 passengers. The service is private, with no waiting time or continuous stops."
+                        "title": "Private Transportation",
+                        "price": "29.99",
+                        "description": "Our transportation and private transfer service is one of the most popular and affordable options in Cancun and the Riviera Maya. We offer spacious, air-conditioned, safe, and clean vehicles that can accommodate 1 to 8 people comfortably."
                     },
                     "group": {
                         "title": "Group Transportation",
                         "price": "84.00",
-                        "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers, ensuring everyone enjoys a comfortable and convenient journey together."
+                        "description": "Traveling with a group of more than 8 passengers? Save money and book our group transportation service. Our spacious and safe vehicles can accommodate up to 16 passengers, ensuring everyone travels comfortably together."
                     }
                 }
             },
@@ -669,6 +669,7 @@
             }
         },
         "private": {
+            "title": "Private Shuttle Cancun Airport",
             "faq": {
                 "title": "Private Transportation from Cancun Airport - FAQS",
                 "items": {
@@ -714,6 +715,27 @@
                         "imageAlt": "Comment from our customer Michael B.",
                         "imageTitle": "Comment from our customer Michael B.",
                         "stars": "5"
+                    }
+                }
+            },
+            "pricing": {
+                "title": "Other services similar to private transportation in Cancun",
+                "subtitle": "List of our transportation services",
+                "cards": {
+                    "luxury": {
+                        "title": "Luxury Transportation",
+                        "price": "84.00",
+                        "description": "Enhance your travel experience with our premium transfer service, providing seamless transportation between Cancun Airport and your hotel in Cancun or the Riviera Maya. Our top-tier service caters to 1 to 5 passengers in a Suburban or a comparable luxury vehicle, ensuring comfort and style throughout your journey."
+                    },
+                    "private": {
+                        "title": "Taxi Service",
+                        "price": "34.99",
+                        "description": "Travel comfortably in a fully equipped private service for up to 3 passengers. The service is private, with no waiting time or continuous stops."
+                    },
+                    "group": {
+                        "title": "Group Transportation",
+                        "price": "84.00",
+                        "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers, ensuring everyone enjoys a comfortable and convenient journey together."
                     }
                 }
             }
