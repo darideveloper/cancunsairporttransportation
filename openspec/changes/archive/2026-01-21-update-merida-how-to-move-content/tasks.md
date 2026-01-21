@@ -1,0 +1,5 @@
+
+- [x] Update `pages.cancunToMerida.howToMove` in `src/messages/en.json` with the new English title and content derived from `design.md`. <!-- validation: openspec validate update-merida-how-to-move-content --strict -->
+- [x] Update `pages.cancunToMerida.howToMove` in `src/messages/es.json` with the new Spanish title and content derived from `design.md`. <!-- validation: openspec validate update-merida-how-to-move-content --strict -->
+- [x] Copy `src/assets/images/destinations/akumal/destination.webp` to `src/assets/images/destinations/cancun-to-merida/destination.webp` to ensure the asset is in the correct folder. <!-- validation: file_exists src/assets/images/destinations/cancun-to-merida/destination.webp -->
+- [x] Update `src/pages/[lang]/transportation-from-cancun-to-merida.astro` to import `howToMoveImg` from `../../assets/images/destinations/cancun-to-merida/destination.webp`. <!-- validation: grep_search "cancun-to-merida/destination.webp" src/pages/[lang]/transportation-from-cancun-to-merida.astro -->
