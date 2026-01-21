@@ -10,9 +10,14 @@ import H2 from "../atoms/H2.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+// Images
+import image from "../../assets/images/vehicles/standard.webp";
+
+// Icons
+import { FaCheck } from "react-icons/fa";
+
 // Get includes data from translations
 const title = t("global.sections.includes.title");
-const image = t("global.sections.includes.image");
 const imageAlt = t("global.sections.includes.imageAlt");
 const imageTitle = t("global.sections.includes.imageTitle");
 const items = t("global.sections.includes.items");
@@ -21,41 +26,46 @@ const items = t("global.sections.includes.items");
 <section
   id="service-includes"
   aria-labelledby="includes-title"
-  class="py-12 md:py-16 lg:py-20"
+  class="bg-accent/10 mt-12 py-4"
 >
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
-      <!-- Left side: Title and Image -->
-      <div class="includes-content-left">
-        <H2 id="includes-title" class="mb-6 text-left">
-          {title}
-        </H2>
-        <Image
-          src={image}
-          alt={imageAlt}
-          title={imageTitle}
-          width={600}
-          height={400}
-          loading="lazy"
-          class="h-auto w-full rounded-lg shadow-lg"
-        />
-      </div>
+  <div
+    class="container flex flex-col items-center justify-center text-center md:flex-row md:text-left"
+  >
+    <!-- Left side: Title and Image -->
+    <div class="title-image h-full w-full">
+      <H2 id="includes-title" class="my-4">
+        {title}
+      </H2>
+      <Image
+        src={image}
+        alt={imageAlt}
+        title={imageTitle}
+        width={600}
+        height={400}
+        loading="lazy"
+        class="mx-auto w-11/12 max-w-4xl"
+      />
+    </div>
 
-      <!-- Right side: List of items -->
-      <div class="includes-content-right">
-        <ul class="space-y-4">
-          {
-            items.map((item: string) => (
-              <li class="text-gray-dark flex items-start gap-3 text-lg">
-                <span class="text-accent mt-1" aria-hidden="true">
-                  ✓
-                </span>
-                <span>{item}</span>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+    <!-- Right side: List of items -->
+    <div class="list-items w-full md:w-1/2">
+      <ul
+        class="flex flex-wrap items-center justify-center gap-2 md:justify-start"
+      >
+        {
+          items.map((item: string) => (
+            <li class="rounded-2xl bg-white px-4 py-2">
+              <span class="inline-block text-left">
+                <FaCheck
+                  aria-hidden="true"
+                  className="inline-block mr-2 text-blue"
+                />
+                {item}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </div>
 </section>

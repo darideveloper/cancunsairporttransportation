@@ -50,27 +50,27 @@ const columns: TableColumn[] = [
   {
     key: "arrival",
     header: tableData.headers.arrival,
-    className: "text-gray-dark px-6 py-4 font-medium",
+    className: "",
   },
   {
     key: "departure",
     header: tableData.headers.departure,
-    className: "text-gray-dark px-6 py-4 font-medium",
+    className: "",
   },
   {
     key: "capacity",
     header: tableData.headers.capacity,
-    className: "text-gray-dark px-6 py-4",
+    className: "",
   },
   {
     key: "oneWay",
     header: tableData.headers.oneWay,
-    className: "text-accent px-6 py-4 font-bold",
+    className: "",
   },
   {
     key: "roundTrip",
     header: tableData.headers.roundTrip,
-    className: "text-accent px-6 py-4 font-bold",
+    className: "",
   },
 ];
 ---
@@ -78,47 +78,38 @@ const columns: TableColumn[] = [
 <section
   id="private-details"
   aria-labelledby="private-details-heading"
-  class="py-12 md:py-16 lg:py-20"
+  class=""
 >
-  <div class="container mx-auto px-4">
+  <div class="">
     <!-- Title Section -->
-    <SectionHeading
-      id="private-details-heading"
-      title={title}
-      class="mb-8 text-center"
-    >
-      <div
-        class="prose prose-p:text-gray-dark prose-p:text-lg prose-strong:text-black max-w-none"
-        set:html={descriptionHtml}
-      />
+    <SectionHeading id="private-details-heading" title={title} class="">
+      <div class="" set:html={descriptionHtml} />
     </SectionHeading>
 
     <!-- Table Section -->
-    <div class="mb-6">
-      <h3 class="mb-4 text-center text-xl font-bold">{tableData.title}</h3>
+    <div class="">
+      <h3 class="">{tableData.title}</h3>
     </div>
 
     <!-- Responsive Table Wrapper -->
-    <div
-      class="border-gray/20 mb-8 w-full overflow-x-auto rounded-xl border shadow-sm"
-    >
-      <table class="w-full min-w-[600px] border-collapse bg-white">
-        <caption class="sr-only">{tableData.title}</caption>
-        <thead class="bg-gray/5 text-black">
+    <div class="">
+      <table class="">
+        <caption class="">{tableData.title}</caption>
+        <thead class="">
           <tr>
             {
               columns.map((col) => (
-                <th scope="col" class="px-6 py-4 text-left font-bold">
+                <th scope="col" class="">
                   {col.header}
                 </th>
               ))
             }
           </tr>
         </thead>
-        <tbody class="divide-gray/10 divide-y">
+        <tbody class="">
           {
             tableData.rows.map((row) => (
-              <tr class="hover:bg-gray/5 transition-colors">
+              <tr class="">
                 {columns.map((col) => (
                   <td class={col.className}>{row[col.key]}</td>
                 ))}
@@ -130,8 +121,8 @@ const columns: TableColumn[] = [
     </div>
 
     <!-- CTA Button -->
-    <div class="mt-12 text-center">
-      <ButtonCta href={cta.href} class="min-w-[200px]">
+    <div class="">
+      <ButtonCta href={cta.href} class="">
         {cta.text}
       </ButtonCta>
     </div>

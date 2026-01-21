@@ -85,7 +85,7 @@ export default function BookingForm({
   return (
     <section
       id="booking-form"
-      className={`container flex w-full justify-center ${className}`}
+      className={`container flex w-full justify-center ${className} px-4! sm:px-8!`}
     >
       <form className="bg-accent w-full rounded-xl px-8 py-6">
         {title && (
@@ -104,9 +104,9 @@ export default function BookingForm({
         </header>
 
         {/* Fields */}
-        <div className="grid grid-cols-1 gap-4 py-4 @lg:grid-cols-6 @2xl:grid-cols-18">
+        <div className="grid grid-cols-1 gap-4 py-4 @lg:grid-cols-6 @4xl:grid-cols-18">
           {/* Departure Trip */}
-          <div className="@lg:col-span-3 @2xl:col-span-5">
+          <div className="@lg:col-span-3 @4xl:col-span-5">
             <LocationSelect
               id="location-from"
               label={`${translations.labels.leavingFrom} *`}
@@ -115,7 +115,7 @@ export default function BookingForm({
               required={true}
             />
           </div>
-          <div className="@lg:col-span-3 @2xl:col-span-5">
+          <div className="@lg:col-span-3 @4xl:col-span-5">
             <LocationSelect
               id="location-to"
               label={translations.labels.goingTo}
@@ -123,7 +123,7 @@ export default function BookingForm({
               onChange={setLocationTo}
             />
           </div>
-          <div className="@lg:col-span-2 @2xl:col-span-3">
+          <div className="@lg:col-span-2 @4xl:col-span-3">
             <DateInput
               id="departure-date"
               label={translations.labels.pickupDate}
@@ -131,7 +131,7 @@ export default function BookingForm({
               onChange={setDepartureDate}
             />
           </div>
-          <div className="@lg:col-span-2 @2xl:col-span-3">
+          <div className="@lg:col-span-2 @4xl:col-span-3">
             <TimeInput
               id="departure-time"
               label={translations.labels.pickupTime}
@@ -139,7 +139,7 @@ export default function BookingForm({
               onChange={setDepartureTime}
             />
           </div>
-          <div className="@lg:col-span-2 @2xl:col-span-2">
+          <div className="@lg:col-span-2 @4xl:col-span-2">
             <PassengerInput
               id="passengers"
               label={translations.labels.passengers}
@@ -151,7 +151,7 @@ export default function BookingForm({
           {/* Return Trip (Rendered only if roundTrip) */}
           {tripType === "roundTrip" && (
             <>
-              <div className="@lg:col-span-3 @2xl:col-span-5">
+              <div className="@lg:col-span-3 @4xl:col-span-5">
                 <LocationSelect
                   id="return-location-from"
                   label={translations.labels.leavingFrom}
@@ -159,7 +159,7 @@ export default function BookingForm({
                   disabled={true}
                 />
               </div>
-              <div className="@lg:col-span-3 @2xl:col-span-5">
+              <div className="@lg:col-span-3 @4xl:col-span-5">
                 <LocationSelect
                   id="return-location-to"
                   label={translations.labels.goingTo}
@@ -167,7 +167,7 @@ export default function BookingForm({
                   disabled={true}
                 />
               </div>
-              <div className="@lg:col-span-2 @2xl:col-span-3">
+              <div className="@lg:col-span-2 @4xl:col-span-3">
                 <DateInput
                   id="return-date"
                   label={translations.labels.pickupDate}
@@ -175,7 +175,7 @@ export default function BookingForm({
                   onChange={setReturnDate}
                 />
               </div>
-              <div className="@lg:col-span-2 @2xl:col-span-3">
+              <div className="@lg:col-span-2 @4xl:col-span-3">
                 <TimeInput
                   id="return-time"
                   label={translations.labels.pickupTime}
@@ -183,7 +183,7 @@ export default function BookingForm({
                   onChange={setReturnTime}
                 />
               </div>
-              <div className="@lg:col-span-2 @2xl:col-span-2">
+              <div className="@lg:col-span-2 @4xl:col-span-2">
                 <PassengerInput
                   id="return-passengers"
                   label={translations.labels.passengers}
