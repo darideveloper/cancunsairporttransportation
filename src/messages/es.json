@@ -1180,6 +1180,19 @@
         },
         "cancunToMerida": {
             "title": "Transporte de Cancún a Mérida",
+            "ratesTable": {
+                "destinations": {
+                    "merida": {
+                        "name": "Mérida",
+                        "privateOw": "$9,975 MXN",
+                        "privateRt": "$19,855 MXN",
+                        "luxuryOw": "$18,905 MXN",
+                        "luxuryRt": "$37,240 MXN",
+                        "groupOw": "N/A",
+                        "groupRt": "N/A"
+                    }
+                }
+            },
             "destinations": {
                 "title": "Traslados hacia y desde Mérida y otros destinos",
                 "text": "Ofrecemos el servicio de transporte más completo a cualquier hotel o destino en Mérida. Ya sea que vengas desde cualquier punto de la península de Yucatán o desde el Aeropuerto de Cancún, brindamos un servicio completo listo para llevarte a tu hotel, atracción preferida o cualquier lugar en Mérida con facilidad y comodidad.",
@@ -1210,8 +1223,8 @@
                 }
             },
             "bannerCta": {
-                "title": "Transportación del Aeropuerto de Cancún a Tulum",
-                "text": "Tulum se encuentra aproximadamente a 130 km (80 millas) al sur del Aeropuerto de Cancún, un viaje que generalmente toma alrededor de 2 horas. Conocido por sus impresionantes ruinas mayas, Tulum es el destino perfecto para aquellos que buscan unas vacaciones extraordinarias lejos del ajetreo y el bullicio de la vida de la ciudad. Para su transporte de Cancún a Tulum, considere nuestro servicio: Nuestro Transporte del Aeropuerto de Cancún a Tulum es la opción más rentable para el transporte desde el Aeropuerto de Cancún a Tulum.\n\nSiéntese, relájese y disfrute de un viaje seguro y cómodo a Tulum en una de nuestras confiables camionetas. Con más de una década de experiencia, nos especializamos en brindar servicios de transporte aeroportuario de primer nivel a hoteles tanto en Cancún como en Tulum.\n\n¡Experimente nuestro servicio de Traslado de Cancún a Tulum a una tarifa increíble! Viaje con lujo y estilo en una de nuestras impecables camionetas SUV de tamaño completo, la manera perfecta de comenzar sus vacaciones en el Caribe Mexicano.\n\n¡Reserve hoy su transporte de lujo a Tulum desde Cancún!\n\nEstamos orgullosos de ofrecer el transporte más asequible en Cancún y Tulum, con conductores experimentados dedicados a garantizar un viaje seguro y eficiente a su hotel."
+                "title": "Transporte de Cancún a Mérida con Cancun Airport Transportation",
+                "text": "Mérida, la vibrante capital de Yucatán, es una ciudad llena de historia, cultura y encanto. Conocida como la \"Ciudad Blanca\", Mérida es famosa por su impresionante arquitectura colonial, sus coloridos mercados y su rica herencia maya.\n\nEste cautivador destino ofrece una mezcla de hoteles boutique, lujosas haciendas y acogedores alojamientos, todos rodeados de calles pintorescas, gastronomía de clase mundial y experiencias de compra únicas.\n\nEl viaje en auto desde Cancún a Mérida suele tomar alrededor de 3 horas, ofreciendo un recorrido panorámico a través de la península de Yucatán.\n\nYa sea que estés planeando una aventura cultural o una escapada relajante, Mérida es el destino perfecto. Si te preguntas cómo llegar desde el Aeropuerto de Cancún a Mérida, confía en Cancun Airport Transportation para el servicio de transporte más confiable y económico. Viaja con comodidad y estilo mientras te llevamos directamente a tu destino en Mérida."
             },
             "testimonials": {
                 "title": "Nuestras reseñas de clientes - Cancún a Mérida",

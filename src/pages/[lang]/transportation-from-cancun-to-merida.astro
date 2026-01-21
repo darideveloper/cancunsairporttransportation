@@ -28,10 +28,10 @@ import TransportationServices from "../../components/organisms/TransportationSer
 // Images
 import safeTripBookingImg from "../../assets/images/destinations/cancun-to-merida/trip-advisor.webp";
 import howToMoveImg from "../../assets/images/destinations/cancun-to-merida/destination.webp";
-import client1Img from "../../assets/images/destinations/akumal/gallery/client_1.webp";
-import client2Img from "../../assets/images/destinations/akumal/gallery/client_2.webp";
-import client3Img from "../../assets/images/destinations/akumal/gallery/client_3.webp";
-import client4Img from "../../assets/images/destinations/akumal/gallery/client_4.webp";
+import client1Img from "../../assets/images/destinations/cancun-to-merida/gallery/client_1.webp";
+import client2Img from "../../assets/images/destinations/cancun-to-merida/gallery/client_2.webp";
+import client3Img from "../../assets/images/destinations/cancun-to-merida/gallery/client_3.webp";
+import client4Img from "../../assets/images/destinations/cancun-to-merida/gallery/client_4.webp";
 
 // Testimonial Images
 import meridaClient1 from "../../assets/images/destinations/cancun-to-merida/client_review_1.webp";
@@ -114,7 +114,7 @@ const t = useTranslations(lang);
   <BannerCta page={page} imageClass="sm:w-1/2 md:w-4/12 h-auto" />
 
   <!-- Rates Table -->
-  <RatesTable />
+  <RatesTable page={page} />
 
   <!-- FAQs -->
   <FaqSection page={page} />

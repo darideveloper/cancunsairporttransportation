@@ -1,20 +1,4 @@
-# merida-page-translations Specification
-
-## Purpose
-TBD - created by archiving change update-merida-form-title. Update Purpose after archive.
-## Requirements
-### Requirement: Merida Page Title
-The Merida transportation page MUST show the correct localized title in the Booking Form.
-
-#### Scenario: Merida English Title
-Given the user is on the Merida transportation page in English
-When they view the Booking Form
-Then the title MUST be "Transportation from Cancun to Merida".
-
-#### Scenario: Merida Spanish Title
-Given the user is on the Merida transportation page in Spanish
-When they view the Booking Form
-Then the title MUST be "Transporte de Cancún a Mérida".
+## ADDED Requirements
 
 ### Requirement: Merida Banner CTA Content
 The Merida transportation page Banner CTA section MUST contain specific content describing Merida, not generic or incorrect content (e.g. from Tulum).
@@ -30,4 +14,3 @@ Given the user is on the Merida transportation page in Spanish
 When they view the Banner CTA section
 Then the title MUST be "Transporte de Cancún a Mérida con Cancun Airport Transportation"
 And the text MUST describe Merida as the "Ciudad Blanca" and mention "3 horas".
-

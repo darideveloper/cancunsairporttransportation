@@ -1,0 +1,3 @@
+- [x] Update `src/messages/en.json` `pages.cancunToMerida.bannerCta` with new English content <!-- id: 0 -->
+- [x] Update `src/messages/es.json` `pages.cancunToMerida.bannerCta` with new Spanish content <!-- id: 1 -->
+- [x] Verify the Merida page shows the correct Banner CTA content in English and Spanish <!-- id: 2 -->
