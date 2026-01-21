@@ -1,8 +1,7 @@
-# merida-page-translations Specification
+# merida-page-translations Spec Delta
 
-## Purpose
-TBD - created by archiving change update-merida-form-title. Update Purpose after archive.
-## Requirements
+## MODIFIED Requirements
+
 ### Requirement: Merida Page Title
 The Merida transportation page MUST show the correct localized title in the Booking Form.
 
@@ -15,4 +14,3 @@ Then the title MUST be "Transportation from Cancun to Merida".
 Given the user is on the Merida transportation page in Spanish
 When they view the Booking Form
 Then the title MUST be "Transporte de Cancún a Mérida".
-
