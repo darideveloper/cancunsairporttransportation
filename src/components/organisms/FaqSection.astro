@@ -14,7 +14,15 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const title = t(`pages.${page}.faq.title`);
-const description = t("global.sections.faq.description");
+const localDescription = t(`pages.${page}.faq.description`);
+const globalDescription = t("global.sections.faq.description");
+
+// If the localized description is not found, it returns the key as string
+const description =
+  localDescription && localDescription !== `pages.${page}.faq.description`
+    ? localDescription
+    : globalDescription;
+
 const faqItems = t(`pages.${page}.faq.items`) as any;
 const faqKeys = Object.keys(faqItems);
 ---

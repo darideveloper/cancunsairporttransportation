@@ -1296,52 +1296,29 @@
                 "content": "Cancun Airport Transportation by Go Transfers is your trusted choice for safe and comfortable travel to Merida and any other destination in the Yucatán Peninsula. With over a decade of experience, we specialize in private transfers directly from Cancun Airport to Merida, offering convenient door-to-door service in our modern, air-conditioned vehicles.\n\nMerida, located approximately 3 hours west of Cancun, is a city rich in history, culture, and charm. Known as the \"White City,\" Merida boasts stunning colonial architecture, vibrant local markets, and a thriving culinary scene. It’s also the gateway to exploring ancient Mayan ruins, cenotes, and the picturesque towns of the Yucatán region.\n\nUpon arriving at Cancun Airport, you have several options to reach Merida, including the ADO bus, taxi services, car rentals, or our private shuttle. For those seeking the most reliable and stress-free option, we offer competitive rates for transfers to Merida, as well as other popular destinations like Valladolid, Chichen Itza, and throughout the Yucatán Peninsula.\n\nOur commitment to excellence ensures that Cancun Airport Transportation to Merida is available 24/7, with real-time flight monitoring to minimize wait times and avoid any additional fees due to flight delays.\n\nEffective communication is at the heart of our service. Our customer support team and drivers are fully bilingual, ensuring a smooth and hassle-free experience for all passengers. When you book your shuttle with us, we take care of every detail to guarantee a seamless, secure, and enjoyable journey for you and your group."
             },
             "faq": {
-                "title": "Cancun to Tulum - Faqs",
+                "title": "Cancun to Merida Transportation - FAQs",
+                "description": "Rates for Transfer Services in Mérida and the Riviera Maya",
                 "items": {
-                    "safe": {
-                        "question": "Is the Transportation from Cancun Airport to Tulum Safe?",
-                        "answer": "Yes, the transportation service from Cancun to Tulum is generally considered safe. Providers often prioritize safety, with experienced drivers and well-maintained vehicles."
+                    "service24h": {
+                        "question": "Is the Cancun to Merida shuttle service available 24/7?",
+                        "answer": "Yes, our shuttle service operates 24/7 to accommodate all flight schedules, including early arrivals and late-night departures."
                     },
-                    "include": {
-                        "question": "What Does My Transportation from Cancun Airport to Tulum Include?",
-                        "answer": "Transportation from Cancun Airport to Tulum typically includes a direct transfer by car, van, or bus, depending on the service you choose. It often includes amenities like air conditioning, professional drivers, and sometimes Wi-Fi and water."
+                    "doorToDoor": {
+                        "question": "Do you provide door-to-door service for Cancun to Merida transfers?",
+                        "answer": "Absolutely! We offer convenient door-to-door service, taking you directly from Cancun Airport to your hotel or destination in Merida."
                     },
-                    "visit": {
-                        "question": "What Can I Visit When I Book the Shuttle in Tulum?",
-                        "answer": "When in Tulum, you can visit the Tulum Ruins, beautiful beaches like Playa Paraíso, cenotes such as Gran Cenote, and the Sian Ka’an Biosphere Reserve."
+                    "largeGroups": {
+                        "question": "Can I book a private transfer for a large group?",
+                        "answer": "Yes, we provide private transfers for groups of all sizes, with vehicles that can accommodate up to 16 passengers."
                     },
-                    "duration": {
-                        "question": "How Long is the Shuttle from Cancun Airport to Tulum?",
-                        "answer": "The shuttle ride from Cancun Airport to Tulum typically takes about 2 hours, depending on traffic and the specific location of your drop-off in Tulum."
-                    },
-                    "bestWay": {
-                        "question": "Is the Shuttle from Cancun Airport the Best Way to Get to Tulum?",
-                        "answer": "The shuttle is a convenient and reliable option, especially for those not wanting to drive themselves. It offers a good balance of cost, convenience, and comfort."
-                    },
-                    "options": {
-                        "question": "How Can I Go from Cancun to Tulum?",
-                        "answer": "Options include renting a car, taking a bus (such as ADO), booking a private or shared shuttle, or using a taxi or transfer service."
-                    },
-                    "activities": {
-                        "question": "What Activities Can I Do in Tulum?",
-                        "answer": "In Tulum, you can enjoy snorkeling, scuba diving, visiting cenotes, exploring the Mayan ruins, yoga classes, and dining at excellent restaurants."
-                    },
-                    "uber": {
-                        "question": "Is There Uber in Tulum?",
-                        "answer": "Uber is not available in Tulum. Local taxis and shuttles are commonly used for transportation."
-                    },
-                    "cheapest": {
-                        "question": "What is the Cheapest Airport Shuttle from Cancun to Tulum?",
-                        "answer": "The cheapest shuttle from Cancun Airport to Tulum is our service: $129 USD per vehicle."
-                    },
-                    "otherDestinations": {
-                        "question": "What Other Destinations Can I Book for My Shuttle Service?",
-                        "answer": "You can book shuttle services to various destinations like <a href=\"/\" title=\"Cancun Airport Transportation\">Cancun Airport Transportation</a> and <a href=\"/transportation-from-cancun-airport-to-playa-del-carmen\" title=\"Transportation from Cancun Airport to Playa del Carmen\">Transportation from Cancun Airport to Playa del Carmen</a>."
+                    "priceIncludes": {
+                        "question": "What is included in the price of the shuttle service?",
+                        "answer": "The price includes a private transfer, all taxes, tolls, and gratuities. There are no hidden fees."
                     }
                 }
             },
             "transportationServices": {
-                "title": "Cancun to Tulum Shuttle - Main Servives",
+                "title": "Shuttle from Cancun to Mérida",
                 "description": "",
                 "items": {
                     "airportToHotel": {
@@ -1363,19 +1340,19 @@
                 }
             },
             "popularHotels": {
-                "title": "Most popular hotels in Tulum",
+                "title": "Transportation from Cancun Airport to the most popular hotels in Mérida",
                 "viewMore": "View More Hotels",
                 "viewMoreTitle": "View More Hotels",
                 "viewMoreLink": "/destinations",
                 "items": [
-                    "Transportation from Cancun Airport to Naay Tulum Boutique Hotel",
-                    "Transportation from Cancun Airport to Ahau Tulum",
-                    "Transportation from Cancun Airport to Be Tulum",
-                    "Transportation from Cancun Airport to Aldea Zama",
-                    "Transportation from Cancun Airport to Dreams Tulum Resort & Spa",
-                    "Transportation from Cancun Airport to Hotelito Azul Tulum",
-                    "Transportation from Cancun Airport to Selina Tulum Hotel",
-                    "Transportation from Cancun Airport to Nomade Tulum Hotel"
+                    "Transportation from Cancun Airport to Hotel el Cid Merida",
+                    "Transportation from Cancun Airport to Hotel Colonial Merida",
+                    "Transportation from Cancun Airport to Ibis Styles Merida",
+                    "Transportation from Cancun Airport to Gran Hotel Merida",
+                    "Transportation from Cancun Airport to Hyatt Regency Merida",
+                    "Transportation from Cancun Airport to Marriott Merida",
+                    "Transportation from Cancun Airport to Doralba Inn Merida",
+                    "Transportation from Cancun Airport to Hotel el Español Merida"
                 ]
             }
         }

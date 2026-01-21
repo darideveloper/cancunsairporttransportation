@@ -139,3 +139,16 @@ The destination cards (Tulum, Playa del Carmen, Cancun) on the Merida page displ
 - **Playa del Carmen**: $69.99 USD / $1259.82 MXN
 - **Cancun**: $29.99 USD / $539.82 MXN
 
+### Requirement: Update Cancun to Merida Transportation Services Title
+The title for the transportation services section on the Cancun to Merida page MUST accurately reflect the destination.
+
+#### Scenario: Spanish Translation
+- **Given** the user is viewing the Cancun to Merida page in Spanish
+- **When** the Transportation Services section is rendered
+- **Then** the title should be "Traslado de Cancún a Mérida"
+
+#### Scenario: English Translation
+- **Given** the user is viewing the Cancun to Merida page in English
+- **When** the Transportation Services section is rendered
+- **Then** the title should be "Shuttle from Cancun to Mérida"
+
