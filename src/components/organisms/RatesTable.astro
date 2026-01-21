@@ -74,6 +74,28 @@ const SERVICE_TIERS = [
 
 const STICKY_SHADOW_CLASSES =
   "after:absolute after:inset-y-0 after:right-0 after:w-4 after:translate-x-full after:bg-linear-to-r after:from-black/5 after:to-transparent after:content-[''] after:pointer-events-none lg:after:hidden";
+
+// Calculate visibility for each tier and column
+const visibleServiceTiers = SERVICE_TIERS.map((tier) => {
+  const hasOw = destinations.some(
+    (dest) =>
+      dest[tier.owKey as keyof DestinationData] &&
+      dest[tier.owKey as keyof DestinationData] !== "N/A",
+  );
+  const hasRt = destinations.some(
+    (dest) =>
+      dest[tier.rtKey as keyof DestinationData] &&
+      dest[tier.rtKey as keyof DestinationData] !== "N/A",
+  );
+
+  return {
+    ...tier,
+    hasOw,
+    hasRt,
+    isVisible: hasOw || hasRt,
+    colspan: (hasOw ? 1 : 0) + (hasRt ? 1 : 0),
+  };
+}).filter((tier) => tier.isVisible);
 ---
 
 <section
@@ -110,11 +132,11 @@ const STICKY_SHADOW_CLASSES =
             {headers.destination}
           </th>
           {
-            SERVICE_TIERS.map((tier) => (
+            visibleServiceTiers.map((tier) => (
               <th
                 scope="colgroup"
                 class="text-blue-dark border-gray/50 border-t border-b bg-white px-6 py-4 text-center font-bold"
-                colspan="2"
+                colspan={tier.colspan}
               >
                 {tier.label} <br /> {tier.pax}
               </th>
@@ -123,16 +145,26 @@ const STICKY_SHADOW_CLASSES =
         </tr>
         <tr>
           {
-            SERVICE_TIERS.map(() =>
-              [headers.oneWay, headers.roundTrip].map((label) => (
-                <th
-                  scope="col"
-                  class="text-blue-dark border-gray/50 border-b bg-white px-6 py-4 text-center font-bold tracking-wider capitalize"
-                >
-                  {label}
-                </th>
-              )),
-            )
+            visibleServiceTiers.map((tier) => (
+              <>
+                {tier.hasOw && (
+                  <th
+                    scope="col"
+                    class="text-blue-dark border-gray/50 border-b bg-white px-6 py-4 text-center font-bold tracking-wider capitalize"
+                  >
+                    {headers.oneWay}
+                  </th>
+                )}
+                {tier.hasRt && (
+                  <th
+                    scope="col"
+                    class="text-blue-dark border-gray/50 border-b bg-white px-6 py-4 text-center font-bold tracking-wider capitalize"
+                  >
+                    {headers.roundTrip}
+                  </th>
+                )}
+              </>
+            ))
           }
         </tr>
       </thead>
@@ -152,13 +184,20 @@ const STICKY_SHADOW_CLASSES =
               >
                 {dest.name}
               </th>
-              {SERVICE_TIERS.map((tier) =>
-                [tier.owKey, tier.rtKey].map((key) => (
-                  <td class="border-gray-light border-0 px-4 py-4 text-center whitespace-nowrap">
-                    {dest[key as keyof typeof dest]}
-                  </td>
-                )),
-              )}
+              {visibleServiceTiers.map((tier) => (
+                <>
+                  {tier.hasOw && (
+                    <td class="border-gray-light border-0 px-4 py-4 text-center whitespace-nowrap">
+                      {dest[tier.owKey as keyof typeof dest]}
+                    </td>
+                  )}
+                  {tier.hasRt && (
+                    <td class="border-gray-light border-0 px-4 py-4 text-center whitespace-nowrap">
+                      {dest[tier.rtKey as keyof typeof dest]}
+                    </td>
+                  )}
+                </>
+              ))}
             </tr>
           ))
         }
