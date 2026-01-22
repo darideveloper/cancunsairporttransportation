@@ -670,6 +670,11 @@
         },
         "private": {
             "title": "Private Shuttle Cancun Airport",
+            "includes": {
+                "title": "All our Cancun Private Transfers include:",
+                "imageAlt": "Private Airport Transfer Cancun",
+                "imageTitle": "Private Airport Transfer Cancun"
+            },
             "faq": {
                 "title": "Private Transportation from Cancun Airport - FAQS",
                 "items": {
@@ -742,24 +747,29 @@
         },
         "luxury": {
             "title": "Luxury Airport Transfer Cancun",
+            "includes": {
+                "title": "All our Cancun Luxury Transfers include:",
+                "imageAlt": "Luxury Airport Transfer Cancun",
+                "imageTitle": "Luxury Airport Transfer Cancun"
+            },
             "faq": {
-                "title": "Private Transportation from Cancun Airport - FAQS",
+                "title": "Luxury Transportation from Cancun Airport - FAQS",
                 "items": {
-                    "passengers": {
-                        "question": "How many passengers can travel using the private transportation service?",
-                        "answer": "Our vehicles can accommodate up to 8 passengers."
-                    },
-                    "difference": {
-                        "question": "What is the difference between private transportation and other transfer services?",
-                        "answer": "Unlike other transfer services, private transportation does not require sharing the vehicle with strangers or making unnecessary stops at different hotels."
-                    },
                     "booking": {
-                        "question": "How can I book the private transfer service?",
-                        "answer": "You can book our private transfer service through our website, phone, or email. Be sure to provide your flight and destination details for a quick and hassle-free booking experience."
+                        "question": "How do I book a luxury transportation service from Cancun Airport?",
+                        "answer": "You can book a luxury transportation service online through our website or by contacting our customer service representatives directly via phone or email. Booking is recommended to ensure availability."
                     },
-                    "cost": {
-                        "question": "How much does the private transportation service cost?",
-                        "answer": "We offer affordable and competitive rates for private transportation services. Costs may vary depending on the destination and number of passengers. For an accurate quote, please visit our website or contact our customer service team."
+                    "vehicleTypes": {
+                        "question": "What types of vehicles are available for luxury transportation?",
+                        "answer": "Luxury transportation services offer a range of high-end vehicles, including luxury sedans, SUVs and vans. You can choose the type of vehicle based on your preferences and the number of passengers."
+                    },
+                    "availability": {
+                        "question": "Is the service available 24/7?",
+                        "answer": "Most of our luxury transportation services from Cancun Airport operate 24/7, accommodating flights arriving at any time of day or night. It is advisable to confirm this when booking your service."
+                    },
+                    "advanceBooking": {
+                        "question": "How far in advance should I book my luxury transportation?",
+                        "answer": "It is advisable to book your luxury transportation as soon as you have your travel details confirmed. This ensures availability and allows the service provider to make any necessary arrangements to meet your specific needs."
                     }
                 }
             },
@@ -791,13 +801,13 @@
                 }
             },
             "pricing": {
-                "title": "Other services similar to private transportation in Cancun",
+                "title": "Other services similar to luxury transportation in Cancun",
                 "subtitle": "List of our transportation services",
                 "cards": {
                     "luxury": {
-                        "title": "Luxury Transportation",
-                        "price": "84.00",
-                        "description": "Enhance your travel experience with our premium transfer service, providing seamless transportation between Cancun Airport and your hotel in Cancun or the Riviera Maya. Our top-tier service caters to 1 to 5 passengers in a Suburban or a comparable luxury vehicle, ensuring comfort and style throughout your journey."
+                        "title": "Private Transportation",
+                        "price": "29.99",
+                        "description": "Travel comfortably in a fully equipped private service for up to 8 passengers. The service is private, with no waiting time or continuous stops."
                     },
                     "private": {
                         "title": "Taxi Service",
@@ -807,7 +817,7 @@
                     "group": {
                         "title": "Group Transportation",
                         "price": "84.00",
-                        "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers, ensuring everyone enjoys a comfortable and convenient journey together."
+                        "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers."
                     }
                 }
             }

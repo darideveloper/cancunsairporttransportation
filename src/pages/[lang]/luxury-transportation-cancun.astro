@@ -20,6 +20,7 @@ import PrivateDetails from "../../components/organisms/PrivateDetails.astro";
 
 // Images
 import homeBannerImg from "../../assets/images/home-banner.webp";
+import luxuryImg from "../../assets/images/vehicles/luxury.webp";
 import luxuryClient1Img from "../../assets/images/clients/luxury-1.webp";
 import luxuryClient2Img from "../../assets/images/clients/luxury-2.webp";
 import luxuryClient3Img from "../../assets/images/clients/luxury-3.webp";
@@ -54,7 +55,7 @@ const t = useTranslations(lang);
   </div>
 
   <!-- Service Includes -->
-  <Includes />
+  <Includes page={page} image={luxuryImg} />
 
   <!-- Private Details -->
   <PrivateDetails />

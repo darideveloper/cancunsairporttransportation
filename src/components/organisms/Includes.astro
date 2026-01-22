@@ -6,20 +6,24 @@ import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 import { Image } from "astro:assets";
 import H2 from "../atoms/H2.astro";
 
+// Icons
+import { FaCheck } from "react-icons/fa";
+
 // Lang
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// Images
-import image from "../../assets/images/vehicles/standard.webp";
-
-// Icons
-import { FaCheck } from "react-icons/fa";
+// Types
+interface Props {
+  page: string;
+  image: ImageMetadata;
+}
+const { page, image } = Astro.props;
 
 // Get includes data from translations
-const title = t("global.sections.includes.title");
-const imageAlt = t("global.sections.includes.imageAlt");
-const imageTitle = t("global.sections.includes.imageTitle");
+const title = t(`pages.${page}.includes.title`);
+const imageAlt = t(`pages.${page}.includes.imageAlt`);
+const imageTitle = t(`pages.${page}.includes.imageTitle`);
 const items = t("global.sections.includes.items");
 ---
 
