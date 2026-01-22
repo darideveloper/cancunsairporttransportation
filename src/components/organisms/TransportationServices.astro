@@ -1,5 +1,5 @@
 ---
-import { useTranslations } from "../../lib/i18n/utils";
+import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 import SectionHeading from "../molecules/SectionHeading.astro";
 import InfoIconCard from "../molecules/InfoIconCard.astro";
 import { FaPlane, FaBed, FaUtensils, FaTree } from "react-icons/fa";
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { page = "home" } = Astro.props;
-const { lang } = Astro.params as { lang: "en" | "es" };
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const serviceKeys = [
@@ -29,10 +29,7 @@ const services = serviceKeys.map(({ key, Icon }) => {
   );
 
   return {
-    title:
-      pageTitle !== `pages.${page}.transportationServices.items.${key}.title`
-        ? pageTitle
-        : globalTitle,
+    title: pageTitle || globalTitle,
     text: t(`pages.${page}.transportationServices.items.${key}.text`),
     Icon,
   };

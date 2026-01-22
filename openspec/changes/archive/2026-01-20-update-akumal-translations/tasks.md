@@ -1,0 +1,3 @@
+- [x] Update `src/messages/en.json` with new Akumal content <!-- id: 0 -->
+- [x] Update `src/messages/es.json` with new Akumal content <!-- id: 1 -->
+- [x] Verify content appears correctly on the page <!-- id: 2 -->

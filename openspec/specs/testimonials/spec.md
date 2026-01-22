@@ -145,3 +145,33 @@ Then I should see "John P.", "Ana G.", and "Carlos R."
 And the text should match the provided copy (e.g., "Excellent service! From the moment I arrived...")
 And the images should be the default client images (1, 2, 3)
 
+### Requirement: Update Testimonial Content for Merida Page
+The Merida page MUST display specific testimonials with unique client names and images.
+
+#### Scenario: Viewing Merida page in English
+-   **Given** the user is on the `/en/transportation-from-cancun-to-merida` page
+-   **When** they scroll to the testimonials section
+-   **Then** they should see the header "Our client reviews - Cancun to Merida"
+-   **And** they should see 3 reviews from "Emily R.", "Michael T.", and "Jessica K." with the updated text and new images.
+
+#### Scenario: Viewing Merida page in Spanish
+-   **Given** the user is on the `/es/traslado-de-cancun-a-merida` page
+-   **When** they scroll to the testimonials section
+-   **Then** they should see the header "Nuestras reseñas de clientes - Cancún a Mérida"
+-   **And** they should see 3 reviews from "Emily R.", "Michael T.", and "Jessica K." with the updated Spanish text and new images.
+
+### Requirement: Update Testimonial Content for Luxury Page
+The Luxury Transportation page MUST display specific testimonials with unique client names and images as requested by the user.
+
+#### Scenario: Viewing Luxury page in English
+- **Given** the user is on the `/en/luxury-transportation-cancun` page
+- **When** they scroll to the testimonials section
+- **Then** they should see the header "Cancun Luxury Transfers - What our clients say about us"
+- **And** they should see 3 reviews from "Alexander M.", "Sofia H.", and "Daniel R." with the updated text and new images.
+
+#### Scenario: Viewing Luxury page in Spanish
+- **Given** the user is on the `/es/transporte-de-lujo-cancun` page
+- **When** they scroll to the testimonials section
+- **Then** they should see the header "Traslados de Lujo en Cancún - Lo que nuestros clientes dicen de nosotros"
+- **And** they should see 3 reviews from "Alexander M.", "Sofia H.", and "Daniel R." with the updated Spanish text and new images.
+

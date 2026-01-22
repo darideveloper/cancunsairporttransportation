@@ -1,0 +1,166 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { marked } from "marked";
+import clsx from "clsx";
+
+// Components
+import SectionHeading from "../molecules/SectionHeading.astro";
+import ButtonCta from "../atoms/ButtonCta.astro";
+
+// Lang
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Data
+const content = t("pages.privateAirportTransfer.privateDetails") as any;
+const { title, description, table, cta } = content;
+const descriptionHtml = await marked.parse(description);
+
+// Table Data Interfaces
+interface TableRow {
+  arrival: string;
+  departure: string;
+  oneWay: string;
+  roundTrip: string;
+  capacity: string;
+}
+
+interface TableData {
+  title: string;
+  headers: {
+    arrival: string;
+    departure: string;
+    oneWay: string;
+    roundTrip: string;
+    capacity: string;
+  };
+  rows: TableRow[];
+}
+
+const tableData = table as TableData;
+
+// Column Configuration
+interface TableColumn {
+  key: keyof TableRow;
+  header: string;
+  className: string;
+}
+
+const columns: TableColumn[] = [
+  {
+    key: "arrival",
+    header: tableData.headers.arrival,
+    className: "",
+  },
+  {
+    key: "departure",
+    header: tableData.headers.departure,
+    className: "",
+  },
+  {
+    key: "capacity",
+    header: tableData.headers.capacity,
+    className: "",
+  },
+  {
+    key: "oneWay",
+    header: tableData.headers.oneWay,
+    className: "",
+  },
+  {
+    key: "roundTrip",
+    header: tableData.headers.roundTrip,
+    className: "",
+  },
+];
+
+const STICKY_SHADOW_CLASSES =
+  "after:absolute after:inset-y-0 after:right-0 after:w-4 after:translate-x-full after:bg-linear-to-r after:from-black/5 after:to-transparent after:content-[''] after:pointer-events-none md:after:hidden";
+---
+
+<section
+  id="private-details"
+  aria-labelledby="private-details-heading"
+  class="container mt-12"
+>
+  <div
+    class="flex flex-col items-center justify-center gap-4 text-center lg:flex-row lg:text-left"
+  >
+    <!-- Title Section -->
+    <SectionHeading
+      id="private-details-heading"
+      title={title}
+      class="w-full text-center lg:w-1/3 lg:text-left"
+    >
+      <div
+        class="markdown text-justify lg:text-left"
+        set:html={descriptionHtml}
+      />
+    </SectionHeading>
+
+    <!-- Table Section -->
+    <div
+      class="mx-auto mt-6 w-full rounded-xl bg-white p-4 text-xs shadow-2xl sm:w-[98%] sm:text-sm lg:w-2/3"
+    >
+      <!-- Title -->
+      <h3 class="my-4 text-center text-2xl font-bold lg:text-left">
+        {tableData.title}
+      </h3>
+
+      <!-- Responsive Table Wrapper -->
+      <div class="w-full overflow-x-auto rounded-xl">
+        <table class="w-full min-w-[600px]">
+          <thead class="">
+            <tr class="border-gray-dark/20 border-t">
+              {
+                columns.map((col, index) => (
+                  <th
+                    scope="col"
+                    class={clsx(
+                      "px-2 py-4 text-left",
+                      index === 0 && [
+                        "sticky left-0 z-30 bg-white",
+                        STICKY_SHADOW_CLASSES,
+                      ],
+                    )}
+                  >
+                    {col.header}
+                  </th>
+                ))
+              }
+            </tr>
+          </thead>
+          <tbody class="">
+            {
+              tableData.rows.map((row, rowIndex) => (
+                <tr class="border-gray-dark/20 odd:bg-blue/5 border-t even:bg-white">
+                  {columns.map((col, colIndex) => (
+                    <td
+                      class={clsx(
+                        col.className,
+                        "px-2 py-4",
+                        colIndex === 0 && [
+                          "sticky left-0 z-20",
+                          rowIndex % 2 === 0 ? "bg-[#F2F7FB]" : "bg-white", // Exact match for blue/5 (5% #0056b1 on white)
+                          STICKY_SHADOW_CLASSES,
+                        ],
+                      )}
+                    >
+                      {row[col.key]}
+                    </td>
+                  ))}
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CTA Button -->
+      <ButtonCta href={cta.href} class="mt-6 w-full" variant="blue">
+        {cta.text}
+      </ButtonCta>
+    </div>
+  </div>
+</section>

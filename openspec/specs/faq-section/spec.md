@@ -76,3 +76,5 @@ The system SHALL provide a reusable FAQ component that dynamically loads content
 - **And** it must display the global description from `global.sections.faq.description`.
 - **And** it must iterate over the items in `pages.playaDelCarmen.faq.items` and render `FaqItem` for each.
 
+
+

@@ -5,43 +5,33 @@ import Layout from "../../layouts/Layout.astro";
 // Libs
 import { useTranslations } from "../../lib/i18n/utils";
 import { getStaticPathsLangs } from "../../lib/utils";
-import { marked } from "marked";
 
 // i18n
 export const getStaticPaths = getStaticPathsLangs;
 
 // Components
 import PageSEO from "../../components/utils/PageSEO.astro";
-import BannerImage from "../../components/atoms/BannerImage.astro";
+import RatesTable from "../../components/organisms/RatesTable.astro";
 import BookingForm from "../../components/organisms/BookingForm";
-import TextCard from "../../components/molecules/TextCard.astro";
-import BannerCta from "../../components/organisms/BannerCta.astro";
+import TextCardHalf from "../../components/organisms/TextCardHalf.astro";
+import TextCardSmall from "../../components/organisms/TextCardSmall.astro";
+import PopularHotels from "../../components/organisms/PopularHotels.astro";
 import BannerStats from "../../components/organisms/BannerStats.astro";
-import PricingCard from "../../components/molecules/PricingCard.astro";
-import RatesTable from "../../components/molecules/RatesTable.astro";
-import SectionHeading from "../../components/molecules/SectionHeading.astro";
-import ButtonCta from "../../components/atoms/ButtonCta.astro";
-import Testimonials from "../../components/organisms/Testimonials.astro";
-import FaqSection from "../../components/organisms/FaqSection.astro";
-import { Image } from "astro:assets";
-import TransportationServices from "../../components/organisms/TransportationServices.astro";
-import Locations from "../../components/organisms/Locations.astro";
 import PricingSection from "../../components/organisms/PricingSection.astro";
+import Testimonials from "../../components/organisms/Testimonials.astro";
 import ClientGallery from "../../components/organisms/ClientGallery.astro";
 import Destinations from "../../components/organisms/Destinations.astro";
+import BannerCta from "../../components/organisms/BannerCta.astro";
+import FaqSection from "../../components/organisms/FaqSection.astro";
+import TransportationServices from "../../components/organisms/TransportationServices.astro";
 
 // Images
-import homeBannerImg from "../../assets/images/home-banner.webp";
 import safeTripBookingImg from "../../assets/images/destinations/playa-del-carmen/trip-advisor.webp";
 import howToMoveImg from "../../assets/images/destinations/playa-del-carmen/destination.webp";
 import client1Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_1.webp";
 import client2Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_2.webp";
 import client3Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_3.webp";
 import client4Img from "../../assets/images/destinations/playa-del-carmen/gallery/client_4.webp";
-import clientAppEsImg from "../../assets/images/clients/client-app-es.webp";
-
-// Icons
-import { FaImages } from "react-icons/fa";
 
 // Page data
 const page = "playaDelCarmen";
@@ -55,80 +45,50 @@ const { lang } = Astro.params as { lang: "en" | "es" };
 
 // Tranlation texts
 const t = useTranslations(lang);
-const safeTripBookContent = await marked.parse(
-  t("pages.playaDelCarmen.safeTrip.description"),
-);
-const howToMoveContent = await marked.parse(
-  t("pages.playaDelCarmen.howToMove.content"),
-);
-const reliableServiceContent = await marked.parse(
-  t("pages.playaDelCarmen.reliableService.description"),
-);
 
 // Data
 ---
 
-<Layout preloadImage={homeBannerImg.src}>
+<Layout>
   <!-- Page SEO -->
-  <PageSEO currentPage="home" slot="seo" />
+  <PageSEO currentPage={page} slot="seo" />
 
   <!-- Form -->
-  <BookingForm
-    translations={t("global.booking")}
-    defaultFrom="cun"
-    defaultTo="merida"
-    client:idle
-    title={t("pages.playaDelCarmen.title")}
-  />
+  <div class="@container">
+    <BookingForm
+      translations={t("global.booking")}
+      defaultFrom="cun"
+      defaultTo="merida"
+      client:idle
+      title={t(`pages.${page}.title`)}
+    />
+  </div>
 
   <!-- Company stats -->
   <BannerStats />
 
   <!-- Banner with image and text -->
-  <TextCard
+  <TextCardHalf
     id="safe-trip-booking"
-    title={t("pages.playaDelCarmen.safeTrip.title")}
-    class="mt-12 grid grid-cols-1 items-center justify-center md:grid-cols-2"
-  >
-    <Image
-      slot="image"
-      src={safeTripBookingImg}
-      alt={t("pages.playaDelCarmen.safeTrip.title")}
-      widths={[348, 696, 1220, safeTripBookingImg.width]}
-      sizes="(max-width: 768px) 348px, (max-width: 1024px) 450px, 610px"
-      quality={60}
-      format="avif"
-      loading="eager"
-      decoding="async"
-      class="object-right2 h-full w-full rounded-xl object-cover"
-    />
-    <div set:html={safeTripBookContent} class="markdown" />
-  </TextCard>
+    page={page}
+    section="safeTrip"
+    image={safeTripBookingImg}
+    imageClass="object-right"
+  />
 
   <!-- Pricing transportation -->
   <PricingSection page={page} />
 
   <!-- How to move -->
   <div class="bg-accent/5 mt-12 py-12">
-    <TextCard
+    <TextCardSmall
       id="how-to-move"
-      title={t("pages.playaDelCarmen.howToMove.title")}
-      class="flex flex-col items-center justify-center md:flex-row"
-    >
-      <Image
-        slot="image"
-        src={howToMoveImg}
-        alt={t("pages.playaDelCarmen.howToMove.title")}
-        widths={[400, 800, howToMoveImg.width]}
-        sizes="(max-width: 768px) 400px, 800px"
-        quality={60}
-        format="avif"
-        loading="lazy"
-        decoding="async"
-        class="h-full w-full rounded-xl object-cover object-right md:w-1/2 lg:w-1/3"
-      />
-      <div set:html={howToMoveContent} class="markdown text-justify" />
-    </TextCard>
+      page={page}
+      section="howToMove"
+      contentKey="content"
+      image={howToMoveImg}
+      imageClass="object-right"
+    />
   </div>
 
   <!-- Clients testimonials -->
@@ -148,24 +108,14 @@ const reliableServiceContent = await marked.parse(
   <BannerCta page={page} imageClass="sm:w-1/2 md:w-4/12 h-auto" />
 
   <!-- Rates Table -->
-  <section
-    class="container mt-12"
-    id="rates-table"
-    aria-labelledby="rates-table-heading"
-  >
-    <SectionHeading
-      id="rates-table-heading"
-      title={t("global.ratesTable.title")}
-      class="mb-8 text-center"
-    >
-      <p>{t("global.ratesTable.description")}</p>
-    </SectionHeading>
-    <RatesTable />
-  </section>
+  <RatesTable />
 
   <!-- FAQs -->
   <FaqSection page={page} />
 
+  <!-- Popular hotels -->
+  <PopularHotels page={page} />
+
+  <!-- Transportation services -->
   <TransportationServices page={page} />
-  <Locations />
 </Layout>

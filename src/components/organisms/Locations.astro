@@ -1,11 +1,18 @@
 ---
-import { useTranslations } from "../../lib/i18n/utils";
+// Libs
+// Libs
+import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
+
+// Components
 import SectionHeading from "../molecules/SectionHeading.astro";
 import InfoIconCard from "../molecules/InfoIconCard.astro";
+import BasicIconCard from "../molecules/BasicIconCard.astro";
+
+// Icons
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-const { lang } = Astro.params as { lang: string };
-const t = useTranslations(lang as "en" | "es");
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const contactItems = [
   {
@@ -49,12 +56,13 @@ const transportationTimes = t(
   <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
     {
       contactItems.map((item) => (
-        <InfoIconCard
+        <BasicIconCard
           title={item.title}
           text={item.text}
-          TitleIcon={item.Icon}
+          Icon={item.Icon}
           href={item.href}
           class="bg-gray-light"
+          iconClass="text-blue "
         />
       ))
     }

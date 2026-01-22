@@ -1,16 +1,14 @@
 ---
 import NavLink from "../atoms/NavLink.astro";
 import { MOBILE_MENU_STYLES } from "../../styles/menu";
-import { useTranslations } from "../../lib/i18n/utils";
-
-import { ui } from "../../lib/i18n/ui";
+import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 
 interface Props {
-  lang: keyof typeof ui;
   mode?: "desktop" | "mobile";
 }
 
-const { lang, mode = "desktop" } = Astro.props;
+const { mode = "desktop" } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const links = [

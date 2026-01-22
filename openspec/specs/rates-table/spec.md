@@ -41,3 +41,33 @@ And the destination names (Left Column) MUST remain fixed at the left when scrol
 Given the table is scrolled both vertically and horizontally
 Then the Top-Left corner cell (Destination Header) MUST remain fixed and always visible above both the row headers and column headers.
 
+### Requirement: Update Merida Rates
+The rates table on the Cancun to Merida page MUST reflect the specific pricing for Private and Luxury tiers as provided by the business, overriding the global defaults.
+
+#### Scenario: Verify Merida Page Rates
+Given I am on the Cancun to Merida page
+When I view the Rates Table
+Then I should see a row for "Merida" (or "Mérida" in Spanish)
+And the Private One Way price should be "$525 USD" (en) or "$9,975 MXN" (es)
+And the Private Round Trip price should be "$1,045 USD" (en) or "$19,855 MXN" (es)
+And the Luxury One Way price should be "$995 USD" (en) or "$18,905 MXN" (es)
+And the Luxury Round Trip price should be "$1,960 USD" (en) or "$37,240 MXN" (es)
+
+### Requirement: Dynamic Column Visibility
+The table MUST only display columns (Service Tiers and Trip Types) that contain valid pricing data for at least one destination in the current set.
+
+#### Scenario: Hiding an entire Service Tier
+- **Given** a `RatesTable` showing destinations where Group transportation is unavailable ("N/A") for both One Way and Round Trip.
+- **When** the table renders.
+- **Then** the "Taxi for Groups" column and its sub-columns MUST be hidden entirely.
+
+#### Scenario: Hiding a specific Trip Type within a Tier
+- **Given** a `RatesTable` where Luxury transportation only offers One Way service ("N/A" for all Round Trip values).
+- **When** the table renders.
+- **Then** the "Round Trip" sub-column for Luxury MUST be hidden, and the "Luxury Taxi" header `colspan` MUST be 1.
+
+#### Scenario: Displaying columns with partial data
+- **Given** a `RatesTable` where at least one destination has a valid price for a column.
+- **When** the table renders.
+- **Then** that column MUST be visible for all destinations, even if some of them show "N/A".
+

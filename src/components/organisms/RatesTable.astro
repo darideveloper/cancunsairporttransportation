@@ -1,0 +1,207 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import clsx from "clsx";
+
+// Components
+import SectionHeading from "../molecules/SectionHeading.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Props
+interface Props {
+  page?: string;
+}
+
+interface DestinationData {
+  name: string;
+  privateOw: string;
+  privateRt: string;
+  luxuryOw: string;
+  luxuryRt: string;
+  groupOw: string;
+  groupRt: string;
+}
+
+const { page } = Astro.props;
+
+// Get headers translation object
+const headers = t("global.ratesTable.headers") as Record<string, string>;
+
+// Get destinations translation object and convert to array for iteration
+// Try to get page specific destinations first, then fallback to global
+let destinationsObj = page
+  ? (t(`pages.${page}.ratesTable.destinations`) as Record<
+      string,
+      DestinationData
+    >)
+  : undefined;
+
+// Fallback to global if page specific not found or page not provided
+if (!destinationsObj) {
+  destinationsObj = t("global.ratesTable.destinations") as Record<
+    string,
+    DestinationData
+  >;
+}
+
+const destinations = Object.values(destinationsObj);
+
+const SERVICE_TIERS = [
+  {
+    id: "private",
+    label: headers.private,
+    pax: headers.pax1to8,
+    owKey: "privateOw",
+    rtKey: "privateRt",
+  },
+  {
+    id: "luxury",
+    label: headers.luxury,
+    pax: headers.pax1to5,
+    owKey: "luxuryOw",
+    rtKey: "luxuryRt",
+  },
+  {
+    id: "group",
+    label: headers.group,
+    pax: headers.pax1to16,
+    owKey: "groupOw",
+    rtKey: "groupRt",
+  },
+];
+
+const STICKY_SHADOW_CLASSES =
+  "after:absolute after:inset-y-0 after:right-0 after:w-4 after:translate-x-full after:bg-linear-to-r after:from-black/5 after:to-transparent after:content-[''] after:pointer-events-none lg:after:hidden";
+
+// Calculate visibility for each tier and column
+const visibleServiceTiers = SERVICE_TIERS.map((tier) => {
+  const hasOw = destinations.some(
+    (dest) =>
+      dest[tier.owKey as keyof DestinationData] &&
+      dest[tier.owKey as keyof DestinationData] !== "N/A",
+  );
+  const hasRt = destinations.some(
+    (dest) =>
+      dest[tier.rtKey as keyof DestinationData] &&
+      dest[tier.rtKey as keyof DestinationData] !== "N/A",
+  );
+
+  return {
+    ...tier,
+    hasOw,
+    hasRt,
+    isVisible: hasOw || hasRt,
+    colspan: (hasOw ? 1 : 0) + (hasRt ? 1 : 0),
+  };
+}).filter((tier) => tier.isVisible);
+---
+
+<section
+  class="container mt-12"
+  id="rates-table"
+  aria-labelledby="rates-table-heading"
+>
+  <SectionHeading
+    id="rates-table-heading"
+    title={t("global.ratesTable.title")}
+    class="mb-8 text-center"
+  >
+    <p>{t("global.ratesTable.description")}</p>
+  </SectionHeading>
+  <div class="w-full overflow-x-auto rounded-xl">
+    <table
+      class="w-full min-w-[800px] border-collapse text-left text-xs sm:text-sm"
+    >
+      <caption class="sr-only"
+        >{t("global.ratesTable.title")} - {
+          t("global.ratesTable.description")
+        }</caption
+      >
+      <thead class="sticky top-0 z-10 font-bold">
+        <tr>
+          <th
+            scope="col"
+            class={clsx(
+              "text-blue-dark border-gray/50 sticky left-0 z-30 border-t border-b bg-white px-2 py-4 text-center align-bottom font-bold md:px-6",
+              STICKY_SHADOW_CLASSES,
+            )}
+            rowspan="2"
+          >
+            {headers.destination}
+          </th>
+          {
+            visibleServiceTiers.map((tier) => (
+              <th
+                scope="colgroup"
+                class="text-blue-dark border-gray/50 border-t border-b bg-white px-6 py-4 text-center font-bold"
+                colspan={tier.colspan}
+              >
+                {tier.label} <br /> {tier.pax}
+              </th>
+            ))
+          }
+        </tr>
+        <tr>
+          {
+            visibleServiceTiers.map((tier) => (
+              <>
+                {tier.hasOw && (
+                  <th
+                    scope="col"
+                    class="text-blue-dark border-gray/50 border-b bg-white px-6 py-4 text-center font-bold tracking-wider capitalize"
+                  >
+                    {headers.oneWay}
+                  </th>
+                )}
+                {tier.hasRt && (
+                  <th
+                    scope="col"
+                    class="text-blue-dark border-gray/50 border-b bg-white px-6 py-4 text-center font-bold tracking-wider capitalize"
+                  >
+                    {headers.roundTrip}
+                  </th>
+                )}
+              </>
+            ))
+          }
+        </tr>
+      </thead>
+      <tbody
+        class="[&>tr:not(:first-child)>*]:border-gray-light [&>tr:not(:first-child)>*]:border-t"
+      >
+        {
+          destinations.map((dest, index) => (
+            <tr class={clsx(index % 2 === 0 ? "bg-white" : "bg-gray/10")}>
+              <th
+                scope="row"
+                class={clsx(
+                  "text-gray-dark sticky left-0 z-20 border-0 px-2 py-4 font-medium whitespace-nowrap md:px-6",
+                  index % 2 === 0 ? "bg-white" : "bg-[#F1F1F1]",
+                  STICKY_SHADOW_CLASSES,
+                )}
+              >
+                {dest.name}
+              </th>
+              {visibleServiceTiers.map((tier) => (
+                <>
+                  {tier.hasOw && (
+                    <td class="border-gray-light border-0 px-4 py-4 text-center whitespace-nowrap">
+                      {dest[tier.owKey as keyof typeof dest]}
+                    </td>
+                  )}
+                  {tier.hasRt && (
+                    <td class="border-gray-light border-0 px-4 py-4 text-center whitespace-nowrap">
+                      {dest[tier.rtKey as keyof typeof dest]}
+                    </td>
+                  )}
+                </>
+              ))}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

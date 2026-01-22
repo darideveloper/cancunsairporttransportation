@@ -1,0 +1,4 @@
+- [x] Update `page` variable to `cancunToMerida` in `transportation-from-cancun-to-merida.astro` <!-- id: 0 -->
+- [x] Update `src/messages/en.json` with new English content <!-- id: 1 -->
+- [x] Update `src/messages/es.json` with new Spanish content <!-- id: 2 -->
+- [x] Verify image assets if needed <!-- id: 3 -->
