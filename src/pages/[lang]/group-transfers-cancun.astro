@@ -21,12 +21,12 @@ import PrivateDetails from "../../components/organisms/PrivateDetails.astro";
 // Images
 import homeBannerImg from "../../assets/images/home-banner.webp";
 import standardImg from "../../assets/images/vehicles/standard.webp";
-import privateClient1Img from "../../assets/images/clients/private-1.webp";
-import privateClient2Img from "../../assets/images/clients/private-2.webp";
-import privateClient3Img from "../../assets/images/clients/private-3.webp";
+import groupClient1Img from "../../assets/images/clients/group-1.webp";
+import groupClient2Img from "../../assets/images/clients/group-3.webp";
+import groupClient3Img from "../../assets/images/clients/group-2.webp";
 
 // Page data
-const page = "private";
+const page = "group";
 
 // Props
 interface Props {
@@ -63,7 +63,7 @@ const t = useTranslations(lang);
   <!-- Clients testimonials -->
   <Testimonials
     page={page}
-    images={[privateClient1Img, privateClient2Img, privateClient3Img]}
+    images={[groupClient1Img, groupClient2Img, groupClient3Img]}
   />
 
   <!-- FAQs -->

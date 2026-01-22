@@ -11,3 +11,5 @@ Be sure to follow the best SEO and optimziation practices, like using the corerc
 Also, check in too much detail all components already created, to reuse them as much as possible. If the components require icons, use ReactIcons, already installed. Create new components, only if is abasolutly required (after checking in detail the already created components).
 
 All data of the component, should come from the translation files, in the respective place depending if is a global component (a component with the same data always) or a page component (a component with text that changes in each page). By now, use dummy data in spanish and english.
+
+be sure to match the proposal name with the components and/or pages names

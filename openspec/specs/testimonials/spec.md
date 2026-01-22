@@ -175,3 +175,15 @@ The Luxury Transportation page MUST display specific testimonials with unique cl
 - **Then** they should see the header "Traslados de Lujo en Cancún - Lo que nuestros clientes dicen de nosotros"
 - **And** they should see 3 reviews from "Alexander M.", "Sofia H.", and "Daniel R." with the updated Spanish text and new images.
 
+### Requirement: Display Specific Group Testimonials
+The testimonials section on the Group Transfers page MUST display testimonials relevant to group travel, with distinct genuine visuals.
+
+#### Scenario: Displaying Group Testimonials
+- **Given** the user visits the group transfers page
+- **When** they scroll to the testimonials section
+- **Then** they should see 3 specific testimonials for group services:
+    - Sarah M. (Cancun to Tulum)
+    - Elena S. (Airport to Playa del Carmen)
+    - David R. (Day trip to Chichen Itza)
+- **And** the images should be distinct from particular transfer clients.
+

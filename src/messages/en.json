@@ -743,6 +743,151 @@
                         "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers, ensuring everyone enjoys a comfortable and convenient journey together."
                     }
                 }
+            },
+            "privateDetails": {
+                "title": "Cancun Private Transportation",
+                "description": "Our Private Transportation service in Cancun is the perfect option for moving from the airport. With a capacity for up to 8 passengers and an affordable price, you can enjoy a comfortable and safe ride from Cancun International Airport to your hotel, Airbnb, or home in the Hotel Zone of Cancun, Playa del Carmen, Tulum, and the Riviera Maya.\n\nWithout a doubt, our private transportation service from Cancun is the most popular choice for Cancun airport transfers. Private transportation is available all day long, no need to share the vehicle with strangers or make unnecessary stops on the way to your hotel. Cancun Airport Transportation by Go Transfers offers a safe and affordable service, with airport meet and greet, professional and bilingual drivers, and travel insurance for all passengers. With more than 10 years of experience offering private transfers in Cancun with the highest quality, we provide our clients with the best experience on their trip through a personalized service.",
+                "table": {
+                    "title": "Cancun Airport Private Transportation Prices",
+                    "headers": {
+                        "arrival": "Arrival",
+                        "departure": "Departure",
+                        "oneWay": "One Way",
+                        "roundTrip": "Round Trip",
+                        "capacity": "Capacity"
+                    },
+                    "rows": [
+                        {
+                            "arrival": "Cancun Airport",
+                            "departure": "Cancun Hotel Zone",
+                            "oneWay": "$24.00 USD",
+                            "roundTrip": "$48.00 USD",
+                            "capacity": "Up to 8 passengers"
+                        },
+                        {
+                            "arrival": "Cancun Hotel Zone",
+                            "departure": "Cancun Airport",
+                            "oneWay": "$24.00 USD",
+                            "roundTrip": "$48.00 USD",
+                            "capacity": "Up to 8 passengers"
+                        }
+                    ]
+                },
+                "cta": {
+                    "text": "Book now",
+                    "href": "#booking-form"
+                }
+            }
+        },
+        "taxi": {
+            "title": "Cancun Airport Taxi",
+            "includes": {
+                "title": "All our Cancun Private Transfers include:",
+                "imageAlt": "Private Airport Transfer Cancun",
+                "imageTitle": "Private Airport Transfer Cancun"
+            },
+            "faq": {
+                "title": "Private Transportation from Cancun Airport - FAQS",
+                "items": {
+                    "passengers": {
+                        "question": "How many passengers can travel using the private transportation service?",
+                        "answer": "Our vehicles can accommodate up to 8 passengers."
+                    },
+                    "difference": {
+                        "question": "What is the difference between private transportation and other transfer services?",
+                        "answer": "Unlike other transfer services, private transportation does not require sharing the vehicle with strangers or making unnecessary stops at different hotels."
+                    },
+                    "booking": {
+                        "question": "How can I book the private transfer service?",
+                        "answer": "You can book our private transfer service through our website, phone, or email. Be sure to provide your flight and destination details for a quick and hassle-free booking experience."
+                    },
+                    "cost": {
+                        "question": "How much does the private transportation service cost?",
+                        "answer": "We offer affordable and competitive rates for private transportation services. Costs may vary depending on the destination and number of passengers. For an accurate quote, please visit our website or contact our customer service team."
+                    }
+                }
+            },
+            "testimonials": {
+                "title": "Private Transportation in Cancun - What our clients say about us",
+                "description": "The opinion of our customers is the most important thing for us.",
+                "items": {
+                    "item1": {
+                        "name": "Robert D.",
+                        "text": "I hired the private transportation service to go from Cancun to Tulum and was impressed with the punctuality and professionalism of the driver.",
+                        "imageAlt": "Comment from our customer Robert D.",
+                        "imageTitle": "Comment from our customer Robert D.",
+                        "stars": "5"
+                    },
+                    "item2": {
+                        "name": "Emily S.",
+                        "text": "Our private transfer from Cancun airport to our hotel in Playa del Carmen was perfect. The driver was amiable and gave us excellent recommendations on places to visit. Also, the price was very reasonable. Excellent service!",
+                        "imageAlt": "Comment from our customer Emily S.",
+                        "imageTitle": "Comment from our customer Emily S.",
+                        "stars": "5"
+                    },
+                    "item3": {
+                        "name": "Michael B.",
+                        "text": "I used this Cancun Airport Private Transportation service for a day trip to Chichen Itza and everything was wonderful.",
+                        "imageAlt": "Comment from our customer Michael B.",
+                        "imageTitle": "Comment from our customer Michael B.",
+                        "stars": "5"
+                    }
+                }
+            },
+            "pricing": {
+                "title": "Other services similar to private transportation in Cancun",
+                "subtitle": "List of our transportation services",
+                "cards": {
+                    "luxury": {
+                        "title": "Luxury Transportation",
+                        "price": "84.00",
+                        "description": "Enhance your travel experience with our premium transfer service, providing seamless transportation between Cancun Airport and your hotel in Cancun or the Riviera Maya. Our top-tier service caters to 1 to 5 passengers in a Suburban or a comparable luxury vehicle, ensuring comfort and style throughout your journey."
+                    },
+                    "private": {
+                        "title": "Taxi Service",
+                        "price": "34.99",
+                        "description": "Travel comfortably in a fully equipped private service for up to 3 passengers. The service is private, with no waiting time or continuous stops."
+                    },
+                    "group": {
+                        "title": "Group Transportation",
+                        "price": "84.00",
+                        "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers, ensuring everyone enjoys a comfortable and convenient journey together."
+                    }
+                }
+            },
+            "privateDetails": {
+                "title": "Cancun Private Transportation",
+                "description": "Our Private Transportation service in Cancun is the perfect option for moving from the airport. With a capacity for up to 8 passengers and an affordable price, you can enjoy a comfortable and safe ride from Cancun International Airport to your hotel, Airbnb, or home in the Hotel Zone of Cancun, Playa del Carmen, Tulum, and the Riviera Maya.\n\nWithout a doubt, our private transportation service from Cancun is the most popular choice for Cancun airport transfers. Private transportation is available all day long, no need to share the vehicle with strangers or make unnecessary stops on the way to your hotel. Cancun Airport Transportation by Go Transfers offers a safe and affordable service, with airport meet and greet, professional and bilingual drivers, and travel insurance for all passengers. With more than 10 years of experience offering private transfers in Cancun with the highest quality, we provide our clients with the best experience on their trip through a personalized service.",
+                "table": {
+                    "title": "Cancun Airport Private Transportation Prices",
+                    "headers": {
+                        "arrival": "Arrival",
+                        "departure": "Departure",
+                        "oneWay": "One Way",
+                        "roundTrip": "Round Trip",
+                        "capacity": "Capacity"
+                    },
+                    "rows": [
+                        {
+                            "arrival": "Cancun Airport",
+                            "departure": "Cancun Hotel Zone",
+                            "oneWay": "$24.00 USD",
+                            "roundTrip": "$48.00 USD",
+                            "capacity": "Up to 8 passengers"
+                        },
+                        {
+                            "arrival": "Cancun Hotel Zone",
+                            "departure": "Cancun Airport",
+                            "oneWay": "$24.00 USD",
+                            "roundTrip": "$48.00 USD",
+                            "capacity": "Up to 8 passengers"
+                        }
+                    ]
+                },
+                "cta": {
+                    "text": "Book now",
+                    "href": "#booking-form"
+                }
             }
         },
         "luxury": {
@@ -819,6 +964,151 @@
                         "price": "84.00",
                         "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers."
                     }
+                }
+            },
+            "privateDetails": {
+                "title": "Cancun Luxury Transportation",
+                "description": "Our Cancun Airport Luxury Transportation is the ultimate choice for traveling from the airport. Designed to accommodate up to 8 passengers, our service offers a premium, comfortable, and safe ride from Cancun International Airport to your hotel, Airbnb, or home in the Hotel Zone of Cancun, Playa del Carmen, Tulum, and the Riviera Maya.\n\nUnquestionably, our luxury transportation service is the top choice for Cancun airport transfers. Available around the clock, this service ensures you travel exclusively with your party, avoiding the need to share the vehicle with strangers or make unnecessary stops on the way to your destination.\n\nCancun Airport Transportation by Go Transfers provides a secure and elegant service, featuring airport meet and greet, professional and bilingual drivers, and travel insurance for all passengers. With over 10 years of experience in offering luxury transfers in Cancun, we ensure our clients have the best experience on their journey with personalized and top-tier service.",
+                "table": {
+                    "title": "Cancun Airport Luxury Transportation Prices",
+                    "headers": {
+                        "arrival": "Arrival",
+                        "departure": "Departure",
+                        "oneWay": "One Way",
+                        "roundTrip": "Round Trip",
+                        "capacity": "Capacity"
+                    },
+                    "rows": [
+                        {
+                            "arrival": "Cancun Airport",
+                            "departure": "Cancun Hotel Zone",
+                            "oneWay": "$84.00 USD",
+                            "roundTrip": "$160.00 USD",
+                            "capacity": "Up to 5 passengers"
+                        },
+                        {
+                            "arrival": "Cancun Hotel Zone",
+                            "departure": "Cancun Airport",
+                            "oneWay": "$84.00 USD",
+                            "roundTrip": "$160.00 USD",
+                            "capacity": "Up to 5 passengers"
+                        }
+                    ]
+                },
+                "cta": {
+                    "text": "Book now",
+                    "href": "#booking-form"
+                }
+            }
+        },
+        "group": {
+            "title": "Cancun Group Transfers",
+            "includes": {
+                "title": "All our Cancun Airport Group Transportation include:",
+                "imageAlt": "Private service in Suburban",
+                "imageTitle": "Private service in Suburban"
+            },
+            "faq": {
+                "title": "Cancun Group Transportation - FAQs",
+                "items": {
+                    "vehicleTypes": {
+                        "question": "What types of vehicles are available for group transportation?",
+                        "answer": "Group transportation services offer a range of vehicles, including large vans, similar to crafters. These vehicles can comfortably accommodate up to 15 passengers, along with their luggage."
+                    },
+                    "availability": {
+                        "question": "Is the service available 24/7?",
+                        "answer": "Our group transportation services from Cancun Airport operate 24/7, accommodating flights arriving at any time of day or night. It is advisable to confirm this when booking your service."
+                    },
+                    "inclusions": {
+                        "question": "What is included in the price of group transportation?",
+                        "answer": "The price typically includes the service, driver, fuel, and any tolls or parking fees."
+                    },
+                    "advanceBooking": {
+                        "question": "How far in advance should I book my group transportation?",
+                        "answer": "It is advisable to book your group transportation as soon as you have your travel details confirmed. This ensures availability and allows the service provider to make any necessary arrangements to meet your specific needs."
+                    }
+                }
+            },
+            "testimonials": {
+                "title": "Transportation for Groups in Cancun - What our clients say about us",
+                "description": "The opinion of our customers is the most important thing for us.",
+                "items": {
+                    "item1": {
+                        "name": "Sarah M.",
+                        "text": "I hired the transportation service for groups to go from Cancun to Tulum and was impressed with the punctuality and professionalism of the driver.",
+                        "imageAlt": "Comment from our customer Sarah M.",
+                        "imageTitle": "Comment from our customer Sarah M.",
+                        "stars": "5"
+                    },
+                    "item2": {
+                        "name": "Elena S.",
+                        "text": "Our transfer for groups from Cancun airport to our hotel in Playa del Carmen was perfect. The driver was amiable and gave us excellent recommendations on places to visit. Also, the price was very reasonable. Excellent service!",
+                        "imageAlt": "Comment from our customer Elena S.",
+                        "imageTitle": "Comment from our customer Elena S.",
+                        "stars": "5"
+                    },
+                    "item3": {
+                        "name": "David R.",
+                        "text": "I used this Cancun Airport Group Transportation service for a day trip to Chichen Itza and everything was wonderful.",
+                        "imageAlt": "Comment from our customer David R.",
+                        "imageTitle": "Comment from our customer David R.",
+                        "stars": "5"
+                    }
+                }
+            },
+            "pricing": {
+                "title": "Other services similar to group transportation in Cancun",
+                "subtitle": "List of our transportation services",
+                "cards": {
+                    "luxury": {
+                        "title": "Luxury Transportation",
+                        "price": "84.00",
+                        "description": "Enhance your travel experience with our premium transfer service, providing seamless transportation between Cancun Airport and your hotel in Cancun or the Riviera Maya. Our top-tier service caters to 1 to 5 passengers in a Suburban or a comparable luxury vehicle, ensuring comfort and style throughout your journey."
+                    },
+                    "private": {
+                        "title": "Taxi Service",
+                        "price": "34.99",
+                        "description": "Travel comfortably in a fully equipped private service for up to 3 passengers. The service is private, with no waiting time or continuous stops."
+                    },
+                    "group": {
+                        "title": "Group Transportation",
+                        "price": "84.00",
+                        "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers, ensuring everyone enjoys a comfortable and convenient journey together."
+                    }
+                }
+            },
+            "privateDetails": {
+                "title": "Cancun Group Transportation",
+                "description": "Our Group Transportation service in Cancun is the ideal choice for moving from the airport. With a capacity for up to 15 passengers and an affordable price, you can enjoy a comfortable and safe ride from Cancun International Airport to your hotel, Airbnb, or home in the Hotel Zone of Cancun, Playa del Carmen, Tulum, and the Riviera Maya.\n\nWithout a doubt, our group transportation service from Cancun is the most popular choice for Cancun Airport Group Transfers. Group transportation is available all day long, no need to share the vehicle with strangers or make unnecessary stops on the way to your hotel.\n\nCancun Airport Transportation by Go Transfers offers a safe and affordable service, with airport meet and greet, professional and bilingual drivers, and travel insurance for all passengers. With more than 10 years of experience offering group transfers in Cancun with the highest quality, we provide our clients with the best experience on their trip through a personalized service.",
+                "table": {
+                    "title": "Transfers for groups in Cancun - Prices",
+                    "headers": {
+                        "arrival": "Arrival",
+                        "departure": "Departure",
+                        "oneWay": "One Way",
+                        "roundTrip": "Round Trip",
+                        "capacity": "Capacity"
+                    },
+                    "rows": [
+                        {
+                            "arrival": "Cancun Airport",
+                            "departure": "Cancun Hotel Zone",
+                            "oneWay": "$124.00 USD",
+                            "roundTrip": "$241.00 USD",
+                            "capacity": "Up to 15 passengers"
+                        },
+                        {
+                            "arrival": "Cancun Hotel Zone",
+                            "departure": "Cancun Airport",
+                            "oneWay": "$124.00 USD",
+                            "roundTrip": "$241.00 USD",
+                            "capacity": "Up to 15 passengers"
+                        }
+                    ]
+                },
+                "cta": {
+                    "text": "Book now",
+                    "href": "#booking-form"
                 }
             }
         },

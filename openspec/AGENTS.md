@@ -68,11 +68,9 @@ After deployment, create separate PR to:
 **Context Checklist:**
 - [ ] Read relevant specs in `specs/[capability]/spec.md`
 - [ ] Check pending changes in `changes/` for conflicts
-- [ ] Read `openspec/project.md` for conventions (Focus on SEO & Component Reuse)
+- [ ] Read `openspec/project.md` for conventions
 - [ ] Run `openspec list` to see active changes
 - [ ] Run `openspec list --specs` to see existing capabilities
-- [ ] Identify reusable components in `src/components/` before starting
-- [ ] Ensure SEO & Accessibility standards in `project.md` are followed
 
 **Before Creating Specs:**
 - Always check if capability already exists
@@ -407,11 +405,11 @@ Only add complexity with:
 
 ## Tool Selection Guide
 
-| Task                  | Tool | Why                      |
-| --------------------- | ---- | ------------------------ |
-| Find files by pattern | Glob | Fast pattern matching    |
-| Search code content   | Grep | Optimized regex search   |
-| Read specific files   | Read | Direct file access       |
+| Task | Tool | Why |
+|------|------|-----|
+| Find files by pattern | Glob | Fast pattern matching |
+| Search code content | Grep | Optimized regex search |
+| Read specific files | Read | Direct file access |
 | Explore unknown scope | Task | Multi-step investigation |
 
 ## Error Recovery

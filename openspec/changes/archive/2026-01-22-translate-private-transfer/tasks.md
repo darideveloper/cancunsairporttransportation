@@ -1,0 +1,2 @@
+- [x] Update English translations in `src/messages/en.json` <!-- id: 0 -->
+- [x] Update Spanish translations in `src/messages/es.json` <!-- id: 1 -->

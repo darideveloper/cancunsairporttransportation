@@ -8,12 +8,19 @@ import clsx from "clsx";
 import SectionHeading from "../molecules/SectionHeading.astro";
 import ButtonCta from "../atoms/ButtonCta.astro";
 
+// Props
+interface Props {
+  page: string;
+}
+
+const { page } = Astro.props;
+
 // Lang
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // Data
-const content = t("pages.privateAirportTransfer.privateDetails") as any;
+const content = t(`pages.${page}.privateDetails`) as any;
 const { title, description, table, cta } = content;
 const descriptionHtml = await marked.parse(description);
 
@@ -118,7 +125,7 @@ const STICKY_SHADOW_CLASSES =
                   <th
                     scope="col"
                     class={clsx(
-                      "px-2 py-4 text-left",
+                      "px-2 py-4",
                       index === 0 && [
                         "sticky left-0 z-30 bg-white",
                         STICKY_SHADOW_CLASSES,
