@@ -782,9 +782,9 @@
         "taxi": {
             "title": "Cancun Airport Taxi",
             "includes": {
-                "title": "All our Cancun Private Transfers include:",
-                "imageAlt": "Private Airport Transfer Cancun",
-                "imageTitle": "Private Airport Transfer Cancun"
+                "title": "All our Taxi Cancun include:",
+                "imageAlt": "Private service in Suburban",
+                "imageTitle": "Private service in Suburban"
             },
             "faq": {
                 "title": "Private Transportation from Cancun Airport - FAQS",
@@ -856,10 +856,10 @@
                 }
             },
             "privateDetails": {
-                "title": "Cancun Private Transportation",
-                "description": "Our Private Transportation service in Cancun is the perfect option for moving from the airport. With a capacity for up to 8 passengers and an affordable price, you can enjoy a comfortable and safe ride from Cancun International Airport to your hotel, Airbnb, or home in the Hotel Zone of Cancun, Playa del Carmen, Tulum, and the Riviera Maya.\n\nWithout a doubt, our private transportation service from Cancun is the most popular choice for Cancun airport transfers. Private transportation is available all day long, no need to share the vehicle with strangers or make unnecessary stops on the way to your hotel. Cancun Airport Transportation by Go Transfers offers a safe and affordable service, with airport meet and greet, professional and bilingual drivers, and travel insurance for all passengers. With more than 10 years of experience offering private transfers in Cancun with the highest quality, we provide our clients with the best experience on their trip through a personalized service.",
+                "title": "Cancun Airport Taxi",
+                "description": "Our Cancun Airport Taxi service is the ideal choice for traveling from the airport. Designed to accommodate up to 3 passengers, our service offers a convenient, comfortable, and safe ride from Cancun International Airport to your hotel, Airbnb, or home in the Hotel Zone of Cancun, Playa del Carmen, Tulum, and the Riviera Maya.\n\nUnquestionably, our taxi service is the top choice for taxi service in Cancun Airport. Available around the clock, this service ensures you travel exclusively with your party, avoiding the need to share the vehicle with strangers or make unnecessary stops on the way to your destination.\n\nCancun Airport Taxi service by Cancun Airport Transportation provides a secure and reliable service, featuring airport meet and greet, professional and bilingual drivers, and travel insurance for all passengers. With over 10 years of experience in offering taxi transfers in Cancun, we ensure our clients have the best experience on their journey with personalized and top-tier service.",
                 "table": {
-                    "title": "Cancun Airport Private Transportation Prices",
+                    "title": "Taxi Cancun Airport - Prices",
                     "headers": {
                         "arrival": "Arrival",
                         "departure": "Departure",
@@ -871,16 +871,16 @@
                         {
                             "arrival": "Cancun Airport",
                             "departure": "Cancun Hotel Zone",
-                            "oneWay": "$24.00 USD",
-                            "roundTrip": "$48.00 USD",
-                            "capacity": "Up to 8 passengers"
+                            "oneWay": "$34.99 USD",
+                            "roundTrip": "$69.99 USD",
+                            "capacity": "Up to 3 passengers"
                         },
                         {
                             "arrival": "Cancun Hotel Zone",
                             "departure": "Cancun Airport",
-                            "oneWay": "$24.00 USD",
-                            "roundTrip": "$48.00 USD",
-                            "capacity": "Up to 8 passengers"
+                            "oneWay": "$34.99 USD",
+                            "roundTrip": "$69.99 USD",
+                            "capacity": "Up to 3 passengers"
                         }
                     ]
                 },
