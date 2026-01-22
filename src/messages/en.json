@@ -857,7 +857,7 @@
             },
             "privateDetails": {
                 "title": "Cancun Luxury Transportation",
-                "description": "Our Luxury Transportation service in Cancun is the perfect option for moving from the airport. With a capacity for up to 5 passengers and an affordable price, you can enjoy a comfortable and safe ride from Cancun International Airport to your hotel, Airbnb, or home in the Hotel Zone of Cancun, Playa del Carmen, Tulum, and the Riviera Maya.\n\nWithout a doubt, our luxury transportation service from Cancun is the most popular choice for Cancun airport transfers. Luxury transportation is available all day long, no need to share the vehicle with strangers or make unnecessary stops on the way to your hotel. Cancun Airport Transportation by Go Transfers offers a safe and affordable service, with airport meet and greet, professional and bilingual drivers, and travel insurance for all passengers. With more than 10 years of experience offering luxury transfers in Cancun with the highest quality, we provide our clients with the best experience on their trip through a personalized service.",
+                "description": "Our Cancun Airport Luxury Transportation is the ultimate choice for traveling from the airport. Designed to accommodate up to 8 passengers, our service offers a premium, comfortable, and safe ride from Cancun International Airport to your hotel, Airbnb, or home in the Hotel Zone of Cancun, Playa del Carmen, Tulum, and the Riviera Maya.\n\nUnquestionably, our luxury transportation service is the top choice for Cancun airport transfers. Available around the clock, this service ensures you travel exclusively with your party, avoiding the need to share the vehicle with strangers or make unnecessary stops on the way to your destination.\n\nCancun Airport Transportation by Go Transfers provides a secure and elegant service, featuring airport meet and greet, professional and bilingual drivers, and travel insurance for all passengers. With over 10 years of experience in offering luxury transfers in Cancun, we ensure our clients have the best experience on their journey with personalized and top-tier service.",
                 "table": {
                     "title": "Cancun Airport Luxury Transportation Prices",
                     "headers": {
@@ -872,14 +872,14 @@
                             "arrival": "Cancun Airport",
                             "departure": "Cancun Hotel Zone",
                             "oneWay": "$84.00 USD",
-                            "roundTrip": "$168.00 USD",
+                            "roundTrip": "$160.00 USD",
                             "capacity": "Up to 5 passengers"
                         },
                         {
                             "arrival": "Cancun Hotel Zone",
                             "departure": "Cancun Airport",
                             "oneWay": "$84.00 USD",
-                            "roundTrip": "$168.00 USD",
+                            "roundTrip": "$160.00 USD",
                             "capacity": "Up to 5 passengers"
                         }
                     ]
@@ -968,9 +968,9 @@
             },
             "privateDetails": {
                 "title": "Cancun Group Transportation",
-                "description": "Our Group Transportation service in Cancun is the perfect option for moving from the airport. With a capacity for up to 16 passengers and an affordable price, you can enjoy a comfortable and safe ride from Cancun International Airport to your hotel, Airbnb, or home in the Hotel Zone of Cancun, Playa del Carmen, Tulum, and the Riviera Maya.\n\nWithout a doubt, our group transportation service from Cancun is the most popular choice for Cancun airport transfers. Group transportation is available all day long, no need to share the vehicle with strangers or make unnecessary stops on the way to your hotel. Cancun Airport Transportation by Go Transfers offers a safe and affordable service, with airport meet and greet, professional and bilingual drivers, and travel insurance for all passengers. With more than 10 years of experience offering group transfers in Cancun with the highest quality, we provide our clients with the best experience on their trip through a personalized service.",
+                "description": "Our Group Transportation service in Cancun is the ideal choice for moving from the airport. With a capacity for up to 15 passengers and an affordable price, you can enjoy a comfortable and safe ride from Cancun International Airport to your hotel, Airbnb, or home in the Hotel Zone of Cancun, Playa del Carmen, Tulum, and the Riviera Maya.\n\nWithout a doubt, our group transportation service from Cancun is the most popular choice for Cancun Airport Group Transfers. Group transportation is available all day long, no need to share the vehicle with strangers or make unnecessary stops on the way to your hotel.\n\nCancun Airport Transportation by Go Transfers offers a safe and affordable service, with airport meet and greet, professional and bilingual drivers, and travel insurance for all passengers. With more than 10 years of experience offering group transfers in Cancun with the highest quality, we provide our clients with the best experience on their trip through a personalized service.",
                 "table": {
-                    "title": "Cancun Airport Group Transportation Prices",
+                    "title": "Transfers for groups in Cancun - Prices",
                     "headers": {
                         "arrival": "Arrival",
                         "departure": "Departure",
@@ -982,16 +982,16 @@
                         {
                             "arrival": "Cancun Airport",
                             "departure": "Cancun Hotel Zone",
-                            "oneWay": "$84.00 USD",
-                            "roundTrip": "$168.00 USD",
-                            "capacity": "Up to 16 passengers"
+                            "oneWay": "$124.00 USD",
+                            "roundTrip": "$241.00 USD",
+                            "capacity": "Up to 15 passengers"
                         },
                         {
                             "arrival": "Cancun Hotel Zone",
                             "departure": "Cancun Airport",
-                            "oneWay": "$84.00 USD",
-                            "roundTrip": "$168.00 USD",
-                            "capacity": "Up to 16 passengers"
+                            "oneWay": "$124.00 USD",
+                            "roundTrip": "$241.00 USD",
+                            "capacity": "Up to 15 passengers"
                         }
                     ]
                 },
