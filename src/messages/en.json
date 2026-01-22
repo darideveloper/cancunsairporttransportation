@@ -898,49 +898,49 @@
                 "imageTitle": "Private service in Suburban"
             },
             "faq": {
-                "title": "Group Transportation from Cancun Airport - FAQS",
+                "title": "Cancun Group Transportation - FAQs",
                 "items": {
-                    "passengers": {
-                        "question": "How many passengers can travel using the group transportation service?",
-                        "answer": "Our vehicles can accommodate up to 16 passengers."
+                    "vehicleTypes": {
+                        "question": "What types of vehicles are available for group transportation?",
+                        "answer": "Group transportation services offer a range of vehicles, including large vans, similar to crafters. These vehicles can comfortably accommodate up to 15 passengers, along with their luggage."
                     },
-                    "difference": {
-                        "question": "What is the difference between group transportation and other transfer services?",
-                        "answer": "Group transportation is ideal for large groups, ensuring everyone travels together."
+                    "availability": {
+                        "question": "Is the service available 24/7?",
+                        "answer": "Our group transportation services from Cancun Airport operate 24/7, accommodating flights arriving at any time of day or night. It is advisable to confirm this when booking your service."
                     },
-                    "booking": {
-                        "question": "How can I book the group transfer service?",
-                        "answer": "You can book our group transfer service through our website, phone, or email. Be sure to provide your flight and destination details for a quick and hassle-free booking experience."
+                    "inclusions": {
+                        "question": "What is included in the price of group transportation?",
+                        "answer": "The price typically includes the service, driver, fuel, and any tolls or parking fees."
                     },
-                    "cost": {
-                        "question": "How much does the group transportation service cost?",
-                        "answer": "We offer affordable and competitive rates for group transportation services. Costs may vary depending on the destination and number of passengers."
+                    "advanceBooking": {
+                        "question": "How far in advance should I book my group transportation?",
+                        "answer": "It is advisable to book your group transportation as soon as you have your travel details confirmed. This ensures availability and allows the service provider to make any necessary arrangements to meet your specific needs."
                     }
                 }
             },
             "testimonials": {
-                "title": "Group Transportation in Cancun - What our clients say about us",
+                "title": "Transportation for Groups in Cancun - What our clients say about us",
                 "description": "The opinion of our customers is the most important thing for us.",
                 "items": {
                     "item1": {
-                        "name": "Robert D.",
-                        "text": "I hired the group transportation service and was impressed with the punctuality and professionalism of the driver.",
-                        "imageAlt": "Comment from our customer Robert D.",
-                        "imageTitle": "Comment from our customer Robert D.",
+                        "name": "Sarah M.",
+                        "text": "I hired the transportation service for groups to go from Cancun to Tulum and was impressed with the punctuality and professionalism of the driver.",
+                        "imageAlt": "Comment from our customer Sarah M.",
+                        "imageTitle": "Comment from our customer Sarah M.",
                         "stars": "5"
                     },
                     "item2": {
-                        "name": "Emily S.",
-                        "text": "Our group transfer from Cancun airport to our hotel was perfect. Excellent service!",
-                        "imageAlt": "Comment from our customer Emily S.",
-                        "imageTitle": "Comment from our customer Emily S.",
+                        "name": "Elena S.",
+                        "text": "Our transfer for groups from Cancun airport to our hotel in Playa del Carmen was perfect. The driver was amiable and gave us excellent recommendations on places to visit. Also, the price was very reasonable. Excellent service!",
+                        "imageAlt": "Comment from our customer Elena S.",
+                        "imageTitle": "Comment from our customer Elena S.",
                         "stars": "5"
                     },
                     "item3": {
-                        "name": "Michael B.",
-                        "text": "I used this Group Transportation service for a day trip and everything was wonderful.",
-                        "imageAlt": "Comment from our customer Michael B.",
-                        "imageTitle": "Comment from our customer Michael B.",
+                        "name": "David R.",
+                        "text": "I used this Cancun Airport Group Transportation service for a day trip to Chichen Itza and everything was wonderful.",
+                        "imageAlt": "Comment from our customer David R.",
+                        "imageTitle": "Comment from our customer David R.",
                         "stars": "5"
                     }
                 }

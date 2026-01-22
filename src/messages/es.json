@@ -894,49 +894,49 @@
                 "imageTitle": "Servicio privado en Suburban"
             },
             "faq": {
-                "title": "Transportación para Grupos desde el Aeropuerto de Cancún - FAQS",
+                "title": "Transportación para grupos en Cancún - Preguntas Frecuentes",
                 "items": {
-                    "passengers": {
-                        "question": "¿Cuántos pasajeros pueden viajar utilizando el servicio de transportación para grupos?",
-                        "answer": "Nuestros vehículos pueden transportar hasta 16 pasajeros."
+                    "vehicleTypes": {
+                        "question": "¿Qué tipos de vehículos están disponibles para el transporte de grupos?",
+                        "answer": "Los servicios de transportación para grupos ofrecen una gama de vehículos, incluyendo camionetas grandes, similares a las crafters. Estos vehículos pueden acomodar cómodamente hasta 15 pasajeros, junto con su equipaje."
                     },
-                    "difference": {
-                        "question": "¿Cuál es la diferencia entre la transportación para grupos y otros servicios de traslado?",
-                        "answer": "El transporte para grupos es ideal para grupos grandes, asegurando que todos viajen juntos."
+                    "availability": {
+                        "question": "¿El servicio está disponible 24/7?",
+                        "answer": "Nuestros servicios de transporte de grupos desde el Aeropuerto de Cancún operan 24/7, acomodando vuelos que llegan a cualquier hora del día o de la noche. Es recomendable confirmar esto al momento de reservar su servicio."
                     },
-                    "booking": {
-                        "question": "¿Cómo puedo reservar el servicio de traslado para grupos?",
-                        "answer": "Puede reservar nuestro servicio de traslado para grupos a través de nuestra página web, teléfono o correo electrónico."
+                    "inclusions": {
+                        "question": "¿Qué está incluido en el precio del transporte de grupo?",
+                        "answer": "El precio normalmente incluye el servicio, el conductor, el combustible y cualquier peaje o tarifa de estacionamiento."
                     },
-                    "cost": {
-                        "question": "¿Cuánto cuesta el servicio de transporte para grupos?",
-                        "answer": "Ofrecemos tarifas asequibles y competitivas para los servicios de transporte para grupos. Los costes pueden variar en función del destino y del número de pasajeros."
+                    "advanceBooking": {
+                        "question": "¿Con cuánta antelación debo reservar el transporte para grupos?",
+                        "answer": "Es aconsejable reservar el transporte para grupos en cuanto tenga confirmados los detalles del viaje. Esto garantiza la disponibilidad y permite al proveedor de servicios hacer los arreglos necesarios para satisfacer sus necesidades específicas."
                     }
                 }
             },
             "testimonials": {
-                "title": "Transporte de Grupos en Cancun - Lo que nuestros clientes dicen de nosotros",
+                "title": "Transportación para Grupos en Cancún - Lo que nuestros clientes dicen de nosotros",
                 "description": "La opinión de nuestros clientes es lo más importante para nosotros.",
                 "items": {
                     "item1": {
-                        "name": "Roberto D.",
-                        "text": "Contraté el servicio de transporte de grupo y quedé impresionado con la puntualidad y profesionalismo.",
-                        "imageAlt": "Comentarios de nuestros clientes Roberto D.",
-                        "imageTitle": "Comentarios de nuestros clientes Roberto D.",
+                        "name": "Sarah M.",
+                        "text": "Contraté el servicio de transportación para grupos para ir de Cancún a Tulum y quedé impresionada con la puntualidad y profesionalismo del chofer.",
+                        "imageAlt": "Comentarios de nuestros clientes Sarah M.",
+                        "imageTitle": "Comentarios de nuestros clientes Sarah M.",
                         "stars": "5"
                     },
                     "item2": {
-                        "name": "Emilia S.",
-                        "text": "Nuestro traslado de grupo desde el aeropuerto de Cancún fue perfecto. ¡Excelente servicio!",
-                        "imageAlt": "Comentarios de nuestros clientes Emilia S.",
-                        "imageTitle": "Comentarios de nuestros clientes Emilia S.",
+                        "name": "Elena S.",
+                        "text": "Nuestro traslado para grupos desde el aeropuerto de Cancún a nuestro hotel en Playa del Carmen fue perfecto. El conductor era amable y nos dio excelentes recomendaciones sobre lugares para visitar. Además, el precio era muy razonable. ¡Excelente servicio!",
+                        "imageAlt": "Comentarios de nuestros clientes Elena S.",
+                        "imageTitle": "Comentarios de nuestros clientes Elena S.",
                         "stars": "5"
                     },
                     "item3": {
-                        "name": "Miguel B.",
-                        "text": "He utilizado este servicio de transporte de grupos y todo fue maravilloso.",
-                        "imageAlt": "Comentarios de nuestros clientes Miguel B.",
-                        "imageTitle": "Comentarios de nuestros clientes Miguel B.",
+                        "name": "David R.",
+                        "text": "Utilicé este servicio de transporte para grupos del aeropuerto de Cancún para un viaje de un día a Chichen Itza y todo fue maravilloso.",
+                        "imageAlt": "Comentarios de nuestros clientes David R.",
+                        "imageTitle": "Comentarios de nuestros clientes David R.",
                         "stars": "5"
                     }
                 }
