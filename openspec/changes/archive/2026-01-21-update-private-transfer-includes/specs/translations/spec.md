@@ -2,7 +2,7 @@
 
 Update the global "Includes" section to reflect the specific benefits of private transfers.
 
-## MODIFIED Requirements
+## ADDED Requirements
 
 ### Requirement: Update English Includes Content
 The translation SHALL update the English includes section content.

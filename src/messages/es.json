@@ -736,6 +736,78 @@
                 }
             }
         },
+        "luxury": {
+            "title": "Transportación de lujo en Cancún Aeropuerto",
+            "faq": {
+                "title": "Transportación Privada desde el Aeropuerto de Cancún - FAQS",
+                "items": {
+                    "passengers": {
+                        "question": "¿Cuántos pasajeros pueden viajar utilizando el servicio de transportación privada?",
+                        "answer": "Nuestros vehículos pueden transportar hasta 8 pasajeros."
+                    },
+                    "difference": {
+                        "question": "¿Cuál es la diferencia entre la transportación privada y otros servicios de traslado?",
+                        "answer": "A diferencia de otros servicios de traslado, el transporte privado no requiere compartir el vehículo con extraños ni hacer paradas innecesarias en diferentes hoteles."
+                    },
+                    "booking": {
+                        "question": "¿Cómo puedo reservar el servicio de traslado privado?",
+                        "answer": "Puede reservar nuestro servicio de traslado privado a través de nuestra página web, teléfono o correo electrónico. Asegúrese de proporcionar los detalles de su vuelo y destino para una experiencia de reserva rápida y sin complicaciones."
+                    },
+                    "cost": {
+                        "question": "¿Cuánto cuesta el servicio de transporte privado?",
+                        "answer": "Ofrecemos tarifas asequibles y competitivas para los servicios de transporte privado. Los costes pueden variar en función del destino y del número de pasajeros. Para obtener un presupuesto exacto, visite nuestro sitio web o póngase en contacto con nuestro equipo de atención al cliente."
+                    }
+                }
+            },
+            "testimonials": {
+                "title": "Traslados de Lujo en Cancún - Lo que nuestros clientes dicen de nosotros",
+                "description": "La opinión de nuestros clientes es lo más importante para nosotros.",
+                "items": {
+                    "item1": {
+                        "name": "Alexander M.",
+                        "text": "Reservé el servicio de transporte de lujo para viajar de Cancún a Tulum, y la puntualidad y profesionalismo del conductor fueron sobresalientes.",
+                        "imageAlt": "Comentarios de nuestros clientes Alexander M.",
+                        "imageTitle": "Comentarios de nuestros clientes Alexander M.",
+                        "stars": "5"
+                    },
+                    "item2": {
+                        "name": "Sofia H.",
+                        "text": "Nuestro traslado de lujo desde el aeropuerto de Cancún a nuestro hotel en Playa del Carmen fue impecable. El conductor era amable y proporcionó grandes recomendaciones sobre lugares para visitar. El precio también era muy razonable. ¡Un servicio excepcional!",
+                        "imageAlt": "Comentarios de nuestros clientes Sofia H.",
+                        "imageTitle": "Comentarios de nuestros clientes Sofia H.",
+                        "stars": "5"
+                    },
+                    "item3": {
+                        "name": "Daniel R.",
+                        "text": "He utilizado este servicio de transporte de lujo del aeropuerto de Cancún para un viaje de un día a Chichen Itza, y todo fue fantástico.",
+                        "imageAlt": "Comentarios de nuestros clientes Daniel R.",
+                        "imageTitle": "Comentarios de nuestros clientes Daniel R.",
+                        "stars": "5"
+                    }
+                }
+            },
+            "pricing": {
+                "title": "Otros servicios similares al transporte privado en Cancún",
+                "subtitle": "Lista de nuestros servicios de transporte",
+                "cards": {
+                    "luxury": {
+                        "title": "Transportación de Lujo",
+                        "price": "1512.00",
+                        "description": "Mejore su experiencia de viaje con nuestro servicio de traslado premium, proporcionando transporte sin problemas entre el aeropuerto de Cancún y su hotel en Cancún o la Riviera Maya. Nuestro servicio de primer nivel atiende de 1 a 5 pasajeros en una Suburban o un vehículo de lujo comparable, garantizando comodidad y estilo durante todo su viaje."
+                    },
+                    "private": {
+                        "title": "Servicio de Taxi",
+                        "price": "664.81",
+                        "description": "Viaje cómodamente en un servicio privado totalmente equipado para un máximo de 3 pasajeros. El servicio es privado, sin esperas ni paradas continuas."
+                    },
+                    "group": {
+                        "title": "Transporte de grupos",
+                        "price": "1512.00",
+                        "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero reservando nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros, asegurando que todos disfruten juntos de un viaje cómodo y conveniente."
+                    }
+                }
+            }
+        },
         "playaDelCarmen": {
             "title": "Transportación de Cancún a Playa del Carmen",
             "destinations": {

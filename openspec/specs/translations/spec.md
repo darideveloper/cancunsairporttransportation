@@ -262,3 +262,50 @@ The `FaqSection` component currently inherits `page="home"` from the `page` cons
 **Changes:**
 - Update `<FaqSection page={page} />` to `<FaqSection page="private" />`.
 
+### Requirement: Update English Includes Content
+The translation SHALL update the English includes section content.
+
+#### Scenario: Apply new English text
+- Given the `en.json` file
+- When updating `global.sections.includes`
+- Then the `title` SHALL be "All our Cancun Private Transfers include:"
+- And the `imageAlt` and `imageTitle` SHALL be "Private service in Suburban"
+- And the `items` SHALL be:
+    - "Highly Trained Staff"
+    - "Flight Monitoring"
+    - "Travel Insurance"
+    - "Reception at the airport"
+    - "Free Schedule Changes (See our terms and conditions)"
+    - "Vehicles in content maintenance"
+    - "24-Hour Service"
+
+### Requirement: Update Spanish Includes Content
+The translation SHALL update the Spanish includes section content.
+
+#### Scenario: Apply new Spanish text
+- Given the `es.json` file
+- When updating `global.sections.includes`
+- Then the `title` SHALL be "Todos nuestros Traslados Privados en Cancún incluyen:"
+- And the `imageAlt` and `imageTitle` SHALL be "Servicio privado en Suburban"
+- And the `items` SHALL be:
+    - "Personal Altamente Capacitado"
+    - "Monitoreo de Vuelo"
+    - "Seguro de Viaje"
+    - "Recepción en el aeropuerto"
+    - "Cambios de horario gratuitos (Consulte nuestros términos y condiciones)"
+    - "Vehículos en mantenimiento de contenido"
+    - "Servicio 24 horas"
+
+### Requirement: Luxury Page Title
+The Luxury Transportation page MUST display the correct title based on the selected language.
+
+#### Scenario: Update English Title
+Given the language is "en"
+When the `pages.luxury.title` key is accessed
+Then it should return `Luxury Airport Transfer Cancun`
+
+#### Scenario: Update Spanish Title
+Given the language is "es"
+When the `pages.luxury.title` key is accessed
+Then it should return `Transportación de lujo en Cancún Aeropuerto`
+
