@@ -8,3 +8,5 @@ Get the text from the next html code, in spanish and english. Be sure to extract
 Be sure to only edit the translation json files
 Don't create a new key in translation files, if page key already exist (check in detail before edit).
 Add to the proposal all the detailed/final texts
+
+be sure to match the proposal name with the components and/or pages names
