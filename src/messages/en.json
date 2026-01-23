@@ -1847,6 +1847,40 @@
                     "href": "#booking-form"
                 }
             }
+        },
+        "destinations": {
+            "tagline": "Reach any corner of the Riviera Maya",
+            "title": "Cancun Airport Transportation - Rates for Popular destinations",
+            "description": "With years of experience in the tourist transportation industry, we guarantee an exceptional trip. Our professional drivers know every corner of the Riviera Maya, assuring you not only efficient transportation but also a smooth and hassle-free experience.",
+            "destinations": {
+                "title": "Cancun Airport Transportation - Rates for Popular destinations",
+                "text": "With years of experience in the tourist transportation industry, we guarantee an exceptional trip. Our professional drivers know every corner of the Riviera Maya, assuring you not only efficient transportation but also a smooth and hassle-free experience.",
+                "viewMore": "View more destinations",
+                "viewMoreLink": "/destinations",
+                "cards": {
+                    "tulum": {
+                        "title": "Cancun Airport Transportation to Tulum",
+                        "price": "129.00",
+                        "description": "Tulum, a city located within the Riviera Maya, is approximately a 2-hour drive from Cancun. Renowned for its breathtaking beaches, historic archaeological sites, and amazing jungle hotels, Tulum is a must-visit destination.",
+                        "ctaText": "Book now",
+                        "link": "/cancun-to-tulum-shuttle"
+                    },
+                    "playa": {
+                        "title": "Cancun Airport Transportation to Playa del Carmen",
+                        "price": "69.99",
+                        "description": "Our transportation and taxi services will bring you to any hotel, vacation home, or Airbnb in Playa del Carmen, the vibrant heart of the Riviera Maya. With us, your adventure is just around the corner!",
+                        "ctaText": "Book now",
+                        "link": "/transportation-from-cancun-airport-to-playa-del-carmen"
+                    },
+                    "cancun": {
+                        "title": "Cancun Airport Transportation to Cancun Hotel Zone",
+                        "price": "29.99",
+                        "description": "Cancun’s hotel zone is the city’s top destination, featuring 4 and 5-star hotels that offer the best views of the Caribbean Sea and the most unforgettable vacation experience you can imagine.",
+                        "ctaText": "Book now",
+                        "link": "/"
+                    }
+                }
+            }
         }
     }
 }

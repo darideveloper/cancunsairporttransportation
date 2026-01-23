@@ -1,0 +1,60 @@
+---
+// Libs
+import { Image } from "astro:assets";
+import clsx from "clsx";
+
+// Props
+interface Props {
+  title: string;
+  image: {
+    src: ImageMetadata | string;
+    alt: string;
+    title?: string;
+  };
+  contentClass?: string;
+}
+
+const { title, image, contentClass } = Astro.props;
+
+const id = `image-card-${title
+  .toLowerCase()
+  .trim()
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-+|-+$/g, "")}`;
+---
+
+<article
+  class="group border-gray-light flex items-start gap-4 rounded-2xl border bg-white p-4 shadow-sm transition-all duration-300 hover:shadow-lg"
+  aria-labelledby={id}
+>
+  <div class="shrink-0">
+    {
+      typeof image.src === "string" ? (
+        <img
+          src={image.src}
+          alt={image.alt}
+          title={image.title}
+          class="h-16 w-16 rounded-lg object-cover"
+        />
+      ) : (
+        <Image
+          src={image.src}
+          alt={image.alt}
+          title={image.title}
+          width={64}
+          height={64}
+          class="h-16 w-16 rounded-lg object-cover"
+        />
+      )
+    }
+  </div>
+
+  <div class={clsx("flex flex-col gap-1", contentClass)}>
+    <h3 class="text-md text-accent-dark leading-tight font-bold" id={id}>
+      {title}
+    </h3>
+    <div class="text-gray text-sm leading-relaxed">
+      <slot />
+    </div>
+  </div>
+</article>

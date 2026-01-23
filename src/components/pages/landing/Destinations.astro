@@ -13,6 +13,8 @@ import { marked } from "marked";
 // Components
 import PageSEO from "../../../components/utils/PageSEO.astro";
 import BookingForm from "../../../components/organisms/BookingForm";
+import SectionHeading from "../../../components/molecules/SectionHeading.astro";
+import DestinationsList from "../../../components/organisms/Destinations.astro";
 
 // Images
 import homeBannerImg from "../../../assets/images/home-banner.webp";
@@ -36,16 +38,31 @@ const t = useTranslations(lang);
   <!-- Page SEO -->
   <PageSEO currentPage={page} slot="seo" />
 
-  <aside>
-    <!-- Form -->
-    <div class="form-wrapper debug @container max-w-md">
-      <BookingForm
-        translations={t("global.booking")}
-        defaultFrom="cun"
-        defaultTo="merida"
-        client:idle
-        className="px-0!"
-      />
+  <section class="container mx-auto px-4 py-12">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-accent mb-2 text-sm font-bold tracking-wider uppercase">
+        {t("pages.destinations.tagline")}
+      </p>
+      <SectionHeading title={t("pages.destinations.title")}>
+        <p class="text-gray-dark leading-relaxed">
+          {t("pages.destinations.description")}
+        </p>
+      </SectionHeading>
     </div>
-  </aside>
+
+    <aside>
+      <!-- Form -->
+      <div class="form-wrapper debug @container max-w-md">
+        <BookingForm
+          translations={t("global.booking")}
+          defaultFrom="cun"
+          defaultTo="merida"
+          client:idle
+          className="px-0!"
+        />
+      </div>
+    </aside>
+  </section>
+
+  <DestinationsList page={page} />
 </Layout>
