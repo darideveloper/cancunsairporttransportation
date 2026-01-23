@@ -1,4 +1,17 @@
 {
+    "routes": {
+        "home": "es",
+        "taxi": "es/taxi-aeropuerto-cancun",
+        "akumal": "es/transporte-cancun-akumal",
+        "tulum": "es/traslado-cancun-tulum",
+        "destinations": "es/destinos",
+        "group": "es/transporte-para-grupos-cancun",
+        "luxury": "es/transporte-de-lujo-cancun",
+        "private": "es/transporte-privado-cancun",
+        "playa": "es/transportacion-cancun-a-playa-del-carmen",
+        "merida": "es/traslado-de-cancun-a-merida",
+        "terms": "es/terminos-y-condiciones"
+    },
     "global": {
         "branding": {
             "businessName": "Transporte Cancún Aeropuerto"
@@ -778,9 +791,9 @@
         "taxi": {
             "title": "Taxi Aeropuerto Cancun",
             "includes": {
-                "title": "Todos nuestros Traslados Privados en Cancún incluyen:",
-                "imageAlt": "Transportación privada en el Aeropuerto de Cancún",
-                "imageTitle": "Transportación privada en el Aeropuerto de Cancún"
+                "title": "Todos nuestros Taxis en Cancún incluyen:",
+                "imageAlt": "Servicio privado en Suburban",
+                "imageTitle": "Servicio privado en Suburban"
             },
             "faq": {
                 "title": "Transportación Privada desde el Aeropuerto de Cancún - FAQS",
@@ -852,10 +865,10 @@
                 }
             },
             "privateDetails": {
-                "title": "Transportación Privada en Cancún",
-                "description": "Nuestro servicio de Transportación Privada en Cancún es la opción perfecta para trasladarse desde el aeropuerto. Con una capacidad de hasta 8 pasajeros y un precio accesible, usted puede disfrutar de un viaje cómodo y seguro desde el Aeropuerto Internacional de Cancún a su hotel, Airbnb, o casa en la Zona Hotelera de Cancún, Playa del Carmen, Tulum, y la Riviera Maya.\n\nSin duda, nuestro servicio de transporte privado desde Cancún es la opción más popular en traslados al aeropuerto de Cancún. El transporte privado está disponible durante todo el día, no hay necesidad de compartir el vehículo con extraños o hacer paradas innecesarias en el camino a su hotel. Cancun Airport Transportation por Go Transfers ofrece un servicio seguro y asequible, con recogida en el aeropuerto, conductores profesionales y bilingües, y seguro de viaje para todos los pasajeros. Con más de 10 años de experiencia ofreciendo traslados privados en Cancún con la más alta calidad, brindamos a nuestros clientes la mejor experiencia en su viaje a través de un servicio personalizado.",
+                "title": "Taxi Aeropuerto Cancun",
+                "description": "Nuestro servicio de Taxi Aeropuerto Cancún es la opción ideal para viajar desde el aeropuerto. Diseñado para transportar hasta 3 pasajeros, nuestro servicio ofrece un viaje conveniente, cómodo y seguro desde el Aeropuerto Internacional de Cancún a su hotel, Airbnb o casa en la Zona Hotelera de Cancún, Playa del Carmen, Tulum y la Riviera Maya.\n\nSin duda, nuestro servicio de taxi es la mejor opción para el servicio de taxi en el Aeropuerto de Cancún. Disponible las 24 horas del día, este servicio le asegura viajar exclusivamente con su grupo, evitando la necesidad de compartir el vehículo con extraños o hacer paradas innecesarias en el camino a su destino.\n\nEl servicio de Taxi en el Aeropuerto de Cancún de Cancun Airport Transportation por Go proporciona un servicio seguro y fiable, con servicio de recogida en el aeropuerto, conductores profesionales y bilingües, y seguro de viaje para todos los pasajeros. Con más de 10 años de experiencia ofreciendo traslados de taxi en Cancún, nos aseguramos de que nuestros clientes tengan la mejor experiencia en su viaje con un servicio personalizado y de primer nivel.",
                 "table": {
-                    "title": "Precios de Transportación Privada en el Aeropuerto de Cancún",
+                    "title": "Taxi Aeropuerto Cancún - Precios",
                     "headers": {
                         "arrival": "Llegada",
                         "departure": "Salida",
@@ -867,16 +880,16 @@
                         {
                             "arrival": "Cancún Aeropuerto",
                             "departure": "Cancún Zona Hotelera",
-                            "oneWay": "$539.82 MXN",
-                            "roundTrip": "$1,079.82 MXN",
-                            "capacity": "Hasta 8 pasajeros"
+                            "oneWay": "$664.81 MXN",
+                            "roundTrip": "$1,329.81 MXN",
+                            "capacity": "Hasta 3 pasajeros"
                         },
                         {
                             "arrival": "Cancún Zona Hotelera",
                             "departure": "Cancún Aeropuerto",
-                            "oneWay": "$539.82 MXN",
-                            "roundTrip": "$1,079.82 MXN",
-                            "capacity": "Hasta 8 pasajeros"
+                            "oneWay": "$664.81 MXN",
+                            "roundTrip": "$1,329.81 MXN",
+                            "capacity": "Hasta 3 pasajeros"
                         }
                     ]
                 },

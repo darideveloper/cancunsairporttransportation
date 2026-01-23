@@ -1,21 +1,21 @@
 ---
 // Layout
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../../layouts/Layout.astro";
 
 // Libs
-import { useTranslations } from "../../lib/i18n/utils";
-import { getStaticPathsLangs } from "../../lib/utils";
+import { useTranslations } from "../../../lib/i18n/utils";
+import { getStaticPathsLangs } from "../../../lib/utils";
 import { marked } from "marked";
 
 // i18n
-export const getStaticPaths = getStaticPathsLangs;
+// export const getStaticPaths = getStaticPathsLangs;
 
 // Components
-import PageSEO from "../../components/utils/PageSEO.astro";
-import BookingForm from "../../components/organisms/BookingForm";
+import PageSEO from "../../../components/utils/PageSEO.astro";
+import BookingForm from "../../../components/organisms/BookingForm";
 
 // Images
-import homeBannerImg from "../../assets/images/home-banner.webp";
+import homeBannerImg from "../../../assets/images/home-banner.webp";
 
 // Page data
 const page = "home";
@@ -23,15 +23,16 @@ const page = "home";
 // Props
 interface Props {
   lang: "en" | "es";
+  pageKey: string;
 }
 // Get language from params or props
-const { lang } = Astro.params as { lang: "en" | "es" };
+const { lang, pageKey } = Astro.props;
 
 // Tranlation texts
 const t = useTranslations(lang);
 ---
 
-<Layout preloadImage={homeBannerImg.src}>
+<Layout preloadImage={homeBannerImg.src} pageKey={pageKey}>
   <!-- Page SEO -->
   <PageSEO currentPage={page} slot="seo" />
 

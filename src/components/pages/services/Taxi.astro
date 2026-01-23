@@ -1,0 +1,75 @@
+---
+// Layout
+import Layout from "../../../layouts/Layout.astro";
+
+// Libs
+import { useTranslations } from "../../../lib/i18n/utils";
+import { getStaticPathsLangs } from "../../../lib/utils";
+
+// i18n
+// export const getStaticPaths = getStaticPathsLangs;
+
+// Components
+import PageSEO from "../../../components/utils/PageSEO.astro";
+import BookingForm from "../../../components/organisms/BookingForm";
+import PricingSection from "../../../components/organisms/PricingSection.astro";
+import Testimonials from "../../../components/organisms/Testimonials.astro";
+import FaqSection from "../../../components/organisms/FaqSection.astro";
+import Includes from "../../../components/organisms/Includes.astro";
+import PrivateDetails from "../../../components/organisms/PrivateDetails.astro";
+
+// Images
+import homeBannerImg from "../../../assets/images/home-banner.webp";
+import standardImg from "../../../assets/images/vehicles/standard.webp";
+import privateClient1Img from "../../../assets/images/clients/private-1.webp";
+import privateClient2Img from "../../../assets/images/clients/private-2.webp";
+import privateClient3Img from "../../../assets/images/clients/private-3.webp";
+
+// Page data
+const page = "taxi";
+
+// Props
+interface Props {
+  lang: "en" | "es";
+  pageKey: string;
+}
+// Get language from params or props
+const { lang, pageKey } = Astro.props;
+
+// Tranlation texts
+const t = useTranslations(lang);
+---
+
+<Layout preloadImage={homeBannerImg.src} pageKey={pageKey}>
+  <!-- Page SEO -->
+  <PageSEO currentPage={page} slot="seo" />
+
+  <!-- Form -->
+  <div class="@container" id="booking-form">
+    <BookingForm
+      translations={t("global.booking")}
+      defaultFrom="cun"
+      defaultTo="merida"
+      client:idle
+      title={t(`pages.${page}.title`)}
+    />
+  </div>
+
+  <!-- Service Includes -->
+  <Includes page={page} image={standardImg} />
+
+  <!-- Private Details -->
+  <PrivateDetails page={page} />
+
+  <!-- Clients testimonials -->
+  <Testimonials
+    page={page}
+    images={[privateClient1Img, privateClient2Img, privateClient3Img]}
+  />
+
+  <!-- FAQs -->
+  <FaqSection page={page} />
+
+  <!-- Pricing transportation -->
+  <PricingSection page={page} isRegularGrid />
+</Layout>

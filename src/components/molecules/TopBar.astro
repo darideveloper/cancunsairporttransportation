@@ -16,6 +16,8 @@ import { FaFacebook, FaInstagram } from "react-icons/fa6";
 // Lang
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const { pageKey } = Astro.props;
 ---
 
 <section
@@ -25,7 +27,7 @@ const t = useTranslations(lang);
   <div class="mx-auto flex flex-row items-center justify-between gap-2">
     <!-- Left: Lang Selector -->
     <div class="flex items-center">
-      <LangLink />
+      <LangLink pageKey={pageKey} />
     </div>
 
     <!-- Center: Contact Info -->

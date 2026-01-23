@@ -1,22 +1,27 @@
 ---
-import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getLocalizedPath,
+} from "../../lib/i18n/utils";
 import { languages } from "../../lib/i18n/ui";
 
+interface Props {
+  pageKey?: string;
+}
+
+const { pageKey } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const isSpanish = lang === "es";
 const targetLang = isSpanish ? "en" : "es";
 const label = languages[targetLang];
-const currentRoute = Astro.url.pathname;
 
-// Simple route switcher for /[lang]/...
-const segments = currentRoute.split("/").filter(Boolean);
-if (segments.length > 0 && (segments[0] === "en" || segments[0] === "es")) {
-  segments[0] = targetLang;
-} else {
-  segments.unshift(targetLang);
-}
-const targetUrl = `/${segments.join("/")}/`;
+const targetUrl = pageKey
+  ? getLocalizedPath(pageKey, targetLang)
+  : targetLang === "es"
+    ? "/es"
+    : "/";
 ---
 
 <div class="flex items-center gap-1 text-inherit">
