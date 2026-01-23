@@ -1,0 +1,51 @@
+---
+// Layout
+import Layout from "../../../layouts/Layout.astro";
+
+// Libs
+import { useTranslations } from "../../../lib/i18n/utils";
+import { getStaticPathsLangs } from "../../../lib/utils";
+import { marked } from "marked";
+
+// i18n
+// export const getStaticPaths = getStaticPathsLangs;
+
+// Components
+import PageSEO from "../../../components/utils/PageSEO.astro";
+import BookingForm from "../../../components/organisms/BookingForm";
+
+// Images
+import homeBannerImg from "../../../assets/images/home-banner.webp";
+
+// Page data
+const page = "destinations";
+
+// Props
+interface Props {
+  lang: "en" | "es";
+  pageKey: string;
+}
+// Get language from params or props
+const { lang, pageKey } = Astro.props;
+
+// Tranlation texts
+const t = useTranslations(lang);
+---
+
+<Layout preloadImage={homeBannerImg.src} pageKey={pageKey}>
+  <!-- Page SEO -->
+  <PageSEO currentPage={page} slot="seo" />
+
+  <aside>
+    <!-- Form -->
+    <div class="form-wrapper debug @container max-w-md">
+      <BookingForm
+        translations={t("global.booking")}
+        defaultFrom="cun"
+        defaultTo="merida"
+        client:idle
+        className="px-0!"
+      />
+    </div>
+  </aside>
+</Layout>

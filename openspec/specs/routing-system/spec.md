@@ -30,22 +30,14 @@ TBD - created by archiving change upgrade-i18n-routing. Update Purpose after arc
 ### Requirement: Route Map Configuration
 - The routing configuration MUST be stored in `src/messages/en.json` and `src/messages/es.json` under a `routes` key.
 - Each page key MUST be identical in both files to ensure correct cross-language mapping.
-#### Scenario: Checking route consistency
-- Given `en.json` has `"taxi": "cancun-airport-taxi"`
-- And `es.json` has `"taxi": "taxi-aeropuerto-cancun"`
-- Then they are correctly mapped by the common key "taxi"
+#### Scenario: Contact page
+- The "contact" page MUST be defined in the `routes` object for both languages.
 
 ### Requirement: Dynamic Utility Linking
 - The `getLocalizedPath(pageKey, targetLang)` utility MUST return the correct URL for any given page and language.
-#### Scenario: Generating a Spanish link
-- Given the page key is "taxi"
-- When I call `getLocalizedPath('taxi', 'es')`
-- Then it returns `/es/taxi-aeropuerto-cancun`
-
-#### Scenario: Generating an English link
-- Given the page key is "home"
-- When I call `getLocalizedPath('home', 'en')`
-- Then it returns `/`
+#### Scenario: Components usage
+- The `NavLinks`, `MenuBar` and `Logo` components MUST use `getLocalizedPath` to resolve their `href` attributes.
+- Hardcoded string paths (e.g. `href="/contact"`) are FORBIDDEN in navigation components.
 
 ### Requirement: Intelligent Language Switcher
 - The language switcher MUST detect the current `pageKey` and link to its counterpart in the other language using its localized slug.

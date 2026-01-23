@@ -30,7 +30,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // Constants & Data
-const CTA_LINK = "/contact";
+const CTA_LINK = getLocalizedPath("contact", lang);
 const CTA_LABEL = t("global.menubar.cta");
 
 const contactPhones = [

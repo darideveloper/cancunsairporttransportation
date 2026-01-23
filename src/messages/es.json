@@ -10,7 +10,8 @@
         "private": "es/transporte-privado-cancun",
         "playa": "es/transportacion-cancun-a-playa-del-carmen",
         "merida": "es/traslado-de-cancun-a-merida",
-        "terms": "es/terminos-y-condiciones"
+        "terms": "es/terminos-y-condiciones",
+        "contact": "es/contacto"
     },
     "global": {
         "branding": {
@@ -37,7 +38,7 @@
                     "links": [
                         {
                             "text": "Taxi Aeropuerto Cancún",
-                            "href": "/es"
+                            "href": "/es/"
                         },
                         {
                             "text": "Cancun a Playa del Carmen",
