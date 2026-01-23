@@ -1880,6 +1880,20 @@
                         "link": "/"
                     }
                 }
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserve today",
+                    "text": "Live the magic of the **Riviera Maya** without worries.",
+                    "imageAlt": "Reserve today Icon",
+                    "imageTitle": "Reserve today"
+                },
+                "contact": {
+                    "title": "Contact us if you have problems",
+                    "text": "If you don't find your destination in the list, you can contact us and a consultant will gladly help you.",
+                    "imageAlt": "Contact us Icon",
+                    "imageTitle": "Contact us"
+                }
             }
         }
     }

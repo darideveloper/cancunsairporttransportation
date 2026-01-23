@@ -1,7 +1,6 @@
 ---
 // Libs
 import { Image } from "astro:assets";
-import clsx from "clsx";
 
 // Props
 interface Props {
@@ -11,10 +10,9 @@ interface Props {
     alt: string;
     title?: string;
   };
-  contentClass?: string;
 }
 
-const { title, image, contentClass } = Astro.props;
+const { title, image } = Astro.props;
 
 const id = `image-card-${title
   .toLowerCase()
@@ -23,19 +21,11 @@ const id = `image-card-${title
   .replace(/^-+|-+$/g, "")}`;
 ---
 
-<article
-  class="group border-gray-light flex items-start gap-4 rounded-2xl border bg-white p-4 shadow-sm transition-all duration-300 hover:shadow-lg"
-  aria-labelledby={id}
->
-  <div class="shrink-0">
+<article class="" aria-labelledby={id}>
+  <div class="">
     {
       typeof image.src === "string" ? (
-        <img
-          src={image.src}
-          alt={image.alt}
-          title={image.title}
-          class="h-16 w-16 rounded-lg object-cover"
-        />
+        <img src={image.src} alt={image.alt} title={image.title} class="" />
       ) : (
         <Image
           src={image.src}
@@ -43,17 +33,17 @@ const id = `image-card-${title
           title={image.title}
           width={64}
           height={64}
-          class="h-16 w-16 rounded-lg object-cover"
+          class=""
         />
       )
     }
   </div>
 
-  <div class={clsx("flex flex-col gap-1", contentClass)}>
-    <h3 class="text-md text-accent-dark leading-tight font-bold" id={id}>
+  <div class="">
+    <h3 class="" id={id}>
       {title}
     </h3>
-    <div class="text-gray text-sm leading-relaxed">
+    <div class="">
       <slot />
     </div>
   </div>

@@ -1836,6 +1836,20 @@
                         "link": "/es"
                     }
                 }
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserva hoy",
+                    "text": "Vive la magia de la **Riviera Maya** sin preocupaciones.",
+                    "imageAlt": "Icono de Reserva hoy",
+                    "imageTitle": "Reserva hoy"
+                },
+                "contact": {
+                    "title": "Contáctanos si tienes problemas",
+                    "text": "Si no encuentras tu destino en la lista, puedes contactarnos y con gusto un asesor te ayudará.",
+                    "imageAlt": "Icono de Contáctanos",
+                    "imageTitle": "Contáctanos"
+                }
             }
         },
         "privateAirportTransfer": {

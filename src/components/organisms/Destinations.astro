@@ -7,6 +7,7 @@ import { marked } from "marked";
 import SectionHeading from "../../components/molecules/SectionHeading.astro";
 import PricingCard from "../../components/molecules/PricingCard.astro";
 import ButtonCta from "../../components/atoms/ButtonCta.astro";
+import BasicImageCard from "../../components/molecules/BasicImageCard.astro";
 import { Image } from "astro:assets";
 
 // Images
@@ -93,6 +94,36 @@ const destinations = [
       ))
     }
   </ul>
+
+  <div
+    class="destinations-highlights mt-12 grid grid-cols-1 gap-8 md:grid-cols-2"
+  >
+    <BasicImageCard
+      title={t(`pages.${page}.highlights.reserve.title`)}
+      image={{
+        src: "/assets/img/destinations/book-now.png",
+        alt: t(`pages.${page}.highlights.reserve.imageAlt`),
+        title: t(`pages.${page}.highlights.reserve.imageTitle`),
+      }}
+    >
+      <div
+        set:html={marked.parse(t(`pages.${page}.highlights.reserve.text`))}
+      />
+    </BasicImageCard>
+
+    <BasicImageCard
+      title={t(`pages.${page}.highlights.contact.title`)}
+      image={{
+        src: "/assets/img/destinations/customer-service.png",
+        alt: t(`pages.${page}.highlights.contact.imageAlt`),
+        title: t(`pages.${page}.highlights.contact.imageTitle`),
+      }}
+    >
+      <div
+        set:html={marked.parse(t(`pages.${page}.highlights.contact.text`))}
+      />
+    </BasicImageCard>
+  </div>
 
   <div class="bottom mt-4 scale-90 text-center">
     <ButtonCta
