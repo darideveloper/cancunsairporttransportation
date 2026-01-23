@@ -1,5 +1,5 @@
 ---
-import { ui } from "../lib/i18n/ui";
+import { routes } from "../lib/i18n/routes";
 // Import all page components
 import Home from "../components/pages/landing/Home.astro";
 import Taxi from "../components/pages/services/Taxi.astro";
@@ -16,26 +16,18 @@ import Terms from "../components/pages/legal/Terms.astro";
 export async function getStaticPaths() {
   const paths = [];
 
-  // English Routes
-  if (ui.en && ui.en.routes) {
-    const enRoutes = ui.en.routes;
-    for (const [key, path] of Object.entries(enRoutes)) {
-      paths.push({
-        params: { path: path === "" ? undefined : path },
-        props: { pageKey: key, lang: "en" },
-      });
-    }
-  }
+  for (const [key, langPaths] of Object.entries(routes)) {
+    // English
+    paths.push({
+      params: { path: langPaths.en === "" ? undefined : langPaths.en },
+      props: { pageKey: key, lang: "en" },
+    });
 
-  // Spanish Routes
-  if (ui.es && ui.es.routes) {
-    const esRoutes = ui.es.routes;
-    for (const [key, path] of Object.entries(esRoutes)) {
-      paths.push({
-        params: { path: path },
-        props: { pageKey: key, lang: "es" },
-      });
-    }
+    // Spanish
+    paths.push({
+      params: { path: langPaths.es },
+      props: { pageKey: key, lang: "es" },
+    });
   }
 
   return paths;

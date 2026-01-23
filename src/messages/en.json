@@ -1,17 +1,4 @@
 {
-    "routes": {
-        "home": "",
-        "taxi": "cancun-airport-taxi",
-        "akumal": "cancun-to-akumal-shuttle",
-        "tulum": "cancun-to-tulum-shuttle",
-        "destinations": "destinations",
-        "group": "group-transfers-cancun",
-        "luxury": "luxury-transportation-cancun",
-        "private": "private-airport-transfer-cancun",
-        "playa": "transportation-from-cancun-airport-to-playa-del-carmen",
-        "merida": "transportation-from-cancun-to-merida",
-        "terms": "terms-and-conditions"
-    },
     "global": {
         "branding": {
             "businessName": "Cancun Airport Transportation"
@@ -514,6 +501,20 @@
                     "Vehicles in content maintenance",
                     "24-Hour Service"
                 ]
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserve today",
+                    "text": "Live the magic of the **Riviera Maya** without worries.",
+                    "imageAlt": "Reserve today Icon",
+                    "imageTitle": "Reserve today"
+                },
+                "contact": {
+                    "title": "Contact us if you have problems",
+                    "text": "If you don't find your destination in the list, you can contact us and a consultant will gladly help you.",
+                    "imageAlt": "Contact us Icon",
+                    "imageTitle": "Contact us"
+                }
             }
         },
         "ui": {
@@ -678,6 +679,20 @@
                         "question": "What should I do if my flight is delayed or canceled?",
                         "answer": "If your flight is delayed or canceled, it’s crucial to inform us as soon as possible to reschedule your transfer. We can adjust the service, but we ask that you contact us promptly."
                     }
+                }
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserve today",
+                    "text": "Live the magic of the **Riviera Maya** without worries.",
+                    "imageAlt": "Reserve today Icon",
+                    "imageTitle": "Reserve today"
+                },
+                "contact": {
+                    "title": "Contact us if you have problems",
+                    "text": "If you don't find your destination in the list, you can contact us and a consultant will gladly help you.",
+                    "imageAlt": "Contact us Icon",
+                    "imageTitle": "Contact us"
                 }
             }
         },
@@ -1858,6 +1873,54 @@
                 "cta": {
                     "text": "Book now",
                     "href": "#booking-form"
+                }
+            }
+        },
+        "destinations": {
+            "tagline": "Reach any corner of the Riviera Maya",
+            "title": "Cancun Airport Transportation - Rates for Popular destinations",
+            "description": "With years of experience in the tourist transportation industry, we guarantee an exceptional trip. Our professional drivers know every corner of the Riviera Maya, assuring you not only efficient transportation but also a smooth and hassle-free experience.",
+            "destinations": {
+                "title": "Cancun Airport Transportation - Rates for Popular destinations",
+                "text": "With years of experience in the tourist transportation industry, we guarantee an exceptional trip. Our professional drivers know every corner of the Riviera Maya, assuring you not only efficient transportation but also a smooth and hassle-free experience.",
+                "viewMore": "View more destinations",
+                "viewMoreLink": "/destinations",
+                "cards": {
+                    "tulum": {
+                        "title": "Cancun Airport Transportation to Tulum",
+                        "price": "129.00",
+                        "description": "Tulum, a city located within the Riviera Maya, is approximately a 2-hour drive from Cancun. Renowned for its breathtaking beaches, historic archaeological sites, and amazing jungle hotels, Tulum is a must-visit destination.",
+                        "ctaText": "Book now",
+                        "link": "/cancun-to-tulum-shuttle"
+                    },
+                    "playa": {
+                        "title": "Cancun Airport Transportation to Playa del Carmen",
+                        "price": "69.99",
+                        "description": "Our transportation and taxi services will bring you to any hotel, vacation home, or Airbnb in Playa del Carmen, the vibrant heart of the Riviera Maya. With us, your adventure is just around the corner!",
+                        "ctaText": "Book now",
+                        "link": "/transportation-from-cancun-airport-to-playa-del-carmen"
+                    },
+                    "cancun": {
+                        "title": "Cancun Airport Transportation to Cancun Hotel Zone",
+                        "price": "29.99",
+                        "description": "Cancun’s hotel zone is the city’s top destination, featuring 4 and 5-star hotels that offer the best views of the Caribbean Sea and the most unforgettable vacation experience you can imagine.",
+                        "ctaText": "Book now",
+                        "link": "/"
+                    }
+                }
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserve today",
+                    "text": "Live the magic of the **Riviera Maya** without worries.",
+                    "imageAlt": "Reserve today Icon",
+                    "imageTitle": "Reserve today"
+                },
+                "contact": {
+                    "title": "Contact us if you have problems",
+                    "text": "If you don't find your destination in the list, you can contact us and a consultant will gladly help you.",
+                    "imageAlt": "Contact us Icon",
+                    "imageTitle": "Contact us"
                 }
             }
         }

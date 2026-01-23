@@ -1,17 +1,4 @@
 {
-    "routes": {
-        "home": "es",
-        "taxi": "es/taxi-aeropuerto-cancun",
-        "akumal": "es/transporte-cancun-akumal",
-        "tulum": "es/traslado-cancun-tulum",
-        "destinations": "es/destinos",
-        "group": "es/transporte-para-grupos-cancun",
-        "luxury": "es/transporte-de-lujo-cancun",
-        "private": "es/transporte-privado-cancun",
-        "playa": "es/transportacion-cancun-a-playa-del-carmen",
-        "merida": "es/traslado-de-cancun-a-merida",
-        "terms": "es/terminos-y-condiciones"
-    },
     "global": {
         "branding": {
             "businessName": "Transporte Cancún Aeropuerto"
@@ -37,7 +24,7 @@
                     "links": [
                         {
                             "text": "Taxi Aeropuerto Cancún",
-                            "href": "/es"
+                            "href": "/es/"
                         },
                         {
                             "text": "Cancun a Playa del Carmen",
@@ -514,6 +501,20 @@
                     "Vehículos en mantenimiento de contenido",
                     "Servicio 24 horas"
                 ]
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserva hoy",
+                    "text": "Vive la magia de la **Riviera Maya** sin preocupaciones.",
+                    "imageAlt": "Icono de Reserva hoy",
+                    "imageTitle": "Reserva hoy"
+                },
+                "contact": {
+                    "title": "Contáctanos si tienes problemas",
+                    "text": "Si no encuentras tu destino en la lista, puedes contactarnos y con gusto un asesor te ayudará.",
+                    "imageAlt": "Icono de Contáctanos",
+                    "imageTitle": "Contáctanos"
+                }
             }
         },
         "ui": {
@@ -674,6 +675,20 @@
                         "question": "¿Qué debo hacer si mi vuelo se retrasa o cancela?",
                         "answer": "Si tu vuelo se retrasa o cancela, es crucial que nos informes lo antes posible para reprogramar su traslado. Podemos ajustar el servicio, pero le pedimos que se ponga en contacto con nosotros lo antes posible."
                     }
+                }
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserva hoy",
+                    "text": "Vive la magia de la **Riviera Maya** sin preocupaciones.",
+                    "imageAlt": "Icono de Reserva hoy",
+                    "imageTitle": "Reserva hoy"
+                },
+                "contact": {
+                    "title": "Contáctanos si tienes problemas",
+                    "text": "Si no encuentras tu destino en la lista, puedes contactarnos y con gusto un asesor te ayudará.",
+                    "imageAlt": "Icono de Contáctanos",
+                    "imageTitle": "Contáctanos"
                 }
             }
         },
@@ -1815,6 +1830,54 @@
                     "Transporte del Aeropuerto de Cancún al Doralba Inn Merida",
                     "Transporte del Aeropuerto de Cancún al Hotel el Español Mérida"
                 ]
+            }
+        },
+        "destinations": {
+            "tagline": "Llega a cualquier rincón de la Riviera Maya",
+            "title": "Transportación desde el Aeropuerto de Cancún - Tarifas a destinos populares",
+            "description": "Con años de experiencia en la industria del transporte turístico, le garantizamos un viaje excepcional. Nuestros conductores profesionales conocen cada rincón de la Riviera Maya, asegurándole no solo un transporte eficiente sino también una experiencia fluida y sin complicaciones.",
+            "destinations": {
+                "title": "Transportación desde el Aeropuerto de Cancún - Tarifas a destinos populares",
+                "text": "Con años de experiencia en la industria del transporte turístico, le garantizamos un viaje excepcional. Nuestros conductores profesionales conocen cada rincón de la Riviera Maya, asegurándole no solo un transporte eficiente sino también una experiencia fluida y sin complicaciones.",
+                "viewMore": "Ver más destinos",
+                "viewMoreLink": "/es/destinos",
+                "cards": {
+                    "tulum": {
+                        "title": "Transporte del Aeropuerto de Cancun a Tulum",
+                        "price": "2322.00",
+                        "description": "Tulum, ciudad situada en la Riviera Maya, se encuentra aproximadamente a 2 horas en coche de Cancún. Conocida por sus impresionantes playas, sitios arqueológicos históricos e increíbles hoteles en la selva, Tulum es un destino de visita obligada.",
+                        "ctaText": "Reservar",
+                        "link": "/es/traslado-cancun-tulum"
+                    },
+                    "playa": {
+                        "title": "Transporte del Aeropuerto de Cancun a Playa del Carmen",
+                        "price": "1259.82",
+                        "description": "Nuestros servicios de transporte y taxi te llevarán a cualquier hotel, casa vacacional o Airbnb en Playa del Carmen, el vibrante corazón de la Riviera Maya. ¡Con nosotros, su aventura está a la vuelta de la esquina!",
+                        "ctaText": "Reservar",
+                        "link": "/es/transportacion-cancun-a-playa-del-carmen"
+                    },
+                    "cancun": {
+                        "title": "Transportación del Aeropuerto de Cancún a la Zona Hotelera de Cancún",
+                        "price": "539.82",
+                        "description": "La zona hotelera de Cancún es el principal destino de la ciudad, con hoteles de 4 y 5 estrellas que ofrecen las mejores vistas del Mar Caribe y la experiencia vacacional más inolvidable que pueda imaginar.",
+                        "ctaText": "Reservar",
+                        "link": "/es"
+                    }
+                }
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserva hoy",
+                    "text": "Vive la magia de la **Riviera Maya** sin preocupaciones.",
+                    "imageAlt": "Icono de Reserva hoy",
+                    "imageTitle": "Reserva hoy"
+                },
+                "contact": {
+                    "title": "Contáctanos si tienes problemas",
+                    "text": "Si no encuentras tu destino en la lista, puedes contactarnos y con gusto un asesor te ayudará.",
+                    "imageAlt": "Icono de Contáctanos",
+                    "imageTitle": "Contáctanos"
+                }
             }
         },
         "privateAirportTransfer": {

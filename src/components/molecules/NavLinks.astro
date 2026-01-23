@@ -1,7 +1,11 @@
 ---
 import NavLink from "../atoms/NavLink.astro";
 import { MOBILE_MENU_STYLES } from "../../styles/menu";
-import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
+import {
+  useTranslations,
+  getLangFromUrl,
+  getLocalizedPath,
+} from "../../lib/i18n/utils";
 
 interface Props {
   mode?: "desktop" | "mobile";
@@ -14,15 +18,15 @@ const t = useTranslations(lang);
 const links = [
   {
     key: "cancun",
-    link: "/",
+    link: getLocalizedPath("home", lang),
   },
   {
     key: "carmen",
-    link: "/transportation-from-cancun-airport-to-playa-del-carmen",
+    link: getLocalizedPath("playa", lang),
   },
   {
     key: "tulum",
-    link: "/cancun-to-tulum-shuttle",
+    link: getLocalizedPath("tulum", lang),
   },
 ];
 ---

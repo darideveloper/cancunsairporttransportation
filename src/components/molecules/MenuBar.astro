@@ -30,7 +30,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // Constants & Data
-const CTA_LINK = "/contact";
+const CTA_LINK = getLocalizedPath("contact", lang);
 const CTA_LABEL = t("global.menubar.cta");
 
 const contactPhones = [
@@ -138,12 +138,14 @@ const translateLink = pageKey
   </nav>
 
   <!-- cta -->
-  <ButtonCta
-    href={CTA_LINK}
-    class="bg-yellow hover:bg-yellow-dark mx-4 my-10 inline-block w-11/12 font-bold text-black!"
-  >
-    {CTA_LABEL}
-  </ButtonCta>
+  <div class="flex w-full justify-center">
+    <ButtonCta
+      href={CTA_LINK}
+      class="bg-yellow hover:bg-yellow-dark mx-auto my-10 inline-block w-11/12 font-bold text-black!"
+    >
+      {CTA_LABEL}
+    </ButtonCta>
+  </div>
 </div>
 
 <script>

@@ -20,7 +20,7 @@ import TextCard from "../../../components/molecules/TextCard.astro";
 import BookingForm from "../../../components/organisms/BookingForm";
 import TextCardHalf from "../../../components/organisms/TextCardHalf.astro";
 import TextCardSmall from "../../../components/organisms/TextCardSmall.astro";
-import Destinations from "../../../components/organisms/Destinations.astro";
+import FeaturedDestinations from "../../../components/organisms/FeaturedDestinations.astro";
 import BannerCta from "../../../components/organisms/BannerCta.astro";
 import BannerStats from "../../../components/organisms/BannerStats.astro";
 import PricingSection from "../../../components/organisms/PricingSection.astro";
@@ -111,7 +111,7 @@ const reliableServiceContent = await marked.parse(
   <Testimonials images={[client1Img, client2Img, client3Img]} />
 
   <!-- Destinations -->
-  <Destinations page={page} />
+  <FeaturedDestinations page={page} />
 
   <!-- Why Choose Us -->
   <div class="bg-accent/5 mt-12 py-12">

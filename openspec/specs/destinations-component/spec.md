@@ -18,3 +18,12 @@ When the component renders
 Then it should display the title, text, and destination cards defined in `pages.playaDelCarmen.destinations`
 And it should display a "View More" button linking to the appropriate destination list (e.g., `/destinations` or specific link).
 
+### Requirement: Display Highlight Cards in Destinations
+The `Destinations.astro` organism MUST display two highlight cards using the `BasicImageCard` component.
+
+#### Scenario: Rendering in Destinations
+- **Given** the `Destinations.astro` component
+- **When** rendered on any page
+- **Then** it should include two `BasicImageCard` components at the bottom of the section
+- **And** the content must be localized via the translation system
+

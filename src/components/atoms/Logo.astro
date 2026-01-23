@@ -15,7 +15,7 @@ const { class: className } = Astro.props;
 ---
 
 <a
-  href={`/${lang}/`}
+  href={lang === "es" ? "/es" : "/"}
   aria-label={t("global.branding.businessName")}
   class={`flex items-center ${className || "w-52 sm:w-60"}`}
 >

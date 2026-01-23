@@ -84,7 +84,8 @@ const destinations = [
             <div
               slot="content"
               set:html={marked.parse(
-                t(`pages.${page}.destinations.cards.${dest.id}.description`),
+                t(`pages.${page}.destinations.cards.${dest.id}.description`) ||
+                  "",
               )}
               class="markdown text-justify text-sm"
             />

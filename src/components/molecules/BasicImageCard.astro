@@ -1,0 +1,48 @@
+---
+// Libs
+import { Image } from "astro:assets";
+
+// Props
+interface Props {
+  title: string;
+  image: {
+    src: ImageMetadata;
+    alt: string;
+    title?: string;
+  };
+  class?: string;
+}
+
+const { title, image, class: className } = Astro.props;
+
+const id = `image-card-${title
+  .toLowerCase()
+  .trim()
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-+|-+$/g, "")}`;
+---
+
+<article
+  class={`${className} flex items-center justify-center gap-4 border-gray/10 rounded-md border-2 px-6 py-4`}
+  aria-labelledby={id}
+>
+  <div class="">
+    <Image
+      src={image.src}
+      alt={image.alt}
+      title={image.title}
+      width={64}
+      height={64}
+      class=""
+    />
+  </div>
+
+  <div class="">
+    <h3 class="text-blue! text-xl font-bold" id={id}>
+      {title}
+    </h3>
+    <div class="">
+      <slot />
+    </div>
+  </div>
+</article>
