@@ -1,0 +1,135 @@
+// Example: Global Translation Structure
+// Location: src/messages/en.json and src/messages/es.json
+// Use Case: Content that appears on multiple pages with the same text
+// English (en.json)
+{
+    "global": {
+        "branding": {
+            "businessName": "Cancun Airport Transportation"
+        },
+        "ui": {
+            "button": {
+                "bookNow": "Book now",
+                "viewMore": "View more",
+                "contactUs": "Contact us"
+            },
+            "pricingCard": {
+                "mostPopular": "Most Popular",
+                "priceFrom": "Price from",
+                "bookNow": "Book now",
+                "features": {
+                    "privateService": "Private Service",
+                    "taxesIncluded": "Includes airport taxes and traveler's insurance",
+                    "service24h": "24H service hours"
+                }
+            }
+        },
+        "sections": {
+            "includes": {
+                "items": [
+                    "Highly Trained Staff",
+                    "Flight Monitoring",
+                    "Travel Insurance",
+                    "Reception at the airport",
+                    "Free Schedule Changes (See our terms and conditions)",
+                    "Vehicles in content maintenance",
+                    "24-Hour Service"
+                ]
+            },
+            "bannerCta": {
+                "imageAlt": "Transport van, behind a person smiling because he found a safe and reliable transport.",
+                "imageTitle": "How to get from Cancun Airport",
+                "buttons": {
+                    "primary": {
+                        "text": "Book now",
+                        "href": "#"
+                    },
+                    "secondary": {
+                        "text": "All destinations",
+                        "href": "/destinations"
+                    }
+                }
+            }
+        }
+    }
+}
+// Spanish (es.json)
+{
+    "global": {
+        "branding": {
+            "businessName": "Transporte del Aeropuerto de Cancún"
+        },
+        "ui": {
+            "button": {
+                "bookNow": "Reservar ahora",
+                "viewMore": "Ver más",
+                "contactUs": "Contáctanos"
+            },
+            "pricingCard": {
+                "mostPopular": "Más Popular",
+                "priceFrom": "Precio desde",
+                "bookNow": "Reservar ahora",
+                "features": {
+                    "privateService": "Servicio Privado",
+                    "taxesIncluded": "Incluye impuestos aeroportuarios y seguro de viajero",
+                    "service24h": "Servicio 24 horas"
+                }
+            }
+        },
+        "sections": {
+            "includes": {
+                "items": [
+                    "Personal Altamente Capacitado",
+                    "Monitoreo de Vuelos",
+                    "Seguro de Viaje",
+                    "Recepción en el aeropuerto",
+                    "Cambios de Horario Gratuitos (Ver nuestros términos y condiciones)",
+                    "Vehículos en mantenimiento continuo",
+                    "Servicio 24 Horas"
+                ]
+            },
+            "bannerCta": {
+                "imageAlt": "Camioneta de transporte, detrás una persona sonriendo porque encontró un transporte seguro y confiable.",
+                "imageTitle": "Cómo llegar desde el Aeropuerto de Cancún",
+                "buttons": {
+                    "primary": {
+                        "text": "Reservar ahora",
+                        "href": "#"
+                    },
+                    "secondary": {
+                        "text": "Todos los destinos",
+                        "href": "/destinations"
+                    }
+                }
+            }
+        }
+    }
+}
+/*
+Usage in Component:
+
+---
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const businessName = t("global.branding.businessName");
+const bookNowText = t("global.ui.button.bookNow");
+const includeItems = t("global.sections.includes.items");
+const bannerAlt = t("global.sections.bannerCta.imageAlt");
+---
+
+<h1>{businessName}</h1>
+<button>{bookNowText}</button>
+<ul>
+  {includeItems.map((item) => <li>{item}</li>)}
+</ul>
+<img alt={bannerAlt} />
+
+Key Points:
+✓ Global translations are shared across all pages
+✓ Use for headers, footers, common UI elements
+✓ No page prop required
+✓ Consistent across the entire site
+*/

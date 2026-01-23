@@ -1,0 +1,112 @@
+---
+// Example: Organism Component with Full Translation Integration
+// File: Includes.astro
+// Purpose: Displays service includes section with title, image, and list
+// Type: Organism (complex section combining multiple components)
+---
+
+// Libs
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+
+// Components
+import { Image } from "astro:assets";
+import H2 from "../atoms/H2.astro";
+import CheckListItem from "../atoms/CheckListItem.astro";
+
+// Lang
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Types
+interface Props {
+  page: string;
+  image: ImageMetadata;
+}
+const { page, image } = Astro.props;
+
+// Get includes data from translations
+const title = t(`pages.${page}.includes.title`);
+const imageAlt = t(`pages.${page}.includes.imageAlt`);
+const imageTitle = t(`pages.${page}.includes.imageTitle`);
+const items = t("global.sections.includes.items");
+---
+
+<section
+  id="service-includes"
+  aria-labelledby="includes-title"
+  class="bg-accent/10 mt-12 py-4"
+>
+  <div
+    class="container flex flex-col items-center justify-center gap-4 text-center md:flex-row md:text-left"
+  >
+    <!-- Left side: Title and Image -->
+    <div class="title-image h-full w-full md:w-1/2">
+      <H2 id="includes-title" class="my-4">
+        {title}
+      </H2>
+      <Image
+        src={image}
+        alt={imageAlt}
+        title={imageTitle}
+        width={600}
+        height={400}
+        loading="lazy"
+        class="mx-auto w-11/12 max-w-2xl"
+      />
+    </div>
+
+    <!-- Right side: List of items -->
+    <div class="list-items w-full md:w-1/2">
+      <ul
+        class="flex flex-wrap items-center justify-center gap-2 md:justify-start"
+      >
+        {items.map((item: string) => <CheckListItem text={item} />)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!--
+SEO Best Practices Demonstrated:
+✓ Semantic HTML: Uses <section> for thematic grouping
+✓ ARIA: aria-labelledby references the section title
+✓ Unique ID: Section and title have unique IDs
+✓ Translation Integration: All text from translation files
+✓ Page-specific Props: Accepts page prop for dynamic translations
+✓ Component Reuse: Uses H2 and CheckListItem atoms
+✓ Astro Image: Proper image handling with lazy loading
+✓ Responsive Design: Uses Tailwind classes for mobile/desktop
+✓ Comments: Clear HTML comments for structure
+✓ Mixed Translations: Uses both page-specific and global translations
+
+Translation Structure Required:
+{
+  "pages": {
+    "home": {
+      "includes": {
+        "title": "All our Cancun Private Transfers include:",
+        "imageAlt": "Private service in Suburban",
+        "imageTitle": "Private service in Suburban"
+      }
+    }
+  },
+  "global": {
+    "sections": {
+      "includes": {
+        "items": [
+          "Highly Trained Staff",
+          "Flight Monitoring",
+          "Travel Insurance",
+          "Reception at the airport",
+          "Free Schedule Changes",
+          "Vehicles in content maintenance",
+          "24-Hour Service"
+        ]
+      }
+    }
+  }
+}
+
+Usage Example:
+<Includes page="home" image={includesImage} />
+-->

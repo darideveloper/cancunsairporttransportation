@@ -1,0 +1,181 @@
+// Example: Page-Specific Translation Structure
+// Location: src/messages/en.json and src/messages/es.json
+// Use Case: Content unique to a specific page
+// English (en.json)
+{
+    "pages": {
+        "home": {
+            "title": "Cancun Airport Transportation | Official Website",
+            "description": "Book your Cancun Airport Transportation with the best rates. Private, safe and reliable shuttle service to any hotel in Cancun and the Riviera Maya.",
+            "keywords": "cancun airport transportation, cancun shuttle, private transportation cancun",
+            "bannerTitle": "Cancun Airport Transportation",
+            "testimonials": {
+                "title": "Comments from our customers",
+                "description": "Discover why our customers choose Cancun Airport Transportation by Go",
+                "items": {
+                    "item1": {
+                        "name": "Juan P.",
+                        "text": "I hired the transportation service to go from Cancun to Tulum and was impressed with the punctuality and professionalism of the driver. The vehicle was in excellent condition and the trip was very comfortable. I will recommend this service to my friends and family.",
+                        "imageAlt": "Comment from our customer Juan P.",
+                        "imageTitle": "Comment from our customer Juan P.",
+                        "stars": "5"
+                    },
+                    "item2": {
+                        "name": "Ana G.",
+                        "text": "Our transfer from Cancun airport to our hotel in Playa del Carmen was perfect. The driver was amiable and gave us excellent recommendations on places to visit. Also, the price was very reasonable. Excellent service!",
+                        "imageAlt": "Comment from our customer Ana G.",
+                        "imageTitle": "Comment from our customer Ana G.",
+                        "stars": "5"
+                    }
+                }
+            },
+            "pricing": {
+                "title": "Our Transportation Services",
+                "subtitle": "List of our transportation services",
+                "cards": {
+                    "luxury": {
+                        "title": "Luxury Transportation",
+                        "price": "84.00",
+                        "description": "Elevate your shuttle experience with our luxury transfer service, taking you to and from Cancun Airport to your hotel in Cancun or the Riviera Maya."
+                    },
+                    "private": {
+                        "title": "Private Transportation",
+                        "price": "29.99",
+                        "description": "Our transportation and private transfer service is one of the most popular and affordable options in Cancun and the Riviera Maya."
+                    }
+                }
+            }
+        },
+        "private": {
+            "title": "Private Shuttle Cancun Airport",
+            "includes": {
+                "title": "All our Cancun Private Transfers include:",
+                "imageAlt": "Private Airport Transfer Cancun",
+                "imageTitle": "Private Airport Transfer Cancun"
+            },
+            "testimonials": {
+                "title": "Private Transportation in Cancun - What our clients say about us",
+                "description": "The opinion of our customers is the most important thing for us.",
+                "items": {
+                    "item1": {
+                        "name": "Robert D.",
+                        "text": "I hired the private transportation service to go from Cancun to Tulum and was impressed with the punctuality and professionalism of the driver.",
+                        "imageAlt": "Comment from our customer Robert D.",
+                        "imageTitle": "Comment from our customer Robert D.",
+                        "stars": "5"
+                    }
+                }
+            }
+        }
+    }
+}
+// Spanish (es.json)
+{
+    "pages": {
+        "home": {
+            "title": "Transporte del Aeropuerto de Cancún | Sitio Web Oficial",
+            "description": "Reserva tu Transporte del Aeropuerto de Cancún con las mejores tarifas. Servicio de traslado privado, seguro y confiable a cualquier hotel en Cancún y la Riviera Maya.",
+            "keywords": "transporte aeropuerto cancun, traslado cancun, transporte privado cancun",
+            "bannerTitle": "Transporte del Aeropuerto de Cancún",
+            "testimonials": {
+                "title": "Comentarios de nuestros clientes",
+                "description": "Descubre por qué nuestros clientes eligen Transporte del Aeropuerto de Cancún by Go",
+                "items": {
+                    "item1": {
+                        "name": "Juan P.",
+                        "text": "Contraté el servicio de transporte para ir de Cancún a Tulum y quedé impresionado con la puntualidad y profesionalismo del conductor. El vehículo estaba en excelentes condiciones y el viaje fue muy cómodo. Recomendaré este servicio a mis amigos y familiares.",
+                        "imageAlt": "Comentario de nuestro cliente Juan P.",
+                        "imageTitle": "Comentario de nuestro cliente Juan P.",
+                        "stars": "5"
+                    },
+                    "item2": {
+                        "name": "Ana G.",
+                        "text": "Nuestro traslado desde el aeropuerto de Cancún hasta nuestro hotel en Playa del Carmen fue perfecto. El conductor fue muy amable y nos dio excelentes recomendaciones sobre lugares para visitar. Además, el precio fue muy razonable. ¡Excelente servicio!",
+                        "imageAlt": "Comentario de nuestra cliente Ana G.",
+                        "imageTitle": "Comentario de nuestra cliente Ana G.",
+                        "stars": "5"
+                    }
+                }
+            },
+            "pricing": {
+                "title": "Nuestros Servicios de Transporte",
+                "subtitle": "Lista de nuestros servicios de transporte",
+                "cards": {
+                    "luxury": {
+                        "title": "Transporte de Lujo",
+                        "price": "84.00",
+                        "description": "Eleva tu experiencia de traslado con nuestro servicio de transferencia de lujo, llevándote desde y hacia el Aeropuerto de Cancún a tu hotel en Cancún o la Riviera Maya."
+                    },
+                    "private": {
+                        "title": "Transporte Privado",
+                        "price": "29.99",
+                        "description": "Nuestro servicio de transporte y traslado privado es una de las opciones más populares y asequibles en Cancún y la Riviera Maya."
+                    }
+                }
+            }
+        },
+        "private": {
+            "title": "Traslado Privado Aeropuerto Cancún",
+            "includes": {
+                "title": "Todos nuestros Traslados Privados de Cancún incluyen:",
+                "imageAlt": "Traslado Privado Aeropuerto Cancún",
+                "imageTitle": "Traslado Privado Aeropuerto Cancún"
+            },
+            "testimonials": {
+                "title": "Transporte Privado en Cancún - Lo que dicen nuestros clientes",
+                "description": "La opinión de nuestros clientes es lo más importante para nosotros.",
+                "items": {
+                    "item1": {
+                        "name": "Robert D.",
+                        "text": "Contraté el servicio de transporte privado para ir de Cancún a Tulum y quedé impresionado con la puntualidad y profesionalismo del conductor.",
+                        "imageAlt": "Comentario de nuestro cliente Robert D.",
+                        "imageTitle": "Comentario de nuestro cliente Robert D.",
+                        "stars": "5"
+                    }
+                }
+            }
+        }
+    }
+}
+/*
+Usage in Component:
+
+---
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Component requires page prop
+interface Props {
+  page: string;
+}
+const { page } = Astro.props;
+
+// Get page-specific translations
+const title = t(`pages.${page}.testimonials.title`);
+const description = t(`pages.${page}.testimonials.description`);
+const items = t(`pages.${page}.testimonials.items`);
+---
+
+<section>
+  <h2>{title}</h2>
+  <p>{description}</p>
+  {Object.values(items).map((item) => (
+    <div>
+      <p>{item.name}</p>
+      <p>{item.text}</p>
+      <img alt={item.imageAlt} title={item.imageTitle} />
+    </div>
+  ))}
+</section>
+
+// Usage in page
+<Testimonials page="home" />
+
+Key Points:
+✓ Page-specific translations are unique to each page
+✓ Requires page prop to access correct translations
+✓ Same component can show different content on different pages
+✓ Useful for testimonials, pricing, FAQs that vary by page
+*/
