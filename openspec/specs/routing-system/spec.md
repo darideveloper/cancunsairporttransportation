@@ -28,10 +28,11 @@ TBD - created by archiving change upgrade-i18n-routing. Update Purpose after arc
 - Then I see the Spanish Home page
 
 ### Requirement: Route Map Configuration
-- The routing configuration MUST be stored in `src/messages/en.json` and `src/messages/es.json` under a `routes` key.
-- Each page key MUST be identical in both files to ensure correct cross-language mapping.
-#### Scenario: Contact page
-- The "contact" page MUST be defined in the `routes` object for both languages.
+- The routing configuration MUST be stored in a centralized `src/lib/i18n/routes.ts` file.
+- The configuration MUST be an object where keys are `pageKeys` and values are objects containing `en` and `es` paths.
+- The configuration MUST no longer be stored in `src/messages/en.json` or `src/messages/es.json`.
+#### Scenario: Contact page definition
+- The `contact` page MUST be defined in `routes.ts` with both its English and Spanish URL paths.
 
 ### Requirement: Dynamic Utility Linking
 - The `getLocalizedPath(pageKey, targetLang)` utility MUST return the correct URL for any given page and language.
@@ -53,8 +54,7 @@ TBD - created by archiving change upgrade-i18n-routing. Update Purpose after arc
 - Then the `hreflang="en"` link MUST point to `/cancun-airport-taxi`.
 
 ### Requirement: Legacy Link Redirection
-- All legacy URLs using the `/en/` prefix MUST be redirected to the root level equivalent.
-#### Scenario: Visiting an old English link
-- When I visit `/en/about-us`
-- Then I am redirected to `/about-us` with a 301 status.
+- The legacy redirects (e.g. `/en/` -> `/`) MUST be generated dynamically in `astro.config.ts` by importing the configuration from `src/lib/i18n/routes.ts`.
+#### Scenario: Adding a new page
+- When a new page is added to `routes.ts`, its legacy English redirect (`/en/new-page` -> `/new-page`) MUST automatically work without modifying `astro.config.ts`.
 

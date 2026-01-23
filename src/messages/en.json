@@ -1,18 +1,4 @@
 {
-    "routes": {
-        "home": "",
-        "taxi": "cancun-airport-taxi",
-        "akumal": "cancun-to-akumal-shuttle",
-        "tulum": "cancun-to-tulum-shuttle",
-        "destinations": "destinations",
-        "group": "group-transfers-cancun",
-        "luxury": "luxury-transportation-cancun",
-        "private": "private-airport-transfer-cancun",
-        "playa": "transportation-from-cancun-airport-to-playa-del-carmen",
-        "merida": "transportation-from-cancun-to-merida",
-        "terms": "terms-and-conditions",
-        "contact": "contact"
-    },
     "global": {
         "branding": {
             "businessName": "Cancun Airport Transportation"

@@ -1,18 +1,4 @@
 {
-    "routes": {
-        "home": "es",
-        "taxi": "es/taxi-aeropuerto-cancun",
-        "akumal": "es/transporte-cancun-akumal",
-        "tulum": "es/traslado-cancun-tulum",
-        "destinations": "es/destinos",
-        "group": "es/transporte-para-grupos-cancun",
-        "luxury": "es/transporte-de-lujo-cancun",
-        "private": "es/transporte-privado-cancun",
-        "playa": "es/transportacion-cancun-a-playa-del-carmen",
-        "merida": "es/traslado-de-cancun-a-merida",
-        "terms": "es/terminos-y-condiciones",
-        "contact": "es/contacto"
-    },
     "global": {
         "branding": {
             "businessName": "Transporte Cancún Aeropuerto"

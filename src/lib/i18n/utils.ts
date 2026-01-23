@@ -1,4 +1,5 @@
 import { ui, defaultLang } from './ui';
+import { routes } from './routes';
 
 export function getLangFromUrl(url: URL) {
   const [, firstSegment] = url.pathname.split('/');
@@ -7,10 +8,10 @@ export function getLangFromUrl(url: URL) {
 }
 
 export function getLocalizedPath(pageKey: string, lang: keyof typeof ui) {
-  // @ts-ignore - Dynamic access to routes
-  const path = ui[lang]?.routes?.[pageKey];
+  const path = routes[pageKey as keyof typeof routes]?.[lang];
   return path === undefined ? '/' : `/${path}`;
 }
+
 
 export function useTranslations(lang: keyof typeof ui) {
   return function t(key: string, vars?: Record<string, string>) {
