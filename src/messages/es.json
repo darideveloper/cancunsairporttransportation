@@ -1878,6 +1878,53 @@
                     "imageAlt": "Icono de Contáctanos",
                     "imageTitle": "Contáctanos"
                 }
+            },
+            "serviceCards": {
+                "confidence": {
+                    "title": "Viaja con Confianza",
+                    "text": "Viaja con confianza, seguridad y la comodidad que solo nosotros te ofrecemos",
+                    "imageAlt": "Icono de pirámide representando confianza y seguridad",
+                    "imageTitle": "Confianza y Seguridad"
+                },
+                "transportation": {
+                    "title": "Servicio de Transportación",
+                    "text": "Transportación hasta su hotel o destino",
+                    "imageAlt": "Icono de excursión representando servicio de transportación",
+                    "imageTitle": "Servicio de Transportación"
+                },
+                "comfort": {
+                    "title": "Comodidad Completa",
+                    "text": "Comodidad desde el principio hasta el final de tu viaje",
+                    "imageAlt": "Icono de asiento de auto representando comodidad",
+                    "imageTitle": "Comodidad Durante Todo Tu Viaje"
+                }
+            },
+            "testimonials": {
+                "title": "Lo que opinan nuestros clientes",
+                "description": "La opinión de nuestros clientes es lo más importante para nosotros",
+                "items": {
+                    "item1": {
+                        "name": "Miguel R.",
+                        "text": "¡Excelente servicio para nuestro viaje a Tulum! El conductor fue puntual, profesional y el vehículo estaba impecable. El viaje fue cómodo y llegamos seguros a nuestro hotel. Muy recomendable para cualquiera que viaje a los destinos de la Riviera Maya.",
+                        "imageAlt": "Comentario de nuestro cliente Miguel R.",
+                        "imageTitle": "Comentario de nuestro cliente Miguel R.",
+                        "stars": "5"
+                    },
+                    "item2": {
+                        "name": "Lisa K.",
+                        "text": "¡Reservamos transporte a Playa del Carmen y no podríamos estar más felices! El conductor nos dio excelentes consejos sobre restaurantes y playas locales. El precio fue justo y el servicio fue excepcional. Definitivamente los usaremos de nuevo en nuestra próxima visita.",
+                        "imageAlt": "Comentario de nuestro cliente Lisa K.",
+                        "imageTitle": "Comentario de nuestro cliente Lisa K.",
+                        "stars": "5"
+                    },
+                    "item3": {
+                        "name": "James T.",
+                        "text": "Transporte perfecto desde el Aeropuerto de Cancún hasta nuestro resort en la Zona Hotelera. El proceso de reserva fue fácil, el conductor nos estaba esperando en llegadas y el viaje fue tranquilo. ¡Excelente manera de comenzar nuestras vacaciones en Cancún!",
+                        "imageAlt": "Comentario de nuestro cliente James T.",
+                        "imageTitle": "Comentario de nuestro cliente James T.",
+                        "stars": "5"
+                    }
+                }
             }
         },
         "privateAirportTransfer": {

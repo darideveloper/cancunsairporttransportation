@@ -1,0 +1,17 @@
+---
+// Icons
+import { FaCheck } from "react-icons/fa";
+
+// Types
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+
+<li class="rounded-2xl bg-white px-4 py-2">
+  <span class="inline-block text-left">
+    <FaCheck aria-hidden="true" className="text-blue mr-2 inline-block" />
+    {text}
+  </span>
+</li>

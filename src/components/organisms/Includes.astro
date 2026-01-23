@@ -5,9 +5,7 @@ import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 // Components
 import { Image } from "astro:assets";
 import H2 from "../atoms/H2.astro";
-
-// Icons
-import { FaCheck } from "react-icons/fa";
+import CheckListItem from "../atoms/CheckListItem.astro";
 
 // Lang
 const lang = getLangFromUrl(Astro.url);
@@ -56,19 +54,7 @@ const items = t("global.sections.includes.items");
       <ul
         class="flex flex-wrap items-center justify-center gap-2 md:justify-start"
       >
-        {
-          items.map((item: string) => (
-            <li class="rounded-2xl bg-white px-4 py-2">
-              <span class="inline-block text-left">
-                <FaCheck
-                  aria-hidden="true"
-                  className="inline-block mr-2 text-blue"
-                />
-                {item}
-              </span>
-            </li>
-          ))
-        }
+        {items.map((item: string) => <CheckListItem text={item} />)}
       </ul>
     </div>
   </div>

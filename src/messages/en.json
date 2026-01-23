@@ -1922,6 +1922,53 @@
                     "imageAlt": "Contact us Icon",
                     "imageTitle": "Contact us"
                 }
+            },
+            "serviceCards": {
+                "confidence": {
+                    "title": "Travel with Confidence",
+                    "text": "Travel with confidence, security and the comfort that only we can offer you.",
+                    "imageAlt": "Pyramid icon representing confidence and security",
+                    "imageTitle": "Confidence and Security"
+                },
+                "transportation": {
+                    "title": "Transportation Service",
+                    "text": "Transportation to your hotel or destination",
+                    "imageAlt": "Excursion icon representing transportation service",
+                    "imageTitle": "Transportation Service"
+                },
+                "comfort": {
+                    "title": "Complete Comfort",
+                    "text": "Comfort from the beginning to the end of your trip",
+                    "imageAlt": "Car seat icon representing comfort",
+                    "imageTitle": "Comfort Throughout Your Journey"
+                }
+            },
+            "testimonials": {
+                "title": "What our customers say",
+                "description": "The opinion of our customers is the most important thing for us",
+                "items": {
+                    "item1": {
+                        "name": "Miguel R.",
+                        "text": "Excellent service for our trip to Tulum! The driver was punctual, professional, and the vehicle was spotless. The journey was comfortable and we arrived safely at our hotel. Highly recommend for anyone traveling to the Riviera Maya destinations.",
+                        "imageAlt": "Comment from our customer Miguel R.",
+                        "imageTitle": "Comment from our customer Miguel R.",
+                        "stars": "5"
+                    },
+                    "item2": {
+                        "name": "Lisa K.",
+                        "text": "We booked transportation to Playa del Carmen and couldn't be happier! The driver gave us great tips about local restaurants and beaches. The price was fair and the service was outstanding. Will definitely use them again for our next visit.",
+                        "imageAlt": "Comment from our customer Lisa K.",
+                        "imageTitle": "Comment from our customer Lisa K.",
+                        "stars": "5"
+                    },
+                    "item3": {
+                        "name": "James T.",
+                        "text": "Perfect transportation from Cancun Airport to our resort in the Hotel Zone. The booking process was easy, the driver was waiting for us at arrivals, and the ride was smooth. Great way to start our vacation in Cancun!",
+                        "imageAlt": "Comment from our customer James T.",
+                        "imageTitle": "Comment from our customer James T.",
+                        "stars": "5"
+                    }
+                }
             }
         }
     }
