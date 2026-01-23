@@ -85,7 +85,7 @@ export default function BookingForm({
   return (
     <section
       id="booking-form"
-      className={`container flex w-full justify-center ${className} px-4! sm:px-8!`}
+      className={`container flex w-full justify-center ${className} px-4 sm:px-16`}
     >
       <form className="bg-accent w-full rounded-xl px-8 py-6">
         {title && (

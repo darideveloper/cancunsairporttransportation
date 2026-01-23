@@ -501,6 +501,20 @@
                     "Vehicles in content maintenance",
                     "24-Hour Service"
                 ]
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserve today",
+                    "text": "Live the magic of the **Riviera Maya** without worries.",
+                    "imageAlt": "Reserve today Icon",
+                    "imageTitle": "Reserve today"
+                },
+                "contact": {
+                    "title": "Contact us if you have problems",
+                    "text": "If you don't find your destination in the list, you can contact us and a consultant will gladly help you.",
+                    "imageAlt": "Contact us Icon",
+                    "imageTitle": "Contact us"
+                }
             }
         },
         "ui": {
@@ -665,6 +679,20 @@
                         "question": "What should I do if my flight is delayed or canceled?",
                         "answer": "If your flight is delayed or canceled, it’s crucial to inform us as soon as possible to reschedule your transfer. We can adjust the service, but we ask that you contact us promptly."
                     }
+                }
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserve today",
+                    "text": "Live the magic of the **Riviera Maya** without worries.",
+                    "imageAlt": "Reserve today Icon",
+                    "imageTitle": "Reserve today"
+                },
+                "contact": {
+                    "title": "Contact us if you have problems",
+                    "text": "If you don't find your destination in the list, you can contact us and a consultant will gladly help you.",
+                    "imageAlt": "Contact us Icon",
+                    "imageTitle": "Contact us"
                 }
             }
         },

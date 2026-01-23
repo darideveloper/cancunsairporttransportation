@@ -501,6 +501,20 @@
                     "Vehículos en mantenimiento de contenido",
                     "Servicio 24 horas"
                 ]
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserva hoy",
+                    "text": "Vive la magia de la **Riviera Maya** sin preocupaciones.",
+                    "imageAlt": "Icono de Reserva hoy",
+                    "imageTitle": "Reserva hoy"
+                },
+                "contact": {
+                    "title": "Contáctanos si tienes problemas",
+                    "text": "Si no encuentras tu destino en la lista, puedes contactarnos y con gusto un asesor te ayudará.",
+                    "imageAlt": "Icono de Contáctanos",
+                    "imageTitle": "Contáctanos"
+                }
             }
         },
         "ui": {
@@ -661,6 +675,20 @@
                         "question": "¿Qué debo hacer si mi vuelo se retrasa o cancela?",
                         "answer": "Si tu vuelo se retrasa o cancela, es crucial que nos informes lo antes posible para reprogramar su traslado. Podemos ajustar el servicio, pero le pedimos que se ponga en contacto con nosotros lo antes posible."
                     }
+                }
+            },
+            "highlights": {
+                "reserve": {
+                    "title": "Reserva hoy",
+                    "text": "Vive la magia de la **Riviera Maya** sin preocupaciones.",
+                    "imageAlt": "Icono de Reserva hoy",
+                    "imageTitle": "Reserva hoy"
+                },
+                "contact": {
+                    "title": "Contáctanos si tienes problemas",
+                    "text": "Si no encuentras tu destino en la lista, puedes contactarnos y con gusto un asesor te ayudará.",
+                    "imageAlt": "Icono de Contáctanos",
+                    "imageTitle": "Contáctanos"
                 }
             }
         },

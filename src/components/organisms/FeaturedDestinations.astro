@@ -7,15 +7,12 @@ import { marked } from "marked";
 import SectionHeading from "../../components/molecules/SectionHeading.astro";
 import PricingCard from "../../components/molecules/PricingCard.astro";
 import ButtonCta from "../../components/atoms/ButtonCta.astro";
-import BasicImageCard from "../../components/molecules/BasicImageCard.astro";
 import { Image } from "astro:assets";
 
 // Images
 import tulumImg from "../../assets/images/destinations/tulum.webp";
 import playaImg from "../../assets/images/destinations/playa-del-carmen.webp";
 import cancunImg from "../../assets/images/destinations/cancun.webp";
-import bookNowImg from "../../assets/images/destinations/book-now.png";
-import customerServiceImg from "../../assets/images/destinations/customer-service.png";
 
 // Props
 interface Props {
@@ -87,7 +84,8 @@ const destinations = [
             <div
               slot="content"
               set:html={marked.parse(
-                t(`pages.${page}.destinations.cards.${dest.id}.description`),
+                t(`pages.${page}.destinations.cards.${dest.id}.description`) ||
+                  "",
               )}
               class="markdown text-justify text-sm"
             />
@@ -96,36 +94,6 @@ const destinations = [
       ))
     }
   </ul>
-
-  <div
-    class="destinations-highlights mt-12 grid grid-cols-1 gap-8 md:grid-cols-2"
-  >
-    <BasicImageCard
-      title={t(`pages.${page}.highlights.reserve.title`)}
-      image={{
-        src: bookNowImg,
-        alt: t(`pages.${page}.highlights.reserve.imageAlt`),
-        title: t(`pages.${page}.highlights.reserve.imageTitle`),
-      }}
-    >
-      <div
-        set:html={marked.parse(t(`pages.${page}.highlights.reserve.text`))}
-      />
-    </BasicImageCard>
-
-    <BasicImageCard
-      title={t(`pages.${page}.highlights.contact.title`)}
-      image={{
-        src: customerServiceImg,
-        alt: t(`pages.${page}.highlights.contact.imageAlt`),
-        title: t(`pages.${page}.highlights.contact.imageTitle`),
-      }}
-    >
-      <div
-        set:html={marked.parse(t(`pages.${page}.highlights.contact.text`))}
-      />
-    </BasicImageCard>
-  </div>
 
   <div class="bottom mt-4 scale-90 text-center">
     <ButtonCta
