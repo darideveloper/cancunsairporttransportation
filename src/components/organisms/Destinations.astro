@@ -14,6 +14,8 @@ import { Image } from "astro:assets";
 import tulumImg from "../../assets/images/destinations/tulum.webp";
 import playaImg from "../../assets/images/destinations/playa-del-carmen.webp";
 import cancunImg from "../../assets/images/destinations/cancun.webp";
+import bookNowImg from "../../assets/images/destinations/book-now.png";
+import customerServiceImg from "../../assets/images/destinations/customer-service.png";
 
 // Props
 interface Props {
@@ -101,7 +103,7 @@ const destinations = [
     <BasicImageCard
       title={t(`pages.${page}.highlights.reserve.title`)}
       image={{
-        src: "/assets/img/destinations/book-now.png",
+        src: bookNowImg,
         alt: t(`pages.${page}.highlights.reserve.imageAlt`),
         title: t(`pages.${page}.highlights.reserve.imageTitle`),
       }}
@@ -114,7 +116,7 @@ const destinations = [
     <BasicImageCard
       title={t(`pages.${page}.highlights.contact.title`)}
       image={{
-        src: "/assets/img/destinations/customer-service.png",
+        src: customerServiceImg,
         alt: t(`pages.${page}.highlights.contact.imageAlt`),
         title: t(`pages.${page}.highlights.contact.imageTitle`),
       }}
