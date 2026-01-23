@@ -1,10 +1,16 @@
 ---
 // Components
-import TopBar from '../molecules/TopBar.astro'
-import MenuBar from '../molecules/MenuBar.astro'
+import TopBar from "../molecules/TopBar.astro";
+import MenuBar from "../molecules/MenuBar.astro";
+
+interface Props {
+  pageKey?: string;
+}
+
+const { pageKey } = Astro.props;
 ---
 
 <header>
-  <TopBar />
-  <MenuBar />
+  <TopBar pageKey={pageKey} />
+  <MenuBar pageKey={pageKey} />
 </header>

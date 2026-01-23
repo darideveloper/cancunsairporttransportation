@@ -1,0 +1,31 @@
+---
+import LegalLayout from "../../layouts/LegalLayout.astro";
+import { getCollection, render } from "astro:content";
+
+interface Props {
+  lang: "en" | "es";
+  pageKey: string;
+}
+
+const { lang, pageKey } = Astro.props;
+
+const legalEntries = await getCollection("legal");
+const entry = legalEntries.find((e) => {
+  const cleanId = e.id.replace(/\.[^/.]+$/, "");
+  return cleanId === `${lang}/terms-and-conditions`;
+});
+
+if (!entry) {
+  throw new Error(`Terms and conditions not found for language: ${lang}`);
+}
+
+const { Content } = await render(entry);
+---
+
+<LegalLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  pageKey={pageKey}
+>
+  <Content />
+</LegalLayout>

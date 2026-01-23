@@ -1,6 +1,10 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getLocalizedPath,
+} from "../../lib/i18n/utils";
 
 // Icons
 import { TiThMenu as MenuIcon } from "react-icons/ti";
@@ -15,6 +19,12 @@ import NavLink from "../atoms/NavLink.astro";
 // Styles
 import { MOBILE_MENU_STYLES as MOBILE_STYLES } from "../../styles/menu";
 
+interface Props {
+  pageKey?: string;
+}
+
+const { pageKey } = Astro.props;
+
 // Lang
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -28,7 +38,12 @@ const contactPhones = [
   { link: "tel:+19299991258", label: "+1 (929) 999-1258" },
 ];
 
-const translateLink = lang === "es" ? "/en" : "/es";
+const targetLang = lang === "es" ? "en" : "es";
+const translateLink = pageKey
+  ? getLocalizedPath(pageKey, targetLang)
+  : targetLang === "es"
+    ? "/es"
+    : "/";
 ---
 
 <div

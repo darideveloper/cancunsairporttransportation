@@ -7,7 +7,7 @@ import { useTranslations } from "../../lib/i18n/utils";
 import { getStaticPathsLangs } from "../../lib/utils";
 
 // i18n
-export const getStaticPaths = getStaticPathsLangs;
+// export const getStaticPaths = getStaticPathsLangs;
 
 // Components
 import PageSEO from "../../components/utils/PageSEO.astro";
@@ -31,15 +31,16 @@ const page = "taxi";
 // Props
 interface Props {
   lang: "en" | "es";
+  pageKey: string;
 }
 // Get language from params or props
-const { lang } = Astro.params as { lang: "en" | "es" };
+const { lang, pageKey } = Astro.props;
 
 // Tranlation texts
 const t = useTranslations(lang);
 ---
 
-<Layout preloadImage={homeBannerImg.src}>
+<Layout preloadImage={homeBannerImg.src} pageKey={pageKey}>
   <!-- Page SEO -->
   <PageSEO currentPage={page} slot="seo" />
 

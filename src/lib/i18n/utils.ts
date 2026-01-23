@@ -1,13 +1,15 @@
 import { ui, defaultLang } from './ui';
 
 export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split('/');
-  // Handle root path as English
-  if (url.pathname === '/' || !lang) {
-    return defaultLang;
-  }
-  if (lang in ui) return lang as keyof typeof ui;
-  return defaultLang;
+  const [, firstSegment] = url.pathname.split('/');
+  if (firstSegment === 'es') return 'es';
+  return 'en';
+}
+
+export function getLocalizedPath(pageKey: string, lang: keyof typeof ui) {
+  // @ts-ignore - Dynamic access to routes
+  const path = ui[lang]?.routes?.[pageKey];
+  return path === undefined ? '/' : `/${path}`;
 }
 
 export function useTranslations(lang: keyof typeof ui) {

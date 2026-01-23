@@ -19,7 +19,11 @@ const {
 } = Astro.props as Props;
 
 // Libs
-import { useTranslations, getLangFromUrl } from "../../../lib/i18n/utils";
+import {
+  useTranslations,
+  getLangFromUrl,
+  getLocalizedPath,
+} from "../../../lib/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -55,16 +59,14 @@ if (currentPage == "home") {
   pageTitle = pageName;
 }
 
-// Page slug — we assume `currentPage` is the slug, e.g., 'gallery'
-const pageSlug = currentPage === "home" ? "" : `/${currentPage}`;
-
 // Canonical URL for this language
-const canonicalUrl = `${SITE_URL}/${lang}${pageSlug}`;
+const canonicalPath = getLocalizedPath(currentPage, lang);
+const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 
 // Alternate URLs
 const alternateUrls = {
-  en: `${SITE_URL}/en${pageSlug}`,
-  es: `${SITE_URL}/es${pageSlug}`,
+  en: `${SITE_URL}${getLocalizedPath(currentPage, "en")}`,
+  es: `${SITE_URL}${getLocalizedPath(currentPage, "es")}`,
 };
 
 // Generate data

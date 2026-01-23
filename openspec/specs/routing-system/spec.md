@@ -1,7 +1,8 @@
-# Spec: Localized Routing System
+# routing-system Specification
 
-## MODIFIED Requirements
-
+## Purpose
+TBD - created by archiving change upgrade-i18n-routing. Update Purpose after archive.
+## Requirements
 ### Requirement: Clean English URLs
 - English pages MUST be served from the root path without a `/en/` prefix.
 #### Scenario: Accessing the about page in English
@@ -64,3 +65,4 @@
 #### Scenario: Visiting an old English link
 - When I visit `/en/about-us`
 - Then I am redirected to `/about-us` with a 301 status.
+

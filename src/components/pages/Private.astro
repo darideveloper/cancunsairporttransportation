@@ -7,7 +7,7 @@ import { useTranslations } from "../../lib/i18n/utils";
 import { getStaticPathsLangs } from "../../lib/utils";
 
 // i18n
-export const getStaticPaths = getStaticPathsLangs;
+// export const getStaticPaths = getStaticPathsLangs;
 
 // Components
 import PageSEO from "../../components/utils/PageSEO.astro";
@@ -20,26 +20,27 @@ import PrivateDetails from "../../components/organisms/PrivateDetails.astro";
 
 // Images
 import homeBannerImg from "../../assets/images/home-banner.webp";
-import luxuryImg from "../../assets/images/vehicles/luxury.webp";
-import luxuryClient1Img from "../../assets/images/clients/luxury-1.webp";
-import luxuryClient2Img from "../../assets/images/clients/luxury-2.webp";
-import luxuryClient3Img from "../../assets/images/clients/luxury-3.webp";
+import standardImg from "../../assets/images/vehicles/standard.webp";
+import privateClient1Img from "../../assets/images/clients/private-1.webp";
+import privateClient2Img from "../../assets/images/clients/private-2.webp";
+import privateClient3Img from "../../assets/images/clients/private-3.webp";
 
 // Page data
-const page = "luxury";
+const page = "private";
 
 // Props
 interface Props {
   lang: "en" | "es";
+  pageKey: string;
 }
 // Get language from params or props
-const { lang } = Astro.params as { lang: "en" | "es" };
+const { lang, pageKey } = Astro.props;
 
 // Tranlation texts
 const t = useTranslations(lang);
 ---
 
-<Layout preloadImage={homeBannerImg.src}>
+<Layout preloadImage={homeBannerImg.src} pageKey={pageKey}>
   <!-- Page SEO -->
   <PageSEO currentPage={page} slot="seo" />
 
@@ -55,7 +56,7 @@ const t = useTranslations(lang);
   </div>
 
   <!-- Service Includes -->
-  <Includes page={page} image={luxuryImg} />
+  <Includes page={page} image={standardImg} />
 
   <!-- Private Details -->
   <PrivateDetails page={page} />
@@ -63,7 +64,7 @@ const t = useTranslations(lang);
   <!-- Clients testimonials -->
   <Testimonials
     page={page}
-    images={[luxuryClient1Img, luxuryClient2Img, luxuryClient3Img]}
+    images={[privateClient1Img, privateClient2Img, privateClient3Img]}
   />
 
   <!-- FAQs -->
