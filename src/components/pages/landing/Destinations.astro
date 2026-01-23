@@ -61,14 +61,12 @@ const destinations = [
   <!-- Page SEO -->
   <PageSEO currentPage={page} slot="seo" />
 
-  <section
-    class="debug container flex flex-col-reverse gap-6 md:flex-row md:gap-4"
-  >
+  <section class="container flex flex-col-reverse gap-6 md:flex-row md:gap-4">
     <!-- Content -->
     <div class="content md:w-1/2 lg:w-2/3">
       <!-- Heading -->
       <div class="">
-        <p class="">
+        <p class="mb-4">
           {t("pages.destinations.tagline")}
         </p>
         <SectionHeading title={t("pages.destinations.title")}>
@@ -79,8 +77,23 @@ const destinations = [
         </SectionHeading>
       </div>
 
+      <BasicImageCard
+        title={t(`global.sections.highlights.reserve.title`)}
+        image={{
+          src: bookNowImg,
+          alt: t(`global.sections.highlights.reserve.imageAlt`),
+          title: t(`global.sections.highlights.reserve.imageTitle`),
+        }}
+        class="mt-6"
+      >
+        <div
+          set:html={marked.parse(t(`pages.${page}.highlights.reserve.text`))}
+          class=""
+        />
+      </BasicImageCard>
+
       <!-- Destinations -->
-      <ul class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
+      <ul class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
         {
           destinations.map((dest) => (
             <li>
@@ -125,20 +138,6 @@ const destinations = [
       <!-- Highlights -->
       <div class="mt-12">
         <BasicImageCard
-          title={t(`global.sections.highlights.reserve.title`)}
-          image={{
-            src: bookNowImg,
-            alt: t(`global.sections.highlights.reserve.imageAlt`),
-            title: t(`global.sections.highlights.reserve.imageTitle`),
-          }}
-        >
-          <div
-            set:html={marked.parse(t(`pages.${page}.highlights.reserve.text`))}
-            class=""
-          />
-        </BasicImageCard>
-
-        <BasicImageCard
           title={t(`global.sections.highlights.contact.title`)}
           image={{
             src: customerServiceImg,
@@ -155,14 +154,14 @@ const destinations = [
     </div>
 
     <!-- Sidebar -->
-    <aside class="debug @container -mx-6 md:mx-0 md:w-1/2 lg:w-1/3">
+    <aside class="@container -mx-6 md:mx-0 md:w-1/2 lg:w-1/3">
       <!-- Form -->
       <BookingForm
         translations={t("global.booking")}
         defaultFrom="cun"
         defaultTo="merida"
         client:idle
-        className="debug md:px-0!"
+        className="md:px-0!"
       />
     </aside>
   </section>
