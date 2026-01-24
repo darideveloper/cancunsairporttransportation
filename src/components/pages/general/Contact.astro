@@ -19,6 +19,7 @@ import {
 import Input from "../../atoms/form/Input.astro";
 import Textarea from "../../atoms/form/Textarea.astro";
 import ButtonCta from "../../atoms/ButtonCta.astro";
+import GoogleMap from "../../atoms/GoogleMap.astro";
 
 interface Props {
   lang: "en" | "es";
@@ -174,7 +175,7 @@ const formFields = [
     </div>
   </div>
 
-  <section class="container mb-24">
+  <section class="container mt-12">
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
       {
         contactCardsList.map((card) => (
@@ -190,4 +191,10 @@ const formFields = [
       }
     </div>
   </section>
+
+  <div
+    class="border-gray-light container my-12 h-[450px] w-full overflow-hidden rounded-2xl border bg-white shadow-sm"
+  >
+    <GoogleMap />
+  </div>
 </Layout>
