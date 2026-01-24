@@ -1909,6 +1909,10 @@
                     }
                 }
             },
+            "checklist": {
+                "affordable": "Affordable travel",
+                "lowRates": "Low rates"
+            },
             "highlights": {
                 "reserve": {
                     "title": "Reserve today",

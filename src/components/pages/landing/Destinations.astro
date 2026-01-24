@@ -18,6 +18,7 @@ import SectionHeading from "../../../components/molecules/SectionHeading.astro";
 import PricingCard from "../../../components/molecules/PricingCard.astro";
 import BasicImageCard from "../../../components/molecules/BasicImageCard.astro";
 import Testimonials from "../../../components/organisms/Testimonials.astro";
+import CheckListItem from "../../../components/atoms/CheckListItem.astro";
 
 // Images
 import tulumImg from "../../../assets/images/destinations/tulum.webp";
@@ -156,6 +157,13 @@ const destinations = [
           class=""
         />
       </BasicImageCard>
+
+      <!-- Testimonials -->
+      <Testimonials
+        page="destinations"
+        images={[destinationsClient1Img, destinationsClient2Img]}
+        class="md:hidden lg:block"
+      />
     </div>
 
     <!-- Sidebar -->
@@ -182,7 +190,16 @@ const destinations = [
         <p>{t(`pages.${page}.serviceCards.confidence.text`)}</p>
       </BasicImageCard>
 
-      <!-- Check list items -->
+      <ul class="grid grid-cols-2 gap-4 sm:gap-1">
+        <CheckListItem
+          text={t(`pages.${page}.checklist.affordable`)}
+          class="flex justify-center"
+        />
+        <CheckListItem
+          text={t(`pages.${page}.checklist.lowRates`)}
+          class="flex justify-center"
+        />
+      </ul>
 
       <BasicImageCard
         title={t(`pages.${page}.serviceCards.transportation.title`)}
@@ -207,9 +224,4 @@ const destinations = [
       </BasicImageCard>
     </aside>
   </section>
-  <!-- Testimonials -->
-  <Testimonials
-    page="destinations"
-    images={[destinationsClient1Img, destinationsClient2Img]}
-  />
 </Layout>
