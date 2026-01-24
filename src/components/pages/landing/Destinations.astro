@@ -31,7 +31,6 @@ import carSeatImg from "../../../assets/images/destinations/car-seat.png";
 import homeBannerImg from "../../../assets/images/home-banner.webp";
 import destinationsClient1Img from "../../../assets/images/clients/destinations-client-1.webp";
 import destinationsClient2Img from "../../../assets/images/clients/destinations-client-2.webp";
-import destinationsClient3Img from "../../../assets/images/clients/destinations-client-3.webp";
 
 // Page data
 const page = "destinations";
@@ -157,16 +156,6 @@ const destinations = [
           class=""
         />
       </BasicImageCard>
-
-      <!-- Testimonials -->
-      <Testimonials
-        page="destinations"
-        images={[
-          destinationsClient1Img,
-          destinationsClient2Img,
-          destinationsClient3Img,
-        ]}
-      />
     </div>
 
     <!-- Sidebar -->
@@ -192,6 +181,9 @@ const destinations = [
       >
         <p>{t(`pages.${page}.serviceCards.confidence.text`)}</p>
       </BasicImageCard>
+
+      <!-- Check list items -->
+
       <BasicImageCard
         title={t(`pages.${page}.serviceCards.transportation.title`)}
         image={{
@@ -215,4 +207,9 @@ const destinations = [
       </BasicImageCard>
     </aside>
   </section>
+  <!-- Testimonials -->
+  <Testimonials
+    page="destinations"
+    images={[destinationsClient1Img, destinationsClient2Img]}
+  />
 </Layout>

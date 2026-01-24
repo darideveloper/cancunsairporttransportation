@@ -6,9 +6,6 @@ import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 import H2 from "../atoms/H2.astro";
 import Testimonial from "../molecules/Testimonial.astro";
 
-// Images
-// Images are passed via props
-
 // Lang
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,13 +14,22 @@ const t = useTranslations(lang);
 interface Props {
   page?: string;
   images: ImageMetadata[];
+  count?: number;
 }
-const { page, images } = Astro.props;
+const { page, images, count: explicitCount } = Astro.props;
 
 // Translation path
 const basePath = page
   ? `pages.${page}.testimonials`
   : "pages.home.testimonials";
+
+// Get testimonials items from translations to determine count if not provided
+const testimonialsItems = t(`${basePath}.items`);
+const translationCount = testimonialsItems
+  ? Object.keys(testimonialsItems).length
+  : 0;
+
+const count = explicitCount || translationCount || 3;
 
 // Date
 const today = new Date();
@@ -31,25 +37,19 @@ const month = String(today.getMonth() + 1).padStart(2, "0");
 const year = today.getFullYear();
 const currentDate = `${month}/${year}`;
 
-const currentImages = images;
+const testimonials = Array.from({ length: count }, (_, i) => ({
+  key: `item${i + 1}`,
+  image: images[i % images.length],
+  date: currentDate,
+}));
 
-const testimonials = [
+const gridClass =
   {
-    key: "item1",
-    image: currentImages[0],
-    date: currentDate,
-  },
-  {
-    key: "item2",
-    image: currentImages[1],
-    date: currentDate,
-  },
-  {
-    key: "item3",
-    image: currentImages[2],
-    date: currentDate,
-  },
-];
+    1: "md:grid-cols-1 max-w-xl mx-auto",
+    2: "md:grid-cols-2 max-w-4xl mx-auto",
+    3: "md:grid-cols-3",
+    4: "md:grid-cols-2 lg:grid-cols-4",
+  }[count] || "md:grid-cols-3";
 
 // JSON-LD Structured Data
 const jsonLd = {
@@ -91,7 +91,7 @@ const jsonLd = {
       </p>
     </div>
 
-    <div class="grid grid-cols-1 gap-7 md:grid-cols-3">
+    <div class:list={["grid grid-cols-1 gap-7", gridClass]}>
       {
         testimonials.map((item) => (
           <Testimonial
