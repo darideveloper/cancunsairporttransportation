@@ -6,14 +6,15 @@ interface Props {
   src: any;
   alt: string;
   title: string;
+  class?: string;
 }
 
-const { src, alt, title } = Astro.props;
+const { src, alt, title, class: className } = Astro.props;
 ---
 
 <section
   id="banner-image"
-  class="relative -z-10 mx-auto h-[500px] w-[98%] overflow-hidden rounded-xl"
+  class={`relative -z-10 mx-auto h-[500px] w-[98%] overflow-hidden rounded-xl ${className}`}
 >
   <Image
     src={src}
