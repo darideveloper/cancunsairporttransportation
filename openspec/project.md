@@ -21,6 +21,7 @@ Cancun Airport Transportation is a specialized booking platform for private shut
 - **Styling**:
   - Always use Tailwind CSS utility classes.
   - **Forbidden**: Do NOT use `<style>` blocks in Astro/React components.
+  - **Class Handling**: Never use Astro `class:list` for complex or conditional classes. Always use `clsx` for consistency.
   - **Core Variables** (Available as Tailwind utilities):
     - Colors: `text/bg/border-accent`, `*-black`, `*-gray`, `*-gray-light`, `*-gray-dark`
     - Fonts: `font-title`, `font-sans`

@@ -64,6 +64,7 @@ Run through this checklist for every component you validate.
 
 - [ ] **Hardcoded Strings**: Are all user-facing strings extracted to translation files? (Check `useTranslations`).
 - [ ] **Classes**: Are utility classes or styles reused? Avoid inline styles where possible.
+- [ ] **Conditional Classes**: Is `clsx` used for conditional or complex classes? (Avoid using `class:list`).
 - [ ] **Logic**: Is complex logic moved to utility functions or a separate script file?
 - [ ] **Imports**: Are unused imports removed?
 - [ ] **Props**: Are component props typed correctly (TypeScript interfaces)?
