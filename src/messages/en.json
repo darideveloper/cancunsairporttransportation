@@ -1909,6 +1909,10 @@
                     }
                 }
             },
+            "checklist": {
+                "affordable": "Affordable travel",
+                "lowRates": "Low rates"
+            },
             "highlights": {
                 "reserve": {
                     "title": "Reserve today",
@@ -1921,6 +1925,46 @@
                     "text": "If you don't find your destination in the list, you can contact us and a consultant will gladly help you.",
                     "imageAlt": "Contact us Icon",
                     "imageTitle": "Contact us"
+                }
+            },
+            "serviceCards": {
+                "confidence": {
+                    "title": "Travel with Confidence",
+                    "text": "Travel with confidence, security and the comfort that only we can offer you.",
+                    "imageAlt": "Pyramid icon representing confidence and security",
+                    "imageTitle": "Confidence and Security"
+                },
+                "transportation": {
+                    "title": "Transportation Service",
+                    "text": "Transportation to your hotel or destination",
+                    "imageAlt": "Excursion icon representing transportation service",
+                    "imageTitle": "Transportation Service"
+                },
+                "comfort": {
+                    "title": "Complete Comfort",
+                    "text": "Comfort from the beginning to the end of your trip",
+                    "imageAlt": "Car seat icon representing comfort",
+                    "imageTitle": "Comfort Throughout Your Journey"
+                }
+            },
+            "testimonials": {
+                "title": "What our customers say",
+                "description": "The opinion of our customers is the most important thing for us",
+                "items": {
+                    "item1": {
+                        "name": "Miguel R.",
+                        "text": "Excellent service for our trip to Tulum! The driver was punctual, professional, and the vehicle was spotless. The journey was comfortable and we arrived safely at our hotel. Highly recommend for anyone traveling to the Riviera Maya destinations.",
+                        "imageAlt": "Comment from our customer Miguel R.",
+                        "imageTitle": "Comment from our customer Miguel R.",
+                        "stars": "5"
+                    },
+                    "item2": {
+                        "name": "Lisa K.",
+                        "text": "We booked transportation to Playa del Carmen and couldn't be happier! The driver gave us great tips about local restaurants and beaches. The price was fair and the service was outstanding. Will definitely use them again for our next visit.",
+                        "imageAlt": "Comment from our customer Lisa K.",
+                        "imageTitle": "Comment from our customer Lisa K.",
+                        "stars": "5"
+                    }
                 }
             }
         }

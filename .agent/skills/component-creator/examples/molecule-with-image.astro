@@ -1,0 +1,79 @@
+---
+// Example: Molecule Component with Translations
+// File: BasicImageCard.astro
+// Purpose: Displays a card with an image and title
+// Type: Molecule (combination of atoms)
+---
+
+// Libs
+import { Image } from "astro:assets";
+
+// Props
+interface Props {
+  title: string;
+  image: {
+    src: ImageMetadata;
+    alt: string;
+    title?: string;
+  };
+  class?: string;
+}
+
+const { title, image, class: className } = Astro.props;
+
+// Generate unique ID from title
+const id = `image-card-${title
+  .toLowerCase()
+  .trim()
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-+|-+$/g, "")}`;
+---
+
+<article
+  class={`${className} flex items-center justify-center gap-4 border-gray/10 rounded-md border-2 px-6 py-4`}
+  aria-labelledby={id}
+>
+  <div class="">
+    <Image
+      src={image.src}
+      alt={image.alt}
+      title={image.title}
+      width={64}
+      height={64}
+      class=""
+    />
+  </div>
+
+  <div class="">
+    <h3 class="text-blue! text-xl font-bold" id={id}>
+      {title}
+    </h3>
+    <div class="">
+      <slot />
+    </div>
+  </div>
+</article>
+
+<!--
+SEO Best Practices Demonstrated:
+✓ Semantic HTML: Uses <article> for self-contained content
+✓ Astro Image: Uses Astro's Image component with proper attributes
+✓ ARIA: aria-labelledby links article to heading
+✓ Unique ID: Generated from title for accessibility
+✓ Heading: Uses h3 for card title (assuming h2 is section title)
+✓ Slot: Allows flexible content insertion
+✓ Props: Accepts image metadata and title
+✓ Lazy Loading: Can add loading="lazy" for below-fold images
+
+Usage Example:
+<BasicImageCard
+  title="Cancun Hotel Zone"
+  image={{
+    src: hotelZoneImage,
+    alt: "Beautiful view of Cancun Hotel Zone",
+    title: "Cancun Hotel Zone"
+  }}
+>
+  <p>Description of the hotel zone...</p>
+</BasicImageCard>
+-->

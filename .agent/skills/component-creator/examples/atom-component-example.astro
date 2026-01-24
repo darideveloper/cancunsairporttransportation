@@ -1,0 +1,39 @@
+---
+// Example: Simple Atom Component
+// File: CheckListItem.astro
+// Purpose: Displays a single checklist item with an icon
+// Type: Atom (basic building block)
+---
+
+// Icons
+import { FaCheck } from "react-icons/fa";
+
+// Types
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+
+<li class="rounded-2xl bg-white px-4 py-2">
+  <span class="inline-block text-left">
+    <FaCheck aria-hidden="true" className="text-blue mr-2 inline-block" />
+    {text}
+  </span>
+</li>
+
+<!--
+SEO Best Practices Demonstrated:
+✓ Semantic HTML: Uses <li> for list item
+✓ ARIA: aria-hidden="true" on decorative icon
+✓ ReactIcons: Properly imported and used with className
+✓ Props: Accepts text as a prop for reusability
+✓ Accessibility: Icon is decorative, text is readable
+
+Usage Example:
+<ul>
+  <CheckListItem text="Highly Trained Staff" />
+  <CheckListItem text="Flight Monitoring" />
+  <CheckListItem text="Travel Insurance" />
+</ul>
+-->

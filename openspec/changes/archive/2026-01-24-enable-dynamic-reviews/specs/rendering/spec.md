@@ -1,15 +1,6 @@
-# rendering Specification
+# Rendering Requirements
 
-## Purpose
-TBD - created by archiving change optimize-web-vitals. Update Purpose after archive.
-## Requirements
-### Requirement: Dependency Freshness
-The system SHALL use the latest stable patch versions of core rendering libraries to mitigate known performance bugs like forced reflows.
-
-#### Scenario: Update Astro
-- **Given** the `package.json`
-- **When** the project dependencies are checked
-- **Then** `astro` should be updated to the latest 5.x patch release to include `ClientRouter` fixes.
+## ADDED Requirements
 
 ### Requirement: Dynamic Review Count
 The number of testimonials rendered MUST be controllable via component props, defaulting to 3 if unspecified.
@@ -25,4 +16,3 @@ And there are corresponding translations for items 1 through 5
 When it renders the `Testimonials` section
 Then it should display 5 reviews
 And the images should cycle if fewer than 5 images are provided.
-

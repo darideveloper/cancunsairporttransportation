@@ -17,6 +17,8 @@ import BookingForm from "../../../components/organisms/BookingForm";
 import SectionHeading from "../../../components/molecules/SectionHeading.astro";
 import PricingCard from "../../../components/molecules/PricingCard.astro";
 import BasicImageCard from "../../../components/molecules/BasicImageCard.astro";
+import Testimonials from "../../../components/organisms/Testimonials.astro";
+import CheckListItem from "../../../components/atoms/CheckListItem.astro";
 
 // Images
 import tulumImg from "../../../assets/images/destinations/tulum.webp";
@@ -24,7 +26,12 @@ import playaImg from "../../../assets/images/destinations/playa-del-carmen.webp"
 import cancunImg from "../../../assets/images/destinations/cancun.webp";
 import bookNowImg from "../../../assets/images/destinations/book-now.png";
 import customerServiceImg from "../../../assets/images/destinations/customer-service.png";
+import pyramidImg from "../../../assets/images/destinations/pyramid.png";
+import excursionImg from "../../../assets/images/destinations/excursion.png";
+import carSeatImg from "../../../assets/images/destinations/car-seat.png";
 import homeBannerImg from "../../../assets/images/home-banner.webp";
+import destinationsClient1Img from "../../../assets/images/clients/destinations-client-1.webp";
+import destinationsClient2Img from "../../../assets/images/clients/destinations-client-2.webp";
 
 // Page data
 const page = "destinations";
@@ -136,25 +143,33 @@ const destinations = [
       </ul>
 
       <!-- Highlights -->
-      <div class="mt-12">
-        <BasicImageCard
-          title={t(`global.sections.highlights.contact.title`)}
-          image={{
-            src: customerServiceImg,
-            alt: t(`global.sections.highlights.contact.imageAlt`),
-            title: t(`global.sections.highlights.contact.imageTitle`),
-          }}
-        >
-          <div
-            set:html={marked.parse(t(`pages.${page}.highlights.contact.text`))}
-            class=""
-          />
-        </BasicImageCard>
-      </div>
+      <BasicImageCard
+        title={t(`global.sections.highlights.contact.title`)}
+        image={{
+          src: customerServiceImg,
+          alt: t(`global.sections.highlights.contact.imageAlt`),
+          title: t(`global.sections.highlights.contact.imageTitle`),
+        }}
+        class="mt-6"
+      >
+        <div
+          set:html={marked.parse(t(`pages.${page}.highlights.contact.text`))}
+          class=""
+        />
+      </BasicImageCard>
+
+      <!-- Testimonials -->
+      <Testimonials
+        page="destinations"
+        images={[destinationsClient1Img, destinationsClient2Img]}
+        class="md:hidden lg:block"
+      />
     </div>
 
     <!-- Sidebar -->
-    <aside class="@container -mx-6 md:mx-0 md:w-1/2 lg:w-1/3">
+    <aside
+      class="@container -mx-6 flex flex-col gap-6 md:mx-0 md:w-1/2 lg:w-1/3"
+    >
       <!-- Form -->
       <BookingForm
         translations={t("global.booking")}
@@ -163,6 +178,50 @@ const destinations = [
         client:idle
         className="md:px-0!"
       />
+
+      <BasicImageCard
+        title={t(`pages.${page}.serviceCards.confidence.title`)}
+        image={{
+          src: pyramidImg,
+          alt: t(`pages.${page}.serviceCards.confidence.imageAlt`),
+          title: t(`pages.${page}.serviceCards.confidence.imageTitle`),
+        }}
+      >
+        <p>{t(`pages.${page}.serviceCards.confidence.text`)}</p>
+      </BasicImageCard>
+
+      <ul class="grid grid-cols-2 gap-4 sm:gap-1">
+        <CheckListItem
+          text={t(`pages.${page}.checklist.affordable`)}
+          class="flex justify-center"
+        />
+        <CheckListItem
+          text={t(`pages.${page}.checklist.lowRates`)}
+          class="flex justify-center"
+        />
+      </ul>
+
+      <BasicImageCard
+        title={t(`pages.${page}.serviceCards.transportation.title`)}
+        image={{
+          src: excursionImg,
+          alt: t(`pages.${page}.serviceCards.transportation.imageAlt`),
+          title: t(`pages.${page}.serviceCards.transportation.imageTitle`),
+        }}
+      >
+        <p>{t(`pages.${page}.serviceCards.transportation.text`)}</p>
+      </BasicImageCard>
+
+      <BasicImageCard
+        title={t(`pages.${page}.serviceCards.comfort.title`)}
+        image={{
+          src: carSeatImg,
+          alt: t(`pages.${page}.serviceCards.comfort.imageAlt`),
+          title: t(`pages.${page}.serviceCards.comfort.imageTitle`),
+        }}
+      >
+        <p>{t(`pages.${page}.serviceCards.comfort.text`)}</p>
+      </BasicImageCard>
     </aside>
   </section>
 </Layout>

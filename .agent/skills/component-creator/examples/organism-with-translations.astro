@@ -1,4 +1,10 @@
 ---
+// Example: Organism Component with Full Translation Integration
+// File: Includes.astro
+// Purpose: Displays service includes section with title, image, and list
+// Type: Organism (complex section combining multiple components)
+---
+
 // Libs
 import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 
@@ -59,3 +65,48 @@ const items = t("global.sections.includes.items");
     </div>
   </div>
 </section>
+
+<!--
+SEO Best Practices Demonstrated:
+✓ Semantic HTML: Uses <section> for thematic grouping
+✓ ARIA: aria-labelledby references the section title
+✓ Unique ID: Section and title have unique IDs
+✓ Translation Integration: All text from translation files
+✓ Page-specific Props: Accepts page prop for dynamic translations
+✓ Component Reuse: Uses H2 and CheckListItem atoms
+✓ Astro Image: Proper image handling with lazy loading
+✓ Responsive Design: Uses Tailwind classes for mobile/desktop
+✓ Comments: Clear HTML comments for structure
+✓ Mixed Translations: Uses both page-specific and global translations
+
+Translation Structure Required:
+{
+  "pages": {
+    "home": {
+      "includes": {
+        "title": "All our Cancun Private Transfers include:",
+        "imageAlt": "Private service in Suburban",
+        "imageTitle": "Private service in Suburban"
+      }
+    }
+  },
+  "global": {
+    "sections": {
+      "includes": {
+        "items": [
+          "Highly Trained Staff",
+          "Flight Monitoring",
+          "Travel Insurance",
+          "Reception at the airport",
+          "Free Schedule Changes",
+          "Vehicles in content maintenance",
+          "24-Hour Service"
+        ]
+      }
+    }
+  }
+}
+
+Usage Example:
+<Includes page="home" image={includesImage} />
+-->
