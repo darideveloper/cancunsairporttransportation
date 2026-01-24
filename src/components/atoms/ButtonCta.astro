@@ -4,7 +4,8 @@ import type { HTMLAttributes } from "astro/types";
 
 // Props
 interface Props extends HTMLAttributes<"a"> {
-  href: string;
+  href?: string;
+  type?: "submit" | "button" | "reset";
   target?: string;
   class?: string;
   variant?:
@@ -19,6 +20,7 @@ interface Props extends HTMLAttributes<"a"> {
 
 const {
   href,
+  type = "button",
   target = "_self",
   class: className,
   variant = "orange",
@@ -38,18 +40,23 @@ const variants = {
 
 const computedRel =
   rel || (target === "_blank" ? "noopener noreferrer" : undefined);
+
+const sharedClasses = clsx(
+  className,
+  "btn inline-block px-6 py-5 rounded-lg text-sm text-center whitespace-nowrap transition-transform hover:scale-[102%] cursor-pointer duration-300",
+  variants[variant],
+);
+
+const Element = href ? "a" : "button";
 ---
 
-<a
+<Element
   href={href}
-  target={target}
-  rel={computedRel}
-  class={clsx(
-    className,
-    "btn inline-block px-6 py-5 rounded-lg text-sm text-center whitespace-nowrap transition-transform hover:scale-105",
-    variants[variant],
-  )}
+  type={href ? undefined : type}
+  target={href ? target : undefined}
+  rel={href ? computedRel : undefined}
+  class={sharedClasses}
   {...rest}
 >
   <slot />
-</a>
+</Element>

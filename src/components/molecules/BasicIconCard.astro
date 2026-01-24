@@ -43,7 +43,7 @@ const textClasses = {
 
 <article
   class={clsx(
-    `group ${className} flex flex-col items-start rounded-2xl p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`,
+    `button-icon-card ${variant} group ${className} flex flex-col items-start rounded-2xl p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`,
     variantClasses[variant],
   )}
   aria-labelledby={id}
@@ -57,7 +57,7 @@ const textClasses = {
       class={clsx(
         "text-base leading-relaxed",
         textClasses[variant],
-        href && "hover:text-accent transition-colors duration-300",
+        href && "hover:opacity-60 duration-300",
       )}
     >
       {text}
