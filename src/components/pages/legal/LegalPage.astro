@@ -9,14 +9,27 @@ interface Props {
 
 const { lang, pageKey } = Astro.props;
 
+const PAGE_KEY_TO_SLUG: Record<string, string> = {
+  privacy: "privacy-policy",
+  terms: "terms-and-conditions",
+};
+
+const slug = PAGE_KEY_TO_SLUG[pageKey];
+
+if (!slug) {
+  throw new Error(`Unknown legal page key: ${pageKey}`);
+}
+
 const legalEntries = await getCollection("legal");
 const entry = legalEntries.find((e) => {
   const cleanId = e.id.replace(/\.[^/.]+$/, "");
-  return cleanId === `${lang}/terms-and-conditions`;
+  return cleanId === `${lang}/${slug}`;
 });
 
 if (!entry) {
-  throw new Error(`Terms and conditions not found for language: ${lang}`);
+  throw new Error(
+    `Legal content not found for key: ${pageKey} (${slug}) in language: ${lang}`,
+  );
 }
 
 const { Content } = await render(entry);
