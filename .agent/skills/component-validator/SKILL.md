@@ -13,6 +13,24 @@ This skill provides a comprehensive checklist and procedure for validating Astro
 - Before submitting a component for review
 - When refactoring legacy components
 - If you suspect performance or accessibility issues
+- **Creating an OpenSpec Proposal** (Use this skill to audit components being refactored or modified in a proposal)
+
+## OpenSpec Proposal Requirements
+
+When creating an OpenSpec proposal that involves refactoring or validating existing components, you **MUST** include the following:
+
+1.  **Current Issues**: Briefly list the specific "smells" or violations found (e.g., "Hardcoded text in Hero.astro", "Missing alt tags").
+2.  **Validation Plan**: State that you will run the `component-validator` checklist post-implementation.
+3.  **Expected Improvements**: Mention specific a11y or SEO gains (e.g., "Will improve Lighthouse accessibility score by adding aria-labels").
+
+**Example Proposal Extract:**
+
+```markdown
+### Validation Plan: Footer Component
+- **Current State**: Uses `<div>`s instead of semantic `<nav>`/`<footer>`. Missing contrast on links.
+- **Refactor Goal**: Switch to semantic HTML5 tags.
+- **Verification**: Will pass `component-validator` section 2 (Accessibility) and section 3 (Structure).
+```
 
 ## Validation Checklist
 

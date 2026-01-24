@@ -13,6 +13,35 @@ This skill guides you through creating new Astro components that follow SEO best
 - Building atoms, molecules, or organisms following atomic design principles
 - Need to ensure SEO compliance from the start
 - Integrating with the project's i18n translation system
+- **Creating an OpenSpec Proposal** (Use this skill to detail component structure in your proposal)
+
+## OpenSpec Proposal Requirements
+
+When creating an OpenSpec proposal that involves new components, you **MUST** include the following key points in your proposal document:
+
+1.  **Component Name & Type**: Specify the exact component name and whether it is an atom, molecule, or organism.
+2.  **File Location**: State where the file will be created (e.g., `src/components/molecules/Card.astro`).
+3.  **Props Interface**: Define the expected `Props` interface for the component in TypeScript format.
+4.  **HTML Structure**: Provide a high-level outline of the semantic HTML structure (e.g., `<section>` containing `<h2>`, `<p>`, `<Image />`).
+5.  **Translation Strategy**: Explicitly state which text will be global vs. page-specific and list the new translation keys that will be created.
+6.  **SEO & Accessibility**: Mention specific attributes like `aria-labels`, `alt` text strategies, and heading levels.
+
+**Example Proposal Extract:**
+
+```markdown
+### Component: FeatureCard (Molecule)
+
+- **Location**: `src/components/molecules/FeatureCard.astro`
+- **Props**:
+  ```typescript
+  interface Props {
+    title: string;
+    icon: string;
+  }
+  ```
+- **Structure**: `<article>` with an icon, `<h3>` title, and `<slot />` for content.
+- **Translations**: Global keys under `global.components.featureCard.*`.
+```
 
 ## Prerequisites
 

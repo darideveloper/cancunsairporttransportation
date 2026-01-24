@@ -14,6 +14,28 @@ This skill guides you through translating component content into both English an
 - Extracting hardcoded text to translation files
 - Adding new languages to existing components
 - Updating text content on specific pages
+- **Creating an OpenSpec Proposal** (Use this skill to plan translation keys and values proposal)
+
+## OpenSpec Proposal Requirements
+
+When creating an OpenSpec proposal that involves translations, you **MUST** include the following key points:
+
+1.  **New Keys List**: List every new translation key you intend to create.
+2.  **Key Location**: Specify if the keys will be in `global` or `pages.{pageName}`.
+3.  **Content Preview**: Provide the English and Spanish text for the major keys to ensure content accuracy before implementation.
+4.  **Metadata Strategy**: Explicitly list metadata keys (alt text, aria-labels) that will be added.
+
+**Example Proposal Extract:**
+
+```markdown
+### Translations: Home Page Hero
+
+- **Location**: `pages.home.hero.*`
+- **New Keys**:
+  - `title`: "Welcome to Cancun" / "Bienvenido a Cancún"
+  - `cta`: "Book Now" / "Reservar Ahora"
+  - `imageAlt`: "Beach view" / "Vista a la playa"
+```
 
 ## Prerequisites
 
