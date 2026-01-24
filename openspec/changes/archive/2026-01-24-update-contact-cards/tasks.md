@@ -1,0 +1,3 @@
+- [x] Define translation keys for contact cards in `src/messages/en.json` and `src/messages/es.json`. <!-- id: 0 -->
+- [x] Update `BasicIconCard.astro` to add `variant` prop (`white`, `orange`, `black`) and apply conditional classes. <!-- id: 1 -->
+- [x] Update `Contact.astro` to import `BasicIconCard` and render the 3 cards at the bottom of the page using the specified content and variants. <!-- id: 2 -->

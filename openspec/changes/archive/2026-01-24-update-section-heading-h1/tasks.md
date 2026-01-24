@@ -1,0 +1,3 @@
+- [x] 1. Update `SectionHeading.astro` to add `isH1` to `Props` interface and implement dynamic tag rendering. <!-- id: 0 -->
+- [x] 2. Create a test/verification verifying `<h1>` renders when `isH1` is passed. <!-- id: 1 -->
+- [x] 3. Create a test/verification verifying `<h2>` renders when `isH1` is omitted. <!-- id: 2 -->

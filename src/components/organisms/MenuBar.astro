@@ -48,7 +48,7 @@ const translateLink = pageKey
 
 <div
   id="menu-bar"
-  class="container mx-auto flex w-full max-w-[1750px]! items-center justify-between py-4"
+  class="shadow-gray/8 container mx-auto flex w-full max-w-[1750px] items-center justify-between py-4 shadow-xl"
 >
   <!-- logo -->
   <Logo />
@@ -59,7 +59,7 @@ const translateLink = pageKey
   </nav>
 
   <!-- cta -->
-  <ButtonCta href={CTA_LINK} class="hidden! lg:block!">
+  <ButtonCta href={CTA_LINK} class="hidden lg:block">
     {CTA_LABEL}
   </ButtonCta>
 
@@ -141,7 +141,7 @@ const translateLink = pageKey
   <div class="flex w-full justify-center">
     <ButtonCta
       href={CTA_LINK}
-      class="bg-yellow hover:bg-yellow-dark mx-auto my-10 inline-block w-11/12 font-bold text-black!"
+      class="bg-yellow hover:bg-yellow-dark mx-auto my-10 inline-block w-11/12 font-bold text-black"
     >
       {CTA_LABEL}
     </ButtonCta>
@@ -157,7 +157,7 @@ const translateLink = pageKey
     let menuTimeout: ReturnType<typeof setTimeout>;
 
     const toggleMenu = (show: boolean) => {
-      if (!menuBarMobile || !menuOpenButton) return;
+      if (!menuBarMobile || !menuOpenButton || !menuCloseButton) return;
 
       clearTimeout(menuTimeout);
 
@@ -166,11 +166,12 @@ const translateLink = pageKey
         menuBarMobile.classList.remove("translate-x-full");
         menuBarMobile.setAttribute("aria-hidden", "false");
         menuOpenButton.setAttribute("aria-expanded", "true");
-        // Focus trap logic could go here
+        menuCloseButton.focus();
       } else {
         menuBarMobile.classList.add("translate-x-full");
         menuBarMobile.setAttribute("aria-hidden", "true");
         menuOpenButton.setAttribute("aria-expanded", "false");
+        menuOpenButton.focus();
 
         // Wait for the transition to finish before hiding the element
         menuTimeout = setTimeout(() => {
@@ -186,5 +187,37 @@ const translateLink = pageKey
     if (menuCloseButton) {
       menuCloseButton.addEventListener("click", () => toggleMenu(false));
     }
+
+    // Focus trap implementation
+    menuBarMobile?.addEventListener("keydown", (e) => {
+      if (!menuBarMobile || menuBarMobile.classList.contains("invisible"))
+        return;
+
+      const focusableElements = menuBarMobile.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      );
+      const firstFocusableElement = focusableElements[0] as HTMLElement;
+      const lastFocusableElement = focusableElements[
+        focusableElements.length - 1
+      ] as HTMLElement;
+
+      if (e.key === "Tab") {
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusableElement) {
+            lastFocusableElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastFocusableElement) {
+            firstFocusableElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+
+      if (e.key === "Escape") {
+        toggleMenu(false);
+      }
+    });
   });
 </script>

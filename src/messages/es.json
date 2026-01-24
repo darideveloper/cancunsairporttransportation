@@ -542,20 +542,54 @@
             "cta": "Volver al Inicio"
         },
         "contact": {
-            "title": "Contáctanos",
-            "description": "¿Tienes preguntas? Estamos aquí para ayudarte con tus necesidades de transporte en el aeropuerto de Cancún.",
+            "title": "Contactanos",
+            "description": "Estaremos encantados de atenderle, póngase en contacto con nosotros en cualquiera de las siguientes opciones.",
+            "stayInTouch": {
+                "title": "Mantente en contacto con nosotros",
+                "description": "Si deseas una cotización de un servicio especial de transporte, no dudes en consultarnos, llena el siguiente formulario y nos pondremos en contacto lo más pronto posible."
+            },
             "form": {
-                "name": "Nombre Completo",
-                "email": "Correo Electrónico",
-                "phone": "Número de Teléfono",
-                "message": "¿Cómo podemos ayudarte?",
-                "submit": "Enviar Mensaje"
+                "name": {
+                    "label": "Nombre",
+                    "placeholder": "Escriba su nombre completo"
+                },
+                "email": {
+                    "label": "E-mail",
+                    "placeholder": "Escriba su correo electrónico"
+                },
+                "phone": {
+                    "label": "Teléfono",
+                    "placeholder": "Escribe tu teléfono"
+                },
+                "subject": {
+                    "label": "Asunto",
+                    "placeholder": "Escriba..."
+                },
+                "message": {
+                    "label": "Comentario",
+                    "placeholder": "Haz una pregunta"
+                },
+                "submit": "Enviar mensaje"
             },
             "info": {
                 "title": "Información de Contacto",
                 "address": "Dirección",
                 "email": "Correo",
                 "phone": "Teléfono"
+            },
+            "cards": {
+                "usa": {
+                    "title": "Desde USA / Canada",
+                    "text": "+1 (929) 999-1258"
+                },
+                "mexico": {
+                    "title": "México & Resto del mundo",
+                    "text": "+52 (998) 387-0435"
+                },
+                "email": {
+                    "title": "Mándanos un email a:",
+                    "text": "bookings@gotransfers.us"
+                }
             }
         },
         "privacy": {

@@ -1,9 +1,11 @@
 ---
+import { generateId } from "../../lib/utils/ids";
+
 interface Props {
   title: string;
   text: string;
-  TitleIcon?: any;
-  BottomIcon?: any;
+  TitleIcon?: (props: any) => any;
+  BottomIcon?: (props: any) => any;
   bottomText?: string;
   href?: string;
   class?: string;
@@ -18,11 +20,8 @@ const {
   href,
   class: className,
 } = Astro.props;
-const id = `info-card-${title
-  .toLowerCase()
-  .trim()
-  .replace(/[^a-z0-9]+/g, "-")
-  .replace(/^-+|-+$/g, "")}`;
+
+const id = generateId("info-card", title);
 ---
 
 <article
@@ -31,7 +30,7 @@ const id = `info-card-${title
 >
   <header class="mb-3 flex items-center gap-2">
     {TitleIcon && <TitleIcon class="text-accent text-xl" aria-hidden="true" />}
-    <h3 class="text-accent-dark! text-md font-bold" id={id}>{title}</h3>
+    <h3 class="text-accent-dark text-md font-bold" id={id}>{title}</h3>
   </header>
   <p class="text-gray text-base leading-relaxed">
     {

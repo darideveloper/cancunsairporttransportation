@@ -543,19 +543,53 @@
         },
         "contact": {
             "title": "Contact Us",
-            "description": "Have questions? We're here to help you with your Cancun Airport Transportation needs.",
+            "description": "We’ll be happy to assist you, please contact us in any of the next options.",
+            "stayInTouch": {
+                "title": "Stay in touch with us",
+                "description": "If you would like a quote for a special transportation service, do not hesitate to contact us, fill out the following form and we will contact you as soon as possible."
+            },
             "form": {
-                "name": "Full Name",
-                "email": "Email Address",
-                "phone": "Phone Number",
-                "message": "How can we help you?",
-                "submit": "Send Message"
+                "name": {
+                    "label": "Name",
+                    "placeholder": "Write your full name"
+                },
+                "email": {
+                    "label": "E-mail",
+                    "placeholder": "Write your email"
+                },
+                "phone": {
+                    "label": "Phone",
+                    "placeholder": "Write your phone"
+                },
+                "subject": {
+                    "label": "Subject",
+                    "placeholder": "Write..."
+                },
+                "message": {
+                    "label": "Comment",
+                    "placeholder": "Ask a question"
+                },
+                "submit": "Send a message"
             },
             "info": {
                 "title": "Contact Information",
                 "address": "Address",
                 "email": "Email",
                 "phone": "Phone"
+            },
+            "cards": {
+                "usa": {
+                    "title": "From USA / Canada",
+                    "text": "+1 (929) 999-1258"
+                },
+                "mexico": {
+                    "title": "México & Rest of the world",
+                    "text": "+52 (998) 387-0435"
+                },
+                "email": {
+                    "title": "Send us an email at:",
+                    "text": "bookings@gotransfers.us"
+                }
             }
         },
         "privacy": {
