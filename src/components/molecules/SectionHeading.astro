@@ -9,10 +9,11 @@ interface Props {
 const { title, class: className = "", id, isH1 = false } = Astro.props;
 
 const Tag = isH1 ? "h1" : "h2";
+const textSize = isH1 ? "text-4xl" : "text-2xl";
 ---
 
 <div class={className}>
-  <Tag class="text-2xl font-bold" id={id}>
+  <Tag class={`${textSize} font-bold`} id={id}>
     {title}
   </Tag>
   <div class="mt-4 text-sm">

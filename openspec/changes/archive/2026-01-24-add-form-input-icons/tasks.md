@@ -1,0 +1,3 @@
+- [x] Update `Input.astro` to support optional `icon` prop <!-- id: 0 -->
+- [x] Update `Textarea.astro` to support optional `icon` prop <!-- id: 1 -->
+- [x] Verify proper padding and alignment when icon is present <!-- id: 2 -->

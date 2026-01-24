@@ -1,6 +1,6 @@
 # Contact Page Content
 
-## MODIFIED Requirements
+## ADDED Requirements
 
 ### Requirement: The contact page must display the correct main heading and description
 The main heading of the contact page MUST be updated to use the `<h1>` tag and display the correct localized text.
@@ -17,7 +17,7 @@ Then the main heading should be "Contactanos"
 And the description should be "Estaremos encantados de atenderle, póngase en contacto con nosotros en cualquiera de las siguientes opciones."
 And the main heading tag should be `<h1>`.
 
-## ADDED Requirements
+
 
 ### Requirement: The contact page must display a "Stay in touch" section
 A new section heading MUST be added to the contact page, encouraging users to get a quote.

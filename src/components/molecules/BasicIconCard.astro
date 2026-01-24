@@ -1,15 +1,17 @@
 ---
 // Libs
 import clsx from "clsx";
+import { generateId } from "../../lib/utils/ids";
 
 // Props
 interface Props {
   title: string;
   text?: string;
-  Icon?: any;
+  Icon?: (props: any) => any;
   href?: string;
   class?: string;
   iconClass?: string;
+  variant?: "white" | "orange" | "black";
 }
 
 const {
@@ -19,18 +21,31 @@ const {
   href,
   class: className,
   iconClass,
+  variant = "white",
 } = Astro.props;
-const id = `info-card-${title
-  .toLowerCase()
-  .trim()
-  .replace(/[^a-z0-9]+/g, "-")
-  .replace(/^-+|-+$/g, "")}`;
+
+const id = generateId("info-card", title);
 
 const Container = href ? "a" : "div";
+
+const variantClasses = {
+  white: "bg-white border border-gray-light",
+  orange: "bg-accent text-white border-none",
+  black: "bg-black text-white border-none",
+};
+
+const textClasses = {
+  white: "text-gray",
+  orange: "text-white",
+  black: "text-white",
+};
 ---
 
 <article
-  class={`group ${className} flex flex-col items-start rounded-2xl p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-light`}
+  class={clsx(
+    `group ${className} flex flex-col items-start rounded-2xl p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`,
+    variantClasses[variant],
+  )}
   aria-labelledby={id}
 >
   <Container href={href}>
@@ -40,7 +55,8 @@ const Container = href ? "a" : "div";
     </header>
     <p
       class={clsx(
-        "text-gray text-base leading-relaxed",
+        "text-base leading-relaxed",
+        textClasses[variant],
         href && "hover:text-accent transition-colors duration-300",
       )}
     >

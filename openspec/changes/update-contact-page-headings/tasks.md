@@ -1,6 +1,0 @@
-- [ ] Update `src/messages/en.json` `pages.contact.title` and `pages.contact.description`.
-- [ ] Update `src/messages/es.json` `pages.contact.title` and `pages.contact.description`.
-- [ ] Add `pages.contact.stayInTouch.title` and `pages.contact.stayInTouch.description` to `src/messages/en.json`.
-- [ ] Add `pages.contact.stayInTouch.title` and `pages.contact.stayInTouch.description` to `src/messages/es.json`.
-- [ ] Update `src/components/pages/general/Contact.astro` to use `isH1` for the main heading.
-- [ ] Update `src/components/pages/general/Contact.astro` to include the new "Stay in touch" section.
