@@ -108,6 +108,11 @@ Check these directories:
    - Use `className` instead of `class` for React components
    - Add `client:visible` directive if icons need interactivity
 
+7. **Use `clsx` for Classes**
+   - **CRITICAL**: Never use Astro `class:list`.
+   - Always use `clsx` for conditional or complex class strings.
+   - Import: `import clsx from "clsx";`
+
 #### Example Component Structure
 
 ```astro
@@ -115,6 +120,7 @@ Check these directories:
 // Libs
 import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 import { Image } from "astro:assets";
+import clsx from "clsx";
 
 // Icons (if needed)
 import { FaCheck } from "react-icons/fa";
