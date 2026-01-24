@@ -3,15 +3,18 @@ interface Props {
   title: string;
   class?: string;
   id?: string;
+  isH1?: boolean;
 }
 
-const { title, class: className = "", id } = Astro.props;
+const { title, class: className = "", id, isH1 = false } = Astro.props;
+
+const Tag = isH1 ? "h1" : "h2";
 ---
 
 <div class={className}>
-  <h2 class="text-2xl font-bold" id={id}>
+  <Tag class="text-2xl font-bold" id={id}>
     {title}
-  </h2>
+  </Tag>
   <div class="mt-4 text-sm">
     <slot />
   </div>
