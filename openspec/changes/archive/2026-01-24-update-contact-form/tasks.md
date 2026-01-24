@@ -1,0 +1,6 @@
+- [x] Run `openspec validate update-contact-form --strict` <!-- id: validate-spec -->
+- [x] Read `src/messages/en.json` and `src/messages/es.json` to check existing keys. <!-- id: check-translations -->
+- [x] Update translation files (`src/messages/en.json`, `src/messages/es.json`) with new labels and placeholders from the provided HTML. <!-- id: update-translations -->
+- [x] Refactor `src/components/pages/general/Contact.astro` to use a data-driven approach for form fields. <!-- id: refactor-contact-astro -->
+- [x] Implement the icon wrapper logic using `react-icons` in `Contact.astro`. <!-- id: implement-icons -->
+- [x] Verify the form renders correctly and responsiveness is maintained. <!-- id: verify-ui -->

@@ -1,8 +1,7 @@
 # ui-section-heading Specification
 
-## Purpose
-TBD - created by archiving change refactor-section-heading. Update Purpose after archive.
-## Requirements
+## MODIFIED Requirements
+
 ### Requirement: Component API
 The `SectionHeading` component MUST support title, custom class for styling (alignment, color), custom content via slots, and optional H1 heading level.
 
@@ -17,12 +16,3 @@ Given existing usages of SectionHeading
 When `isH1` is omitted or false
 Then it should continue to render `<h2>`
 And maintain all existing styling and behavior.
-
-### Requirement: Integration
-The component MUST be integrated into existing pages.
-
-#### Scenario: Index Page Refactor
-Given `src/pages/[lang]/index.astro`
-When replacing the "Pricing transportation" and "Destinations" headers
-Then the visual output should remain consistent with the standardized design.
-
