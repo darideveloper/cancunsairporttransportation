@@ -47,6 +47,14 @@ export const routes = {
         en: "contact",
         es: "es/contacto",
     },
+    privacy: {
+        en: "privacy",
+        es: "es/privacidad",
+    },
+    reservation: {
+        en: "my-reservation",
+        es: "es/mi-reservacion",
+    },
 
 } as const;
 

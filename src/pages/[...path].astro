@@ -12,6 +12,9 @@ import Private from "../components/pages/services/Private.astro";
 import Playa from "../components/pages/destinations/Playa.astro";
 import Merida from "../components/pages/destinations/Merida.astro";
 import Terms from "../components/pages/legal/Terms.astro";
+import Contact from "../components/pages/Contact.astro";
+import Privacy from "../components/pages/legal/Privacy.astro";
+import Reservation from "../components/pages/Reservation.astro";
 
 export async function getStaticPaths() {
   const paths = [];
@@ -51,6 +54,9 @@ const COMPONENT_MAP = {
   playa: Playa,
   merida: Merida,
   terms: Terms,
+  contact: Contact,
+  privacy: Privacy,
+  reservation: Reservation,
 };
 
 const PageComponent = COMPONENT_MAP[pageKey as keyof typeof COMPONENT_MAP];

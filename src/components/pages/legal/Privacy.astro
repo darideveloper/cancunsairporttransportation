@@ -1,0 +1,24 @@
+---
+// Layout
+import LegalLayout from "../../../layouts/LegalLayout.astro";
+
+// Libs
+import { useTranslations } from "../../../lib/i18n/utils";
+import { marked } from "marked";
+
+interface Props {
+  lang: "en" | "es";
+  pageKey: string;
+}
+
+const { lang, pageKey } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<LegalLayout
+  title={t("pages.privacy.title")}
+  description={t("pages.privacy.description")}
+  pageKey={pageKey}
+>
+  <div set:html={marked.parse(t("pages.privacy.content"))} />
+</LegalLayout>
