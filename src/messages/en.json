@@ -598,12 +598,17 @@
             "content": "## Privacy Policy\n\nYour privacy is important to us. It is Cancun Airport Transportation's policy to respect your privacy regarding any information we may collect from you across our website.\n\n### 1. Information we collect\nWe only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent.\n\n### 2. Use of Information\nWe only retain collected information for as long as necessary to provide you with your requested service.\n\n### 3. Data Protection\nWe protect your data within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use, or modification."
         },
         "reservation": {
-            "title": "My Reservation",
+            "title": "RESERVATION DATA",
             "description": "Check your booking status and details.",
             "form": {
-                "reservationId": "Reservation ID",
-                "email": "Email Address",
-                "submit": "Check Reservation"
+                "heading": "MY RESERVATION",
+                "code": {
+                    "label": "RESERVATION CODE:"
+                },
+                "email": {
+                    "label": "EMAIL:"
+                },
+                "submit": "SEARCH"
             },
             "help": {
                 "title": "Need help?",
