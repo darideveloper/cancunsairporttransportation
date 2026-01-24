@@ -545,11 +545,27 @@
             "title": "Contact Us",
             "description": "Have questions? We're here to help you with your Cancun Airport Transportation needs.",
             "form": {
-                "name": "Full Name",
-                "email": "Email Address",
-                "phone": "Phone Number",
-                "message": "How can we help you?",
-                "submit": "Send Message"
+                "name": {
+                    "label": "Name",
+                    "placeholder": "Write your full name"
+                },
+                "email": {
+                    "label": "E-mail",
+                    "placeholder": "Write your email"
+                },
+                "phone": {
+                    "label": "Phone",
+                    "placeholder": "Write your phone"
+                },
+                "subject": {
+                    "label": "Subject",
+                    "placeholder": "Write..."
+                },
+                "message": {
+                    "label": "Comment",
+                    "placeholder": "Ask a question"
+                },
+                "submit": "Send a message"
             },
             "info": {
                 "title": "Contact Information",

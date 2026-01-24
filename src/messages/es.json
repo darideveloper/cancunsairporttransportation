@@ -545,11 +545,27 @@
             "title": "Contáctanos",
             "description": "¿Tienes preguntas? Estamos aquí para ayudarte con tus necesidades de transporte en el aeropuerto de Cancún.",
             "form": {
-                "name": "Nombre Completo",
-                "email": "Correo Electrónico",
-                "phone": "Número de Teléfono",
-                "message": "¿Cómo podemos ayudarte?",
-                "submit": "Enviar Mensaje"
+                "name": {
+                    "label": "Nombre",
+                    "placeholder": "Escriba su nombre completo"
+                },
+                "email": {
+                    "label": "E-mail",
+                    "placeholder": "Escriba su correo electrónico"
+                },
+                "phone": {
+                    "label": "Teléfono",
+                    "placeholder": "Escribe tu teléfono"
+                },
+                "subject": {
+                    "label": "Asunto",
+                    "placeholder": "Escriba..."
+                },
+                "message": {
+                    "label": "Comentario",
+                    "placeholder": "Haz una pregunta"
+                },
+                "submit": "Enviar mensaje"
             },
             "info": {
                 "title": "Información de Contacto",

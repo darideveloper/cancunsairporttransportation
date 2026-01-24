@@ -3,10 +3,17 @@
 import Layout from "../../../layouts/Layout.astro";
 
 // Libs
+// Libs
 import { useTranslations } from "../../../lib/i18n/utils";
 import PageSEO from "../../../components/utils/PageSEO.astro";
 import SectionHeading from "../../../components/molecules/SectionHeading.astro";
-import ButtonCta from "../../../components/atoms/ButtonCta.astro";
+import {
+  FaUser,
+  FaEnvelope,
+  FaPhone,
+  FaRegImage,
+  FaComment,
+} from "react-icons/fa";
 
 interface Props {
   lang: "en" | "es";
@@ -17,6 +24,54 @@ const { lang, pageKey } = Astro.props;
 const t = useTranslations(lang);
 
 const contactInfo = t("global.footer.columns.contact");
+
+const formFields = [
+  {
+    name: "name",
+    type: "text",
+    icon: FaUser,
+    label: t("pages.contact.form.name.label"),
+    placeholder: t("pages.contact.form.name.placeholder"),
+    required: true,
+    colSpan: 1,
+  },
+  {
+    name: "email",
+    type: "email",
+    icon: FaEnvelope,
+    label: t("pages.contact.form.email.label"),
+    placeholder: t("pages.contact.form.email.placeholder"),
+    required: true,
+    colSpan: 1,
+  },
+  {
+    name: "phone",
+    type: "tel",
+    icon: FaPhone,
+    label: t("pages.contact.form.phone.label"),
+    placeholder: t("pages.contact.form.phone.placeholder"),
+    required: true,
+    colSpan: 1,
+  },
+  {
+    name: "subject",
+    type: "text",
+    icon: FaRegImage,
+    label: t("pages.contact.form.subject.label"),
+    placeholder: t("pages.contact.form.subject.placeholder"),
+    required: true,
+    colSpan: 1,
+  },
+  {
+    name: "message",
+    type: "textarea",
+    icon: FaComment,
+    label: t("pages.contact.form.message.label"),
+    placeholder: t("pages.contact.form.message.placeholder"),
+    required: true,
+    colSpan: 2,
+  },
+];
 ---
 
 <Layout pageKey={pageKey}>
@@ -32,56 +87,53 @@ const contactInfo = t("global.footer.columns.contact");
     <div class="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
       <!-- Contact Form -->
       <div class="bg-gray-light rounded-2xl p-8 shadow-sm">
-        <form class="flex flex-col gap-6">
-          <div class="flex flex-col gap-2">
-            <label for="name" class="font-bold"
-              >{t("pages.contact.form.name")}</label
-            >
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="focus:border-accent focus:ring-accent rounded-lg border border-gray-300 p-3 transition-all outline-none focus:ring-2"
-            />
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <label for="email" class="font-bold"
-              >{t("pages.contact.form.email")}</label
-            >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="focus:border-accent focus:ring-accent rounded-lg border border-gray-300 p-3 transition-all outline-none focus:ring-2"
-            />
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <label for="phone" class="font-bold"
-              >{t("pages.contact.form.phone")}</label
-            >
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              class="focus:border-accent focus:ring-accent rounded-lg border border-gray-300 p-3 transition-all outline-none focus:ring-2"
-            />
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <label for="message" class="font-bold"
-              >{t("pages.contact.form.message")}</label
-            >
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              required
-              class="focus:border-accent focus:ring-accent rounded-lg border border-gray-300 p-3 transition-all outline-none focus:ring-2"
-            ></textarea>
+        <form class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {
+            formFields.map((field) => {
+              const Icon = field.icon;
+              return (
+                <div
+                  class={
+                    field.colSpan === 2
+                      ? "col-span-1 md:col-span-2"
+                      : "col-span-1"
+                  }
+                >
+                  <label for={field.name} class="mb-2 block font-bold">
+                    {field.label}
+                  </label>
+                  <div class="focus-within:text-accent relative text-gray-500">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    {field.type === "textarea" ? (
+                      <textarea
+                        id={field.name}
+                        name={field.name}
+                        rows="4"
+                        required={field.required}
+                        placeholder={field.placeholder}
+                        class="focus:border-accent focus:ring-accent w-full rounded-lg border border-gray-300 py-3 pr-3 pl-10 transition-all outline-none focus:ring-2"
+                      />
+                    ) : (
+                      <input
+                        type={field.type}
+                        id={field.name}
+                        name={field.name}
+                        required={field.required}
+                        placeholder={field.placeholder}
+                        class="focus:border-accent focus:ring-accent w-full rounded-lg border border-gray-300 py-3 pr-3 pl-10 transition-all outline-none focus:ring-2"
+                      />
+                    )}
+                  </div>
+                </div>
+              );
+            })
+          }
+          <div class="col-span-1 md:col-span-2">
+            <button type="submit" class="btn btn-primary w-full md:w-auto">
+              {t("pages.contact.form.submit")}
+            </button>
           </div>
         </form>
       </div>
