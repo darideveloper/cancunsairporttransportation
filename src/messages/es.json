@@ -88,6 +88,10 @@
                 },
                 "contact": {
                     "title": "Contáctanos",
+                    "address": {
+                        "label": "Dirección",
+                        "value": "Av. Prol. La Luna 132, 77533 Cancún, Q.R."
+                    },
                     "email": {
                         "label": "bookings@gotransfers.us",
                         "value": "bookings@gotransfers.us",
@@ -536,6 +540,41 @@
             "heading": "Página No Encontrada",
             "message": "Lo sentimos, no pudimos encontrar la página que buscas. Pudo haber sido movida o eliminada.",
             "cta": "Volver al Inicio"
+        },
+        "contact": {
+            "title": "Contáctanos",
+            "description": "¿Tienes preguntas? Estamos aquí para ayudarte con tus necesidades de transporte en el aeropuerto de Cancún.",
+            "form": {
+                "name": "Nombre Completo",
+                "email": "Correo Electrónico",
+                "phone": "Número de Teléfono",
+                "message": "¿Cómo podemos ayudarte?",
+                "submit": "Enviar Mensaje"
+            },
+            "info": {
+                "title": "Información de Contacto",
+                "address": "Dirección",
+                "email": "Correo",
+                "phone": "Teléfono"
+            }
+        },
+        "privacy": {
+            "title": "Aviso de Privacidad",
+            "description": "Información sobre cómo manejamos tus datos personales.",
+            "content": "## Aviso de Privacidad\n\nSu privacidad es importante para nosotros. Es política de Cancun Airport Transportation respetar su privacidad respecto a cualquier información que podamos recopilar de usted a través de nuestro sitio web.\n\n### 1. Información que recopilamos\nSolo solicitamos información personal cuando realmente la necesitamos para prestarle un servicio. La recopilamos por medios justos y legales, con su conocimiento y consentimiento.\n\n### 2. Uso de la información\nSolo conservamos la información recopilada durante el tiempo necesario para prestarle el servicio solicitado.\n\n### 3. Protección de datos\nProtegemos sus datos dentro de medios comercialmente aceptables para evitar pérdidas y robos, así como el acceso, la divulgación, la copia, el uso o la modificación no autorizados."
+        },
+        "reservation": {
+            "title": "Mi Reservación",
+            "description": "Consulta el estado y los detalles de tu reserva.",
+            "form": {
+                "reservationId": "ID de Reservación",
+                "email": "Correo Electrónico",
+                "submit": "Consultar Reservación"
+            },
+            "help": {
+                "title": "¿Necesitas ayuda?",
+                "text": "Si no encuentras tu reservación, por favor contacta a nuestro equipo de soporte."
+            }
         },
         "home": {
             "title": "Transporte Cancún Aeropuerto | Sitio Oficial",

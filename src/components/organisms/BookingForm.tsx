@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSearchFormStore } from "../../store/search-form";
 import TripTypeControls from "../molecules/booking/TripTypeControls";
 import CurrencyControls from "../molecules/booking/CurrencyControls";
-import SubmitButton from "../molecules/booking/SubmitButton";
+import SubmitButton from "../atoms/form/SubmitButton";
 import LocationSelect from "../atoms/form/LocationSelect";
 import DateInput from "../atoms/form/DateInput";
 import TimeInput from "../atoms/form/TimeInput";

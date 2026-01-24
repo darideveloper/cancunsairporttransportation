@@ -13,7 +13,7 @@ import { IoClose as CloseIcon } from "react-icons/io5";
 // Components
 import Logo from "../atoms/Logo.astro";
 import ButtonCta from "../atoms/ButtonCta.astro";
-import NavLinks from "./NavLinks.astro";
+import NavLinks from "../molecules/NavLinks.astro";
 import NavLink from "../atoms/NavLink.astro";
 
 // Styles
@@ -30,7 +30,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // Constants & Data
-const CTA_LINK = getLocalizedPath("contact", lang);
+const CTA_LINK = getLocalizedPath("reservation", lang);
 const CTA_LABEL = t("global.menubar.cta");
 
 const contactPhones = [

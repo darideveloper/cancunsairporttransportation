@@ -88,6 +88,10 @@
                 },
                 "contact": {
                     "title": "Contact",
+                    "address": {
+                        "label": "Address",
+                        "value": "Av. Prol. La Luna 132, 77533 Cancún, Q.R."
+                    },
                     "email": {
                         "label": "bookings@gotransfers.us",
                         "value": "bookings@gotransfers.us",
@@ -536,6 +540,41 @@
             "heading": "Page Not Found",
             "message": "Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.",
             "cta": "Return to Home"
+        },
+        "contact": {
+            "title": "Contact Us",
+            "description": "Have questions? We're here to help you with your Cancun Airport Transportation needs.",
+            "form": {
+                "name": "Full Name",
+                "email": "Email Address",
+                "phone": "Phone Number",
+                "message": "How can we help you?",
+                "submit": "Send Message"
+            },
+            "info": {
+                "title": "Contact Information",
+                "address": "Address",
+                "email": "Email",
+                "phone": "Phone"
+            }
+        },
+        "privacy": {
+            "title": "Privacy Policy",
+            "description": "Information about how we handle your personal data.",
+            "content": "## Privacy Policy\n\nYour privacy is important to us. It is Cancun Airport Transportation's policy to respect your privacy regarding any information we may collect from you across our website.\n\n### 1. Information we collect\nWe only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent.\n\n### 2. Use of Information\nWe only retain collected information for as long as necessary to provide you with your requested service.\n\n### 3. Data Protection\nWe protect your data within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use, or modification."
+        },
+        "reservation": {
+            "title": "My Reservation",
+            "description": "Check your booking status and details.",
+            "form": {
+                "reservationId": "Reservation ID",
+                "email": "Email Address",
+                "submit": "Check Reservation"
+            },
+            "help": {
+                "title": "Need help?",
+                "text": "If you cannot find your reservation, please contact our support team."
+            }
         },
         "home": {
             "title": "Cancun Airport Transportation | Official Website",
