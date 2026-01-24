@@ -46,105 +46,107 @@ const translateLink = pageKey
     : "/";
 ---
 
-<div
-  id="menu-bar"
-  class="shadow-gray/8 container mx-auto flex w-full max-w-[1750px] items-center justify-between py-4 shadow-xl"
->
-  <!-- logo -->
-  <Logo />
-
-  <!-- navigation -->
-  <nav aria-label={t("global.menubar.nav.ariaLabel") || "Main Navigation"}>
-    <NavLinks mode="desktop" />
-  </nav>
-
-  <!-- cta -->
-  <ButtonCta href={CTA_LINK} class="hidden lg:block">
-    {CTA_LABEL}
-  </ButtonCta>
-
-  <!-- mobile menu open button -->
-  <button
-    id="menu-open-button"
-    aria-label="Open main menu"
-    aria-expanded="false"
-    aria-controls="menu-bar-mobile"
-    class="text-yellow border-yellow inline-block cursor-pointer rounded-xl border-2 p-3 text-3xl lg:hidden"
+<div class="menu-bar shadow-gray/8 w-full shadow-xl">
+  <div
+    id="menu-bar"
+    class="container mx-auto flex w-full max-w-[1750px] items-center justify-between py-4"
   >
-    <MenuIcon />
-  </button>
-</div>
+    <!-- logo -->
+    <Logo />
 
-<!-- mobile menu bar -->
-<div
-  class="invisible fixed top-0 left-0 z-50 h-screen w-full translate-x-full overflow-y-auto bg-white transition-transform duration-300 ease-in-out"
-  id="menu-bar-mobile"
-  aria-hidden="true"
->
-  <!-- menu top bar -->
-  <div class="flex w-full justify-between px-4 py-8">
-    <!-- Top "Menu" text -->
-    <div class="menu-text flex items-center justify-center gap-4">
-      <MenuIcon className="text-blue text-2xl" />
-      <p class="text-xl">
-        {t("global.menubar.topSection.text")}
-      </p>
-    </div>
+    <!-- navigation -->
+    <nav aria-label={t("global.menubar.nav.ariaLabel") || "Main Navigation"}>
+      <NavLinks mode="desktop" />
+    </nav>
 
-    <!-- Close button -->
+    <!-- cta -->
+    <ButtonCta href={CTA_LINK} class="hidden! lg:block!">
+      {CTA_LABEL}
+    </ButtonCta>
+
+    <!-- mobile menu open button -->
     <button
-      id="menu-close-button"
-      aria-label="Close menu"
+      id="menu-open-button"
+      aria-label="Open main menu"
+      aria-expanded="false"
       aria-controls="menu-bar-mobile"
-      class="text-blue border-blue inline-block cursor-pointer rounded-xl border-2 p-2 text-4xl lg:hidden"
+      class="text-yellow border-yellow inline-block cursor-pointer rounded-xl border-2 p-3 text-3xl lg:hidden"
     >
-      <CloseIcon />
+      <MenuIcon />
     </button>
   </div>
 
-  <!-- Duplicate nav -->
-  <nav aria-label="Mobile Navigation">
-    <NavLinks mode="mobile">
-      <!-- Mobile Extras -->
-      <li class={MOBILE_STYLES.li}>
-        <p><strong>{t("global.menubar.translateWebsite")}</strong></p>
-      </li>
-      <li class={MOBILE_STYLES.li}>
-        <NavLink
-          link={translateLink}
-          label={t("global.menubar.translateWebsiteText")}
-          class={MOBILE_STYLES.link}
-        />
-      </li>
-      <li class={MOBILE_STYLES.li}>
-        <p>
-          <strong>{t("global.menubar.customerService.title")}</strong>
+  <!-- mobile menu bar -->
+  <div
+    class="invisible fixed top-0 left-0 z-50 h-screen w-full translate-x-full overflow-y-auto bg-white transition-transform duration-300 ease-in-out"
+    id="menu-bar-mobile"
+    aria-hidden="true"
+  >
+    <!-- menu top bar -->
+    <div class="flex w-full justify-between px-4 py-8">
+      <!-- Top "Menu" text -->
+      <div class="menu-text flex items-center justify-center gap-4">
+        <MenuIcon className="text-blue text-2xl" />
+        <p class="text-xl">
+          {t("global.menubar.topSection.text")}
         </p>
-        <p class="mt-2">{t("global.menubar.customerService.body")}</p>
-      </li>
+      </div>
 
-      {
-        contactPhones.map((phone) => (
-          <li class={MOBILE_STYLES.li}>
-            <NavLink
-              link={phone.link}
-              label={phone.label}
-              class={MOBILE_STYLES.link}
-            />
-          </li>
-        ))
-      }
-    </NavLinks>
-  </nav>
+      <!-- Close button -->
+      <button
+        id="menu-close-button"
+        aria-label="Close menu"
+        aria-controls="menu-bar-mobile"
+        class="text-blue border-blue inline-block cursor-pointer rounded-xl border-2 p-2 text-4xl lg:hidden"
+      >
+        <CloseIcon />
+      </button>
+    </div>
 
-  <!-- cta -->
-  <div class="flex w-full justify-center">
-    <ButtonCta
-      href={CTA_LINK}
-      class="bg-yellow hover:bg-yellow-dark mx-auto my-10 inline-block w-11/12 font-bold text-black"
-    >
-      {CTA_LABEL}
-    </ButtonCta>
+    <!-- Duplicate nav -->
+    <nav aria-label="Mobile Navigation">
+      <NavLinks mode="mobile">
+        <!-- Mobile Extras -->
+        <li class={MOBILE_STYLES.li}>
+          <p><strong>{t("global.menubar.translateWebsite")}</strong></p>
+        </li>
+        <li class={MOBILE_STYLES.li}>
+          <NavLink
+            link={translateLink}
+            label={t("global.menubar.translateWebsiteText")}
+            class={MOBILE_STYLES.link}
+          />
+        </li>
+        <li class={MOBILE_STYLES.li}>
+          <p>
+            <strong>{t("global.menubar.customerService.title")}</strong>
+          </p>
+          <p class="mt-2">{t("global.menubar.customerService.body")}</p>
+        </li>
+
+        {
+          contactPhones.map((phone) => (
+            <li class={MOBILE_STYLES.li}>
+              <NavLink
+                link={phone.link}
+                label={phone.label}
+                class={MOBILE_STYLES.link}
+              />
+            </li>
+          ))
+        }
+      </NavLinks>
+    </nav>
+
+    <!-- cta -->
+    <div class="flex w-full justify-center">
+      <ButtonCta
+        href={CTA_LINK}
+        class="bg-yellow hover:bg-yellow-dark mx-auto my-10 inline-block w-11/12 font-bold text-black"
+      >
+        {CTA_LABEL}
+      </ButtonCta>
+    </div>
   </div>
 </div>
 
