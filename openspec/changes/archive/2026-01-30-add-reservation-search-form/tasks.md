@@ -13,6 +13,6 @@
 
 
 ## 3. Validation
-- [ ] 3.1 Run `npm run dev` and verify form rendering
-- [ ] 3.2 Verify accessibility (labels, ARIA attributes)
-- [ ] 3.3 Run `openspec validate add-reservation-search-form --strict`
+- [x] 3.1 Run `npm run dev` and verify form rendering
+- [x] 3.2 Verify accessibility (labels, ARIA attributes)
+- [x] 3.3 Run `openspec validate add-reservation-search-form --strict`

@@ -3,7 +3,7 @@
 import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 
 // Data
-import { SOCIAL_LINKS } from "../../lib/constants";
+import { PHONES, SOCIAL_LINKS } from "../../lib/contact";
 
 // Components
 import LangLink from "../atoms/LangLink.astro";
@@ -36,11 +36,11 @@ const { pageKey } = Astro.props;
     >
       <ContactItem
         label={t("global.topbar.mexicoPhone")}
-        phone="+52 (998) 387-0435"
+        phone={PHONES.mexico.formatted}
       />
       <ContactItem
         label={t("global.topbar.usaCanadaPhone")}
-        phone="+1 (929) 999-1258"
+        phone={PHONES.usa.formatted}
       />
     </div>
 

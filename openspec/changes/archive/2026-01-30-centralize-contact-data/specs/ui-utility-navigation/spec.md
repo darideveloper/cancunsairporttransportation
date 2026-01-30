@@ -1,31 +1,6 @@
-# ui-utility-navigation Specification
+# ui-utility-navigation Specification Delta
 
-## Purpose
-TBD - created by archiving change add-top-bar. Update Purpose after archive.
-## Requirements
-### Requirement: Global Top Bar Visibility
-The website MUST display a utility bar at the very top of every page containing essential contact and configuration options. Social links MUST be sourced from the centralized contact data file.
-
-#### Scenario: Displaying the Top Bar
-- **GIVEN** a user navigates to any page on the site
-- **THEN** they see an orange-tinted or white bar at the top
-- **AND** it contains the language selector, contact numbers, and social links
-- **AND** contact numbers are sourced from `PHONES.mexico.formatted` and `PHONES.usa.formatted`
-- **AND** social links are sourced from `SOCIAL_LINKS.facebook` and `SOCIAL_LINKS.instagram`
-
-#### Scenario: TopBar Social Links Import Verification
-- **Given** the TopBar component source code
-- **When** inspected for social link URLs
-- **Then** social URLs MUST be sourced from `SOCIAL_LINKS` object
-- **And** social URLs MUST NOT be hardcoded in the component
-
-### Requirement: Route-based Language Switching
-The language selector MUST allow users to switch between English and Spanish.
-
-#### Scenario: Switching from English to Spanish
-- **GIVEN** the user is at `/en/`
-- **WHEN** the user clicks "Español" in the Top Bar
-- **THEN** they are redirected to `/es/`
+## MODIFIED Requirements
 
 ### Requirement: Click-to-Call Contact Numbers
 Phone numbers in the top bar MUST be clickable on mobile devices. Phone values MUST be sourced from the centralized contact data file.
@@ -48,13 +23,23 @@ Phone numbers in the top bar MUST be clickable on mobile devices. Phone values M
 - **And** the component MUST use `PHONES.mexico.formatted` for display
 - **And** the component MUST use `PHONES.usa.formatted` for display
 
-### Requirement: Screen Reader Compatibility
-All non-text elements (icons) MUST have descriptive ARIA labels to ensure accessibility and SEO clarity.
+### Requirement: Global Top Bar Visibility
+The website MUST display a utility bar at the very top of every page containing essential contact and configuration options. Social links MUST be sourced from the centralized contact data file.
 
-#### Scenario: Navigating with a Screen Reader
-- **GIVEN** a visually impaired user using a screen reader
-- **WHEN** they focus on the Facebook icon in the top bar
-- **THEN** the screen reader announces "Follow us on Facebook"
+#### Scenario: Displaying the Top Bar
+- **GIVEN** a user navigates to any page on the site
+- **THEN** they see an orange-tinted or white bar at the top
+- **AND** it contains the language selector, contact numbers, and social links
+- **AND** contact numbers are sourced from `PHONES.mexico.formatted` and `PHONES.usa.formatted`
+- **AND** social links are sourced from `SOCIAL_LINKS.facebook` and `SOCIAL_LINKS.instagram`
+
+#### Scenario: TopBar Social Links Import Verification
+- **Given** the TopBar component source code
+- **When** inspected for social link URLs
+- **Then** social URLs MUST be sourced from `SOCIAL_LINKS` object
+- **And** social URLs MUST NOT be hardcoded in the component
+
+## ADDED Requirements
 
 ### Requirement: Mobile Menu Contact Numbers
 The mobile menu MUST display contact phone numbers using centralized contact data.
@@ -70,4 +55,3 @@ The mobile menu MUST display contact phone numbers using centralized contact dat
 - **When** inspected for phone number values
 - **Then** there MUST be an import statement: `import { PHONES } from "../../lib/contact";`
 - **And** phone numbers MUST NOT be hardcoded as string literals in the component
-

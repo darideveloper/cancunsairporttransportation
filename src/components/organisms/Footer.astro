@@ -2,6 +2,9 @@
 // Libs
 import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 
+// Data
+import { SOCIAL_LINKS } from "../../lib/contact";
+
 // Components
 import Logo from "../atoms/Logo.astro";
 import LinkList from "../molecules/LinkList.astro";
@@ -16,12 +19,12 @@ const columns = footerMessages.columns;
 const socialLinks = [
   {
     text: footerMessages.social.facebook,
-    href: "https://www.facebook.com/gotransfers.us",
+    href: SOCIAL_LINKS.facebook,
     label: footerMessages.social.facebook,
   },
   {
     text: footerMessages.social.instagram,
-    href: "https://www.instagram.com/gotransfers.us",
+    href: SOCIAL_LINKS.instagram,
     label: footerMessages.social.instagram,
   },
 ];

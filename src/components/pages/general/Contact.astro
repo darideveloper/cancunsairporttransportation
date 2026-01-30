@@ -21,6 +21,9 @@ import Textarea from "../../atoms/form/Textarea.astro";
 import ButtonCta from "../../atoms/ButtonCta.astro";
 import GoogleMap from "../../atoms/GoogleMap.astro";
 
+// Data
+import { PHONES, EMAIL } from "../../../lib/contact";
+
 interface Props {
   lang: "en" | "es";
   pageKey: string;
@@ -38,21 +41,21 @@ const contactCardsList = [
     title: contactCards.usa.title,
     text: contactCards.usa.text,
     variant: "white",
-    href: "tel:+19299991258",
+    href: PHONES.usa.href,
   },
   {
     Icon: FaPhone,
     title: contactCards.mexico.title,
     text: contactCards.mexico.text,
     variant: "orange",
-    href: "tel:+529983870435",
+    href: PHONES.mexico.href,
   },
   {
     Icon: FaEnvelope,
     title: contactCards.email.title,
     text: contactCards.email.text,
     variant: "black",
-    href: "mailto:bookings@gotransfers.us",
+    href: EMAIL.href,
   },
 ] as const;
 
