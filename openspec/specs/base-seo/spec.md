@@ -35,42 +35,17 @@ The system MUST enhance the JSON-LD generation to support rich snippets for Loca
 - **Then** it MUST include the full global business details (Address, Geo, etc.) merged with any `extraJson`.
 
 ### Requirement: Canonical URL Resolution
-The `BaseSEO` component MUST generate correct canonical URLs by using the route key for path resolution, separate from translation key lookups.
+The `BaseSEO` component MUST generate correct canonical URLs by relying on consistent naming between Page Identifiers and Route Keys.
 
-#### Scenario: Canonical URL with pageKey
-- **Given** a page passes `pageKey="akumal"` and `currentPage="cancunToAkumalShuttle"`,
+#### Scenario: Self-referencing Canonical
+- **Given** a page component defines `const page = "akumal"`,
 - **When** `BaseSEO` renders,
-- **Then** the canonical URL MUST be resolved using `getLocalizedPath("akumal", lang)`.
-- **And** translation lookups MUST continue using `currentPage` for `t(\`pages.cancunToAkumalShuttle.title\`)`.
+- **Then** `currentPage` MUST be `"akumal"`.
+- **And** the canonical path lookup `getLocalizedPath("akumal", lang)` MUST return the correct URL.
+- **And** the translation lookup `t("pages.akumal.title")` MUST return the correct content.
 
-#### Scenario: Canonical URL fallback to currentPage
-- **Given** a page passes only `currentPage="taxi"` without `pageKey`,
-- **When** `BaseSEO` renders,
-- **Then** the canonical URL MUST be resolved using `getLocalizedPath("taxi", lang)`.
-- **And** this maintains backward compatibility with existing pages.
-
-#### Scenario: Canonical URL fallback to pathname
-- **Given** a page passes neither `pageKey` nor `currentPage`,
-- **When** `BaseSEO` renders,
-- **Then** the canonical URL MUST use `Astro.url.pathname` as the path.
-
-#### Scenario: Spanish page canonical points to English equivalent
-- **Given** the current language is `es` and `pageKey="akumal"`,
+#### Scenario: Spanish page canonical
+- **Given** the current language is `es` and `currentPage="akumal"`,
 - **When** `BaseSEO` resolves the canonical URL,
-- **Then** the canonical URL path MUST be the English version (`/cancun-to-akumal-shuttle`), not the Spanish version.
-- **And** this ensures proper canonical URL behavior across language variants.
-
-### Requirement: Route Key Prop Support
-The SEO components MUST accept a `pageKey` prop to explicitly specify the route key for URL resolution.
-
-#### Scenario: PageSEO forwards pageKey
-- **Given** a component passes `pageKey="playa"` to `PageSEO`,
-- **When** `PageSEO` renders `BaseSEO`,
-- **Then** the `pageKey` prop MUST be forwarded to `BaseSEO`.
-- **And** both `currentPage` and `pageKey` MUST be available for their respective purposes.
-
-#### Scenario: Missing route key graceful degradation
-- **Given** an invalid `pageKey` is passed (e.g., `"nonexistent-key"`),
-- **When** `BaseSEO` attempts to resolve the canonical path,
-- **Then** the system MUST fall back to `Astro.url.pathname` without throwing errors.
+- **Then** the canonical URL path MUST be the Spanish version (`/es/transporte-cancun-akumal`), ensuring self-referencing correctness.
 
