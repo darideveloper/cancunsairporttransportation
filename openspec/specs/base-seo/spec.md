@@ -1,9 +1,8 @@
-# BaseSEO Component Updates
+# base-seo Specification
 
-## MODIFIED Requirements
-
-## MODIFIED Requirements
-
+## Purpose
+TBD - created by archiving change enhance-seo-metadata. Update Purpose after archive.
+## Requirements
 ### Requirement: Social Metadata
 The component MUST support flexible social metadata including dynamic images and correct locales to improve sharing appearance.
 
@@ -34,3 +33,4 @@ The system MUST enhance the JSON-LD generation to support rich snippets for Loca
 - **Given** any page using `BaseSEO`,
 - **When** the JSON-LD is generated with `LocalBusiness` type,
 - **Then** it MUST include the full global business details (Address, Geo, etc.) merged with any `extraJson`.
+

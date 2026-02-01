@@ -1,132 +1,180 @@
 ---
-interface Props {
-  currentPage: string; // Current page
-  jsonType: string; // Type of the page
-  extraJson?: Record<string, any>; // Extra JSON data
-  baseDescription?: string; // Description of the page (optional, to ignore i18n)
-  baseKeywords?: string; // Keywords of the page (optional, to ignore i18n)
-  author?: string; // Author of the page (optional, to ignore i18n)
-  useTagLine?: boolean; // Use tag line from i18n
-}
-const {
-  currentPage,
-  jsonType,
-  extraJson = {},
-  baseDescription = "",
-  baseKeywords = "",
-  author = "Dari Dev's Team",
-  useTagLine = true,
-} = Astro.props as Props;
-
-// Libs
+import { BUSINESS_DATA } from "../../../data/site-config";
+import { SITE_TITLE, SITE_DESCRIPTION, LOCALE_MAP } from "../../../consts";
 import {
   useTranslations,
   getLangFromUrl,
   getLocalizedPath,
 } from "../../../lib/i18n/utils";
 
-const lang = getLangFromUrl(Astro.url);
-
-// i18n
-const t = useTranslations(lang);
-
-// Data
-const SITE_URL = import.meta.env.SITE_URL;
-// import { email, socialNetworks } from '../../../data/contact'
-// import { googleMapsLink } from '../../../data/contact'
-
-// Get page metadata from i18n
-const businessName =
-  t("global.branding.businessName") || "Cancun Airport Transportation";
-const pageName = t(`pages.${currentPage}.title`) || currentPage;
-const description = t(`pages.${currentPage}.description`) || baseDescription;
-const image = "/imgs/logo.webp";
-const twitterHandle = "@DeveloperDari";
-let keywords = t(`pages.${currentPage}.keywords`) || baseKeywords;
-
-// Split keywords into an array if it's a string
-const keywordsContent = Array.isArray(keywords)
-  ? keywords.join(", ")
-  : keywords;
-
-// Calculate page title
-let pageTitle;
-if (currentPage == "home") {
-  pageTitle = pageName;
-} else if (useTagLine) {
-  pageTitle = `${pageName} | ${businessName}`;
-} else {
-  pageTitle = pageName;
+interface Props {
+  currentPage?: string;
+  title?: string;
+  description?: string;
+  jsonType?: string;
+  extraJson?: Record<string, any>;
+  ogImage?: string;
+  noIndex?: boolean;
+  baseDescription?: string;
+  baseKeywords?: string;
+  author?: string;
+  useTagLine?: boolean;
 }
 
-// Canonical URL for this language
-const canonicalPath = getLocalizedPath(currentPage, lang);
-const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+const {
+  currentPage,
+  title,
+  description: propDescription,
+  jsonType = "LocalBusiness",
+  extraJson = {},
+  ogImage,
+  noIndex = false,
+  baseDescription = "",
+  baseKeywords = "",
+  author = BUSINESS_DATA.name,
+  useTagLine = true,
+} = Astro.props;
 
-// Alternate URLs
-const alternateUrls = {
-  en: `${SITE_URL}${getLocalizedPath(currentPage, "en")}`,
-  es: `${SITE_URL}${getLocalizedPath(currentPage, "es")}`,
-};
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const locale = LOCALE_MAP[lang] || "en_US";
 
-// Generate data
-const jsonLd = {
+// Metadata Resolution
+const i18nTitle = currentPage ? t(`pages.${currentPage}.title`) : undefined;
+const i18nDesc = currentPage
+  ? t(`pages.${currentPage}.description`)
+  : undefined;
+const i18nKeywords = currentPage
+  ? t(`pages.${currentPage}.keywords`)
+  : undefined;
+
+// Fallback logic: Prop > i18n > Constant > Default
+const resolvedTitle = title || i18nTitle || SITE_TITLE;
+const resolvedDescription =
+  propDescription || baseDescription || i18nDesc || SITE_DESCRIPTION;
+const resolvedKeywords = baseKeywords || i18nKeywords || "";
+
+// Title Formatting (Tagline)
+let pageTitle = resolvedTitle;
+if (
+  useTagLine &&
+  resolvedTitle !== BUSINESS_DATA.name &&
+  currentPage !== "home"
+) {
+  // Check if title already includes branding to avoid duplication
+  if (!resolvedTitle.includes(BUSINESS_DATA.name)) {
+    pageTitle = `${resolvedTitle} | ${BUSINESS_DATA.name}`;
+  }
+}
+
+// Canonical & Alternates
+const canonicalPath = currentPage
+  ? getLocalizedPath(currentPage, lang)
+  : Astro.url.pathname;
+const canonicalUrl = `${BUSINESS_DATA.url}${canonicalPath}`;
+
+const alternateUrls = currentPage
+  ? {
+      en: `${BUSINESS_DATA.url}${getLocalizedPath(currentPage, "en")}`,
+      es: `${BUSINESS_DATA.url}${getLocalizedPath(currentPage, "es")}`,
+    }
+  : undefined;
+
+// Images
+const socialImage = ogImage || BUSINESS_DATA.logo;
+const socialImageUrl = socialImage.startsWith("http")
+  ? socialImage
+  : `${BUSINESS_DATA.url}${socialImage}`;
+
+// JSON-LD Construction
+const baseSchema = {
   "@context": "https://schema.org",
-  "@type": jsonType || "LocalBusiness",
-  "@id": `${SITE_URL}#localbusiness`,
+  "@type": jsonType,
+  "@id": `${BUSINESS_DATA.url}#${jsonType.toLowerCase()}`,
   name: pageTitle,
-  description: description,
+  description: resolvedDescription,
   url: canonicalUrl,
-  logo: `${SITE_URL}/imgs/logo.webp`,
-  image: `${SITE_URL}/imgs/logo.webp`,
-  // email: email,
-  serviceArea: ["Yucatan", "Mexico"],
-  // hasMap: googleMapsLink,
-  // sameAs: [...socialNetworks.map((social) => social.link)],
+  logo: `${BUSINESS_DATA.url}${BUSINESS_DATA.logo}`,
+  image: socialImageUrl,
+  email: BUSINESS_DATA.contact.email,
+  telephone: BUSINESS_DATA.contact.phone,
+  address: BUSINESS_DATA.contact.address,
+  geo: BUSINESS_DATA.contact.geo,
+  priceRange: "$$-$$$", // Hardcoded as it was missing in config
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "00:00",
+    closes: "23:59",
+  },
+  sameAs: Object.values(BUSINESS_DATA.social),
   areaServed: [
     { "@type": "AdministrativeArea", name: "Yucatan" },
     { "@type": "Country", name: "Mexico" },
   ],
-  inLanguage: lang || "en",
-  ...extraJson,
+  inLanguage: lang,
 };
 
-const ogTypeMap = {
+const jsonLd = { ...baseSchema, ...extraJson };
+
+const ogTypeMap: Record<string, string> = {
   LocalBusiness: "website",
+  TravelAgency: "website",
   Blog: "blog",
   BlogPosting: "article",
 };
-const ogType = ogTypeMap[jsonType as keyof typeof ogTypeMap] || "website";
+const ogType = ogTypeMap[jsonType] || "website";
+const keywordsContent = Array.isArray(resolvedKeywords)
+  ? resolvedKeywords.join(", ")
+  : resolvedKeywords;
 ---
 
-<!-- Html tags -->
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>{pageTitle}</title>
-<meta name="description" content={description} />
+<meta name="description" content={resolvedDescription} />
 {keywordsContent && <meta name="keywords" content={keywordsContent} />}
 <meta name="author" content={author} />
-
-<!-- Open Graph tags -->
-<meta property="og:type" content={ogType} />
-<meta property="og:title" content={pageTitle} />
-<meta property="og:description" content={description} />
-<meta property="og:url" content={canonicalUrl} />
-<meta property="og:image" content={image} />
-
-<!-- Twitter tags -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content={twitterHandle} />
-<meta name="twitter:title" content={pageTitle} />
-<meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={image} />
-<meta name="twitter:creator" content="@DeveloperDari" />
-
-<!-- Json Ld -->
-<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-
-<!-- Sitemap -->
-<link rel="sitemap" href="/sitemap-index.xml" />
-
-<!-- Lang -->
 <link rel="canonical" href={canonicalUrl} />
-<link rel="alternate" hreflang="en" href={alternateUrls.en} />
-<link rel="alternate" hreflang="es" href={alternateUrls.es} />
+
+<!-- Robots -->
+{noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={resolvedDescription} />
+<meta property="og:image" content={socialImageUrl} />
+<meta property="og:locale" content={locale} />
+<meta property="og:site_name" content={BUSINESS_DATA.name} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={resolvedDescription} />
+<meta name="twitter:image" content={socialImageUrl} />
+
+<!-- Alternates -->
+{
+  alternateUrls && (
+    <>
+      <link rel="alternate" hreflang="en" href={alternateUrls.en} />
+      <link rel="alternate" hreflang="es" href={alternateUrls.es} />
+    </>
+  )
+}
+
+<!-- JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<link rel="sitemap" href="/sitemap-index.xml" />

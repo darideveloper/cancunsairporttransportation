@@ -37,13 +37,13 @@ export const BUSINESS_DATA = {
 };
 ```
 
-### 2. Component Interface (`BaseSEO.astro`)
+### 2. Component Interface Extension (`BaseSEO.astro`)
 
-The component signature needs update to support the requirements:
+The component will be **extended** to accept new optional props. Existing props will remain to ensure backward compatibility.
 
 ```typescript
 interface Props {
-  // Existing
+  // Existing Props (Preserved)
   currentPage: string;
   jsonType?: string; // Mapped to schema.org types
   extraJson?: Record<string, any>; // Merged into JSON-LD

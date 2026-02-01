@@ -7,21 +7,6 @@ interface Props {
   currentPage: string; // Current page
 }
 const { currentPage } = Astro.props as Props;
-
-// Data
-const SITE_URL = import.meta.env.SITE_URL;
-
-// Extra JSON
-const extraJson = {
-  publisher: {
-    "@type": "Organization",
-    name: "Ella Skin & Spa Wellness",
-    logo: {
-      "@type": "ImageObject",
-      url: `${SITE_URL}/imgs/logo.webp`,
-    },
-  },
-};
 ---
 
-<BaseSEO currentPage={currentPage} jsonType="Blog" extraJson={extraJson} />
+<BaseSEO currentPage={currentPage} jsonType="Blog" />
