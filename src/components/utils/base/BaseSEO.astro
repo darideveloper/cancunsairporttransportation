@@ -86,22 +86,34 @@ const socialImageUrl = socialImage.startsWith("http")
   ? socialImage
   : `${BUSINESS_DATA.url}${socialImage}`;
 
-// JSON-LD Construction
-const baseSchema = {
+// JSON-LD Construction - Conditionally build schema based on jsonType
+// LocalBusiness-specific properties (not valid for TouristDestination, Service)
+const isLocalBusiness =
+  jsonType === "LocalBusiness" || jsonType === "TravelAgency";
+const isTouristDestination = jsonType === "TouristDestination";
+const isService = jsonType === "Service";
+
+// Common schema properties for all schema types
+const baseSchema: Record<string, any> = {
   "@context": "https://schema.org",
   "@type": jsonType,
   "@id": `${BUSINESS_DATA.url}#${jsonType.toLowerCase()}`,
   name: pageTitle,
   description: resolvedDescription,
   url: canonicalUrl,
-  logo: `${BUSINESS_DATA.url}${BUSINESS_DATA.logo}`,
   image: socialImageUrl,
-  email: BUSINESS_DATA.contact.email,
-  telephone: BUSINESS_DATA.contact.phone,
-  address: BUSINESS_DATA.contact.address,
-  geo: BUSINESS_DATA.contact.geo,
-  priceRange: "$$-$$$", // Hardcoded as it was missing in config
-  openingHoursSpecification: {
+  inLanguage: lang,
+};
+
+// Add LocalBusiness-specific properties
+if (isLocalBusiness) {
+  baseSchema.logo = `${BUSINESS_DATA.url}${BUSINESS_DATA.logo}`;
+  baseSchema.email = BUSINESS_DATA.contact.email;
+  baseSchema.telephone = BUSINESS_DATA.contact.phone;
+  baseSchema.address = BUSINESS_DATA.contact.address;
+  baseSchema.geo = BUSINESS_DATA.contact.geo;
+  baseSchema.priceRange = "$$-$$$";
+  baseSchema.openingHoursSpecification = {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: [
       "Monday",
@@ -114,14 +126,37 @@ const baseSchema = {
     ],
     opens: "00:00",
     closes: "23:59",
-  },
-  sameAs: Object.values(BUSINESS_DATA.social),
-  areaServed: [
+  };
+  baseSchema.sameAs = Object.values(BUSINESS_DATA.social);
+  baseSchema.areaServed = [
     { "@type": "AdministrativeArea", name: "Yucatan" },
     { "@type": "Country", name: "Mexico" },
-  ],
-  inLanguage: lang,
-};
+  ];
+}
+
+// Add TouristDestination-specific properties
+if (isTouristDestination) {
+  baseSchema.touristType = "Adventure travelers";
+  baseSchema.containedInPlace = {
+    "@type": "AdministrativeArea",
+    name: "Riviera Maya, Mexico",
+  };
+}
+
+// Add Service-specific properties
+if (isService) {
+  baseSchema.provider = {
+    "@type": "LocalBusiness",
+    name: BUSINESS_DATA.name,
+    url: BUSINESS_DATA.url,
+    telephone: BUSINESS_DATA.contact.phone,
+  };
+  baseSchema.areaServed = [
+    { "@type": "AdministrativeArea", name: "Yucatan" },
+    { "@type": "Country", name: "Mexico" },
+  ];
+  baseSchema.serviceType = "Airport Transportation";
+}
 
 const jsonLd = { ...baseSchema, ...extraJson };
 

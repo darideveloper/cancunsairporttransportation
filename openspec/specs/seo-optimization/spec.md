@@ -1,7 +1,8 @@
-# Spec: SEO Optimization
+# seo-optimization Specification
 
-## MODIFIED Requirements
-
+## Purpose
+TBD - created by archiving change enhance-seo-metadata. Update Purpose after archive.
+## Requirements
 ### Requirement: Specialized Schemas and Images
 The system MUST support specific schemas and unique social images for key page types.
 
@@ -36,3 +37,4 @@ Then every page entry MUST have a "keywords" field
 Given I am on a generic page like "/contact"
 Then the JSON-LD schema type SHOULD remain "LocalBusiness" unless specified otherwise
 And the Open Graph image SHOULD default to the business logo if no specific image is provided
+

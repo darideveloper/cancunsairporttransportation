@@ -1,10 +1,17 @@
 ---
-// Reas props
+// Read props
 interface Props {
   currentPage: string; // Current page
   extraJson?: Record<string, any>;
+  jsonType?: string; // Schema type: LocalBusiness, TouristDestination, Service
+  ogImage?: string; // Custom social image URL
 }
-const { currentPage, extraJson = {} } = Astro.props;
+const {
+  currentPage,
+  extraJson = {},
+  jsonType = "LocalBusiness",
+  ogImage,
+} = Astro.props;
 
 // Components
 import BaseSEO from "./base/BaseSEO.astro";
@@ -12,6 +19,7 @@ import BaseSEO from "./base/BaseSEO.astro";
 
 <BaseSEO
   currentPage={currentPage}
-  jsonType="LocalBusiness"
+  jsonType={jsonType}
   extraJson={extraJson}
+  ogImage={ogImage}
 />
