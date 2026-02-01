@@ -101,6 +101,9 @@ const destinations = [
       href={t(`pages.${page}.destinations.viewMoreLink`)}
       variant="blueGhost"
       title={t(`pages.${page}.destinations.viewMore`)}
+      ariaLabel={t("global.accessibility.viewDetails", {
+        item: t(`pages.${page}.destinations.title`),
+      })}
     >
       {t(`pages.${page}.destinations.viewMore`)}
     </ButtonCta>

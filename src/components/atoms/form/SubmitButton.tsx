@@ -1,15 +1,17 @@
 interface Props {
-  label: string
-  className?: string
+  label: string;
+  className?: string;
+  ariaLabel?: string;
 }
 
-export default function SubmitButton({ label, className }: Props) {
+export default function SubmitButton({ label, className, ariaLabel }: Props) {
   return (
     <button
-      type='submit'
-      className={`px-5 py-4 bg-blue text-white uppercase rounded-md ${className}`}
+      type="submit"
+      aria-label={ariaLabel}
+      className={`bg-blue rounded-md px-5 py-4 text-white uppercase ${className}`}
     >
       {label}
     </button>
-  )
+  );
 }

@@ -3,6 +3,15 @@
     "branding": {
       "businessName": "Cancun Airport Transportation"
     },
+    "accessibility": {
+      "callAction": "Call {label}: {phone}",
+      "bookingForm": "Booking form",
+      "viewDetails": "View details for {item}",
+      "legal": {
+        "terms": "Read our Terms and Conditions",
+        "privacy": "Read our Privacy Policy"
+      }
+    },
     "topbar": {
       "languageLabel": "Language",
       "mexicoPhone": "Mexico & Rest of the world",

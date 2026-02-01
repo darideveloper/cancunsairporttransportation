@@ -14,6 +14,7 @@ interface Props {
   defaultTo?: string;
   title?: string;
   className?: string;
+  ariaLabel?: string;
 }
 
 export default function BookingForm({
@@ -22,6 +23,7 @@ export default function BookingForm({
   defaultTo,
   title,
   className,
+  ariaLabel,
 }: Props) {
   const state = useSearchFormStore();
 
@@ -87,9 +89,16 @@ export default function BookingForm({
       id="booking-form"
       className={`container flex w-full justify-center ${className} px-4 sm:px-16`}
     >
-      <form className="bg-accent w-full rounded-xl px-8 py-6">
+      <form
+        className="bg-accent w-full rounded-xl px-8 py-6"
+        aria-label={!title ? ariaLabel : undefined}
+        aria-labelledby={title ? "booking-form-title" : undefined}
+      >
         {title && (
-          <h1 className="mb-4 text-center text-3xl font-bold text-balance">
+          <h1
+            id="booking-form-title"
+            className="mb-4 text-center text-3xl font-bold text-balance"
+          >
             {title}
           </h1>
         )}

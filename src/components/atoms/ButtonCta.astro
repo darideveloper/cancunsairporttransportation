@@ -8,6 +8,7 @@ interface Props extends HTMLAttributes<"a"> {
   type?: "submit" | "button" | "reset";
   target?: string;
   class?: string;
+  ariaLabel?: string;
   variant?:
     | "orange"
     | "blue"
@@ -25,6 +26,7 @@ const {
   class: className,
   variant = "orange",
   rel,
+  ariaLabel,
   ...rest
 } = Astro.props;
 
@@ -55,6 +57,7 @@ const Element = href ? "a" : "button";
   type={href ? undefined : type}
   target={href ? target : undefined}
   rel={href ? computedRel : undefined}
+  aria-label={ariaLabel}
   class={sharedClasses}
   {...rest}
 >

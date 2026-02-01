@@ -3,6 +3,15 @@
     "branding": {
       "businessName": "Transporte Cancún Aeropuerto"
     },
+    "accessibility": {
+      "callAction": "Llamar a {label}: {phone}",
+      "bookingForm": "Formulario de reserva",
+      "viewDetails": "Ver detalles de {item}",
+      "legal": {
+        "terms": "Leer nuestros Términos y Condiciones",
+        "privacy": "Leer nuestra Política de Privacidad"
+      }
+    },
     "topbar": {
       "languageLabel": "Idioma",
       "mexicoPhone": "México y resto del mundo",
