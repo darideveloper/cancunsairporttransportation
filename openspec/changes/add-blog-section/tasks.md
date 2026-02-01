@@ -5,6 +5,7 @@
 - [ ] Define blog types in `src/types/blog.ts` <!-- id: 0 -->
 - [ ] Create `src/lib/blog/api.ts` with `getPosts` and `getPostBySlug` functions <!-- id: 1 -->
 - [ ] Add `blog` route to `src/lib/i18n/routes.ts` <!-- id: 2 -->
+- [ ] Update `src/pages/rss.xml.js` to use `getPosts` from blog API instead of `getCollection` <!-- id: 20 -->
 
 ## Phase 2: Translation Integration
 
@@ -37,3 +38,4 @@
 - [ ] Verify SEO metadata is correctly rendered on listing pages <!-- id: 17 -->
 - [ ] Verify SEO metadata from API is correctly rendered on detail pages <!-- id: 18 -->
 - [ ] Verify language switching works correctly on blog posts <!-- id: 19 -->
+- [ ] Verify RSS feed is generated with correct post data from API <!-- id: 21 -->
