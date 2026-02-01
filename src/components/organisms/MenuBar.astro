@@ -37,8 +37,16 @@ const CTA_LINK = getLocalizedPath("reservation", lang);
 const CTA_LABEL = t("global.menubar.cta");
 
 const contactPhones = [
-  { link: PHONES.mexico.href, label: PHONES.mexico.formatted },
-  { link: PHONES.usa.href, label: PHONES.usa.formatted },
+  {
+    link: PHONES.mexico.href,
+    label: PHONES.mexico.formatted,
+    name: t("global.topbar.mexicoPhone"),
+  },
+  {
+    link: PHONES.usa.href,
+    label: PHONES.usa.formatted,
+    name: t("global.topbar.usaPhone"),
+  },
 ];
 
 const targetLang = lang === "es" ? "en" : "es";
@@ -133,6 +141,10 @@ const translateLink = pageKey
               <NavLink
                 link={phone.link}
                 label={phone.label}
+                ariaLabel={t("global.accessibility.callAction", {
+                  label: phone.name,
+                  phone: phone.label,
+                })}
                 class={MOBILE_STYLES.link}
               />
             </li>

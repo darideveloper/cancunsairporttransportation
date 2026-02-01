@@ -23,3 +23,19 @@ The Reservation page MUST feature a search form implemented using standard UI at
 - **AND** it MUST include a submit button with the text "SEARCH" (EN) or "BUSCAR" (ES)
 - **AND** the form MUST submit via POST to the language-appropriate reservation endpoint
 
+### Requirement: Help Section Heading Level
+The "Need help?" section MUST use `<h3>` instead of `<h4>` to maintain proper heading hierarchy.
+
+#### Scenario: Help Section Follows H2 Form Heading
+Given the Reservation page is rendered
+When viewing the help section below the form
+Then the heading "Need help?" (English) or "¿Necesitas ayuda?" (Spanish) MUST be an `<h3>`
+And it follows the `<h2>` "MY RESERVATION" form heading
+And no heading levels are skipped
+
+#### Scenario: Heading Hierarchy Validation
+Given the built Reservation page HTML
+When parsing heading elements
+Then the heading sequence MUST be: H1 → H2 → H3
+And H4 MUST NOT appear before H3 in the document flow
+

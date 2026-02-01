@@ -34,3 +34,18 @@ The system MUST enhance the JSON-LD generation to support rich snippets for Loca
 - **When** the JSON-LD is generated with `LocalBusiness` type,
 - **Then** it MUST include the full global business details (Address, Geo, etc.) merged with any `extraJson`.
 
+### Requirement: Canonical URL Resolution
+The `BaseSEO` component MUST generate correct canonical URLs by relying on consistent naming between Page Identifiers and Route Keys.
+
+#### Scenario: Self-referencing Canonical
+- **Given** a page component defines `const page = "akumal"`,
+- **When** `BaseSEO` renders,
+- **Then** `currentPage` MUST be `"akumal"`.
+- **And** the canonical path lookup `getLocalizedPath("akumal", lang)` MUST return the correct URL.
+- **And** the translation lookup `t("pages.akumal.title")` MUST return the correct content.
+
+#### Scenario: Spanish page canonical
+- **Given** the current language is `es` and `currentPage="akumal"`,
+- **When** `BaseSEO` resolves the canonical URL,
+- **Then** the canonical URL path MUST be the Spanish version (`/es/transporte-cancun-akumal`), ensuring self-referencing correctness.
+

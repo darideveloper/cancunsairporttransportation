@@ -2,6 +2,7 @@
 // Libs
 import clsx from "clsx";
 import { generateId } from "../../lib/utils/ids";
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 
 // Props
 interface Props {
@@ -24,6 +25,8 @@ const {
   variant = "white",
 } = Astro.props;
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const id = generateId("info-card", title);
 
 const Container = href ? "a" : "div";
@@ -39,6 +42,10 @@ const textClasses = {
   orange: "text-white",
   black: "text-white",
 };
+
+const ariaLabel = href
+  ? t("global.accessibility.viewDetails", { item: title })
+  : undefined;
 ---
 
 <article
@@ -48,7 +55,7 @@ const textClasses = {
   )}
   aria-labelledby={id}
 >
-  <Container href={href}>
+  <Container href={href} aria-label={ariaLabel}>
     <header class="mb-3 flex items-center gap-2">
       {Icon && <Icon className={`text-3xl ${iconClass}`} aria-hidden="true" />}
       <h3 class="text-md font-bold" id={id}>{title}</h3>

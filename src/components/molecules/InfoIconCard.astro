@@ -1,5 +1,6 @@
 ---
 import { generateId } from "../../lib/utils/ids";
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 
 interface Props {
   title: string;
@@ -21,7 +22,10 @@ const {
   class: className,
 } = Astro.props;
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const id = generateId("info-card", title);
+const ariaLabel = t("global.accessibility.viewDetails", { item: title });
 ---
 
 <article
@@ -35,7 +39,11 @@ const id = generateId("info-card", title);
   <p class="text-gray text-base leading-relaxed">
     {
       href ? (
-        <a href={href} class="hover:text-accent transition-colors duration-300">
+        <a
+          href={href}
+          class="hover:text-accent transition-colors duration-300"
+          aria-label={ariaLabel}
+        >
           {text}
         </a>
       ) : (

@@ -84,6 +84,9 @@ const destinations = [
         </SectionHeading>
       </div>
 
+      <!-- Highlights Section -->
+      <h2 class="sr-only">{t(`pages.${page}.highlights.sectionTitle`)}</h2>
+
       <BasicImageCard
         title={t(`global.sections.highlights.reserve.title`)}
         image={{
@@ -120,6 +123,7 @@ const destinations = [
                   slot="image"
                   src={dest.image}
                   alt={t(`pages.${page}.destinations.cards.${dest.id}.title`)}
+                  title={t(`pages.${page}.destinations.cards.${dest.id}.title`)}
                   widths={[300, 600, dest.image.width]}
                   quality={60}
                   format="avif"

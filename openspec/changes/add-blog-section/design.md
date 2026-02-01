@@ -217,6 +217,47 @@ interface Props {
 </article>
 ```
 
+### 8. RSS Feed Integration
+
+The existing `src/pages/rss.xml.js` uses Astro content collections. It must be updated to use the external blog API.
+
+**Current Implementation (to be replaced):**
+```javascript
+import { getCollection } from 'astro:content';
+// Uses getCollection('blog') which doesn't exist
+```
+
+**Updated Implementation:**
+```javascript
+// src/pages/rss.xml.js
+import rss from '@astrojs/rss';
+import { getPosts } from '../lib/blog/api';
+
+export async function GET(context) {
+  const posts = await getPosts('en');
+  
+  return rss({
+    title: 'Cancun Airport Transportation Blog',
+    description: 'Read our latest articles about travel tips, destinations, and airport transportation in Cancun and Riviera Maya.',
+    site: context.site,
+    items: posts.map((post) => ({
+      title: post.title,
+      description: post.description,
+      pubDate: new Date(post.created_at),
+      author: post.author,
+      link: `/blog/${post.slug}/`,
+    })),
+  });
+}
+```
+
+**Key Changes:**
+- Import `getPosts` from the blog API client instead of `getCollection`.
+- Use `post.slug` for the link instead of `post.id`.
+- Map `post.created_at` to `pubDate`.
+- Include `post.author` in RSS items.
+- Update title/description to match the blog context.
+
 ## Considerations
 
 - **API Limits**: Fetching all posts at build time with `page-size=1000`.

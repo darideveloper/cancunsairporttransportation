@@ -48,6 +48,7 @@ const contentHtml = await marked.parse(contentText);
     src={image}
     class={`h-full w-full rounded-xl object-cover md:w-1/2 lg:w-1/3 ${imageClass || ""}`}
     alt={imageAlt}
+    title={imageAlt}
     widths={[400, 800, image.width]}
     sizes="(max-width: 768px) 400px, 800px"
     quality={60}

@@ -37,6 +37,7 @@ const buttons = [
               <ButtonCta
                 href={t(`global.sections.bannerCta.buttons.${button.id}.href`)}
                 variant={button.variant as "orange" | "grayDark"}
+                ariaLabel={`${t(`global.sections.bannerCta.buttons.${button.id}.text`)} - ${title}`}
                 class="inline-block w-full px-8 md:w-auto"
               >
                 {t(`global.sections.bannerCta.buttons.${button.id}.text`)}

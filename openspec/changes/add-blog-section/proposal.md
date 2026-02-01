@@ -36,6 +36,12 @@ Implement a blog section that fetches content from an external API, supports pag
 - `src/layouts/Layout.astro`: Add `translatedPath` prop support and pass to `Header`.
 - `src/messages/en.json`: Add `pages.blog` translations for listing page SEO and UI.
 - `src/messages/es.json`: Add `pages.blog` translations for listing page SEO and UI.
+- `src/pages/rss.xml.js`: Update to fetch posts from external API instead of Astro content collections.
+  - Replace `getCollection('blog')` with `getPosts('en')` from `src/lib/blog/api.ts`.
+  - Map API response fields (`title`, `description`, `slug`, `created_at`, `author`) to RSS item format.
+  - Add `pubDate` using `post.created_at` from the API.
+  - Add `author` field using `post.author` from the API.
+  - Update `link` to use `post.slug` instead of `post.id`.
 
 ### SEO Integration (STRICT REQUIREMENT)
 

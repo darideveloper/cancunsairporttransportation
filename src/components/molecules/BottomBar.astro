@@ -12,6 +12,8 @@ const copyright = footerMessages.bottomBar.copyright.replace(
   currentYear.toString(),
 );
 const terms = footerMessages.bottomBar.terms;
+const termsTitle = t("global.accessibility.legal.terms");
+const privacyTitle = t("global.accessibility.legal.privacy");
 ---
 
 <div class="border-gray-light mt-12 border-t py-8">
@@ -24,6 +26,7 @@ const terms = footerMessages.bottomBar.terms;
         <li>
           <a
             href={`/${lang}/terms-and-conditions`}
+            title={termsTitle}
             class="text-gray hover:text-blue text-sm font-medium transition-colors"
           >
             {terms}
@@ -32,6 +35,7 @@ const terms = footerMessages.bottomBar.terms;
         <li>
           <a
             href={lang === "es" ? "/es/privacidad" : "/privacy"}
+            title={privacyTitle}
             class="text-gray hover:text-blue text-sm font-medium transition-colors"
           >
             {footerMessages.bottomBar.privacy}
