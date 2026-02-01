@@ -10,12 +10,14 @@ const tEs = useTranslations("es");
 const title = t("pages.404.title");
 const heading = t("pages.404.heading");
 const message = t("pages.404.message");
+const subtitle = t("pages.404.subtitle");
 const cta = t("pages.404.cta");
 
 // Pre-compute Spanish values for client-side injection
 const esValues = {
   title: tEs("pages.404.title"),
   heading: tEs("pages.404.heading"),
+  subtitle: tEs("pages.404.subtitle"),
   message: tEs("pages.404.message"),
   cta: tEs("pages.404.cta"),
 };
@@ -45,6 +47,9 @@ const esValues = {
       >
         {heading}
       </h1>
+      <h2 id="error-subtitle" class="text-accent text-2xl font-bold">
+        {subtitle}
+      </h2>
       <p id="error-message" class="text-gray max-w-md text-lg">
         {message}
       </p>
@@ -66,6 +71,9 @@ const esValues = {
       // Update visible content
       const headingEl = document.getElementById("error-heading");
       if (headingEl) headingEl.textContent = esValues.heading;
+
+      const subtitleEl = document.getElementById("error-subtitle");
+      if (subtitleEl) subtitleEl.textContent = esValues.subtitle;
 
       const messageEl = document.getElementById("error-message");
       if (messageEl) messageEl.textContent = esValues.message;

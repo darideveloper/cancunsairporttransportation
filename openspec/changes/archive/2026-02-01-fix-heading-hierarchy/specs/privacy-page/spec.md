@@ -1,17 +1,9 @@
-# privacy-page Specification
+# privacy-page Specification Delta
 
 ## Purpose
-TBD - created by archiving change add-missing-pages. Update Purpose after archive.
-## Requirements
-### Requirement: Privacy Page Layout
-The Privacy Policy page SHALL use the `LegalLayout` to ensure a consistent appearance with other legal documents.
+Updates to the Privacy Policy page content to fix heading hierarchy violation.
 
-#### Scenario: Rendering Privacy Page
-Given a user visits the Privacy page
-When the page loads
-Then it should be rendered within the `LegalLayout`
-And it should display the privacy policy text retrieved from the translation files
-And it should have a proper SEO title and description
+## ADDED Requirements
 
 ### Requirement: MDX Content Section Headings
 The Privacy Policy MDX content MUST include `<h2>` section headings to structure the legal text before footer H3s appear.
@@ -34,4 +26,3 @@ Given the Spanish Privacy Policy (`/es/privacidad`)
 When viewing the page content
 Then the H2 section structure MUST mirror the English version
 And both versions MUST pass heading hierarchy validation
-
