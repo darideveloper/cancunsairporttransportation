@@ -45,11 +45,12 @@ const extraJson = {
 ---
 
 <BaseSEO
-  currentPage={postTitle || ""}
+  title={postTitle}
+  description={postExcerpt}
   author={author}
-  baseDescription={postExcerpt}
   baseKeywords={postKeywords}
   jsonType="BlogPosting"
   extraJson={extraJson}
+  ogImage={postImageUrl}
   useTagLine={false}
 />

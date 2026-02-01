@@ -6,6 +6,9 @@ import {
   getLocalizedPath,
 } from "../../lib/i18n/utils";
 
+// Data
+import { PHONES } from "../../data/site-config";
+
 // Icons
 import { TiThMenu as MenuIcon } from "react-icons/ti";
 import { IoClose as CloseIcon } from "react-icons/io5";
@@ -34,8 +37,8 @@ const CTA_LINK = getLocalizedPath("reservation", lang);
 const CTA_LABEL = t("global.menubar.cta");
 
 const contactPhones = [
-  { link: "tel:+529983870435", label: "+52 (998) 387-0435" },
-  { link: "tel:+19299991258", label: "+1 (929) 999-1258" },
+  { link: PHONES.mexico.href, label: PHONES.mexico.formatted },
+  { link: PHONES.usa.href, label: PHONES.usa.formatted },
 ];
 
 const targetLang = lang === "es" ? "en" : "es";

@@ -4,10 +4,6 @@ import Layout from "../../../layouts/Layout.astro";
 
 // Libs
 import { useTranslations } from "../../../lib/i18n/utils";
-import { getStaticPathsLangs } from "../../../lib/utils";
-
-// i18n
-// export const getStaticPaths = getStaticPathsLangs;
 
 // Components
 import PageSEO from "../../../components/utils/PageSEO.astro";
@@ -15,7 +11,6 @@ import RatesTable from "../../../components/organisms/RatesTable.astro";
 import BookingForm from "../../../components/organisms/BookingForm";
 import TextCardHalf from "../../../components/organisms/TextCardHalf.astro";
 import TextCardSmall from "../../../components/organisms/TextCardSmall.astro";
-import PopularHotels from "../../../components/organisms/PopularHotels.astro";
 import BannerStats from "../../../components/organisms/BannerStats.astro";
 import PricingSection from "../../../components/organisms/PricingSection.astro";
 import Testimonials from "../../../components/organisms/Testimonials.astro";
@@ -57,7 +52,12 @@ const t = useTranslations(lang);
 
 <Layout pageKey={pageKey}>
   <!-- Page SEO -->
-  <PageSEO currentPage={page} slot="seo" />
+  <PageSEO
+    currentPage={page}
+    slot="seo"
+    jsonType="TouristDestination"
+    ogImage={safeTripBookingImg.src}
+  />
 
   <!-- Form -->
   <div class="@container">

@@ -1,5 +1,6 @@
 ---
 import Layout from "./Layout.astro";
+import BaseSEO from "../components/utils/base/BaseSEO.astro";
 
 interface Props {
   title: string;
@@ -8,26 +9,16 @@ interface Props {
 }
 
 const { title, description, pageKey } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <Layout pageKey={pageKey}>
-  <Fragment slot="seo">
-    <title>{title} | Cancun Airport Transportation</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalURL} />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-  </Fragment>
+  <BaseSEO
+    slot="seo"
+    title={title}
+    description={description}
+    jsonType="Article"
+    useTagLine={true}
+  />
 
   <div class="w-full">
     <header class="bg-accent mx-auto w-full pt-12 pb-32">

@@ -2,6 +2,9 @@
 // Libs
 import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 
+// Data
+import { PHONES } from "../../data/site-config";
+
 // Components
 import SectionHeading from "../molecules/SectionHeading.astro";
 import InfoIconCard from "../molecules/InfoIconCard.astro";
@@ -19,13 +22,13 @@ const contactItems = [
     title: t("global.locations.contacts.usaCanada.label"),
     text: t("global.locations.contacts.usaCanada.value"),
     Icon: FaMapMarkerAlt,
-    href: `tel:${t("global.locations.contacts.usaCanada.value").replace(/[^0-9+]/g, "")}`,
+    href: PHONES.usa.href,
   },
   {
     title: t("global.locations.contacts.mexicoRest.label"),
     text: t("global.locations.contacts.mexicoRest.value"),
     Icon: FaMapMarkerAlt,
-    href: `tel:${t("global.locations.contacts.mexicoRest.value").replace(/[^0-9+]/g, "")}`,
+    href: PHONES.mexico.href,
   },
   {
     title: t("global.locations.contacts.address.label"),

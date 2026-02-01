@@ -4,10 +4,6 @@ import Layout from "../../../layouts/Layout.astro";
 
 // Libs
 import { useTranslations } from "../../../lib/i18n/utils";
-import { getStaticPathsLangs } from "../../../lib/utils";
-
-// i18n
-// export const getStaticPaths = getStaticPathsLangs;
 
 // Components
 import PageSEO from "../../../components/utils/PageSEO.astro";
@@ -42,7 +38,12 @@ const t = useTranslations(lang);
 
 <Layout preloadImage={homeBannerImg.src} pageKey={pageKey}>
   <!-- Page SEO -->
-  <PageSEO currentPage={page} slot="seo" />
+  <PageSEO
+    currentPage={page}
+    slot="seo"
+    jsonType="Service"
+    ogImage={luxuryImg.src}
+  />
 
   <!-- Form -->
   <div class="@container" id="booking-form">
