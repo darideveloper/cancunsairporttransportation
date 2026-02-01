@@ -81,7 +81,7 @@ const alternateUrls = currentPage
   : undefined;
 
 // Images
-const socialImage = ogImage || BUSINESS_DATA.logo;
+const socialImage = ogImage || BUSINESS_DATA.ogImage || BUSINESS_DATA.logo;
 const socialImageUrl = socialImage.startsWith("http")
   ? socialImage
   : `${BUSINESS_DATA.url}${socialImage}`;
