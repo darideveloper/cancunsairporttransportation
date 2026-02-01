@@ -82,6 +82,7 @@ export const BUSINESS_DATA = {
     legalName: "Cancun Airport Transportation by Go Transfers",
     url: "https://cancunsairporttransportation.com",
     logo: "/assets/img/logo.png",
+    ogImage: "/og-image.jpg",
     contact: {
         phone: PHONES.mexico.formatted,
         email: EMAIL.address,

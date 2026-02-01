@@ -14,7 +14,7 @@ const { src, alt, title, class: className } = Astro.props;
 
 <section
   id="banner-image"
-  class={`relative -z-10 mx-auto h-[500px] w-[98%] overflow-hidden rounded-xl ${className}`}
+  class={`relative -z-10 mx-auto h-[300px] w-[98%] overflow-hidden rounded-xl ${className} h-[350px]`}
 >
   <Image
     src={src}
@@ -30,7 +30,7 @@ const { src, alt, title, class: className } = Astro.props;
     class="absolute inset-0 h-full w-full object-cover object-center"
   />
   <div
-    class="absolute top-1/2 left-1/2 container -translate-x-1/2 -translate-y-1/2 transform text-center text-white"
+    class="absolute top-1/2 left-1/2 container -mt-12 -translate-x-1/2 -translate-y-1/2 transform text-center text-white"
   >
     <slot />
   </div>
