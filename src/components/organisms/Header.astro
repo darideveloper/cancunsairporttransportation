@@ -5,12 +5,13 @@ import MenuBar from "./MenuBar.astro";
 
 interface Props {
   pageKey?: string;
+  translatedPath?: string;
 }
 
-const { pageKey } = Astro.props;
+const { pageKey, translatedPath } = Astro.props;
 ---
 
 <header class="mb-6">
-  <TopBar pageKey={pageKey} />
+  <TopBar pageKey={pageKey} translatedPath={translatedPath} />
   <MenuBar pageKey={pageKey} />
 </header>

@@ -12,6 +12,7 @@ interface Props {
   postDate?: string; // Post date
   postImageUrl?: string; // Post image URL
   postSlug?: string; // Post URL
+  alternateUrls?: { en: string; es: string };
 }
 const {
   author,
@@ -22,6 +23,7 @@ const {
   postDate,
   postImageUrl,
   postSlug,
+  alternateUrls,
 } = Astro.props as Props;
 
 // Data
@@ -53,4 +55,5 @@ const extraJson = {
   extraJson={extraJson}
   ogImage={postImageUrl}
   useTagLine={false}
+  alternateUrls={alternateUrls}
 />
