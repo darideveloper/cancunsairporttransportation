@@ -1882,6 +1882,19 @@
           "href": "#booking-form"
         }
       }
+    },
+    "blog": {
+      "title": "Blog de Cancun Airport Transportation | Consejos de Viaje y Noticias",
+      "description": "Lee las últimas noticias, consejos de viaje y guías sobre Cancún, Playa del Carmen, Tulum y la Riviera Maya de nuestros expertos.",
+      "keywords": "blog cancun, consejos de viaje riviera maya, guia tulum, noticias playa del carmen",
+      "heading": "Nuestro Blog",
+      "readMore": "Leer más",
+      "authorPrefix": "Por",
+      "datePrefix": "Publicado el",
+      "pagination": {
+        "previous": "Anterior",
+        "next": "Siguiente"
+      }
     }
   }
 }

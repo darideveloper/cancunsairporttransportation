@@ -1,0 +1,71 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import BlogSEO from "../../utils/BlogSEO.astro";
+import SectionHeading from "../../molecules/SectionHeading.astro";
+import PostCard from "../../molecules/PostCard.astro";
+import ButtonCta from "../../atoms/ButtonCta.astro";
+import { useTranslations } from "../../../lib/i18n/utils";
+import type { Post } from "../../../types/blog";
+
+interface Props {
+  posts: Post[];
+  lang: "en" | "es";
+  currentPage: number;
+  lastPage: number;
+  prevUrl?: string;
+  nextUrl?: string;
+}
+
+const { posts, lang, currentPage, lastPage, prevUrl, nextUrl } = Astro.props;
+const t = useTranslations(lang);
+
+const pageLabel = lang === "es" ? "Página" : "Page";
+---
+
+<Layout lang={lang}>
+  <BlogSEO slot="seo" currentPage="blog" />
+
+  <section class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4">
+      <div class="mb-12 text-center">
+        <SectionHeading title={t("pages.blog.heading")} isH1={true} />
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => <PostCard post={post} lang={lang} />)}
+      </div>
+
+      {/* Pagination */}
+      <div class="mt-12 flex items-center justify-center gap-4">
+        {
+          prevUrl && (
+            <ButtonCta
+              href={prevUrl}
+              variant="gray"
+              ariaLabel={t("pages.blog.pagination.previous")}
+            >
+              ← {t("pages.blog.pagination.previous")}
+            </ButtonCta>
+          )
+        }
+
+        <span class="font-medium text-gray-600">
+          {pageLabel}
+          {currentPage} / {lastPage}
+        </span>
+
+        {
+          nextUrl && (
+            <ButtonCta
+              href={nextUrl}
+              variant="gray"
+              ariaLabel={t("pages.blog.pagination.next")}
+            >
+              {t("pages.blog.pagination.next")} →
+            </ButtonCta>
+          )
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

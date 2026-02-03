@@ -19,6 +19,7 @@ interface Props {
   baseKeywords?: string;
   author?: string;
   useTagLine?: boolean;
+  alternateUrls?: { en: string; es: string };
 }
 
 const {
@@ -33,6 +34,7 @@ const {
   baseKeywords = "",
   author = BUSINESS_DATA.name,
   useTagLine = true,
+  alternateUrls: propAlternateUrls,
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
@@ -73,12 +75,14 @@ const canonicalPath = currentPage
   : Astro.url.pathname;
 const canonicalUrl = `${BUSINESS_DATA.url}${canonicalPath}`;
 
-const alternateUrls = currentPage
-  ? {
-      en: `${BUSINESS_DATA.url}${getLocalizedPath(currentPage, "en")}`,
-      es: `${BUSINESS_DATA.url}${getLocalizedPath(currentPage, "es")}`,
-    }
-  : undefined;
+const alternateUrls =
+  propAlternateUrls ||
+  (currentPage
+    ? {
+        en: `${BUSINESS_DATA.url}${getLocalizedPath(currentPage, "en")}`,
+        es: `${BUSINESS_DATA.url}${getLocalizedPath(currentPage, "es")}`,
+      }
+    : undefined);
 
 // Images
 const socialImage = ogImage || BUSINESS_DATA.ogImage || BUSINESS_DATA.logo;

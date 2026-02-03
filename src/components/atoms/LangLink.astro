@@ -8,20 +8,23 @@ import { languages } from "../../lib/i18n/ui";
 
 interface Props {
   pageKey?: string;
+  translatedPath?: string;
 }
 
-const { pageKey } = Astro.props;
+const { pageKey, translatedPath } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const isSpanish = lang === "es";
 const targetLang = isSpanish ? "en" : "es";
 const label = languages[targetLang];
 
-const targetUrl = pageKey
-  ? getLocalizedPath(pageKey, targetLang)
-  : targetLang === "es"
-    ? "/es"
-    : "/";
+const targetUrl =
+  translatedPath ||
+  (pageKey
+    ? getLocalizedPath(pageKey, targetLang)
+    : targetLang === "es"
+      ? "/es"
+      : "/");
 ---
 
 <div class="flex items-center gap-1 text-inherit">

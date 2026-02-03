@@ -1,0 +1,90 @@
+---
+import { marked } from "marked";
+import Layout from "../../../layouts/Layout.astro";
+import BlogPostSEO from "../../utils/BlogPostSEO.astro";
+import BannerImage from "../../atoms/BannerImage.astro";
+import ButtonCta from "../../atoms/ButtonCta.astro";
+import { useTranslations } from "../../../lib/i18n/utils";
+import type { PostDetail } from "../../../types/blog";
+
+interface Props {
+  post: PostDetail;
+  lang: "en" | "es";
+  translatedPath?: string;
+}
+
+const { post, lang, translatedPath } = Astro.props;
+const t = useTranslations(lang);
+
+const content = marked.parse(post.content);
+
+// Format date
+const date = new Date(post.created_at);
+const formattedDate = date.toLocaleDateString(
+  lang === "es" ? "es-MX" : "en-US",
+  {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  },
+);
+
+// Construct alternateUrls for SEO
+// We assume translatedPath IS the alternate URL for the other language.
+const alternateUrls = translatedPath
+  ? {
+      en: lang === "en" ? Astro.url.pathname : translatedPath,
+      es: lang === "es" ? Astro.url.pathname : translatedPath,
+    }
+  : undefined;
+---
+
+<Layout lang={lang} translatedPath={translatedPath}>
+  <BlogPostSEO
+    slot="seo"
+    postTitle={post.title}
+    postExcerpt={post.description}
+    postKeywords={post.keywords}
+    postAuthor={post.author}
+    postDate={post.created_at}
+    postImageUrl={post.banner_image_url}
+    postSlug={post.slug}
+    alternateUrls={alternateUrls}
+  />
+
+  <BannerImage
+    src={post.banner_image_url}
+    alt={post.title}
+    title={post.title}
+    class="mb-8"
+  >
+    <div class="mx-auto max-w-4xl px-4 text-center">
+      <h1
+        class="mb-4 text-3xl font-bold text-white drop-shadow-md md:text-4xl lg:text-5xl"
+      >
+        {post.title}
+      </h1>
+      <div
+        class="flex items-center justify-center gap-4 text-sm font-medium text-white/90 drop-shadow-sm md:text-base"
+      >
+        <span>{formattedDate}</span>
+        <span>•</span>
+        <span>{post.author}</span>
+      </div>
+    </div>
+  </BannerImage>
+
+  <article class="container mx-auto max-w-4xl px-4 py-12">
+    <div
+      class="prose prose-lg prose-blue prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-accent hover:prose-a:text-accent-hover prose-img:rounded-xl prose-img:shadow-lg mx-auto max-w-none"
+    >
+      <div set:html={content} />
+    </div>
+
+    <div class="mt-12 flex justify-center">
+      <ButtonCta href={lang === "es" ? "/es/blog" : "/blog"} variant="gray">
+        {lang === "es" ? "← Volver al blog" : "← Back to Blog"}
+      </ButtonCta>
+    </div>
+  </article>
+</Layout>

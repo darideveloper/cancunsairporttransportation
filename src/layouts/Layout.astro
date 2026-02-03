@@ -25,9 +25,10 @@ interface Props {
   preloadImage?: string;
   lang?: string;
   pageKey?: string;
+  translatedPath?: string;
 }
 
-const { preloadImage, lang: propLang, pageKey } = Astro.props;
+const { preloadImage, lang: propLang, pageKey, translatedPath } = Astro.props;
 const paramsLang = Astro.params.lang;
 const currentLang = propLang || paramsLang || "en";
 ---
@@ -78,7 +79,7 @@ const currentLang = propLang || paramsLang || "en";
     }
   </head>
   <body>
-    <Header pageKey={pageKey} />
+    <Header pageKey={pageKey} translatedPath={translatedPath} />
 
     <main class:list={["font-sans"]}>
       <slot />
