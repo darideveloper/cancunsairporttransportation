@@ -18,6 +18,8 @@
 - [ ] Update `src/components/molecules/TopBar.astro` to pass `translatedPath` to `LangLink` <!-- id: 6 -->
 - [ ] Update `src/components/organisms/Header.astro` to accept and pass `translatedPath` <!-- id: 7 -->
 - [ ] Update `src/layouts/Layout.astro` to accept and propagate `translatedPath` prop <!-- id: 8 -->
+- [ ] Update `src/components/utils/base/BaseSEO.astro` to support optional `alternateUrls` prop <!-- id: 22 -->
+- [ ] Update `src/components/utils/BlogPostSEO.astro` to accept and pass `alternateUrls` to `BaseSEO` <!-- id: 23 -->
 
 ## Phase 4: Components
 

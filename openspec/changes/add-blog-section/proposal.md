@@ -36,6 +36,7 @@ Implement a blog section that fetches content from an external API, supports pag
 - `src/layouts/Layout.astro`: Add `translatedPath` prop support and pass to `Header`.
 - `src/messages/en.json`: Add `pages.blog` translations for listing page SEO and UI.
 - `src/messages/es.json`: Add `pages.blog` translations for listing page SEO and UI.
+- `src/components/utils/base/BaseSEO.astro`: Add `alternateUrls` prop to support dynamic pages (like blog posts) that are not in `routes.ts`.
 - `src/pages/rss.xml.js`: Update to fetch posts from external API instead of Astro content collections.
   - Replace `getCollection('blog')` with `getPosts('en')` from `src/lib/blog/api.ts`.
   - Map API response fields (`title`, `description`, `slug`, `created_at`, `author`) to RSS item format.
@@ -61,6 +62,8 @@ Implement a blog section that fetches content from an external API, supports pag
 - **Static UI Text**: All static UI text (buttons, labels, headings) MUST use `useTranslations(lang)` from `src/lib/i18n/utils.ts`.
 - **Dynamic Content**: Blog post titles, descriptions, content, and SEO metadata come from the API (already localized via `Accept-Language` header).
 - **SEO Metadata for Listing Page**: Add `pages.blog.title`, `pages.blog.description`, `pages.blog.keywords` to both `en.json` and `es.json`.
+- **SEO Alternate Links (Dynamic)**: For blog posts, `alternateUrls` must be manually passed to `BlogPostSEO` (and then to `BaseSEO`) as posts are not in `src/lib/i18n/routes.ts`.
+- **Language Switching Integration**: Pass `translatedPath` derived from `related_post` (API data) down through `Layout` -> `Header` -> `TopBar` -> `LangLink`.
 
 ### Reusable Components (MUST USE)
 
