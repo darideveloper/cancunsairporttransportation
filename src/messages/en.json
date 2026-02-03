@@ -1890,6 +1890,19 @@
           }
         }
       }
+    },
+    "blog": {
+      "title": "Cancun Airport Transportation Blog | Travel Tips & News",
+      "description": "Read the latest news, travel tips, and guides about Cancun, Playa del Carmen, Tulum, and the Riviera Maya from our experts.",
+      "keywords": "cancun blog, riviera maya travel tips, tulum guide, playa del carmen news",
+      "heading": "Our Blog",
+      "readMore": "Read more",
+      "authorPrefix": "By",
+      "datePrefix": "Published on",
+      "pagination": {
+        "previous": "Previous",
+        "next": "Next"
+      }
     }
   }
 }

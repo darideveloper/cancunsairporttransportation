@@ -9,8 +9,8 @@
 
 ## Phase 2: Translation Integration
 
-- [ ] Add `pages.blog` translations to `src/messages/en.json` (title, description, keywords, UI strings) <!-- id: 3 -->
-- [ ] Add `pages.blog` translations to `src/messages/es.json` (title, description, keywords, UI strings) <!-- id: 4 -->
+- [x] Add `pages.blog` translations to `src/messages/en.json` (title, description, keywords, UI strings) <!-- id: 3 -->
+- [x] Add `pages.blog` translations to `src/messages/es.json` (title, description, keywords, UI strings) <!-- id: 4 -->
 
 ## Phase 3: Language Switching
 
