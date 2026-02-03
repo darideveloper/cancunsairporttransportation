@@ -110,7 +110,7 @@ Add to JSON files under `pages.blog`:
 The project has SEO wrapper components:
 
 - **`BlogSEO.astro`**: For blog listing. Uses `currentPage` and sets `jsonType="Blog"`.
-- **`BlogPostSEO.astro`**: For blog posts. Accepts explicit props for title, description, keywords, author, date, image, slug.
+- **`BlogPostSEO.astro`**: For blog posts. Accepts explicit props for title, description, keywords, author, date, image, slug. It must also receive and pass `alternateUrls` to `BaseSEO` for correct language indexing.
 
 **Usage in Blog Listing:**
 ```astro
@@ -139,10 +139,17 @@ const post = /* fetched post from API */;
     postDate={post.created_at}
     postImageUrl={post.banner_image_url}
     postSlug={post.slug}
+    alternateUrls={{
+      en: `${import.meta.env.SITE_URL}/blog/${post.slug}`,
+      es: `${import.meta.env.SITE_URL}/es/blog/${translationSlug}`
+    }}
   />
   <!-- ... -->
 </Layout>
 ```
+
+**Required `BaseSEO.astro` Update:**
+Modify `BaseSEO.astro` to accept `alternateUrls` prop to override the default `routes.ts` based resolution for dynamic content.
 
 ### 5. Language Switching Integration
 
