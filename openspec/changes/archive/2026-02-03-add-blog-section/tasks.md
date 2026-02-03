@@ -36,8 +36,8 @@
 
 ## Phase 6: Validation
 
-- [ ] Verify build completes without errors <!-- id: 16 -->
-- [ ] Verify SEO metadata is correctly rendered on listing pages <!-- id: 17 -->
-- [ ] Verify SEO metadata from API is correctly rendered on detail pages <!-- id: 18 -->
-- [ ] Verify language switching works correctly on blog posts <!-- id: 19 -->
-- [ ] Verify RSS feed is generated with correct post data from API <!-- id: 21 -->
+- [x] Verify build completes without errors <!-- id: 16 -->
+- [x] Verify SEO metadata is correctly rendered on listing pages <!-- id: 17 -->
+- [x] Verify SEO metadata from API is correctly rendered on detail pages <!-- id: 18 -->
+- [x] Verify language switching works correctly on blog posts <!-- id: 19 -->
+- [x] Verify RSS feed is generated with correct post data from API <!-- id: 21 -->
