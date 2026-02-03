@@ -1,6 +1,8 @@
 ---
 // Libs
 import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { getFormattedPrice } from "../../lib/utils";
+import { BASE_PRICES, type ServiceTier } from "../../data/prices";
 import clsx from "clsx";
 
 // Components
@@ -11,10 +13,20 @@ const t = useTranslations(lang);
 
 // Props
 interface Props {
-  page?: string;
+  /**
+   * Optional: Filter to specific destinations by key.
+   * If not provided, all destinations will be shown.
+   */
+  destinations?: string[];
 }
 
-interface DestinationData {
+const { destinations: destinationFilter } = Astro.props;
+
+// Get headers translation object
+const headers = t("global.ratesTable.headers") as Record<string, string>;
+
+// Build destination data from centralized prices
+interface DestinationRow {
   name: string;
   privateOw: string;
   privateRt: string;
@@ -24,51 +36,48 @@ interface DestinationData {
   groupRt: string;
 }
 
-const { page } = Astro.props;
+// Get all destinations from the centralized pricing data
+const allDestinationKeys = Object.keys(BASE_PRICES);
+const destinationKeys = destinationFilter ?? allDestinationKeys;
 
-// Get headers translation object
-const headers = t("global.ratesTable.headers") as Record<string, string>;
+const destinations: DestinationRow[] = destinationKeys
+  .filter((key) => BASE_PRICES[key]) // Ensure key exists
+  .map((key) => {
+    const dest = BASE_PRICES[key];
+    const pricing = dest.pricing;
 
-// Get destinations translation object and convert to array for iteration
-// Try to get page specific destinations first, then fallback to global
-let destinationsObj = page
-  ? (t(`pages.${page}.ratesTable.destinations`) as Record<
-      string,
-      DestinationData
-    >)
-  : undefined;
-
-// Fallback to global if page specific not found or page not provided
-if (!destinationsObj) {
-  destinationsObj = t("global.ratesTable.destinations") as Record<
-    string,
-    DestinationData
-  >;
-}
-
-const destinations = Object.values(destinationsObj);
+    return {
+      name: t(dest.nameKey) as string,
+      privateOw: getFormattedPrice(pricing.private?.ow, lang),
+      privateRt: getFormattedPrice(pricing.private?.rt, lang),
+      luxuryOw: getFormattedPrice(pricing.luxury?.ow, lang),
+      luxuryRt: getFormattedPrice(pricing.luxury?.rt, lang),
+      groupOw: getFormattedPrice(pricing.group?.ow, lang),
+      groupRt: getFormattedPrice(pricing.group?.rt, lang),
+    };
+  });
 
 const SERVICE_TIERS = [
   {
     id: "private",
     label: headers.private,
     pax: headers.pax1to8,
-    owKey: "privateOw",
-    rtKey: "privateRt",
+    owKey: "privateOw" as const,
+    rtKey: "privateRt" as const,
   },
   {
     id: "luxury",
     label: headers.luxury,
     pax: headers.pax1to5,
-    owKey: "luxuryOw",
-    rtKey: "luxuryRt",
+    owKey: "luxuryOw" as const,
+    rtKey: "luxuryRt" as const,
   },
   {
     id: "group",
     label: headers.group,
     pax: headers.pax1to16,
-    owKey: "groupOw",
-    rtKey: "groupRt",
+    owKey: "groupOw" as const,
+    rtKey: "groupRt" as const,
   },
 ];
 
@@ -78,14 +87,10 @@ const STICKY_SHADOW_CLASSES =
 // Calculate visibility for each tier and column
 const visibleServiceTiers = SERVICE_TIERS.map((tier) => {
   const hasOw = destinations.some(
-    (dest) =>
-      dest[tier.owKey as keyof DestinationData] &&
-      dest[tier.owKey as keyof DestinationData] !== "N/A",
+    (dest) => dest[tier.owKey] && dest[tier.owKey] !== "N/A",
   );
   const hasRt = destinations.some(
-    (dest) =>
-      dest[tier.rtKey as keyof DestinationData] &&
-      dest[tier.rtKey as keyof DestinationData] !== "N/A",
+    (dest) => dest[tier.rtKey] && dest[tier.rtKey] !== "N/A",
   );
 
   return {
@@ -188,12 +193,12 @@ const visibleServiceTiers = SERVICE_TIERS.map((tier) => {
                 <>
                   {tier.hasOw && (
                     <td class="border-gray-light border-0 px-4 py-4 text-center whitespace-nowrap">
-                      {dest[tier.owKey as keyof typeof dest]}
+                      {dest[tier.owKey]}
                     </td>
                   )}
                   {tier.hasRt && (
                     <td class="border-gray-light border-0 px-4 py-4 text-center whitespace-nowrap">
-                      {dest[tier.rtKey as keyof typeof dest]}
+                      {dest[tier.rtKey]}
                     </td>
                   )}
                 </>

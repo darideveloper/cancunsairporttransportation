@@ -2,6 +2,8 @@
 
 interface ImportMetaEnv {
     readonly SITE_URL: string;
+    /** USD to MXN exchange rate for dynamic price conversion */
+    readonly USD_TO_MXN_RATE: string;
 }
 
 interface ImportMeta {
