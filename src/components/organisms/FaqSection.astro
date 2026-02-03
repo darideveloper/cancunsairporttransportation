@@ -1,5 +1,7 @@
 ---
 import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
+import { getFormattedPrice } from "../../lib/utils";
+import { getOneWayPrice, PAGE_DESTINATION_MAP } from "../../data/prices";
 import SectionHeading from "../molecules/SectionHeading.astro";
 import FaqItem from "../molecules/FaqItem.astro";
 
@@ -17,6 +19,27 @@ const description = t("global.sections.faq.description");
 
 const faqItems = t(`pages.${page}.faq.items`) as any;
 const faqKeys = Object.keys(faqItems);
+
+// Price Interpolation Logic
+const destinationKey = PAGE_DESTINATION_MAP[page];
+let formattedPrivateOw = "N/A";
+
+if (destinationKey) {
+  const price = getOneWayPrice(destinationKey, "private");
+  formattedPrivateOw = getFormattedPrice(price, lang, {
+    includeCurrency: true,
+  });
+}
+
+const processAnswer = (text: string) => {
+  if (!text) return "";
+  // strict replacement for the current page's price
+  // We handle both the standard {pricePrivateOw} and the legacy specific keys which will be cleaned up
+  return text
+    .replace(/{pricePrivateOw}/g, formattedPrivateOw)
+    .replace(/{priceTulumPrivateOw}/g, formattedPrivateOw)
+    .replace(/{priceAkumalPrivateOw}/g, formattedPrivateOw);
+};
 ---
 
 <section
@@ -37,7 +60,7 @@ const faqKeys = Object.keys(faqItems);
       faqKeys.map((key) => (
         <FaqItem
           question={faqItems[key].question}
-          answer={marked.parse(faqItems[key].answer) as string}
+          answer={marked.parse(processAnswer(faqItems[key].answer)) as string}
         />
       ))
     }

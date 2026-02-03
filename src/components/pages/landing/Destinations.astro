@@ -4,7 +4,8 @@ import Layout from "../../../layouts/Layout.astro";
 
 // Libs
 import { useTranslations } from "../../../lib/i18n/utils";
-import { getStaticPathsLangs } from "../../../lib/utils";
+import { getStaticPathsLangs, getFormattedPrice } from "../../../lib/utils";
+import { getOneWayPrice } from "../../../data/prices";
 import { marked } from "marked";
 
 // i18n
@@ -51,14 +52,17 @@ const t = useTranslations(lang);
 const destinations = [
   {
     id: "tulum",
+    priceKey: "tulum",
     image: tulumImg,
   },
   {
     id: "playa",
+    priceKey: "playaDelCarmen",
     image: playaImg,
   },
   {
     id: "cancun",
+    priceKey: "cancunZone",
     image: cancunImg,
   },
 ];
@@ -109,7 +113,11 @@ const destinations = [
             <li>
               <PricingCard
                 title={t(`pages.${page}.destinations.cards.${dest.id}.title`)}
-                price={t(`pages.${page}.destinations.cards.${dest.id}.price`)}
+                price={getFormattedPrice(
+                  getOneWayPrice(dest.priceKey, "private"),
+                  lang,
+                  { includeCurrency: false },
+                )}
                 ctaLink={t(`pages.${page}.destinations.cards.${dest.id}.link`)}
                 ctaText={t(
                   `pages.${page}.destinations.cards.${dest.id}.ctaText`,

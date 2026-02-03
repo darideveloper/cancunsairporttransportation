@@ -1,5 +1,7 @@
 ---
 import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
+import { getPriceValue, getCurrencyCode } from "../../lib/utils";
+import { BASE_PRICES, PAGE_DESTINATION_MAP } from "../../data/prices";
 import SectionHeading from "../molecules/SectionHeading.astro";
 import PricingCard from "../molecules/PricingCard.astro";
 import { Image } from "astro:assets";
@@ -29,6 +31,17 @@ const vehicleImages = {
 
 const title = t(`pages.${page}.pricing.title`);
 const subtitle = t(`pages.${page}.pricing.subtitle`);
+
+// Map service tier keys to destination pricing keys
+const tierToDestinationKey = {
+  luxury: "luxury",
+  private: "private",
+  group: "group",
+} as const;
+
+// Get the destination key for this page (fallback to cancunZone if not found)
+const destinationKey = PAGE_DESTINATION_MAP[page] || "cancunZone";
+const destinationPricing = BASE_PRICES[destinationKey]?.pricing;
 ---
 
 <section
@@ -57,15 +70,24 @@ const subtitle = t(`pages.${page}.pricing.subtitle`);
         ) as any;
         const pageData = t(`pages.${page}.pricing.cards.${key}`) as any;
 
+        // Get the price from centralized pricing data
+        const tierKey = tierToDestinationKey[key];
+        const tierPricing = destinationPricing?.[tierKey];
+        const usdPrice = tierPricing?.ow ?? null;
+
+        // Format the price value (just the number, without currency symbol)
+        const price = getPriceValue(usdPrice, lang);
+        const currency = getCurrencyCode(lang);
+
         return (
           <li class={`${isRegularGrid && "h-full"}`}>
             <PricingCard
               title={pageData.title}
-              price={pageData.price}
+              price={price}
               ctaLink="#booking-form"
               ctaText={globalData.ctaText}
               bestSeller={globalData.bestSeller}
-              currency={lang === "es" ? "mxn" : "usd"}
+              currency={currency}
               class="pt-4"
             >
               <Image
