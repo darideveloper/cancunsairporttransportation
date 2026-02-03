@@ -15,9 +15,8 @@ import {
   FaRegImage,
   FaComment,
 } from "react-icons/fa";
-import Input from "../../atoms/form/Input.astro";
-import Textarea from "../../atoms/form/Textarea.astro";
-import ButtonCta from "../../atoms/ButtonCta.astro";
+// Atoms
+import ContactForm from "../../organisms/ContactForm";
 import GoogleMap from "../../atoms/GoogleMap.astro";
 
 // Data
@@ -56,54 +55,6 @@ const contactCardsList = [
     href: EMAIL.href,
   },
 ] as const;
-
-const formFields = [
-  {
-    name: "name",
-    type: "text",
-    icon: FaUser,
-    label: t("pages.contact.form.name.label"),
-    placeholder: t("pages.contact.form.name.placeholder"),
-    required: true,
-    colSpan: 1,
-  },
-  {
-    name: "email",
-    type: "email",
-    icon: FaEnvelope,
-    label: t("pages.contact.form.email.label"),
-    placeholder: t("pages.contact.form.email.placeholder"),
-    required: true,
-    colSpan: 1,
-  },
-  {
-    name: "phone",
-    type: "tel",
-    icon: FaPhone,
-    label: t("pages.contact.form.phone.label"),
-    placeholder: t("pages.contact.form.phone.placeholder"),
-    required: true,
-    colSpan: 1,
-  },
-  {
-    name: "subject",
-    type: "text",
-    icon: FaRegImage,
-    label: t("pages.contact.form.subject.label"),
-    placeholder: t("pages.contact.form.subject.placeholder"),
-    required: true,
-    colSpan: 1,
-  },
-  {
-    name: "message",
-    type: "textarea",
-    icon: FaComment,
-    label: t("pages.contact.form.message.label"),
-    placeholder: t("pages.contact.form.message.placeholder"),
-    required: true,
-    colSpan: 2,
-  },
-];
 ---
 
 <Layout pageKey={pageKey}>
@@ -132,47 +83,33 @@ const formFields = [
         </p>
       </SectionHeading>
 
-      <form
-        class="my-6 grid w-full grid-cols-1 gap-6 rounded-2xl bg-white p-8 lg:w-2/3 lg:grid-cols-2"
-      >
-        {
-          formFields.map((field) => {
-            return (
-              <div
-                class={
-                  field.colSpan === 2
-                    ? "col-span-1 lg:col-span-2" // simplified spacing
-                    : "col-span-1"
-                }
-              >
-                {field.type === "textarea" ? (
-                  <Textarea
-                    name={field.name}
-                    label={field.label}
-                    placeholder={field.placeholder}
-                    required={field.required}
-                    icon={field.icon}
-                  />
-                ) : (
-                  <Input
-                    name={field.name}
-                    label={field.label}
-                    type={field.type as any}
-                    placeholder={field.placeholder}
-                    required={field.required}
-                    icon={field.icon}
-                  />
-                )}
-              </div>
-            );
-          })
-        }
-        <div class="col-span-1 lg:col-span-2">
-          <ButtonCta type="submit" class="w-full! md:w-auto">
-            {t("pages.contact.form.submit")}
-          </ButtonCta>
-        </div>
-      </form>
+      <ContactForm
+        client:load
+        labels={{
+          name: t("pages.contact.form.name.label"),
+          email: t("pages.contact.form.email.label"),
+          phone: t("pages.contact.form.phone.label"),
+          subject: t("pages.contact.form.subject.label"),
+          message: t("pages.contact.form.message.label"),
+          submit: t("pages.contact.form.submit"),
+          submitting: t("pages.contact.form.submitting") || "Sending...",
+        }}
+        placeholders={{
+          name: t("pages.contact.form.name.placeholder"),
+          email: t("pages.contact.form.email.placeholder"),
+          phone: t("pages.contact.form.phone.placeholder"),
+          subject: t("pages.contact.form.subject.placeholder"),
+          message: t("pages.contact.form.message.placeholder"),
+        }}
+        messages={{
+          success:
+            t("pages.contact.form.success_message") ||
+            "We will get back to you as soon as possible.",
+          error:
+            t("pages.contact.form.error_message") ||
+            "Please try again later or contact us directly by phone.",
+        }}
+      />
     </div>
   </div>
 
