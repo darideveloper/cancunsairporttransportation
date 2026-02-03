@@ -1,0 +1,30 @@
+---
+import BlogDetail from "../../../components/pages/blog/BlogDetail.astro";
+import { getPosts, getPostBySlug } from "../../../lib/blog/api";
+
+export async function getStaticPaths() {
+  const posts = await getPosts("es");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = await getPostBySlug(slug as string, "es");
+
+if (!post) {
+  return Astro.redirect("/es/404");
+}
+
+// Find translated path
+let translatedPath = "/blog";
+if (post.related_post) {
+  const enPosts = await getPosts("en");
+  const enPost = enPosts.find((p) => p.id === post.related_post);
+  if (enPost) {
+    translatedPath = `/blog/${enPost.slug}`;
+  }
+}
+---
+
+<BlogDetail post={post} lang="es" translatedPath={translatedPath} />

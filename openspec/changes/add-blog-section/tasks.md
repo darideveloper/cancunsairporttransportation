@@ -23,16 +23,16 @@
 
 ## Phase 4: Components
 
-- [ ] Create `src/components/molecules/PostCard.astro` using `ButtonCta` for read more link <!-- id: 9 -->
-- [ ] Create `src/components/pages/blog/BlogListing.astro` using `SectionHeading`, `PostCard`, `ButtonCta` <!-- id: 10 -->
-- [ ] Create `src/components/pages/blog/BlogDetail.astro` using `BannerImage`, `marked` for content <!-- id: 11 -->
+- [x] Create `src/components/molecules/PostCard.astro` using `ButtonCta` for read more link <!-- id: 9 -->
+- [x] Create `src/components/pages/blog/BlogListing.astro` using `SectionHeading`, `PostCard`, `ButtonCta` <!-- id: 10 -->
+- [x] Create `src/components/pages/blog/BlogDetail.astro` using `BannerImage`, `marked` for content <!-- id: 11 -->
 
 ## Phase 5: Pages
 
-- [ ] Create `src/pages/blog/[...page].astro` (English listing with `BlogSEO`) <!-- id: 12 -->
-- [ ] Create `src/pages/es/blog/[...page].astro` (Spanish listing with `BlogSEO`) <!-- id: 13 -->
-- [ ] Create `src/pages/blog/[slug].astro` (English detail with `BlogPostSEO` using API data) <!-- id: 14 -->
-- [ ] Create `src/pages/es/blog/[slug].astro` (Spanish detail with `BlogPostSEO` using API data) <!-- id: 15 -->
+- [x] Create `src/pages/blog/[...page].astro` (English listing with `BlogSEO`) <!-- id: 12 -->
+- [x] Create `src/pages/es/blog/[...page].astro` (Spanish listing with `BlogSEO`) <!-- id: 13 -->
+- [x] Create `src/pages/blog/[slug].astro` (English detail with `BlogPostSEO` using API data) <!-- id: 14 -->
+- [x] Create `src/pages/es/blog/[slug].astro` (Spanish detail with `BlogPostSEO` using API data) <!-- id: 15 -->
 
 ## Phase 6: Validation
 

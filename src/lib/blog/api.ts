@@ -1,6 +1,13 @@
 import type { Post, PostDetail } from "../../types/blog";
 
+// Simple in-memory cache to avoid repeated requests during build
+const postsCache: Record<string, Post[]> = {};
+
 export async function getPosts(lang: string = 'es'): Promise<Post[]> {
+    if (postsCache[lang]) {
+        return postsCache[lang];
+    }
+
     const headers = new Headers();
     headers.append('Accept-Language', lang);
     if (import.meta.env.API_TOKEN) {
@@ -17,7 +24,9 @@ export async function getPosts(lang: string = 'es'): Promise<Post[]> {
     }
 
     const result = await response.json();
-    return result?.results as Post[];
+    const posts = result?.results as Post[];
+    postsCache[lang] = posts;
+    return posts;
 }
 
 export async function getPostBySlug(slug: string, lang: string): Promise<PostDetail | null> {
