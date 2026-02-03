@@ -729,17 +729,14 @@
         "cards": {
           "luxury": {
             "title": "Luxury Transportation",
-            "price": "84.00",
             "description": "Enhance your travel experience with our premium transfer service, providing seamless transportation between Cancun Airport and your hotel in Cancun or the Riviera Maya. Our top-tier service caters to 1 to 5 passengers in a Suburban or a comparable luxury vehicle, ensuring comfort and style throughout your journey."
           },
           "private": {
             "title": "Taxi Service",
-            "price": "34.99",
             "description": "Travel comfortably in a fully equipped private service for up to 3 passengers. The service is private, with no waiting time or continuous stops."
           },
           "group": {
             "title": "Group Transportation",
-            "price": "84.00",
             "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers, ensuring everyone enjoys a comfortable and convenient journey together."
           }
         }
@@ -760,15 +757,11 @@
             {
               "arrival": "Cancun Airport",
               "departure": "Cancun Hotel Zone",
-              "oneWay": "$24.00 USD",
-              "roundTrip": "$48.00 USD",
               "capacity": "Up to 8 passengers"
             },
             {
               "arrival": "Cancun Hotel Zone",
               "departure": "Cancun Airport",
-              "oneWay": "$24.00 USD",
-              "roundTrip": "$48.00 USD",
               "capacity": "Up to 8 passengers"
             }
           ]
@@ -842,17 +835,14 @@
         "cards": {
           "luxury": {
             "title": "Luxury Transportation",
-            "price": "84.00",
             "description": "Enhance your travel experience with our premium transfer service, providing seamless transportation between Cancun Airport and your hotel in Cancun or the Riviera Maya. Our top-tier service caters to 1 to 5 passengers in a Suburban or a comparable luxury vehicle, ensuring comfort and style throughout your journey."
           },
           "private": {
             "title": "Taxi Service",
-            "price": "34.99",
             "description": "Travel comfortably in a fully equipped private service for up to 3 passengers. The service is private, with no waiting time or continuous stops."
           },
           "group": {
             "title": "Group Transportation",
-            "price": "84.00",
             "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers, ensuring everyone enjoys a comfortable and convenient journey together."
           }
         }
@@ -873,15 +863,11 @@
             {
               "arrival": "Cancun Airport",
               "departure": "Cancun Hotel Zone",
-              "oneWay": "$34.99 USD",
-              "roundTrip": "$69.99 USD",
               "capacity": "Up to 3 passengers"
             },
             {
               "arrival": "Cancun Hotel Zone",
               "departure": "Cancun Airport",
-              "oneWay": "$34.99 USD",
-              "roundTrip": "$69.99 USD",
               "capacity": "Up to 3 passengers"
             }
           ]
@@ -955,17 +941,14 @@
         "cards": {
           "luxury": {
             "title": "Private Transportation",
-            "price": "29.99",
             "description": "Travel comfortably in a fully equipped private service for up to 8 passengers. The service is private, with no waiting time or continuous stops."
           },
           "private": {
             "title": "Taxi Service",
-            "price": "34.99",
             "description": "Travel comfortably in a fully equipped private service for up to 3 passengers. The service is private, with no waiting time or continuous stops."
           },
           "group": {
             "title": "Group Transportation",
-            "price": "84.00",
             "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers."
           }
         }
@@ -986,15 +969,11 @@
             {
               "arrival": "Cancun Airport",
               "departure": "Cancun Hotel Zone",
-              "oneWay": "$84.00 USD",
-              "roundTrip": "$160.00 USD",
               "capacity": "Up to 5 passengers"
             },
             {
               "arrival": "Cancun Hotel Zone",
               "departure": "Cancun Airport",
-              "oneWay": "$84.00 USD",
-              "roundTrip": "$160.00 USD",
               "capacity": "Up to 5 passengers"
             }
           ]
@@ -1068,17 +1047,14 @@
         "cards": {
           "luxury": {
             "title": "Luxury Transportation",
-            "price": "84.00",
             "description": "Enhance your travel experience with our premium transfer service, providing seamless transportation between Cancun Airport and your hotel in Cancun or the Riviera Maya. Our top-tier service caters to 1 to 5 passengers in a Suburban or a comparable luxury vehicle, ensuring comfort and style throughout your journey."
           },
           "private": {
             "title": "Taxi Service",
-            "price": "34.99",
             "description": "Travel comfortably in a fully equipped private service for up to 3 passengers. The service is private, with no waiting time or continuous stops."
           },
           "group": {
             "title": "Group Transportation",
-            "price": "84.00",
             "description": "Traveling with a group of more than 8 passengers? Save money by booking our group transportation service. Our spacious and secure vehicles can accommodate up to 16 passengers, ensuring everyone enjoys a comfortable and convenient journey together."
           }
         }
@@ -1099,15 +1075,11 @@
             {
               "arrival": "Cancun Airport",
               "departure": "Cancun Hotel Zone",
-              "oneWay": "$29.99 USD",
-              "roundTrip": "$54.99 USD",
               "capacity": "Up to 8 passengers"
             },
             {
               "arrival": "Cancun Hotel Zone",
               "departure": "Cancun Airport",
-              "oneWay": "$29.99 USD",
-              "roundTrip": "$54.99 USD",
               "capacity": "Up to 8 passengers"
             }
           ]
@@ -1130,21 +1102,18 @@
         "cards": {
           "tulum": {
             "title": "Transportation to Tulum",
-            "price": "129.00",
             "description": "Enjoy a safe, fast, and reliable transfer service to Akumal. The estimated transfer time from Cancun to Akumal is 1 hour and 40 minutes.",
             "ctaText": "Book now",
             "link": "/cancun-to-tulum-shuttle"
           },
           "playa": {
             "title": "Transportation to Playa del Carmen",
-            "price": "69.99",
             "description": "Enjoy a safe, fast, and reliable transfer service to Playa del Carmen. The estimated transfer time from Cancun is 55 minutes.",
             "ctaText": "Book now",
             "link": "/transportation-from-cancun-airport-to-playa-del-carmen"
           },
           "cancun": {
             "title": "Transportation to Cancun",
-            "price": "29.99",
             "description": "Enjoy a safe, fast, and reliable transfer service to the Hotel Zone. The estimated transfer time from the Airport to the Hotel Zone is 30 minutes.",
             "ctaText": "Book now",
             "link": "/"
@@ -1196,17 +1165,14 @@
         "cards": {
           "luxury": {
             "title": "Cancun to Playa del Carmen Luxury Transportation",
-            "price": "145.00",
             "description": "Elevate your transportation experience between Cancun Airport to Playa del Carmen with our luxury transportation service. Designed for 1 to 5 passengers, enjoy the comfort and luxury of a Suburban or similar vehicle."
           },
           "private": {
             "title": "Private Transportation from Cancun to Playa del Carmen",
-            "price": "69.99",
             "description": "Our transportation service from Cancun Airport to Playa del Carmen is the most popular and affordable option in the Riviera Maya. We offer spacious, air-conditioned, safe, and clean vehicles that accommodate groups ranging from 1 to 8 people."
           },
           "group": {
             "title": "Cancun to Playa del Carmen Group Transportation",
-            "price": "145.00",
             "description": "Traveling with a group of more than 8 passengers? Save money and book our group transportation service, accommodating up to 16 passengers. Enjoy a comfortable and safe journey in our spacious vehicles."
           }
         }
@@ -1307,21 +1273,18 @@
         "cards": {
           "tulum": {
             "title": "Transportation to Tulum",
-            "price": "129.00",
             "description": "Enjoy a safe, fast, and reliable transfer service to Akumal. The estimated transfer time from Cancun to Akumal is 1 hour and 40 minutes.",
             "ctaText": "Book now",
             "link": "/cancun-to-tulum-shuttle"
           },
           "playa": {
             "title": "Transportation to Playa del Carmen",
-            "price": "69.99",
             "description": "Enjoy a safe, fast, and reliable transfer service to Playa del Carmen. The estimated transfer time from Cancun is 55 minutes.",
             "ctaText": "Book now",
             "link": "/transportation-from-cancun-airport-to-playa-del-carmen"
           },
           "cancun": {
             "title": "Transportation to Cancun",
-            "price": "29.99",
             "description": "Enjoy a safe, fast, and reliable transfer service to the Hotel Zone. The estimated transfer time from the Airport to the Hotel Zone is 30 minutes.",
             "ctaText": "Book now",
             "link": "/"
@@ -1374,17 +1337,14 @@
         "cards": {
           "luxury": {
             "title": "Luxury Transfer to Akumal",
-            "price": "145.00",
             "description": "Enjoy this service aboard a brand-new Suburban or a similar vehicle, featuring luxury seats, comfort, and a fully luxurious experience. The luxury transfer service accommodates 1 to 5 passengers."
           },
           "private": {
             "title": "Private Transportation to Akumal",
-            "price": "69.99",
             "description": "Our most affordable service for those seeking the best value in the Riviera Maya. Get an economical service for up to 8 people with guaranteed safety and reliability."
           },
           "group": {
             "title": "Group Transfer to Akumal",
-            "price": "145.00",
             "description": "The perfect transportation solution for weddings, conventions, conferences, and any large event in the Riviera Maya. Speak with one of our sales advisors to find the option that best fits your budget. Ideal for any number of passengers."
           }
         }
@@ -1398,7 +1358,7 @@
         "items": {
           "cost": {
             "question": "How much does transportation from Cancun to Akumal cost?",
-            "answer": "The cost of transportation from Cancun to Akumal can vary depending on the type of service you choose. Go Transfers offers transfer services starting from 125 USD for up to 8 people. Opting for a private transfer guarantees comfort and peace of mind during the journey, with an exclusive vehicle for you and your group, making the trip more comfortable and uninterrupted."
+            "answer": "The cost of transportation from Cancun to Akumal can vary depending on the type of service you choose. Go Transfers offers transfer services starting from {pricePrivateOw} for up to 8 people. Opting for a private transfer guarantees comfort and peace of mind during the journey, with an exclusive vehicle for you and your group, making the trip more comfortable and uninterrupted."
           },
           "safe": {
             "question": "Is transportation from Cancun Airport to Akumal safe?",
@@ -1426,7 +1386,7 @@
           },
           "cheapest": {
             "question": "What is the cheapest transfer from Cancun Airport to Akumal?",
-            "answer": "The most economical and reliable shuttle for getting from Cancun Airport to Akumal is ours, with rates starting from 125 USD per trip for up to 8 passengers. This competitive price includes high-quality service, professional drivers, air-conditioned vehicles, and the peace of mind that you'll reach your destination safely and efficiently. Additionally, our rates are fixed, so you won't have to worry about additional charges or surprises at the end of the trip."
+            "answer": "The most economical and reliable shuttle for getting from Cancun Airport to Akumal is ours, with rates starting from {pricePrivateOw} per trip for up to 8 passengers. This competitive price includes high-quality service, professional drivers, air-conditioned vehicles, and the peace of mind that you'll reach your destination safely and efficiently. Additionally, our rates are fixed, so you won't have to worry about additional charges or surprises at the end of the trip."
           },
           "otherDestinations": {
             "question": "To which other destinations can I book my transfer service?",
@@ -1485,21 +1445,18 @@
         "cards": {
           "tulum": {
             "title": "Transportation to Tulum",
-            "price": "129.00",
             "description": "Enjoy a safe, fast, and reliable transfer service to Tulum. The estimated transfer time from Cancun to Tulum is 1 hour and 40 minutes.",
             "ctaText": "Book now",
             "link": "/cancun-to-tulum-shuttle"
           },
           "playa": {
             "title": "Transportation to Playa del Carmen",
-            "price": "69.99",
             "description": "Enjoy a safe, fast, and reliable transfer service to Playa del Carmen. The estimated transfer time from Cancun is 55 minutes.",
             "ctaText": "Book now",
             "link": "/transportation-from-cancun-airport-to-playa-del-carmen"
           },
           "cancun": {
             "title": "Transportation to Cancun",
-            "price": "29.99",
             "description": "Enjoy a safe, fast, and reliable transfer service to the Hotel Zone. The estimated transfer time from the Airport to the Hotel Zone is 30 minutes.",
             "ctaText": "Book now",
             "link": "/"
@@ -1552,17 +1509,14 @@
         "cards": {
           "luxury": {
             "title": "Luxury Transportation from Cancun to Tulum",
-            "price": "305.00",
             "description": "Enhance your travel experience with our luxury transfer service from Cancun Airport to Tulum. Ideal for 1 to 5 passengers, this service offers premium comfort in a Suburban or similar vehicle."
           },
           "private": {
             "title": "Private Transportation from Cancun to Tulum",
-            "price": "129.00",
             "description": "Our private transportation service from Cancun Airport to Tulum is one of the most popular and affordable options in the Riviera Maya. This service accommodates 1 to 8 people in a spacious, air-conditioned, safe, and clean vehicle."
           },
           "group": {
             "title": "Group Transportation from Cancun to Tulum",
-            "price": "305.00",
             "description": "Traveling with a group of more than 8 passengers? Save money and book our group transportation service from Cancun Airport to Tulum. This service can accommodate up to 16 passengers, ensuring everyone travels comfortably and safely."
           }
         }
@@ -1608,7 +1562,7 @@
           },
           "cheapest": {
             "question": "What is the Cheapest Airport Shuttle from Cancun to Tulum?",
-            "answer": "The cheapest shuttle from Cancun Airport to Tulum is our service: $129 USD per vehicle."
+            "answer": "The cheapest shuttle from Cancun Airport to Tulum is our service: {pricePrivateOw} per vehicle."
           },
           "otherDestinations": {
             "question": "What Other Destinations Can I Book for My Shuttle Service?",
@@ -1662,13 +1616,7 @@
       "ratesTable": {
         "destinations": {
           "merida": {
-            "name": "Merida",
-            "privateOw": "$525 USD",
-            "privateRt": "$1,045 USD",
-            "luxuryOw": "$995 USD",
-            "luxuryRt": "$1,960 USD",
-            "groupOw": "N/A",
-            "groupRt": "N/A"
+            "name": "Merida"
           }
         }
       },
@@ -1680,21 +1628,18 @@
         "cards": {
           "tulum": {
             "title": "Transportation to Tulum from Cancun",
-            "price": "129.00",
             "description": "Enjoy a safe, fast, and reliable transfer service to Tulum. The estimated transfer time from Cancun to Tulum is 1 hour and 45 minutes.",
             "ctaText": "Book now",
             "link": "/cancun-to-tulum-shuttle"
           },
           "playa": {
             "title": "Transportation to Playa del Carmen from Cancun",
-            "price": "69.99",
             "description": "Enjoy a safe, fast, and reliable transfer service to Playa del Carmen. The estimated transfer time from Cancun is 55 minutes.",
             "ctaText": "Book now",
             "link": "/transportation-from-cancun-airport-to-playa-del-carmen"
           },
           "cancun": {
             "title": "Transportation to Cancun Hotel Zone from Cancun",
-            "price": "29.99",
             "description": "Enjoy a safe, fast, and reliable transfer service to the Hotel Zone. The estimated transfer time from the Airport to the Hotel Zone is 30 minutes.",
             "ctaText": "Book now",
             "link": "/"
@@ -1747,17 +1692,14 @@
         "cards": {
           "luxury": {
             "title": "Cancun to Merida Luxury Transportation",
-            "price": "995.00",
             "description": "Enhance your journey from Cancun Airport to Merida with our premium transportation service. Tailored for 1 to 6 passengers, experience the ultimate in comfort and style with our luxury SUV or similar high-end vehicle."
           },
           "private": {
             "title": "Private Shuttle from Cancun to Merida",
-            "price": "525.00",
             "description": "Our private shuttle service from Cancun Airport to Merida is the ideal choice for travelers seeking convenience and affordability. Enjoy a relaxing ride in our modern, air-conditioned vehicles, designed to comfortably accommodate groups of 1 to 10 passengers. Safety, cleanliness, and punctuality are our top priorities."
           },
           "group": {
             "title": "Cancun to Merida Large Group Transportation",
-            "price": "995.00",
             "description": "Traveling with a larger group? Our cost-effective group transportation service is perfect for parties of up to 20 passengers. With spacious, well-maintained vehicles, we ensure a smooth and enjoyable journey for everyone. Save time and money while traveling in comfort and safety."
           }
         }
@@ -1843,15 +1785,11 @@
             {
               "arrival": "Cancun Airport",
               "departure": "Cancun Hotel Zone",
-              "oneWay": "$24.00 USD",
-              "roundTrip": "$48.00 USD",
               "capacity": "Up to 8 passengers"
             },
             {
               "arrival": "Cancun Hotel Zone",
               "departure": "Cancun Airport",
-              "oneWay": "$24.00 USD",
-              "roundTrip": "$48.00 USD",
               "capacity": "Up to 8 passengers"
             }
           ]
@@ -1875,21 +1813,18 @@
         "cards": {
           "tulum": {
             "title": "Cancun Airport Transportation to Tulum",
-            "price": "129.00",
             "description": "Tulum, a city located within the Riviera Maya, is approximately a 2-hour drive from Cancun. Renowned for its breathtaking beaches, historic archaeological sites, and amazing jungle hotels, Tulum is a must-visit destination.",
             "ctaText": "Book now",
             "link": "/cancun-to-tulum-shuttle"
           },
           "playa": {
             "title": "Cancun Airport Transportation to Playa del Carmen",
-            "price": "69.99",
             "description": "Our transportation and taxi services will bring you to any hotel, vacation home, or Airbnb in Playa del Carmen, the vibrant heart of the Riviera Maya. With us, your adventure is just around the corner!",
             "ctaText": "Book now",
             "link": "/transportation-from-cancun-airport-to-playa-del-carmen"
           },
           "cancun": {
             "title": "Cancun Airport Transportation to Cancun Hotel Zone",
-            "price": "29.99",
             "description": "Cancun’s hotel zone is the city’s top destination, featuring 4 and 5-star hotels that offer the best views of the Caribbean Sea and the most unforgettable vacation experience you can imagine.",
             "ctaText": "Book now",
             "link": "/"

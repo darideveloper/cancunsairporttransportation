@@ -203,6 +203,7 @@ export const PAGE_DESTINATION_MAP: Record<string, string> = {
     cancunToTulum: 'tulum',
     cancunToAkumal: 'akumal',
     cancunToMerida: 'merida',
+    private: 'cancunZone',
 } as const;
 
 /**

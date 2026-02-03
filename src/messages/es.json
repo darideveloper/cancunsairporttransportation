@@ -725,17 +725,14 @@
         "cards": {
           "luxury": {
             "title": "Transporte privado",
-            "price": "539.82",
             "description": "Viaje cómodamente en un servicio privado totalmente equipado para un máximo de 8 pasajeros. El servicio es privado, sin tiempos de espera ni paradas continuas."
           },
           "private": {
             "title": "Servicio de taxi",
-            "price": "664.81",
             "description": "Viaje cómodamente en un servicio privado totalmente equipado para un máximo de 3 pasajeros. El servicio es privado, sin esperas ni paradas continuas."
           },
           "group": {
             "title": "Transporte de grupos",
-            "price": "1512.00",
             "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero reservando nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros."
           }
         }
@@ -756,15 +753,11 @@
             {
               "arrival": "Cancún Aeropuerto",
               "departure": "Cancún Zona Hotelera",
-              "oneWay": "$539.82 MXN",
-              "roundTrip": "$1,079.82 MXN",
               "capacity": "Hasta 8 pasajeros"
             },
             {
               "arrival": "Cancún Zona Hotelera",
               "departure": "Cancún Aeropuerto",
-              "oneWay": "$539.82 MXN",
-              "roundTrip": "$1,079.82 MXN",
               "capacity": "Hasta 8 pasajeros"
             }
           ]
@@ -838,17 +831,14 @@
         "cards": {
           "luxury": {
             "title": "Transporte privado",
-            "price": "539.82",
             "description": "Viaje cómodamente en un servicio privado totalmente equipado para un máximo de 8 pasajeros. El servicio es privado, sin tiempos de espera ni paradas continuas."
           },
           "private": {
             "title": "Servicio de taxi",
-            "price": "664.81",
             "description": "Viaje cómodamente en un servicio privado totalmente equipado para un máximo de 3 pasajeros. El servicio es privado, sin esperas ni paradas continuas."
           },
           "group": {
             "title": "Transporte de grupos",
-            "price": "1512.00",
             "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero reservando nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros."
           }
         }
@@ -869,15 +859,11 @@
             {
               "arrival": "Cancún Aeropuerto",
               "departure": "Cancún Zona Hotelera",
-              "oneWay": "$664.81 MXN",
-              "roundTrip": "$1,329.81 MXN",
               "capacity": "Hasta 3 pasajeros"
             },
             {
               "arrival": "Cancún Zona Hotelera",
               "departure": "Cancún Aeropuerto",
-              "oneWay": "$664.81 MXN",
-              "roundTrip": "$1,329.81 MXN",
               "capacity": "Hasta 3 pasajeros"
             }
           ]
@@ -951,17 +937,14 @@
         "cards": {
           "luxury": {
             "title": "Transporte privado",
-            "price": "539.82",
             "description": "Viaje cómodamente en un servicio privado totalmente equipado para un máximo de 8 pasajeros. El servicio es privado, sin tiempos de espera ni paradas continuas."
           },
           "private": {
             "title": "Servicio de taxi",
-            "price": "664.81",
             "description": "Viaje cómodamente en un servicio privado totalmente equipado para un máximo de 3 pasajeros. El servicio es privado, sin esperas ni paradas continuas."
           },
           "group": {
             "title": "Transporte de grupos",
-            "price": "1512.00",
             "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero reservando nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros."
           }
         }
@@ -982,15 +965,11 @@
             {
               "arrival": "Cancún Aeropuerto",
               "departure": "Cancún Zona Hotelera",
-              "oneWay": "$1,596 MXN",
-              "roundTrip": "$3,040 MXN",
               "capacity": "Hasta 5 pasajeros"
             },
             {
               "arrival": "Cancún Zona Hotelera",
               "departure": "Cancún Aeropuerto",
-              "oneWay": "$1,596 MXN",
-              "roundTrip": "$3,040 MXN",
               "capacity": "Hasta 5 pasajeros"
             }
           ]
@@ -1064,17 +1043,14 @@
         "cards": {
           "luxury": {
             "title": "Transporte privado",
-            "price": "539.82",
             "description": "Viaje cómodamente en un servicio privado totalmente equipado para un máximo de 8 pasajeros. El servicio es privado, sin tiempos de espera ni paradas continuas."
           },
           "private": {
             "title": "Servicio de taxi",
-            "price": "664.81",
             "description": "Viaje cómodamente en un servicio privado totalmente equipado para un máximo de 3 pasajeros. El servicio es privado, sin esperas ni paradas continuas."
           },
           "group": {
             "title": "Transporte de grupos",
-            "price": "1512.00",
             "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero reservando nuestro servicio de transporte para grupos. Nuestros espaciosos y seguros vehículos pueden acomodar hasta 16 pasajeros."
           }
         }
@@ -1095,15 +1071,11 @@
             {
               "arrival": "Cancún Aeropuerto",
               "departure": "Cancún Zona Hotelera",
-              "oneWay": "$539.82 MXN",
-              "roundTrip": "$1,079.82 MXN",
               "capacity": "Hasta 15 pasajeros"
             },
             {
               "arrival": "Cancún Zona Hotelera",
               "departure": "Cancún Aeropuerto",
-              "oneWay": "$539.82 MXN",
-              "roundTrip": "$1,079.82 MXN",
               "capacity": "Hasta 15 pasajeros"
             }
           ]
@@ -1126,21 +1098,18 @@
         "cards": {
           "tulum": {
             "title": "Transporte a Tulum",
-            "price": "2322.00",
             "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a Akumal. El tiempo estimado de traslado de Cancún a Akumal es de 1 hora y 40 minutos.",
             "ctaText": "Reservar",
             "link": "/es/traslado-cancun-tulum"
           },
           "playa": {
             "title": "Transporte a Playa del Carmen",
-            "price": "1259.82",
             "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a Playa del Carmen. El tiempo estimado de traslado desde Cancún es de 55 minutos.",
             "ctaText": "Reservar",
             "link": "/es/transportacion-cancun-a-playa-del-carmen"
           },
           "cancun": {
             "title": "Transporte a Cancún",
-            "price": "539.82",
             "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a la Zona Hotelera. El tiempo estimado de traslado del Aeropuerto a la Zona Hotelera es de 30 minutos.",
             "ctaText": "Reservar",
             "link": "/es"
@@ -1192,17 +1161,14 @@
         "cards": {
           "luxury": {
             "title": "Transportación de Lujo de Cancún a Playa del Carmen",
-            "price": "2610.00",
             "description": "Eleve su experiencia de transportación entre el Aeropuerto de Cancún y Playa del Carmen con nuestro servicio de transportación de lujo. Diseñado para 1 a 5 pasajeros, disfrute de la comodidad y el lujo de una Suburban o vehículo similar."
           },
           "private": {
             "title": "Transportación Privada de Cancún a Playa del Carmen",
-            "price": "1259.82",
             "description": "Nuestro servicio de transportación del Aeropuerto de Cancún a Playa del Carmen es la opción más popular y económica en la Riviera Maya. Ofrecemos vehículos espaciosos, con aire acondicionado, seguros y limpios que acomodan grupos de 1 a 8 personas."
           },
           "group": {
             "title": "Transportación de Cancún a Playa del Carmen para Grupos",
-            "price": "2610.00",
             "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos, con capacidad para hasta 16 pasajeros. Disfrute de un viaje cómodo y seguro en nuestros espaciosos vehículos."
           }
         }
@@ -1240,7 +1206,7 @@
           },
           "cheapest": {
             "question": "¿Cuál es el servicio de transporte más barato de Cancún a Playa del Carmen?",
-            "answer": "El transporte más barato es nuestro transporte: $1,259 MXN"
+            "answer": "El transporte más barato es nuestro transporte: {pricePrivateOw}"
           },
           "otherDestinations": {
             "question": "¿Qué otros destinos puedo reservar para mi servicio de transporte?",
@@ -1299,21 +1265,18 @@
         "cards": {
           "tulum": {
             "title": "Transporte a Tulum",
-            "price": "2322.00",
             "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a Akumal. El tiempo estimado de traslado de Cancún a Akumal es de 1 hora y 40 minutos.",
             "ctaText": "Reservar",
             "link": "/es/traslado-cancun-tulum"
           },
           "playa": {
             "title": "Transportación a Playa del Carmen",
-            "price": "1259.82",
             "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a Playa del Carmen. El tiempo estimado de traslado desde Cancún es de 55 minutos.",
             "ctaText": "Reservar",
             "link": "/es/transportacion-cancun-a-playa-del-carmen"
           },
           "cancun": {
             "title": "Transportación a Cancún",
-            "price": "539.82",
             "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a la Zona Hotelera. El tiempo estimado de traslado del Aeropuerto a la Zona Hotelera es de 30 minutos.",
             "ctaText": "Reservar",
             "link": "/es"
@@ -1366,17 +1329,14 @@
         "cards": {
           "luxury": {
             "title": "Traslado de Lujo a Akumal",
-            "price": "2610.00",
             "description": "Disfruta de este servicio a bordo de una camioneta Suburban último modelo o similar, con asientos de lujo, comodidad y una experiencia totalmente de lujo. El servicio de traslado de lujo es de 1 a 5 pasajeros."
           },
           "private": {
             "title": "Transporte Privado a Akumal",
-            "price": "1259.82",
             "description": "Nuestro servicio más económico para aquellos que buscan la mejor calidad-precio en toda la Riviera Maya, obtén un servicio económico para hasta 8 personas con toda la confianza y seguridad garantizada."
           },
           "group": {
             "title": "Traslado para Grupos a Akumal",
-            "price": "2610.00",
             "description": "La solución perfecta de transporte para bodas, convenciones, congresos y cualquier evento masivo en la Riviera Maya. Habla con uno de nuestros asesores de ventas para encontrar la opción que mejor se adapte a tu presupuesto. Ideal para cualquier cantidad de pasajeros."
           }
         }
@@ -1390,7 +1350,7 @@
         "items": {
           "cost": {
             "question": "¿Cuánto cuesta el transporte de Cancún a Akumal?",
-            "answer": "El costo del transporte de Cancún a Akumal puede variar dependiendo del tipo de servicio que elijas. Go Transfers ofrece servicio de traslado desde 2375 MXN para hasta 8 personas. Optar por un traslado privado te garantiza comodidad y tranquilidad durante el viaje, con un vehículo exclusivo para ti y tu grupo, lo que hace que el trayecto sea más cómodo y sin interrupciones."
+            "answer": "El costo del transporte de Cancún a Akumal puede variar dependiendo del tipo de servicio que elijas. Go Transfers ofrece servicio de traslado desde {pricePrivateOw} para hasta 8 personas. Optar por un traslado privado te garantiza comodidad y tranquilidad durante el viaje, con un vehículo exclusivo para ti y tu grupo, lo que hace que el trayecto sea más cómodo y sin interrupciones."
           },
           "safe": {
             "question": "¿Es seguro el transporte desde el Aeropuerto de Cancún a Akumal?",
@@ -1418,7 +1378,7 @@
           },
           "cheapest": {
             "question": "¿Cuál es el traslado más barato del Aeropuerto de Cancún a Akumal?",
-            "answer": "El shuttle más económico y confiable para trasladarte del Aeropuerto de Cancún a Akumal es el nuestro, con tarifas que comienzan desde 2375 MXN por trayecto para hasta 8 pasajeros. Este precio competitivo incluye un servicio de alta calidad, con conductores profesionales, vehículos con aire acondicionado, y la tranquilidad de saber que llegarás a tu destino de manera segura y eficiente. Además, nuestras tarifas son fijas, por lo que no tendrás que preocuparte por cargos adicionales ni sorpresas al final del viaje."
+            "answer": "El shuttle más económico y confiable para trasladarte del Aeropuerto de Cancún a Akumal es el nuestro, con tarifas que comienzan desde {pricePrivateOw} por trayecto para hasta 8 pasajeros. Este precio competitivo incluye un servicio de alta calidad, con conductores profesionales, vehículos con aire acondicionado, y la tranquilidad de saber que llegarás a tu destino de manera segura y eficiente. Además, nuestras tarifas son fijas, por lo que no tendrás que preocuparte por cargos adicionales ni sorpresas al final del viaje."
           },
           "otherDestinations": {
             "question": "¿A qué otros destinos puedo reservar mi servicio de traslado?",
@@ -1477,21 +1437,18 @@
         "cards": {
           "tulum": {
             "title": "Transporte a Tulum",
-            "price": "2322.00",
             "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a Tulum. El tiempo estimado de traslado de Cancún a Tulum es de 1 hora y 40 minutos.",
             "ctaText": "Reservar",
             "link": "/es/traslado-cancun-tulum"
           },
           "playa": {
             "title": "Transporte a Playa del Carmen",
-            "price": "1259.82",
             "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a Playa del Carmen. El tiempo estimado de traslado desde Cancún es de 55 minutos.",
             "ctaText": "Reservar",
             "link": "/es/transportacion-cancun-a-playa-del-carmen"
           },
           "cancun": {
             "title": "Transporte a Cancún",
-            "price": "539.82",
             "description": "Disfrute de un servicio de traslado seguro, rápido y confiable a la Zona Hotelera. El tiempo estimado de traslado del Aeropuerto a la Zona Hotelera es de 30 minutos.",
             "ctaText": "Reservar",
             "link": "/es"
@@ -1544,17 +1501,14 @@
         "cards": {
           "luxury": {
             "title": "Transporte de lujo de Cancún a Tulum",
-            "price": "5490.00",
             "description": "Mejore su experiencia de viaje con nuestro servicio de traslado de lujo del Aeropuerto de Cancún a Tulum. Ideal para 1 a 5 pasajeros, este servicio ofrece confort premium en una Suburban o vehículo similar."
           },
           "private": {
             "title": "Transportación Privada de Cancún a Tulum",
-            "price": "2322.00",
             "description": "Nuestro servicio de transportación privada del Aeropuerto de Cancún a Tulum es una de las opciones más populares y económicas en la Riviera Maya. Este servicio acomoda de 1 a 8 personas en un vehículo espacioso, con aire acondicionado, seguro y limpio."
           },
           "group": {
             "title": "Transporte de grupos de Cancún a Tulum",
-            "price": "5490.00",
             "description": "¿Viaja con un grupo de más de 8 pasajeros? Ahorre dinero y reserve nuestro servicio de transporte para grupos del Aeropuerto de Cancún a Tulum. Este servicio puede acomodar hasta 16 pasajeros, asegurando que todos viajen cómodos y seguros."
           }
         }
@@ -1654,13 +1608,7 @@
       "ratesTable": {
         "destinations": {
           "merida": {
-            "name": "Mérida",
-            "privateOw": "$9,975 MXN",
-            "privateRt": "$19,855 MXN",
-            "luxuryOw": "$18,905 MXN",
-            "luxuryRt": "$37,240 MXN",
-            "groupOw": "N/A",
-            "groupRt": "N/A"
+            "name": "Mérida"
           }
         }
       },
@@ -1672,21 +1620,18 @@
         "cards": {
           "tulum": {
             "title": "Transporte a Tulum desde Cancún",
-            "price": "2322.00",
             "description": "Disfruta de un servicio de traslado seguro, rápido y confiable a Tulum. El tiempo estimado de traslado desde Cancún a Tulum es de 1 hora y 45 minutos.",
             "ctaText": "Reservar",
             "link": "/es/traslado-cancun-tulum"
           },
           "playa": {
             "title": "Transporte a Playa del Carmen desde Cancún",
-            "price": "1259.82",
             "description": "Disfruta de un servicio de traslado seguro, rápido y confiable a Playa del Carmen. El tiempo estimado de traslado desde Cancún es de 55 minutos.",
             "ctaText": "Reservar",
             "link": "/es/transportacion-cancun-a-playa-del-carmen"
           },
           "cancun": {
             "title": "Transporte a la Zona Hotelera de Cancún desde Cancún",
-            "price": "539.82",
             "description": "Disfruta de un servicio de traslado seguro, rápido y confiable a la Zona Hotelera. El tiempo estimado de traslado desde el Aeropuerto a la Zona Hotelera es de 30 minutos.",
             "ctaText": "Reservar",
             "link": "/es"
@@ -1739,17 +1684,14 @@
         "cards": {
           "luxury": {
             "title": "Transporte de Lujo de Cancún a Mérida",
-            "price": "17910.00",
             "description": "Mejore su viaje desde el Aeropuerto de Cancún a Mérida con nuestro servicio de transporte premium. Diseñado para 1 a 6 pasajeros, experimente lo último en confort y estilo con nuestra SUV de lujo o vehículo de alta gama similar."
           },
           "private": {
             "title": "Traslado Privado de Cancún a Mérida",
-            "price": "9450.00",
             "description": "Nuestro servicio de traslado privado desde el Aeropuerto de Cancún a Mérida es la opción ideal para los viajeros que buscan comodidad y asequibilidad. Disfrute de un viaje relajante en nuestros vehículos modernos con aire acondicionado, diseñados para acomodar cómodamente a grupos de 1 a 10 pasajeros. La seguridad, la limpieza y la puntualidad son nuestras principales prioridades."
           },
           "group": {
             "title": "Transporte para Grupos Grandes de Cancún a Mérida",
-            "price": "17910.00",
             "description": "¿Viaja con un grupo más grande? Nuestro rentable servicio de transporte para grupos es perfecto para grupos de hasta 20 pasajeros. Con vehículos espaciosos y bien mantenidos, garantizamos un viaje agradable y sin contratiempos para todos. Ahorre tiempo y dinero mientras viaja con comodidad y seguridad."
           }
         }
@@ -1831,21 +1773,18 @@
         "cards": {
           "tulum": {
             "title": "Transporte del Aeropuerto de Cancun a Tulum",
-            "price": "2322.00",
             "description": "Tulum, ciudad situada en la Riviera Maya, se encuentra aproximadamente a 2 horas en coche de Cancún. Conocida por sus impresionantes playas, sitios arqueológicos históricos e increíbles hoteles en la selva, Tulum es un destino de visita obligada.",
             "ctaText": "Reservar",
             "link": "/es/traslado-cancun-tulum"
           },
           "playa": {
             "title": "Transporte del Aeropuerto de Cancun a Playa del Carmen",
-            "price": "1259.82",
             "description": "Nuestros servicios de transporte y taxi te llevarán a cualquier hotel, casa vacacional o Airbnb en Playa del Carmen, el vibrante corazón de la Riviera Maya. ¡Con nosotros, su aventura está a la vuelta de la esquina!",
             "ctaText": "Reservar",
             "link": "/es/transportacion-cancun-a-playa-del-carmen"
           },
           "cancun": {
             "title": "Transportación del Aeropuerto de Cancún a la Zona Hotelera de Cancún",
-            "price": "539.82",
             "description": "La zona hotelera de Cancún es el principal destino de la ciudad, con hoteles de 4 y 5 estrellas que ofrecen las mejores vistas del Mar Caribe y la experiencia vacacional más inolvidable que pueda imaginar.",
             "ctaText": "Reservar",
             "link": "/es"
@@ -1929,15 +1868,11 @@
             {
               "arrival": "Cancún Aeropuerto",
               "departure": "Cancún Zona Hotelera",
-              "oneWay": "$539.82 MXN",
-              "roundTrip": "$1,079.82 MXN",
               "capacity": "Hasta 8 pasajeros"
             },
             {
               "arrival": "Cancún Zona Hotelera",
               "departure": "Cancún Aeropuerto",
-              "oneWay": "$539.82 MXN",
-              "roundTrip": "$1,079.82 MXN",
               "capacity": "Hasta 8 pasajeros"
             }
           ]

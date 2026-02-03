@@ -3,6 +3,12 @@
 import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 import { marked } from "marked";
 import clsx from "clsx";
+import { getFormattedPrice } from "../../lib/utils";
+import {
+  getOneWayPrice,
+  getRoundTripPrice,
+  PAGE_DESTINATION_MAP,
+} from "../../data/prices";
 
 // Components
 import SectionHeading from "../molecules/SectionHeading.astro";
@@ -46,6 +52,23 @@ interface TableData {
 }
 
 const tableData = table as TableData;
+
+// Inject Dynamic Prices
+const destinationKey = PAGE_DESTINATION_MAP[page] || "cancunZone";
+const oneWayPrice = getFormattedPrice(
+  getOneWayPrice(destinationKey, "private"),
+  lang,
+);
+const roundTripPrice = getFormattedPrice(
+  getRoundTripPrice(destinationKey, "private"),
+  lang,
+);
+
+tableData.rows = tableData.rows.map((row) => ({
+  ...row,
+  oneWay: oneWayPrice,
+  roundTrip: roundTripPrice,
+}));
 
 // Column Configuration
 interface TableColumn {
