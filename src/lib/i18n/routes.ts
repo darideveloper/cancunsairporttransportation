@@ -55,6 +55,10 @@ export const routes = {
         en: "my-reservation",
         es: "es/mi-reservacion",
     },
+    blog: {
+        en: "blog",
+        es: "es/blog",
+    },
 
 } as const;
 

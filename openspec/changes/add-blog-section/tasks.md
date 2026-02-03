@@ -2,10 +2,10 @@
 
 ## Phase 1: Foundation
 
-- [ ] Define blog types in `src/types/blog.ts` <!-- id: 0 -->
-- [ ] Create `src/lib/blog/api.ts` with `getPosts` and `getPostBySlug` functions <!-- id: 1 -->
-- [ ] Add `blog` route to `src/lib/i18n/routes.ts` <!-- id: 2 -->
-- [ ] Update `src/pages/rss.xml.js` to use `getPosts` from blog API instead of `getCollection` <!-- id: 20 -->
+- [x] Define blog types in `src/types/blog.ts` <!-- id: 0 -->
+- [x] Create `src/lib/blog/api.ts` with `getPosts` and `getPostBySlug` functions <!-- id: 1 -->
+- [x] Add `blog` route to `src/lib/i18n/routes.ts` <!-- id: 2 -->
+- [x] Update `src/pages/rss.xml.js` to use `getPosts` from blog API instead of `getCollection` <!-- id: 20 -->
 
 ## Phase 2: Translation Integration
 
