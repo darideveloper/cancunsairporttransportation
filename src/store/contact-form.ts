@@ -97,7 +97,7 @@ export const useContactFormStore = create<ContactFormState>((set, get) => ({
         set({ isLoading: true, errorMessage: null, errors: {} });
 
         try {
-            const response = await fetch('/api/v1/contact', {
+            const response = await fetch(`${import.meta.env.PUBLIC_LEGACY_API_URL}/api/v1/contact`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
