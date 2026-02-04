@@ -22,7 +22,7 @@ const t = useTranslations(lang);
 const pageLabel = lang === "es" ? "Página" : "Page";
 ---
 
-<Layout lang={lang}>
+<Layout lang={lang} pageKey="blog">
   <BlogSEO slot="seo" currentPage="blog" />
 
   <section class="bg-gray-50 py-16">

@@ -91,6 +91,7 @@ export default function ContactForm({
   return (
     <form
       onSubmit={handleSubmit}
+      method="POST"
       className="my-6 grid w-full grid-cols-1 gap-6 rounded-2xl bg-white p-8 shadow-sm lg:w-2/3 lg:grid-cols-2"
     >
       <div className="col-span-1">

@@ -20,7 +20,7 @@ if (!post) {
 let translatedPath = "/blog";
 if (post.related_post) {
   const enPosts = await getPosts("en");
-  const enPost = enPosts.find((p) => p.id === post.related_post);
+  const enPost = enPosts.find((p) => p.slug === post.related_post);
   if (enPost) {
     translatedPath = `/blog/${enPost.slug}`;
   }

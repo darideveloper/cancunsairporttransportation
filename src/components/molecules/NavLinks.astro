@@ -1,12 +1,19 @@
 ---
+// Libs
+import clsx from "clsx";
+
+// Components
 import NavLink from "../atoms/NavLink.astro";
 import { MOBILE_MENU_STYLES } from "../../styles/menu";
+
+// i18n
 import {
   useTranslations,
   getLangFromUrl,
   getLocalizedPath,
 } from "../../lib/i18n/utils";
 
+// Props
 interface Props {
   mode?: "desktop" | "mobile";
 }
@@ -28,27 +35,35 @@ const links = [
     key: "tulum",
     link: getLocalizedPath("tulum", lang),
   },
+  {
+    key: "blog",
+    link: getLocalizedPath("blog", lang),
+  },
 ];
 ---
 
 <ul
   class:list={[
     mode === "desktop"
-      ? "mx-auto hidden w-9/12 gap-0 lg:flex lg:w-auto lg:gap-2"
+      ? "mx-auto hidden w-full grid-cols-4 items-center justify-center gap-0 lg:flex lg:w-10/12 lg:gap-6"
       : "mx-auto w-full gap-0 lg:w-auto lg:gap-2",
   ]}
 >
   {
     links.map((link) => (
       <li
-        class:list={[
+        class={clsx(
           mode === "desktop" ? "inline-block" : MOBILE_MENU_STYLES.li,
-        ]}
+          "flex items-center justify-center",
+        )}
       >
         <NavLink
           link={link.link}
           label={t(`global.menubar.nav.${link.key}`)}
-          class={mode === "mobile" ? MOBILE_MENU_STYLES.link : ""}
+          class={clsx(
+            mode === "mobile" ? MOBILE_MENU_STYLES.link : "",
+            "mx-auto",
+          )}
         />
       </li>
     ))

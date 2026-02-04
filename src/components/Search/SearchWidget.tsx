@@ -77,7 +77,7 @@ export default function SearchWidget({ currentLang }: { currentLang: string }) {
 
       {/* Dropdown Container */}
       {isOpen && (
-        <div className="animate-in fade-in slide-in-from-top-2 absolute top-16 left-0 z-50 mt-2 w-80 rounded-lg border border-gray-100 bg-white p-4 shadow-xl duration-200 sm:w-96">
+        <div className="animate-in fade-in slide-in-from-top-2 absolute top-16 left-0 z-50 mt-2 w-full rounded-lg border border-gray-100 bg-white p-4 shadow-xl duration-200 sm:w-96">
           {/* Input Field */}
           <div className="relative mb-3">
             <input

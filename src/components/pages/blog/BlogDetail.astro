@@ -1,8 +1,8 @@
 ---
 import { marked } from "marked";
+import { Image } from "astro:assets";
 import Layout from "../../../layouts/Layout.astro";
 import BlogPostSEO from "../../utils/BlogPostSEO.astro";
-import BannerImage from "../../atoms/BannerImage.astro";
 import ButtonCta from "../../atoms/ButtonCta.astro";
 import { useTranslations } from "../../../lib/i18n/utils";
 import type { PostDetail } from "../../../types/blog";
@@ -52,27 +52,80 @@ const alternateUrls = translatedPath
     alternateUrls={alternateUrls}
   />
 
-  <BannerImage
-    src={post.banner_image_url}
-    alt={post.title}
-    title={post.title}
-    class="mb-8"
+  <section
+    id="banner-image"
+    class="relative mx-auto mb-8 h-[300px] w-[98%] overflow-hidden rounded-xl md:h-[400px]"
   >
-    <div class="mx-auto max-w-4xl px-4 text-center">
-      <h1
-        class="mb-4 text-3xl font-bold text-white drop-shadow-md md:text-4xl lg:text-5xl"
-      >
-        {post.title}
-      </h1>
-      <div
-        class="flex items-center justify-center gap-4 text-sm font-medium text-white/90 drop-shadow-sm md:text-base"
-      >
-        <span>{formattedDate}</span>
-        <span>•</span>
-        <span>{post.author}</span>
+    <Image
+      src={post.banner_image_url}
+      alt={post.title}
+      title={post.title}
+      inferSize={true}
+      loading="eager"
+      fetchpriority="high"
+      class="absolute -top-[20%] left-0 h-[140%] w-full object-cover"
+    />
+    <div class="bg-accent/60 absolute inset-0 mix-blend-multiply"></div>
+    <div
+      class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center"
+    >
+      <div class="max-w-4xl">
+        <h1
+          class="mb-4 text-3xl font-bold text-white! drop-shadow-md md:text-4xl lg:text-5xl"
+        >
+          {post.title}
+        </h1>
+        <div
+          class="flex items-center justify-center gap-4 text-sm font-medium text-white/90 drop-shadow-sm md:text-base"
+        >
+          <span>{formattedDate}</span>
+          <span>•</span>
+          <span>{post.author}</span>
+        </div>
       </div>
     </div>
-  </BannerImage>
+  </section>
+
+  <script>
+    const setupParallax = () => {
+      const banner = document.getElementById("banner-image");
+      if (!banner) return;
+
+      const img = banner.querySelector("img");
+      if (!img) return;
+
+      let ticking = false;
+      const speed = 0.4;
+
+      const updatePosition = () => {
+        const scrollY = window.scrollY;
+        // Optimization: Stop animating if banner is out of view
+        if (scrollY > 600) return;
+
+        img.style.transform = `translateY(${scrollY * speed}px)`;
+        ticking = false;
+      };
+
+      const onScroll = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updatePosition);
+          ticking = true;
+        }
+      };
+
+      window.addEventListener("scroll", onScroll);
+
+      // Cleanup on navigation
+      const cleanup = () => {
+        window.removeEventListener("scroll", onScroll);
+        document.removeEventListener("astro:before-swap", cleanup);
+      };
+
+      document.addEventListener("astro:before-swap", cleanup);
+    };
+
+    document.addEventListener("astro:page-load", setupParallax);
+  </script>
 
   <article class="container mx-auto max-w-4xl px-4 py-12">
     <div
