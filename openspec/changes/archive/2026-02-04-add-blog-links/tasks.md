@@ -1,0 +1,4 @@
+- [x] Update `src/messages/en.json` to include "Blog" in `global.menubar.nav` and `global.footer.columns.services.links` <!-- id: 0 -->
+- [x] Update `src/messages/es.json` to include "Blog" in `global.menubar.nav` and `global.footer.columns.services.links` <!-- id: 1 -->
+- [x] Update `src/components/molecules/NavLinks.astro` to add the blog link entry using the `blog` key <!-- id: 2 -->
+- [x] Verify the blog link appears in the header and footer on both English and Spanish versions <!-- id: 3 -->
