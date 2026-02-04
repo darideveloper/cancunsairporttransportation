@@ -75,6 +75,10 @@
             {
               "text": "Taxi Aeropuerto Cancún",
               "href": "/es/taxi-aeropuerto-cancun"
+            },
+            {
+              "text": "Blog",
+              "href": "/es/blog"
             }
           ]
         },
@@ -135,7 +139,8 @@
       "nav": {
         "cancun": "Taxi Aeropuerto Cancún",
         "carmen": "Cancun a Playa del Carmen",
-        "tulum": "Cancun a Tulum"
+        "tulum": "Cancun a Tulum",
+        "blog": "Blog"
       },
       "cta": "Mi reserva",
       "topSection": {

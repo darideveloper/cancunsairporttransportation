@@ -75,6 +75,10 @@
             {
               "text": "Cancun Airport Taxi",
               "href": "/cancun-airport-taxi"
+            },
+            {
+              "text": "Blog",
+              "href": "/blog"
             }
           ]
         },
@@ -135,7 +139,8 @@
       "nav": {
         "cancun": "Cancun Airport Transportation",
         "carmen": "Playa del Carmen Transfers",
-        "tulum": "Cancun to Tulum Shuttle"
+        "tulum": "Cancun to Tulum Shuttle",
+        "blog": "Blog"
       },
       "cta": "My Booking",
       "topSection": {
