@@ -119,20 +119,14 @@ All static UI text MUST use the project's translation system.
 - **And** they MUST include `pages.blog.meta.author`, `pages.blog.meta.date`
 
 ### Requirement: Language Switching on Post
-
-The system MUST allow users to switch between the English and Spanish versions of a post.
+The system MUST allow users to switch between English and Spanish versions of the same post.
 
 #### Scenario: Switching to existing translation
-
-- **Given** a user is viewing an English post that has a Spanish translation (`related_post`)
-- **When** they click the language switch in the header
-- **Then** they MUST be redirected to `/es/blog/{related_post_slug}`
-
-#### Scenario: Switching with no translation
-
-- **Given** a user is viewing a post with no translation (`related_post` is null)
-- **When** they click the language switch
-- **Then** they MUST be redirected to the main blog listing of the target language (`/blog` or `/es/blog`)
+When a user views a post that has a related post in the other language (linked via `related_post` slug), the language switcher button MUST link directly to that related post's URL.
+- **Given** I am on a blog post page (e.g., /blog/my-post)
+- **And** the post data contains a `related_post` slug pointing to the translated version (e.g., "mi-articulo")
+- **Then** the logic must successfully resolve this slug to the translated post object
+- **And** the language toggle button must point to the translated post URL (e.g., /es/blog/mi-articulo)
 
 ### Requirement: Reusable Components
 

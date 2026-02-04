@@ -11,7 +11,7 @@ export interface Post {
 }
 
 export interface PostDetail extends Post {
-    related_post: number | null;
+    related_post: string | null;
     content: string;
     keywords: string;
 }
