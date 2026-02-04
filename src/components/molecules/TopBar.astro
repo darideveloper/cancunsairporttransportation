@@ -9,12 +9,14 @@ import { PHONES, SOCIAL_LINKS } from "../../data/site-config";
 import LangLink from "../atoms/LangLink.astro";
 import ContactItem from "../atoms/ContactItem.astro";
 import SocialIcon from "../atoms/SocialIcon.astro";
+import SearchWidget from "../Search/SearchWidget";
 
 // Icons
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
 
 // Lang
 const lang = getLangFromUrl(Astro.url);
+const currentLang = lang === "es" ? "es" : "en";
 const t = useTranslations(lang);
 
 interface Props {
@@ -33,6 +35,9 @@ const { pageKey, translatedPath } = Astro.props;
     <!-- Left: Lang Selector -->
     <div class="flex items-center">
       <LangLink pageKey={pageKey} translatedPath={translatedPath} />
+      <div class="ml-4 border-l border-gray-300 pl-4">
+        <SearchWidget currentLang={currentLang} client:idle />
+      </div>
     </div>
 
     <!-- Center: Contact Info -->
