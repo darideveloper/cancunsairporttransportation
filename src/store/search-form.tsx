@@ -49,14 +49,14 @@ export const useSearchFormStore = create<SearchFormState>()(
       setCurrency: (currency) => set({ currency }),
       setLocationFrom: (location) => {
         if (typeof location === "string") {
-          set({ locationFrom: location });
+          set({ locationFrom: location, locationFromData: null });
         } else {
           set({ locationFrom: location.name, locationFromData: location });
         }
       },
       setLocationTo: (location) => {
         if (typeof location === "string") {
-          set({ locationTo: location });
+          set({ locationTo: location, locationToData: null });
         } else {
           set({ locationTo: location.name, locationToData: location });
         }

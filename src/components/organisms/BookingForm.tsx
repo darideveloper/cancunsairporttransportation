@@ -25,7 +25,9 @@ export default function BookingForm({
   const {
     tripType,
     locationFrom,
+    locationFromData,
     locationTo,
+    locationToData,
     departureDate,
     departureTime,
     returnDate,
@@ -39,6 +41,8 @@ export default function BookingForm({
     setReturnTime,
     setPassengers,
   } = state;
+
+  const isValid = !!locationFromData && !!locationToData;
 
   return (
     <section
@@ -65,6 +69,7 @@ export default function BookingForm({
           <SubmitButton
             label={translations.submit}
             className="hidden @xl:block"
+            disabled={!isValid}
           />
         </header>
 
@@ -164,6 +169,7 @@ export default function BookingForm({
           <SubmitButton
             label={translations.submit}
             className="mt-4 block w-full @xl:hidden"
+            disabled={!isValid}
           />
         </footer>
       </form>
