@@ -5,6 +5,7 @@ interface ImportMetaEnv {
     /** USD to MXN exchange rate for dynamic price conversion */
     readonly USD_TO_MXN_RATE: string;
     readonly PUBLIC_LEGACY_API_URL: string;
+    readonly PUBLIC_LEGACY_API_KEY: string;
 }
 
 interface ImportMeta {

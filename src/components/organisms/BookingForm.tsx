@@ -1,17 +1,14 @@
-import { useEffect } from "react";
 import { useSearchFormStore } from "../../store/search-form";
 import TripTypeControls from "../molecules/booking/TripTypeControls";
 import CurrencyControls from "../molecules/booking/CurrencyControls";
 import SubmitButton from "../atoms/form/SubmitButton";
-import LocationSelect from "../atoms/form/LocationSelect";
+import LocationAutocomplete from "../atoms/form/LocationAutocomplete";
 import DateInput from "../atoms/form/DateInput";
 import TimeInput from "../atoms/form/TimeInput";
 import PassengerInput from "../atoms/form/PassengerInput";
 
 interface Props {
   translations: any;
-  defaultFrom?: string;
-  defaultTo?: string;
   title?: string;
   className?: string;
   ariaLabel?: string;
@@ -19,8 +16,6 @@ interface Props {
 
 export default function BookingForm({
   translations,
-  defaultFrom,
-  defaultTo,
   title,
   className,
   ariaLabel,
@@ -44,45 +39,6 @@ export default function BookingForm({
     setReturnTime,
     setPassengers,
   } = state;
-
-  useEffect(() => {
-    // Initialize defaults if not set
-    if (!locationFrom && defaultFrom) {
-      setLocationFrom(defaultFrom);
-    }
-    if (!locationTo && defaultTo) {
-      setLocationTo(defaultTo);
-    }
-
-    // Initialize date/time if not set
-    if (!departureDate) {
-      const now = new Date();
-      // YYYY-MM-DD
-      const dateStr = now.toISOString().split("T")[0];
-      setDepartureDate(dateStr);
-    }
-
-    if (!departureTime) {
-      const now = new Date();
-      // HH:MM
-      const timeStr = now.toLocaleTimeString("en-GB", {
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-      setDepartureTime(timeStr);
-    }
-  }, [
-    defaultFrom,
-    defaultTo,
-    locationFrom,
-    locationTo,
-    departureDate,
-    departureTime,
-    setLocationFrom,
-    setLocationTo,
-    setDepartureDate,
-    setDepartureTime,
-  ]);
 
   return (
     <section
@@ -116,7 +72,7 @@ export default function BookingForm({
         <div className="grid grid-cols-1 gap-4 py-4 @lg:grid-cols-6 @4xl:grid-cols-18">
           {/* Departure Trip */}
           <div className="@lg:col-span-3 @4xl:col-span-5">
-            <LocationSelect
+            <LocationAutocomplete
               id="location-from"
               label={`${translations.labels.leavingFrom} *`}
               value={locationFrom}
@@ -125,7 +81,7 @@ export default function BookingForm({
             />
           </div>
           <div className="@lg:col-span-3 @4xl:col-span-5">
-            <LocationSelect
+            <LocationAutocomplete
               id="location-to"
               label={translations.labels.goingTo}
               value={locationTo}
@@ -161,7 +117,7 @@ export default function BookingForm({
           {tripType === "roundTrip" && (
             <>
               <div className="@lg:col-span-3 @4xl:col-span-5">
-                <LocationSelect
+                <LocationAutocomplete
                   id="return-location-from"
                   label={translations.labels.leavingFrom}
                   value={locationTo} // Swapped for return
@@ -169,7 +125,7 @@ export default function BookingForm({
                 />
               </div>
               <div className="@lg:col-span-3 @4xl:col-span-5">
-                <LocationSelect
+                <LocationAutocomplete
                   id="return-location-to"
                   label={translations.labels.goingTo}
                   value={locationFrom} // Swapped for return
