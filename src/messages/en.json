@@ -1911,6 +1911,11 @@
         "previous": "Previous",
         "next": "Next"
       }
+    },
+    "results": {
+      "title": "Search Results | Cancun Airport Transportation",
+      "description": "View your search results for transportation from Cancun Airport.",
+      "keywords": "cancun transportation results, search results"
     }
   }
 }

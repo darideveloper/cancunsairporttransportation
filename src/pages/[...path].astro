@@ -14,6 +14,7 @@ import Merida from "../components/pages/destinations/Merida.astro";
 import LegalPage from "../components/pages/legal/LegalPage.astro";
 import Contact from "../components/pages/general/Contact.astro";
 import Reservation from "../components/pages/store/Reservation.astro";
+import Results from "../components/pages/store/Results.astro";
 
 export async function getStaticPaths() {
   const paths = [];
@@ -56,6 +57,7 @@ const COMPONENT_MAP = {
   contact: Contact,
   privacy: LegalPage,
   reservation: Reservation,
+  results: Results,
 };
 
 const PageComponent = COMPONENT_MAP[pageKey as keyof typeof COMPONENT_MAP];

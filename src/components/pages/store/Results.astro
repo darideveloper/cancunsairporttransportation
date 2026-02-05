@@ -1,0 +1,16 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageSEO from "../../utils/PageSEO.astro";
+
+const { pageKey } = Astro.props;
+const page = "results";
+---
+
+<Layout pageKey={pageKey}>
+  <PageSEO currentPage={page} slot="seo" />
+  <section class="container mx-auto px-4 py-24 text-center">
+    <h1 class="font-title text-4xl font-bold text-gray-900 md:text-6xl">
+      Results
+    </h1>
+  </section>
+</Layout>

@@ -59,6 +59,10 @@ export const routes = {
         en: "blog",
         es: "es/blog",
     },
+    results: {
+        en: "results",
+        es: "es/resultados",
+    },
 
 } as const;
 
