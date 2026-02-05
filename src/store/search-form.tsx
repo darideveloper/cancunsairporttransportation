@@ -5,6 +5,7 @@ export interface LocationData {
   name: string;
   lat: number;
   lng: number;
+  address?: string;
 }
 
 interface SearchFormState {

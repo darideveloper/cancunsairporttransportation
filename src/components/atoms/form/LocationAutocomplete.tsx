@@ -76,6 +76,7 @@ export default function LocationAutocomplete({
           name: item.name,
           lat: parseFloat(item.geo?.lat || "0"),
           lng: parseFloat(item.geo?.lng || "0"),
+          address: item.address,
         }));
 
         setResults(mappedResults);
@@ -150,6 +151,11 @@ export default function LocationAutocomplete({
                 className="relative cursor-pointer px-4 py-2 text-gray-900 select-none hover:bg-gray-100"
               >
                 <span className="block truncate font-medium">{item.name}</span>
+                {item.address && (
+                  <span className="block truncate text-xs text-gray-500">
+                    {item.address}
+                  </span>
+                )}
                 {/* Optional: Add address if available */}
               </li>
             ))
