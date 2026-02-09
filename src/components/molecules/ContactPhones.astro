@@ -1,0 +1,32 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+
+// Components
+import ContactItem from "../atoms/ContactItem.astro";
+
+// Data
+import { PHONES } from "../../data/site-config";
+
+// Lang
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Props
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<ContactItem
+  label={t("global.topbar.mexicoPhone")}
+  phone={PHONES.mexico.formatted}
+  class={className}
+/>
+<ContactItem
+  label={t("global.topbar.usaCanadaPhone")}
+  phone={PHONES.usa.formatted}
+  class={className}
+/>

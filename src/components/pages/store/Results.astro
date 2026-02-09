@@ -12,6 +12,13 @@ import H2 from "../../atoms/H2.astro";
 import ButtonCta from "../../atoms/ButtonCta.astro";
 import VehicleBuyCard from "../../molecules/VehicleBuyCard.astro";
 import BookingForm from "../../organisms/BookingForm";
+import ContactPhones from "../../molecules/ContactPhones.astro";
+import { Image } from "astro:assets";
+
+// Images
+import logoSafeTravel from "../../../assets/images/process/safe_travel.jpg";
+import logoSct from "../../../assets/images/process/sct.png";
+const logos = [logoSafeTravel, logoSct];
 
 // Props
 const { pageKey } = Astro.props;
@@ -84,7 +91,37 @@ const t = useTranslations(lang);
           className="my-12 hidden! md:px-0!"
         />
 
+        <!-- Why Choose Us -->
         <WhyChooseUs />
+
+        <!-- Help -->
+        <div class="mt-8 text-sm">
+          <H2 class="mb-0 border-b text-left">
+            ¿Necesitas ayuda con tu reservación?
+          </H2>
+          <p class="my-4">
+            Estaríamos mas que felices de ayudarte. Nuestro centro de llamadas
+            está a su servicio.
+          </p>
+          <ContactPhones class="mb-4 flex-col items-start justify-start" />
+          <!-- Logos -->
+          <div class="flex items-center gap-4">
+            {
+              logos.map((logo) => (
+                <Image
+                  src={logo}
+                  alt=""
+                  title=""
+                  loading="lazy"
+                  decoding="async"
+                  width={100}
+                  height={100}
+                  class="h-24 w-auto"
+                />
+              ))
+            }
+          </div>
+        </div>
       </div>
     </div>
   </section>

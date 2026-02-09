@@ -4,9 +4,10 @@ import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 interface Props {
   label: string;
   phone: string;
+  class?: string;
 }
 
-const { label, phone } = Astro.props;
+const { label, phone, class: className } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -15,7 +16,7 @@ const cleanPhone = phone.replace(/[^\d+]/g, "");
 const ariaLabel = t("global.accessibility.callAction", { label, phone });
 ---
 
-<div class="flex items-center gap-1 sm:gap-2">
+<div class={`flex items-center gap-1 sm:gap-2 ${className}`}>
   <span class="opacity-80">{label}:</span>
   <a
     href={`tel:${cleanPhone}`}

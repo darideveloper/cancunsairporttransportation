@@ -44,9 +44,10 @@ const iconMap: Record<string, any> = {
 ---
 
 <section id="why-choose-us" class="mt-8">
-  <div class="container mx-auto px-4 text-center">
-    <H2 class="mb-0 text-left">{t("global.sections.whyChooseUs.title")}</H2>
-    <hr />
+  <div class="mx-auto text-center">
+    <H2 class="mb-0 border-b text-left">
+      {t("global.sections.whyChooseUs.title")}
+    </H2>
 
     <!-- Trip Advisor Badge -->
     <div class="mt-4 flex justify-center">
@@ -69,14 +70,14 @@ const iconMap: Record<string, any> = {
     </div>
 
     <!-- Features Grid -->
-    <ul class="mt-6 flex flex-col">
+    <ul class="mt-6 flex w-full flex-col">
       {
         t("global.sections.whyChooseUs.items").map(
           (item: { text: string; icon?: string }) => (
             <CheckListItem
               text={item.text}
               Icon={item.icon ? iconMap[item.icon] : FaCheck}
-              class="flex h-full items-start justify-start text-sm"
+              class="flex h-full items-start justify-start px-0! text-sm"
             />
           ),
         )
