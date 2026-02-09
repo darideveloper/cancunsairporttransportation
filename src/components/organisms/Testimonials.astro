@@ -12,16 +12,21 @@ const t = useTranslations(lang);
 
 // Props
 interface Props {
-  page?: string;
+  contentKey?: string;
   images: ImageMetadata[];
   count?: number;
   class?: string;
 }
-const { page, images, count: explicitCount, class: className } = Astro.props;
+const {
+  contentKey,
+  images,
+  count: explicitCount,
+  class: className,
+} = Astro.props;
 
 // Translation path
-const basePath = page
-  ? `pages.${page}.testimonials`
+const basePath = contentKey
+  ? `pages.${contentKey}.testimonials`
   : "pages.home.testimonials";
 
 // Get testimonials items from translations to determine count if not provided

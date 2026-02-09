@@ -16,17 +16,17 @@ import ButtonCta from "../atoms/ButtonCta.astro";
 
 // Props
 interface Props {
-  page: string;
+  contentKey: string;
 }
 
-const { page } = Astro.props;
+const { contentKey } = Astro.props;
 
 // Lang
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // Data
-const content = t(`pages.${page}.privateDetails`) as any;
+const content = t(`pages.${contentKey}.privateDetails`) as any;
 const { title, description, table, cta } = content;
 const descriptionHtml = await marked.parse(description);
 
@@ -54,7 +54,7 @@ interface TableData {
 const tableData = table as TableData;
 
 // Inject Dynamic Prices
-const destinationKey = PAGE_DESTINATION_MAP[page] || "cancunZone";
+const destinationKey = PAGE_DESTINATION_MAP[contentKey] || "cancunZone";
 const oneWayPrice = getFormattedPrice(
   getOneWayPrice(destinationKey, "private"),
   lang,

@@ -30,8 +30,6 @@ import client3Img from "../../../assets/images/destinations/playa-del-carmen/gal
 import client4Img from "../../../assets/images/destinations/playa-del-carmen/gallery/client_4.webp";
 
 // Page data
-const page = "playa";
-
 // Props
 interface Props {
   lang: "en" | "es";
@@ -39,6 +37,9 @@ interface Props {
 }
 // Get language from params or props
 const { lang, pageKey } = Astro.props;
+
+// Page data
+const contentKey = pageKey || "playa";
 
 // Tranlation texts
 const t = useTranslations(lang);
@@ -49,7 +50,7 @@ const t = useTranslations(lang);
 <Layout pageKey={pageKey}>
   <!-- Page SEO -->
   <PageSEO
-    currentPage={page}
+    currentPage={contentKey}
     slot="seo"
     jsonType="TouristDestination"
     ogImage={safeTripBookingImg.src}
@@ -60,7 +61,7 @@ const t = useTranslations(lang);
     <BookingForm
       translations={t("global.booking")}
       client:idle
-      title={t(`pages.${page}.title`)}
+      title={t(`pages.${contentKey}.title`)}
     />
   </div>
 
@@ -70,29 +71,32 @@ const t = useTranslations(lang);
   <!-- Banner with image and text -->
   <TextCardHalf
     id="safe-trip-booking"
-    page={page}
+    contentKey={contentKey}
     section="safeTrip"
     image={safeTripBookingImg}
     imageClass="object-right"
   />
 
   <!-- Pricing transportation -->
-  <PricingSection page={page} />
+  <PricingSection contentKey={contentKey} />
 
   <!-- How to move -->
   <div class="bg-accent/5 mt-12 py-12">
     <TextCardSmall
       id="how-to-move"
-      page={page}
+      contentKey={contentKey}
       section="howToMove"
-      contentKey="content"
+      fieldKey="content"
       image={howToMoveImg}
       imageClass="object-right"
     />
   </div>
 
   <!-- Clients testimonials -->
-  <Testimonials page={page} images={[client1Img, client2Img, client3Img]} />
+  <Testimonials
+    contentKey={contentKey}
+    images={[client1Img, client2Img, client3Img]}
+  />
 
   <!-- Client Gallery -->
   <ClientGallery
@@ -102,20 +106,20 @@ const t = useTranslations(lang);
   />
 
   <!-- Destinations -->
-  <FeaturedDestinations page={page} />
+  <FeaturedDestinations contentKey={contentKey} />
 
   <!-- Banner CTA -->
-  <BannerCta page={page} imageClass="sm:w-1/2 md:w-4/12 h-auto" />
+  <BannerCta contentKey={contentKey} imageClass="sm:w-1/2 md:w-4/12 h-auto" />
 
   <!-- Rates Table -->
   <RatesTable />
 
   <!-- FAQs -->
-  <FaqSection page={page} />
+  <FaqSection contentKey={contentKey} />
 
   <!-- Popular hotels -->
-  <PopularHotels page={page} />
+  <PopularHotels contentKey={contentKey} />
 
   <!-- Transportation services -->
-  <TransportationServices page={page} />
+  <TransportationServices contentKey={contentKey} />
 </Layout>

@@ -14,10 +14,10 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang as "en" | "es");
 
 interface Props {
-  page: string;
+  contentKey: string;
 }
 
-const { page } = Astro.props;
+const { contentKey } = Astro.props;
 
 interface PopularHotelsData {
   title: string;
@@ -26,7 +26,9 @@ interface PopularHotelsData {
   items: string[];
 }
 
-const popularHotels = t(`pages.${page}.popularHotels`) as PopularHotelsData;
+const popularHotels = t(
+  `pages.${contentKey}.popularHotels`,
+) as PopularHotelsData;
 ---
 
 <section class="container mx-auto px-4 pt-12">

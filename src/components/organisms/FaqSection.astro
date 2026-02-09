@@ -8,20 +8,20 @@ import FaqItem from "../molecules/FaqItem.astro";
 import { marked } from "marked";
 
 interface Props {
-  page: string; // e.g., "home", "playaDelCarmen"
+  contentKey: string; // e.g., "home", "playaDelCarmen"
 }
 
-const { page } = Astro.props;
+const { contentKey } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const title = t(`pages.${page}.faq.title`);
+const title = t(`pages.${contentKey}.faq.title`);
 const description = t("global.sections.faq.description");
 
-const faqItems = t(`pages.${page}.faq.items`) as any;
+const faqItems = t(`pages.${contentKey}.faq.items`) as any;
 const faqKeys = Object.keys(faqItems);
 
 // Price Interpolation Logic
-const destinationKey = PAGE_DESTINATION_MAP[page];
+const destinationKey = PAGE_DESTINATION_MAP[contentKey];
 let formattedPrivateOw = "N/A";
 
 if (destinationKey) {

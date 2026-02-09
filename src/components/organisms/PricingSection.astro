@@ -13,11 +13,11 @@ import privateVehicleImg from "../../assets/images/vehicles/standard.webp";
 import groupVehicleImg from "../../assets/images/vehicles/groups.webp";
 
 interface Props {
-  page: string; // e.g., "home", "playaDelCarmen"
+  contentKey: string; // e.g., "home", "playaDelCarmen"
   isRegularGrid?: boolean;
 }
 
-const { page, isRegularGrid = false } = Astro.props;
+const { contentKey, isRegularGrid = false } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -29,8 +29,8 @@ const vehicleImages = {
   group: groupVehicleImg,
 };
 
-const title = t(`pages.${page}.pricing.title`);
-const subtitle = t(`pages.${page}.pricing.subtitle`);
+const title = t(`pages.${contentKey}.pricing.title`);
+const subtitle = t(`pages.${contentKey}.pricing.subtitle`);
 
 // Map service tier keys to destination pricing keys
 const tierToDestinationKey = {
@@ -40,7 +40,7 @@ const tierToDestinationKey = {
 } as const;
 
 // Get the destination key for this page (fallback to cancunZone if not found)
-const destinationKey = PAGE_DESTINATION_MAP[page] || "cancunZone";
+const destinationKey = PAGE_DESTINATION_MAP[contentKey] || "cancunZone";
 const destinationPricing = BASE_PRICES[destinationKey]?.pricing;
 ---
 
@@ -68,7 +68,7 @@ const destinationPricing = BASE_PRICES[destinationKey]?.pricing;
         const globalData = t(
           `global.sections.pricingServices.cards.${key}`,
         ) as any;
-        const pageData = t(`pages.${page}.pricing.cards.${key}`) as any;
+        const pageData = t(`pages.${contentKey}.pricing.cards.${key}`) as any;
 
         // Get the price from centralized pricing data
         const tierKey = tierToDestinationKey[key];

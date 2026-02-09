@@ -13,15 +13,15 @@ const t = useTranslations(lang);
 
 // Types
 interface Props {
-  page: string;
+  contentKey: string;
   image: ImageMetadata;
 }
-const { page, image } = Astro.props;
+const { contentKey, image } = Astro.props;
 
 // Get includes data from translations
-const title = t(`pages.${page}.includes.title`);
-const imageAlt = t(`pages.${page}.includes.imageAlt`);
-const imageTitle = t(`pages.${page}.includes.imageTitle`);
+const title = t(`pages.${contentKey}.includes.title`);
+const imageAlt = t(`pages.${contentKey}.includes.imageAlt`);
+const imageTitle = t(`pages.${contentKey}.includes.imageTitle`);
 const items = t("global.sections.includes.items");
 ---
 

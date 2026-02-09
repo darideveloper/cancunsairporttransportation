@@ -7,16 +7,16 @@ import cancunAirportTransportationImg from "../../assets/images/reliable-company
 import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 
 interface Props {
-  page: string;
+  contentKey: string;
   imageClass?: string;
 }
 
-const { page, imageClass } = Astro.props;
+const { contentKey, imageClass } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const title = t(`pages.${page}.bannerCta.title`);
-const text = t(`pages.${page}.bannerCta.text`);
+const title = t(`pages.${contentKey}.bannerCta.title`);
+const text = t(`pages.${contentKey}.bannerCta.text`);
 
 const buttons = [
   { id: "primary", variant: "orange" },

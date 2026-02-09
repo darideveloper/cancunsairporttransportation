@@ -6,10 +6,10 @@ import { FaPlane, FaBed, FaUtensils, FaTree } from "react-icons/fa";
 import { marked } from "marked";
 
 interface Props {
-  page?: string;
+  contentKey?: string;
 }
 
-const { page = "home" } = Astro.props;
+const { contentKey = "home" } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -22,7 +22,7 @@ const serviceKeys = [
 
 const services = serviceKeys.map(({ key, Icon }) => {
   const pageTitle = t(
-    `pages.${page}.transportationServices.items.${key}.title`,
+    `pages.${contentKey}.transportationServices.items.${key}.title`,
   );
   const globalTitle = t(
     `global.sections.transportationServicesList.items.${key}.title`,
@@ -30,13 +30,13 @@ const services = serviceKeys.map(({ key, Icon }) => {
 
   return {
     title: pageTitle || globalTitle,
-    text: t(`pages.${page}.transportationServices.items.${key}.text`),
+    text: t(`pages.${contentKey}.transportationServices.items.${key}.text`),
     Icon,
   };
 });
 
-const title = t(`pages.${page}.transportationServices.title`);
-const description = t(`pages.${page}.transportationServices.description`);
+const title = t(`pages.${contentKey}.transportationServices.title`);
+const description = t(`pages.${contentKey}.transportationServices.description`);
 const id = "transportation-services";
 ---
 

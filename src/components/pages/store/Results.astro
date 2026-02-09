@@ -13,14 +13,14 @@ import ButtonCta from "../../atoms/ButtonCta.astro";
 
 // Props
 const { pageKey } = Astro.props;
-const page = "results";
+const contentKey = pageKey || "results";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <Layout pageKey={pageKey}>
-  <PageSEO currentPage={page} slot="seo" />
+  <PageSEO currentPage={contentKey} slot="seo" />
   <section class="container mx-auto px-4 py-12">
     <div class="flex flex-col-reverse gap-8 lg:flex-row-reverse">
       <div class="flex w-full flex-col items-center justify-center">

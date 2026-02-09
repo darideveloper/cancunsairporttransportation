@@ -22,8 +22,6 @@ import groupClient2Img from "../../../assets/images/clients/group-3.webp";
 import groupClient3Img from "../../../assets/images/clients/group-2.webp";
 
 // Page data
-const page = "group";
-
 // Props
 interface Props {
   lang: "en" | "es";
@@ -32,6 +30,9 @@ interface Props {
 // Get language from params or props
 const { lang, pageKey } = Astro.props;
 
+// Page data
+const contentKey = pageKey || "group";
+
 // Tranlation texts
 const t = useTranslations(lang);
 ---
@@ -39,7 +40,7 @@ const t = useTranslations(lang);
 <Layout preloadImage={homeBannerImg.src} pageKey={pageKey}>
   <!-- Page SEO -->
   <PageSEO
-    currentPage={page}
+    currentPage={contentKey}
     slot="seo"
     jsonType="Service"
     ogImage={standardImg.src}
@@ -50,25 +51,25 @@ const t = useTranslations(lang);
     <BookingForm
       translations={t("global.booking")}
       client:idle
-      title={t(`pages.${page}.title`)}
+      title={t(`pages.${contentKey}.title`)}
     />
   </div>
 
   <!-- Service Includes -->
-  <Includes page={page} image={standardImg} />
+  <Includes contentKey={contentKey} image={standardImg} />
 
   <!-- Private Details -->
-  <PrivateDetails page={page} />
+  <PrivateDetails contentKey={contentKey} />
 
   <!-- Clients testimonials -->
   <Testimonials
-    page={page}
+    contentKey={contentKey}
     images={[groupClient1Img, groupClient2Img, groupClient3Img]}
   />
 
   <!-- FAQs -->
-  <FaqSection page={page} />
+  <FaqSection contentKey={contentKey} />
 
   <!-- Pricing transportation -->
-  <PricingSection page={page} isRegularGrid />
+  <PricingSection contentKey={contentKey} isRegularGrid />
 </Layout>
