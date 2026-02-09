@@ -11,6 +11,7 @@ import WhyChooseUs from "../../organisms/WhyChooseUs.astro";
 import H2 from "../../atoms/H2.astro";
 import ButtonCta from "../../atoms/ButtonCta.astro";
 import VehicleBuyCard from "../../molecules/VehicleBuyCard.astro";
+import BookingForm from "../../organisms/BookingForm";
 
 // Props
 const { pageKey } = Astro.props;
@@ -76,6 +77,12 @@ const t = useTranslations(lang);
         <ButtonCta id="modify-route-btn" type="button" class="mt-8 w-full">
           {t("pages.results.sidebar.route.modifyBtn")}
         </ButtonCta>
+        <!-- Form -->
+        <BookingForm
+          translations={t("global.booking")}
+          client:idle
+          className="my-12 hidden! md:px-0!"
+        />
 
         <WhyChooseUs />
       </div>
@@ -87,7 +94,8 @@ const t = useTranslations(lang);
   document.addEventListener("astro:page-load", () => {
     const modifyBtn = document.getElementById("modify-route-btn");
     modifyBtn?.addEventListener("click", () => {
-      alert("click");
+      const bookingForm = document.querySelector("#booking-form");
+      bookingForm?.classList.toggle("hidden!");
     });
   });
 </script>
