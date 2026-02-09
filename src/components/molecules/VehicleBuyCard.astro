@@ -1,0 +1,141 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import clsx from "clsx";
+
+// Components
+import ButtonCta from "../atoms/ButtonCta.astro";
+import CheckListItem from "../atoms/CheckListItem.astro";
+
+// Icons
+import { FaUserFriends, FaSuitcase, FaStar } from "react-icons/fa";
+
+// Types
+interface Props {
+  vehicleImage: string;
+  vehicleName: string;
+  maxPassengers: number;
+  maxLuggage: number;
+  price: number;
+  originalPrice: number;
+  rating: number; // 1 to 5
+  description: string;
+  items: string[];
+  currency?: string;
+}
+
+const {
+  vehicleImage,
+  vehicleName,
+  maxPassengers,
+  maxLuggage,
+  price,
+  originalPrice,
+  rating,
+  description,
+  items,
+  currency = "USD",
+} = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Generate SEO-friendly alt and title for the image
+const imageAlt = `${vehicleName} Private Transportation from Cancun Airport`;
+const imageTitle = `${vehicleName} Private Transportation from Cancun Airport`;
+
+// Generate star rating array
+const stars = Array.from({ length: 5 }, (_, i) => i < rating);
+---
+
+<article class="">
+  <div class="">
+    <!-- Vehicle Overview Section -->
+    <div class="">
+      <div class="">
+        <img
+          src={vehicleImage}
+          alt={imageAlt}
+          title={imageTitle}
+          width="300"
+          height="200"
+          loading="lazy"
+          class=""
+        />
+      </div>
+
+      <div class="">
+        <h3 class="">
+          {vehicleName}
+        </h3>
+
+        <!-- Rating -->
+        <div class="" aria-label={`Rating: ${rating} out of 5 stars`}>
+          {
+            stars.map((filled) => (
+              <FaStar
+                className={clsx(filled ? "text-accent" : "text-gray-300")}
+                aria-hidden="true"
+              />
+            ))
+          }
+        </div>
+
+        <!-- Capacity Icons -->
+        <div class="">
+          <span class="" aria-label={`Maximum ${maxPassengers} passengers`}>
+            <FaUserFriends className="" aria-hidden="true" />
+            <span class="">
+              {maxPassengers}
+              {t("global.ui.vehicleCard.maxPassengers")}
+            </span>
+          </span>
+
+          <span class="" aria-label={`Maximum ${maxLuggage} luggage`}>
+            <FaSuitcase className="" aria-hidden="true" />
+            <span class="">
+              {maxLuggage}
+              {t("global.ui.vehicleCard.maxLuggage")}
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Description and Features Section -->
+    <div class="">
+      <p class="">
+        {description}
+      </p>
+
+      <ul class="">
+        {items.map((item) => <CheckListItem text={item} />)}
+      </ul>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="">
+      <div class="">
+        <p class="">
+          {t("global.ui.vehicleCard.priceFrom")}
+        </p>
+        <p class="">
+          <del>{currency} ${originalPrice.toFixed(2)}</del>
+        </p>
+        <p class="">
+          {currency} ${price.toFixed(2)}
+        </p>
+        <p class="">
+          {t("global.ui.vehicleCard.pricePerVehicle")}
+        </p>
+      </div>
+    </div>
+
+    <!-- Action Section -->
+    <div class="">
+      <ButtonCta href="#" class="">
+        {t("global.ui.vehicleCard.bookNow")}
+      </ButtonCta>
+    </div>
+  </div>
+</article>

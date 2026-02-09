@@ -474,6 +474,13 @@
           "taxesIncluded": "Includes airport taxes and traveler's insurance",
           "service24h": "24H service hours"
         }
+      },
+      "vehicleCard": {
+        "maxPassengers": "Passengers",
+        "maxLuggage": "Luggage",
+        "priceFrom": "Price from",
+        "pricePerVehicle": "Price per vehicle",
+        "bookNow": "Book now"
       }
     }
   },
@@ -537,6 +544,17 @@
         "email": {
           "title": "Send us an email at:",
           "text": "bookings@gotransfers.us"
+        }
+      }
+    },
+    "results": {
+      "title": "Available Transportation Options",
+      "description": "Choose the perfect vehicle for your journey",
+      "sidebar": {
+        "route": {
+          "title": "Your **Route**",
+          "mapAriaLabel": "Map showing your route",
+          "modifyBtn": "Modify Route"
         }
       }
     },

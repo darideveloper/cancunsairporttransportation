@@ -474,6 +474,13 @@
           "taxesIncluded": "Incluye tasas de aeropuerto y seguro del viajero",
           "service24h": "Servicio 24H"
         }
+      },
+      "vehicleCard": {
+        "maxPassengers": "Pasajeros",
+        "maxLuggage": "Equipaje",
+        "priceFrom": "Precio desde",
+        "pricePerVehicle": "Precio por vehículo",
+        "bookNow": "Reservar"
       }
     }
   },
@@ -537,6 +544,17 @@
         "email": {
           "title": "Mándanos un email a:",
           "text": "bookings@gotransfers.us"
+        }
+      }
+    },
+    "results": {
+      "title": "Opciones de Transporte Disponibles",
+      "description": "Elige el vehículo perfecto para tu viaje",
+      "sidebar": {
+        "route": {
+          "title": "Tu **Ruta**",
+          "mapAriaLabel": "Mapa mostrando tu ruta",
+          "modifyBtn": "Modificar Ruta"
         }
       }
     },

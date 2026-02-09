@@ -10,6 +10,7 @@ import RouteMap from "../../molecules/booking/RouteMap";
 import WhyChooseUs from "../../organisms/WhyChooseUs.astro";
 import H2 from "../../atoms/H2.astro";
 import ButtonCta from "../../atoms/ButtonCta.astro";
+import VehicleBuyCard from "../../molecules/VehicleBuyCard.astro";
 
 // Props
 const { pageKey } = Astro.props;
@@ -30,6 +31,28 @@ const t = useTranslations(lang);
         <p class="mt-4 text-gray-600">
           {t("pages.results.description")}
         </p>
+
+        <!-- Vehicle Buy Cards -->
+        <div class="mt-8 w-full space-y-6">
+          <VehicleBuyCard
+            vehicleImage="https://placehold.co/300x200/png?text=Private+Van"
+            vehicleName="Private Transportation"
+            maxPassengers={8}
+            maxLuggage={8}
+            price={45.0}
+            originalPrice={60.0}
+            rating={5}
+            description="Our private transportation service is perfect for families and small groups. Enjoy a comfortable and safe ride from Cancun Airport to your destination."
+            items={[
+              "Professional bilingual driver",
+              "Flight monitoring included",
+              "Travel insurance",
+              "Air-conditioned vehicle",
+              "Meet and greet at airport",
+            ]}
+            currency="USD"
+          />
+        </div>
       </div>
 
       <!-- sidebar -->
