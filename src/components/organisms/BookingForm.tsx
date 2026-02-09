@@ -44,12 +44,24 @@ export default function BookingForm({
 
   const isValid = !!locationFromData && !!locationToData;
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!isValid) return;
+
+    // Determine locale-based redirect URL
+    const isSpanish = window.location.pathname.startsWith("/es");
+    const resultsUrl = isSpanish ? "/es/resultados" : "/results";
+
+    window.location.assign(resultsUrl);
+  };
+
   return (
     <section
       id="booking-form"
       className={`container flex w-full justify-center ${className} px-4 sm:px-16`}
     >
       <form
+        onSubmit={handleSubmit}
         className="bg-accent w-full rounded-xl px-8 py-6"
         aria-label={!title ? ariaLabel : undefined}
         aria-labelledby={title ? "booking-form-title" : undefined}
