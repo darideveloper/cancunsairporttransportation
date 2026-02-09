@@ -1956,9 +1956,16 @@
       }
     },
     "results": {
-      "title": "Search Results | Cancun Airport Transportation",
-      "description": "View your search results for transportation from Cancun Airport.",
-      "keywords": "cancun transportation results, search results"
+      "title": "Results",
+      "description": "Showing available transportation options for your trip.",
+      "keywords": "cancun transportation results, search results",
+      "sidebar": {
+        "route": {
+          "title": "Your travel **route**",
+          "modifyBtn": "Modify Route",
+          "mapAriaLabel": "Travel route map"
+        }
+      }
     }
   }
 }

@@ -5,9 +5,12 @@ import clsx from "clsx";
 
 interface Props {
   className?: string;
+  labels: {
+    mapAriaLabel: string;
+  };
 }
 
-export default function RouteMap({ className }: Props) {
+export default function RouteMap({ className, labels }: Props) {
   const mapRef = useRef<HTMLDivElement>(null);
   const { locationFromData, locationToData } = useSearchFormStore();
 
@@ -77,7 +80,7 @@ export default function RouteMap({ className }: Props) {
           "h-[250px] w-full overflow-hidden rounded-xl bg-gray-100 shadow-md",
           className,
         )}
-        aria-label="Travel route map"
+        aria-label={labels.mapAriaLabel}
       />
     </div>
   );
