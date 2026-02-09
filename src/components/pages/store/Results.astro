@@ -1,8 +1,13 @@
 ---
+// Components
 import Layout from "../../../layouts/Layout.astro";
 import PageSEO from "../../utils/PageSEO.astro";
 import RouteMap from "../../molecules/booking/RouteMap";
+import WhyChooseUs from "../../organisms/WhyChooseUs.astro";
+import H2 from "../../atoms/H2.astro";
+import ButtonCta from "../../atoms/ButtonCta.astro";
 
+// Props
 const { pageKey } = Astro.props;
 const page = "results";
 ---
@@ -10,13 +15,8 @@ const page = "results";
 <Layout pageKey={pageKey}>
   <PageSEO currentPage={page} slot="seo" />
   <section class="container mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-6">
-      <div class="md:col-span-1 lg:col-span-2">
-        <RouteMap client:load />
-      </div>
-      <div
-        class="flex flex-col items-center justify-center md:col-span-3 lg:col-span-4"
-      >
+    <div class="flex flex-col-reverse gap-8 lg:flex-row-reverse">
+      <div class="flex w-full flex-col items-center justify-center">
         <h1 class="font-title text-4xl font-bold text-gray-900 md:text-6xl">
           Results
         </h1>
@@ -24,6 +24,28 @@ const page = "results";
           Showing available transportation options for your trip.
         </p>
       </div>
+
+      <!-- sidebar -->
+      <div class="sidebar mx-auto w-full max-w-md">
+        <!-- Map -->
+        <H2 class="my-4">Your travel <span class="text-blue">route</span></H2>
+        <RouteMap client:load />
+
+        <!-- Booking -->
+        <ButtonCta id="modify-route-btn" type="button" class="mt-8 w-full">
+          Modify Route
+        </ButtonCta>
+        <WhyChooseUs />
+      </div>
     </div>
   </section>
 </Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const modifyBtn = document.getElementById("modify-route-btn");
+    modifyBtn?.addEventListener("click", () => {
+      alert("click");
+    });
+  });
+</script>

@@ -1,4 +1,5 @@
 ---
+import clsx from "clsx";
 // Icons
 import { FaCheck } from "react-icons/fa";
 
@@ -6,13 +7,20 @@ import { FaCheck } from "react-icons/fa";
 interface Props {
   text: string;
   class?: string;
+  Icon?: any;
+  iconColor?: string;
 }
-const { text, class: className } = Astro.props;
+const {
+  text,
+  class: className,
+  Icon = FaCheck,
+  iconColor = "text-accent",
+} = Astro.props;
 ---
 
-<li class={`rounded-2xl bg-white px-4 py-2 ${className}`}>
+<li class={clsx("rounded-2xl bg-white px-4 py-2", className)}>
   <span class="inline-block text-left">
-    <FaCheck aria-hidden="true" className="text-blue mr-2 inline-block" />
+    <Icon aria-hidden="true" className={clsx("mr-2 inline-block", iconColor)} />
     {text}
   </span>
 </li>

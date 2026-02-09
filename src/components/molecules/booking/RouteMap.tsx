@@ -70,13 +70,15 @@ export default function RouteMap({ className }: Props) {
   }, [locationFromData, locationToData]);
 
   return (
-    <div
-      ref={mapRef}
-      className={clsx(
-        "h-[250px] w-full overflow-hidden rounded-xl bg-gray-100 shadow-md",
-        className,
-      )}
-      aria-label="Travel route map"
-    />
+    <div className="map">
+      <div
+        ref={mapRef}
+        className={clsx(
+          "h-[250px] w-full overflow-hidden rounded-xl bg-gray-100 shadow-md",
+          className,
+        )}
+        aria-label="Travel route map"
+      />
+    </div>
   );
 }
