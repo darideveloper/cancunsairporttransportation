@@ -1,8 +1,10 @@
 ---
+import type { GetStaticPaths, Page } from "astro";
+import type { Post } from "../../types/blog";
 import BlogListing from "../../components/pages/blog/BlogListing.astro";
 import { getPosts } from "../../lib/blog/api";
 
-export async function getStaticPaths({ paginate }: any) {
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
   const posts = await getPosts("en");
   const sortedPosts = posts.sort(
     (a, b) =>
@@ -10,6 +12,10 @@ export async function getStaticPaths({ paginate }: any) {
   );
 
   return paginate(sortedPosts, { pageSize: 9 });
+};
+
+interface Props {
+  page: Page<Post>;
 }
 
 const { page } = Astro.props;
