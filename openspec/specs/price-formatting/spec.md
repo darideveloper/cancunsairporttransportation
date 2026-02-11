@@ -1,10 +1,8 @@
 # price-formatting Specification
 
 ## Purpose
-Replace manual price formatting in VehicleBuyCard component with the project's established `getFormattedPrice()` utility to ensure consistency with other pricing components and enable automatic USD/MXN currency conversion based on language.
-
-## ADDED Requirements
-
+TBD - created by archiving change enhance-vehicle-buy-card. Update Purpose after archive.
+## Requirements
 ### Requirement: Use getFormattedPrice Utility
 The VehicleBuyCard component MUST use the `getFormattedPrice()` utility from `src/lib/utils.ts` for all price displays.
 
@@ -71,8 +69,6 @@ Prices MUST be formatted according to the locale's number formatting conventions
 - AND it MUST use comma as thousands separator
 - AND it MUST use period as decimal separator (es-MX locale)
 
-## MODIFIED Requirements
-
 ### Requirement: VehicleBuyCard Props Interface
 The VehicleBuyCard component Props interface MUST be updated to remove the currency prop.
 
@@ -81,3 +77,4 @@ The VehicleBuyCard component Props interface MUST be updated to remove the curre
 - THEN it MUST include: `vehicleImage`, `vehicleName`, `maxPassengers`, `maxLuggage`, `price`, `originalPrice`, `rating`, `description`, `items`
 - AND it MUST NOT include `currency` prop
 - AND all price-related props MUST remain as `number` type
+

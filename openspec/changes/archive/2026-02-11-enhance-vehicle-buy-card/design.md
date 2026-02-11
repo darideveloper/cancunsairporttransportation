@@ -23,12 +23,13 @@ interface Props {
   maxRating?: number;       // Default: 5
   showNumeric?: boolean;    // Show "4.5/5" text
   size?: "sm" | "md" | "lg"; // Icon size
+  withSchema?: boolean;     // Enable schema.org microdata (Default: false)
   class?: string;           // Additional classes
 }
 ```
 
 **Implementation Details**:
-- Uses `FaStar` from `react-icons/fa` (consistent with existing usage)
+- Uses `FaStar`, `FaStarHalfAlt`, and `FaRegStar` from `react-icons/fa`
 - Supports partial stars (e.g., 4.5 stars)
 - Includes proper ARIA labels for accessibility
 - Includes schema.org microdata support via props
@@ -44,7 +45,7 @@ interface Props {
 {withSchema && (
   <>
     <meta itemprop="ratingValue" content={rating.toString()} />
-    <meta itemprop="bestRating" content={maxRating.toString()} />
+    <meta itemprop="bestRating" content={(maxRating || 5).toString()} />
   </>
 )}
 ```
@@ -84,7 +85,7 @@ interface Props {
     itemtype="https://schema.org/Offer"
   >
     <meta itemprop="price" content={price.toString()} />
-    <meta itemprop="priceCurrency" content={currency} />
+    <meta itemprop="priceCurrency" content={getCurrencyCode(lang).toUpperCase()} />
     <meta itemprop="availability" content="https://schema.org/InStock" />
   </div>
 </article>

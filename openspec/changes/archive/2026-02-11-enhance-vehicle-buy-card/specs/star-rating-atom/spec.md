@@ -36,6 +36,7 @@ The StarRating component MUST accept specific props for customization.
 - AND it MUST accept an optional `maxRating` prop of type `number` with default value `5`
 - AND it MUST accept an optional `withSchema` prop of type `boolean` with default value `false`
 - AND it MUST accept an optional `class` prop of type `string` for additional CSS classes
+- AND it MUST support partial stars using `FaStarHalfAlt` for decimal values >= 0.5
 
 ### Requirement: Visual Consistency
 The StarRating component MUST maintain visual consistency with existing star rating implementations.

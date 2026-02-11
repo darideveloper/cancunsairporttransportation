@@ -50,7 +50,7 @@ The VehicleBuyCard component MUST include schema.org Offer microdata for the pri
 #### Scenario: Price metadata
 - GIVEN a VehicleBuyCard component displays a price
 - THEN it MUST include `<meta itemprop="price" content={price.toString()}>` inside the offers div
-- AND it MUST include `<meta itemprop="priceCurrency" content={currency}>` inside the offers div
+- AND it MUST include `<meta itemprop="priceCurrency" content={getCurrencyCode(lang).toUpperCase()}>` inside the offers div
 - AND it MUST include `<meta itemprop="availability" content="https://schema.org/InStock">` inside the offers div
 
 ### Requirement: Unique ID Generation

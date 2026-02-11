@@ -12,6 +12,20 @@
         "privacy": "Leer nuestra Política de Privacidad"
       }
     },
+    "needHelp": {
+      "title": "¿Necesitas ayuda con tu reservación?",
+      "description": "Estaríamos mas que felices de ayudarte. Nuestro centro de llamadas está a su servicio.",
+      "logos": {
+        "safeTravel": {
+          "alt": "Sello de Viaje Seguro",
+          "title": "Sello de Viaje Seguro"
+        },
+        "sct": {
+          "alt": "Secretaría de Comunicaciones y Transportes",
+          "title": "Secretaría de Comunicaciones y Transportes"
+        }
+      }
+    },
     "topbar": {
       "languageLabel": "Idioma",
       "mexicoPhone": "México y resto del mundo",
@@ -480,7 +494,8 @@
         "maxLuggage": "Equipaje",
         "priceFrom": "Precio desde",
         "pricePerVehicle": "Precio por vehículo",
-        "bookNow": "Reservar"
+        "bookNow": "Reservar",
+        "save": "Ahorra"
       }
     }
   },

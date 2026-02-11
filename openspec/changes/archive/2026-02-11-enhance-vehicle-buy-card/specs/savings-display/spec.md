@@ -95,8 +95,6 @@ The savings display MUST have empty class attributes ready for styling.
 - AND the savings text span MUST have `class=""`
 - AND this allows for future styling without modifying the component structure
 
-## MODIFIED Requirements
-
 ### Requirement: Translation System
 The global UI translation keys MUST include savings-related text.
 

@@ -12,6 +12,20 @@
         "privacy": "Read our Privacy Policy"
       }
     },
+    "needHelp": {
+      "title": "Need help with your reservation?",
+      "description": "We would be more than happy to help you. Our call center is at your service.",
+      "logos": {
+        "safeTravel": {
+          "alt": "Safe Travel Stamp",
+          "title": "Safe Travel Stamp"
+        },
+        "sct": {
+          "alt": "Ministry of Communications and Transportation",
+          "title": "Ministry of Communications and Transportation"
+        }
+      }
+    },
     "topbar": {
       "languageLabel": "Language",
       "mexicoPhone": "Mexico & Rest of the world",
@@ -480,7 +494,8 @@
         "maxLuggage": "Luggage",
         "priceFrom": "Price from",
         "pricePerVehicle": "Price per vehicle",
-        "bookNow": "Book now"
+        "bookNow": "Book now",
+        "save": "Save"
       }
     }
   },

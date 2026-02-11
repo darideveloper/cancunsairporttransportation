@@ -1,0 +1,77 @@
+---
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import clsx from "clsx";
+
+interface Props {
+  rating: number; // 1-5 rating value
+  maxRating?: number; // Default: 5
+  showNumeric?: boolean; // Show "4.5/5" text
+  size?: "sm" | "md" | "lg"; // Icon size
+  withSchema?: boolean; // Enable schema.org microdata (Default: false)
+  class?: string; // Additional classes
+}
+
+const {
+  rating,
+  maxRating = 5,
+  showNumeric = false,
+  size = "md",
+  withSchema = false,
+  class: className,
+} = Astro.props;
+
+// Calculate stars
+const stars = [];
+for (let i = 1; i <= maxRating; i++) {
+  if (rating >= i) {
+    stars.push("full");
+  } else if (rating >= i - 0.5) {
+    stars.push("half");
+  } else {
+    stars.push("empty");
+  }
+}
+
+const sizeClasses = {
+  sm: "text-sm",
+  md: "text-base",
+  lg: "text-lg",
+};
+---
+
+<div
+  class={clsx("flex items-center gap-1", sizeClasses[size], className)}
+  role="img"
+  aria-label={`Rating: ${rating} out of ${maxRating} stars`}
+>
+  {
+    withSchema && (
+      <>
+        <meta itemprop="ratingValue" content={rating.toString()} />
+        <meta itemprop="bestRating" content={maxRating.toString()} />
+      </>
+    )
+  }
+
+  <div class="flex text-yellow-400">
+    {
+      stars.map((type, index) => {
+        if (type === "full") {
+          return <FaStar aria-hidden="true" />;
+        } else if (type === "half") {
+          return <FaStarHalfAlt aria-hidden="true" />;
+        } else {
+          return <FaRegStar aria-hidden="true" class="text-gray-300" />;
+        }
+      })
+    }
+  </div>
+
+  {
+    showNumeric && (
+      <span class="ml-2 text-gray-600">
+        {rating}/{maxRating}
+      </span>
+    )
+  }
+</div>

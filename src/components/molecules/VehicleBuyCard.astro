@@ -1,14 +1,20 @@
 ---
 // Libs
 import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import {
+  generateId,
+  getFormattedPrice,
+  getCurrencyCode,
+} from "../../lib/utils";
 import clsx from "clsx";
 
 // Components
 import ButtonCta from "../atoms/ButtonCta.astro";
 import CheckListItem from "../atoms/CheckListItem.astro";
+import StarRating from "../atoms/StarRating.astro";
 
 // Icons
-import { FaUserFriends, FaSuitcase, FaStar } from "react-icons/fa";
+import { FaUserFriends, FaSuitcase } from "react-icons/fa";
 
 // Types
 interface Props {
@@ -21,7 +27,6 @@ interface Props {
   rating: number; // 1 to 5
   description: string;
   items: string[];
-  currency?: string;
 }
 
 const {
@@ -34,7 +39,6 @@ const {
   rating,
   description,
   items,
-  currency = "USD",
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
@@ -44,11 +48,22 @@ const t = useTranslations(lang);
 const imageAlt = `${vehicleName} Private Transportation from Cancun Airport`;
 const imageTitle = `${vehicleName} Private Transportation from Cancun Airport`;
 
-// Generate star rating array
-const stars = Array.from({ length: 5 }, (_, i) => i < rating);
+// Generate unique ID for schema
+const cardId = generateId("vehicle-card", vehicleName);
+
+// Calculate savings
+const savings = originalPrice - price;
+const savingsPercentage =
+  originalPrice > 0 ? Math.round((savings / originalPrice) * 100) : 0;
+const hasSavings = savingsPercentage > 0;
 ---
 
-<article class="">
+<article
+  class=""
+  itemscope
+  itemtype="https://schema.org/Product"
+  aria-labelledby={cardId}
+>
   <div class="">
     <!-- Vehicle Overview Section -->
     <div class="">
@@ -65,46 +80,43 @@ const stars = Array.from({ length: 5 }, (_, i) => i < rating);
       </div>
 
       <div class="">
-        <h3 class="">
+        <h3 class="" itemprop="name" id={cardId}>
           {vehicleName}
         </h3>
 
         <!-- Rating -->
-        <div class="" aria-label={`Rating: ${rating} out of 5 stars`}>
-          {
-            stars.map((filled) => (
-              <FaStar
-                className={clsx(filled ? "text-accent" : "text-gray-300")}
-                aria-hidden="true"
-              />
-            ))
-          }
+        <div
+          itemprop="aggregateRating"
+          itemscope
+          itemtype="https://schema.org/AggregateRating"
+        >
+          <StarRating rating={rating} withSchema={true} />
         </div>
+      </div>
 
-        <!-- Capacity Icons -->
-        <div class="">
-          <span class="" aria-label={`Maximum ${maxPassengers} passengers`}>
-            <FaUserFriends className="" aria-hidden="true" />
-            <span class="">
-              {maxPassengers}
-              {t("global.ui.vehicleCard.maxPassengers")}
-            </span>
+      <!-- Capacity Icons -->
+      <div class="">
+        <span class="" aria-label={`Maximum ${maxPassengers} passengers`}>
+          <FaUserFriends className="" aria-hidden="true" />
+          <span class="">
+            {maxPassengers}
+            {t("global.ui.vehicleCard.maxPassengers")}
           </span>
+        </span>
 
-          <span class="" aria-label={`Maximum ${maxLuggage} luggage`}>
-            <FaSuitcase className="" aria-hidden="true" />
-            <span class="">
-              {maxLuggage}
-              {t("global.ui.vehicleCard.maxLuggage")}
-            </span>
+        <span class="" aria-label={`Maximum ${maxLuggage} luggage`}>
+          <FaSuitcase className="" aria-hidden="true" />
+          <span class="">
+            {maxLuggage}
+            {t("global.ui.vehicleCard.maxLuggage")}
           </span>
-        </div>
+        </span>
       </div>
     </div>
 
     <!-- Description and Features Section -->
     <div class="">
-      <p class="">
+      <p class="" itemprop="description">
         {description}
       </p>
 
@@ -114,16 +126,44 @@ const stars = Array.from({ length: 5 }, (_, i) => i < rating);
     </div>
 
     <!-- Pricing Section -->
-    <div class="">
+    <div
+      class=""
+      itemprop="offers"
+      itemscope
+      itemtype="https://schema.org/Offer"
+    >
+      <meta itemprop="price" content={price.toString()} />
+      <meta
+        itemprop="priceCurrency"
+        content={getCurrencyCode(lang).toUpperCase()}
+      />
+      <meta itemprop="availability" content="https://schema.org/InStock" />
+
       <div class="">
         <p class="">
           {t("global.ui.vehicleCard.priceFrom")}
         </p>
+
+        <div class="">
+          <p class="">
+            <del class="">
+              {getFormattedPrice(originalPrice, lang)}
+            </del>
+          </p>
+
+          {
+            hasSavings && (
+              <div class="" role="status" aria-live="polite">
+                <span class="">
+                  {t("global.ui.vehicleCard.save")} {savingsPercentage}%
+                </span>
+              </div>
+            )
+          }
+        </div>
+
         <p class="">
-          <del>{currency} ${originalPrice.toFixed(2)}</del>
-        </p>
-        <p class="">
-          {currency} ${price.toFixed(2)}
+          {getFormattedPrice(price, lang)}
         </p>
         <p class="">
           {t("global.ui.vehicleCard.pricePerVehicle")}
