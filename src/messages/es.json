@@ -1973,6 +1973,7 @@
       "title": "Resultados",
       "description": "Selecciona el vehículo que se adapte a tu estilo y prepárate para una experiencia inolvidable llena de comodidad, seguridad y diversión. ¡Tu aventura empieza con la elección de tu vehículo ideal! 🚗✨",
       "keywords": "resultados transporte cancun, busqueda resultados",
+      "dynamicTitle": "Traslado de {from} a {to}",
       "sidebar": {
         "route": {
           "title": "Trayectoria de tu **viaje**",

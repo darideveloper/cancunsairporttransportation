@@ -13,6 +13,7 @@ import H2 from "../../atoms/H2.astro";
 import ButtonCta from "../../atoms/ButtonCta";
 import VehicleBuyCard from "../../molecules/VehicleBuyCard";
 import BookingForm from "../../organisms/BookingForm";
+import DynamicResultsHeader from "../../molecules/DynamicResultsHeader";
 import { getFormattedPrice, getCurrencyCode } from "../../../lib/utils";
 // Images
 
@@ -41,10 +42,10 @@ const vehicleLabels = {
   >
     <div class="flex w-full flex-col items-center justify-center">
       <header>
-        <h1 class="font-title text-3xl font-bold text-gray-900">
+        <h1 class="font-title text-4xl font-bold text-gray-900">
           {t("pages.results.title")}
         </h1>
-        <h2></h2>
+        <DynamicResultsHeader lang={lang} client:load />
         <p class="mt-4 text-gray-600">
           {t("pages.results.description")}
         </p>

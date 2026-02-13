@@ -1981,6 +1981,7 @@
       "title": "Results",
       "description": "Select the vehicle that suits your style and get ready for an unforgettable experience full of comfort, safety and fun - your adventure starts with choosing your ideal vehicle! 🚗✨",
       "keywords": "cancun transportation results, search results",
+      "dynamicTitle": "Shuttle from {from} to {to}",
       "sidebar": {
         "route": {
           "title": "Your travel **route**",
