@@ -1994,7 +1994,7 @@
       "noVehicles": "No vehicles found.",
       "retry": "Try Again",
       "sorry": "We are sorry :(",
-      "noAvailabilityMessage": "Unfortunately we found no availability for the Zone / Times requested, but don't worry, we can solve it.",
+      "noAvailabilityMessage": "Unfortunately we found no availability for the **Zone / Times** requested, but don't worry, we can solve it.",
       "usaCanada": "USA & Canada",
       "mexicoRest": "Mexico & Rest of the world",
       "whatsapp": "WhatsApp",

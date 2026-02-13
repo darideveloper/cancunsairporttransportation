@@ -7,6 +7,7 @@ import ButtonCta from "../atoms/ButtonCta";
 // Utils
 import { useTranslations } from "../../lib/i18n/utils";
 import clsx from "clsx";
+import { marked } from "marked";
 
 // data
 import { PHONES } from "../../data/site-config";
@@ -37,9 +38,14 @@ export default function NoAvailability({
         {t("pages.results.sorry")}
       </p>
 
-      <h2 className="mb-10 max-w-2xl text-3xl leading-tight font-bold text-gray-900 md:text-4xl">
-        {t("pages.results.noAvailabilityMessage")}
-      </h2>
+      <h2
+        className="mb-10 max-w-2xl text-3xl leading-tight text-gray-900 md:text-4xl"
+        dangerouslySetInnerHTML={{
+          __html: marked.parseInline(
+            t("pages.results.noAvailabilityMessage"),
+          ) as string,
+        }}
+      />
 
       <div className="flex flex-wrap items-center justify-center gap-4">
         {[

@@ -1986,7 +1986,7 @@
       "noVehicles": "No se encontraron vehículos.",
       "retry": "Intentar de nuevo",
       "sorry": "Lo sentimos :(",
-      "noAvailabilityMessage": "Desafortunadamente no encontramos disponibilidad para la Zona / Horarios solicitados, descuida podemos resolverlo.",
+      "noAvailabilityMessage": "Desafortunadamente no encontramos disponibilidad para la **Zona / Horarios** solicitados, descuida podemos resolverlo.",
       "usaCanada": "USA & Canada",
       "mexicoRest": "México & Resto del mundo",
       "whatsapp": "WhatsApp",
