@@ -1,7 +1,15 @@
-import { FaPhoneAlt, FaWhatsapp, FaRegComments } from "react-icons/fa";
+// Icons
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+
+// Components
 import ButtonCta from "../atoms/ButtonCta";
+
+// Utils
 import { useTranslations } from "../../lib/i18n/utils";
 import clsx from "clsx";
+
+// data
+import { PHONES } from "../../data/site-config";
 
 interface NoAvailabilityProps {
   lang: "en" | "es";
@@ -37,26 +45,20 @@ export default function NoAvailability({
         {[
           {
             icon: FaPhoneAlt,
-            href: "tel:+19299991258",
+            href: PHONES.usa.href,
             label: t("pages.results.usaCanada"),
             variant: "black" as const,
           },
           {
             icon: FaPhoneAlt,
-            href: "tel:+529983870435",
+            href: PHONES.mexico.href,
             label: t("pages.results.mexicoRest"),
             variant: "blackGhost" as const,
           },
           {
             icon: FaWhatsapp,
-            href: "https://wa.me/529983870435",
+            href: `https://wa.me/${PHONES.mexico.raw.replace("+", "")}`,
             label: t("pages.results.whatsapp"),
-            variant: "blackGhost" as const,
-          },
-          {
-            icon: FaRegComments,
-            href: "#",
-            label: t("pages.results.chat"),
             variant: "blackGhost" as const,
           },
         ].map(({ icon: Icon, href, label, variant }) => (
