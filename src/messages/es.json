@@ -562,17 +562,6 @@
         }
       }
     },
-    "results": {
-      "title": "Opciones de Transporte Disponibles",
-      "description": "Elige el vehículo perfecto para tu viaje",
-      "sidebar": {
-        "route": {
-          "title": "Tu **Ruta**",
-          "mapAriaLabel": "Mapa mostrando tu ruta",
-          "modifyBtn": "Modificar Ruta"
-        }
-      }
-    },
     "privacy": {
       "title": "Aviso de Privacidad",
       "description": "Información sobre cómo manejamos tus datos personales.",
@@ -1982,7 +1971,7 @@
     },
     "results": {
       "title": "Resultados",
-      "description": "Mostrando opciones de transporte disponibles para su viaje.",
+      "description": "Selecciona el vehículo que se adapte a tu estilo y prepárate para una experiencia inolvidable llena de comodidad, seguridad y diversión. ¡Tu aventura empieza con la elección de tu vehículo ideal! 🚗✨",
       "keywords": "resultados transporte cancun, busqueda resultados",
       "sidebar": {
         "route": {

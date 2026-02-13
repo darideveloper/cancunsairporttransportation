@@ -562,17 +562,6 @@
         }
       }
     },
-    "results": {
-      "title": "Available Transportation Options",
-      "description": "Choose the perfect vehicle for your journey",
-      "sidebar": {
-        "route": {
-          "title": "Your **Route**",
-          "mapAriaLabel": "Map showing your route",
-          "modifyBtn": "Modify Route"
-        }
-      }
-    },
     "privacy": {
       "title": "Privacy Policy",
       "description": "Information about how we handle your personal data.",
@@ -1990,7 +1979,7 @@
     },
     "results": {
       "title": "Results",
-      "description": "Showing available transportation options for your trip.",
+      "description": "Select the vehicle that suits your style and get ready for an unforgettable experience full of comfort, safety and fun - your adventure starts with choosing your ideal vehicle! 🚗✨",
       "keywords": "cancun transportation results, search results",
       "sidebar": {
         "route": {
