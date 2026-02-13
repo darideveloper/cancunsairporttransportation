@@ -1,13 +1,12 @@
 /// <reference types="astro/client" />
 
 interface ImportMetaEnv {
-    readonly SITE_URL: string;
-    /** USD to MXN exchange rate for dynamic price conversion */
-    readonly USD_TO_MXN_RATE: string;
-    readonly PUBLIC_LEGACY_API_URL: string;
-    readonly PUBLIC_LEGACY_API_KEY: string;
+  readonly SITE_URL: string;
+  /** USD to MXN exchange rate for dynamic price conversion */
+  readonly USD_TO_MXN_RATE: string;
+  readonly PUBLIC_API_BASE: string;
 }
 
 interface ImportMeta {
-    readonly env: ImportMetaEnv;
+  readonly env: ImportMetaEnv;
 }

@@ -56,12 +56,11 @@ export default function LocationAutocomplete({
     setIsLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.PUBLIC_LEGACY_API_URL}/api/v1/autocomplete-affiliates`,
+        `${import.meta.env.PUBLIC_API_BASE}/legacy/autocomplete/`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "app-key": import.meta.env.PUBLIC_LEGACY_API_KEY,
           },
           body: JSON.stringify({ keyword }),
         },
