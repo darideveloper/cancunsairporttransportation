@@ -58,49 +58,45 @@ export default function VehicleBuyCard({
 
   return (
     <article
-      className=""
+      className="border-gray/25 grid grid-cols-1 gap-4 border-b pb-6 xl:grid-cols-4"
       itemScope
       itemType="https://schema.org/Product"
       aria-labelledby={cardId}
     >
-      <div className="">
-        {/* Vehicle Overview Section */}
-        <div className="">
-          <div className="">
-            <img
-              src={vehicleImage}
-              alt={imageAlt}
-              title={imageTitle}
-              width="300"
-              height="200"
-              loading="lazy"
+      {/* Vehicle Overview Section */}
+      <div className="flex items-center justify-start gap-6 xl:flex-col">
+        <img
+          src={vehicleImage}
+          alt={imageAlt}
+          title={imageTitle}
+          width="300"
+          height="200"
+          loading="lazy"
+          className="w-1/2 xl:mx-0 xl:w-full"
+        />
+
+        <div className="flex w-1/2 flex-col xl:w-full">
+          <h3 className="text-xl font-bold" itemProp="name" id={cardId}>
+            {vehicleName}
+          </h3>
+
+          {/* Rating */}
+          <div
+            itemProp="aggregateRating"
+            itemScope
+            itemType="https://schema.org/AggregateRating"
+          >
+            <StarRating
+              rating={rating}
+              withSchema={true}
+              showNumeric={true}
               className=""
             />
           </div>
-
-          <div className="">
-            <h3 className="" itemProp="name" id={cardId}>
-              {vehicleName}
-            </h3>
-
-            {/* Rating */}
-            <div
-              itemProp="aggregateRating"
-              itemScope
-              itemType="https://schema.org/AggregateRating"
-            >
-              <StarRating
-                rating={rating}
-                withSchema={true}
-                showNumeric={true}
-              />
-            </div>
-          </div>
-
           {/* Capacity Icons */}
           <div className="">
             <span
-              className=""
+              className="flex items-center gap-2"
               aria-label={`Maximum ${maxPassengers} passengers`}
             >
               <FaUserFriends className="" aria-hidden="true" />
@@ -109,7 +105,10 @@ export default function VehicleBuyCard({
               </span>
             </span>
 
-            <span className="" aria-label={`Maximum ${maxLuggage} luggage`}>
+            <span
+              className="flex items-center gap-2"
+              aria-label={`Maximum ${maxLuggage} luggage`}
+            >
               <FaSuitcase className="" aria-hidden="true" />
               <span className="">
                 {maxLuggage} {labels.maxLuggage}
@@ -117,61 +116,44 @@ export default function VehicleBuyCard({
             </span>
           </div>
         </div>
+      </div>
 
-        {/* Description and Features Section */}
-        <div className="">
-          <p className="" itemProp="description">
-            {description}
-          </p>
+      {/* Description and Features Section */}
+      <div className="border-gray/0 xl:border-gray/25 border-r border-l px-4 xl:col-span-2">
+        <p className="" itemProp="description">
+          {description}
+        </p>
 
-          <ul className="">
-            {items.map((item, index) => (
-              <CheckListItem key={index} text={item} />
-            ))}
-          </ul>
-        </div>
+        <ul className="mt-6 flex flex-col gap-3">
+          {items.map((item, index) => (
+            <CheckListItem key={index} text={item} className="py-0!" />
+          ))}
+        </ul>
+      </div>
 
-        {/* Pricing Section */}
-        <div
-          className=""
-          itemProp="offers"
-          itemScope
-          itemType="https://schema.org/Offer"
-        >
-          <meta itemProp="price" content={price.toString()} />
-          <meta itemProp="priceCurrency" content={currencyCode.toUpperCase()} />
-          <meta itemProp="availability" content="https://schema.org/InStock" />
+      {/* Pricing Section */}
+      <div
+        className="mt-6 flex flex-col gap-1 text-center"
+        itemProp="offers"
+        itemScope
+        itemType="https://schema.org/Offer"
+      >
+        <meta itemProp="price" content={price.toString()} />
+        <meta itemProp="priceCurrency" content={currencyCode.toUpperCase()} />
+        <meta itemProp="availability" content="https://schema.org/InStock" />
 
-          <div className="">
-            <p className="">{labels.priceFrom}</p>
+        <p className="text-sm">{labels.priceFrom}</p>
 
-            <div className="">
-              <div className="flex items-center gap-2">
-                <p className="">
-                  <del className="">{formattedOriginalPrice}</del>
-                </p>
+        <p className="text-lg text-red-700">
+          <del className="">{formattedOriginalPrice}</del>
+        </p>
 
-                {hasSavings && (
-                  <div className="" role="status" aria-live="polite">
-                    <span className="">
-                      {labels.save} {savingsPercentage}%
-                    </span>
-                  </div>
-                )}
-              </div>
-            </div>
+        <p className="text-2xl font-bold">{formattedPrice}</p>
+        <p className="text-sm">{labels.pricePerVehicle}</p>
 
-            <p className="">{formattedPrice}</p>
-            <p className="">{labels.pricePerVehicle}</p>
-          </div>
-        </div>
-
-        {/* Action Section */}
-        <div className="">
-          <ButtonCta href="#" className="">
-            {labels.bookNow}
-          </ButtonCta>
-        </div>
+        <ButtonCta href="#" className="mt-2">
+          {labels.bookNow}
+        </ButtonCta>
       </div>
     </article>
   );
