@@ -13,7 +13,7 @@ export interface VehicleBuyCardLabels {
   bookNow: string;
 }
 
-interface VehicleBuyCardProps {
+export interface VehicleBuyCardProps {
   vehicleImage: string;
   vehicleName: string;
   maxPassengers: number;
@@ -89,7 +89,11 @@ export default function VehicleBuyCard({
               itemScope
               itemType="https://schema.org/AggregateRating"
             >
-              <StarRating rating={rating} withSchema={true} />
+              <StarRating
+                rating={rating}
+                withSchema={true}
+                showNumeric={true}
+              />
             </div>
           </div>
 
