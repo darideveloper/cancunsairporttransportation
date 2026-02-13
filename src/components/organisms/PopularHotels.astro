@@ -2,7 +2,7 @@
 // COmponents
 import SectionHeading from "../molecules/SectionHeading.astro";
 import BasicIconCard from "../molecules/BasicIconCard.astro";
-import ButtonCta from "../atoms/ButtonCta.astro";
+import ButtonCta from "../atoms/ButtonCta";
 
 // Libs
 import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
@@ -50,7 +50,7 @@ const popularHotels = t(
       <ButtonCta
         href={popularHotels.viewMoreLink || "/destinations"}
         variant="orangeGhost"
-        class="flex! w-full items-center justify-center sm:w-auto lg:w-full"
+        className="flex! w-full items-center justify-center sm:w-auto lg:w-full"
       >
         <span class="inline-block">
           {popularHotels.viewMore}

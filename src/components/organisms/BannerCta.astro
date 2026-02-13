@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { marked } from "marked";
-import ButtonCta from "../atoms/ButtonCta.astro";
+import ButtonCta from "../atoms/ButtonCta";
 import SectionHeading from "../molecules/SectionHeading.astro";
 import cancunAirportTransportationImg from "../../assets/images/reliable-company.webp";
 import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
@@ -38,7 +38,7 @@ const buttons = [
                 href={t(`global.sections.bannerCta.buttons.${button.id}.href`)}
                 variant={button.variant as "orange" | "grayDark"}
                 ariaLabel={`${t(`global.sections.bannerCta.buttons.${button.id}.text`)} - ${title}`}
-                class="inline-block w-full px-8 md:w-auto"
+                className="inline-block w-full px-8 md:w-auto"
               >
                 {t(`global.sections.bannerCta.buttons.${button.id}.text`)}
               </ButtonCta>

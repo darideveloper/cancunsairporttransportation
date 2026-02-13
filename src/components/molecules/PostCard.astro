@@ -1,7 +1,7 @@
 ---
 import type { Post } from "../../types/blog";
 import { useTranslations } from "../../lib/i18n/utils";
-import ButtonCta from "../atoms/ButtonCta.astro";
+import ButtonCta from "../atoms/ButtonCta";
 
 interface Props {
   post: Post;
@@ -59,7 +59,7 @@ const formattedDate = date.toLocaleDateString(
       <ButtonCta
         href={href}
         variant="blueGhost"
-        class="w-full"
+        className="w-full"
         ariaLabel={`${t("pages.blog.readMore")} - ${post.title}`}
       >
         {t("pages.blog.readMore")}

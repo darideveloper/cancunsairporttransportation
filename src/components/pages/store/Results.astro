@@ -10,9 +10,10 @@ import RouteMap from "../../molecules/booking/RouteMap";
 import NeedHelp from "../../organisms/NeedHelp.astro";
 import WhyChooseUs from "../../organisms/WhyChooseUs.astro";
 import H2 from "../../atoms/H2.astro";
-import ButtonCta from "../../atoms/ButtonCta.astro";
-import VehicleBuyCard from "../../molecules/VehicleBuyCard.astro";
+import ButtonCta from "../../atoms/ButtonCta";
+import VehicleBuyCard from "../../molecules/VehicleBuyCard";
 import BookingForm from "../../organisms/BookingForm";
+import { getFormattedPrice, getCurrencyCode } from "../../../lib/utils";
 // Images
 
 // Props
@@ -21,6 +22,16 @@ const contentKey = pageKey || "results";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const currencyCode = getCurrencyCode(lang);
+const vehicleLabels = {
+  maxPassengers: t("global.ui.vehicleCard.maxPassengers"),
+  maxLuggage: t("global.ui.vehicleCard.maxLuggage"),
+  priceFrom: t("global.ui.vehicleCard.priceFrom"),
+  save: t("global.ui.vehicleCard.save"),
+  pricePerVehicle: t("global.ui.vehicleCard.pricePerVehicle"),
+  bookNow: t("global.ui.vehicleCard.bookNow"),
+};
 ---
 
 <Layout pageKey={pageKey}>
@@ -29,12 +40,15 @@ const t = useTranslations(lang);
     class="container mx-auto flex flex-col-reverse items-start gap-8 px-4 py-12 md:flex-row-reverse"
   >
     <div class="flex w-full flex-col items-center justify-center">
-      <h1 class="font-title text-4xl font-bold text-gray-900 md:text-6xl">
-        {t("pages.results.title")}
-      </h1>
-      <p class="mt-4 text-gray-600">
-        {t("pages.results.description")}
-      </p>
+      <header>
+        <h1 class="font-title text-3xl font-bold text-gray-900">
+          {t("pages.results.title")}
+        </h1>
+        <h2></h2>
+        <p class="mt-4 text-gray-600">
+          {t("pages.results.description")}
+        </p>
+      </header>
 
       <!-- Vehicle Buy Cards -->
       <div class="mt-8 w-full space-y-6">
@@ -54,6 +68,10 @@ const t = useTranslations(lang);
             "Air-conditioned vehicle",
             "Meet and greet at airport",
           ]}
+          currencyCode={currencyCode}
+          formattedPrice={getFormattedPrice(45.0, lang)}
+          formattedOriginalPrice={getFormattedPrice(60.0, lang)}
+          labels={vehicleLabels}
         />
       </div>
     </div>
@@ -74,7 +92,7 @@ const t = useTranslations(lang);
       />
 
       <!-- Booking -->
-      <ButtonCta id="modify-route-btn" type="button" class="mt-8 w-full">
+      <ButtonCta id="modify-route-btn" type="button" className="mt-8 w-full">
         {t("pages.results.sidebar.route.modifyBtn")}
       </ButtonCta>
       <!-- Form -->

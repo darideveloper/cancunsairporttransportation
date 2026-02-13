@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 
 // Components
 import H2 from "../atoms/H2.astro";
-import CheckListItem from "../atoms/CheckListItem.astro";
+import CheckListItem from "../atoms/CheckListItem";
 
 // Icons
 import {
@@ -77,7 +77,7 @@ const iconMap: Record<string, any> = {
             <CheckListItem
               text={item.text}
               Icon={item.icon ? iconMap[item.icon] : FaCheck}
-              class="flex h-full items-start justify-start px-0! text-sm"
+              className="flex h-full items-start justify-start px-0! text-sm"
             />
           ),
         )

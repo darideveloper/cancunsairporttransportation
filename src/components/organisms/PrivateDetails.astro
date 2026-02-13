@@ -12,7 +12,7 @@ import {
 
 // Components
 import SectionHeading from "../molecules/SectionHeading.astro";
-import ButtonCta from "../atoms/ButtonCta.astro";
+import ButtonCta from "../atoms/ButtonCta";
 
 // Props
 interface Props {
@@ -188,7 +188,7 @@ const STICKY_SHADOW_CLASSES =
       </div>
 
       <!-- CTA Button -->
-      <ButtonCta href={cta.href} class="mt-6 w-full" variant="blue">
+      <ButtonCta href={cta.href} className="mt-6 w-full" variant="blue">
         {cta.text}
       </ButtonCta>
     </div>

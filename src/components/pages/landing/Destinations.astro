@@ -19,7 +19,7 @@ import SectionHeading from "../../../components/molecules/SectionHeading.astro";
 import PricingCard from "../../../components/molecules/PricingCard.astro";
 import BasicImageCard from "../../../components/molecules/BasicImageCard.astro";
 import Testimonials from "../../../components/organisms/Testimonials.astro";
-import CheckListItem from "../../../components/atoms/CheckListItem.astro";
+import CheckListItem from "../../../components/atoms/CheckListItem";
 
 // Images
 import tulumImg from "../../../assets/images/destinations/tulum.webp";
@@ -219,11 +219,11 @@ const destinations = [
       <ul class="grid grid-cols-2 gap-4 sm:gap-1">
         <CheckListItem
           text={t(`pages.${contentKey}.checklist.affordable`)}
-          class="flex justify-center"
+          className="flex justify-center"
         />
         <CheckListItem
           text={t(`pages.${contentKey}.checklist.lowRates`)}
-          class="flex justify-center"
+          className="flex justify-center"
         />
       </ul>
 

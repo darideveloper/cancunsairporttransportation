@@ -14,7 +14,7 @@ import { marked } from "marked";
 import { Image } from "astro:assets";
 import PageSEO from "../../../components/utils/PageSEO.astro";
 import BannerImage from "../../../components/atoms/BannerImage.astro";
-import ButtonCta from "../../../components/atoms/ButtonCta.astro";
+import ButtonCta from "../../../components/atoms/ButtonCta";
 import RatesTable from "../../../components/organisms/RatesTable.astro";
 import TextCard from "../../../components/molecules/TextCard.astro";
 import BookingForm from "../../../components/organisms/BookingForm";
@@ -159,7 +159,7 @@ const reliableServiceContent = await marked.parse(
           href="#booking-form"
           variant="blue"
           title={t("global.sections.reliableService.title")}
-          class="w-full"
+          className="w-full"
           aria-label={`${t("global.sections.reliableService.cta.label")} - ${t("global.sections.reliableService.cta.sublabel")}`}
         >
           <div class="flex items-center justify-center gap-3 text-justify">
