@@ -28,3 +28,4 @@ temp.*
 /docs/
 
 /openspec/changes/*
+!openspec/changes/archive/

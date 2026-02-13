@@ -19,13 +19,13 @@ export interface VehicleBuyCardProps {
   maxPassengers: number;
   maxLuggage: number;
   price: number;
-  originalPrice: number;
+  originalPrice?: number;
   rating: number; // 1 to 5
   description: string;
   items: string[];
   currencyCode: string;
   formattedPrice: string;
-  formattedOriginalPrice: string;
+  formattedOriginalPrice?: string;
   labels: VehicleBuyCardLabels;
 }
 
@@ -51,9 +51,12 @@ export default function VehicleBuyCard({
   const cardId = `vehicle-card-${vehicleName.toLowerCase().replace(/\s+/g, "-")}`;
 
   // Calculate savings
-  const savings = originalPrice - price;
+  const effectiveOriginalPrice = originalPrice ?? 0;
+  const savings = effectiveOriginalPrice - price;
   const savingsPercentage =
-    originalPrice > 0 ? Math.round((savings / originalPrice) * 100) : 0;
+    effectiveOriginalPrice > 0
+      ? Math.round((savings / effectiveOriginalPrice) * 100)
+      : 0;
   const hasSavings = savingsPercentage > 0;
 
   return (
@@ -144,9 +147,11 @@ export default function VehicleBuyCard({
 
         <p className="text-sm">{labels.priceFrom}</p>
 
-        <p className="text-lg text-red-700">
-          <del className="">{formattedOriginalPrice}</del>
-        </p>
+        {hasSavings && formattedOriginalPrice && (
+          <p className="text-lg text-red-700">
+            <del className="">{formattedOriginalPrice}</del>
+          </p>
+        )}
 
         <p className="text-2xl font-bold">{formattedPrice}</p>
         <p className="text-sm">{labels.pricePerVehicle}</p>

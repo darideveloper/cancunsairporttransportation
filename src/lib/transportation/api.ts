@@ -1,91 +1,121 @@
 import { type VehicleBuyCardProps } from "../../components/molecules/VehicleBuyCard";
 import { getFormattedPrice, getCurrencyCode } from "../utils";
 import { useTranslations } from "../i18n/utils";
+import type {
+  LegacyQuoteRequest,
+  LegacyQuoteResponse,
+  LegacyErrorResponse,
+} from "./legacy-api.types";
+import { useSearchFormStore } from "../../store/search-form";
+import { vehicleFeatures } from "../../data/vehicle-features";
 
 export async function getVehicles(
   lang: "en" | "es",
 ): Promise<VehicleBuyCardProps[]> {
-  // Simulate delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  const searchFormState = useSearchFormStore.getState();
 
-  const t = useTranslations(lang);
-  const currencyCode = getCurrencyCode(lang);
+  // Validate required keys
+  if (
+    !searchFormState.locationFromData ||
+    !searchFormState.locationToData ||
+    !searchFormState.departureDate ||
+    !searchFormState.departureTime
+  ) {
+    console.warn("Missing required search form data");
+    return [];
+  }
 
-  const vehicleLabels = {
-    maxPassengers: t("global.ui.vehicleCard.maxPassengers"),
-    maxLuggage: t("global.ui.vehicleCard.maxLuggage"),
-    priceFrom: t("global.ui.vehicleCard.priceFrom"),
-    save: t("global.ui.vehicleCard.save"),
-    pricePerVehicle: t("global.ui.vehicleCard.pricePerVehicle"),
-    bookNow: t("global.ui.vehicleCard.bookNow"),
+  const payload: LegacyQuoteRequest = {
+    type: searchFormState.tripType === "oneWay" ? "one-way" : "round-trip",
+    language: lang,
+    passengers: searchFormState.passengers,
+    currency: searchFormState.currency,
+    start: {
+      place: searchFormState.locationFromData.name,
+      lat: searchFormState.locationFromData.lat.toString(),
+      lng: searchFormState.locationFromData.lng.toString(),
+      pickup: `${searchFormState.departureDate} ${searchFormState.departureTime}`,
+    },
+    end: {
+      place: searchFormState.locationToData.name,
+      lat: searchFormState.locationToData.lat.toString(),
+      lng: searchFormState.locationToData.lng.toString(),
+    },
   };
 
-  return [
-    {
-      vehicleImage: "https://placehold.co/300x200/png?text=Private+Van",
-      vehicleName: "Private Transportation",
-      maxPassengers: 8,
-      maxLuggage: 8,
-      price: 45.0,
-      originalPrice: 60.0,
-      rating: 5,
-      description:
-        "Our private transportation service is perfect for families and small groups. Enjoy a comfortable and safe ride from Cancun Airport to your destination.",
-      items: [
-        "Professional bilingual driver",
-        "Flight monitoring included",
-        "Travel insurance",
-        "Air-conditioned vehicle",
-        "Meet and greet at airport",
-      ],
-      currencyCode,
-      formattedPrice: getFormattedPrice(45.0, lang),
-      formattedOriginalPrice: getFormattedPrice(60.0, lang),
-      labels: vehicleLabels,
-    },
-    {
-      vehicleImage: "https://placehold.co/300x200/png?text=Luxury+SUV",
-      vehicleName: "Luxury Transportation",
-      maxPassengers: 6,
-      maxLuggage: 5,
-      price: 95.0,
-      originalPrice: 120.0,
-      rating: 4.8,
-      description:
-        "Travel in style and comfort with our premium luxury SUVs. Perfect for business travelers or couples seeking a more upscale experience.",
-      items: [
-        "Suburban or similar luxury vehicle",
-        "Cold water and towels included",
-        "Bilingual professional driver",
-        "Premium travel insurance",
-        "Direct non-stop service",
-      ],
-      currencyCode,
-      formattedPrice: getFormattedPrice(95.0, lang),
-      formattedOriginalPrice: getFormattedPrice(120.0, lang),
-      labels: vehicleLabels,
-    },
-    {
-      vehicleImage: "https://placehold.co/300x200/png?text=Large+Van",
-      vehicleName: "Group Transportation",
-      maxPassengers: 16,
-      maxLuggage: 16,
-      price: 135.0,
-      originalPrice: 170.0,
-      rating: 4.5,
-      description:
-        "Ideal for large groups, wedding parties, or corporate events. Our spacious vans ensure everyone travels together comfortably.",
-      items: [
-        "Volkswagen Crafter or similar",
-        "Extra space for luggage",
-        "Professional group coordinator",
-        "Air-conditioned spacious interior",
-        "Safe and efficient group travel",
-      ],
-      currencyCode,
-      formattedPrice: getFormattedPrice(135.0, lang),
-      formattedOriginalPrice: getFormattedPrice(170.0, lang),
-      labels: vehicleLabels,
-    },
-  ];
+  try {
+    const response = await fetch(
+      `${import.meta.env.PUBLIC_API_BASE}/legacy/quote/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      },
+    );
+
+    if (!response.ok) {
+      if (response.status === 404) {
+        const errorData = (await response.json()) as LegacyErrorResponse;
+        if (errorData.error?.code === "availability") {
+          return [];
+        }
+      }
+      throw new Error(`API error: ${response.statusText}`);
+    }
+
+    const data = (await response.json()) as LegacyQuoteResponse;
+    const t = useTranslations(lang);
+    const currencyCode = getCurrencyCode(lang);
+
+    const vehicleLabels = {
+      maxPassengers: t("global.ui.vehicleCard.maxPassengers"),
+      maxLuggage: t("global.ui.vehicleCard.maxLuggage"),
+      priceFrom: t("global.ui.vehicleCard.priceFrom"),
+      save: t("global.ui.vehicleCard.save"),
+      pricePerVehicle: t("global.ui.vehicleCard.pricePerVehicle"),
+      bookNow: t("global.ui.vehicleCard.bookNow"),
+    };
+
+    return data.items.map((item) => {
+      // Feature Mapping
+      const featureData = vehicleFeatures[item.id.toString()];
+      const features = featureData?.features[lang];
+
+      // Description Interpolation
+      let description = features?.description || "";
+      if (description) {
+        description = description.replace("{pax}", item.passengers.toString());
+      }
+
+      return {
+        vehicleImage: item.image,
+        vehicleName: item.name,
+        maxPassengers: item.passengers,
+        maxLuggage: item.luggage,
+        price: parseFloat(item.price),
+        // The API does not return an original price, so we'll use the price as a fallback if needed,
+        // but typically 'originalPrice' is higher to show a discount.
+        // Assuming no discount logic from API for now, or we can omit/mock if UI requires it.
+        // Let's set it to undefined or same as price if strict, but UI might hide 'save' tag if they match.
+        // Looking at previous mock data: price 45, original 60.
+        // We will leave originalPrice undefined or implement logic if provided.
+        // For now, let's map it to null or omit to avoid showing fake discount.
+        // Actually, interface likely expects it. Let's make it optional in UI or handle here.
+        // Checking VehicleBuyCardProps: it has originalPrice?: number.
+        originalPrice: undefined,
+        rating: featureData ? parseFloat(featureData.rating.split("/")[0]) : 5,
+        description: description,
+        items: features?.items || [],
+        currencyCode,
+        formattedPrice: getFormattedPrice(parseFloat(item.price), lang),
+        // formattedOriginalPrice: ... (optional)
+        labels: vehicleLabels,
+      };
+    });
+  } catch (error) {
+    console.error("Failed to fetch vehicles:", error);
+    throw error;
+  }
 }
