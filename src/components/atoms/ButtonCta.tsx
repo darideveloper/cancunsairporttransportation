@@ -14,7 +14,8 @@ type BaseProps = {
     | "black"
     | "gray"
     | "grayDark"
-    | "orangeGhost";
+    | "orangeGhost"
+    | "blackGhost";
   ariaLabel?: string;
   children?: ReactNode;
 };
@@ -44,6 +45,7 @@ export default function ButtonCta({
     gray: "bg-gray text-white",
     grayDark: "bg-gray-dark text-white",
     orangeGhost: "bg-accent/10 border border-orange text-accent",
+    blackGhost: "bg-black/5 border border-black text-black",
   };
 
   const sharedClasses = clsx(

@@ -1,8 +1,14 @@
+// Hooks
 import { useState, useEffect } from "react";
+
+// Components
 import VehicleBuyCard, {
   type VehicleBuyCardProps,
 } from "../molecules/VehicleBuyCard";
 import VehicleBuyCardSkeleton from "../molecules/VehicleBuyCardSkeleton";
+import NoAvailability from "./NoAvailability";
+
+// Utils
 import { getVehicles } from "../../lib/transportation/api";
 import { useTranslations } from "../../lib/i18n/utils";
 
@@ -31,7 +37,7 @@ export default function VehicleBuyCards({
     setError(false);
     try {
       const data = await getVehicles(lang);
-      setVehicles(data);
+      setVehicles([]);
     } catch (err) {
       console.error("Failed to fetch vehicles", err);
       setError(true);
@@ -71,11 +77,7 @@ export default function VehicleBuyCards({
   }
 
   if (!vehicles || vehicles.length === 0) {
-    return (
-      <div className="w-full py-12 text-center">
-        <p className="text-gray-600">{t("pages.results.noVehicles")}</p>
-      </div>
-    );
+    return <NoAvailability lang={lang} />;
   }
 
   return (

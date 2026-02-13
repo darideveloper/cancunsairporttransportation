@@ -1984,7 +1984,13 @@
       "loading": "Buscando las mejores opciones para ti...",
       "error": "Algo salió mal al cargar los vehículos.",
       "noVehicles": "No se encontraron vehículos.",
-      "retry": "Intentar de nuevo"
+      "retry": "Intentar de nuevo",
+      "sorry": "Lo sentimos :(",
+      "noAvailabilityMessage": "Desafortunadamente no encontramos disponibilidad para la Zona / Horarios solicitados, descuida podemos resolverlo.",
+      "usaCanada": "USA & Canada",
+      "mexicoRest": "México & Resto del mundo",
+      "whatsapp": "WhatsApp",
+      "chat": "Chat"
     }
   }
 }
