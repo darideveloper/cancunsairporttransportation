@@ -20,7 +20,6 @@ const contentKey = pageKey || "results";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
 ---
 
 <Layout pageKey={pageKey}>
@@ -46,7 +45,7 @@ const t = useTranslations(lang);
     </div>
 
     <!-- sidebar -->
-    <div class="sidebar mx-auto w-full max-w-xs">
+    <div class="sidebar mx-auto w-full max-w-full md:max-w-sm">
       <!-- Map -->
       <H2 class="[&_strong]:text-blue my-4">
         <Fragment
