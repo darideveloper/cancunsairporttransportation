@@ -1980,7 +1980,11 @@
           "modifyBtn": "Modificar Trayectoria",
           "mapAriaLabel": "Mapa de trayectoria de viaje"
         }
-      }
+      },
+      "loading": "Buscando las mejores opciones para ti...",
+      "error": "Algo salió mal al cargar los vehículos.",
+      "noVehicles": "No se encontraron vehículos.",
+      "retry": "Intentar de nuevo"
     }
   }
 }

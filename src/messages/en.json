@@ -1988,7 +1988,11 @@
           "modifyBtn": "Modify Route",
           "mapAriaLabel": "Travel route map"
         }
-      }
+      },
+      "loading": "Finding the best vehicles for you...",
+      "error": "Something went wrong while loading vehicles.",
+      "noVehicles": "No vehicles found.",
+      "retry": "Try Again"
     }
   }
 }
