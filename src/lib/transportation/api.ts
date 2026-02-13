@@ -19,7 +19,9 @@ export async function getVehicles(
     !searchFormState.locationFromData ||
     !searchFormState.locationToData ||
     !searchFormState.departureDate ||
-    !searchFormState.departureTime
+    !searchFormState.departureTime ||
+    (searchFormState.tripType === "roundTrip" &&
+      (!searchFormState.returnDate || !searchFormState.returnTime))
   ) {
     console.warn("Missing required search form data");
     return [];
@@ -40,6 +42,9 @@ export async function getVehicles(
       place: searchFormState.locationToData.name,
       lat: searchFormState.locationToData.lat.toString(),
       lng: searchFormState.locationToData.lng.toString(),
+      ...(searchFormState.tripType === "roundTrip" && {
+        pickup: `${searchFormState.returnDate} ${searchFormState.returnTime}`,
+      }),
     },
   };
 
