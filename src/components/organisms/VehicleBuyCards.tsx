@@ -37,7 +37,7 @@ export default function VehicleBuyCards({
     setError(false);
     try {
       const data = await getVehicles(lang);
-      setVehicles([]);
+      setVehicles(data);
     } catch (err) {
       console.error("Failed to fetch vehicles", err);
       setError(true);

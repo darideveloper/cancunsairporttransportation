@@ -81,6 +81,10 @@ const t = useTranslations(lang);
 
 <script>
   document.addEventListener("astro:page-load", () => {
+    // Keep scroll always in top
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    // show and hide booking
     const modifyBtn = document.getElementById("modify-route-btn");
     modifyBtn?.addEventListener("click", () => {
       const bookingForm = document.querySelector("#booking-form");
