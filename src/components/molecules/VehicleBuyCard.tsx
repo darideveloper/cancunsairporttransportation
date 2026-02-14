@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import ButtonCta from "../atoms/ButtonCta";
 import CheckListItem from "../atoms/CheckListItem";
 import StarRating from "../atoms/StarRating";
@@ -27,6 +26,8 @@ export interface VehicleBuyCardProps {
   formattedPrice: string;
   formattedOriginalPrice?: string;
   labels: VehicleBuyCardLabels;
+  token: string;
+  onSelect?: (token: string) => void;
 }
 
 export default function VehicleBuyCard({
@@ -43,6 +44,8 @@ export default function VehicleBuyCard({
   formattedPrice,
   formattedOriginalPrice,
   labels,
+  token,
+  onSelect,
 }: VehicleBuyCardProps) {
   // Generate SEO-friendly alt and title for the image
   const imageAlt = `${vehicleName} Private Transportation from Cancun Airport`;
@@ -58,6 +61,12 @@ export default function VehicleBuyCard({
       ? Math.round((savings / effectiveOriginalPrice) * 100)
       : 0;
   const hasSavings = savingsPercentage > 0;
+
+  const handleSelect = () => {
+    if (onSelect) {
+      onSelect(token);
+    }
+  };
 
   return (
     <article
@@ -156,7 +165,7 @@ export default function VehicleBuyCard({
         <p className="text-2xl font-bold">{formattedPrice}</p>
         <p className="text-sm">{labels.pricePerVehicle}</p>
 
-        <ButtonCta href="#" className="mt-2">
+        <ButtonCta onClick={handleSelect} className="mt-2">
           {labels.bookNow}
         </ButtonCta>
       </div>
