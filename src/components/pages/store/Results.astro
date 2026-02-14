@@ -11,10 +11,9 @@ import NeedHelp from '../../organisms/NeedHelp.astro'
 import WhyChooseUs from '../../organisms/WhyChooseUs.astro'
 import H2 from '../../atoms/H2'
 import ButtonCta from '../../atoms/ButtonCta'
-import VehicleBuyCard from '../../molecules/VehicleBuyCard'
-import BookingForm from '../../organisms/BookingForm'
-import DynamicResultsHeader from '../../molecules/DynamicResultsHeader'
-import VehicleBuyCards from '../../organisms/VehicleBuyCards'
+import BookingForm from '../../organisms/booking/BookingForm'
+import DynamicResultsHeader from '../../molecules/booking/DynamicResultsHeader'
+import VehicleBuyCards from '../../organisms/booking/VehicleBuyCards'
 const { pageKey } = Astro.props
 const contentKey = pageKey || 'results'
 

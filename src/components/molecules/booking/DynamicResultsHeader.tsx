@@ -1,7 +1,7 @@
 import React from "react";
-import { useSearchFormStore } from "../../store/search-form";
-import { useTranslations } from "../../lib/i18n/utils";
-import type { ui } from "../../lib/i18n/ui";
+import { useSearchFormStore } from "../../../store/search-form";
+import { useTranslations } from "../../../lib/i18n/utils";
+import type { ui } from "../../../lib/i18n/ui";
 import clsx from "clsx";
 
 interface DynamicResultsHeaderProps {

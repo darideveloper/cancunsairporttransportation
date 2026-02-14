@@ -1,96 +1,105 @@
 ---
 // Layout
-import Layout from "../../../layouts/Layout.astro";
+import Layout from '../../../layouts/Layout.astro'
 
 // Libs
-import { useTranslations } from "../../../lib/i18n/utils";
-import { getStaticPathsLangs, getFormattedPrice } from "../../../lib/utils";
-import { getOneWayPrice } from "../../../data/prices";
-import { marked } from "marked";
+import { useTranslations } from '../../../lib/i18n/utils'
+import { getStaticPathsLangs, getFormattedPrice } from '../../../lib/utils'
+import { getOneWayPrice } from '../../../data/prices'
+import { marked } from 'marked'
 
 // i18n
 // export const getStaticPaths = getStaticPathsLangs;
 
 // Components
-import { Image } from "astro:assets";
-import PageSEO from "../../../components/utils/PageSEO.astro";
-import BookingForm from "../../../components/organisms/BookingForm";
-import SectionHeading from "../../../components/molecules/SectionHeading.astro";
-import PricingCard from "../../../components/molecules/PricingCard.astro";
-import BasicImageCard from "../../../components/molecules/BasicImageCard.astro";
-import Testimonials from "../../../components/organisms/Testimonials.astro";
-import CheckListItem from "../../../components/atoms/CheckListItem";
+import { Image } from 'astro:assets'
+import PageSEO from '../../../components/utils/PageSEO.astro'
+import BookingForm from '../../../components/organisms/booking/BookingForm'
+import SectionHeading from '../../../components/molecules/SectionHeading.astro'
+import PricingCard from '../../../components/molecules/PricingCard.astro'
+import BasicImageCard from '../../../components/molecules/BasicImageCard.astro'
+import Testimonials from '../../../components/organisms/Testimonials.astro'
+import CheckListItem from '../../../components/atoms/CheckListItem'
 
 // Images
-import tulumImg from "../../../assets/images/destinations/tulum.webp";
-import playaImg from "../../../assets/images/destinations/playa-del-carmen.webp";
-import cancunImg from "../../../assets/images/destinations/cancun.webp";
-import bookNowImg from "../../../assets/images/destinations/book-now.png";
-import customerServiceImg from "../../../assets/images/destinations/customer-service.png";
-import pyramidImg from "../../../assets/images/destinations/pyramid.png";
-import excursionImg from "../../../assets/images/destinations/excursion.png";
-import carSeatImg from "../../../assets/images/destinations/car-seat.png";
-import homeBannerImg from "../../../assets/images/home-banner.webp";
-import destinationsClient1Img from "../../../assets/images/clients/destinations-client-1.webp";
-import destinationsClient2Img from "../../../assets/images/clients/destinations-client-2.webp";
+import tulumImg from '../../../assets/images/destinations/tulum.webp'
+import playaImg from '../../../assets/images/destinations/playa-del-carmen.webp'
+import cancunImg from '../../../assets/images/destinations/cancun.webp'
+import bookNowImg from '../../../assets/images/destinations/book-now.png'
+import customerServiceImg from '../../../assets/images/destinations/customer-service.png'
+import pyramidImg from '../../../assets/images/destinations/pyramid.png'
+import excursionImg from '../../../assets/images/destinations/excursion.png'
+import carSeatImg from '../../../assets/images/destinations/car-seat.png'
+import homeBannerImg from '../../../assets/images/home-banner.webp'
+import destinationsClient1Img from '../../../assets/images/clients/destinations-client-1.webp'
+import destinationsClient2Img from '../../../assets/images/clients/destinations-client-2.webp'
 
 // Page data
 // Props
 interface Props {
-  lang: "en" | "es";
-  pageKey: string;
+  lang: 'en' | 'es'
+  pageKey: string
 }
 // Get language from params or props
-const { lang, pageKey } = Astro.props;
+const { lang, pageKey } = Astro.props
 
 // Page data
-const contentKey: string = pageKey || "destinations";
+const contentKey: string = pageKey || 'destinations'
 
 // Tranlation texts
-const t = useTranslations(lang);
+const t = useTranslations(lang)
 
 // Data
 const destinations = [
   {
-    id: "tulum",
-    priceKey: "tulum",
+    id: 'tulum',
+    priceKey: 'tulum',
     image: tulumImg,
   },
   {
-    id: "playa",
-    priceKey: "playaDelCarmen",
+    id: 'playa',
+    priceKey: 'playaDelCarmen',
     image: playaImg,
   },
   {
-    id: "cancun",
-    priceKey: "cancunZone",
+    id: 'cancun',
+    priceKey: 'cancunZone',
     image: cancunImg,
   },
-];
+]
 ---
 
-<Layout preloadImage={homeBannerImg.src} pageKey={pageKey}>
+<Layout
+  preloadImage={homeBannerImg.src}
+  pageKey={pageKey}
+>
   <!-- Page SEO -->
-  <PageSEO currentPage={contentKey} slot="seo" />
+  <PageSEO
+    currentPage={contentKey}
+    slot='seo'
+  />
 
-  <section class="container flex flex-col-reverse gap-6 md:flex-row md:gap-4">
+  <section class='container flex flex-col-reverse gap-6 md:flex-row md:gap-4'>
     <!-- Content -->
-    <div class="content md:w-1/2 lg:w-2/3">
+    <div class='content md:w-1/2 lg:w-2/3'>
       <!-- Heading -->
-      <div class="">
-        <p class="mb-4">
-          {t("pages.destinations.tagline")}
+      <div class=''>
+        <p class='mb-4'>
+          {t('pages.destinations.tagline')}
         </p>
-        <SectionHeading title={t("pages.destinations.title")} isH1>
+        <SectionHeading
+          title={t('pages.destinations.title')}
+          isH1
+        >
           <div
-            class=""
-            set:html={marked.parse(t("pages.destinations.description"))}
+            class=''
+            set:html={marked.parse(t('pages.destinations.description'))}
           />
         </SectionHeading>
       </div>
 
       <!-- Highlights Section -->
-      <h2 class="sr-only">
+      <h2 class='sr-only'>
         {t(`pages.${contentKey}.highlights.sectionTitle`)}
       </h2>
 
@@ -101,18 +110,18 @@ const destinations = [
           alt: t(`global.sections.highlights.reserve.imageAlt`),
           title: t(`global.sections.highlights.reserve.imageTitle`),
         }}
-        class="mt-6"
+        class='mt-6'
       >
         <div
           set:html={marked.parse(
             t(`pages.${contentKey}.highlights.reserve.text`),
           )}
-          class=""
+          class=''
         />
       </BasicImageCard>
 
       <!-- Destinations -->
-      <ul class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
+      <ul class='mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3'>
         {
           destinations.map((dest) => (
             <li>
@@ -121,7 +130,7 @@ const destinations = [
                   `pages.${contentKey}.destinations.cards.${dest.id}.title`,
                 )}
                 price={getFormattedPrice(
-                  getOneWayPrice(dest.priceKey, "private"),
+                  getOneWayPrice(dest.priceKey, 'private'),
                   lang,
                   { includeCurrency: false },
                 )}
@@ -131,13 +140,13 @@ const destinations = [
                 ctaText={t(
                   `pages.${contentKey}.destinations.cards.${dest.id}.ctaText`,
                 )}
-                currency={lang === "es" ? "mxn" : "usd"}
+                currency={lang === 'es' ? 'mxn' : 'usd'}
                 bestSeller={false}
                 reverse={true}
-                class=""
+                class=''
               >
                 <Image
-                  slot="image"
+                  slot='image'
                   src={dest.image}
                   src={dest.image}
                   alt={t(
@@ -148,19 +157,19 @@ const destinations = [
                   )}
                   widths={[300, 600, dest.image.width]}
                   quality={60}
-                  format="avif"
-                  loading="lazy"
-                  decoding="async"
-                  class="w-full"
+                  format='avif'
+                  loading='lazy'
+                  decoding='async'
+                  class='w-full'
                 />
                 <div
-                  slot="content"
+                  slot='content'
                   set:html={marked.parse(
                     t(
                       `pages.${contentKey}.destinations.cards.${dest.id}.description`,
                     ),
                   )}
-                  class=""
+                  class=''
                 />
               </PricingCard>
             </li>
@@ -176,33 +185,33 @@ const destinations = [
           alt: t(`global.sections.highlights.contact.imageAlt`),
           title: t(`global.sections.highlights.contact.imageTitle`),
         }}
-        class="mt-6"
+        class='mt-6'
       >
         <div
           set:html={marked.parse(
             t(`pages.${contentKey}.highlights.contact.text`),
           )}
-          class=""
+          class=''
         />
       </BasicImageCard>
 
       <!-- Testimonials -->
       <Testimonials
-        contentKey="destinations"
+        contentKey='destinations'
         images={[destinationsClient1Img, destinationsClient2Img]}
-        class="md:hidden lg:block"
+        class='md:hidden lg:block'
       />
     </div>
 
     <!-- Sidebar -->
     <aside
-      class="@container -mx-6 flex flex-col gap-6 md:mx-0 md:w-1/2 lg:w-1/3"
+      class='@container -mx-6 flex flex-col gap-6 md:mx-0 md:w-1/2 lg:w-1/3'
     >
       <!-- Form -->
       <BookingForm
-        translations={t("global.booking")}
+        translations={t('global.booking')}
         client:idle
-        className="md:px-0!"
+        className='md:px-0!'
       />
 
       <BasicImageCard
@@ -216,14 +225,14 @@ const destinations = [
         <p>{t(`pages.${contentKey}.serviceCards.confidence.text`)}</p>
       </BasicImageCard>
 
-      <ul class="grid grid-cols-2 gap-4 sm:gap-1">
+      <ul class='grid grid-cols-2 gap-4 sm:gap-1'>
         <CheckListItem
           text={t(`pages.${contentKey}.checklist.affordable`)}
-          className="flex justify-center"
+          className='flex justify-center'
         />
         <CheckListItem
           text={t(`pages.${contentKey}.checklist.lowRates`)}
-          className="flex justify-center"
+          className='flex justify-center'
         />
       </ul>
 

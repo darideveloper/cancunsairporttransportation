@@ -1,4 +1,4 @@
-import { type VehicleBuyCardProps } from "../../components/molecules/VehicleBuyCard";
+import { type VehicleBuyCardProps } from "../../components/molecules/booking/VehicleBuyCard";
 import { getFormattedPrice, getCurrencyCode } from "../utils";
 import { useTranslations } from "../i18n/utils";
 import type {

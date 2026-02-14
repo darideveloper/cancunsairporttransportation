@@ -1,11 +1,11 @@
-import { useSearchFormStore } from "../../store/search-form";
-import TripTypeControls from "../molecules/booking/TripTypeControls";
-import CurrencyControls from "../molecules/booking/CurrencyControls";
-import SubmitButton from "../atoms/form/SubmitButton";
-import LocationAutocomplete from "../atoms/form/LocationAutocomplete";
-import DateInput from "../atoms/form/DateInput";
-import TimeInput from "../atoms/form/TimeInput";
-import PassengerInput from "../atoms/form/PassengerInput";
+import { useSearchFormStore } from "../../../store/search-form";
+import TripTypeControls from "../../molecules/booking/TripTypeControls";
+import CurrencyControls from "../../molecules/booking/CurrencyControls";
+import SubmitButton from "../../atoms/form/SubmitButton";
+import LocationAutocomplete from "../../atoms/form/LocationAutocomplete";
+import DateInput from "../../atoms/form/DateInput";
+import TimeInput from "../../atoms/form/TimeInput";
+import PassengerInput from "../../atoms/form/PassengerInput";
 
 interface Props {
   translations: any;

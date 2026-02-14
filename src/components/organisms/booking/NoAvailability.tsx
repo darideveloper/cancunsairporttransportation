@@ -2,15 +2,15 @@
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 // Components
-import ButtonCta from "../atoms/ButtonCta";
+import ButtonCta from "../../atoms/ButtonCta";
 
 // Utils
-import { useTranslations } from "../../lib/i18n/utils";
+import { useTranslations } from "../../../lib/i18n/utils";
 import clsx from "clsx";
 import { marked } from "marked";
 
 // data
-import { PHONES } from "../../data/site-config";
+import { PHONES } from "../../../data/site-config";
 
 interface NoAvailabilityProps {
   lang: "en" | "es";

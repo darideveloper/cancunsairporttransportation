@@ -1,6 +1,6 @@
-import ButtonCta from "../atoms/ButtonCta";
-import CheckListItem from "../atoms/CheckListItem";
-import StarRating from "../atoms/StarRating";
+import ButtonCta from "../../atoms/ButtonCta";
+import CheckListItem from "../../atoms/CheckListItem";
+import StarRating from "../../atoms/StarRating";
 import { FaUserFriends, FaSuitcase } from "react-icons/fa";
 
 export interface VehicleBuyCardLabels {
