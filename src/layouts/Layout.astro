@@ -1,91 +1,152 @@
 ---
 // Styles
-import "../styles/global.css";
+import '../styles/global.css'
 
 // i18n
 
 // Animations / Transitions
-import { ClientRouter } from "astro:transitions";
+import { ClientRouter } from 'astro:transitions'
 
 // Get current page
-const segments = Astro.url.pathname.split("/").filter(Boolean);
-const last = segments.at(-1);
+const segments = Astro.url.pathname.split('/').filter(Boolean)
+const last = segments.at(-1)
 
-let currentPage = last;
-if (!currentPage || currentPage === "en" || currentPage === "es") {
-  currentPage = "home";
+let currentPage = last
+if (!currentPage || currentPage === 'en' || currentPage === 'es') {
+  currentPage = 'home'
 }
 
 // Sections
-import Header from "../components/organisms/Header.astro";
-import Footer from "../components/organisms/Footer.astro";
-import TawkTo from "../components/integrations/TawkTo.astro";
+import Header from '../components/organisms/Header.astro'
+import Footer from '../components/organisms/Footer.astro'
+import TawkTo from '../components/integrations/TawkTo.astro'
 
 interface Props {
-  preloadImage?: string;
-  lang?: string;
-  pageKey?: string;
-  translatedPath?: string;
+  preloadImage?: string
+  lang?: string
+  pageKey?: string
+  translatedPath?: string
 }
 
-const { preloadImage, lang: propLang, pageKey, translatedPath } = Astro.props;
-const paramsLang = Astro.params.lang;
-const currentLang = propLang || paramsLang || "en";
+const { preloadImage, lang: propLang, pageKey, translatedPath } = Astro.props
+const paramsLang = Astro.params.lang
+const currentLang = propLang || paramsLang || 'en'
 ---
 
 <!doctype html>
 <html lang={currentLang}>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset='UTF-8' />
+    <meta
+      name='viewport'
+      content='width=device-width'
+    />
+    <link
+      rel='icon'
+      type='image/x-icon'
+      href='/favicon.ico'
+    />
+    <meta
+      name='generator'
+      content={Astro.generator}
+    />
 
     <!-- Preconnect to external origins -->
-    <link rel="preconnect" href="https://maps.googleapis.com" />
-    <link rel="preconnect" href="https://maps.gstatic.com" />
+    <link
+      rel='preconnect'
+      href='https://maps.googleapis.com'
+    />
+    <link
+      rel='preconnect'
+      href='https://maps.gstatic.com'
+    />
 
     <!-- Pages transition -->
     <ClientRouter />
 
     <!-- Preload critical fonts -->
     <link
-      rel="preload"
-      href="/fonts/inter-latin-wght-normal.woff2"
-      as="font"
-      type="font/woff2"
+      rel='preload'
+      href='/fonts/inter-latin-wght-normal.woff2'
+      as='font'
+      type='font/woff2'
       crossorigin
     />
     <link
-      rel="preload"
-      href="/fonts/metropolis-latin-400-normal.woff2"
-      as="font"
-      type="font/woff2"
+      rel='preload'
+      href='/fonts/metropolis-latin-400-normal.woff2'
+      as='font'
+      type='font/woff2'
       crossorigin
     />
 
     <!-- SEO Slot -->
-    <slot name="seo" />
+    <slot name='seo' />
 
     {
       preloadImage && (
         <link
-          rel="preload"
-          as="image"
+          rel='preload'
+          as='image'
           href={preloadImage}
-          fetchpriority="high"
+          fetchpriority='high'
         />
       )
     }
   </head>
   <body>
-    <Header pageKey={pageKey} translatedPath={translatedPath} />
+    <Header
+      pageKey={pageKey}
+      translatedPath={translatedPath}
+    />
 
-    <main class:list={["font-sans"]}>
+    <main class:list={['font-sans']}>
       <slot />
     </main>
 
     <Footer />
     <TawkTo />
+
+    <!-- Global parallax -->
+    <script>
+      const setupParallax = () => {
+        const banner = document.querySelector('.parallax')
+        if (!banner) return
+
+        const img = banner.querySelector('img')
+        if (!img) return
+
+        let ticking = false
+        const speed = 0.4
+
+        const updatePosition = () => {
+          const scrollY = window.scrollY
+          // Optimization: Stop animating if banner is out of view
+          if (scrollY > 600) return
+
+          img.style.transform = `translateY(${scrollY * speed}px)`
+          ticking = false
+        }
+
+        const onScroll = () => {
+          if (!ticking) {
+            window.requestAnimationFrame(updatePosition)
+            ticking = true
+          }
+        }
+
+        window.addEventListener('scroll', onScroll)
+
+        // Cleanup on navigation
+        const cleanup = () => {
+          window.removeEventListener('scroll', onScroll)
+          document.removeEventListener('astro:before-swap', cleanup)
+        }
+
+        document.addEventListener('astro:before-swap', cleanup)
+      }
+
+      document.addEventListener('astro:page-load', setupParallax)
+    </script>
   </body>
 </html>

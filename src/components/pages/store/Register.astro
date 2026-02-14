@@ -4,8 +4,11 @@ import Layout from '../../../layouts/Layout.astro'
 
 // Components
 import PageSEO from '../../utils/PageSEO.astro'
-import SectionHeading from '../../molecules/SectionHeading.astro'
+import BannerImage from '../../atoms/BannerImage.astro'
 import SelectedVehicleCard from '../../organisms/SelectedVehicleCard'
+
+// Images
+import processBannerImg from '../../../assets/images/banners/process.png'
 
 // Libs
 import { useTranslations } from '../../../lib/i18n/utils'
@@ -25,17 +28,21 @@ const t = useTranslations(lang)
     slot='seo'
   />
 
-  <div class='container py-24'>
-    <SectionHeading
-      title={t('pages.register.title')}
-      isH1
-      class='text-center'
-    >
-      <p class='mt-4 text-lg text-gray-600'>
-        {t('pages.register.description')}
-      </p>
-    </SectionHeading>
+  <BannerImage
+    src={processBannerImg}
+    alt={t('pages.register.title')}
+    title={t('pages.register.title')}
+    class='parallax -mt-6'
+  >
+    <h1 class='mx-auto w-11/12 text-4xl font-bold md:text-5xl'>
+      {t('pages.register.title')}
+    </h1>
+    <p class='mt-4 text-lg text-white/90'>
+      {t('pages.register.description')}
+    </p>
+  </BannerImage>
 
+  <div class='container py-24'>
     <div class='mt-12 flex justify-center'>
       <div
         class='w-full max-w-md rounded-2xl border border-gray-100 bg-white p-8 shadow-sm'
