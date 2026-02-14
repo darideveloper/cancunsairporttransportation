@@ -56,7 +56,14 @@ export default function BookingForm({
   const minReturnTime =
     returnDate === departureDate ? departureTime : undefined;
 
-  const isValid = !!locationFromData && !!locationToData;
+  // Validate all required fields based on trip type
+  const isValid =
+    !!locationFromData &&
+    !!locationToData &&
+    !!departureDate &&
+    !!departureTime &&
+    (tripType === "oneWay" ||
+      (tripType === "roundTrip" && !!returnDate && !!returnTime));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
