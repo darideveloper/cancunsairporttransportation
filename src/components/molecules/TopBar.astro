@@ -1,63 +1,69 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
 
 // Data
-import { PHONES, SOCIAL_LINKS } from "../../data/site-config";
+import { PHONES, SOCIAL_LINKS } from '../../data/site-config'
 
 // Components
-import LangLink from "../atoms/LangLink.astro";
-import SocialIcon from "../atoms/SocialIcon.astro";
-import SearchWidget from "../Search/SearchWidget";
-import ContactPhones from "./ContactPhones.astro";
+import LangLink from '../atoms/LangLink.astro'
+import SocialIcon from '../atoms/SocialIcon.astro'
+import SearchWidget from '../atoms/SearchWidget'
+import ContactPhones from './ContactPhones.astro'
 
 // Icons
-import { FaFacebook, FaInstagram } from "react-icons/fa6";
+import { FaFacebook, FaInstagram } from 'react-icons/fa6'
 
 // Lang
-const lang = getLangFromUrl(Astro.url);
-const currentLang = lang === "es" ? "es" : "en";
-const t = useTranslations(lang);
+const lang = getLangFromUrl(Astro.url)
+const currentLang = lang === 'es' ? 'es' : 'en'
+const t = useTranslations(lang)
 
 interface Props {
-  pageKey?: string;
-  translatedPath?: string;
+  pageKey?: string
+  translatedPath?: string
 }
 
-const { pageKey, translatedPath } = Astro.props;
+const { pageKey, translatedPath } = Astro.props
 ---
 
 <section
-  aria-label={t("global.topbar.utilityNavLabel")}
-  class="bg-gray-light w-full px-4 py-4 text-sm sm:px-6"
+  aria-label={t('global.topbar.utilityNavLabel')}
+  class='bg-gray-light w-full px-4 py-4 text-sm sm:px-6'
 >
-  <div class="mx-auto flex flex-row items-center justify-between gap-2">
+  <div class='mx-auto flex flex-row items-center justify-between gap-2'>
     <!-- Left: Lang Selector -->
-    <div class="flex items-center">
-      <LangLink pageKey={pageKey} translatedPath={translatedPath} />
-      <div class="ml-4 border-l border-gray-300 pl-4">
-        <SearchWidget currentLang={currentLang} client:idle />
+    <div class='flex items-center'>
+      <LangLink
+        pageKey={pageKey}
+        translatedPath={translatedPath}
+      />
+      <div class='ml-4 border-l border-gray-300 pl-4'>
+        <SearchWidget
+          currentLang={currentLang}
+          client:idle
+        />
       </div>
     </div>
 
     <!-- Center: Contact Info -->
     <div
-      class="hidden flex-col items-end gap-0 sm:flex md:flex-row md:items-center md:gap-4"
+      class='hidden flex-col items-end gap-0 sm:flex md:flex-row md:items-center md:gap-4'
     >
       <ContactPhones />
     </div>
 
     <!-- Right: Socials -->
-    <div class="hidden items-center gap-3 lg:flex">
+    <div class='hidden items-center gap-3 lg:flex'>
       <SocialIcon
         Icon={FaFacebook}
         href={SOCIAL_LINKS.facebook}
-        label={t("global.topbar.facebookAriaLabel")}
+        label={t('global.topbar.facebookAriaLabel')}
       />
       <SocialIcon
         Icon={FaInstagram}
         href={SOCIAL_LINKS.instagram}
-        label={t("global.topbar.instagramAriaLabel")}
+        label={t('global.topbar.instagramAriaLabel')}
       />
     </div>
   </div>

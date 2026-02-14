@@ -71,6 +71,8 @@ export const useSearchFormStore = create<SearchFormState>()(
       setPassengers: (passengers) => set({ passengers }),
       setSelectedVehicleToken: (selectedVehicleToken) =>
         set({ selectedVehicleToken }),
+      setAirline: (airline) => set({ airline }),
+      setFlightNumber: (flightNumber) => set({ flightNumber }),
     }),
     {
       name: "search-form-storage",
@@ -88,6 +90,8 @@ export const useSearchFormStore = create<SearchFormState>()(
         returnTime: state.returnTime,
         passengers: state.passengers,
         selectedVehicleToken: state.selectedVehicleToken,
+        airline: state.airline,
+        flightNumber: state.flightNumber,
       }),
     },
   ),
