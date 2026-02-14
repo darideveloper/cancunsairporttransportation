@@ -19,6 +19,7 @@ export interface VehicleBuyCardProps {
   maxLuggage: number;
   price: number;
   originalPrice?: number;
+  vehicleType?: string;
   rating: number; // 1 to 5
   description: string;
   items: string[];
@@ -27,7 +28,7 @@ export interface VehicleBuyCardProps {
   formattedOriginalPrice?: string;
   labels: VehicleBuyCardLabels;
   token: string;
-  onSelect?: (token: string) => void;
+  onSelect?: () => void;
 }
 
 export default function VehicleBuyCard({
@@ -37,6 +38,7 @@ export default function VehicleBuyCard({
   maxLuggage,
   price,
   originalPrice,
+  vehicleType,
   rating,
   description,
   items,
@@ -64,7 +66,7 @@ export default function VehicleBuyCard({
 
   const handleSelect = () => {
     if (onSelect) {
-      onSelect(token);
+      onSelect();
     }
   };
 

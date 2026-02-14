@@ -32,8 +32,8 @@ export default function VehicleBuyCards({
   const [error, setError] = useState(false);
 
   const t = useTranslations(lang);
-  const setSelectedVehicleToken = useSearchFormStore(
-    (state) => state.setSelectedVehicleToken,
+  const setSelectedVehicle = useSearchFormStore(
+    (state) => state.setSelectedVehicle,
   );
 
   const fetchVehicles = async () => {
@@ -56,8 +56,17 @@ export default function VehicleBuyCards({
     }
   }, [lang]);
 
-  const handleVehicleSelect = (token: string) => {
-    setSelectedVehicleToken(token);
+  const handleVehicleSelect = (vehicle: VehicleBuyCardProps) => {
+    setSelectedVehicle({
+      token: vehicle.token,
+      name: vehicle.vehicleName,
+      image: vehicle.vehicleImage,
+      maxPassengers: vehicle.maxPassengers,
+      maxLuggage: vehicle.maxLuggage,
+      price: vehicle.price,
+      currency: vehicle.currencyCode,
+      type: vehicle.vehicleType,
+    });
     // Future step: Navigate to results page or next step
   };
 
@@ -95,7 +104,7 @@ export default function VehicleBuyCards({
         <VehicleBuyCard
           key={`${vehicle.vehicleName}-${index}`}
           {...vehicle}
-          onSelect={handleVehicleSelect}
+          onSelect={() => handleVehicleSelect(vehicle)}
         />
       ))}
     </div>
