@@ -4,25 +4,22 @@
 TBD - created by archiving change enhance-vehicle-buy-card. Update Purpose after archive.
 ## Requirements
 ### Requirement: Use getFormattedPrice Utility
-The VehicleBuyCard component MUST use the `getFormattedPrice()` utility from `src/lib/utils.ts` for all price displays.
+The `getFormattedPrice` utility MUST support an optional `currency` in its options to bypass automatic conversion.
 
-#### Scenario: Import price formatting utility
-- GIVEN the VehicleBuyCard component
-- THEN it MUST import `getFormattedPrice` from `../../lib/utils`
+#### Scenario: Support explicit currency override
+- GIVEN a price of `500.00` (already in MXN)
+- AND `lang="es"`
+- AND `options.currency="mxn"`
+- WHEN `getFormattedPrice(500, "es", { currency: "mxn" })` is called
+- THEN it MUST NOT apply any exchange rate conversion
+- AND it MUST return `$500.00 MXN`
 
-#### Scenario: Format current price
-- GIVEN a VehicleBuyCard component with `price={45.00}` and `lang="en"`
-- WHEN the current price is displayed
-- THEN it MUST use `getFormattedPrice(price, lang)` instead of `{currency} ${price.toFixed(2)}`
-- AND the output MUST be `$45.00 USD` for English
-- AND the output MUST be `$810.00 MXN` for Spanish (using configured exchange rate)
-
-#### Scenario: Format original price
-- GIVEN a VehicleBuyCard component with `originalPrice={60.00}` and `lang="en"`
-- WHEN the original price is displayed with strikethrough
-- THEN it MUST use `getFormattedPrice(originalPrice, lang)` instead of `{currency} ${originalPrice.toFixed(2)}`
-- AND the output MUST be `$60.00 USD` for English
-- AND the output MUST be `$1,080.00 MXN` for Spanish (using configured exchange rate)
+#### Scenario: Support explicit currency override for different language
+- GIVEN a price of `500.00` (MXN)
+- AND `lang="en"`
+- AND `options.currency="mxn"`
+- WHEN `getFormattedPrice(500, "en", { currency: "mxn" })` is called
+- THEN it MUST return `$500.00 MXN` (independent of language)
 
 ### Requirement: Remove Currency Prop
 The VehicleBuyCard component MUST NOT require a manual `currency` prop since currency is determined by language.
