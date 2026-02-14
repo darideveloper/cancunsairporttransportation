@@ -189,7 +189,7 @@
         "passengers": "Pasajeros: {count}",
         "origin": "Origen: {location}",
         "destination": "Destino: {location}",
-        "privateTransportation": "Transportación Privada"
+        "privateTransportation": "Transporte privado"
       }
     },
     "ratesTable": {

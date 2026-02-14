@@ -1,4 +1,4 @@
-import { FaMapMarkerAlt, FaThumbsUp } from "react-icons/fa";
+import { FaMapMarkerAlt, FaThumbsUp, FaUsers } from "react-icons/fa";
 import clsx from "clsx";
 import { useSearchFormStore } from "../../store/search-form";
 import { useTranslations } from "../../lib/i18n/utils";
@@ -31,6 +31,12 @@ export default function SelectedVehicleCard({
 
   const details = [
     {
+      Icon: FaUsers,
+      text: t("global.booking.summary.passengers", {
+        count: passengers.toString(),
+      }),
+    },
+    {
       Icon: FaMapMarkerAlt,
       text: t("global.booking.summary.origin", {
         location: locationFrom,
@@ -60,21 +66,17 @@ export default function SelectedVehicleCard({
         <img
           src={selectedVehicle.image}
           alt={selectedVehicle.name}
-          className="h-auto w-42 object-contain"
+          className="h-auto w-52 object-contain"
         />
       </div>
 
       {/* Content */}
       <div className="flex flex-1 flex-col gap-2">
-        <H2 className="text-gray-900!">
+        <H2 className="text-center font-normal md:text-right">
           <span className="font-bold">
             {t("global.booking.summary.privateTransportation")}
           </span>
           <span className="ml-2">
-            {t("global.booking.summary.passengers", {
-              count: passengers.toString(),
-            })}{" "}
-            -{" "}
             {t("global.booking.summary.capacity", {
               maxPassengers: selectedVehicle.maxPassengers.toString(),
             })}
@@ -82,14 +84,14 @@ export default function SelectedVehicleCard({
         </H2>
 
         {/* Details Row */}
-        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
+        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-500 md:justify-end">
           {details.map((item, index) => (
             <CheckListItem
               key={index}
               as="div"
               unstyled
               Icon={item.Icon}
-              iconColor="text-gray-400"
+              iconColor="text-black"
               text={item.text}
             />
           ))}
