@@ -46,14 +46,13 @@ const t = useTranslations(lang)
       </div>
     </div>
 
-    <!-- Selected Vehicle Summary -->
-    <div class='mt-12 flex justify-center'>
-      <div class='w-full max-w-4xl'>
-        <SelectedVehicleCard
-          lang={lang}
-          client:load
-        />
-      </div>
+    <div class='mx-auto w-full max-w-4xl'>
+      <!-- Selected Vehicle Summary -->
+      <SelectedVehicleCard
+        lang={lang}
+        client:load
+        className='mt-12'
+      />
     </div>
   </div>
 </Layout>

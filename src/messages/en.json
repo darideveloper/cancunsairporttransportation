@@ -188,7 +188,8 @@
         "capacity": "Capacity {maxPassengers} passengers.",
         "passengers": "Passengers: {count}",
         "origin": "Origin: {location}",
-        "destination": "Destination: {location}"
+        "destination": "Destination: {location}",
+        "privateTransportation": "Private Transportation"
       }
     },
     "ratesTable": {

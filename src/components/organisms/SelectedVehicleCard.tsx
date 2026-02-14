@@ -1,15 +1,18 @@
-import { FaUser, FaMapMarkerAlt, FaThumbsUp } from "react-icons/fa";
+import { FaMapMarkerAlt, FaThumbsUp } from "react-icons/fa";
 import clsx from "clsx";
 import { useSearchFormStore } from "../../store/search-form";
 import { useTranslations } from "../../lib/i18n/utils";
 import CheckListItem from "../atoms/CheckListItem";
+import H2 from "../atoms/H2";
 
 export interface SelectedVehicleCardProps {
   lang: "en" | "es";
+  className?: string;
 }
 
 export default function SelectedVehicleCard({
   lang,
+  className,
 }: SelectedVehicleCardProps) {
   const { selectedVehicle, locationFrom, locationTo, passengers, tripType } =
     useSearchFormStore();
@@ -27,12 +30,6 @@ export default function SelectedVehicleCard({
       : t("global.booking.tripType.roundTrip");
 
   const details = [
-    {
-      Icon: FaUser,
-      text: t("global.booking.summary.passengers", {
-        count: passengers.toString(),
-      }),
-    },
     {
       Icon: FaMapMarkerAlt,
       text: t("global.booking.summary.origin", {
@@ -54,7 +51,8 @@ export default function SelectedVehicleCard({
   return (
     <div
       className={clsx(
-        "flex flex-col items-center gap-4 rounded-lg bg-white p-4 shadow-sm md:flex-row",
+        "bg-gray/10 flex flex-col items-center gap-4 rounded-lg p-4 shadow-sm md:flex-row",
+        className,
       )}
     >
       {/* Vehicle Image */}
@@ -62,23 +60,26 @@ export default function SelectedVehicleCard({
         <img
           src={selectedVehicle.image}
           alt={selectedVehicle.name}
-          className="h-auto w-32 object-contain"
+          className="h-auto w-42 object-contain"
         />
       </div>
 
       {/* Content */}
       <div className="flex flex-1 flex-col gap-2">
-        {/* Header: Vehicle Name and Capacity */}
-        <div className="flex flex-col">
-          <h3 className="text-xl font-bold text-gray-900">
-            {selectedVehicle.name}
-          </h3>
-          <p className="text-sm text-gray-600">
+        <H2 className="text-gray-900!">
+          <span className="font-bold">
+            {t("global.booking.summary.privateTransportation")}
+          </span>
+          <span className="ml-2">
+            {t("global.booking.summary.passengers", {
+              count: passengers.toString(),
+            })}{" "}
+            -{" "}
             {t("global.booking.summary.capacity", {
               maxPassengers: selectedVehicle.maxPassengers.toString(),
             })}
-          </p>
-        </div>
+          </span>
+        </H2>
 
         {/* Details Row */}
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
