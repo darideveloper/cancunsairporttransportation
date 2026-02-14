@@ -170,7 +170,7 @@ export default function VehicleBuyCard({
         <p className="text-2xl font-bold">{formattedPrice}</p>
         <p className="text-sm">{labels.pricePerVehicle}</p>
 
-        <ButtonCta onClick={handleSelect} className="mt-2">
+        <ButtonCta onClick={handleSelect} className="mt-2" variant="greenGhost">
           {labels.bookNow}
         </ButtonCta>
       </div>
