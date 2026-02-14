@@ -2,6 +2,7 @@ import { FaUser, FaMapMarkerAlt, FaThumbsUp } from "react-icons/fa";
 import clsx from "clsx";
 import { useSearchFormStore } from "../../store/search-form";
 import { useTranslations } from "../../lib/i18n/utils";
+import CheckListItem from "../atoms/CheckListItem";
 
 export interface SelectedVehicleCardProps {
   lang: "en" | "es";
@@ -15,7 +16,10 @@ export default function SelectedVehicleCard({
 
   const t = useTranslations(lang);
 
-  if (!selectedVehicle) return null;
+  // Validation: Don't render if critical data is missing
+  if (!selectedVehicle || !locationFrom || !locationTo || passengers < 1) {
+    return null;
+  }
 
   const tripTypeLabel =
     tripType === "oneWay"
@@ -52,43 +56,42 @@ export default function SelectedVehicleCard({
         </div>
 
         {/* Details Row */}
-        <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-          {/* Passengers */}
-          <div className="flex items-center gap-2">
-            <FaUser className="text-gray-400" />
-            <span>
-              {t("global.booking.summary.passengers", {
-                count: passengers.toString(),
-              })}
-            </span>
-          </div>
-
-          {/* Origin */}
-          <div className="flex items-center gap-2">
-            <FaMapMarkerAlt className="text-gray-400" />
-            <span>
-              {t("global.booking.summary.origin", {
-                location: locationFrom,
-              })}
-            </span>
-          </div>
-
-          {/* Destination */}
-          <div className="flex items-center gap-2">
-            <FaMapMarkerAlt className="text-gray-400" />
-            <span>
-              {t("global.booking.summary.destination", {
-                location: locationTo,
-              })}
-            </span>
-          </div>
-
-          {/* Trip Type */}
-          <div className="flex items-center gap-2">
-            <FaThumbsUp className="text-gray-400" />
-            <span>{tripTypeLabel}</span>
-          </div>
-        </div>
+        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
+          <CheckListItem
+            as="div"
+            unstyled
+            Icon={FaUser}
+            iconColor="text-gray-400"
+            text={t("global.booking.summary.passengers", {
+              count: passengers.toString(),
+            })}
+          />
+          <CheckListItem
+            as="div"
+            unstyled
+            Icon={FaMapMarkerAlt}
+            iconColor="text-gray-400"
+            text={t("global.booking.summary.origin", {
+              location: locationFrom,
+            })}
+          />
+          <CheckListItem
+            as="div"
+            unstyled
+            Icon={FaMapMarkerAlt}
+            iconColor="text-gray-400"
+            text={t("global.booking.summary.destination", {
+              location: locationTo,
+            })}
+          />
+          <CheckListItem
+            as="div"
+            unstyled
+            Icon={FaThumbsUp}
+            iconColor="text-gray-400"
+            text={tripTypeLabel}
+          />
+        </ul>
       </div>
     </div>
   );

@@ -7,6 +7,8 @@ interface CheckListItemProps {
   className?: string;
   Icon?: ElementType;
   iconColor?: string;
+  as?: "li" | "div";
+  unstyled?: boolean;
 }
 
 export default function CheckListItem({
@@ -14,9 +16,13 @@ export default function CheckListItem({
   className,
   Icon = FaCheck,
   iconColor = "text-accent",
+  as: Component = "li",
+  unstyled = false,
 }: CheckListItemProps) {
   return (
-    <li className={clsx("rounded-2xl bg-white px-4 py-2", className)}>
+    <Component
+      className={clsx(!unstyled && "rounded-2xl bg-white px-4 py-2", className)}
+    >
       <span className="inline-block text-left">
         <Icon
           aria-hidden="true"
@@ -24,6 +30,6 @@ export default function CheckListItem({
         />
         {text}
       </span>
-    </li>
+    </Component>
   );
 }

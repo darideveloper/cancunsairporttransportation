@@ -108,26 +108,23 @@ export default function VehicleBuyCard({
             />
           </div>
           {/* Capacity Icons */}
-          <div className="">
-            <span
-              className="flex items-center gap-2"
-              aria-label={`Maximum ${maxPassengers} passengers`}
-            >
-              <FaUserFriends className="" aria-hidden="true" />
-              <span className="">
-                {maxPassengers} {labels.maxPassengers}
-              </span>
-            </span>
-
-            <span
-              className="flex items-center gap-2"
-              aria-label={`Maximum ${maxLuggage} luggage`}
-            >
-              <FaSuitcase className="" aria-hidden="true" />
-              <span className="">
-                {maxLuggage} {labels.maxLuggage}
-              </span>
-            </span>
+          <div className="flex flex-col gap-1">
+            <CheckListItem
+              as="div"
+              unstyled
+              Icon={FaUserFriends}
+              iconColor="text-gray-900"
+              text={`${maxPassengers} ${labels.maxPassengers}`}
+              className="px-0! py-0!"
+            />
+            <CheckListItem
+              as="div"
+              unstyled
+              Icon={FaSuitcase}
+              iconColor="text-gray-900"
+              text={`${maxLuggage} ${labels.maxLuggage}`}
+              className="px-0! py-0!"
+            />
           </div>
         </div>
       </div>
