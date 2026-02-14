@@ -72,7 +72,10 @@ export async function getVehicles(
 
     const data = (await response.json()) as LegacyQuoteResponse;
     const t = useTranslations(lang);
-    const currencyCode = getCurrencyCode(lang);
+    const storeCurrency = searchFormState.currency.toLowerCase() as
+      | "usd"
+      | "mxn";
+    const currencyCode = getCurrencyCode(lang, storeCurrency);
 
     const vehicleLabels = {
       maxPassengers: t("global.ui.vehicleCard.maxPassengers"),
@@ -114,7 +117,9 @@ export async function getVehicles(
         description: description,
         items: features?.items || [],
         currencyCode,
-        formattedPrice: getFormattedPrice(parseFloat(item.price), lang),
+        formattedPrice: getFormattedPrice(parseFloat(item.price), lang, {
+          currency: storeCurrency,
+        }),
         // formattedOriginalPrice: ... (optional)
         labels: vehicleLabels,
       };
