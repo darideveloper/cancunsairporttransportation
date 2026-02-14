@@ -1,0 +1,3 @@
+- [x] Update `LocationAutocomplete.tsx` to access `data.items` instead of `data` directly
+- [x] Update `LocationAutocomplete.tsx` to map API items to `LocationData` interface (extract `geo` fields and parsing strings to numbers)
+- [x] Verify that searching now displays results in the UI

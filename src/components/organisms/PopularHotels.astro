@@ -2,7 +2,7 @@
 // COmponents
 import SectionHeading from "../molecules/SectionHeading.astro";
 import BasicIconCard from "../molecules/BasicIconCard.astro";
-import ButtonCta from "../atoms/ButtonCta.astro";
+import ButtonCta from "../atoms/ButtonCta";
 
 // Libs
 import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
@@ -14,10 +14,10 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang as "en" | "es");
 
 interface Props {
-  page: string;
+  contentKey: string;
 }
 
-const { page } = Astro.props;
+const { contentKey } = Astro.props;
 
 interface PopularHotelsData {
   title: string;
@@ -26,7 +26,9 @@ interface PopularHotelsData {
   items: string[];
 }
 
-const popularHotels = t(`pages.${page}.popularHotels`) as PopularHotelsData;
+const popularHotels = t(
+  `pages.${contentKey}.popularHotels`,
+) as PopularHotelsData;
 ---
 
 <section class="container mx-auto px-4 pt-12">
@@ -48,7 +50,7 @@ const popularHotels = t(`pages.${page}.popularHotels`) as PopularHotelsData;
       <ButtonCta
         href={popularHotels.viewMoreLink || "/destinations"}
         variant="orangeGhost"
-        class="flex! w-full items-center justify-center sm:w-auto lg:w-full"
+        className="flex! w-full items-center justify-center sm:w-auto lg:w-full"
       >
         <span class="inline-block">
           {popularHotels.viewMore}

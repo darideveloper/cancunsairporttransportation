@@ -12,6 +12,20 @@
         "privacy": "Leer nuestra Política de Privacidad"
       }
     },
+    "needHelp": {
+      "title": "¿Necesitas ayuda con tu reservación?",
+      "description": "Estaríamos mas que felices de ayudarte. Nuestro centro de llamadas está a su servicio.",
+      "logos": {
+        "safeTravel": {
+          "alt": "Sello de Viaje Seguro",
+          "title": "Sello de Viaje Seguro"
+        },
+        "sct": {
+          "alt": "Secretaría de Comunicaciones y Transportes",
+          "title": "Secretaría de Comunicaciones y Transportes"
+        }
+      }
+    },
     "topbar": {
       "languageLabel": "Idioma",
       "mexicoPhone": "México y resto del mundo",
@@ -328,9 +342,52 @@
         }
       },
       "whyChooseUs": {
-        "title": "Por qué utilizar Cancun Airport Transportation by Go Transfers",
-        "imageAlt": "Nuestros clientes felices",
-        "text": "Con muchas agencias privadas de traslados en Cancún, es importante saber por qué nos destacamos.\n\nEn Cancun Airport Transportation por Go, entendemos que después de un largo vuelo, lo último que quiere es esperar en el aeropuerto para llegar a su hotel y comenzar sus vacaciones. Sabemos que está cansado de un vuelo de dos horas o más, y lo último que quiere es lidiar con largas filas de taxis o esperar casi una hora para el transporte público, lidiando con el ruido y los movimientos de otros pasajeros.\n\nPor eso nuestro servicio de traslado es perfecto para usted: Ofrecemos precios más bajos que nuestros competidores, un servicio de primera clase y el compromiso de asegurarnos de que disfrute de sus vacaciones al máximo. Por estas razones y más, elíjanos para sus necesidades de transporte."
+        "title": "¿Por qué elegirnos?",
+        "imageAlt": "Trip Advisor 2024",
+        "imageTitle": "2024 Traveller's Choice",
+        "text": "Con muchas agencias privadas de traslados en Cancún, es importante saber por qué nos destacamos.\n\nEn Cancun Airport Transportation por Go, entendemos que después de un largo vuelo, lo último que quiere es esperar en el aeropuerto para llegar a su hotel y comenzar sus vacaciones. Sabemos que está cansado de un vuelo de dos horas o más, y lo último que quiere es lidiar con largas filas de taxis o esperar casi una hora para el transporte público, lidiando con el ruido y los movimientos de otros pasajeros.\n\nPor eso nuestro servicio de traslado es perfecto para usted: Ofrecemos precios más bajos que nuestros competidores, un servicio de primera clase y el compromiso de asegurarnos de que disfrute de sus vacaciones al máximo. Por estas razones y más, elíjanos para sus necesidades de transporte.",
+        "items": [
+          {
+            "text": "10 Años de Experiencia",
+            "icon": "star"
+          },
+          {
+            "text": "Ganador del Trip Advisor Traveller's Choice 2024",
+            "icon": "trophy"
+          },
+          {
+            "text": "Transportación Privada",
+            "icon": "userFriends"
+          },
+          {
+            "text": "Monitoreo de Vuelos",
+            "icon": "planeArrival"
+          },
+          {
+            "text": "Seguro de Viajero Incluido",
+            "icon": "shieldAlt"
+          },
+          {
+            "text": "Recepción en el Aeropuerto",
+            "icon": "mapMarkerAlt"
+          },
+          {
+            "text": "Sin Tiempos de Espera",
+            "icon": "clock"
+          },
+          {
+            "text": "Vehículos con Aire Acondicionado",
+            "icon": "snowflake"
+          },
+          {
+            "text": "Conductores Bilingües",
+            "icon": "comments"
+          },
+          {
+            "text": "Disponibilidad 24/7",
+            "icon": "calendarAlt"
+          }
+        ]
       },
       "faq": {
         "description": "Te ayudamos a despejar tus dudas sobre nuestros servicios de transporte"
@@ -431,6 +488,14 @@
           "taxesIncluded": "Incluye tasas de aeropuerto y seguro del viajero",
           "service24h": "Servicio 24H"
         }
+      },
+      "vehicleCard": {
+        "maxPassengers": "Pasajeros",
+        "maxLuggage": "Equipaje",
+        "priceFrom": "Precio desde",
+        "pricePerVehicle": "Precio por vehículo",
+        "bookNow": "Reservar",
+        "save": "Ahorra"
       }
     }
   },
@@ -520,6 +585,11 @@
         "title": "¿Necesitas ayuda?",
         "text": "Si no encuentras tu reservación, por favor contacta a nuestro equipo de soporte."
       }
+    },
+    "register": {
+      "title": "Registro | Cancun Airport Transportation",
+      "description": "Crea una cuenta con Cancun Airport Transportation para gestionar tus reservas y acceder a ofertas exclusivas.",
+      "keywords": "registro transporte cancun, crear cuenta traslado aeropuerto cancun"
     },
     "home": {
       "title": "Transportación Confiable al Aeropuerto de Cancún | Traslados Privados y Transporte a Cancún y Riviera Maya",
@@ -1903,6 +1973,29 @@
         "previous": "Anterior",
         "next": "Siguiente"
       }
+    },
+    "results": {
+      "title": "Resultados",
+      "description": "Selecciona el vehículo que se adapte a tu estilo y prepárate para una experiencia inolvidable llena de comodidad, seguridad y diversión. ¡Tu aventura empieza con la elección de tu vehículo ideal! 🚗✨",
+      "keywords": "resultados transporte cancun, busqueda resultados",
+      "dynamicTitle": "Traslado de {from} a {to}",
+      "sidebar": {
+        "route": {
+          "title": "Trayectoria de tu **viaje**",
+          "modifyBtn": "Modificar Trayectoria",
+          "mapAriaLabel": "Mapa de trayectoria de viaje"
+        }
+      },
+      "loading": "Buscando las mejores opciones para ti...",
+      "error": "Algo salió mal al cargar los vehículos.",
+      "noVehicles": "No se encontraron vehículos.",
+      "retry": "Intentar de nuevo",
+      "sorry": "Lo sentimos :(",
+      "noAvailabilityMessage": "Desafortunadamente no encontramos disponibilidad para la **Zona / Horarios** solicitados, descuida podemos resolverlo.",
+      "usaCanada": "USA & Canada",
+      "mexicoRest": "México & Resto del mundo",
+      "whatsapp": "WhatsApp",
+      "chat": "Chat"
     }
   }
 }

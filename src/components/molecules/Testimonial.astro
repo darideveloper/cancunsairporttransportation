@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { FaStar } from "react-icons/fa";
+import StarRating from "../atoms/StarRating";
 
 interface Props {
   name: string;
@@ -61,20 +61,11 @@ const {
         {name}
       </cite>
       <div
-        class=""
-        role="img"
-        aria-label={`${stars} out of 5 stars`}
         itemprop="reviewRating"
         itemscope
         itemtype="https://schema.org/Rating"
       >
-        <meta itemprop="ratingValue" content={stars} />
-        <meta itemprop="bestRating" content="5" />
-        {
-          Array.from({ length: parseInt(stars) }).map((_) => (
-            <FaStar className="inline-block text-yellow" />
-          ))
-        }
+        <StarRating rating={parseInt(stars)} withSchema={true} />
       </div>
     </div>
   </figcaption>

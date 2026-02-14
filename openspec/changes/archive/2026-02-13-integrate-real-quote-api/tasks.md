@@ -1,0 +1,4 @@
+- [x] Define API types in `src/lib/transportation/legacy-api.types.ts` <!-- id: 0 -->
+- [x] Create vehicle content mapping (descriptions, features) in `src/data/vehicle-features.ts` <!-- id: 1 -->
+- [x] Implement `getVehicles` in `src/lib/transportation/api.ts` to use real API <!-- id: 2 -->
+- [x] Verify API integration with local dev server <!-- id: 3 -->

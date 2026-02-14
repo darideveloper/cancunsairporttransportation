@@ -5,25 +5,25 @@ import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
 import TextCard from "../molecules/TextCard.astro";
 
 interface Props {
-  page: string;
+  contentKey: string; // Was page
   section: string;
   image: ImageMetadata;
   id?: string;
   reverse?: boolean; // If true, image is on the right
   baseKey?: string; // Optional override for the full translation key path
-  contentKey?: string; // Key for the text content (default: 'description')
+  fieldKey?: string; // Key for the text content (default: 'description')
   imageAltKey?: string; // Optional override key for alt text (default: 'title')
   imageClass?: string; // Optional class override for image
 }
 
 const {
-  page,
+  contentKey,
   section,
   image,
   id,
   reverse,
   baseKey,
-  contentKey,
+  fieldKey,
   imageAltKey,
   imageClass,
 } = Astro.props;
@@ -31,10 +31,10 @@ const {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const translationBase = baseKey || `pages.${page}.${section}`;
+const translationBase = baseKey || `pages.${contentKey}.${section}`;
 const title = t(`${translationBase}.title`);
 const imageAlt = imageAltKey ? t(`${translationBase}.${imageAltKey}`) : title;
-const contentText = t(`${translationBase}.${contentKey || "description"}`);
+const contentText = t(`${translationBase}.${fieldKey || "description"}`);
 const contentHtml = await marked.parse(contentText);
 ---
 

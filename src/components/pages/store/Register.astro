@@ -1,0 +1,43 @@
+---
+// Layout
+import Layout from "../../../layouts/Layout.astro";
+
+// Components
+import PageSEO from "../../utils/PageSEO.astro";
+import SectionHeading from "../../molecules/SectionHeading.astro";
+
+// Libs
+import { useTranslations } from "../../../lib/i18n/utils";
+
+interface Props {
+  lang: "en" | "es";
+  pageKey: string;
+}
+
+const { lang, pageKey } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<Layout pageKey={pageKey}>
+  <PageSEO currentPage="register" slot="seo" />
+
+  <div class="container py-24">
+    <SectionHeading
+      title={t("pages.register.title")}
+      isH1
+      class="text-center"
+    >
+      <p class="mt-4 text-lg text-gray-600">
+        {t("pages.register.description")}
+      </p>
+    </SectionHeading>
+
+    <div class="mt-12 flex justify-center">
+      <div class="w-full max-w-md rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
+        <p class="text-center text-gray-500 italic">
+          Register form coming soon...
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

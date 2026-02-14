@@ -1,0 +1,94 @@
+---
+// Libs
+import { getLangFromUrl, useTranslations } from "../../../lib/i18n/utils";
+import { marked } from "marked";
+
+// Components
+import Layout from "../../../layouts/Layout.astro";
+import PageSEO from "../../utils/PageSEO.astro";
+import RouteMap from "../../molecules/booking/RouteMap";
+import NeedHelp from "../../organisms/NeedHelp.astro";
+import WhyChooseUs from "../../organisms/WhyChooseUs.astro";
+import H2 from "../../atoms/H2.astro";
+import ButtonCta from "../../atoms/ButtonCta";
+import VehicleBuyCard from "../../molecules/VehicleBuyCard";
+import BookingForm from "../../organisms/BookingForm";
+import DynamicResultsHeader from "../../molecules/DynamicResultsHeader";
+import VehicleBuyCards from "../../organisms/VehicleBuyCards";
+const { pageKey } = Astro.props;
+const contentKey = pageKey || "results";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout pageKey={pageKey}>
+  <PageSEO currentPage={contentKey} slot="seo" />
+  <section
+    class="container mx-auto flex flex-col-reverse items-start gap-8 px-4 py-12 md:flex-row-reverse"
+  >
+    <div class="flex w-full flex-col items-center justify-center">
+      <header>
+        <h1 class="font-title text-4xl font-bold text-gray-900">
+          {t("pages.results.title")}
+        </h1>
+        <DynamicResultsHeader lang={lang} client:load />
+        <p class="mt-4 text-gray-600">
+          {t("pages.results.description")}
+        </p>
+      </header>
+
+      <!-- Vehicle Buy Cards -->
+      <div class="mt-8 w-full">
+        <VehicleBuyCards lang={lang} client:load />
+      </div>
+    </div>
+
+    <!-- sidebar -->
+    <div class="sidebar mx-auto w-full max-w-full md:max-w-sm">
+      <!-- Map -->
+      <H2 class="[&_strong]:text-blue my-4">
+        <Fragment
+          set:html={marked.parseInline(t("pages.results.sidebar.route.title"))}
+        />
+      </H2>
+      <RouteMap
+        labels={{
+          mapAriaLabel: t("pages.results.sidebar.route.mapAriaLabel"),
+        }}
+        client:load
+      />
+
+      <!-- Booking -->
+      <ButtonCta id="modify-route-btn" type="button" className="mt-8 w-full">
+        {t("pages.results.sidebar.route.modifyBtn")}
+      </ButtonCta>
+      <!-- Form -->
+      <BookingForm
+        translations={t("global.booking")}
+        client:idle
+        className="my-12 hidden! md:px-0!"
+      />
+
+      <!-- Why Choose Us -->
+      <WhyChooseUs />
+
+      <!-- Help -->
+      <NeedHelp />
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    // Keep scroll always in top
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    // show and hide booking
+    const modifyBtn = document.getElementById("modify-route-btn");
+    modifyBtn?.addEventListener("click", () => {
+      const bookingForm = document.querySelector("#booking-form");
+      bookingForm?.classList.toggle("hidden!");
+    });
+  });
+</script>

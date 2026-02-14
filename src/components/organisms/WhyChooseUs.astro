@@ -1,0 +1,87 @@
+---
+import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { Image } from "astro:assets";
+
+// Components
+import H2 from "../atoms/H2.astro";
+import CheckListItem from "../atoms/CheckListItem";
+
+// Icons
+import {
+  FaStar,
+  FaAward,
+  FaUserFriends,
+  FaPlaneArrival,
+  FaShieldAlt,
+  FaMapMarkerAlt,
+  FaClock,
+  FaSnowflake,
+  FaComments,
+  FaCalendarAlt,
+  FaCheck,
+} from "react-icons/fa";
+
+// Images
+import tripAdvisorGif from "../../assets/images/traveller-choice-2024.gif";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Icon mapping
+const iconMap: Record<string, any> = {
+  star: FaStar,
+  trophy: FaAward,
+  userFriends: FaUserFriends,
+  planeArrival: FaPlaneArrival,
+  shieldAlt: FaShieldAlt,
+  mapMarkerAlt: FaMapMarkerAlt,
+  clock: FaClock,
+  snowflake: FaSnowflake,
+  comments: FaComments,
+  calendarAlt: FaCalendarAlt,
+  check: FaCheck,
+};
+---
+
+<section id="why-choose-us" class="mt-8">
+  <div class="mx-auto text-center">
+    <H2 class="mb-0 border-b text-left">
+      {t("global.sections.whyChooseUs.title")}
+    </H2>
+
+    <!-- Trip Advisor Badge -->
+    <div class="mt-4 flex justify-center">
+      <a
+        href="https://www.tripadvisor.com/Attraction_Review-g150807-d10103757-Reviews-Cancun_Airport_Transportation-Cancun_ Yucatan_Peninsula.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="transition-transform hover:scale-105"
+      >
+        <Image
+          src={tripAdvisorGif}
+          alt={t("global.sections.whyChooseUs.imageAlt")}
+          title={t("global.sections.whyChooseUs.imageTitle")}
+          width={250}
+          height={250}
+          loading="lazy"
+          class="h-auto w-40"
+        />
+      </a>
+    </div>
+
+    <!-- Features Grid -->
+    <ul class="mt-6 flex w-full flex-col">
+      {
+        t("global.sections.whyChooseUs.items").map(
+          (item: { text: string; icon?: string }) => (
+            <CheckListItem
+              text={item.text}
+              Icon={item.icon ? iconMap[item.icon] : FaCheck}
+              className="flex h-full items-start justify-start px-0! text-sm"
+            />
+          ),
+        )
+      }
+    </ul>
+  </div>
+</section>

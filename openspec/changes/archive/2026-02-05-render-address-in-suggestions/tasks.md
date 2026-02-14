@@ -1,0 +1,4 @@
+- [x] Update `LocationData` interface in `src/store/search-form.tsx` to include `address?: string`.
+- [x] Update `LocationAutocomplete.tsx` to map `address` from API response in `fetchResults`.
+- [x] Update `LocationAutocomplete.tsx` to render `address` in the suggestions dropdown.
+- [x] Verify the address is displayed correctly (small font, below name).

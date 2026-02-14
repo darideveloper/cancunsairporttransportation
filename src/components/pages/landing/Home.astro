@@ -14,7 +14,7 @@ import { marked } from "marked";
 import { Image } from "astro:assets";
 import PageSEO from "../../../components/utils/PageSEO.astro";
 import BannerImage from "../../../components/atoms/BannerImage.astro";
-import ButtonCta from "../../../components/atoms/ButtonCta.astro";
+import ButtonCta from "../../../components/atoms/ButtonCta";
 import RatesTable from "../../../components/organisms/RatesTable.astro";
 import TextCard from "../../../components/molecules/TextCard.astro";
 import BookingForm from "../../../components/organisms/BookingForm";
@@ -42,8 +42,6 @@ import clientAppEsImg from "../../../assets/images/clients/client-app-es.webp";
 import { FaImages } from "react-icons/fa";
 
 // Page data
-const page = "home";
-
 // Props
 interface Props {
   lang: "en" | "es";
@@ -51,6 +49,9 @@ interface Props {
 }
 // Get language from params or props
 const { lang, pageKey } = Astro.props;
+
+// Page data
+const contentKey = pageKey || "home";
 
 // Tranlation texts
 const t = useTranslations(lang);
@@ -63,17 +64,17 @@ const reliableServiceContent = await marked.parse(
 
 <Layout preloadImage={homeBannerImg.src} pageKey={pageKey}>
   <!-- Page SEO -->
-  <PageSEO currentPage={page} slot="seo" />
+  <PageSEO currentPage={contentKey} slot="seo" />
 
   <!-- Hero -->
   <BannerImage
     src={homeBannerImg}
-    alt={t(`pages.${page}.bannerAlt`)}
-    title={t(`pages.${page}.bannerImageTitle`)}
+    alt={t(`pages.${contentKey}.bannerAlt`)}
+    title={t(`pages.${contentKey}.bannerImageTitle`)}
     class="-mt-6"
   >
     <h1 class="mx-auto w-11/12 text-4xl font-bold md:text-5xl">
-      {t(`pages.${page}.bannerTitle`)}
+      {t(`pages.${contentKey}.bannerTitle`)}
     </h1>
   </BannerImage>
 
@@ -81,8 +82,6 @@ const reliableServiceContent = await marked.parse(
   <div class="@container">
     <BookingForm
       translations={t("global.booking")}
-      defaultFrom="cun"
-      defaultTo="merida"
       client:idle
       className="-mt-28"
     />
@@ -91,19 +90,22 @@ const reliableServiceContent = await marked.parse(
   <!-- Banner with image and text -->
   <TextCardHalf
     id="safe-trip-booking"
-    page="home"
+    contentKey="home"
     section="safeTrip"
     baseKey="global.sections.safeTrip"
-    contentKey="text"
+    fieldKey="text"
     image={safeTripBookingImg}
     imageClass="object-left"
   />
 
   <!-- Banner CTA -->
-  <BannerCta page={page} imageClass="sm:w-1/2 h-[115%] md:w-auto md:h-[120%]" />
+  <BannerCta
+    contentKey={contentKey}
+    imageClass="sm:w-1/2 h-[115%] md:w-auto md:h-[120%]"
+  />
 
   <!-- Pricing transportation -->
-  <PricingSection page={page} />
+  <PricingSection contentKey={contentKey} />
 
   <!-- Company stats -->
   <BannerStats />
@@ -112,16 +114,16 @@ const reliableServiceContent = await marked.parse(
   <Testimonials images={[client1Img, client2Img, client3Img]} />
 
   <!-- Destinations -->
-  <FeaturedDestinations page={page} />
+  <FeaturedDestinations contentKey={contentKey} />
 
   <!-- Why Choose Us -->
   <div class="bg-accent/5 mt-12 py-12">
     <TextCardSmall
       id="why-choose-us"
-      page="home"
+      contentKey="home"
       section="whyChooseUs"
       baseKey="global.sections.whyChooseUs"
-      contentKey="text"
+      fieldKey="text"
       imageAltKey="imageAlt"
       image={customClientImg}
       imageClass="object-right"
@@ -157,7 +159,7 @@ const reliableServiceContent = await marked.parse(
           href="#booking-form"
           variant="blue"
           title={t("global.sections.reliableService.title")}
-          class="w-full"
+          className="w-full"
           aria-label={`${t("global.sections.reliableService.cta.label")} - ${t("global.sections.reliableService.cta.sublabel")}`}
         >
           <div class="flex items-center justify-center gap-3 text-justify">
@@ -177,10 +179,10 @@ const reliableServiceContent = await marked.parse(
   </div>
 
   <!-- FAQs -->
-  <FaqSection page={page} />
+  <FaqSection contentKey={contentKey} />
 
   <!-- Transportation Services -->
-  <TransportationServices page={page} />
+  <TransportationServices contentKey={contentKey} />
 
   <!-- Locations -->
   <Locations />

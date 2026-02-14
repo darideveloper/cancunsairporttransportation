@@ -15,7 +15,7 @@ import { IoClose as CloseIcon } from "react-icons/io5";
 
 // Components
 import Logo from "../atoms/Logo.astro";
-import ButtonCta from "../atoms/ButtonCta.astro";
+import ButtonCta from "../atoms/ButtonCta";
 import NavLinks from "../molecules/NavLinks.astro";
 import NavLink from "../atoms/NavLink.astro";
 
@@ -71,7 +71,7 @@ const translateLink = pageKey
     </nav>
 
     <!-- cta -->
-    <ButtonCta href={CTA_LINK} class="hidden! lg:block!">
+    <ButtonCta href={CTA_LINK} className="hidden! lg:block!">
       {CTA_LABEL}
     </ButtonCta>
 
@@ -157,7 +157,7 @@ const translateLink = pageKey
     <div class="flex w-full justify-center">
       <ButtonCta
         href={CTA_LINK}
-        class="bg-yellow hover:bg-yellow-dark mx-auto my-10 inline-block w-11/12 font-bold text-black"
+        className="bg-yellow hover:bg-yellow-dark mx-auto my-10 inline-block w-11/12 font-bold text-black"
       >
         {CTA_LABEL}
       </ButtonCta>

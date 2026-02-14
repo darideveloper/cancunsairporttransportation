@@ -7,9 +7,9 @@ import { PHONES, SOCIAL_LINKS } from "../../data/site-config";
 
 // Components
 import LangLink from "../atoms/LangLink.astro";
-import ContactItem from "../atoms/ContactItem.astro";
 import SocialIcon from "../atoms/SocialIcon.astro";
 import SearchWidget from "../Search/SearchWidget";
+import ContactPhones from "./ContactPhones.astro";
 
 // Icons
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
@@ -44,14 +44,7 @@ const { pageKey, translatedPath } = Astro.props;
     <div
       class="hidden flex-col items-end gap-0 sm:flex md:flex-row md:items-center md:gap-4"
     >
-      <ContactItem
-        label={t("global.topbar.mexicoPhone")}
-        phone={PHONES.mexico.formatted}
-      />
-      <ContactItem
-        label={t("global.topbar.usaCanadaPhone")}
-        phone={PHONES.usa.formatted}
-      />
+      <ContactPhones />
     </div>
 
     <!-- Right: Socials -->

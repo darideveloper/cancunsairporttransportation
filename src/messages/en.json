@@ -12,6 +12,20 @@
         "privacy": "Read our Privacy Policy"
       }
     },
+    "needHelp": {
+      "title": "Need help with your reservation?",
+      "description": "We would be more than happy to help you. Our call center is at your service.",
+      "logos": {
+        "safeTravel": {
+          "alt": "Safe Travel Stamp",
+          "title": "Safe Travel Stamp"
+        },
+        "sct": {
+          "alt": "Ministry of Communications and Transportation",
+          "title": "Ministry of Communications and Transportation"
+        }
+      }
+    },
     "topbar": {
       "languageLabel": "Language",
       "mexicoPhone": "Mexico & Rest of the world",
@@ -328,9 +342,52 @@
         }
       },
       "whyChooseUs": {
-        "title": "Why use Cancun Airport Transportation by Go Transfers",
-        "imageAlt": "Our happy customers",
-        "text": "With many private transfer agencies in Cancun, it’s important to know why we stand out.\n\nAt Cancun Airport Transportation by Go, we understand that after a long flight, the last thing you want is to wait at the airport to get to your hotel and start your vacation. We know you’re tired from a flight of two hours or more, and the last thing you want is to deal with long taxi lines or wait nearly an hour for public transportation, dealing with the noise and movements of other passengers.\n\nThat’s why our transfer service is perfect for you: We offer lower prices than our competitors, first-class service, and a commitment to ensuring you enjoy your vacation to the fullest. For these reasons and more, choose us for your transportation needs."
+        "title": "Why choose us?",
+        "imageAlt": "Trip Advisor 2024",
+        "imageTitle": "2024 Traveller's Choice",
+        "text": "With many private transfer agencies in Cancun, it’s important to know why we stand out.\n\nAt Cancun Airport Transportation by Go, we understand that after a long flight, the last thing you want is to wait at the airport to get to your hotel and start your vacation. We know you’re tired from a flight of two hours or more, and the last thing you want is to deal with long taxi lines or wait nearly an hour for public transportation, dealing with the noise and movements of other passengers.\n\nThat’s why our transfer service is perfect for you: We offer lower prices than our competitors, first-class service, and a commitment to ensuring you enjoy your vacation to the fullest. For these reasons and more, choose us for your transportation needs.",
+        "items": [
+          {
+            "text": "10 Years of Experience",
+            "icon": "star"
+          },
+          {
+            "text": "Trip Advisor Traveller's Choice Awards 2024",
+            "icon": "trophy"
+          },
+          {
+            "text": "Private Transportation",
+            "icon": "userFriends"
+          },
+          {
+            "text": "Flight Monitoring",
+            "icon": "planeArrival"
+          },
+          {
+            "text": "Insurance Included",
+            "icon": "shieldAlt"
+          },
+          {
+            "text": "Reception at the airport",
+            "icon": "mapMarkerAlt"
+          },
+          {
+            "text": "No Waiting Time",
+            "icon": "clock"
+          },
+          {
+            "text": "Air Conditioned Vehicles",
+            "icon": "snowflake"
+          },
+          {
+            "text": "Multilingual Drivers",
+            "icon": "comments"
+          },
+          {
+            "text": "24/7 Availability",
+            "icon": "calendarAlt"
+          }
+        ]
       },
       "faq": {
         "description": "We help you to clear your doubts about our transportation services"
@@ -431,6 +488,14 @@
           "taxesIncluded": "Includes airport taxes and traveler's insurance",
           "service24h": "24H service hours"
         }
+      },
+      "vehicleCard": {
+        "maxPassengers": "Passengers",
+        "maxLuggage": "Luggage",
+        "priceFrom": "Price from",
+        "pricePerVehicle": "Price per vehicle",
+        "bookNow": "Book now",
+        "save": "Save"
       }
     }
   },
@@ -521,6 +586,11 @@
         "title": "Need help?",
         "text": "If you cannot find your reservation, please contact our support team."
       }
+    },
+    "register": {
+      "title": "Register | Cancun Airport Transportation",
+      "description": "Create an account with Cancun Airport Transportation to manage your bookings and access exclusive offers.",
+      "keywords": "register cancun transportation, create account cancun airport shuttle"
     },
     "home": {
       "title": "Cancun Airport Transportation | Private & Shuttle Transfers to Cancun and Riviera Maya",
@@ -1911,6 +1981,29 @@
         "previous": "Previous",
         "next": "Next"
       }
+    },
+    "results": {
+      "title": "Results",
+      "description": "Select the vehicle that suits your style and get ready for an unforgettable experience full of comfort, safety and fun - your adventure starts with choosing your ideal vehicle! 🚗✨",
+      "keywords": "cancun transportation results, search results",
+      "dynamicTitle": "Shuttle from {from} to {to}",
+      "sidebar": {
+        "route": {
+          "title": "Your travel **route**",
+          "modifyBtn": "Modify Route",
+          "mapAriaLabel": "Travel route map"
+        }
+      },
+      "loading": "Finding the best vehicles for you...",
+      "error": "Something went wrong while loading vehicles.",
+      "noVehicles": "No vehicles found.",
+      "retry": "Try Again",
+      "sorry": "We are sorry :(",
+      "noAvailabilityMessage": "Unfortunately we found no availability for the **Zone / Times** requested, but don't worry, we can solve it.",
+      "usaCanada": "USA & Canada",
+      "mexicoRest": "Mexico & Rest of the world",
+      "whatsapp": "WhatsApp",
+      "chat": "Chat"
     }
   }
 }
