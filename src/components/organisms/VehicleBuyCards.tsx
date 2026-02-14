@@ -67,7 +67,13 @@ export default function VehicleBuyCards({
       currency: vehicle.currencyCode,
       type: vehicle.vehicleType,
     });
-    // Future step: Navigate to results page or next step
+
+    // Determine locale-based redirect URL
+    const isSpanish = window.location.pathname.startsWith("/es");
+    const registerUrl = isSpanish ? "/es/registro" : "/register";
+
+    // Navigate to register page
+    window.location.assign(registerUrl);
   };
 
   if (loading) {
