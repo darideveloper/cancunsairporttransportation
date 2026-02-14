@@ -57,7 +57,7 @@ export default function SelectedVehicleCard({
   return (
     <div
       className={clsx(
-        "bg-gray/10 flex flex-col items-center gap-4 rounded-lg p-4 shadow-sm md:flex-row",
+        "bg-gray/10 flex flex-col items-center gap-4 rounded-xl p-4 shadow-sm md:flex-row",
         className,
       )}
     >

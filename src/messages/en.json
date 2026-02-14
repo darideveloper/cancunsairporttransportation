@@ -597,7 +597,16 @@
     "register": {
       "title": "RESERVATION DATA",
       "description": "Create an account with Cancun Airport Transportation to manage your bookings and access exclusive offers.",
-      "keywords": "register cancun transportation, create account cancun airport shuttle"
+      "keywords": "register cancun transportation, create account cancun airport shuttle",
+      "arrivalInformation": {
+        "title": "Arrival Information",
+        "pickupDate": "Pick-up Date",
+        "pickupTime": "Pick-up Time",
+        "airline": "Airline",
+        "flightNumber": "Flight Number",
+        "airlinePlaceholder": "What is your airline?",
+        "flightNumberPlaceholder": "What is your flight number?"
+      }
     },
     "home": {
       "title": "Cancun Airport Transportation | Private & Shuttle Transfers to Cancun and Riviera Maya",

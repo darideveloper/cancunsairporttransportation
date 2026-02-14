@@ -6,6 +6,7 @@ import Layout from '../../../layouts/Layout.astro'
 import PageSEO from '../../utils/PageSEO.astro'
 import BannerImage from '../../atoms/BannerImage.astro'
 import SelectedVehicleCard from '../../organisms/booking/SelectedVehicleCard'
+import ArrivalInformation from '../../molecules/ArrivalInformation'
 
 // Images
 import processBannerImg from '../../../assets/images/banners/process.png'
@@ -45,6 +46,11 @@ const t = useTranslations(lang)
       lang={lang}
       client:load
       className='mt-12'
+    />
+
+    <ArrivalInformation
+      lang={lang}
+      client:load
     />
   </div>
 </Layout>

@@ -596,7 +596,16 @@
     "register": {
       "title": "DATOS DE RESERVACIÓN",
       "description": "Crea una cuenta con Cancun Airport Transportation para gestionar tus reservas y acceder a ofertas exclusivas.",
-      "keywords": "registro transporte cancun, crear cuenta traslado aeropuerto cancun"
+      "keywords": "registro transporte cancun, crear cuenta traslado aeropuerto cancun",
+      "arrivalInformation": {
+        "title": "Información de Llegada",
+        "pickupDate": "Fecha de Recogida",
+        "pickupTime": "Hora de Recogida",
+        "airline": "Aerolínea",
+        "flightNumber": "Número de Vuelo",
+        "airlinePlaceholder": "¿Cuál es tu aerolínea?",
+        "flightNumberPlaceholder": "¿Cuál es tu número de vuelo?"
+      }
     },
     "home": {
       "title": "Transportación Confiable al Aeropuerto de Cancún | Traslados Privados y Transporte a Cancún y Riviera Maya",
