@@ -1,41 +1,44 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
 
 // Components
-import { Image } from "astro:assets";
-import H2 from "../atoms/H2.astro";
-import CheckListItem from "../atoms/CheckListItem";
+import { Image } from 'astro:assets'
+import H2 from '../atoms/H2'
+import CheckListItem from '../atoms/CheckListItem'
 
 // Lang
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 
 // Types
 interface Props {
-  contentKey: string;
-  image: ImageMetadata;
+  contentKey: string
+  image: ImageMetadata
 }
-const { contentKey, image } = Astro.props;
+const { contentKey, image } = Astro.props
 
 // Get includes data from translations
-const title = t(`pages.${contentKey}.includes.title`);
-const imageAlt = t(`pages.${contentKey}.includes.imageAlt`);
-const imageTitle = t(`pages.${contentKey}.includes.imageTitle`);
-const items = t("global.sections.includes.items");
+const title = t(`pages.${contentKey}.includes.title`)
+const imageAlt = t(`pages.${contentKey}.includes.imageAlt`)
+const imageTitle = t(`pages.${contentKey}.includes.imageTitle`)
+const items = t('global.sections.includes.items')
 ---
 
 <section
-  id="service-includes"
-  aria-labelledby="includes-title"
-  class="bg-accent/10 mt-12 py-4"
+  id='service-includes'
+  aria-labelledby='includes-title'
+  class='bg-accent/10 mt-12 py-4'
 >
   <div
-    class="container flex flex-col items-center justify-center gap-4 text-center md:flex-row md:text-left"
+    class='container flex flex-col items-center justify-center gap-4 text-center md:flex-row md:text-left'
   >
     <!-- Left side: Title and Image -->
-    <div class="title-image h-full w-full md:w-1/2">
-      <H2 id="includes-title" class="my-4">
+    <div class='title-image h-full w-full md:w-1/2'>
+      <H2
+        id='includes-title'
+        className='my-4'
+      >
         {title}
       </H2>
       <Image
@@ -44,15 +47,15 @@ const items = t("global.sections.includes.items");
         title={imageTitle}
         width={600}
         height={400}
-        loading="lazy"
-        class="mx-auto w-11/12 max-w-2xl"
+        loading='lazy'
+        class='mx-auto w-11/12 max-w-2xl'
       />
     </div>
 
     <!-- Right side: List of items -->
-    <div class="list-items w-full md:w-1/2">
+    <div class='list-items w-full md:w-1/2'>
       <ul
-        class="flex flex-wrap items-center justify-center gap-2 md:justify-start"
+        class='flex flex-wrap items-center justify-center gap-2 md:justify-start'
       >
         {items.map((item: string) => <CheckListItem text={item} />)}
       </ul>

@@ -1,43 +1,50 @@
 ---
 // Layout
-import Layout from "../../../layouts/Layout.astro";
+import Layout from '../../../layouts/Layout.astro'
 
 // Components
-import PageSEO from "../../utils/PageSEO.astro";
-import SectionHeading from "../../molecules/SectionHeading.astro";
+import PageSEO from '../../utils/PageSEO.astro'
+import BannerImage from '../../atoms/BannerImage.astro'
+import SelectedVehicleCard from '../../organisms/SelectedVehicleCard'
+
+// Images
+import processBannerImg from '../../../assets/images/banners/process.png'
 
 // Libs
-import { useTranslations } from "../../../lib/i18n/utils";
+import { useTranslations } from '../../../lib/i18n/utils'
 
 interface Props {
-  lang: "en" | "es";
-  pageKey: string;
+  lang: 'en' | 'es'
+  pageKey: string
 }
 
-const { lang, pageKey } = Astro.props;
-const t = useTranslations(lang);
+const { lang, pageKey } = Astro.props
+const t = useTranslations(lang)
 ---
 
 <Layout pageKey={pageKey}>
-  <PageSEO currentPage="register" slot="seo" />
+  <PageSEO
+    currentPage='register'
+    slot='seo'
+  />
 
-  <div class="container py-24">
-    <SectionHeading
-      title={t("pages.register.title")}
-      isH1
-      class="text-center"
-    >
-      <p class="mt-4 text-lg text-gray-600">
-        {t("pages.register.description")}
-      </p>
-    </SectionHeading>
+  <BannerImage
+    src={processBannerImg}
+    alt={t('pages.register.title')}
+    title={t('pages.register.title')}
+    class='-mt-6 h-[200px]!'
+  >
+    <h1 class='mx-auto w-11/12 text-4xl font-bold md:text-5xl'>
+      {t('pages.register.title')}
+    </h1>
+  </BannerImage>
 
-    <div class="mt-12 flex justify-center">
-      <div class="w-full max-w-md rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
-        <p class="text-center text-gray-500 italic">
-          Register form coming soon...
-        </p>
-      </div>
-    </div>
+  <div class='container max-w-4xl'>
+    <!-- Selected Vehicle Summary -->
+    <SelectedVehicleCard
+      lang={lang}
+      client:load
+      className='mt-12'
+    />
   </div>
 </Layout>

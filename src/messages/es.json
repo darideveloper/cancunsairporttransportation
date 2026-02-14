@@ -183,7 +183,14 @@
         "pickupTime": "Hora de llegada",
         "passengers": "Pasajeros"
       },
-      "submit": "Buscar"
+      "submit": "Buscar",
+      "summary": {
+        "capacity": "Capacidad {maxPassengers} pasajeros.",
+        "passengers": "Pasajeros: {count}",
+        "origin": "Origen: {location}",
+        "destination": "Destino: {location}",
+        "privateTransportation": "Transporte privado"
+      }
     },
     "ratesTable": {
       "title": "Tarifas de Transportación Aeropuerto Cancún",
@@ -587,7 +594,7 @@
       }
     },
     "register": {
-      "title": "Registro | Cancun Airport Transportation",
+      "title": "DATOS DE RESERVACIÓN",
       "description": "Crea una cuenta con Cancun Airport Transportation para gestionar tus reservas y acceder a ofertas exclusivas.",
       "keywords": "registro transporte cancun, crear cuenta traslado aeropuerto cancun"
     },

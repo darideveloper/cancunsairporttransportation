@@ -70,6 +70,17 @@ export default function VehicleBuyCard({
     }
   };
 
+  const specifications = [
+    {
+      Icon: FaUserFriends,
+      text: `${maxPassengers} ${labels.maxPassengers}`,
+    },
+    {
+      Icon: FaSuitcase,
+      text: `${maxLuggage} ${labels.maxLuggage}`,
+    },
+  ];
+
   return (
     <article
       className="border-gray/25 grid grid-cols-1 gap-4 border-b pb-6 xl:grid-cols-4"
@@ -108,26 +119,18 @@ export default function VehicleBuyCard({
             />
           </div>
           {/* Capacity Icons */}
-          <div className="">
-            <span
-              className="flex items-center gap-2"
-              aria-label={`Maximum ${maxPassengers} passengers`}
-            >
-              <FaUserFriends className="" aria-hidden="true" />
-              <span className="">
-                {maxPassengers} {labels.maxPassengers}
-              </span>
-            </span>
-
-            <span
-              className="flex items-center gap-2"
-              aria-label={`Maximum ${maxLuggage} luggage`}
-            >
-              <FaSuitcase className="" aria-hidden="true" />
-              <span className="">
-                {maxLuggage} {labels.maxLuggage}
-              </span>
-            </span>
+          <div className="flex flex-col gap-1">
+            {specifications.map((spec, index) => (
+              <CheckListItem
+                key={index}
+                as="div"
+                unstyled
+                Icon={spec.Icon}
+                iconColor="text-gray-900"
+                text={spec.text}
+                className="px-0! py-0!"
+              />
+            ))}
           </div>
         </div>
       </div>

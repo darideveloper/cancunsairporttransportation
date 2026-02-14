@@ -1,82 +1,86 @@
 ---
 // Layout
-import Layout from "../../../layouts/Layout.astro";
+import Layout from '../../../layouts/Layout.astro'
 
 // Libs
-import { useTranslations } from "../../../lib/i18n/utils";
-import PageSEO from "../../../components/utils/PageSEO.astro";
-import SectionHeading from "../../../components/molecules/SectionHeading.astro";
+import { useTranslations } from '../../../lib/i18n/utils'
+import PageSEO from '../../../components/utils/PageSEO.astro'
+import SectionHeading from '../../../components/molecules/SectionHeading.astro'
 // Components
-import Input from "../../../components/atoms/form/Input.astro";
-import ButtonCta from "../../../components/atoms/ButtonCta";
-import H2 from "../../atoms/H2.astro";
+import Input from '../../../components/atoms/form/Input.tsx'
+import ButtonCta from '../../../components/atoms/ButtonCta'
+import H2 from '../../atoms/H2'
 
 interface Props {
-  lang: "en" | "es";
-  pageKey: string;
+  lang: 'en' | 'es'
+  pageKey: string
 }
 
-const { lang, pageKey } = Astro.props;
-const t = useTranslations(lang);
+const { lang, pageKey } = Astro.props
+const t = useTranslations(lang)
 
-const action = lang === "es" ? "/es/mi-reservacion" : "/my-reservation";
+const action = lang === 'es' ? '/es/mi-reservacion' : '/my-reservation'
 ---
 
 <Layout pageKey={pageKey}>
-  <PageSEO currentPage="reservation" slot="seo" />
+  <PageSEO
+    currentPage='reservation'
+    slot='seo'
+  />
 
-  <section class="">
-    <div class="bg-accent mb-16 w-full py-12 text-center text-black">
-      <div class="container mx-auto">
-        <h1 class="font-title text-3xl! font-bold uppercase md:text-5xl">
-          {t("pages.reservation.title")}
+  <section class=''>
+    <div class='bg-accent mb-16 w-full py-12 text-center text-black'>
+      <div class='container mx-auto'>
+        <h1 class='font-title text-3xl! font-bold uppercase md:text-5xl'>
+          {t('pages.reservation.title')}
         </h1>
       </div>
     </div>
 
-    <div class="container mx-auto max-w-xl! px-4">
+    <div class='container mx-auto max-w-xl! px-4'>
       <form
         action={action}
-        method="POST"
-        class="bg-gray-light flex flex-col gap-6 rounded-2xl p-8 shadow-sm"
+        method='POST'
+        class='bg-gray-light flex flex-col gap-6 rounded-2xl p-8 shadow-sm'
       >
-        <H2 class="text-center uppercase">
-          {t("pages.reservation.form.heading")}
+        <H2 className='text-center uppercase'>
+          {t('pages.reservation.form.heading')}
         </H2>
         <Input
-          name="code"
-          label={t("pages.reservation.form.code.label")}
+          name='code'
+          label={t('pages.reservation.form.code.label')}
           required
         />
 
         <Input
-          name="email"
-          type="email"
-          label={t("pages.reservation.form.email.label")}
+          name='email'
+          type='email'
+          label={t('pages.reservation.form.email.label')}
           required
         />
 
         <input
-          type="hidden"
-          name="_token"
-          value="pWWBCOYl0LodEcwfGxqPtnqlwjdk2DoBTjb7MjCs"
-          autocomplete="off"
+          type='hidden'
+          name='_token'
+          value='pWWBCOYl0LodEcwfGxqPtnqlwjdk2DoBTjb7MjCs'
+          autocomplete='off'
         />
 
-        <div class="mt-4 flex justify-center">
+        <div class='mt-4 flex justify-center'>
           <ButtonCta
-            type="submit"
-            class="w-full! min-w-[200px] md:w-auto"
-            variant="blue"
+            type='submit'
+            className='w-full! min-w-[200px] md:w-auto'
+            '
+            variant='blue'
           >
-            {t("pages.reservation.form.submit")}
+            {t('pages.reservation.form.submit')}
           </ButtonCta>
         </div>
       </form>
 
-      <div class="mt-12 text-center">
-        <h3 class="mb-2 font-bold">{t("pages.reservation.help.title")}</h3>
-        <p class="text-gray-600">{t("pages.reservation.help.text")}</p>
+      <div class='mt-12 text-center'>
+        <h3 class='mb-2 font-bold'>{t('pages.reservation.help.title')}</h3>
+        <p class='text-gray-600'>{t('pages.reservation.help.text')}</p>
       </div>
     </div>
   </section>

@@ -1,52 +1,52 @@
 ---
-import { Image } from "astro:assets";
-import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
-import H2 from "../atoms/H2.astro";
-import ContactPhones from "../molecules/ContactPhones.astro";
+import { Image } from 'astro:assets'
+import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+import H2 from '../atoms/H2'
+import ContactPhones from '../molecules/ContactPhones.astro'
 
 // Images
-import logoSafeTravel from "../../assets/images/process/safe_travel.jpg";
-import logoSct from "../../assets/images/process/sct.png";
+import logoSafeTravel from '../../assets/images/process/safe_travel.jpg'
+import logoSct from '../../assets/images/process/sct.png'
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 
 const logos = [
   {
     src: logoSafeTravel,
-    alt: t("global.needHelp.logos.safeTravel.alt"),
-    title: t("global.needHelp.logos.safeTravel.title"),
+    alt: t('global.needHelp.logos.safeTravel.alt'),
+    title: t('global.needHelp.logos.safeTravel.title'),
   },
   {
     src: logoSct,
-    alt: t("global.needHelp.logos.sct.alt"),
-    title: t("global.needHelp.logos.sct.title"),
+    alt: t('global.needHelp.logos.sct.alt'),
+    title: t('global.needHelp.logos.sct.title'),
   },
-];
+]
 ---
 
 <!-- Help -->
-<div class="mt-8 text-sm">
-  <H2 class="mb-0 border-b text-left">
-    {t("global.needHelp.title")}
+<div class='mt-8 text-sm'>
+  <H2 className='mb-0 border-b text-left'>
+    {t('global.needHelp.title')}
   </H2>
-  <p class="my-4">
-    {t("global.needHelp.description")}
+  <p class='my-4'>
+    {t('global.needHelp.description')}
   </p>
-  <ContactPhones class="mb-4 flex-col items-start justify-start" />
+  <ContactPhones class='mb-4 flex-col items-start justify-start' />
   <!-- Logos -->
-  <div class="flex items-center gap-4">
+  <div class='flex items-center gap-4'>
     {
       logos.map((logo) => (
         <Image
           src={logo.src}
           alt={logo.alt}
           title={logo.title}
-          loading="lazy"
-          decoding="async"
+          loading='lazy'
+          decoding='async'
           width={100}
           height={100}
-          class="h-24 w-auto"
+          class='h-24 w-auto'
         />
       ))
     }

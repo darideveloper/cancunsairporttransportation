@@ -1,107 +1,113 @@
 ---
 // Layout
-import Layout from "../../../layouts/Layout.astro";
+import Layout from '../../../layouts/Layout.astro'
 
 // Libs
-import { useTranslations } from "../../../lib/i18n/utils";
-import { getStaticPathsLangs } from "../../../lib/utils";
-import { marked } from "marked";
+import { useTranslations } from '../../../lib/i18n/utils'
+import { getStaticPathsLangs } from '../../../lib/utils'
+import { marked } from 'marked'
 
 // i18n
 // export const getStaticPaths = getStaticPathsLangs;
 
 // Components
-import { Image } from "astro:assets";
-import PageSEO from "../../../components/utils/PageSEO.astro";
-import BannerImage from "../../../components/atoms/BannerImage.astro";
-import ButtonCta from "../../../components/atoms/ButtonCta";
-import RatesTable from "../../../components/organisms/RatesTable.astro";
-import TextCard from "../../../components/molecules/TextCard.astro";
-import BookingForm from "../../../components/organisms/BookingForm";
-import TextCardHalf from "../../../components/organisms/TextCardHalf.astro";
-import TextCardSmall from "../../../components/organisms/TextCardSmall.astro";
-import FeaturedDestinations from "../../../components/organisms/FeaturedDestinations.astro";
-import BannerCta from "../../../components/organisms/BannerCta.astro";
-import BannerStats from "../../../components/organisms/BannerStats.astro";
-import PricingSection from "../../../components/organisms/PricingSection.astro";
-import Testimonials from "../../../components/organisms/Testimonials.astro";
-import FaqSection from "../../../components/organisms/FaqSection.astro";
-import TransportationServices from "../../../components/organisms/TransportationServices.astro";
-import Locations from "../../../components/organisms/Locations.astro";
+import { Image } from 'astro:assets'
+import PageSEO from '../../../components/utils/PageSEO.astro'
+import BannerImage from '../../../components/atoms/BannerImage.astro'
+import ButtonCta from '../../../components/atoms/ButtonCta'
+import RatesTable from '../../../components/organisms/RatesTable.astro'
+import TextCard from '../../../components/molecules/TextCard.astro'
+import BookingForm from '../../../components/organisms/BookingForm'
+import TextCardHalf from '../../../components/organisms/TextCardHalf.astro'
+import TextCardSmall from '../../../components/organisms/TextCardSmall.astro'
+import FeaturedDestinations from '../../../components/organisms/FeaturedDestinations.astro'
+import BannerCta from '../../../components/organisms/BannerCta.astro'
+import BannerStats from '../../../components/organisms/BannerStats.astro'
+import PricingSection from '../../../components/organisms/PricingSection.astro'
+import Testimonials from '../../../components/organisms/Testimonials.astro'
+import FaqSection from '../../../components/organisms/FaqSection.astro'
+import TransportationServices from '../../../components/organisms/TransportationServices.astro'
+import Locations from '../../../components/organisms/Locations.astro'
 
 // Images
-import homeBannerImg from "../../../assets/images/home-banner.webp";
-import safeTripBookingImg from "../../../assets/images/trip-advisor.webp";
-import customClientImg from "../../../assets/images/clients/custom-client.webp";
-import client1Img from "../../../assets/images/clients/1.webp";
-import client2Img from "../../../assets/images/clients/2.webp";
-import client3Img from "../../../assets/images/clients/3.webp";
-import clientAppEsImg from "../../../assets/images/clients/client-app-es.webp";
+import homeBannerImg from '../../../assets/images/home-banner.webp'
+import safeTripBookingImg from '../../../assets/images/trip-advisor.webp'
+import customClientImg from '../../../assets/images/clients/custom-client.webp'
+import client1Img from '../../../assets/images/clients/1.webp'
+import client2Img from '../../../assets/images/clients/2.webp'
+import client3Img from '../../../assets/images/clients/3.webp'
+import clientAppEsImg from '../../../assets/images/clients/client-app-es.webp'
 
 // Icons
-import { FaImages } from "react-icons/fa";
+import { FaImages } from 'react-icons/fa'
 
 // Page data
 // Props
 interface Props {
-  lang: "en" | "es";
-  pageKey: string;
+  lang: 'en' | 'es'
+  pageKey: string
 }
 // Get language from params or props
-const { lang, pageKey } = Astro.props;
+const { lang, pageKey } = Astro.props
 
 // Page data
-const contentKey = pageKey || "home";
+const contentKey = pageKey || 'home'
 
 // Tranlation texts
-const t = useTranslations(lang);
+const t = useTranslations(lang)
 const reliableServiceContent = await marked.parse(
-  t("global.sections.reliableService.description"),
-);
+  t('global.sections.reliableService.description'),
+)
 
 // Data
 ---
 
-<Layout preloadImage={homeBannerImg.src} pageKey={pageKey}>
+<Layout
+  preloadImage={homeBannerImg.src}
+  pageKey={pageKey}
+>
   <!-- Page SEO -->
-  <PageSEO currentPage={contentKey} slot="seo" />
+  <PageSEO
+    currentPage={contentKey}
+    slot='seo'
+  />
 
   <!-- Hero -->
   <BannerImage
     src={homeBannerImg}
     alt={t(`pages.${contentKey}.bannerAlt`)}
     title={t(`pages.${contentKey}.bannerImageTitle`)}
-    class="-mt-6"
+    class='-mt-6'
   >
-    <h1 class="mx-auto w-11/12 text-4xl font-bold md:text-5xl">
+    <h1 class='mx-auto w-11/12 text-4xl font-bold md:text-5xl'>
       {t(`pages.${contentKey}.bannerTitle`)}
     </h1>
   </BannerImage>
 
   <!-- Form -->
-  <div class="@container">
+  <div class='@container'>
     <BookingForm
-      translations={t("global.booking")}
+      translations={t('global.booking')}
       client:idle
-      className="-mt-28"
+      className='-mt-28'
     />
   </div>
 
   <!-- Banner with image and text -->
   <TextCardHalf
-    id="safe-trip-booking"
-    contentKey="home"
-    section="safeTrip"
-    baseKey="global.sections.safeTrip"
-    fieldKey="text"
+    id='safe-trip-booking'
+    contentKey='home'
+    section='safeTrip'
+    baseKey='global.sections.safeTrip'
+    fieldKey='text'
     image={safeTripBookingImg}
-    imageClass="object-left"
+    imageClass='object-left'
   />
 
   <!-- Banner CTA -->
   <BannerCta
     contentKey={contentKey}
-    imageClass="sm:w-1/2 h-[115%] md:w-auto md:h-[120%]"
+    imageClass='sm:w-1/2 h-[115%] md:w-auto md:h-[120%]'
   />
 
   <!-- Pricing transportation -->
@@ -117,16 +123,16 @@ const reliableServiceContent = await marked.parse(
   <FeaturedDestinations contentKey={contentKey} />
 
   <!-- Why Choose Us -->
-  <div class="bg-accent/5 mt-12 py-12">
+  <div class='bg-accent/5 mt-12 py-12'>
     <TextCardSmall
-      id="why-choose-us"
-      contentKey="home"
-      section="whyChooseUs"
-      baseKey="global.sections.whyChooseUs"
-      fieldKey="text"
-      imageAltKey="imageAlt"
+      id='why-choose-us'
+      contentKey='home'
+      section='whyChooseUs'
+      baseKey='global.sections.whyChooseUs'
+      fieldKey='text'
+      imageAltKey='imageAlt'
       image={customClientImg}
-      imageClass="object-right"
+      imageClass='object-right'
     />
   </div>
 
@@ -134,42 +140,45 @@ const reliableServiceContent = await marked.parse(
   <RatesTable />
 
   <!-- Reliable Transportation Service -->
-  <div class="mt-12 bg-[#f5f7fa] py-12">
+  <div class='mt-12 bg-[#f5f7fa] py-12'>
     <TextCard
-      id="reliable-transportation"
-      title={t("global.sections.reliableService.title")}
-      class="flex flex-col-reverse items-center gap-8 md:flex-row-reverse"
+      id='reliable-transportation'
+      title={t('global.sections.reliableService.title')}
+      class='flex flex-col-reverse items-center gap-8 md:flex-row-reverse'
     >
       <Image
-        slot="image"
+        slot='image'
         src={clientAppEsImg}
-        alt={t("global.sections.reliableService.title")}
-        title={t("global.sections.reliableService.title")}
+        alt={t('global.sections.reliableService.title')}
+        title={t('global.sections.reliableService.title')}
         widths={[400, 800, clientAppEsImg.width]}
-        sizes="(max-width: 768px) 400px, 800px"
+        sizes='(max-width: 768px) 400px, 800px'
         quality={60}
-        format="avif"
-        loading="lazy"
-        decoding="async"
-        class="h-full w-full rounded-xl object-cover md:w-1/2"
+        format='avif'
+        loading='lazy'
+        decoding='async'
+        class='h-full w-full rounded-xl object-cover md:w-1/2'
       />
-      <div class="flex flex-col gap-8">
-        <div set:html={reliableServiceContent} class="markdown" />
+      <div class='flex flex-col gap-8'>
+        <div
+          set:html={reliableServiceContent}
+          class='markdown'
+        />
         <ButtonCta
-          href="#booking-form"
-          variant="blue"
-          title={t("global.sections.reliableService.title")}
-          className="w-full"
-          aria-label={`${t("global.sections.reliableService.cta.label")} - ${t("global.sections.reliableService.cta.sublabel")}`}
+          href='#booking-form'
+          variant='blue'
+          title={t('global.sections.reliableService.title')}
+          className='w-full'
+          aria-label={`${t('global.sections.reliableService.cta.label')} - ${t('global.sections.reliableService.cta.sublabel')}`}
         >
-          <div class="flex items-center justify-center gap-3 text-justify">
-            <FaImages className="text-3xl" />
-            <div class="flex flex-col leading-tight">
-              <span class="text-lg font-bold"
-                >{t("global.sections.reliableService.cta.label")}</span
+          <div class='flex items-center justify-center gap-3 text-justify'>
+            <FaImages className='text-3xl' />
+            <div class='flex flex-col leading-tight'>
+              <span class='text-lg font-bold'
+                >{t('global.sections.reliableService.cta.label')}</span
               >
-              <span class="text-xs font-light"
-                >{t("global.sections.reliableService.cta.sublabel")}</span
+              <span class='text-xs font-light'
+                >{t('global.sections.reliableService.cta.sublabel')}</span
               >
             </div>
           </div>

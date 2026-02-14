@@ -1,107 +1,110 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
 
 // Components
-import H2 from "../atoms/H2.astro";
-import Testimonial from "../molecules/Testimonial.astro";
+import H2 from '../atoms/H2'
+import Testimonial from '../molecules/Testimonial.astro'
 
 // Lang
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 
 // Props
 interface Props {
-  contentKey?: string;
-  images: ImageMetadata[];
-  count?: number;
-  class?: string;
+  contentKey?: string
+  images: ImageMetadata[]
+  count?: number
+  class?: string
 }
 const {
   contentKey,
   images,
   count: explicitCount,
   class: className,
-} = Astro.props;
+} = Astro.props
 
 // Translation path
 const basePath = contentKey
   ? `pages.${contentKey}.testimonials`
-  : "pages.home.testimonials";
+  : 'pages.home.testimonials'
 
 // Get testimonials items from translations to determine count if not provided
-const testimonialsItems = t(`${basePath}.items`);
+const testimonialsItems = t(`${basePath}.items`)
 const translationCount = testimonialsItems
   ? Object.keys(testimonialsItems).length
-  : 0;
+  : 0
 
-const count = explicitCount || translationCount || 3;
+const count = explicitCount || translationCount || 3
 
 // Date
-const today = new Date();
-const month = String(today.getMonth() + 1).padStart(2, "0");
-const year = today.getFullYear();
-const currentDate = `${month}/${year}`;
+const today = new Date()
+const month = String(today.getMonth() + 1).padStart(2, '0')
+const year = today.getFullYear()
+const currentDate = `${month}/${year}`
 
 const testimonials = Array.from({ length: count }, (_, i) => ({
   key: `item${i + 1}`,
   image: images[i % images.length],
   date: currentDate,
-}));
+}))
 
 const gridClass =
   {
-    1: "md:grid-cols-1 max-w-xl mx-auto",
-    2: "md:grid-cols-2 max-w-4xl mx-auto",
-    3: "md:grid-cols-3",
-    4: "md:grid-cols-2 lg:grid-cols-4",
-  }[count] || "md:grid-cols-3";
+    1: 'md:grid-cols-1 max-w-xl mx-auto',
+    2: 'md:grid-cols-2 max-w-4xl mx-auto',
+    3: 'md:grid-cols-3',
+    4: 'md:grid-cols-2 lg:grid-cols-4',
+  }[count] || 'md:grid-cols-3'
 
 // JSON-LD Structured Data
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
   itemListElement: testimonials.map((item, index) => ({
-    "@type": "ListItem",
+    '@type': 'ListItem',
     position: index + 1,
     item: {
-      "@type": "Review",
+      '@type': 'Review',
       author: {
-        "@type": "Person",
+        '@type': 'Person',
         name: t(`${basePath}.items.${item.key}.name`),
       },
       reviewBody: t(`${basePath}.items.${item.key}.text`),
       reviewRating: {
-        "@type": "Rating",
+        '@type': 'Rating',
         ratingValue: t(`${basePath}.items.${item.key}.stars`),
-        bestRating: "5",
+        bestRating: '5',
       },
       datePublished: item.date,
       publisher: {
-        "@type": "Organization",
-        name: t("global.branding.businessName"),
+        '@type': 'Organization',
+        name: t('global.branding.businessName'),
       },
     },
   })),
-};
+}
 ---
 
 <section
-  id="testimonials"
-  aria-labelledby="testimonials-title"
+  id='testimonials'
+  aria-labelledby='testimonials-title'
   class={`pt-12 ${className}`}
 >
-  <div class="container px-4 md:px-8">
-    <div class="mb-4 text-center">
-      <H2 id="testimonials-title" class="">
+  <div class='container px-4 md:px-8'>
+    <div class='mb-4 text-center'>
+      <H2
+        id='testimonials-title'
+        className=''
+      >
         {t(`${basePath}.title`)}
       </H2>
-      <p class="text-md text-gray mx-auto max-w-2xl">
+      <p class='text-md text-gray mx-auto max-w-2xl'>
         {t(`${basePath}.description`)}
       </p>
     </div>
 
-    <div class:list={["grid grid-cols-1 gap-7", gridClass]}>
+    <div class:list={['grid grid-cols-1 gap-7', gridClass]}>
       {
         testimonials.map((item) => (
           <Testimonial
@@ -118,5 +121,8 @@ const jsonLd = {
     </div>
   </div>
 
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script
+    type='application/ld+json'
+    set:html={JSON.stringify(jsonLd)}
+  />
 </section>
