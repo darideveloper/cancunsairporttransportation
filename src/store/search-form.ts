@@ -8,6 +8,17 @@ export interface LocationData {
   address?: string;
 }
 
+export interface SelectedVehicle {
+  token: string;
+  name: string;
+  image: string;
+  maxPassengers: number;
+  maxLuggage: number;
+  price: number;
+  currency: string;
+  type?: string;
+}
+
 interface SearchFormState {
   tripType: "oneWay" | "roundTrip";
   currency: "USD" | "MXN";
@@ -20,7 +31,9 @@ interface SearchFormState {
   returnDate: string;
   returnTime: string;
   passengers: number;
-  selectedVehicleToken: string | null;
+  selectedVehicle: SelectedVehicle | null;
+  airline: string;
+  flightNumber: string;
   setTripType: (tripType: "oneWay" | "roundTrip") => void;
   setCurrency: (currency: "USD" | "MXN") => void;
   setLocationFrom: (location: string | LocationData) => void;
@@ -30,7 +43,9 @@ interface SearchFormState {
   setReturnDate: (returnDate: string) => void;
   setReturnTime: (returnTime: string) => void;
   setPassengers: (passengers: number) => void;
-  setSelectedVehicleToken: (token: string | null) => void;
+  setSelectedVehicle: (vehicle: SelectedVehicle | null) => void;
+  setAirline: (airline: string) => void;
+  setFlightNumber: (flightNumber: string) => void;
 }
 
 export const useSearchFormStore = create<SearchFormState>()(
@@ -47,7 +62,9 @@ export const useSearchFormStore = create<SearchFormState>()(
       returnDate: "",
       returnTime: "",
       passengers: 1,
-      selectedVehicleToken: null,
+      selectedVehicle: null,
+      airline: "",
+      flightNumber: "",
       setTripType: (tripType) => set({ tripType }),
       setCurrency: (currency) => set({ currency }),
       setLocationFrom: (location) => {
@@ -69,8 +86,7 @@ export const useSearchFormStore = create<SearchFormState>()(
       setReturnDate: (returnDate) => set({ returnDate }),
       setReturnTime: (returnTime) => set({ returnTime }),
       setPassengers: (passengers) => set({ passengers }),
-      setSelectedVehicleToken: (selectedVehicleToken) =>
-        set({ selectedVehicleToken }),
+      setSelectedVehicle: (selectedVehicle) => set({ selectedVehicle }),
       setAirline: (airline) => set({ airline }),
       setFlightNumber: (flightNumber) => set({ flightNumber }),
     }),
@@ -89,7 +105,7 @@ export const useSearchFormStore = create<SearchFormState>()(
         returnDate: state.returnDate,
         returnTime: state.returnTime,
         passengers: state.passengers,
-        selectedVehicleToken: state.selectedVehicleToken,
+        selectedVehicle: state.selectedVehicle,
         airline: state.airline,
         flightNumber: state.flightNumber,
       }),

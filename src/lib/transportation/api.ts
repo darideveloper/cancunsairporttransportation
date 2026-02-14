@@ -118,6 +118,7 @@ export async function getVehicles(
           // Actually, interface likely expects it. Let's make it optional in UI or handle here.
           // Checking VehicleBuyCardProps: it has originalPrice?: number.
           originalPrice: undefined,
+          vehicleType: featureData?.name,
           rating: featureData
             ? parseFloat(featureData.rating.split("/")[0])
             : 5,
