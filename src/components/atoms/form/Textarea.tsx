@@ -22,10 +22,7 @@ export default function Textarea({
 }: TextareaProps) {
   return (
     <div className={containerClassName}>
-      <label
-        htmlFor={name}
-        className={clsx("mb-2 block font-bold", containerClassName)}
-      >
+      <label htmlFor={name} className="mb-2 block font-bold">
         {label}
       </label>
       <div className="focus-within:text-accent relative text-gray-500">
