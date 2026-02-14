@@ -9,8 +9,7 @@ import { useTranslations } from '../../../lib/i18n/utils'
 import PageSEO from '../../../components/utils/PageSEO.astro'
 import RatesTable from '../../../components/organisms/RatesTable.astro'
 import BookingForm from '../../../components/organisms/booking/BookingForm'
-import TextCardHalf from '../../../components/organisms/TextCardHalf.astro'
-import TextCardSmall from '../../../components/organisms/TextCardSmall.astro'
+import FeatureBanner from '../../../components/organisms/FeatureBanner.astro'
 import PopularHotels from '../../../components/organisms/PopularHotels.astro'
 import BannerStats from '../../../components/organisms/BannerStats.astro'
 import PricingSection from '../../../components/organisms/PricingSection.astro'
@@ -74,12 +73,13 @@ const t = useTranslations(lang)
   <BannerStats />
 
   <!-- Banner with image and text -->
-  <TextCardHalf
+  <FeatureBanner
     id='safe-trip-booking'
     contentKey={contentKey}
     section='safeTrip'
     image={safeTripBookingImg}
     imageClass='object-right'
+    layout='grid'
   />
 
   <!-- Pricing transportation -->
@@ -87,13 +87,14 @@ const t = useTranslations(lang)
 
   <!-- How to move -->
   <div class='bg-accent/5 mt-12 py-12'>
-    <TextCardSmall
+    <FeatureBanner
       id='how-to-move'
       contentKey={contentKey}
       section='howToMove'
       fieldKey='content'
       image={howToMoveImg}
       imageClass='object-right'
+      layout='flex'
     />
   </div>
 
