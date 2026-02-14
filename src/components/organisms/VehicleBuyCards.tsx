@@ -11,6 +11,7 @@ import NoAvailability from "./NoAvailability";
 // Utils
 import { getVehicles } from "../../lib/transportation/api";
 import { useTranslations } from "../../lib/i18n/utils";
+import { useSearchFormStore } from "../../store/search-form";
 
 interface VehicleBuyCardsProps {
   initialVehicles?: VehicleBuyCardProps[];
@@ -31,6 +32,9 @@ export default function VehicleBuyCards({
   const [error, setError] = useState(false);
 
   const t = useTranslations(lang);
+  const setSelectedVehicleToken = useSearchFormStore(
+    (state) => state.setSelectedVehicleToken,
+  );
 
   const fetchVehicles = async () => {
     setLoading(true);
@@ -51,6 +55,11 @@ export default function VehicleBuyCards({
       fetchVehicles();
     }
   }, [lang]);
+
+  const handleVehicleSelect = (token: string) => {
+    setSelectedVehicleToken(token);
+    // Future step: Navigate to results page or next step
+  };
 
   if (loading) {
     return (
@@ -83,7 +92,11 @@ export default function VehicleBuyCards({
   return (
     <div className="w-full space-y-6">
       {vehicles.map((vehicle, index) => (
-        <VehicleBuyCard key={`${vehicle.vehicleName}-${index}`} {...vehicle} />
+        <VehicleBuyCard
+          key={`${vehicle.vehicleName}-${index}`}
+          {...vehicle}
+          onSelect={handleVehicleSelect}
+        />
       ))}
     </div>
   );

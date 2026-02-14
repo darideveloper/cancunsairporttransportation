@@ -20,6 +20,7 @@ interface SearchFormState {
   returnDate: string;
   returnTime: string;
   passengers: number;
+  selectedVehicleToken: string | null;
   setTripType: (tripType: "oneWay" | "roundTrip") => void;
   setCurrency: (currency: "USD" | "MXN") => void;
   setLocationFrom: (location: string | LocationData) => void;
@@ -29,6 +30,7 @@ interface SearchFormState {
   setReturnDate: (returnDate: string) => void;
   setReturnTime: (returnTime: string) => void;
   setPassengers: (passengers: number) => void;
+  setSelectedVehicleToken: (token: string | null) => void;
 }
 
 export const useSearchFormStore = create<SearchFormState>()(
@@ -45,6 +47,7 @@ export const useSearchFormStore = create<SearchFormState>()(
       returnDate: "",
       returnTime: "",
       passengers: 1,
+      selectedVehicleToken: null,
       setTripType: (tripType) => set({ tripType }),
       setCurrency: (currency) => set({ currency }),
       setLocationFrom: (location) => {
@@ -66,6 +69,10 @@ export const useSearchFormStore = create<SearchFormState>()(
       setReturnDate: (returnDate) => set({ returnDate }),
       setReturnTime: (returnTime) => set({ returnTime }),
       setPassengers: (passengers) => set({ passengers }),
+      setSelectedVehicleToken: (selectedVehicleToken) =>
+        set({ selectedVehicleToken }),
+      setAirline: (airline) => set({ airline }),
+      setFlightNumber: (flightNumber) => set({ flightNumber }),
     }),
     {
       name: "search-form-storage",
@@ -82,6 +89,9 @@ export const useSearchFormStore = create<SearchFormState>()(
         returnDate: state.returnDate,
         returnTime: state.returnTime,
         passengers: state.passengers,
+        selectedVehicleToken: state.selectedVehicleToken,
+        airline: state.airline,
+        flightNumber: state.flightNumber,
       }),
     },
   ),
