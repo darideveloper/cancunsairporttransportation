@@ -106,3 +106,45 @@ const alternateUrls = translatedPath
     </div>
   </article>
 </Layout>
+
+<script>
+  // Parallax
+  const setupParallax = () => {
+    const banner = document.querySelector('.parallax')
+    if (!banner) return
+
+    const img = banner.querySelector('img')
+    if (!img) return
+
+    let ticking = false
+    const speed = 0.4
+
+    const updatePosition = () => {
+      const scrollY = window.scrollY
+      // Optimization: Stop animating if banner is out of view
+      if (scrollY > 600) return
+
+      img.style.transform = `translateY(${scrollY * speed}px)`
+      ticking = false
+    }
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updatePosition)
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', onScroll)
+
+    // Cleanup on navigation
+    const cleanup = () => {
+      window.removeEventListener('scroll', onScroll)
+      document.removeEventListener('astro:before-swap', cleanup)
+    }
+
+    document.addEventListener('astro:before-swap', cleanup)
+  }
+
+  document.addEventListener('astro:page-load', setupParallax)
+</script>

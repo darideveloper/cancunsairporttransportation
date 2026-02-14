@@ -1,39 +1,39 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets'
 
 // Props
 interface Props {
-  src: any;
-  alt: string;
-  title: string;
-  class?: string;
+  src: any
+  alt: string
+  title: string
+  class?: string
 }
 
-const { src, alt, title, class: className } = Astro.props;
-const isRemote = typeof src === "string";
-const imageWidths = isRemote ? [600, 1200] : [600, 1200, src.width];
+const { src, alt, title, class: className } = Astro.props
+const isRemote = typeof src === 'string'
+const imageWidths = isRemote ? [600, 1200] : [600, 1200, src.width]
 ---
 
 <section
-  id="banner-image"
-  class={`relative -z-10 mx-auto h-[300px] w-[98%] overflow-hidden rounded-xl ${className} h-[350px]`}
+  id='banner-image'
+  class={`relative -z-10 mx-auto h-[350px] w-[98%] overflow-hidden rounded-xl ${className}`}
 >
   <Image
     src={src}
     alt={alt}
     title={title}
     widths={imageWidths}
-    sizes="100vw"
+    sizes='100vw'
     quality={60}
-    format="avif"
-    loading="eager"
-    fetchpriority="high"
-    decoding="sync"
+    format='avif'
+    loading='eager'
+    fetchpriority='high'
+    decoding='sync'
     inferSize={isRemote}
-    class="absolute inset-0 h-full w-full object-cover object-center"
+    class='absolute inset-0 h-full w-full object-cover object-center'
   />
   <div
-    class="absolute top-1/2 left-1/2 container -mt-12 -translate-x-1/2 -translate-y-1/2 transform text-center text-white"
+    class='absolute top-1/2 left-1/2 container -translate-x-1/2 -translate-y-1/2 transform text-center text-white'
   >
     <slot />
   </div>
