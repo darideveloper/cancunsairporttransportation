@@ -4,19 +4,13 @@
 TBD - created by archiving change simulate-vehicle-api. Update Purpose after archive.
 ## Requirements
 ### Requirement: vehicle-list-fetching
-The `VehicleBuyCards` component MUST manage vehicle data fetching asynchronously.
+The `getVehicles` function MUST exclude restricted vehicles from the results.
 
-#### Scenario: Verify fetch on mount
-- Given the `VehicleBuyCards` component is mounted without `initialVehicles`
-- When the component initializes
-- Then it MUST call `getVehicles(lang)` from `src/lib/transportation/api.ts`
-- AND the `loading` state MUST be set to `true`.
-
-#### Scenario: Verify prop override
-- Given the `VehicleBuyCards` component receives `initialVehicles` prop
-- When the component initializes
-- Then it MUST use the provided vehicles
-- AND it MUST NOT call `getVehicles`.
+#### ADDED Scenario: Exclude Van Plus
+- Given the API response contains a vehicle with ID "5"
+- When `getVehicles` processes the response
+- Then it MUST filter out this vehicle
+- AND the final returned array MUST NOT contain any item with ID "5".
 
 ### Requirement: vehicle-list-loading
 The `VehicleBuyCards` component MUST provide visual feedback during data fetching.
@@ -48,4 +42,13 @@ The component MUST handle empty result sets.
 - Given the `getVehicles` API returns an empty array `[]`
 - When the `loading` state is complete
 - Then a localized "No vehicles found" message MUST be displayed.
+
+### Requirement: vehicle-filtering
+The `getVehicles` function MUST exclude restricted vehicles from the results.
+
+#### Scenario: Exclude Van Plus
+- Given the API response contains a vehicle with ID "5"
+- When `getVehicles` processes the response
+- Then it MUST filter out this vehicle
+- AND the final returned array MUST NOT contain any item with ID "5".
 

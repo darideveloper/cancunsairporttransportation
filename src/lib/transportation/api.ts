@@ -86,44 +86,52 @@ export async function getVehicles(
       bookNow: t("global.ui.vehicleCard.bookNow"),
     };
 
-    return data.items.map((item) => {
-      // Feature Mapping
-      const featureData = vehicleFeatures[item.id.toString()];
-      const features = featureData?.features[lang];
+    return data.items
+      .filter((item) => item.id.toString() !== "5")
+      .map((item) => {
+        // Feature Mapping
+        const featureData = vehicleFeatures[item.id.toString()];
+        const features = featureData?.features[lang];
 
-      // Description Interpolation
-      let description = features?.description || "";
-      if (description) {
-        description = description.replace("{pax}", item.passengers.toString());
-      }
+        // Description Interpolation
+        let description = features?.description || "";
+        if (description) {
+          description = description.replace(
+            "{pax}",
+            item.passengers.toString(),
+          );
+        }
 
-      return {
-        vehicleImage: item.image,
-        vehicleName: item.name,
-        maxPassengers: item.passengers,
-        maxLuggage: item.luggage,
-        price: parseFloat(item.price),
-        // The API does not return an original price, so we'll use the price as a fallback if needed,
-        // but typically 'originalPrice' is higher to show a discount.
-        // Assuming no discount logic from API for now, or we can omit/mock if UI requires it.
-        // Let's set it to undefined or same as price if strict, but UI might hide 'save' tag if they match.
-        // Looking at previous mock data: price 45, original 60.
-        // We will leave originalPrice undefined or implement logic if provided.
-        // For now, let's map it to null or omit to avoid showing fake discount.
-        // Actually, interface likely expects it. Let's make it optional in UI or handle here.
-        // Checking VehicleBuyCardProps: it has originalPrice?: number.
-        originalPrice: undefined,
-        rating: featureData ? parseFloat(featureData.rating.split("/")[0]) : 5,
-        description: description,
-        items: features?.items || [],
-        currencyCode,
-        formattedPrice: getFormattedPrice(parseFloat(item.price), lang, {
-          currency: storeCurrency,
-        }),
-        // formattedOriginalPrice: ... (optional)
-        labels: vehicleLabels,
-      };
-    });
+        return {
+          vehicleImage: item.image,
+          vehicleName: item.name,
+          maxPassengers: item.passengers,
+          maxLuggage: item.luggage,
+          price: parseFloat(item.price),
+          // The API does not return an original price, so we'll use the price as a fallback if needed,
+          // but typically 'originalPrice' is higher to show a discount.
+          // Assuming no discount logic from API for now, or we can omit/mock if UI requires it.
+          // Let's set it to undefined or same as price if strict, but UI might hide 'save' tag if they match.
+          // Looking at previous mock data: price 45, original 60.
+          // We will leave originalPrice undefined or implement logic if provided.
+          // For now, let's map it to null or omit to avoid showing fake discount.
+          // Actually, interface likely expects it. Let's make it optional in UI or handle here.
+          // Checking VehicleBuyCardProps: it has originalPrice?: number.
+          originalPrice: undefined,
+          rating: featureData
+            ? parseFloat(featureData.rating.split("/")[0])
+            : 5,
+          description: description,
+          items: features?.items || [],
+          currencyCode,
+          formattedPrice: getFormattedPrice(parseFloat(item.price), lang, {
+            currency: storeCurrency,
+          }),
+          // formattedOriginalPrice: ... (optional)
+          labels: vehicleLabels,
+          token: item.token,
+        };
+      });
   } catch (error) {
     console.error("Failed to fetch vehicles:", error);
     throw error;
