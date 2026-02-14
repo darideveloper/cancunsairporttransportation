@@ -183,7 +183,13 @@
         "pickupTime": "Hora de llegada",
         "passengers": "Pasajeros"
       },
-      "submit": "Buscar"
+      "submit": "Buscar",
+      "summary": {
+        "capacity": "Capacidad {maxPassengers} pasajeros.",
+        "passengers": "Pasajeros: {count}",
+        "origin": "Origen: {location}",
+        "destination": "Destino: {location}"
+      }
     },
     "ratesTable": {
       "title": "Tarifas de Transportación Aeropuerto Cancún",

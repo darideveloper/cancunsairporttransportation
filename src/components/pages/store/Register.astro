@@ -1,42 +1,58 @@
 ---
 // Layout
-import Layout from "../../../layouts/Layout.astro";
+import Layout from '../../../layouts/Layout.astro'
 
 // Components
-import PageSEO from "../../utils/PageSEO.astro";
-import SectionHeading from "../../molecules/SectionHeading.astro";
+import PageSEO from '../../utils/PageSEO.astro'
+import SectionHeading from '../../molecules/SectionHeading.astro'
+import SelectedVehicleCard from '../../organisms/SelectedVehicleCard'
 
 // Libs
-import { useTranslations } from "../../../lib/i18n/utils";
+import { useTranslations } from '../../../lib/i18n/utils'
 
 interface Props {
-  lang: "en" | "es";
-  pageKey: string;
+  lang: 'en' | 'es'
+  pageKey: string
 }
 
-const { lang, pageKey } = Astro.props;
-const t = useTranslations(lang);
+const { lang, pageKey } = Astro.props
+const t = useTranslations(lang)
 ---
 
 <Layout pageKey={pageKey}>
-  <PageSEO currentPage="register" slot="seo" />
+  <PageSEO
+    currentPage='register'
+    slot='seo'
+  />
 
-  <div class="container py-24">
+  <div class='container py-24'>
     <SectionHeading
-      title={t("pages.register.title")}
+      title={t('pages.register.title')}
       isH1
-      class="text-center"
+      class='text-center'
     >
-      <p class="mt-4 text-lg text-gray-600">
-        {t("pages.register.description")}
+      <p class='mt-4 text-lg text-gray-600'>
+        {t('pages.register.description')}
       </p>
     </SectionHeading>
 
-    <div class="mt-12 flex justify-center">
-      <div class="w-full max-w-md rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
-        <p class="text-center text-gray-500 italic">
+    <div class='mt-12 flex justify-center'>
+      <div
+        class='w-full max-w-md rounded-2xl border border-gray-100 bg-white p-8 shadow-sm'
+      >
+        <p class='text-center text-gray-500 italic'>
           Register form coming soon...
         </p>
+      </div>
+    </div>
+
+    <!-- Selected Vehicle Summary -->
+    <div class='mt-12 flex justify-center'>
+      <div class='w-full max-w-4xl'>
+        <SelectedVehicleCard
+          lang={lang}
+          client:load
+        />
       </div>
     </div>
   </div>

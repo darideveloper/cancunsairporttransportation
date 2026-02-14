@@ -183,7 +183,13 @@
         "pickupTime": "Pickup time",
         "passengers": "Passengers"
       },
-      "submit": "Search"
+      "submit": "Search",
+      "summary": {
+        "capacity": "Capacity {maxPassengers} passengers.",
+        "passengers": "Passengers: {count}",
+        "origin": "Origin: {location}",
+        "destination": "Destination: {location}"
+      }
     },
     "ratesTable": {
       "title": "Cancun Airport Transportation Rates",
