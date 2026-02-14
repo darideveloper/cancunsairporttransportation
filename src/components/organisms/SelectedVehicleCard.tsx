@@ -26,6 +26,31 @@ export default function SelectedVehicleCard({
       ? t("global.booking.tripType.oneWay")
       : t("global.booking.tripType.roundTrip");
 
+  const details = [
+    {
+      Icon: FaUser,
+      text: t("global.booking.summary.passengers", {
+        count: passengers.toString(),
+      }),
+    },
+    {
+      Icon: FaMapMarkerAlt,
+      text: t("global.booking.summary.origin", {
+        location: locationFrom,
+      }),
+    },
+    {
+      Icon: FaMapMarkerAlt,
+      text: t("global.booking.summary.destination", {
+        location: locationTo,
+      }),
+    },
+    {
+      Icon: FaThumbsUp,
+      text: tripTypeLabel,
+    },
+  ];
+
   return (
     <div
       className={clsx(
@@ -57,40 +82,16 @@ export default function SelectedVehicleCard({
 
         {/* Details Row */}
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
-          <CheckListItem
-            as="div"
-            unstyled
-            Icon={FaUser}
-            iconColor="text-gray-400"
-            text={t("global.booking.summary.passengers", {
-              count: passengers.toString(),
-            })}
-          />
-          <CheckListItem
-            as="div"
-            unstyled
-            Icon={FaMapMarkerAlt}
-            iconColor="text-gray-400"
-            text={t("global.booking.summary.origin", {
-              location: locationFrom,
-            })}
-          />
-          <CheckListItem
-            as="div"
-            unstyled
-            Icon={FaMapMarkerAlt}
-            iconColor="text-gray-400"
-            text={t("global.booking.summary.destination", {
-              location: locationTo,
-            })}
-          />
-          <CheckListItem
-            as="div"
-            unstyled
-            Icon={FaThumbsUp}
-            iconColor="text-gray-400"
-            text={tripTypeLabel}
-          />
+          {details.map((item, index) => (
+            <CheckListItem
+              key={index}
+              as="div"
+              unstyled
+              Icon={item.Icon}
+              iconColor="text-gray-400"
+              text={item.text}
+            />
+          ))}
         </ul>
       </div>
     </div>
