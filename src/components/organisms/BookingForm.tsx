@@ -42,6 +42,20 @@ export default function BookingForm({
     setPassengers,
   } = state;
 
+  // Date and Time constraints calculation
+  const today = new Date().toLocaleDateString("en-CA");
+  const now = new Date().toLocaleTimeString("en-GB", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  const minDepartureDate = today;
+  const minDepartureTime = departureDate === today ? now : undefined;
+
+  const minReturnDate = departureDate || today;
+  const minReturnTime =
+    returnDate === departureDate ? departureTime : undefined;
+
   const isValid = !!locationFromData && !!locationToData;
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -111,6 +125,7 @@ export default function BookingForm({
               label={translations.labels.pickupDate}
               value={departureDate}
               onChange={setDepartureDate}
+              min={minDepartureDate}
             />
           </div>
           <div className="@lg:col-span-2 @4xl:col-span-3">
@@ -119,6 +134,7 @@ export default function BookingForm({
               label={translations.labels.pickupTime}
               value={departureTime}
               onChange={setDepartureTime}
+              min={minDepartureTime}
             />
           </div>
           <div className="@lg:col-span-2 @4xl:col-span-2">
@@ -155,6 +171,7 @@ export default function BookingForm({
                   label={translations.labels.pickupDate}
                   value={returnDate}
                   onChange={setReturnDate}
+                  min={minReturnDate}
                 />
               </div>
               <div className="@lg:col-span-2 @4xl:col-span-3">
@@ -163,6 +180,7 @@ export default function BookingForm({
                   label={translations.labels.pickupTime}
                   value={returnTime}
                   onChange={setReturnTime}
+                  min={minReturnTime}
                 />
               </div>
               <div className="@lg:col-span-2 @4xl:col-span-2">

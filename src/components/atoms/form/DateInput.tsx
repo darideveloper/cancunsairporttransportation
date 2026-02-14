@@ -1,11 +1,12 @@
-import type { ChangeEvent } from 'react'
+import type { ChangeEvent } from "react";
 
 interface Props {
-  id: string
-  label: string
-  value?: string
-  onChange?: (val: string) => void
-  disabled?: boolean
+  id: string;
+  label: string;
+  value?: string;
+  onChange?: (val: string) => void;
+  disabled?: boolean;
+  min?: string;
 }
 
 export default function DateInput({
@@ -14,22 +15,24 @@ export default function DateInput({
   value,
   onChange,
   disabled,
+  min,
 }: Props) {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onChange?.(e.target.value)
-  }
+    onChange?.(e.target.value);
+  };
 
   return (
-    <div className='input-container'>
+    <div className="input-container">
       <label htmlFor={id}>{label}</label>
       <input
-        type='date'
+        type="date"
         id={id}
-        value={value || ''}
+        value={value || ""}
         onChange={handleChange}
         disabled={disabled}
-        className={disabled ? 'opacity-50 cursor-not-allowed' : ''}
+        min={min}
+        className={disabled ? "cursor-not-allowed opacity-50" : ""}
       />
     </div>
-  )
+  );
 }
