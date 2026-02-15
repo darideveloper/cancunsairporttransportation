@@ -1,5 +1,5 @@
 ---
-import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
+import { getTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 import { getPriceValue, getCurrencyCode } from "../../lib/utils";
 import { BASE_PRICES, PAGE_DESTINATION_MAP } from "../../data/prices";
 import SectionHeading from "../molecules/SectionHeading.astro";
@@ -19,7 +19,7 @@ interface Props {
 
 const { contentKey, isRegularGrid = false } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 
 const pricingKeys = ["luxury", "private", "group"] as const;
 

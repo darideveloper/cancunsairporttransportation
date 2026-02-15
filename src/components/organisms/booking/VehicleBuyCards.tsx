@@ -10,7 +10,7 @@ import NoAvailability from "./NoAvailability";
 
 // Utils
 import { getVehicles } from "../../../lib/transportation/api";
-import { useTranslations } from "../../../lib/i18n/utils";
+import { getTranslations } from "../../../lib/i18n/utils";
 import { useSearchFormStore } from "../../../store/search-form";
 
 interface VehicleBuyCardsProps {
@@ -31,7 +31,7 @@ export default function VehicleBuyCards({
   const [loading, setLoading] = useState(initialVehicles.length === 0);
   const [error, setError] = useState(false);
 
-  const t = useTranslations(lang);
+  const t = getTranslations(lang);
   const setSelectedVehicle = useSearchFormStore(
     (state) => state.setSelectedVehicle,
   );

@@ -3,7 +3,7 @@
 import Layout from '../../../layouts/Layout.astro'
 
 // Libs
-import { useTranslations } from '../../../lib/i18n/utils'
+import { getTranslations } from '../../../lib/i18n/utils'
 import { getStaticPathsLangs, getFormattedPrice } from '../../../lib/utils'
 import { getOneWayPrice } from '../../../data/prices'
 import { marked } from 'marked'
@@ -47,7 +47,7 @@ const { lang, pageKey } = Astro.props
 const contentKey: string = pageKey || 'destinations'
 
 // Tranlation texts
-const t = useTranslations(lang)
+const t = getTranslations(lang)
 
 // Data
 const destinations = [

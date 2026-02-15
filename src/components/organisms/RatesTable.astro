@@ -1,6 +1,6 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { getLangFromUrl, getTranslations } from "../../lib/i18n/utils";
 import { getFormattedPrice } from "../../lib/utils";
 import { BASE_PRICES, type ServiceTier } from "../../data/prices";
 import clsx from "clsx";
@@ -9,7 +9,7 @@ import clsx from "clsx";
 import SectionHeading from "../molecules/SectionHeading.astro";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 
 // Props
 interface Props {

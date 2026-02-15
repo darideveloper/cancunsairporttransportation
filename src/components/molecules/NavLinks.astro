@@ -8,7 +8,7 @@ import { MOBILE_MENU_STYLES } from "../../styles/menu";
 
 // i18n
 import {
-  useTranslations,
+  getTranslations,
   getLangFromUrl,
   getLocalizedPath,
 } from "../../lib/i18n/utils";
@@ -20,7 +20,7 @@ interface Props {
 
 const { mode = "desktop" } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 
 const links = [
   {

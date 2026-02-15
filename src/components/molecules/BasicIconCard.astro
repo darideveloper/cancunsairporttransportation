@@ -2,7 +2,7 @@
 // Libs
 import clsx from "clsx";
 import { generateId } from "../../lib/utils";
-import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { getLangFromUrl, getTranslations } from "../../lib/i18n/utils";
 
 // Props
 interface Props {
@@ -26,7 +26,7 @@ const {
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 const id = generateId("info-card", title);
 
 const Container = href ? "a" : "div";

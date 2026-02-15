@@ -1,7 +1,7 @@
 // src/components/molecules/ArrivalInformation.tsx
 import type { ChangeEvent } from "react";
 import { useSearchFormStore } from "../../../store/search-form";
-import { useTranslations } from "../../../lib/i18n/utils";
+import { getTranslations } from "../../../lib/i18n/utils";
 import Input from "../../atoms/form/Input";
 import H2 from "../../atoms/H2";
 import { FaPlane, FaCalendarAlt, FaClock } from "react-icons/fa";
@@ -20,10 +20,10 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
     setFlightNumber,
   } = useSearchFormStore();
 
-  const t = useTranslations(lang);
+  const t = getTranslations(lang);
 
   return (
-    <div className="mt-12 space-y-6 rounded-2xl bg-white px-4 py-6 shadow-xl">
+    <div className="space-y-6 rounded-2xl bg-white px-4 py-6 shadow-xl">
       <H2 className="mb-2">{t("pages.register.arrivalInformation.title")}</H2>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

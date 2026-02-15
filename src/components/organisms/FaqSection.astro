@@ -1,5 +1,5 @@
 ---
-import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
+import { getTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 import { getFormattedPrice } from "../../lib/utils";
 import { getOneWayPrice, PAGE_DESTINATION_MAP } from "../../data/prices";
 import SectionHeading from "../molecules/SectionHeading.astro";
@@ -13,7 +13,7 @@ interface Props {
 
 const { contentKey } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 const title = t(`pages.${contentKey}.faq.title`);
 const description = t("global.sections.faq.description");
 

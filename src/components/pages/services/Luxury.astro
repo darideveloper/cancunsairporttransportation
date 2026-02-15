@@ -3,7 +3,7 @@
 import Layout from '../../../layouts/Layout.astro'
 
 // Libs
-import { useTranslations } from '../../../lib/i18n/utils'
+import { getTranslations } from '../../../lib/i18n/utils'
 
 // Components
 import PageSEO from '../../../components/utils/PageSEO.astro'
@@ -34,7 +34,7 @@ const { lang, pageKey } = Astro.props
 const contentKey = pageKey || 'luxury'
 
 // Tranlation texts
-const t = useTranslations(lang)
+const t = getTranslations(lang)
 ---
 
 <Layout

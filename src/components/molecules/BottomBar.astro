@@ -1,9 +1,9 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { getLangFromUrl, getTranslations } from "../../lib/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 const footerMessages = t("global.footer");
 
 const currentYear = new Date().getFullYear();

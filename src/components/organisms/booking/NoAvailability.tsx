@@ -5,7 +5,7 @@ import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import ButtonCta from "../../atoms/ButtonCta";
 
 // Utils
-import { useTranslations } from "../../../lib/i18n/utils";
+import { getTranslations } from "../../../lib/i18n/utils";
 import clsx from "clsx";
 import { marked } from "marked";
 
@@ -25,7 +25,7 @@ export default function NoAvailability({
   lang,
   className,
 }: NoAvailabilityProps) {
-  const t = useTranslations(lang);
+  const t = getTranslations(lang);
 
   return (
     <section

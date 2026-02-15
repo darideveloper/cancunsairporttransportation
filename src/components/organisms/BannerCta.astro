@@ -4,7 +4,7 @@ import { marked } from "marked";
 import ButtonCta from "../atoms/ButtonCta";
 import SectionHeading from "../molecules/SectionHeading.astro";
 import cancunAirportTransportationImg from "../../assets/images/reliable-company.webp";
-import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
+import { getTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 
 interface Props {
   contentKey: string;
@@ -13,7 +13,7 @@ interface Props {
 
 const { contentKey, imageClass } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 
 const title = t(`pages.${contentKey}.bannerCta.title`);
 const text = t(`pages.${contentKey}.bannerCta.text`);

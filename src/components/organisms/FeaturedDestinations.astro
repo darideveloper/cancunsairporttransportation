@@ -1,6 +1,6 @@
 ---
 // Libs
-import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
+import { getTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 import { getPriceValue, getCurrencyCode } from "../../lib/utils";
 import { BASE_PRICES } from "../../data/prices";
 import { marked } from "marked";
@@ -25,7 +25,7 @@ const { contentKey } = Astro.props;
 
 // Get language
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 const currency = getCurrencyCode(lang);
 
 // Data with mapping to centralized pricing

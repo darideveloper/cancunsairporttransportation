@@ -4,7 +4,7 @@ import Layout from "../../../layouts/Layout.astro";
 
 // Libs
 // Libs
-import { useTranslations } from "../../../lib/i18n/utils";
+import { getTranslations } from "../../../lib/i18n/utils";
 import PageSEO from "../../../components/utils/PageSEO.astro";
 import SectionHeading from "../../../components/molecules/SectionHeading.astro";
 import BasicIconCard from "../../../components/molecules/BasicIconCard.astro";
@@ -28,7 +28,7 @@ interface Props {
 }
 
 const { lang, pageKey } = Astro.props;
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 
 const contactCards = t("pages.contact.cards");
 

@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { useSearchFormStore } from "../../../store/search-form";
-import { useTranslations } from "../../../lib/i18n/utils";
+import { getTranslations } from "../../../lib/i18n/utils";
 import { FaCar } from "react-icons/fa";
 import clsx from "clsx";
 
@@ -10,7 +10,7 @@ interface BookingSummaryProps {
 
 export default function BookingSummary({ lang }: BookingSummaryProps) {
   const { selectedVehicle, currency, passengers } = useSearchFormStore();
-  const t = useTranslations(lang);
+  const t = getTranslations(lang);
 
   if (!selectedVehicle) return null;
 

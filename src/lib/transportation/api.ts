@@ -1,6 +1,6 @@
 import { type VehicleBuyCardProps } from "../../components/molecules/booking/VehicleBuyCard";
 import { getFormattedPrice, getCurrencyCode } from "../utils";
-import { useTranslations } from "../i18n/utils";
+import { getTranslations } from "../i18n/utils";
 import type {
   LegacyQuoteRequest,
   LegacyQuoteResponse,
@@ -71,7 +71,7 @@ export async function getVehicles(
     }
 
     const data = (await response.json()) as LegacyQuoteResponse;
-    const t = useTranslations(lang);
+    const t = getTranslations(lang);
     const storeCurrency = searchFormState.currency.toLowerCase() as
       | "usd"
       | "mxn";

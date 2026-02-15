@@ -1,6 +1,6 @@
 ---
 import type { Post } from "../../types/blog";
-import { useTranslations } from "../../lib/i18n/utils";
+import { getTranslations } from "../../lib/i18n/utils";
 import ButtonCta from "../atoms/ButtonCta";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { post, lang } = Astro.props;
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 
 const href = lang === "es" ? `/es/blog/${post.slug}` : `/blog/${post.slug}`;
 
