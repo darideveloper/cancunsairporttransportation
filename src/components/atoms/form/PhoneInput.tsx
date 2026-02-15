@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { ComponentProps } from "react";
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import PhoneInputLib from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -16,6 +16,16 @@ interface PhoneInputProps extends Omit<
   className?: string; // For the input container
   error?: string;
 }
+
+const CustomPhoneNumberInput = forwardRef<
+  HTMLInputElement,
+  ComponentProps<"input">
+>((props, ref) => {
+  // Filter out preferredCountries if it's passed (fixing the React warning)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { preferredCountries, ...rest } = props as any;
+  return <input ref={ref} {...rest} />;
+});
 
 export default function PhoneInput({
   label,
@@ -65,10 +75,11 @@ export default function PhoneInput({
             limitMaxLength
             preferredCountries={["US", "GB", "ES", "MX"]}
             className="flex items-center rounded-lg bg-white px-3 py-3" // Inner wrapper of the library
+            inputComponent={CustomPhoneNumberInput}
             numberInputProps={{
               ...props,
               className:
-                "border-none bg-transparent outline-none w-full placeholder:text-gray text-black", // Remove built-in border, let parent handle it
+                "border-none bg-transparent outline-none w-full placeholder:text-gray-dark text-black", // Remove built-in border, let parent handle it
               required,
             }}
           />
@@ -79,7 +90,7 @@ export default function PhoneInput({
               value={value}
               disabled={true}
               placeholder={placeholder}
-              className="placeholder:text-gray w-full border-none bg-transparent text-black outline-none"
+              className="placeholder:text-gray-dark w-full border-none bg-transparent text-black outline-none"
             />
           </div>
         )}
