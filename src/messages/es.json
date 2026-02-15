@@ -630,7 +630,17 @@
         "termsInfo": "Al hacer clic en Enviar, aceptas los",
         "creditCardInfo": "**¡Importante!** Debe presentar la tarjeta de débito o crédito con la que realizó el pago al iniciar la transferencia.\n\nSi elige pagar con tarjeta de crédito/débito, su pago se convertirá en moneda local (MXN) a un tipo de cambio preferente para usted ❤️."
       },
-      "submit": "¡RESERVA TU VIAJE AHORA!"
+      "submit": "¡RESERVA TU VIAJE AHORA!",
+      "submitting": "Procesando...",
+      "errors": {
+        "title": "¡Oops!",
+        "missingFields": "Por favor, complete todos los campos obligatorios para continuar con su reserva.",
+        "generic": "Algo salió mal al procesar su reservación. Por favor, inténtelo de nuevo o contáctenos."
+      },
+      "success": {
+        "title": "¡Reservación Enviada!",
+        "message": "Estamos procesando su reservación. Será redirigido en un momento."
+      }
     },
     "thankYou": {
       "title": "Gracias | Cancun Airport Transportation",

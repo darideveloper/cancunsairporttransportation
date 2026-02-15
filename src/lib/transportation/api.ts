@@ -5,8 +5,8 @@ import type {
   LegacyQuoteRequest,
   LegacyQuoteResponse,
   LegacyErrorResponse,
-  type CreateReservationPayload,
-  type ReservationResponse,
+  CreateReservationPayload,
+  ReservationResponse,
 } from "./legacy-api.types";
 import { useSearchFormStore } from "../../store/search-form";
 import { vehicleFeatures } from "../../data/vehicle-features";

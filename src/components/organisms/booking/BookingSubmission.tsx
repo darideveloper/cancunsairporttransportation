@@ -4,6 +4,7 @@ import { createReservation } from "../../../lib/transportation/api";
 import ButtonCta from "../../atoms/ButtonCta";
 import { getTranslations } from "../../../lib/i18n/utils";
 import clsx from "clsx";
+import Swal from "sweetalert2";
 
 interface Props {
   lang: "en" | "es";
@@ -21,13 +22,10 @@ export default function BookingSubmission({ lang }: Props) {
     notes,
     departureDate,
     departureTime,
-    returnDate,
-    returnTime,
-    tripType,
+    paymentMethod,
   } = useSearchFormStore();
 
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   // Validation Logic
   const isValid =
@@ -39,16 +37,23 @@ export default function BookingSubmission({ lang }: Props) {
 
   const handleSubmit = async () => {
     setIsLoading(true);
-    setError(null);
 
-    // Redundant check in case disabled attribute is bypassed
     if (!isValid) {
-      setError(t("pages.register.errors.missingFields"));
+      Swal.fire({
+        icon: "error",
+        title: t("pages.register.errors.title"),
+        text: t("pages.register.errors.missingFields"),
+        confirmButtonColor: "#00A651",
+      });
       setIsLoading(false);
       return;
     }
 
     try {
+      const origin = window.location.origin;
+      const success_url = `${origin}/${lang === "es" ? "es/gracias" : "thank-you"}`;
+      const cancel_url = `${origin}/${lang === "es" ? "es/cancelar" : "cancel"}`;
+
       const payload = {
         service_token: selectedVehicle!.token,
         first_name: firstName,
@@ -57,8 +62,13 @@ export default function BookingSubmission({ lang }: Props) {
         phone: phone,
         flight_number: flightNumber,
         comments: notes,
-        pay_at_arrival: 1,
+        pay_at_arrival:
+          paymentMethod === "stripe" || paymentMethod === "paypal" ? 0 : 1,
         arrival_date: `${departureDate} ${departureTime}`,
+        payment_method: paymentMethod.toUpperCase(),
+        success_url,
+        cancel_url,
+        language: lang,
       };
 
       const response = await createReservation(payload);
@@ -71,12 +81,28 @@ export default function BookingSubmission({ lang }: Props) {
         throw new Error(errorMessage);
       }
 
-      console.log("Reservation Success:", response);
-      alert("Reservation confirmed! " + response.reservation_id);
-      // Redirect logic here
+      if (response.payment_link) {
+        window.location.href = response.payment_link;
+        return;
+      }
+
+      await Swal.fire({
+        icon: "success",
+        title: t("pages.register.success.title"),
+        text: t("pages.register.success.message"),
+        confirmButtonColor: "#00A651",
+      });
+
+      // Redirect to thank you page if no payment link (e.g. cash)
+      window.location.href = success_url;
     } catch (err: any) {
       console.error(err);
-      setError(err.message || t("pages.register.errors.generic"));
+      Swal.fire({
+        icon: "error",
+        title: t("pages.register.errors.title"),
+        text: err.message || t("pages.register.errors.generic"),
+        confirmButtonColor: "#00A651",
+      });
     } finally {
       setIsLoading(false);
     }
@@ -93,8 +119,6 @@ export default function BookingSubmission({ lang }: Props) {
           {t("global.footer.columns.information.links.1.text")}
         </a>
       </p>
-
-      {error && <p className="font-bold text-red-500">{error}</p>}
 
       <ButtonCta
         onClick={handleSubmit}
