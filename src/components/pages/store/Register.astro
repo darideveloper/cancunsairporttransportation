@@ -43,13 +43,11 @@ const t = getTranslations(lang)
     </h1>
   </BannerImage>
 
-  <div class='container mt-4 mb-6 max-w-4xl text-center'>
-    <p class='text-gray-dark text-lg font-medium italic'>
-      {t('register.serviceNotice')}
+  <div class='container mt-8 flex max-w-4xl flex-col gap-6'>
+    <!-- Notice text -->
+    <p class='text-gray-dark text-md font-medium'>
+      {t('pages.register.serviceNotice')}
     </p>
-  </div>
-
-  <div class='container flex max-w-4xl flex-col gap-6'>
     <!-- Selected Vehicle Summary -->
     <SelectedVehicleCard
       lang={lang}
