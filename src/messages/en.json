@@ -576,7 +576,6 @@
       "keywords": "privacy policy, data protection, cancun transportation privacy",
       "content": "## Privacy Policy\n\nYour privacy is important to us. It is Cancun Airport Transportation's policy to respect your privacy regarding any information we may collect from you across our website.\n\n### 1. Information we collect\nWe only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent.\n\n### 2. Use of Information\nWe only retain collected information for as long as necessary to provide you with your requested service.\n\n### 3. Data Protection\nWe protect your data within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use, or modification."
     },
-    "keywords": "private transportation cancun, private airport transfer, cancun private shuttle, exclusive transfer cancun",
     "reservation": {
       "title": "My Reservation | Cancun Airport Transportation",
       "description": "Manage your reservation with Cancun Airport Transportation. View details, make changes, or contact support.",
@@ -621,7 +620,16 @@
         "emailPlaceholder": "What is your email address?",
         "phonePlaceholder": "What is your phone number?",
         "notesPlaceholder": "Do you have any special notes or requirements?"
-      }
+      },
+      "paymentMethod": {
+        "title": "Payment method",
+        "securityInfo": "We use SSL encryption for secure payments powered by",
+        "introInfo": "We use encryption SSL for secure payments powered by",
+        "creditCard": "Credit / Debit Card",
+        "stripeExtraInfo": "By selecting this method, you will be redirected to a secure Stripe portal.",
+        "termsInfo": "By clicking on Submit, you accept the"
+      },
+      "submit": "BOOK YOUR TRIP NOW!"
     },
     "home": {
       "title": "Cancun Airport Transportation | Private & Shuttle Transfers to Cancun and Riviera Maya",
@@ -780,6 +788,7 @@
       "title": "Private Airport Transfers Cancun | Cancun Airport Transportation by Go Transfers",
       "description": "Private Transfer Cancun Airport to all hotels in Cancun, Playa del Carmen, Tulum and more destinations in Riviera Maya. Private Airport Transfer Cancun with Cancun Airport Transportation by Go Transfers.",
       "includes": {
+        "keywords": "private transportation cancun, private airport transfer, cancun private shuttle, exclusive transfer cancun",
         "title": "All our Cancun Private Transfers include:",
         "imageAlt": "Private Airport Transfer Cancun",
         "imageTitle": "Private Airport Transfer Cancun"

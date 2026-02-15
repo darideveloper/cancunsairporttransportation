@@ -620,7 +620,16 @@
         "emailPlaceholder": "¿Cuál es tu correo electrónico?",
         "phonePlaceholder": "¿Cuál es tu número de teléfono?",
         "notesPlaceholder": "¿Tienes alguna nota o requerimiento especial?"
-      }
+      },
+      "paymentMethod": {
+        "title": "Método de pago",
+        "securityInfo": "Utilizamos cifrado SSL para pagos seguros impulsados por",
+        "introInfo": "Utilizamos encriptación SSL para pagos seguros impulsados por",
+        "creditCard": "Tarjeta de Crédito / Débito",
+        "stripeExtraInfo": "Al seleccionar este método, será redirigido a un portal seguro de Stripe.",
+        "termsInfo": "Al hacer clic en Enviar, aceptas los"
+      },
+      "submit": "¡RESERVA TU VIAJE AHORA!"
     },
     "home": {
       "title": "Transportación Confiable al Aeropuerto de Cancún | Traslados Privados y Transporte a Cancún y Riviera Maya",
