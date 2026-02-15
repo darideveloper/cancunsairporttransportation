@@ -3,6 +3,7 @@ import type { ChangeEvent } from "react";
 import { useSearchFormStore } from "../../../store/search-form";
 import { getTranslations } from "../../../lib/i18n/utils";
 import Input from "../../atoms/form/Input";
+import PhoneInput from "../../atoms/form/PhoneInput";
 import Textarea from "../../atoms/form/Textarea";
 import H2 from "../../atoms/H2";
 
@@ -70,14 +71,11 @@ export default function PassengerInformation({
           )}
           required
         />
-        <Input
+        <PhoneInput
           label={t("pages.register.passengerInformation.phone")}
           name="phone"
-          type="tel"
           value={phone}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setPhone(e.target.value)
-          }
+          onChange={(value) => setPhone(value || "")}
           placeholder={t(
             "pages.register.passengerInformation.phonePlaceholder",
           )}
