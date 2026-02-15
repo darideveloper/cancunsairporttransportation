@@ -608,6 +608,11 @@
         "airlinePlaceholder": "What is your airline?",
         "flightNumberPlaceholder": "What is your flight number?"
       },
+      "returnInformation": {
+        "title": "Return Information",
+        "returnDate": "Return Date",
+        "returnTime": "Return Time"
+      },
       "passengerInformation": {
         "title": "Passenger information",
         "firstName": "Full name",
