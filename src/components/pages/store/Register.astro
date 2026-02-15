@@ -5,17 +5,9 @@ import Layout from '../../../layouts/Layout.astro'
 // Components
 import PageSEO from '../../utils/PageSEO.astro'
 import BannerImage from '../../atoms/BannerImage.astro'
-import SelectedVehicleCard from '../../organisms/booking/SelectedVehicleCard'
-import ArrivalInformation from '../../molecules/booking/ArrivalInformation'
-import ReturnInformation from '../../molecules/booking/ReturnInformation'
-import PassengerInformation from '../../molecules/booking/PassengerInformation'
-
-import PaymentMethod from '../../molecules/booking/PaymentMethod'
+import RegisterForm from '../../organisms/booking/RegisterForm'
 import PaymentBrands from '../../molecules/booking/PaymentBrands'
-import ButtonCta from '../../atoms/ButtonCta'
-
-import BookingSummary from '../../molecules/booking/BookingSummary'
-import BookingSubmission from '../../organisms/booking/BookingSubmission'
+import RegisterSkeleton from '../../loaders/RegisterSkeleton.astro'
 
 // Images
 import processBannerImg from '../../../assets/images/banners/process.png'
@@ -54,41 +46,13 @@ const t = getTranslations(lang)
     <p class='text-gray-dark text-md font-medium'>
       {t('pages.register.serviceNotice')}
     </p>
-    <!-- Selected Vehicle Summary -->
-    <SelectedVehicleCard
-      lang={lang}
-      client:load
-    />
 
-    <ArrivalInformation
+    <RegisterForm
       lang={lang}
-      client:load
-    />
-
-    <ReturnInformation
-      lang={lang}
-      client:load
-    />
-
-    <PassengerInformation
-      lang={lang}
-      client:load
-    />
-
-    <BookingSummary
-      lang={lang}
-      client:load
-    />
-
-    <PaymentMethod
-      lang={lang}
-      client:load
-    />
-
-    <BookingSubmission
-      lang={lang}
-      client:load
-    />
+      client:only='react'
+    >
+      <RegisterSkeleton slot='fallback' />
+    </RegisterForm>
 
     <!-- Payment brands -->
     <PaymentBrands />
