@@ -2075,5 +2075,16 @@
       "whatsapp": "WhatsApp",
       "chat": "Chat"
     }
+  },
+  "transaction": {
+    "success": {
+      "contact": "Le hemos enviado un correo de confirmación, para más información contáctenos."
+    },
+    "error": {
+      "contact": "Su transacción no fue aprobada, podemos ayudarle, ¡contáctenos!"
+    },
+    "call_us": "Llámanos al",
+    "go_home": "Ir al inicio",
+    "view_reservation": "Ver mi reservación"
   }
 }

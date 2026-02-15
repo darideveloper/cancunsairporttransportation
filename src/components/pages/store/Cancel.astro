@@ -2,6 +2,8 @@
 import { getLangFromUrl, getTranslations } from '../../../lib/i18n/utils'
 import Layout from '../../../layouts/Layout.astro'
 import PageSEO from '../../utils/PageSEO.astro'
+import TransactionStatus from '../../organisms/TransactionStatus.astro'
+import cancelImage from '../../../assets/images/general/cancel.webp'
 
 const { pageKey } = Astro.props
 const lang = getLangFromUrl(Astro.url)
@@ -13,20 +15,10 @@ const t = getTranslations(lang)
     currentPage={pageKey}
     slot='seo'
   />
-  <section class='container mx-auto px-4 py-24 text-center'>
-    <h1 class='font-title text-4xl font-bold text-gray-900 md:text-6xl'>
-      {t(`pages.${pageKey}.heading`)}
-    </h1>
-    <p class='mt-6 text-xl text-gray-600'>
-      {t(`pages.${pageKey}.message`)}
-    </p>
-    <div class='mt-10'>
-      <a
-        href={lang === 'en' ? '/' : '/es'}
-        class='bg-blue hover:bg-blue-dark inline-block rounded-lg px-8 py-4 text-lg font-bold text-white transition-colors'
-      >
-        {t('pages.404.cta')}
-      </a>
-    </div>
-  </section>
+  <TransactionStatus
+    status='error'
+    image={cancelImage}
+    title={t(`pages.${pageKey}.heading`)}
+    message={t(`pages.${pageKey}.message`)}
+  />
 </Layout>
