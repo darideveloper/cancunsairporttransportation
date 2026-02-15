@@ -189,7 +189,8 @@
         "passengers": "Pasajeros: {count}",
         "origin": "Origen: {location}",
         "destination": "Destino: {location}",
-        "privateTransportation": "Transporte privado"
+        "privateTransportation": "Transporte privado",
+        "vehicleDescription": "X {count} {vehicleName} con capacidad de hasta {maxPassengers} pasajeros"
       }
     },
     "ratesTable": {

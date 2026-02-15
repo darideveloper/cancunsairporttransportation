@@ -8,6 +8,8 @@ import BannerImage from '../../atoms/BannerImage.astro'
 import SelectedVehicleCard from '../../organisms/booking/SelectedVehicleCard'
 import ArrivalInformation from '../../molecules/booking/ArrivalInformation'
 
+import BookingSummary from '../../molecules/booking/BookingSummary'
+
 // Images
 import processBannerImg from '../../../assets/images/banners/process.png'
 
@@ -52,5 +54,12 @@ const t = useTranslations(lang)
       lang={lang}
       client:load
     />
+
+    <div class='mt-6'>
+      <BookingSummary
+        lang={lang}
+        client:load
+      />
+    </div>
   </div>
 </Layout>
