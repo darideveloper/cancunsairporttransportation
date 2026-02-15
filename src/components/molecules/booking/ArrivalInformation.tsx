@@ -52,7 +52,7 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
               "pages.register.arrivalInformation.airlinePlaceholder",
             ),
             icon: FaPlane,
-            required: true,
+            required: false,
           },
           {
             label: t("pages.register.arrivalInformation.flightNumber"),
@@ -64,7 +64,7 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
               "pages.register.arrivalInformation.flightNumberPlaceholder",
             ),
             icon: FaPlane,
-            required: true,
+            required: false,
           },
         ].map((field) => (
           <Input

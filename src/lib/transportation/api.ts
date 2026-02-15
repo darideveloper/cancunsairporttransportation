@@ -5,6 +5,8 @@ import type {
   LegacyQuoteRequest,
   LegacyQuoteResponse,
   LegacyErrorResponse,
+  type CreateReservationPayload,
+  type ReservationResponse,
 } from "./legacy-api.types";
 import { useSearchFormStore } from "../../store/search-form";
 import { vehicleFeatures } from "../../data/vehicle-features";
@@ -135,6 +137,42 @@ export async function getVehicles(
       });
   } catch (error) {
     console.error("Failed to fetch vehicles:", error);
+    throw error;
+  }
+}
+
+export async function createReservation(
+  payload: CreateReservationPayload,
+): Promise<ReservationResponse> {
+  try {
+    const response = await fetch(
+      `${import.meta.env.PUBLIC_API_BASE}/legacy/create/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      },
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      // If it is a 422 error, it is a validation error
+      // If it is a 502 error, it is a gateway error
+      // The UI handles error.message or error string.
+      // We can just throw the error message if present
+      const errorMessage =
+        typeof errorData.error === "string"
+          ? errorData.error
+          : errorData.error?.message || response.statusText;
+
+      throw new Error(errorMessage);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("Failed to create reservation:", error);
     throw error;
   }
 }

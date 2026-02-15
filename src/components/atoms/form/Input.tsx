@@ -22,7 +22,7 @@ export default function Input({
   return (
     <div className={containerClassName}>
       <label htmlFor={name} className="mb-2 block font-bold">
-        {label}
+        {label} {props.required && <span className="text-red-500">*</span>}
       </label>
       <div className="focus-within:text-accent relative text-black">
         {Icon && (

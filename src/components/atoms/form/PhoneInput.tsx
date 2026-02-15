@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import type { ComponentProps } from "react";
+import { useEffect, useState } from "react";
 import PhoneInputLib from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -33,10 +34,16 @@ export default function PhoneInput({
   // containerClassName on Input.tsx is for the outer div wrapping label + input-wrapper
   // className on Input.tsx is for the input element itself
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className={containerClassName}>
       <label htmlFor={name} className="mb-2 block font-bold">
-        {label}
+        {label} {required && <span className="text-red-500">*</span>}
       </label>
       <div
         className={clsx(
@@ -46,24 +53,36 @@ export default function PhoneInput({
           className,
         )}
       >
-        <PhoneInputLib
-          international
-          defaultCountry="US"
-          value={value}
-          onChange={(val) => onChange(val || "")} // PhoneInput can return undefined
-          name={name}
-          disabled={disabled}
-          placeholder={placeholder}
-          limitMaxLength
-          preferredCountries={["US", "GB", "ES", "MX"]}
-          className="flex items-center rounded-lg bg-white px-3 py-3" // Inner wrapper of the library
-          numberInputProps={{
-            ...props,
-            className:
-              "border-none bg-transparent outline-none w-full placeholder:text-gray text-black", // Remove built-in border, let parent handle it
-            required,
-          }}
-        />
+        {mounted ? (
+          <PhoneInputLib
+            international
+            defaultCountry="US"
+            value={value}
+            onChange={(val) => onChange(val || "")} // PhoneInput can return undefined
+            name={name}
+            disabled={disabled}
+            placeholder={placeholder}
+            limitMaxLength
+            preferredCountries={["US", "GB", "ES", "MX"]}
+            className="flex items-center rounded-lg bg-white px-3 py-3" // Inner wrapper of the library
+            numberInputProps={{
+              ...props,
+              className:
+                "border-none bg-transparent outline-none w-full placeholder:text-gray text-black", // Remove built-in border, let parent handle it
+              required,
+            }}
+          />
+        ) : (
+          <div className="flex items-center rounded-lg bg-white px-3 py-3">
+            <input
+              name={name}
+              value={value}
+              disabled={true}
+              placeholder={placeholder}
+              className="placeholder:text-gray w-full border-none bg-transparent text-black outline-none"
+            />
+          </div>
+        )}
       </div>
       {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
     </div>
