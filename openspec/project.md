@@ -18,6 +18,10 @@ Cancun Airport Transportation is a specialized booking platform for private shut
 ### Code Style
 - **TypeScript**: Strict typing preferred for all data models (Pricing, Locations, Reservations).
 - **Naming**: PascalCase for React/Astro components, camelCase for variables and functions.
+- **React Components**: 
+  - ALWAYS use standard function declarations: `export default function ComponentName() { ... }`.
+  - NEVER use `React.FC` or `FC` types for component definitions.
+  - NEVER use arrow function constants for top-level component exports.
 - **Styling**:
   - Always use Tailwind CSS utility classes.
   - **Forbidden**: Do NOT use `<style>` blocks in Astro/React components.
