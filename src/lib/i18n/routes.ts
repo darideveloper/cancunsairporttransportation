@@ -67,6 +67,14 @@ export const routes = {
     en: "register",
     es: "es/registro",
   },
+  thankYou: {
+    en: "thank-you",
+    es: "es/gracias",
+  },
+  cancel: {
+    en: "cancel",
+    es: "es/cancelar",
+  },
 } as const;
 
 export type PageKey = keyof typeof routes;

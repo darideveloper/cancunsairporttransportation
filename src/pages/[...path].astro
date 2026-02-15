@@ -1,47 +1,49 @@
 ---
-import { routes } from "../lib/i18n/routes";
+import { routes } from '../lib/i18n/routes'
 // Import all page components
-import Home from "../components/pages/landing/Home.astro";
-import Taxi from "../components/pages/services/Taxi.astro";
-import Akumal from "../components/pages/destinations/Akumal.astro";
-import Tulum from "../components/pages/destinations/Tulum.astro";
-import Destinations from "../components/pages/landing/Destinations.astro";
-import Group from "../components/pages/services/Group.astro";
-import Luxury from "../components/pages/services/Luxury.astro";
-import Private from "../components/pages/services/Private.astro";
-import Playa from "../components/pages/destinations/Playa.astro";
-import Merida from "../components/pages/destinations/Merida.astro";
-import LegalPage from "../components/pages/legal/LegalPage.astro";
-import Contact from "../components/pages/general/Contact.astro";
-import Reservation from "../components/pages/store/Reservation.astro";
-import Results from "../components/pages/store/Results.astro";
-import Register from "../components/pages/store/Register.astro";
+import Home from '../components/pages/landing/Home.astro'
+import Taxi from '../components/pages/services/Taxi.astro'
+import Akumal from '../components/pages/destinations/Akumal.astro'
+import Tulum from '../components/pages/destinations/Tulum.astro'
+import Destinations from '../components/pages/landing/Destinations.astro'
+import Group from '../components/pages/services/Group.astro'
+import Luxury from '../components/pages/services/Luxury.astro'
+import Private from '../components/pages/services/Private.astro'
+import Playa from '../components/pages/destinations/Playa.astro'
+import Merida from '../components/pages/destinations/Merida.astro'
+import LegalPage from '../components/pages/legal/LegalPage.astro'
+import Contact from '../components/pages/general/Contact.astro'
+import Reservation from '../components/pages/store/Reservation.astro'
+import Results from '../components/pages/store/Results.astro'
+import Register from '../components/pages/store/Register.astro'
+import ThankYou from '../components/pages/store/ThankYou.astro'
+import Cancel from '../components/pages/store/Cancel.astro'
 
 export async function getStaticPaths() {
-  const paths = [];
+  const paths = []
 
   for (const [key, langPaths] of Object.entries(routes)) {
     // English
     paths.push({
-      params: { path: langPaths.en === "" ? undefined : langPaths.en },
-      props: { pageKey: key, lang: "en" },
-    });
+      params: { path: langPaths.en === '' ? undefined : langPaths.en },
+      props: { pageKey: key, lang: 'en' },
+    })
 
     // Spanish
     paths.push({
       params: { path: langPaths.es },
-      props: { pageKey: key, lang: "es" },
-    });
+      props: { pageKey: key, lang: 'es' },
+    })
   }
 
-  return paths;
+  return paths
 }
 
 interface Props {
-  pageKey: string;
-  lang: "en" | "es";
+  pageKey: string
+  lang: 'en' | 'es'
 }
-const { pageKey, lang } = Astro.props;
+const { pageKey, lang } = Astro.props
 
 const COMPONENT_MAP = {
   home: Home,
@@ -60,9 +62,18 @@ const COMPONENT_MAP = {
   reservation: Reservation,
   results: Results,
   register: Register,
-};
+  thankYou: ThankYou,
+  cancel: Cancel,
+}
 
-const PageComponent = COMPONENT_MAP[pageKey as keyof typeof COMPONENT_MAP];
+const PageComponent = COMPONENT_MAP[pageKey as keyof typeof COMPONENT_MAP]
 ---
 
-{PageComponent && <PageComponent lang={lang} pageKey={pageKey} />}
+{
+  PageComponent && (
+    <PageComponent
+      lang={lang}
+      pageKey={pageKey}
+    />
+  )
+}

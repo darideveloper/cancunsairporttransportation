@@ -1,4 +1,3 @@
-import React from "react";
 import { useSearchFormStore } from "../../../store/search-form";
 import { getTranslations } from "../../../lib/i18n/utils";
 import type { ui } from "../../../lib/i18n/ui";
@@ -8,10 +7,13 @@ interface DynamicResultsHeaderProps {
   lang: keyof typeof ui;
 }
 
-const DynamicResultsHeader: React.FC<DynamicResultsHeaderProps> = ({
+export default function DynamicResultsHeader({
   lang,
-}) => {
-  const { locationFromData, locationToData } = useSearchFormStore();
+}: DynamicResultsHeaderProps) {
+  const locationFromData = useSearchFormStore(
+    (state) => state.locationFromData,
+  );
+  const locationToData = useSearchFormStore((state) => state.locationToData);
   const t = getTranslations(lang);
 
   if (!locationFromData || !locationToData) {
@@ -28,6 +30,4 @@ const DynamicResultsHeader: React.FC<DynamicResultsHeaderProps> = ({
       {title}
     </h2>
   );
-};
-
-export default DynamicResultsHeader;
+}

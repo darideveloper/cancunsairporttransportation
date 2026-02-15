@@ -63,3 +63,38 @@ export interface LegacyErrorResponse {
     message: string;
   };
 }
+
+export interface CreateReservationPayload {
+  service_token: string;
+  first_name: string;
+  last_name: string;
+  email_address: string;
+  phone: string;
+  flight_number?: string;
+  arrival_date?: string;
+  comments?: string;
+  pay_at_arrival?: number; // 1 for true
+  payment_method?: string;
+  success_url?: string;
+  cancel_url?: string;
+  language?: string;
+  referral_code?: string;
+}
+
+export interface ReservationResponse {
+  reservation_id?: string;
+  payment_link?: string;
+  status?: string;
+  total?: number;
+  currency?: string;
+  customer?: {
+    name: string;
+    email: string;
+  };
+  error?:
+    | {
+        code: string;
+        message: string;
+      }
+    | string;
+}

@@ -7,6 +7,7 @@ import PageSEO from '../../utils/PageSEO.astro'
 import BannerImage from '../../atoms/BannerImage.astro'
 import SelectedVehicleCard from '../../organisms/booking/SelectedVehicleCard'
 import ArrivalInformation from '../../molecules/booking/ArrivalInformation'
+import ReturnInformation from '../../molecules/booking/ReturnInformation'
 import PassengerInformation from '../../molecules/booking/PassengerInformation'
 
 import PaymentMethod from '../../molecules/booking/PaymentMethod'
@@ -14,6 +15,7 @@ import PaymentBrands from '../../molecules/booking/PaymentBrands'
 import ButtonCta from '../../atoms/ButtonCta'
 
 import BookingSummary from '../../molecules/booking/BookingSummary'
+import BookingSubmission from '../../organisms/booking/BookingSubmission'
 
 // Images
 import processBannerImg from '../../../assets/images/banners/process.png'
@@ -63,6 +65,11 @@ const t = getTranslations(lang)
       client:load
     />
 
+    <ReturnInformation
+      lang={lang}
+      client:load
+    />
+
     <PassengerInformation
       lang={lang}
       client:load
@@ -78,26 +85,12 @@ const t = getTranslations(lang)
       client:load
     />
 
-    <div class='mt-6 flex flex-col items-center gap-4'>
-      <p class='text-gray-dark text-sm'>
-        {t('pages.register.paymentMethod.termsInfo')}{' '}
-        <a
-          href='/terms-and-conditions'
-          class='text-blue font-bold underline'
-        >
-          {t('global.footer.columns.information.links.1.text')}
-        </a>
-      </p>
+    <BookingSubmission
+      lang={lang}
+      client:load
+    />
 
-      <ButtonCta
-        variant='green'
-        className='w-full! py-4 text-xl font-bold uppercase'
-        client:load
-      >
-        {t('pages.register.submit')}
-      </ButtonCta>
-
-      <PaymentBrands />
-    </div>
+    <!-- Payment brands -->
+    <PaymentBrands />
   </div>
 </Layout>

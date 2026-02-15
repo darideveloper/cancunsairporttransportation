@@ -1,4 +1,3 @@
-import type { FC } from "react";
 import { useSearchFormStore } from "../../../store/search-form";
 import { getTranslations } from "../../../lib/i18n/utils";
 import { FaCar } from "react-icons/fa";
