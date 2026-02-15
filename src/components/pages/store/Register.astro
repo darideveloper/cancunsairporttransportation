@@ -7,6 +7,7 @@ import PageSEO from '../../utils/PageSEO.astro'
 import BannerImage from '../../atoms/BannerImage.astro'
 import SelectedVehicleCard from '../../organisms/booking/SelectedVehicleCard'
 import ArrivalInformation from '../../molecules/booking/ArrivalInformation'
+import PassengerInformation from '../../molecules/booking/PassengerInformation'
 
 import BookingSummary from '../../molecules/booking/BookingSummary'
 
@@ -14,7 +15,7 @@ import BookingSummary from '../../molecules/booking/BookingSummary'
 import processBannerImg from '../../../assets/images/banners/process.png'
 
 // Libs
-import { useTranslations } from '../../../lib/i18n/utils'
+import { getTranslations } from '../../../lib/i18n/utils'
 
 interface Props {
   lang: 'en' | 'es'
@@ -22,7 +23,7 @@ interface Props {
 }
 
 const { lang, pageKey } = Astro.props
-const t = useTranslations(lang)
+const t = getTranslations(lang)
 ---
 
 <Layout pageKey={pageKey}>
@@ -42,12 +43,17 @@ const t = useTranslations(lang)
     </h1>
   </BannerImage>
 
-  <div class='container max-w-4xl'>
+  <div class='container mt-4 mb-6 max-w-4xl text-center'>
+    <p class='text-gray-dark text-lg font-medium italic'>
+      {t('register.serviceNotice')}
+    </p>
+  </div>
+
+  <div class='container flex max-w-4xl flex-col gap-6'>
     <!-- Selected Vehicle Summary -->
     <SelectedVehicleCard
       lang={lang}
       client:load
-      className='mt-12'
     />
 
     <ArrivalInformation
@@ -55,11 +61,14 @@ const t = useTranslations(lang)
       client:load
     />
 
-    <div class='mt-6'>
-      <BookingSummary
-        lang={lang}
-        client:load
-      />
-    </div>
+    <PassengerInformation
+      lang={lang}
+      client:load
+    />
+
+    <BookingSummary
+      lang={lang}
+      client:load
+    />
   </div>
 </Layout>

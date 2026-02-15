@@ -598,6 +598,7 @@
       "title": "DATOS DE RESERVACIÓN",
       "description": "Crea una cuenta con Cancun Airport Transportation para gestionar tus reservas y acceder a ofertas exclusivas.",
       "keywords": "registro transporte cancun, crear cuenta traslado aeropuerto cancun",
+      "serviceNotice": "Gracias por elegir Cancun Airport Transportation by Go Transfers ®, esta información nos ayudará a darle un mejor servicio y en cualquier caso de cambio en su servicio.",
       "arrivalInformation": {
         "title": "Información de Llegada",
         "pickupDate": "Fecha de Recogida",
@@ -606,6 +607,19 @@
         "flightNumber": "Número de Vuelo",
         "airlinePlaceholder": "¿Cuál es tu aerolínea?",
         "flightNumberPlaceholder": "¿Cuál es tu número de vuelo?"
+      },
+      "passengerInformation": {
+        "title": "Información del pasajero",
+        "firstName": "Nombre completo",
+        "lastName": "Apellido",
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "notes": "Notas / Requerimientos adicionales",
+        "firstNamePlaceholder": "¿Cuál es tu nombre?",
+        "lastNamePlaceholder": "¿Cuál es tu nombre?",
+        "emailPlaceholder": "¿Cuál es tu correo electrónico?",
+        "phonePlaceholder": "¿Cuál es tu número de teléfono?",
+        "notesPlaceholder": "¿Tienes alguna nota o requerimiento especial?"
       }
     },
     "home": {
