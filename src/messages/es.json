@@ -747,15 +747,19 @@
         "description": "En Cancun Airport Transportation por Go Transfers, ofrecemos vehículos modernos y confortables para garantizar traslados sin problemas y fiables desde el aeropuerto de Cancún. Puede reservar fácilmente cualquiera de nuestros servicios a través de nuestra página web.\n\nAdemás de traslados al aeropuerto, ofrecemos soluciones integrales de transporte para llevarlo a cualquier lugar en Cancún y la Riviera Maya. Nuestra amplia gama de servicios está diseñada para satisfacer todas sus necesidades de viaje.",
         "items": {
           "airportToHotel": {
+            "title": "Aeropuerto a Hotel",
             "text": "¿Visita el Caribe y necesita transporte a su hotel o de regreso al aeropuerto? Este servicio es perfecto para usted."
           },
           "hotelToHotel": {
+            "title": "De Hotel a Hotel",
             "text": "¿Necesita cambiar de hotel durante su estancia en Cancún? Le tenemos cubierto con nuestro transporte sin interrupciones de hotel a hotel."
           },
           "hotelToRestaurant": {
+            "title": "Hotel a Restaurante",
             "text": "Cuando está de vacaciones, lo último por lo que quiere preocuparse es por conducir, especialmente si planea disfrutar de unas copas. Permítanos llevarle a su restaurante y de vuelta a su hotel con seguridad."
           },
           "hotelToPark": {
+            "title": "Hotel a Parque",
             "text": "¿Planea visitar Xcaret, Xel-Ha, Xoximilco o el Museo Maya de Cancún? Cancun Transfer Services puede llevarle a cualquiera de estos increíbles parques."
           }
         }
@@ -1025,6 +1029,7 @@
       "description": "Transportación de lujo en Cancún a todos los hoteles en Cancún, Playa del Carmen, Tulum, y más destinos en la Riviera Maya. Traslados de lujo en el Aeropuerto de Cancun por Cancun Airport Transportation",
       "keywords": "transporte de lujo cancun, traslado vip cancun, shuttle premium aeropuerto, servicio auto lujo cancun",
       "includes": {
+        "keywords": "transporte de lujo cancun, traslado vip cancun, shuttle premium aeropuerto, servicio auto lujo cancun",
         "title": "Nuestro servicio de transporte de lujo en Cancún incluyen:",
         "imageAlt": "Transportación de lujo en Cancún Aeropuerto",
         "imageTitle": "Transportación de lujo en Cancún Aeropuerto"
@@ -1129,6 +1134,7 @@
     "group": {
       "title": "Transportación de Grupos en Cancún | Transportación Aeropuerto Cancún por Go Transfers",
       "description": "Transportación para grupos a todos los hoteles en Cancún, Playa del Carmen, Tulum, y más destinos en la Riviera Maya. Transportación de Grupos en Cancún con Cancún Airport Transportation por Go Transfers",
+      "keywords": "transporte grupos cancun, traslado para grupos, renta de autobus cancun, transporte para eventos cancun",
       "includes": {
         "keywords": "transporte grupos cancun, traslado para grupos, renta de autobus cancun, transporte para eventos cancun",
         "title": "Todos nuestros Traslados de Grupo en el Aeropuerto de Cancún incluyen:",
@@ -1357,6 +1363,10 @@
           "otherDestinations": {
             "question": "¿Qué otros destinos puedo reservar para mi servicio de transporte?",
             "answer": "Tenemos varias ubicaciones donde nos puedes encontrar, puedes llegar a los destinos más populares de Quintana Roo con nosotros: Transportación del Aeropuerto de Cancún, Transportación de Cancún a Tulum."
+          },
+          "placesToVisit": {
+            "question": "¿Qué lugares puedo visitar en Playa del Carmen con un servicio de transporte desde Cancún?",
+            "answer": "Un servicio de transporte puede llevarte a varias atracciones en y alrededor de Playa del Carmen, incluyendo la vibrante Quinta Avenida para compras y cenas, parques ecológicos como Xcaret y Xel-Há, y cenotes cercanos para nadar y hacer snorkel. También puedes visitar sitios históricos como las ruinas de Tulum, que están a una hora de distancia."
           }
         }
       },

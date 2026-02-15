@@ -1,6 +1,8 @@
 import { ui, defaultLang } from "./ui";
 import { routes } from "./routes";
 
+const isDev = import.meta.env.DEV;
+
 export function getLangFromUrl(url: URL) {
   const [, firstSegment] = url.pathname.split("/");
   if (firstSegment === "es") return "es";
@@ -24,10 +26,20 @@ export function getTranslations(lang: keyof typeof ui) {
 
     // Fallback to default language if the key doesn't exist
     if (value === undefined) {
-      value = ui[defaultLang];
+      let fallbackValue: any = ui[defaultLang];
       for (const k of keys) {
-        value = value?.[k];
-        if (value === undefined) break;
+        fallbackValue = fallbackValue?.[k];
+        if (fallbackValue === undefined) break;
+      }
+
+      value = fallbackValue;
+
+      if (value === undefined) {
+        const errorMsg = `[i18n] Missing translation key: "${key}" for language "${lang}"`;
+        if (isDev) {
+          console.error(errorMsg);
+          return `MISSING: ${key}`;
+        }
       }
     }
 

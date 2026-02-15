@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run validate-i18n && astro build",
     "preview": "astro preview",
+    "validate-i18n": "tsx scripts/validate-i18n.ts",
     "astro": "astro"
   },
   "dependencies": {
@@ -43,6 +44,7 @@
     "@types/google.maps": "^3.58.1",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.2"
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tsx": "^4.21.0"
   }
 }
