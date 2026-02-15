@@ -3,7 +3,7 @@
 import Layout from '../../../layouts/Layout.astro'
 
 // Libs
-import { useTranslations } from '../../../lib/i18n/utils'
+import { getTranslations } from '../../../lib/i18n/utils'
 import PageSEO from '../../../components/utils/PageSEO.astro'
 import SectionHeading from '../../../components/molecules/SectionHeading.astro'
 // Components
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const { lang, pageKey } = Astro.props
-const t = useTranslations(lang)
+const t = getTranslations(lang)
 
 const action = lang === 'es' ? '/es/mi-reservacion' : '/my-reservation'
 ---
@@ -70,7 +70,6 @@ const action = lang === 'es' ? '/es/mi-reservacion' : '/my-reservation'
           <ButtonCta
             type='submit'
             className='w-full! min-w-[200px] md:w-auto'
-            '
             variant='blue'
           >
             {t('pages.reservation.form.submit')}

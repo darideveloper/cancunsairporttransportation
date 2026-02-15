@@ -34,6 +34,12 @@ interface SearchFormState {
   selectedVehicle: SelectedVehicle | null;
   airline: string;
   flightNumber: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  notes: string;
+  paymentMethod: "paypal" | "stripe";
   setTripType: (tripType: "oneWay" | "roundTrip") => void;
   setCurrency: (currency: "USD" | "MXN") => void;
   setLocationFrom: (location: string | LocationData) => void;
@@ -46,6 +52,12 @@ interface SearchFormState {
   setSelectedVehicle: (vehicle: SelectedVehicle | null) => void;
   setAirline: (airline: string) => void;
   setFlightNumber: (flightNumber: string) => void;
+  setFirstName: (firstName: string) => void;
+  setLastName: (lastName: string) => void;
+  setEmail: (email: string) => void;
+  setPhone: (phone: string) => void;
+  setNotes: (notes: string) => void;
+  setPaymentMethod: (method: "paypal" | "stripe") => void;
 }
 
 export const useSearchFormStore = create<SearchFormState>()(
@@ -65,6 +77,12 @@ export const useSearchFormStore = create<SearchFormState>()(
       selectedVehicle: null,
       airline: "",
       flightNumber: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      notes: "",
+      paymentMethod: "stripe",
       setTripType: (tripType) => set({ tripType }),
       setCurrency: (currency) => set({ currency }),
       setLocationFrom: (location) => {
@@ -89,10 +107,25 @@ export const useSearchFormStore = create<SearchFormState>()(
       setSelectedVehicle: (selectedVehicle) => set({ selectedVehicle }),
       setAirline: (airline) => set({ airline }),
       setFlightNumber: (flightNumber) => set({ flightNumber }),
+      setFirstName: (firstName) => set({ firstName }),
+      setLastName: (lastName) => set({ lastName }),
+      setEmail: (email) => set({ email }),
+      setPhone: (phone) => set({ phone }),
+      setNotes: (notes) => set({ notes }),
+      setPaymentMethod: (paymentMethod) => set({ paymentMethod }),
     }),
     {
       name: "search-form-storage",
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => {
+        if (typeof window !== "undefined") {
+          return localStorage;
+        }
+        return {
+          getItem: () => null,
+          setItem: () => {},
+          removeItem: () => {},
+        };
+      }),
       partialize: (state) => ({
         tripType: state.tripType,
         currency: state.currency,
@@ -108,6 +141,12 @@ export const useSearchFormStore = create<SearchFormState>()(
         selectedVehicle: state.selectedVehicle,
         airline: state.airline,
         flightNumber: state.flightNumber,
+        firstName: state.firstName,
+        lastName: state.lastName,
+        email: state.email,
+        phone: state.phone,
+        notes: state.notes,
+        paymentMethod: state.paymentMethod,
       }),
     },
   ),

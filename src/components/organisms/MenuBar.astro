@@ -2,7 +2,7 @@
 // Libs
 import {
   getLangFromUrl,
-  useTranslations,
+  getTranslations,
   getLocalizedPath,
 } from "../../lib/i18n/utils";
 
@@ -30,7 +30,7 @@ const { pageKey } = Astro.props;
 
 // Lang
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 
 // Constants & Data
 const CTA_LINK = getLocalizedPath("reservation", lang);

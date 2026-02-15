@@ -1,7 +1,7 @@
 import React from "react";
-import { useSearchFormStore } from "../../store/search-form";
-import { useTranslations } from "../../lib/i18n/utils";
-import type { ui } from "../../lib/i18n/ui";
+import { useSearchFormStore } from "../../../store/search-form";
+import { getTranslations } from "../../../lib/i18n/utils";
+import type { ui } from "../../../lib/i18n/ui";
 import clsx from "clsx";
 
 interface DynamicResultsHeaderProps {
@@ -12,7 +12,7 @@ const DynamicResultsHeader: React.FC<DynamicResultsHeaderProps> = ({
   lang,
 }) => {
   const { locationFromData, locationToData } = useSearchFormStore();
-  const t = useTranslations(lang);
+  const t = getTranslations(lang);
 
   if (!locationFromData || !locationToData) {
     return null;

@@ -1,6 +1,6 @@
 ---
 // Libs
-import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
+import { getTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 
 // Data
 import { PHONES } from "../../data/site-config";
@@ -15,7 +15,7 @@ import GoogleMap from "../atoms/GoogleMap.astro";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 
 const contactItems = [
   {

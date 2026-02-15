@@ -1,6 +1,6 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+import { getLangFromUrl, getTranslations } from '../../lib/i18n/utils'
 
 // Data
 import { PHONES, SOCIAL_LINKS } from '../../data/site-config'
@@ -17,7 +17,7 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa6'
 // Lang
 const lang = getLangFromUrl(Astro.url)
 const currentLang = lang === 'es' ? 'es' : 'en'
-const t = useTranslations(lang)
+const t = getTranslations(lang)
 
 interface Props {
   pageKey?: string

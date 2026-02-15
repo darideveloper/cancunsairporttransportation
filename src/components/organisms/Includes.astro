@@ -1,6 +1,6 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+import { getLangFromUrl, getTranslations } from '../../lib/i18n/utils'
 
 // Components
 import { Image } from 'astro:assets'
@@ -9,7 +9,7 @@ import CheckListItem from '../atoms/CheckListItem'
 
 // Lang
 const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const t = getTranslations(lang)
 
 // Types
 interface Props {

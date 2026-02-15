@@ -2,7 +2,7 @@
 import { BUSINESS_DATA } from "../../../data/site-config";
 import { SITE_TITLE, SITE_DESCRIPTION, LOCALE_MAP } from "../../../consts";
 import {
-  useTranslations,
+  getTranslations,
   getLangFromUrl,
   getLocalizedPath,
 } from "../../../lib/i18n/utils";
@@ -38,7 +38,7 @@ const {
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 const locale = LOCALE_MAP[lang] || "en_US";
 
 // Metadata Resolution

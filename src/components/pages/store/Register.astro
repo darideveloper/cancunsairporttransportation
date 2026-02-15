@@ -5,13 +5,21 @@ import Layout from '../../../layouts/Layout.astro'
 // Components
 import PageSEO from '../../utils/PageSEO.astro'
 import BannerImage from '../../atoms/BannerImage.astro'
-import SelectedVehicleCard from '../../organisms/SelectedVehicleCard'
+import SelectedVehicleCard from '../../organisms/booking/SelectedVehicleCard'
+import ArrivalInformation from '../../molecules/booking/ArrivalInformation'
+import PassengerInformation from '../../molecules/booking/PassengerInformation'
+
+import PaymentMethod from '../../molecules/booking/PaymentMethod'
+import PaymentBrands from '../../molecules/booking/PaymentBrands'
+import ButtonCta from '../../atoms/ButtonCta'
+
+import BookingSummary from '../../molecules/booking/BookingSummary'
 
 // Images
 import processBannerImg from '../../../assets/images/banners/process.png'
 
 // Libs
-import { useTranslations } from '../../../lib/i18n/utils'
+import { getTranslations } from '../../../lib/i18n/utils'
 
 interface Props {
   lang: 'en' | 'es'
@@ -19,7 +27,7 @@ interface Props {
 }
 
 const { lang, pageKey } = Astro.props
-const t = useTranslations(lang)
+const t = getTranslations(lang)
 ---
 
 <Layout pageKey={pageKey}>
@@ -39,12 +47,57 @@ const t = useTranslations(lang)
     </h1>
   </BannerImage>
 
-  <div class='container max-w-4xl'>
+  <div class='container mt-8 flex max-w-4xl flex-col gap-6'>
+    <!-- Notice text -->
+    <p class='text-gray-dark text-md font-medium'>
+      {t('pages.register.serviceNotice')}
+    </p>
     <!-- Selected Vehicle Summary -->
     <SelectedVehicleCard
       lang={lang}
       client:load
-      className='mt-12'
     />
+
+    <ArrivalInformation
+      lang={lang}
+      client:load
+    />
+
+    <PassengerInformation
+      lang={lang}
+      client:load
+    />
+
+    <BookingSummary
+      lang={lang}
+      client:load
+    />
+
+    <PaymentMethod
+      lang={lang}
+      client:load
+    />
+
+    <div class='mt-6 flex flex-col items-center gap-4'>
+      <p class='text-gray-dark text-sm'>
+        {t('pages.register.paymentMethod.termsInfo')}{' '}
+        <a
+          href='/terms-and-conditions'
+          class='text-blue font-bold underline'
+        >
+          {t('global.footer.columns.information.links.1.text')}
+        </a>
+      </p>
+
+      <ButtonCta
+        variant='green'
+        className='w-full! py-4 text-xl font-bold uppercase'
+        client:load
+      >
+        {t('pages.register.submit')}
+      </ButtonCta>
+
+      <PaymentBrands />
+    </div>
   </div>
 </Layout>

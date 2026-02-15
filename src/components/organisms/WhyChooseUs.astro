@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+import { getLangFromUrl, getTranslations } from '../../lib/i18n/utils'
 import { Image } from 'astro:assets'
 
 // Components
@@ -25,7 +25,7 @@ import {
 import tripAdvisorGif from '../../assets/images/traveller-choice-2024.gif'
 
 const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const t = getTranslations(lang)
 
 // Icon mapping
 const iconMap: Record<string, any> = {

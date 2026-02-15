@@ -5,13 +5,13 @@ import BasicIconCard from "../molecules/BasicIconCard.astro";
 import ButtonCta from "../atoms/ButtonCta";
 
 // Libs
-import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { getLangFromUrl, getTranslations } from "../../lib/i18n/utils";
 
 // Icons
 import { FaHotel } from "react-icons/fa6";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang as "en" | "es");
+const t = getTranslations(lang as "en" | "es");
 
 interface Props {
   contentKey: string;

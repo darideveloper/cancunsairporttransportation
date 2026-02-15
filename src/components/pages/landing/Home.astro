@@ -3,7 +3,7 @@
 import Layout from '../../../layouts/Layout.astro'
 
 // Libs
-import { useTranslations } from '../../../lib/i18n/utils'
+import { getTranslations } from '../../../lib/i18n/utils'
 import { getStaticPathsLangs } from '../../../lib/utils'
 import { marked } from 'marked'
 
@@ -17,9 +17,8 @@ import BannerImage from '../../../components/atoms/BannerImage.astro'
 import ButtonCta from '../../../components/atoms/ButtonCta'
 import RatesTable from '../../../components/organisms/RatesTable.astro'
 import TextCard from '../../../components/molecules/TextCard.astro'
-import BookingForm from '../../../components/organisms/BookingForm'
-import TextCardHalf from '../../../components/organisms/TextCardHalf.astro'
-import TextCardSmall from '../../../components/organisms/TextCardSmall.astro'
+import BookingForm from '../../../components/organisms/booking/BookingForm'
+import FeatureBanner from '../../../components/organisms/FeatureBanner.astro'
 import FeaturedDestinations from '../../../components/organisms/FeaturedDestinations.astro'
 import BannerCta from '../../../components/organisms/BannerCta.astro'
 import BannerStats from '../../../components/organisms/BannerStats.astro'
@@ -54,7 +53,7 @@ const { lang, pageKey } = Astro.props
 const contentKey = pageKey || 'home'
 
 // Tranlation texts
-const t = useTranslations(lang)
+const t = getTranslations(lang)
 const reliableServiceContent = await marked.parse(
   t('global.sections.reliableService.description'),
 )
@@ -94,7 +93,7 @@ const reliableServiceContent = await marked.parse(
   </div>
 
   <!-- Banner with image and text -->
-  <TextCardHalf
+  <FeatureBanner
     id='safe-trip-booking'
     contentKey='home'
     section='safeTrip'
@@ -102,6 +101,7 @@ const reliableServiceContent = await marked.parse(
     fieldKey='text'
     image={safeTripBookingImg}
     imageClass='object-left'
+    layout='grid'
   />
 
   <!-- Banner CTA -->
@@ -124,7 +124,7 @@ const reliableServiceContent = await marked.parse(
 
   <!-- Why Choose Us -->
   <div class='bg-accent/5 mt-12 py-12'>
-    <TextCardSmall
+    <FeatureBanner
       id='why-choose-us'
       contentKey='home'
       section='whyChooseUs'
@@ -133,6 +133,7 @@ const reliableServiceContent = await marked.parse(
       imageAltKey='imageAlt'
       image={customClientImg}
       imageClass='object-right'
+      layout='flex'
     />
   </div>
 

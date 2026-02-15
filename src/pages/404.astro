@@ -2,10 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/atoms/Logo.astro";
 import ButtonCta from "../components/atoms/ButtonCta";
-import { useTranslations } from "../lib/i18n/utils";
+import { getTranslations } from "../lib/i18n/utils";
 
-const t = useTranslations("en");
-const tEs = useTranslations("es");
+const t = getTranslations("en");
+const tEs = getTranslations("es");
 
 const title = t("pages.404.title");
 const heading = t("pages.404.heading");

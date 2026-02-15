@@ -1,6 +1,6 @@
 ---
 // Libs
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+import { getLangFromUrl, getTranslations } from '../../lib/i18n/utils'
 
 // Components
 import H2 from '../atoms/H2'
@@ -8,7 +8,7 @@ import Testimonial from '../molecules/Testimonial.astro'
 
 // Lang
 const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const t = getTranslations(lang)
 
 // Props
 interface Props {

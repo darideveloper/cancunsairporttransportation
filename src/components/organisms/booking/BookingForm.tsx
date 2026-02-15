@@ -1,11 +1,11 @@
-import { useSearchFormStore } from "../../store/search-form";
-import TripTypeControls from "../molecules/booking/TripTypeControls";
-import CurrencyControls from "../molecules/booking/CurrencyControls";
-import SubmitButton from "../atoms/form/SubmitButton";
-import LocationAutocomplete from "../atoms/form/LocationAutocomplete";
-import DateInput from "../atoms/form/DateInput";
-import TimeInput from "../atoms/form/TimeInput";
-import PassengerInput from "../atoms/form/PassengerInput";
+import { useSearchFormStore } from "../../../store/search-form";
+import TripTypeControls from "../../molecules/booking/TripTypeControls";
+import CurrencyControls from "../../molecules/booking/CurrencyControls";
+import SubmitButton from "../../atoms/form/SubmitButton";
+import LocationAutocomplete from "../../atoms/booking/LocationAutocomplete";
+import DateInput from "../../atoms/form/DateInput";
+import TimeInput from "../../atoms/form/TimeInput";
+import PassengerInput from "../../atoms/form/PassengerInput";
 
 interface Props {
   translations: any;
@@ -56,7 +56,14 @@ export default function BookingForm({
   const minReturnTime =
     returnDate === departureDate ? departureTime : undefined;
 
-  const isValid = !!locationFromData && !!locationToData;
+  // Validate all required fields based on trip type
+  const isValid =
+    !!locationFromData &&
+    !!locationToData &&
+    !!departureDate &&
+    !!departureTime &&
+    (tripType === "oneWay" ||
+      (tripType === "roundTrip" && !!returnDate && !!returnTime));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

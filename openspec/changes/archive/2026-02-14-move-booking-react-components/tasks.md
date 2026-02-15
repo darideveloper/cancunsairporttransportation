@@ -1,0 +1,23 @@
+# Tasks: Move Booking React Components
+
+- [x] Create `src/components/molecules/booking` directory
+- [x] Create `src/components/organisms/booking` directory
+- [x] Move molecules to `booking` subfolder:
+    - [x] `VehicleBuyCard.tsx`
+    - [x] `VehicleBuyCardSkeleton.tsx`
+    - [x] `DynamicResultsHeader.tsx`
+- [x] Move organisms to `booking` subfolder:
+    - [x] `VehicleBuyCards.tsx`
+    - [x] `NoAvailability.tsx`
+    - [x] `SelectedVehicleCard.tsx`
+- [x] Update internal imports in moved molecules:
+    - [x] `src/components/molecules/booking/VehicleBuyCard.tsx`
+    - [x] `src/components/molecules/booking/DynamicResultsHeader.tsx`
+- [x] Update internal imports in moved organisms:
+    - [x] `src/components/organisms/booking/VehicleBuyCards.tsx`
+    - [x] `src/components/organisms/booking/NoAvailability.tsx`
+    - [x] `src/components/organisms/booking/SelectedVehicleCard.tsx`
+- [x] Update consumer imports in pages:
+    - [x] `src/components/pages/store/Results.astro`
+    - [x] `src/components/pages/store/Register.astro`
+- [x] Validate project build and component rendering

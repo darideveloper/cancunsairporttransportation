@@ -1,6 +1,6 @@
 ---
 import { generateId } from "../../lib/utils";
-import { getLangFromUrl, useTranslations } from "../../lib/i18n/utils";
+import { getLangFromUrl, getTranslations } from "../../lib/i18n/utils";
 
 interface Props {
   title: string;
@@ -23,7 +23,7 @@ const {
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 const id = generateId("info-card", title);
 const ariaLabel = t("global.accessibility.viewDetails", { item: title });
 ---

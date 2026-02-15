@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils'
+import { getLangFromUrl, getTranslations } from '../../lib/i18n/utils'
 import H2 from '../atoms/H2'
 import ContactPhones from '../molecules/ContactPhones.astro'
 
@@ -9,7 +9,7 @@ import logoSafeTravel from '../../assets/images/process/safe_travel.jpg'
 import logoSct from '../../assets/images/process/sct.png'
 
 const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+const t = getTranslations(lang)
 
 const logos = [
   {

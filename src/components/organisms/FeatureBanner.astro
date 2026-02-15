@@ -1,0 +1,98 @@
+---
+import { Image } from 'astro:assets'
+import { marked } from 'marked'
+import clsx from 'clsx'
+import { getLangFromUrl, getTranslations } from '../../lib/i18n/utils'
+import TextCard from '../molecules/TextCard.astro'
+
+interface Props {
+  contentKey: string // Was page
+  section: string
+  image: ImageMetadata
+  id?: string
+  reverse?: boolean // If true, image is on the right
+  baseKey?: string // Optional override for the full translation key path
+  fieldKey?: string // Key for the text content (default: 'description')
+  imageAltKey?: string // Optional override key for alt text (default: 'title')
+  imageClass?: string // Optional class override for image
+  layout?: 'grid' | 'flex' // Layout mode: grid (default, like TextCardHalf) or flex (like TextCardSmall)
+}
+
+const {
+  contentKey,
+  section,
+  image,
+  id,
+  reverse,
+  baseKey,
+  fieldKey,
+  imageAltKey,
+  imageClass,
+  layout = 'grid',
+} = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const t = getTranslations(lang)
+
+const translationBase = baseKey || `pages.${contentKey}.${section}`
+const title = t(`${translationBase}.title`)
+const imageAlt = imageAltKey ? t(`${translationBase}.${imageAltKey}`) : title
+const contentText = t(`${translationBase}.${fieldKey || 'description'}`)
+const contentHtml = await marked.parse(contentText)
+
+const isGrid = layout === 'grid'
+
+// Determine container class based on layout mode
+const containerClass = clsx(
+  'mt-12 items-center justify-center gap-8',
+  isGrid
+    ? 'grid grid-cols-1 md:grid-cols-2'
+    : clsx('flex flex-col', reverse ? 'md:flex-row-reverse' : 'md:flex-row'),
+)
+
+// Determine image class based on layout mode
+const imageLayoutClass = clsx(
+  'h-full w-full rounded-xl object-cover',
+  isGrid ? reverse && 'md:order-last' : 'md:w-1/2 lg:w-1/3',
+  imageClass,
+)
+
+// Determine content class based on layout mode
+const contentClass = clsx('markdown', !isGrid && 'text-justify')
+
+// Determine image sizes based on layout mode
+const imageSizes = isGrid
+  ? '(max-width: 768px) 348px, (max-width: 1024px) 450px, 610px'
+  : '(max-width: 768px) 400px, 800px'
+
+const imageWidths = isGrid
+  ? [348, 696, 1220, image.width]
+  : [400, 800, image.width]
+
+// Determine loading strategy based on layout mode
+const imageLoading = isGrid ? 'eager' : 'lazy'
+---
+
+<TextCard
+  id={id || section}
+  title={title}
+  class={containerClass}
+>
+  <Image
+    slot='image'
+    src={image}
+    class={imageLayoutClass}
+    alt={imageAlt}
+    title={imageAlt}
+    widths={imageWidths}
+    sizes={imageSizes}
+    quality={60}
+    format='avif'
+    loading={imageLoading}
+    decoding='async'
+  />
+  <div
+    set:html={contentHtml}
+    class={contentClass}
+  />
+</TextCard>

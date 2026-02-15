@@ -1,48 +1,47 @@
 ---
 // Layout
-import Layout from "../../../layouts/Layout.astro";
+import Layout from '../../../layouts/Layout.astro'
 
 // Libs
-import { useTranslations } from "../../../lib/i18n/utils";
+import { getTranslations } from '../../../lib/i18n/utils'
 
 // Components
-import PageSEO from "../../../components/utils/PageSEO.astro";
-import RatesTable from "../../../components/organisms/RatesTable.astro";
-import BookingForm from "../../../components/organisms/BookingForm";
-import TextCardHalf from "../../../components/organisms/TextCardHalf.astro";
-import TextCardSmall from "../../../components/organisms/TextCardSmall.astro";
-import PopularHotels from "../../../components/organisms/PopularHotels.astro";
-import BannerStats from "../../../components/organisms/BannerStats.astro";
-import PricingSection from "../../../components/organisms/PricingSection.astro";
-import Testimonials from "../../../components/organisms/Testimonials.astro";
-import ClientGallery from "../../../components/organisms/ClientGallery.astro";
-import FeaturedDestinations from "../../../components/organisms/FeaturedDestinations.astro";
-import BannerCta from "../../../components/organisms/BannerCta.astro";
-import FaqSection from "../../../components/organisms/FaqSection.astro";
-import TransportationServices from "../../../components/organisms/TransportationServices.astro";
+import PageSEO from '../../../components/utils/PageSEO.astro'
+import RatesTable from '../../../components/organisms/RatesTable.astro'
+import BookingForm from '../../../components/organisms/booking/BookingForm'
+import FeatureBanner from '../../../components/organisms/FeatureBanner.astro'
+import PopularHotels from '../../../components/organisms/PopularHotels.astro'
+import BannerStats from '../../../components/organisms/BannerStats.astro'
+import PricingSection from '../../../components/organisms/PricingSection.astro'
+import Testimonials from '../../../components/organisms/Testimonials.astro'
+import ClientGallery from '../../../components/organisms/ClientGallery.astro'
+import FeaturedDestinations from '../../../components/organisms/FeaturedDestinations.astro'
+import BannerCta from '../../../components/organisms/BannerCta.astro'
+import FaqSection from '../../../components/organisms/FaqSection.astro'
+import TransportationServices from '../../../components/organisms/TransportationServices.astro'
 
 // Images
-import safeTripBookingImg from "../../../assets/images/destinations/playa-del-carmen/trip-advisor.webp";
-import howToMoveImg from "../../../assets/images/destinations/playa-del-carmen/destination.webp";
-import client1Img from "../../../assets/images/destinations/playa-del-carmen/gallery/client_1.webp";
-import client2Img from "../../../assets/images/destinations/playa-del-carmen/gallery/client_2.webp";
-import client3Img from "../../../assets/images/destinations/playa-del-carmen/gallery/client_3.webp";
-import client4Img from "../../../assets/images/destinations/playa-del-carmen/gallery/client_4.webp";
+import safeTripBookingImg from '../../../assets/images/destinations/playa-del-carmen/trip-advisor.webp'
+import howToMoveImg from '../../../assets/images/destinations/playa-del-carmen/destination.webp'
+import client1Img from '../../../assets/images/destinations/playa-del-carmen/gallery/client_1.webp'
+import client2Img from '../../../assets/images/destinations/playa-del-carmen/gallery/client_2.webp'
+import client3Img from '../../../assets/images/destinations/playa-del-carmen/gallery/client_3.webp'
+import client4Img from '../../../assets/images/destinations/playa-del-carmen/gallery/client_4.webp'
 
 // Page data
 // Props
 interface Props {
-  lang: "en" | "es";
-  pageKey: string;
+  lang: 'en' | 'es'
+  pageKey: string
 }
 // Get language from params or props
-const { lang, pageKey } = Astro.props;
+const { lang, pageKey } = Astro.props
 
 // Page data
-const contentKey = pageKey || "playa";
+const contentKey = pageKey || 'playa'
 
 // Tranlation texts
-const t = useTranslations(lang);
+const t = getTranslations(lang)
 
 // Data
 ---
@@ -51,15 +50,15 @@ const t = useTranslations(lang);
   <!-- Page SEO -->
   <PageSEO
     currentPage={contentKey}
-    slot="seo"
-    jsonType="TouristDestination"
+    slot='seo'
+    jsonType='TouristDestination'
     ogImage={safeTripBookingImg.src}
   />
 
   <!-- Form -->
-  <div class="@container">
+  <div class='@container'>
     <BookingForm
-      translations={t("global.booking")}
+      translations={t('global.booking')}
       client:idle
       title={t(`pages.${contentKey}.title`)}
     />
@@ -69,26 +68,28 @@ const t = useTranslations(lang);
   <BannerStats />
 
   <!-- Banner with image and text -->
-  <TextCardHalf
-    id="safe-trip-booking"
+  <FeatureBanner
+    id='safe-trip-booking'
     contentKey={contentKey}
-    section="safeTrip"
+    section='safeTrip'
     image={safeTripBookingImg}
-    imageClass="object-right"
+    imageClass='object-right'
+    layout='grid'
   />
 
   <!-- Pricing transportation -->
   <PricingSection contentKey={contentKey} />
 
   <!-- How to move -->
-  <div class="bg-accent/5 mt-12 py-12">
-    <TextCardSmall
-      id="how-to-move"
+  <div class='bg-accent/5 mt-12 py-12'>
+    <FeatureBanner
+      id='how-to-move'
       contentKey={contentKey}
-      section="howToMove"
-      fieldKey="content"
+      section='howToMove'
+      fieldKey='content'
       image={howToMoveImg}
-      imageClass="object-right"
+      imageClass='object-right'
+      layout='flex'
     />
   </div>
 
@@ -100,8 +101,8 @@ const t = useTranslations(lang);
 
   <!-- Client Gallery -->
   <ClientGallery
-    title={t("global.sections.clientGallery.title")}
-    subtitle={t("global.sections.clientGallery.subtitle")}
+    title={t('global.sections.clientGallery.title')}
+    subtitle={t('global.sections.clientGallery.subtitle')}
     images={[client1Img, client2Img, client3Img, client4Img]}
   />
 
@@ -109,7 +110,10 @@ const t = useTranslations(lang);
   <FeaturedDestinations contentKey={contentKey} />
 
   <!-- Banner CTA -->
-  <BannerCta contentKey={contentKey} imageClass="sm:w-1/2 md:w-4/12 h-auto" />
+  <BannerCta
+    contentKey={contentKey}
+    imageClass='sm:w-1/2 md:w-4/12 h-auto'
+  />
 
   <!-- Rates Table -->
   <RatesTable />

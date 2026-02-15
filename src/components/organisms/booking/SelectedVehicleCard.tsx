@@ -1,9 +1,9 @@
 import { FaMapMarkerAlt, FaThumbsUp, FaUsers } from "react-icons/fa";
 import clsx from "clsx";
-import { useSearchFormStore } from "../../store/search-form";
-import { useTranslations } from "../../lib/i18n/utils";
-import CheckListItem from "../atoms/CheckListItem";
-import H2 from "../atoms/H2";
+import { useSearchFormStore } from "../../../store/search-form";
+import { getTranslations } from "../../../lib/i18n/utils";
+import CheckListItem from "../../atoms/CheckListItem";
+import H2 from "../../atoms/H2";
 
 export interface SelectedVehicleCardProps {
   lang: "en" | "es";
@@ -17,7 +17,7 @@ export default function SelectedVehicleCard({
   const { selectedVehicle, locationFrom, locationTo, passengers, tripType } =
     useSearchFormStore();
 
-  const t = useTranslations(lang);
+  const t = getTranslations(lang);
 
   // Validation: Don't render if critical data is missing
   if (!selectedVehicle || !locationFrom || !locationTo || passengers < 1) {
@@ -57,7 +57,7 @@ export default function SelectedVehicleCard({
   return (
     <div
       className={clsx(
-        "bg-gray/10 flex flex-col items-center gap-4 rounded-lg p-4 shadow-sm md:flex-row",
+        "bg-gray/10 flex flex-col items-center gap-4 rounded-xl p-4 shadow-sm md:flex-row",
         className,
       )}
     >

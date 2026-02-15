@@ -4,14 +4,14 @@ import { useState, useEffect } from "react";
 // Components
 import VehicleBuyCard, {
   type VehicleBuyCardProps,
-} from "../molecules/VehicleBuyCard";
-import VehicleBuyCardSkeleton from "../molecules/VehicleBuyCardSkeleton";
+} from "../../molecules/booking/VehicleBuyCard";
+import VehicleBuyCardSkeleton from "../../molecules/booking/VehicleBuyCardSkeleton";
 import NoAvailability from "./NoAvailability";
 
 // Utils
-import { getVehicles } from "../../lib/transportation/api";
-import { useTranslations } from "../../lib/i18n/utils";
-import { useSearchFormStore } from "../../store/search-form";
+import { getVehicles } from "../../../lib/transportation/api";
+import { getTranslations } from "../../../lib/i18n/utils";
+import { useSearchFormStore } from "../../../store/search-form";
 
 interface VehicleBuyCardsProps {
   initialVehicles?: VehicleBuyCardProps[];
@@ -31,7 +31,7 @@ export default function VehicleBuyCards({
   const [loading, setLoading] = useState(initialVehicles.length === 0);
   const [error, setError] = useState(false);
 
-  const t = useTranslations(lang);
+  const t = getTranslations(lang);
   const setSelectedVehicle = useSearchFormStore(
     (state) => state.setSelectedVehicle,
   );

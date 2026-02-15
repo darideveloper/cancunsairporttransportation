@@ -1,62 +1,71 @@
 ---
 // Layout
-import Layout from "../../../layouts/Layout.astro";
+import Layout from '../../../layouts/Layout.astro'
 
 // Libs
-import { useTranslations } from "../../../lib/i18n/utils";
+import { getTranslations } from '../../../lib/i18n/utils'
 
 // Components
-import PageSEO from "../../../components/utils/PageSEO.astro";
-import BookingForm from "../../../components/organisms/BookingForm";
-import PricingSection from "../../../components/organisms/PricingSection.astro";
-import Testimonials from "../../../components/organisms/Testimonials.astro";
-import FaqSection from "../../../components/organisms/FaqSection.astro";
-import Includes from "../../../components/organisms/Includes.astro";
-import PrivateDetails from "../../../components/organisms/PrivateDetails.astro";
+import PageSEO from '../../../components/utils/PageSEO.astro'
+import BookingForm from '../../../components/organisms/booking/BookingForm'
+import PricingSection from '../../../components/organisms/PricingSection.astro'
+import Testimonials from '../../../components/organisms/Testimonials.astro'
+import FaqSection from '../../../components/organisms/FaqSection.astro'
+import Includes from '../../../components/organisms/Includes.astro'
+import PrivateDetails from '../../../components/organisms/PrivateDetails.astro'
 
 // Images
-import homeBannerImg from "../../../assets/images/home-banner.webp";
-import standardImg from "../../../assets/images/vehicles/standard.webp";
-import privateClient1Img from "../../../assets/images/clients/private-1.webp";
-import privateClient2Img from "../../../assets/images/clients/private-2.webp";
-import privateClient3Img from "../../../assets/images/clients/private-3.webp";
+import homeBannerImg from '../../../assets/images/home-banner.webp'
+import standardImg from '../../../assets/images/vehicles/standard.webp'
+import privateClient1Img from '../../../assets/images/clients/private-1.webp'
+import privateClient2Img from '../../../assets/images/clients/private-2.webp'
+import privateClient3Img from '../../../assets/images/clients/private-3.webp'
 
 // Page data
 // Props
 interface Props {
-  lang: "en" | "es";
-  pageKey: string;
+  lang: 'en' | 'es'
+  pageKey: string
 }
 // Get language from params or props
-const { lang, pageKey } = Astro.props;
+const { lang, pageKey } = Astro.props
 
 // Page data
-const contentKey = pageKey || "taxi";
+const contentKey = pageKey || 'taxi'
 
 // Tranlation texts
-const t = useTranslations(lang);
+const t = getTranslations(lang)
 ---
 
-<Layout preloadImage={homeBannerImg.src} pageKey={pageKey}>
+<Layout
+  preloadImage={homeBannerImg.src}
+  pageKey={pageKey}
+>
   <!-- Page SEO -->
   <PageSEO
     currentPage={contentKey}
-    slot="seo"
-    jsonType="Service"
+    slot='seo'
+    jsonType='Service'
     ogImage={standardImg.src}
   />
 
   <!-- Form -->
-  <div class="@container" id="booking-form">
+  <div
+    class='@container'
+    id='booking-form'
+  >
     <BookingForm
-      translations={t("global.booking")}
+      translations={t('global.booking')}
       client:idle
       title={t(`pages.${contentKey}.title`)}
     />
   </div>
 
   <!-- Service Includes -->
-  <Includes contentKey={contentKey} image={standardImg} />
+  <Includes
+    contentKey={contentKey}
+    image={standardImg}
+  />
 
   <!-- Private Details -->
   <PrivateDetails contentKey={contentKey} />
@@ -71,5 +80,8 @@ const t = useTranslations(lang);
   <FaqSection contentKey={contentKey} />
 
   <!-- Pricing transportation -->
-  <PricingSection contentKey={contentKey} isRegularGrid />
+  <PricingSection
+    contentKey={contentKey}
+    isRegularGrid
+  />
 </Layout>

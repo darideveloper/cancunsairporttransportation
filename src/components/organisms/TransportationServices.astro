@@ -1,5 +1,5 @@
 ---
-import { useTranslations, getLangFromUrl } from "../../lib/i18n/utils";
+import { getTranslations, getLangFromUrl } from "../../lib/i18n/utils";
 import SectionHeading from "../molecules/SectionHeading.astro";
 import InfoIconCard from "../molecules/InfoIconCard.astro";
 import { FaPlane, FaBed, FaUtensils, FaTree } from "react-icons/fa";
@@ -11,7 +11,7 @@ interface Props {
 
 const { contentKey = "home" } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 
 const serviceKeys = [
   { key: "airportToHotel", Icon: FaPlane },

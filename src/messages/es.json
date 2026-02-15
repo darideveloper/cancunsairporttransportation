@@ -189,7 +189,8 @@
         "passengers": "Pasajeros: {count}",
         "origin": "Origen: {location}",
         "destination": "Destino: {location}",
-        "privateTransportation": "Transporte privado"
+        "privateTransportation": "Transporte privado",
+        "vehicleDescription": "X {count} {vehicleName} con capacidad de hasta {maxPassengers} pasajeros"
       }
     },
     "ratesTable": {
@@ -596,7 +597,39 @@
     "register": {
       "title": "DATOS DE RESERVACIÓN",
       "description": "Crea una cuenta con Cancun Airport Transportation para gestionar tus reservas y acceder a ofertas exclusivas.",
-      "keywords": "registro transporte cancun, crear cuenta traslado aeropuerto cancun"
+      "keywords": "registro transporte cancun, crear cuenta traslado aeropuerto cancun",
+      "serviceNotice": "Gracias por elegir Cancun Airport Transportation by Go Transfers ®, esta información nos ayudará a darle un mejor servicio y en cualquier caso de cambio en su servicio.",
+      "arrivalInformation": {
+        "title": "Información de Llegada",
+        "pickupDate": "Fecha de Recogida",
+        "pickupTime": "Hora de Recogida",
+        "airline": "Aerolínea",
+        "flightNumber": "Número de Vuelo",
+        "airlinePlaceholder": "¿Cuál es tu aerolínea?",
+        "flightNumberPlaceholder": "¿Cuál es tu número de vuelo?"
+      },
+      "passengerInformation": {
+        "title": "Información del pasajero",
+        "firstName": "Nombre completo",
+        "lastName": "Apellido",
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "notes": "Notas / Requerimientos adicionales",
+        "firstNamePlaceholder": "¿Cuál es tu nombre?",
+        "lastNamePlaceholder": "¿Cuál es tu nombre?",
+        "emailPlaceholder": "¿Cuál es tu correo electrónico?",
+        "phonePlaceholder": "¿Cuál es tu número de teléfono?",
+        "notesPlaceholder": "¿Tienes alguna nota o requerimiento especial?"
+      },
+      "paymentMethod": {
+        "title": "Método de pago",
+        "securityInfo": "Utilizamos cifrado SSL para pagos seguros impulsados por",
+        "introInfo": "Utilizamos encriptación SSL para pagos seguros impulsados por",
+        "creditCard": "Tarjeta de Crédito / Débito",
+        "stripeExtraInfo": "Al seleccionar este método, será redirigido a un portal seguro de Stripe.",
+        "termsInfo": "Al hacer clic en Enviar, aceptas los"
+      },
+      "submit": "¡RESERVA TU VIAJE AHORA!"
     },
     "home": {
       "title": "Transportación Confiable al Aeropuerto de Cancún | Traslados Privados y Transporte a Cancún y Riviera Maya",

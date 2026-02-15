@@ -111,7 +111,7 @@ export default function LocationAutocomplete({
       <label htmlFor={id} className="mb-2 block font-bold">
         {label}
       </label>
-      <div className="focus-within:text-accent relative text-gray-500">
+      <div className="focus-within:text-accent relative text-black">
         {Icon && (
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <Icon className="h-5 w-5" aria-hidden="true" />
@@ -128,7 +128,7 @@ export default function LocationAutocomplete({
           required={required}
           autoComplete="off"
           className={clsx(
-            "focus:border-accent focus:ring-accent placeholder:text-gray-dark inline-block w-full rounded-lg border border-gray-300 py-3 pr-3 transition-all outline-none focus:ring-2",
+            "focus:border-accent focus:ring-accent placeholder:text-gray inline-block w-full rounded-lg border border-gray-300 py-3 pr-3 transition-all outline-none focus:ring-2",
             Icon ? "pl-10" : "pl-3",
             disabled && "cursor-not-allowed opacity-50",
           )}
