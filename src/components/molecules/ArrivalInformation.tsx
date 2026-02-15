@@ -71,11 +71,7 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
             key={field.name}
             {...field}
             disabled={field.readOnly}
-            className={
-              field.readOnly
-                ? "cursor-not-allowed border-gray-200 bg-gray-100 text-gray-500"
-                : ""
-            }
+            className={field.readOnly ? "cursor-not-allowed opacity-50" : ""}
           />
         ))}
       </div>
