@@ -1,9 +1,9 @@
 // src/components/molecules/ArrivalInformation.tsx
 import type { ChangeEvent } from "react";
-import { useSearchFormStore } from "../../store/search-form";
-import { useTranslations } from "../../lib/i18n/utils";
-import Input from "../atoms/form/Input";
-import H2 from "../atoms/H2";
+import { useSearchFormStore } from "../../../store/search-form";
+import { useTranslations } from "../../../lib/i18n/utils";
+import Input from "../../atoms/form/Input";
+import H2 from "../../atoms/H2";
 import { FaPlane, FaCalendarAlt, FaClock } from "react-icons/fa";
 
 export interface ArrivalInformationProps {
