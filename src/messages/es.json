@@ -627,7 +627,8 @@
         "introInfo": "Utilizamos encriptación SSL para pagos seguros impulsados por",
         "creditCard": "Tarjeta de Crédito / Débito",
         "stripeExtraInfo": "Al seleccionar este método, será redirigido a un portal seguro de Stripe.",
-        "termsInfo": "Al hacer clic en Enviar, aceptas los"
+        "termsInfo": "Al hacer clic en Enviar, aceptas los",
+        "creditCardInfo": "**¡Importante!** Debe presentar la tarjeta de débito o crédito con la que realizó el pago al iniciar la transferencia.\n\nSi elige pagar con tarjeta de crédito/débito, su pago se convertirá en moneda local (MXN) a un tipo de cambio preferente para usted ❤️."
       },
       "submit": "¡RESERVA TU VIAJE AHORA!"
     },

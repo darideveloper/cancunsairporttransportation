@@ -9,6 +9,7 @@ import paypalIcon from "../../../assets/images/checkout/payment/paypal.png";
 import visaIcon from "../../../assets/images/checkout/payment/visa.png";
 import mastercardIcon from "../../../assets/images/checkout/payment/mastercard.png";
 import stripeLogo from "../../../assets/images/checkout/payment/stripe.webp";
+import { marked } from "marked";
 
 export default function PaymentMethod({ lang }: { lang: "en" | "es" }) {
   const { paymentMethod, setPaymentMethod } = useSearchFormStore();
@@ -34,7 +35,7 @@ export default function PaymentMethod({ lang }: { lang: "en" | "es" }) {
         {/* PayPal Option */}
         <label
           className={clsx(
-            "relative flex cursor-pointer items-center gap-4 rounded-xl border-2 p-6 transition-all",
+            "relative flex! cursor-pointer items-center justify-center gap-4 rounded-xl border-2 p-6 transition-all",
             paymentMethod === "paypal"
               ? "border-blue bg-blue/5"
               : "border-gray-200",
@@ -46,15 +47,15 @@ export default function PaymentMethod({ lang }: { lang: "en" | "es" }) {
             value="paypal"
             checked={paymentMethod === "paypal"}
             onChange={() => setPaymentMethod("paypal")}
-            className="accent-blue h-5 w-5"
+            className="accent-blue h-5! w-5!"
           />
-          <img src={paypalIcon.src} alt="PayPal" className="h-8" />
+          <img src={paypalIcon.src} alt="PayPal" className="h-16" />
         </label>
 
         {/* Stripe/Card Option */}
         <label
           className={clsx(
-            "relative flex cursor-pointer items-center gap-4 rounded-xl border-2 p-6 transition-all",
+            "relative flex! cursor-pointer items-center justify-center gap-4 rounded-xl border-2 p-6 transition-all",
             paymentMethod === "stripe"
               ? "border-blue bg-blue/5"
               : "border-gray-200",
@@ -66,12 +67,12 @@ export default function PaymentMethod({ lang }: { lang: "en" | "es" }) {
             value="stripe"
             checked={paymentMethod === "stripe"}
             onChange={() => setPaymentMethod("stripe")}
-            className="accent-blue h-5 w-5"
+            className="accent-blue h-5! w-5!"
           />
           <div className="flex items-center gap-2">
-            <img src={visaIcon.src} alt="Visa" className="h-6" />
-            <img src={mastercardIcon.src} alt="Mastercard" className="h-6" />
-            <span className="text-sm font-semibold">
+            <img src={visaIcon.src} alt="Visa" className="h-8" />
+            <img src={mastercardIcon.src} alt="Mastercard" className="h-8" />
+            <span className="max-w-28 text-sm font-semibold">
               {t("pages.register.paymentMethod.creditCard")}
             </span>
           </div>
@@ -79,9 +80,14 @@ export default function PaymentMethod({ lang }: { lang: "en" | "es" }) {
       </div>
 
       {paymentMethod === "stripe" && (
-        <p className="text-gray-dark mt-4 text-sm font-medium italic">
-          {t("pages.register.paymentMethod.stripeExtraInfo")}
-        </p>
+        <div
+          className="text-gray-dark mt-4 text-sm font-medium [&_p]:mb-2 [&_strong]:font-bold"
+          dangerouslySetInnerHTML={{
+            __html: marked.parse(
+              t("pages.register.paymentMethod.creditCardInfo"),
+            ) as string,
+          }}
+        />
       )}
     </div>
   );
