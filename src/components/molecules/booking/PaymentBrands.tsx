@@ -1,10 +1,10 @@
-import safeTravel from "../../../assets/images/checkout/brands/safe-travel-item.png";
-import cancun from "../../../assets/images/checkout/brands/cancun-item.png";
-import sct from "../../../assets/images/checkout/brands/sct-item.png";
-import mexico from "../../../assets/images/checkout/brands/mexico-item.png";
-import paypal from "../../../assets/images/checkout/brands/paypal-item.png";
-import stripe from "../../../assets/images/checkout/brands/stripe-item.png";
-import letsEncrypt from "../../../assets/images/checkout/brands/lets-encrypt-item.png";
+import safeTravel from "../../../assets/images/checkout/brands/safe-travel-item.webp";
+import cancun from "../../../assets/images/checkout/brands/cancun-item.webp";
+import sct from "../../../assets/images/checkout/brands/sct-item.webp";
+import mexico from "../../../assets/images/checkout/brands/mexico-item.webp";
+import paypal from "../../../assets/images/checkout/brands/paypal-item.webp";
+import stripe from "../../../assets/images/checkout/brands/stripe-item.webp";
+import letsEncrypt from "../../../assets/images/checkout/brands/lets-encrypt-item.webp";
 
 export default function PaymentBrands() {
   const brands = [
@@ -24,7 +24,7 @@ export default function PaymentBrands() {
           key={brand.alt}
           src={brand.src}
           alt={brand.alt}
-          className="h-8 w-auto object-contain grayscale transition-all hover:grayscale-0"
+          className="h-16 w-auto object-contain grayscale transition-all hover:grayscale-0"
         />
       ))}
     </div>
