@@ -632,6 +632,18 @@
       },
       "submit": "¡RESERVA TU VIAJE AHORA!"
     },
+    "thankYou": {
+      "title": "Gracias | Cancun Airport Transportation",
+      "description": "Gracias por su reserva con Cancun Airport Transportation.",
+      "heading": "¡GRACIAS!",
+      "message": "Su reservación ha sido recibida exitosamente. Le enviaremos un correo electrónico de confirmación en breve."
+    },
+    "cancel": {
+      "title": "Reserva Cancelada | Cancun Airport Transportation",
+      "description": "Su proceso de reserva ha sido cancelado.",
+      "heading": "RESERVA CANCELADA",
+      "message": "El proceso de reserva fue cancelado. Si tiene alguna duda, por favor contáctenos."
+    },
     "home": {
       "title": "Transportación Confiable al Aeropuerto de Cancún | Traslados Privados y Transporte a Cancún y Riviera Maya",
       "description": "Transportación confiable en el Aeropuerto de Cancún. Traslados a: Cancún Zona Hotelera, Playa del Carmen, Tulum, y la Riviera Maya. Elija entre servicios de transporte privados, taxis y camionetas de lujo. Traslados seguros y económicos disponibles 24/7",
