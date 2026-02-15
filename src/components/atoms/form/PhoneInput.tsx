@@ -74,7 +74,7 @@ export default function PhoneInput({
             placeholder={placeholder}
             limitMaxLength
             preferredCountries={["US", "GB", "ES", "MX"]}
-            className="flex items-center rounded-lg bg-white px-3 py-3" // Inner wrapper of the library
+            className="flex items-center rounded-lg bg-white px-3" // Inner wrapper of the library
             inputComponent={CustomPhoneNumberInput}
             numberInputProps={{
               ...props,
