@@ -5,11 +5,9 @@ import Layout from '../../../layouts/Layout.astro'
 // Libs
 import { getTranslations } from '../../../lib/i18n/utils'
 import PageSEO from '../../../components/utils/PageSEO.astro'
-import SectionHeading from '../../../components/molecules/SectionHeading.astro'
+
 // Components
-import Input from '../../../components/atoms/form/Input.tsx'
-import ButtonCta from '../../../components/atoms/ButtonCta'
-import H2 from '../../atoms/H2'
+import ReservationForm from '../../organisms/booking/ReservationForm'
 
 interface Props {
   lang: 'en' | 'es'
@@ -20,6 +18,13 @@ const { lang, pageKey } = Astro.props
 const t = getTranslations(lang)
 
 const action = lang === 'es' ? '/es/mi-reservacion' : '/my-reservation'
+
+const formTranslations = {
+  heading: t('pages.reservation.form.heading'),
+  codeLabel: t('pages.reservation.form.code.label'),
+  emailLabel: t('pages.reservation.form.email.label'),
+  submit: t('pages.reservation.form.submit'),
+}
 ---
 
 <Layout pageKey={pageKey}>
@@ -38,44 +43,11 @@ const action = lang === 'es' ? '/es/mi-reservacion' : '/my-reservation'
     </div>
 
     <div class='container mx-auto max-w-xl! px-4'>
-      <form
+      <ReservationForm
+        client:load
         action={action}
-        method='POST'
-        class='bg-gray-light flex flex-col gap-6 rounded-2xl p-8 shadow-sm'
-      >
-        <H2 className='text-center uppercase'>
-          {t('pages.reservation.form.heading')}
-        </H2>
-        <Input
-          name='code'
-          label={t('pages.reservation.form.code.label')}
-          required
-        />
-
-        <Input
-          name='email'
-          type='email'
-          label={t('pages.reservation.form.email.label')}
-          required
-        />
-
-        <input
-          type='hidden'
-          name='_token'
-          value='pWWBCOYl0LodEcwfGxqPtnqlwjdk2DoBTjb7MjCs'
-          autocomplete='off'
-        />
-
-        <div class='mt-4 flex justify-center'>
-          <ButtonCta
-            type='submit'
-            className='w-full! min-w-[200px] md:w-auto'
-            variant='blue'
-          >
-            {t('pages.reservation.form.submit')}
-          </ButtonCta>
-        </div>
-      </form>
+        translations={formTranslations}
+      />
 
       <div class='mt-12 text-center'>
         <h3 class='mb-2 font-bold'>{t('pages.reservation.help.title')}</h3>
