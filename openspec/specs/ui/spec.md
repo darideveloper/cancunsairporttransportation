@@ -57,3 +57,18 @@ GIVEN a developer uses `FeatureBanner`
 WHEN they pass `loading="eager"`
 THEN the underlying `Image` component renders with `loading="eager"`.
 
+### Requirement: SEO and Accessibility
+The page and components MUST follow strict SEO and accessibility guidelines.
+
+#### Scenario: Image Attributes
+All `<img>` tags (e.g., Stripe logo, vehicle image) must include `width`, `height`, and descriptive `alt` attributes to prevent Cumulative Layout Shift (CLS) and aid screen readers.
+
+#### Scenario: Heading Hierarchy
+The page maintains a strict `h1` -> `h2` -> `h3` hierarchy. No skipped levels.
+
+#### Scenario: Semantic Landmarks
+The content is wrapped in appropriate semantic landmarks (`<main>`, `<header>`, `<section>`, `<aside>` where applicable).
+
+#### Scenario: Color Contrast
+Text and background color combinations used in new components (BADGE, BUTTONS) meet WCAG AA contrast ratios.
+
