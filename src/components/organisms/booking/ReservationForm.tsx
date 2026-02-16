@@ -3,6 +3,7 @@ import Input from "../../atoms/form/Input";
 import ButtonCta from "../../atoms/ButtonCta";
 import H2 from "../../atoms/H2";
 import type { FormEvent } from "react";
+import { routes } from "../../../lib/i18n/routes";
 
 // Note: ButtonCta is exported as default, but in some files it was imported as import ButtonCta from '../../atoms/ButtonCta'
 // Let me double check the import path for ButtonCta in Reservation.astro
@@ -11,6 +12,7 @@ import type { FormEvent } from "react";
 
 interface ReservationFormProps {
   action: string;
+  lang: 'en' | 'es';
   translations: {
     heading: string;
     codeLabel: string;
@@ -21,16 +23,19 @@ interface ReservationFormProps {
 
 export default function ReservationForm({
   action,
+  lang,
   translations,
 }: ReservationFormProps) {
   const { code, email, setCode, setEmail } = useReservationStore();
 
   const handleSubmit = (e: FormEvent) => {
-    // If we want to store data BEFORE traditional submission:
-    // We don't necessarily need to preventDefault if we want the browser to still POST.
-    // However, usually in these apps we might handle it via API or just let it redirect.
-    // The task says "handle form submission (preventing default if necessary for store sync)".
-    // Since we are using Zustand with persistence, the values are already synced on change.
+    e.preventDefault();
+    
+    // Get the reservation details route based on current language
+    const reservationDetailRoute = routes.reservationDetail[lang];
+    
+    // Redirect to reservation details page
+    window.location.href = `/${reservationDetailRoute}`;
   };
 
   return (
