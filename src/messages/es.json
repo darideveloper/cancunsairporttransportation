@@ -617,6 +617,10 @@
         "methods": "Métodos de pago",
         "total": "Total",
         "secure": "Compra segura garantizada"
+      },
+      "updatePayment": {
+        "text": "Si ya realizaste tu pago y aún no se refleja, haz clic en el botón para actualizar",
+        "button": "Actualizar"
       }
     },
     "register": {

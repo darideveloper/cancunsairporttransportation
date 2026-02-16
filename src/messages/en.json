@@ -617,6 +617,10 @@
         "methods": "Payment methods",
         "total": "Total",
         "secure": "Guaranteed safe & secure checkout"
+      },
+      "updatePayment": {
+        "text": "If you have already made your payment and it is still not reflected, click on the button to update",
+        "button": "Update"
       }
     },
     "register": {
