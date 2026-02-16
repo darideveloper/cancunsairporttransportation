@@ -7,18 +7,7 @@ import { getTranslations } from '../../../lib/i18n/utils'
 import PageSEO from '../../../components/utils/PageSEO.astro'
 
 // Components
-import BookingSummary from '../../../components/molecules/booking/BookingSummary'
-import H2 from '../../../components/atoms/H2'
-import ReservationHeader from '../../../components/molecules/booking/ReservationHeader.astro'
-import ReservationStatusBadge from '../../../components/molecules/booking/ReservationStatusBadge.astro'
-import ReservationDetailsList from '../../../components/molecules/booking/ReservationDetailsList.astro'
-import PaymentUpdateAction from '../../../components/molecules/booking/PaymentUpdateAction.astro'
-
-// Assets
-import stripeImage from '../../../assets/images/checkout/stripe.png'
-
-// Types
-import type { Reservation } from '../../../types/reservation'
+import ReservationDetailClient from '../../organisms/booking/ReservationDetailClient'
 
 interface Props {
   lang: 'en' | 'es'
@@ -26,44 +15,6 @@ interface Props {
 }
 
 const { lang, pageKey } = Astro.props
-const t = getTranslations(lang)
-
-// Mock Data (To be replaced with real data fetching later)
-const mockReservation: Reservation = {
-  code: '8V6LTSosO',
-  service: 'Suburban',
-  passengers: 1,
-  from: 'Puerto Juarez',
-  to: 'Akumal',
-  pickupDate: '2026-03-03 12:00:00',
-  vehicle: {
-    id: 'suburban',
-    name: 'Suburban',
-    price: 1.0,
-    maxPassengers: 6,
-    maxLuggage: 4,
-    image: '', // Needs a valid image URL or import if we challenge that
-    type: 'private',
-  },
-  user: {
-    name: 'Marcelo Rodriguez',
-    phone: '+1756765867',
-    email: 'jvso9414@gmail.com',
-  },
-  status: 'CONFIRMED',
-}
-
-// Prepare selectedVehicle object for BookingSummary
-const selectedVehicle = {
-  token: 'mock-token',
-  name: mockReservation.vehicle.name,
-  price: mockReservation.vehicle.price,
-  maxPassengers: mockReservation.vehicle.maxPassengers,
-  maxLuggage: mockReservation.vehicle.maxLuggage,
-  image: mockReservation.vehicle.image,
-  currency: 'USD',
-  type: mockReservation.vehicle.type,
-}
 ---
 
 <Layout pageKey={pageKey}>
@@ -72,71 +23,8 @@ const selectedVehicle = {
     slot='seo'
   />
 
-  <main class='min-h-screen bg-gray-50 py-12'>
-    <div class='container mx-auto max-w-6xl px-4'>
-      {/* Header Section */}
-      <ReservationHeader
-        user={mockReservation.user}
-        status={mockReservation.status}
-        lang={lang}
-      />
-
-      <PaymentUpdateAction lang={lang} />
-
-      <div class='grid grid-cols-1 gap-8 lg:grid-cols-7'>
-        {/* Left Column: Details */}
-        <section class='space-y-6 lg:col-span-4'>
-          {/* Status Card */}
-          <aside
-            class='border-accent rounded-r-lg border-l-4 bg-white p-6 shadow-sm'
-          >
-            <h2 class='mb-2 text-lg font-bold'>
-              {t('pages.reservationDetail.user.statusLabel')}
-            </h2>
-            <ReservationStatusBadge
-              status={mockReservation.status}
-              lang={lang}
-              size='lg'
-            />
-          </aside>
-
-          {/* Details Table */}
-          <ReservationDetailsList
-            reservation={mockReservation}
-            lang={lang}
-          />
-        </section>
-
-        {/* Right Column: Payment Summary */}
-        <aside class='space-y-6 lg:col-span-3'>
-          <H2 className='text-blue text-xl'
-            >{t('pages.reservationDetail.payment.methods')}</H2
-          >
-
-          <BookingSummary
-            lang={lang}
-            selectedVehicle={selectedVehicle}
-            currency='USD'
-            passengers={mockReservation.passengers}
-            customDescription={t(
-              'pages.reservationDetail.payment.vehicleDescription',
-              {
-                count: 1,
-              },
-            )}
-          />
-
-          <figure class='flex justify-center'>
-            <img
-              src={stripeImage.src}
-              width={stripeImage.width}
-              height={stripeImage.height}
-              alt='Stripe Payment'
-              class='w-full object-contain'
-            />
-          </figure>
-        </aside>
-      </div>
-    </div>
-  </main>
+  <ReservationDetailClient
+    client:only='react'
+    lang={lang}
+  />
 </Layout>

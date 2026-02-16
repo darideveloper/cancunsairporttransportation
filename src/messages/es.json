@@ -611,7 +611,8 @@
         "passengers": "Pasajeros:",
         "from": "Desde",
         "to": "Hacia",
-        "pickup": "Fecha de recogida:"
+        "pickup": "Fecha de recogida:",
+        "returnPickup": "Fecha de recogida de regreso:"
       },
       "payment": {
         "methods": "Métodos de pago",

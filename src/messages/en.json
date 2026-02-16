@@ -611,7 +611,8 @@
         "passengers": "Passengers:",
         "from": "From",
         "to": "To",
-        "pickup": "Pickup date:"
+        "pickup": "Pickup date:",
+        "returnPickup": "Return pickup date:"
       },
       "payment": {
         "methods": "Payment methods",
