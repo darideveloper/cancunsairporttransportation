@@ -599,7 +599,25 @@
     "reservationDetail": {
       "title": "Detalle de Reservación | Cancun Airport Transportation",
       "description": "Vea el detalle completo de su reservación con Cancun Airport Transportation.",
-      "heading": "DETALLE DE RESERVACIÓN"
+      "heading": "DETALLE DE RESERVACIÓN",
+      "user": {
+        "greeting": "Hola, {name}",
+        "statusLabel": "Estado de su reservación",
+        "logout": "Cerrar sesión"
+      },
+      "details": {
+        "code": "Código de reservación:",
+        "service": "Servicio:",
+        "passengers": "Pasajeros:",
+        "from": "Origen:",
+        "to": "Destino:",
+        "pickup": "Fecha de recogida:"
+      },
+      "payment": {
+        "methods": "Métodos de pago",
+        "total": "Total",
+        "secure": "Compra segura garantizada"
+      }
     },
     "register": {
       "title": "DATOS DE RESERVACIÓN",
