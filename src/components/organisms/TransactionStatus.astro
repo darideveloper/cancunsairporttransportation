@@ -7,6 +7,8 @@ import {
   getTranslations,
   getLocalizedPath,
 } from '../../lib/i18n/utils'
+import SectionHeading from '../molecules/SectionHeading.astro'
+import ButtonCta from '../atoms/ButtonCta'
 import { EMAIL, PHONES } from '../../data/site-config'
 
 interface Props {
@@ -35,19 +37,18 @@ const reservationLink = reservationId
   <div class='grid gap-12 lg:grid-cols-2 lg:items-center'>
     <!-- Content Side -->
     <div class='order-2 space-y-8 lg:order-1'>
-      <div class='space-y-4 text-center lg:text-left'>
-        <h1
-          class={clsx(
-            'font-title text-4xl font-bold md:text-5xl leading-tight',
-            isSuccess ? 'text-gray-900' : 'text-red-700',
-          )}
-        >
-          {title}
-        </h1>
+      <SectionHeading
+        title={title}
+        isH1={true}
+        class={clsx(
+          'text-center lg:text-left',
+          !isSuccess && '[&_h1]:text-red-700',
+        )}
+      >
         <p class='mx-auto max-w-lg text-lg text-gray-600 md:text-xl lg:mx-0'>
           {message}
         </p>
-      </div>
+      </SectionHeading>
 
       <!-- Contact Info -->
       <div
@@ -92,18 +93,20 @@ const reservationLink = reservationId
       <div
         class='flex flex-col justify-center gap-4 pt-4 sm:flex-row lg:justify-start'
       >
-        <a
+        <ButtonCta
           href={homeRoute}
-          class='inline-flex min-w-[160px] items-center justify-center rounded-lg border-2 border-gray-900 bg-white px-8 py-3 text-base font-bold text-gray-900 transition-colors hover:bg-gray-50'
+          variant='blackGhost'
+          className='min-w-[160px] font-bold'
         >
           {t('transaction.go_home')}
-        </a>
-        <a
+        </ButtonCta>
+        <ButtonCta
           href={reservationLink}
-          class='inline-flex min-w-[200px] items-center justify-center rounded-lg border-2 border-transparent bg-orange-500 px-8 py-3 text-base font-bold text-white shadow-lg transition-colors hover:bg-orange-600 hover:shadow-xl'
+          variant='orange'
+          className='min-w-[200px] font-bold shadow-lg hover:shadow-xl'
         >
           {t('transaction.view_reservation')}
-        </a>
+        </ButtonCta>
       </div>
     </div>
 
