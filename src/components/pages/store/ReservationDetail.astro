@@ -4,14 +4,9 @@ import Layout from '../../../layouts/Layout.astro'
 
 // Libs
 import { getTranslations } from '../../../lib/i18n/utils'
+import { routes } from '../../../lib/i18n/routes'
 import PageSEO from '../../../components/utils/PageSEO.astro'
-import {
-  FaCheckCircle,
-  FaUser,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaShieldAlt,
-} from 'react-icons/fa'
+import { FaCheckCircle, FaEnvelope } from 'react-icons/fa'
 
 // Components
 import ButtonCta from '../../../components/atoms/ButtonCta'
@@ -19,10 +14,7 @@ import BookingSummary from '../../../components/molecules/booking/BookingSummary
 import H2 from '../../../components/atoms/H2'
 
 // Assets
-import stripeLogo from '../../../assets/images/checkout/payment/stripe.webp'
-import visaIcon from '../../../assets/images/checkout/payment/visa.png'
-import mastercardIcon from '../../../assets/images/checkout/payment/mastercard.png'
-import unionPayIcon from '../../../assets/images/checkout/payment/unionpay.png'
+import stripeImage from '../../../assets/images/checkout/stripe.png'
 
 interface Props {
   lang: 'en' | 'es'
@@ -45,6 +37,7 @@ const mockReservation = {
     name: 'Suburban',
     price: 1.0,
     maxPassengers: 6,
+    maxLuggage: 4,
     image: '', // Needs a valid image URL or import if we challenge that
     type: 'private',
   },
@@ -57,12 +50,14 @@ const mockReservation = {
 
 // Prepare selectedVehicle object for BookingSummary
 const selectedVehicle = {
-  id: mockReservation.vehicle.id,
+  token: 'mock-token',
   name: mockReservation.vehicle.name,
   price: mockReservation.vehicle.price,
   maxPassengers: mockReservation.vehicle.maxPassengers,
+  maxLuggage: mockReservation.vehicle.maxLuggage,
   image: mockReservation.vehicle.image,
-  type: mockReservation.vehicle.type as 'private' | 'luxury' | 'group',
+  currency: 'USD',
+  type: mockReservation.vehicle.type,
 }
 ---
 
@@ -76,58 +71,60 @@ const selectedVehicle = {
     <div class='container mx-auto max-w-6xl px-4'>
       {/* Header Section */}
       <div class='mb-12 text-center'>
-        <h1 class='mb-8 text-4xl font-bold text-black'>
+        <h1 class='mb-8 text-4xl font-bold text-black capitalize'>
           {t('pages.reservationDetail.heading')}
         </h1>
 
         <div class='flex flex-col items-center gap-4'>
-          <FaCheckCircle className='text-blue text-7xl' />
+          <FaCheckCircle className='text-blue text-8xl' />
 
-          <div
-            class='mt-4 flex flex-col items-center gap-4 text-gray-700 md:flex-row md:gap-8'
-          >
-            <span class='text-lg font-bold'
-              >{
-                t('pages.reservationDetail.user.greeting', {
-                  name: mockReservation.user.name,
-                })
-              }</span
-            >
-            <div class='flex items-center gap-2'>
-              <span class='text-lg font-bold'>#</span>
-              {mockReservation.user.phone}
+          <div class='flex flex-col items-center gap-4 md:flex-row'>
+            <div class='mt-4 flex flex-col items-center gap-2 md:items-end'>
+              <div class='text-lg font-bold'>
+                {
+                  t('pages.reservationDetail.user.greeting', {
+                    name: mockReservation.user.name,
+                  })
+                }
+              </div>
+              <div class='flex gap-2'>
+                <div class='flex items-center gap-2'>
+                  <span class='text-lg font-bold'>#</span>
+                  {mockReservation.user.phone}
+                </div>
+                <div class='flex items-center gap-2'>
+                  <FaEnvelope />
+                  {mockReservation.user.email}
+                </div>
+              </div>
             </div>
-            <div class='flex items-center gap-2'>
-              <FaEnvelope />
-              {mockReservation.user.email}
-            </div>
-          </div>
 
-          <div
-            class='mt-4 flex flex-col items-center gap-4 border-l-0 border-gray-300 pl-0 md:flex-row md:border-l md:pl-8'
-          >
-            <div class='flex flex-col text-left'>
-              <span class='text-sm font-bold text-black'
-                >{t('pages.reservationDetail.user.statusLabel')}</span
-              >
-              <span
-                class='border-blue text-blue w-fit rounded border px-2 py-1 text-xs font-bold'
-                >CONFIRMED</span
-              >
-            </div>
-            <ButtonCta
-              variant='red'
-              className='px-4! py-2! text-xs!'
+            <div
+              class='mt-4 flex flex-col items-center gap-4 border-l-0 border-gray-300 pl-0 md:flex-row md:border-l md:pl-8'
             >
-              {t('pages.reservationDetail.user.logout')}
-            </ButtonCta>
+              <div class='flex flex-col items-center gap-2 md:items-start'>
+                <span class='text-sm font-bold text-black'
+                  >{t('pages.reservationDetail.user.statusLabel')}</span
+                >
+                <span
+                  class='border-blue text-blue w-fit rounded border px-2 py-1 text-center text-xs font-bold md:text-left'
+                  >CONFIRMED</span
+                >
+              </div>
+              <ButtonCta
+                variant='red'
+                href={`/${routes.reservation[lang]}`}
+              >
+                {t('pages.reservationDetail.user.logout')}
+              </ButtonCta>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class='grid grid-cols-1 gap-8 lg:grid-cols-3'>
+      <div class='grid grid-cols-1 gap-8 lg:grid-cols-7'>
         {/* Left Column: Details */}
-        <div class='space-y-6 lg:col-span-2'>
+        <div class='space-y-6 lg:col-span-4'>
           {/* Status Card */}
           <div
             class='border-accent rounded-r-lg border-l-4 bg-white p-6 shadow-sm'
@@ -196,7 +193,7 @@ const selectedVehicle = {
         </div>
 
         {/* Right Column: Payment Summary */}
-        <div class='space-y-6'>
+        <div class='space-y-6 lg:col-span-3'>
           <H2 className='text-blue text-xl'
             >{t('pages.reservationDetail.payment.methods')}</H2
           >
@@ -208,39 +205,12 @@ const selectedVehicle = {
             passengers={mockReservation.passengers}
           />
 
-          <div class='rounded-xl border border-gray-200 bg-white p-4 shadow-sm'>
-            <div
-              class='mb-4 flex items-center justify-center gap-2 text-sm font-bold text-gray-600'
-            >
-              <FaShieldAlt />
-              {t('pages.reservationDetail.payment.secure')}
-              <img
-                src={stripeLogo.src}
-                alt='Stripe'
-                class='h-4'
-              />
-            </div>
-            <div class='flex flex-wrap justify-center gap-2'>
-              <img
-                src={visaIcon.src}
-                alt='Visa'
-                class='h-6'
-              />
-              <img
-                src={mastercardIcon.src}
-                alt='Mastercard'
-                class='h-6'
-              />
-              {
-                /* Placeholder for other icons if they don't exist, checking imports first */
-              }
-              {
-                /*  <img src={amexIcon.src} alt="Amex" class="h-6" />
-                    <img src={jcbIcon.src} alt="JCB" class="h-6" />
-                    <img src={discoverIcon.src} alt="Discover" class="h-6" />
-                    <img src={unionPayIcon.src} alt="UnionPay" class="h-6" /> */
-              }
-            </div>
+          <div class='flex justify-center'>
+            <img
+              src={stripeImage.src}
+              alt='Stripe'
+              class='w-full object-contain'
+            />
           </div>
         </div>
       </div>
