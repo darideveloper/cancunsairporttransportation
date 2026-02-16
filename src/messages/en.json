@@ -30,6 +30,7 @@
       "languageLabel": "Language",
       "mexicoPhone": "Mexico & Rest of the world",
       "usaCanadaPhone": "USA / Canada",
+      "usaPhone": "USA / Canada",
       "utilityNavLabel": "Utility navigation",
       "facebookAriaLabel": "Follow us on Facebook",
       "instagramAriaLabel": "Follow us on Instagram",
@@ -151,6 +152,7 @@
     },
     "menubar": {
       "nav": {
+        "ariaLabel": "Main Navigation",
         "cancun": "Cancun Airport Transportation",
         "carmen": "Playa del Carmen Transfers",
         "tulum": "Cancun to Tulum Shuttle",
@@ -650,6 +652,7 @@
     "thankYou": {
       "title": "Thank You | Cancun Airport Transportation",
       "description": "Thank you for your booking with Cancun Airport Transportation.",
+      "keywords": "thank you cancun transportation, booking confirmed cancun shuttle",
       "heading": "THANK YOU!",
       "message": "Your reservation has been received successfully. We will send you a confirmation email shortly."
     },
@@ -2075,5 +2078,16 @@
       "whatsapp": "WhatsApp",
       "chat": "Chat"
     }
+  },
+  "transaction": {
+    "success": {
+      "contact": "We have sent you a confirmation email, for more information please contact us."
+    },
+    "error": {
+      "contact": "Your transaction was not approved, we can help you, contact us!"
+    },
+    "call_us": "Call us at",
+    "go_home": "Go home",
+    "view_reservation": "View my reservation"
   }
 }
