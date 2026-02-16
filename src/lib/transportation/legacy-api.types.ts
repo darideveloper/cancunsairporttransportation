@@ -98,3 +98,34 @@ export interface ReservationResponse {
       }
     | string;
 }
+
+export interface ReservationItem {
+  service_type_name: string;
+  from: { name: string };
+  to: { name: string };
+  pickup: string;
+  departure_pickup?: string;
+  is_round_trip: boolean;
+}
+
+export interface GetReservationResponse {
+  status: string;
+  client: {
+    first_name: string;
+    last_name: string;
+    email: string;
+    phone: string;
+  };
+  items: Record<string, ReservationItem>;
+  sales: {
+    total: number;
+  };
+  payments: {
+    total: number;
+  };
+  config: {
+    currency: string;
+    id: number;
+  };
+  error?: string;
+}

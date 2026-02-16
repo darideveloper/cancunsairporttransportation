@@ -1,0 +1,49 @@
+---
+import { getTranslations } from '../../../lib/i18n/utils'
+import type { Reservation } from '../../../types/reservation'
+
+interface Props {
+  reservation: Reservation
+  lang: 'en' | 'es'
+}
+
+const { reservation, lang } = Astro.props
+const t = getTranslations(lang)
+
+const details = [
+  { label: t('pages.reservationDetail.details.code'), value: reservation.code },
+  {
+    label: t('pages.reservationDetail.details.service'),
+    value: reservation.service,
+  },
+  {
+    label: t('pages.reservationDetail.details.passengers'),
+    value: reservation.passengers,
+  },
+  { label: t('pages.reservationDetail.details.from'), value: reservation.from },
+  { label: t('pages.reservationDetail.details.to'), value: reservation.to },
+  {
+    label: t('pages.reservationDetail.details.pickup'),
+    value: reservation.pickupDate,
+  },
+]
+---
+
+<div
+  class='overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm'
+>
+  <dl class='w-full text-left'>
+    {
+      details.map((item) => (
+        <div class='flex flex-col border-b border-gray-100 last:border-b-0 md:flex-row'>
+          <dt class='w-full bg-gray-50 px-6 py-4 font-bold text-gray-700 md:w-1/3'>
+            {item.label}
+          </dt>
+          <dd class='w-full px-6 py-4 wrap-break-word text-gray-900 md:w-2/3'>
+            {item.value}
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
+</div>

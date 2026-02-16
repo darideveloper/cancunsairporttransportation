@@ -42,16 +42,16 @@ When the `variant` prop is set to `"blackGhost"`
 Then the button receives classes `bg-black/5 border border-black text-black` to match the design.
 
 ### Requirement: ButtonCta Color Variants
-The `ButtonCta` component MUST support `green` and `greenGhost` variants to provide affirmative action styles.
+The `ButtonCta` component MUST support `red` and `redGhost` variants to provide destructive or high-alert action styles.
 
-#### Scenario: Solid Green Button
-- **WHEN** a `ButtonCta` is rendered with `variant="green"`
-- **THEN** it MUST have a green background (`bg-green`)
+#### Scenario: Solid Red Button
+- **WHEN** a `ButtonCta` is rendered with `variant="red"`
+- **THEN** it MUST have a red background (`bg-red-600`)
 - **AND** it MUST have white text (`text-white`)
 
-#### Scenario: Green Ghost Button
-- **WHEN** a `ButtonCta` is rendered with `variant="greenGhost"`
-- **THEN** it MUST have a transparent green background (`bg-green/10`)
-- **AND** it MUST have a green border (`border border-green`)
-- **AND** it MUST have green text (`text-green`)
+#### Scenario: Red Ghost Button
+- **WHEN** a `ButtonCta` is rendered with `variant="redGhost"`
+- **THEN** it MUST have a transparent red background (`bg-red-600/10`)
+- **AND** it MUST have a red border (`border border-red-600`)
+- **AND** it MUST have red text (`text-red-600`)
 

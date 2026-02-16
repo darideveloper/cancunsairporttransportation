@@ -1,0 +1,29 @@
+---
+import ButtonCta from '../../../components/atoms/ButtonCta'
+import { getTranslations } from '../../../lib/i18n/utils'
+
+interface Props {
+  actionUrl?: string // Optional, defaults to current path
+  lang: 'en' | 'es'
+}
+
+const { actionUrl = Astro.url.pathname, lang } = Astro.props
+const t = getTranslations(lang)
+---
+
+<section
+  class='bg-blue/10 mb-12 flex flex-col items-center justify-between gap-4 rounded-lg p-4 text-center md:flex-row md:text-left'
+>
+  <p class='font-medium text-black'>
+    {t('pages.reservationDetail.updatePayment.text')}
+  </p>
+  <div class='w-full md:w-auto'>
+    <ButtonCta
+      href={actionUrl}
+      variant='blue'
+      className='w-full md:w-auto'
+    >
+      {t('pages.reservationDetail.updatePayment.button')}
+    </ButtonCta>
+  </div>
+</section>

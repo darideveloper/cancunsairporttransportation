@@ -1,14 +1,26 @@
-import { useSearchFormStore } from "../../../store/search-form";
+// Libs
 import { getTranslations } from "../../../lib/i18n/utils";
-import { FaCar } from "react-icons/fa";
 import clsx from "clsx";
+
+// Icons
+import { FaCar } from "react-icons/fa";
+
+// Types
+import type { SelectedVehicle } from "../../../store/search-form";
 
 interface BookingSummaryProps {
   lang: "en" | "es";
+  selectedVehicle: SelectedVehicle | null;
+  currency: string;
+  passengers: number;
 }
 
-export default function BookingSummary({ lang }: BookingSummaryProps) {
-  const { selectedVehicle, currency, passengers } = useSearchFormStore();
+export default function BookingSummary({
+  lang,
+  selectedVehicle,
+  currency,
+  passengers,
+}: BookingSummaryProps) {
   const t = getTranslations(lang);
 
   if (!selectedVehicle) return null;

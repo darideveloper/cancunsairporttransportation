@@ -17,7 +17,9 @@ type BaseProps = {
     | "orangeGhost"
     | "blackGhost"
     | "green"
-    | "greenGhost";
+    | "greenGhost"
+    | "red"
+    | "redGhost";
   ariaLabel?: string;
   children?: ReactNode;
 };
@@ -50,6 +52,8 @@ export default function ButtonCta({
     blackGhost: "bg-black/5 border border-black text-black",
     green: "bg-green text-white",
     greenGhost: "bg-green/10 border border-green text-green",
+    red: "bg-red-600 text-white font-bold",
+    redGhost: "bg-red-600/10 border border-red-600 text-red-600",
   };
 
   const sharedClasses = clsx(

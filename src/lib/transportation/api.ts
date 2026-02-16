@@ -7,6 +7,7 @@ import type {
   LegacyErrorResponse,
   CreateReservationPayload,
   ReservationResponse,
+  GetReservationResponse,
 } from "./legacy-api.types";
 import { useSearchFormStore } from "../../store/search-form";
 import { vehicleFeatures } from "../../data/vehicle-features";
@@ -173,6 +174,48 @@ export async function createReservation(
     return response.json();
   } catch (error) {
     console.error("Failed to create reservation:", error);
+    throw error;
+  }
+}
+
+export async function getReservation(
+  code: string,
+  email: string,
+  lang: "en" | "es" = "en",
+): Promise<GetReservationResponse> {
+  const payload = {
+    code,
+    email,
+    language: lang,
+  };
+
+  try {
+    const response = await fetch(
+      `${import.meta.env.PUBLIC_API_BASE}/legacy/my-booking/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      },
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      const errorMessage = data.error || response.statusText;
+      throw new Error(errorMessage);
+    }
+
+    // Checking for logical error embedded in 200 OK response
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    return data as GetReservationResponse;
+  } catch (error) {
+    console.error("Failed to fetch reservation:", error);
     throw error;
   }
 }
