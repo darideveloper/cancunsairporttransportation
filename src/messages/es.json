@@ -596,6 +596,11 @@
         "text": "Si no encuentras tu reservación, por favor contacta a nuestro equipo de soporte."
       }
     },
+    "reservationDetail": {
+      "title": "Detalle de Reservación | Cancun Airport Transportation",
+      "description": "Vea el detalle completo de su reservación con Cancun Airport Transportation.",
+      "heading": "DETALLE DE RESERVACIÓN"
+    },
     "register": {
       "title": "DATOS DE RESERVACIÓN",
       "description": "Crea una cuenta con Cancun Airport Transportation para gestionar tus reservas y acceder a ofertas exclusivas.",
