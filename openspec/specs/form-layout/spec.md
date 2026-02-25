@@ -1,7 +1,8 @@
-# Capability: Booking Form Responsive Layout
+# form-layout Specification
 
-## MODIFIED Requirements
-
+## Purpose
+TBD - created by archiving change fix-booking-responsive. Update Purpose after archive.
+## Requirements
 ### Requirement: REQ-001 - The booking form must be fully contained within the viewport on mobile devices.
 The booking form MUST NOT cause horizontal overflow on small screens, ensuring a clean and usable interface on devices like iPhone 16.
 
@@ -19,3 +20,4 @@ Native browser inputs with intrinsic widths MUST be forced to shrink to fit thei
 - WHEN rendered in Safari on iOS
 - THEN the inputs must shrink to fit their grid column even if their intrinsic width is larger
 - AND the `.input-container` must behave as a block element to correctly participate in the grid layout.
+

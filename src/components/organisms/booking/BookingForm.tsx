@@ -83,7 +83,7 @@ export default function BookingForm({
     >
       <form
         onSubmit={handleSubmit}
-        className="bg-accent w-full rounded-xl px-8 py-6"
+        className="bg-accent w-full rounded-xl px-4 py-6 sm:px-8"
         aria-label={!title ? ariaLabel : undefined}
         aria-labelledby={title ? "booking-form-title" : undefined}
       >
