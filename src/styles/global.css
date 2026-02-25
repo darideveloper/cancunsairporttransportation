@@ -114,10 +114,18 @@ button {
 input,
 textarea,
 select {
-  @apply w-full rounded-sm bg-white px-4 py-3;
+  @apply w-full rounded-sm bg-white px-4;
+  height: 3rem !important;
+  box-sizing: border-box !important;
   width: 100% !important;
-  min-width: 100% !important;
-  min-height: 3rem !important;
+  max-width: 100% !important;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="date"],
+input[type="time"] {
+  @apply flex items-center;
 }
 
 label {
