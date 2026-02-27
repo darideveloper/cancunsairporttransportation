@@ -62,8 +62,8 @@ export default function BookingSubmission({ lang }: Props) {
         phone: phone,
         flight_number: flightNumber,
         comments: notes,
-        pay_at_arrival:
-          paymentMethod === "stripe" || paymentMethod === "paypal" ? 0 : 1,
+        // pay_at_arrival:
+        //   paymentMethod === "stripe" || paymentMethod === "paypal" ? 0 : 1,
         arrival_date: `${departureDate} ${departureTime}`,
         payment_method: paymentMethod.toUpperCase(),
         success_url,

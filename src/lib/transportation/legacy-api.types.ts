@@ -73,7 +73,7 @@ export interface CreateReservationPayload {
   flight_number?: string;
   arrival_date?: string;
   comments?: string;
-  pay_at_arrival?: number; // 1 for true
+  // pay_at_arrival?: number; // 1 for true
   payment_method?: string;
   success_url?: string;
   cancel_url?: string;

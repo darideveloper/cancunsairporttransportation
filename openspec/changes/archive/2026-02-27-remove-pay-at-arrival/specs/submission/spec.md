@@ -1,8 +1,6 @@
 # submission Specification
 
-## Purpose
-TBD - created by archiving change submit-reservation. Update Purpose after archive.
-## Requirements
+## MODIFIED Requirements
 ### Requirement: Reservation Service
 
 The application **SHALL** include `src/lib/transportation/legacy-api.types.ts` (mapped in `src/services/reservation.ts`) to handle the API request. The `pay_at_arrival` field is removed from the active payload for the current version.
@@ -62,32 +60,3 @@ const payload = {
   language: lang,
 };
 ```
-
-### Requirement: Register Page
-
-`src/components/pages/store/Register.astro` **MUST** be updated to use the new component.
-
-#### Scenario: Replace Submit Button
-Given the Register page
-When rendered
-Then it should display `BookingSubmission` instead of the static HTML form elements.
-
-```astro
-// src/components/pages/store/Register.astro
-
-// ... imports
-import BookingSubmission from '../../organisms/booking/BookingSubmission';
-
-// ... inside template
-
-    {/* Remove old manual Submit button div */}
-    
-    <BookingSubmission
-      lang={lang}
-      client:load
-    />
-
-    <!-- Payment brands -->
-    <PaymentBrands />
-```
-
