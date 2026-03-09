@@ -44,7 +44,12 @@ export default function PaymentMethods({ lang }: { lang: "en" | "es" }) {
 
   return (
     <div className="space-y-6 rounded-2xl bg-white px-4 py-6 shadow-xl">
-      <H2 className="mb-2">{t("pages.register.paymentMethod.title")}</H2>
+      <div>
+        <H2 className="mb-2">{t("pages.register.paymentMethod.title")}</H2>
+        <p className="text-gray-dark text-sm font-medium">
+          {t("pages.register.paymentMethod.introInfo")}
+        </p>
+      </div>
 
       <div className="flex flex-col gap-4">
         {paymentOptions.map((option) => (

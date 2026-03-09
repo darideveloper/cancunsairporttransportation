@@ -660,7 +660,7 @@
       "paymentMethod": {
         "title": "Método de pago",
         "securityInfo": "Utilizamos cifrado SSL para pagos seguros impulsados por",
-        "introInfo": "Utilizamos encriptación SSL para pagos seguros impulsados por",
+        "introInfo": "Utilizamos encriptación SSL para pagos seguros respaldados por las mejores plataformas de pago.",
         "paypal": "PayPal",
         "card": "Tarjeta de Crédito / Débito",
         "cash": "Pago en Efectivo",

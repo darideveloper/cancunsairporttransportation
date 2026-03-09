@@ -660,7 +660,7 @@
       "paymentMethod": {
         "title": "Payment method",
         "securityInfo": "We use SSL encryption for secure payments powered by",
-        "introInfo": "We use encryption SSL for secure payments powered by",
+        "introInfo": "We use SSL encryption for secure payments backed by the best payment platforms.",
         "paypal": "PayPal",
         "card": "Credit / Debit Card",
         "cash": "Pay in Cash",
