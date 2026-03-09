@@ -108,19 +108,23 @@ button {
 
 /* Global inputs */
 .input-container {
-  @apply flex flex-col w-full;
+  @apply flex w-full flex-col;
 }
 
 input,
 textarea,
 select {
   @apply w-full rounded-sm bg-white px-4;
-  height: 3rem !important;
   box-sizing: border-box !important;
   width: 100% !important;
   max-width: 100% !important;
   -webkit-appearance: none;
   appearance: none;
+}
+
+input,
+select {
+  height: 3rem !important;
 }
 
 input[type="date"],

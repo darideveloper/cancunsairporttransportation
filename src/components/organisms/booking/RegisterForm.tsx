@@ -20,17 +20,23 @@ export default function RegisterForm({ lang }: RegisterFormProps) {
   return (
     <>
       <SelectedVehicleCard lang={lang} />
-      <ArrivalInformation lang={lang} />
-      <ReturnInformation lang={lang} />
-      <PassengerInformation lang={lang} />
-      <BookingSummary
-        lang={lang}
-        selectedVehicle={selectedVehicle}
-        currency={currency}
-        passengers={passengers}
-      />
-      <PaymentMethod lang={lang} />
-      <BookingSubmission lang={lang} />
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div className="left col-span-2 flex flex-col gap-8">
+          <ArrivalInformation lang={lang} />
+          <ReturnInformation lang={lang} />
+          <PassengerInformation lang={lang} />
+        </div>
+        <div className="right col-span-1">
+          <BookingSummary
+            lang={lang}
+            selectedVehicle={selectedVehicle}
+            currency={currency}
+            passengers={passengers}
+          />
+          <PaymentMethod lang={lang} />
+          <BookingSubmission lang={lang} />
+        </div>
+      </div>
     </>
   );
 }

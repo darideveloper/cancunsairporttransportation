@@ -92,6 +92,7 @@ export default function PassengerInformation({
             placeholder={t(
               "pages.register.passengerInformation.notesPlaceholder",
             )}
+            className="h-24"
           />
         </div>
       </div>
