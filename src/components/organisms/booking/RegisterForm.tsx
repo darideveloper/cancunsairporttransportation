@@ -3,7 +3,7 @@ import ArrivalInformation from "../../molecules/booking/ArrivalInformation";
 import ReturnInformation from "../../molecules/booking/ReturnInformation";
 import PassengerInformation from "../../molecules/booking/PassengerInformation";
 import BookingSummary from "../../molecules/booking/BookingSummary";
-import PaymentMethod from "../../molecules/booking/PaymentMethod";
+import PaymentMethods from "../../molecules/booking/PaymentMethods";
 import SelectedVehicleCard from "./SelectedVehicleCard";
 import BookingSubmission from "./BookingSubmission";
 
@@ -33,7 +33,7 @@ export default function RegisterForm({ lang }: RegisterFormProps) {
             currency={currency}
             passengers={passengers}
           />
-          <PaymentMethod lang={lang} />
+          <PaymentMethods lang={lang} />
           <BookingSubmission lang={lang} />
         </div>
       </div>

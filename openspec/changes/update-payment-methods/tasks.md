@@ -13,7 +13,7 @@
     - Include labels for "PayPal", "Tarjeta (Crédito o Débito)", and "Efectivo".
     - Update/Add instructional text for each method.
 
-- [ ] Update `PaymentMethod.tsx` Component <!-- id: 2 -->
+- [ ] Update `PaymentMethods.tsx` Component <!-- id: 2 -->
   - [ ] Update the layout to display three options.
   - [ ] Import/Use icons for all three options (PayPal logo, Credit Card icons, Cash icon).
   - [ ] Ensure state binding still works with the updated store values (`"paypal"`, `"card"`, `"cash"`).

@@ -29,5 +29,5 @@ The current payment flow offers "PayPal" and "Stripe" (Credit Card) as options. 
 
 ## Impact
 - **Store**: Minimal schema change in `search-form.ts`.
-- **UI**: Visual change to labels and icons in `PaymentMethod.tsx`.
+- **UI**: Visual change to labels and icons in `PaymentMethods.tsx`.
 - **API**: Updated payload in `BookingSubmission.tsx`.
