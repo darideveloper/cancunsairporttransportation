@@ -18,16 +18,13 @@ Then the Card radio button should be selected
 And a security/info message should appear below the options.
 
 ### Requirement: Secure Payment Signage
-The system MUST display a security badge and text indicating secure payments, as well as brand logos under the submit button.
-
-#### Scenario: Displaying Security Info
-Given the user is looking at the Payment Method section
-Then they should see a shield icon and the text "We use SSL encryption for secure payments powered by stripe" (or localized equivalent).
-
-#### Scenario: Displaying Brand Logos
-Given the user is at the bottom of the registration form
-Then they should see a row of logos including Safe Travels, Cancun, SCT, Mexico, PayPal, Stripe, and Let's Encrypt.
-And these logos SHOULD be grayscale by default and colored on hover.
+The `PaymentMethods` component MUST include a short text explaining the SSL encryption and security of the payment process.
+#### Scenario: Show SSL encryption message under Payment Methods title
+- GIVEN the user is on the payment stage of the booking process
+- AND the `PaymentMethods` component is rendered
+- WHEN the component loads
+- THEN a message describing SSL encryption for secure payments should be displayed below the title in the user's selected language.
+- AND the text should use the `pages.register.paymentMethod.introInfo` translation key.
 
 ### Requirement: Submission
 The system MUST provide a clear call to action to submit the reservation.

@@ -39,7 +39,7 @@ interface SearchFormState {
   email: string;
   phone: string;
   notes: string;
-  paymentMethod: "paypal" | "stripe";
+  paymentMethod: "paypal" | "card" | "cash";
   setTripType: (tripType: "oneWay" | "roundTrip") => void;
   setCurrency: (currency: "USD" | "MXN") => void;
   setLocationFrom: (location: string | LocationData) => void;
@@ -57,7 +57,7 @@ interface SearchFormState {
   setEmail: (email: string) => void;
   setPhone: (phone: string) => void;
   setNotes: (notes: string) => void;
-  setPaymentMethod: (method: "paypal" | "stripe") => void;
+  setPaymentMethod: (method: "paypal" | "card" | "cash") => void;
 }
 
 export const useSearchFormStore = create<SearchFormState>()(
@@ -82,7 +82,7 @@ export const useSearchFormStore = create<SearchFormState>()(
       email: "",
       phone: "",
       notes: "",
-      paymentMethod: "stripe",
+      paymentMethod: "card",
       setTripType: (tripType) => set({ tripType }),
       setCurrency: (currency) => set({ currency }),
       setLocationFrom: (location) => {

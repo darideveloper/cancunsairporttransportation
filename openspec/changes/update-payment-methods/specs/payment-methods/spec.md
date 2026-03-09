@@ -4,7 +4,7 @@ This capability defines the selection and processing of different payment method
 
 ## MODIFIED Requirements
 
-### Req: Payment Method Selection
+### Requirement: Payment Method Selection
 The system MUST allow the user to choose between **PayPal**, **Card (Credit/Debit Card)**, and **Cash** as their preferred payment method.
 
 #### Scenario: User selects PayPal
@@ -25,7 +25,7 @@ The system MUST allow the user to choose between **PayPal**, **Card (Credit/Debi
 - **Then** the Cash radio button should be selected
 - **And** the `paymentMethod` in the store should be set to `"cash"`
 
-### Req: API Payload Mapping
+### Requirement: API Payload Mapping
 The system MUST map the user's payment selection to the backend's expected `payment_method` and `pay_at_arrival` fields.
 
 #### Scenario: Mapping for PayPal selection

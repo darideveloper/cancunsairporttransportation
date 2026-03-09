@@ -9,9 +9,8 @@ import PaymentMethod from "../../atoms/booking/PaymentMethod";
 
 // Image Imports
 import paypalIcon from "../../../assets/images/checkout/payment/paypal.png";
-import visaIcon from "../../../assets/images/checkout/payment/visa.png";
-import mastercardIcon from "../../../assets/images/checkout/payment/mastercard.png";
-import stripeLogo from "../../../assets/images/checkout/payment/stripe.webp";
+import creditCardIcon from "../../../assets/images/checkout/payment/credit-card.webp";
+import cashIcon from "../../../assets/images/checkout/payment/cash.png";
 
 export default function PaymentMethods({ lang }: { lang: "en" | "es" }) {
   const { paymentMethod, setPaymentMethod } = useSearchFormStore();
@@ -20,57 +19,58 @@ export default function PaymentMethods({ lang }: { lang: "en" | "es" }) {
   const paymentOptions = [
     {
       value: "paypal",
-      images: [paypalIcon.src],
+      imageSrc: paypalIcon.src,
       imageAlt: "PayPal",
+      label: t("pages.register.paymentMethod.paypal"),
+      infoKey: "paypalInfo",
     },
     {
-      value: "stripe",
-      images: [visaIcon.src, mastercardIcon.src],
+      value: "card",
+      imageSrc: creditCardIcon.src,
       imageAlt: "Credit Card",
-      label: t("pages.register.paymentMethod.creditCard"),
+      label: t("pages.register.paymentMethod.card"),
+      infoKey: "cardInfo",
     },
-  ];
+    {
+      value: "cash",
+      imageSrc: cashIcon.src,
+      imageAlt: "Cash",
+      label: t("pages.register.paymentMethod.cash"),
+      infoKey: "cashInfo",
+    },
+  ] as const;
+
+  const selectedOption = paymentOptions.find((opt) => opt.value === paymentMethod);
 
   return (
     <div className="space-y-6 rounded-2xl bg-white px-4 py-6 shadow-xl">
       <H2 className="mb-2">{t("pages.register.paymentMethod.title")}</H2>
 
-      <div className="text-gray-dark flex items-center gap-3 text-sm font-medium">
-        <FaShieldAlt className="h-5 w-5 text-black" />
-        <span>
-          {t("pages.register.paymentMethod.securityInfo")}{" "}
-          <img
-            src={stripeLogo.src}
-            alt="Stripe"
-            className="ml-1 inline-block h-5"
-          />
-        </span>
-      </div>
-
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="flex flex-col gap-4">
         {paymentOptions.map((option) => (
-          <PaymentMethod
-            key={option.value}
-            value={option.value}
-            isSelected={paymentMethod === option.value}
-            onSelect={setPaymentMethod}
-            images={option.images}
-            imageAlt={option.imageAlt}
-            label={option.label}
-          />
+          <div key={option.value} className="flex flex-col gap-2">
+            <PaymentMethod
+              value={option.value}
+              isSelected={paymentMethod === option.value}
+              onSelect={(val) => setPaymentMethod(val as any)}
+              imageSrc={option.imageSrc}
+              imageAlt={option.imageAlt}
+              label={option.label}
+            />
+            
+            {paymentMethod === option.value && (
+              <div
+                className="text-gray-dark px-2 text-sm font-medium animate-in fade-in slide-in-from-top-1 duration-300 [&_p]:mb-2 [&_strong]:font-bold"
+                dangerouslySetInnerHTML={{
+                  __html: marked.parse(
+                    t(`pages.register.paymentMethod.${option.infoKey}` as any),
+                  ) as string,
+                }}
+              />
+            )}
+          </div>
         ))}
       </div>
-
-      {paymentMethod === "stripe" && (
-        <div
-          className="text-gray-dark mt-4 text-sm font-medium [&_p]:mb-2 [&_strong]:font-bold"
-          dangerouslySetInnerHTML={{
-            __html: marked.parse(
-              t("pages.register.paymentMethod.creditCardInfo"),
-            ) as string,
-          }}
-        />
-      )}
     </div>
   );
 }

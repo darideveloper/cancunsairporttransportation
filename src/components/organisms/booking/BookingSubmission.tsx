@@ -54,7 +54,7 @@ export default function BookingSubmission({ lang }: Props) {
       const success_url = `${origin}/${lang === "es" ? "es/gracias" : "thank-you"}`;
       const cancel_url = `${origin}/${lang === "es" ? "es/cancelar" : "cancel"}`;
 
-      const payload = {
+      const payload: any = {
         service_token: selectedVehicle!.token,
         first_name: firstName,
         last_name: lastName,
@@ -62,14 +62,15 @@ export default function BookingSubmission({ lang }: Props) {
         phone: phone,
         flight_number: flightNumber,
         comments: notes,
-        // pay_at_arrival:
-        //   paymentMethod === "stripe" || paymentMethod === "paypal" ? 0 : 1,
         arrival_date: `${departureDate} ${departureTime}`,
-        payment_method: paymentMethod.toUpperCase(),
         success_url,
         cancel_url,
         language: lang,
       };
+
+      if (paymentMethod === "cash") {
+        payload.payment_method = 1;
+      }
 
       const response = await createReservation(payload);
 

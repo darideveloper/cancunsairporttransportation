@@ -1,13 +1,17 @@
 import React from "react";
 import clsx from "clsx";
 
+// Icons
+import checkedOn from "../../../assets/images/checkout/icons/checked-on.svg";
+import checkedOff from "../../../assets/images/checkout/icons/checked-off.svg";
+
 interface PaymentMethodProps {
   value: string;
   isSelected: boolean;
   onSelect: (value: string) => void;
-  images: string[];
+  imageSrc: string;
   imageAlt: string;
-  label?: string;
+  label: string;
   className?: string;
 }
 
@@ -15,7 +19,7 @@ export default function PaymentMethod({
   value,
   isSelected,
   onSelect,
-  images,
+  imageSrc,
   imageAlt,
   label,
   className,
@@ -23,29 +27,40 @@ export default function PaymentMethod({
   return (
     <label
       className={clsx(
-        "relative flex! cursor-pointer items-center justify-center gap-4 rounded-xl border-2 p-6 transition-all",
-        isSelected ? "border-blue bg-blue/5" : "border-gray-200",
+        "relative flex cursor-pointer items-center justify-between gap-4 rounded-xl border-2 p-4 transition-all",
+        isSelected
+          ? "border-accent bg-linear-to-r from-[#ff840033] to-transparent"
+          : "border-gray-200 bg-linear-to-r from-[#ff84001a] to-transparent",
         className,
       )}
     >
-      <input
-        type="radio"
-        name="paymentMethod"
-        value={value}
-        checked={isSelected}
-        onChange={() => onSelect(value)}
-        className="accent-blue h-5! w-5!"
-      />
-      <div className="flex items-center gap-2">
-        {images.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={imageAlt}
-            className={clsx(label ? "h-8" : "h-16")}
+      <div className="flex items-center gap-4">
+        {/* Custom Checkbox UI */}
+        <div className="relative h-6 w-6 shrink-0">
+          <input
+            type="radio"
+            name="paymentMethod"
+            value={value}
+            checked={isSelected}
+            onChange={() => onSelect(value)}
+            className="sr-only"
           />
-        ))}
-        {label && <span className="max-w-28 text-sm font-semibold">{label}</span>}
+          <img
+            src={isSelected ? checkedOn.src : checkedOff.src}
+            alt={isSelected ? "Selected" : "Not Selected"}
+            className="h-full w-full object-contain"
+          />
+        </div>
+
+        {/* Label and Logo */}
+        <div className="flex w-full items-center justify-between gap-3">
+          <span className="text-lg font-semibold text-gray-900">{label}</span>
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className="h-10 w-auto object-contain"
+          />
+        </div>
       </div>
     </label>
   );
