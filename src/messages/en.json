@@ -145,7 +145,7 @@
         }
       },
       "bottomBar": {
-        "copyright": "Copyright © 2026 All Rights Reserved.",
+        "copyright": "Copyright © {year} All Rights Reserved.",
         "terms": "Terms and conditions",
         "privacy": "Privacy policies"
       }
