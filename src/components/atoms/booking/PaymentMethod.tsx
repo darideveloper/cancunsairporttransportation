@@ -54,7 +54,9 @@ export default function PaymentMethod({
 
         {/* Label and Logo */}
         <div className="flex w-full items-center justify-between gap-3">
-          <span className="text-lg font-semibold text-gray-900">{label}</span>
+          <span className="text-md font-semibold text-gray-900 sm:text-lg">
+            {label}
+          </span>
           <img
             src={imageSrc}
             alt={imageAlt}
