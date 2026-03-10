@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSearchFormStore } from "../../../store/search-form";
-import { createReservation } from "../../../lib/transportation/api";
+import {
+  createReservation,
+  capturePayment,
+} from "../../../lib/transportation/api";
 import ButtonCta from "../../atoms/ButtonCta";
 import { getTranslations } from "../../../lib/i18n/utils";
 import clsx from "clsx";
 import Swal from "sweetalert2";
+
+declare global {
+  interface Window {
+    paypal: any;
+  }
+}
 
 interface Props {
   lang: "en" | "es";
@@ -26,6 +35,16 @@ export default function BookingSubmission({ lang }: Props) {
   } = useSearchFormStore();
 
   const [isLoading, setIsLoading] = useState(false);
+  const [paypalId, setPaypalId] = useState<string | null>(null);
+
+  // Clear PayPal buttons if payment method changes
+  useEffect(() => {
+    setPaypalId(null);
+    const container = document.getElementById("paypal-button-container");
+    if (container) {
+      container.innerHTML = "";
+    }
+  }, [paymentMethod]);
 
   // Validation Logic
   const isValid =
@@ -34,6 +53,63 @@ export default function BookingSubmission({ lang }: Props) {
     !!lastName?.trim() &&
     !!email?.trim() &&
     !!phone?.trim();
+
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const success_url = `${origin}/${lang === "es" ? "es/gracias" : "thank-you"}`;
+  const cancel_url = `${origin}/${lang === "es" ? "es/cancelar" : "cancel"}`;
+
+  const renderPayPalButtons = (id: string, method: string) => {
+    if (!window.paypal) {
+      console.error("PayPal SDK not loaded");
+      return;
+    }
+
+    window.paypal
+      .Buttons({
+        fundingSource:
+          method === "card"
+            ? window.paypal.FUNDING.CARD
+            : window.paypal.FUNDING.PAYPAL,
+
+        createOrder: () => id,
+
+        onApprove: async (data: any, actions: any) => {
+          setIsLoading(true);
+          try {
+            const captureData = await capturePayment({ id: data.orderID });
+
+            if (captureData.status === "COMPLETED") {
+              window.location.href = success_url;
+            } else if (captureData.details?.[0]?.issue === "INSTRUMENT_DECLINED") {
+              setIsLoading(false);
+              return actions.restart();
+            } else {
+              throw new Error("Payment failed to capture");
+            }
+          } catch (err: any) {
+            console.error(err);
+            Swal.fire({
+              icon: "error",
+              title: t("pages.register.errors.title"),
+              text: err.message || t("pages.register.errors.generic"),
+              confirmButtonColor: "#00A651",
+            });
+            setIsLoading(false);
+          }
+        },
+
+        onError: (err: any) => {
+          console.error("PayPal Error:", err);
+          Swal.fire({
+            icon: "error",
+            title: t("pages.register.errors.title"),
+            text: t("pages.register.errors.generic"),
+            confirmButtonColor: "#00A651",
+          });
+        },
+      })
+      .render("#paypal-button-container");
+  };
 
   const handleSubmit = async () => {
     setIsLoading(true);
@@ -50,10 +126,6 @@ export default function BookingSubmission({ lang }: Props) {
     }
 
     try {
-      const origin = window.location.origin;
-      const success_url = `${origin}/${lang === "es" ? "es/gracias" : "thank-you"}`;
-      const cancel_url = `${origin}/${lang === "es" ? "es/cancelar" : "cancel"}`;
-
       const payload: any = {
         service_token: selectedVehicle!.token,
         first_name: firstName,
@@ -66,11 +138,8 @@ export default function BookingSubmission({ lang }: Props) {
         success_url,
         cancel_url,
         language: lang,
+        payment_method: paymentMethod === "card" ? "credit_card" : paymentMethod,
       };
-
-      if (paymentMethod === "cash") {
-        payload.payment_method = 1;
-      }
 
       const response = await createReservation(payload);
 
@@ -82,20 +151,26 @@ export default function BookingSubmission({ lang }: Props) {
         throw new Error(errorMessage);
       }
 
-      if (response.payment_link) {
-        window.location.href = response.payment_link;
+      if (paymentMethod === "cash") {
+        await Swal.fire({
+          icon: "success",
+          title: t("pages.register.success.title"),
+          text: t("pages.register.success.message"),
+          confirmButtonColor: "#00A651",
+        });
+        window.location.href = success_url;
         return;
       }
 
-      await Swal.fire({
-        icon: "success",
-        title: t("pages.register.success.title"),
-        text: t("pages.register.success.message"),
-        confirmButtonColor: "#00A651",
-      });
-
-      // Redirect to thank you page if no payment link (e.g. cash)
-      window.location.href = success_url;
+      if (response.paypal_id) {
+        setPaypalId(response.paypal_id);
+        renderPayPalButtons(response.paypal_id, paymentMethod);
+      } else if (response.payment_link) {
+        // Fallback for legacy redirect flow if backend returns payment_link
+        window.location.href = response.payment_link;
+      } else {
+        throw new Error("No payment method initialization data received");
+      }
     } catch (err: any) {
       console.error(err);
       Swal.fire({
@@ -110,8 +185,8 @@ export default function BookingSubmission({ lang }: Props) {
   };
 
   return (
-    <div className="mt-6 flex flex-col items-center gap-4">
-      <p className="text-gray-dark text-sm">
+    <div className="mt-6 flex flex-col items-center gap-4 w-full">
+      <p className="text-gray-dark text-sm text-center">
         {t("pages.register.paymentMethod.termsInfo")}{" "}
         <a
           href="/terms-and-conditions"
@@ -121,21 +196,55 @@ export default function BookingSubmission({ lang }: Props) {
         </a>
       </p>
 
-      <ButtonCta
-        onClick={handleSubmit}
-        disabled={isLoading || !isValid}
-        variant="green"
-        className={clsx(
-          "w-full! py-4 text-xl font-bold uppercase",
-          isLoading || !isValid
-            ? "cursor-not-allowed! opacity-50 hover:scale-100!"
-            : "",
-        )}
-      >
-        {isLoading ? (
-          <div className="flex items-center justify-center gap-2">
+      {!paypalId ? (
+        <ButtonCta
+          onClick={handleSubmit}
+          disabled={isLoading || !isValid}
+          variant="green"
+          className={clsx(
+            "w-full! py-4 text-xl font-bold uppercase",
+            isLoading || !isValid
+              ? "cursor-not-allowed! opacity-50 hover:scale-100!"
+              : "",
+          )}
+        >
+          {isLoading ? (
+            <div className="flex items-center justify-center gap-2">
+              <svg
+                className="h-5 w-5 animate-spin text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              {t("pages.register.submitting")}
+            </div>
+          ) : (
+            t("pages.register.submit")
+          )}
+        </ButtonCta>
+      ) : (
+        <div id="paypal-button-container" className="w-full min-h-[150px]"></div>
+      )}
+
+      {isLoading && paypalId && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="flex flex-col items-center gap-4 rounded-xl bg-white p-8">
             <svg
-              className="h-5 w-5 animate-spin text-white"
+              className="h-10 w-10 animate-spin text-green"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -154,12 +263,12 @@ export default function BookingSubmission({ lang }: Props) {
                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
               ></path>
             </svg>
-            {t("pages.register.submitting")}
+            <p className="text-lg font-bold">
+              {t("pages.register.paymentMethod.processing")}
+            </p>
           </div>
-        ) : (
-          t("pages.register.submit")
-        )}
-      </ButtonCta>
+        </div>
+      )}
     </div>
   );
 }
