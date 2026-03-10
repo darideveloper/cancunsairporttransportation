@@ -50,6 +50,18 @@ export default function BookingSubmission({ lang }: Props) {
     }
   }, [paymentMethod]);
 
+  // Handle PayPal Button rendering after state update and DOM render
+  useEffect(() => {
+    if (paypalId && (paymentMethod === "paypal" || paymentMethod === "card")) {
+      const container = document.getElementById("paypal-button-container");
+      if (container) {
+        // Clear previous buttons before rendering new ones
+        container.innerHTML = "";
+        renderPayPalButtons(paypalId, paymentMethod);
+      }
+    }
+  }, [paypalId, paymentMethod]);
+
   // Validation Logic
   const formData = useMemo(
     () => ({
@@ -207,7 +219,6 @@ export default function BookingSubmission({ lang }: Props) {
 
       if (paypalId) {
         setPaypalId(paypalId);
-        renderPayPalButtons(paypalId, paymentMethod);
       } else if (response.payment_link) {
         // Fallback for legacy redirect flow if backend returns payment_link
         window.location.href = response.payment_link;
