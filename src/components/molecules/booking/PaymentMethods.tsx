@@ -40,7 +40,9 @@ export default function PaymentMethods({ lang }: { lang: "en" | "es" }) {
     },
   ] as const;
 
-  const selectedOption = paymentOptions.find((opt) => opt.value === paymentMethod);
+  const selectedOption = paymentOptions.find(
+    (opt) => opt.value === paymentMethod,
+  );
 
   return (
     <div className="space-y-6 rounded-2xl bg-white px-4 py-6 shadow-xl">
@@ -62,10 +64,10 @@ export default function PaymentMethods({ lang }: { lang: "en" | "es" }) {
               imageAlt={option.imageAlt}
               label={option.label}
             />
-            
+
             {paymentMethod === option.value && (
               <div
-                className="text-gray-dark px-2 text-sm font-medium animate-in fade-in slide-in-from-top-1 duration-300 [&_p]:mb-2 [&_strong]:font-bold"
+                className="text-gray-dark animate-in fade-in slide-in-from-top-1 px-2 text-sm font-medium duration-300 [&_p]:mb-2 [&_strong]:font-bold"
                 dangerouslySetInnerHTML={{
                   __html: marked.parse(
                     t(`pages.register.paymentMethod.${option.infoKey}` as any),

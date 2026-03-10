@@ -174,3 +174,7 @@ label {
 .markdown a {
   @apply text-accent;
 }
+
+hr {
+  margin: 1rem 0;
+}
