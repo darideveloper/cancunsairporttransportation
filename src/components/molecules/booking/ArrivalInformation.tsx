@@ -19,9 +19,14 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
     errors,
     setAirline,
     setFlightNumber,
+    validateField,
   } = useSearchFormStore();
 
   const t = getTranslations(lang);
+
+  const handleBlur = (name: string, value: string) => {
+    validateField(name, value);
+  };
 
   return (
     <div className="space-y-6 rounded-2xl bg-white px-4 py-6 shadow-xl">
@@ -51,11 +56,14 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
             value: airline,
             onChange: (e: ChangeEvent<HTMLInputElement>) =>
               setAirline(e.target.value),
+            onBlur: (e: ChangeEvent<HTMLInputElement>) =>
+              handleBlur("airline", e.target.value),
             placeholder: t(
               "pages.register.arrivalInformation.airlinePlaceholder",
             ),
             icon: FaPlane,
             required: false,
+            error: errors.airline ? t(errors.airline) : undefined,
           },
           {
             label: t("pages.register.arrivalInformation.flightNumber"),
@@ -63,11 +71,14 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
             value: flightNumber,
             onChange: (e: ChangeEvent<HTMLInputElement>) =>
               setFlightNumber(e.target.value),
+            onBlur: (e: ChangeEvent<HTMLInputElement>) =>
+              handleBlur("flightNumber", e.target.value),
             placeholder: t(
               "pages.register.arrivalInformation.flightNumberPlaceholder",
             ),
             icon: FaPlane,
             required: false,
+            error: errors.flightNumber ? t(errors.flightNumber) : undefined,
           },
         ].map((field: any) => (
           <Input

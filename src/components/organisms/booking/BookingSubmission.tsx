@@ -28,6 +28,7 @@ export default function BookingSubmission({ lang }: Props) {
     email,
     phone,
     flightNumber,
+    airline,
     notes,
     departureDate,
     departureTime,
@@ -117,6 +118,8 @@ export default function BookingSubmission({ lang }: Props) {
       tripType,
       returnDate,
       returnTime,
+      airline,
+      flightNumber,
     }),
     [
       firstName,
@@ -128,6 +131,8 @@ export default function BookingSubmission({ lang }: Props) {
       tripType,
       returnDate,
       returnTime,
+      airline,
+      flightNumber,
     ],
   );
 
@@ -228,6 +233,7 @@ export default function BookingSubmission({ lang }: Props) {
         last_name: lastName,
         email_address: email,
         phone: phone,
+        airline: airline,
         flight_number: flightNumber,
         comments: notes,
         arrival_date: `${departureDate} ${departureTime}`,

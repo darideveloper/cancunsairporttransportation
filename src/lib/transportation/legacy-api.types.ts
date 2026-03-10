@@ -70,6 +70,7 @@ export interface CreateReservationPayload {
   last_name: string;
   email_address: string;
   phone: string;
+  airline?: string;
   flight_number?: string;
   arrival_date?: string;
   comments?: string;

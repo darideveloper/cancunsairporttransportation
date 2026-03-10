@@ -18,6 +18,8 @@ export const bookingRegistrationSchema = z
     departureTime: z
       .string()
       .min(1, "pages.register.errors.departureTimeRequired"),
+    airline: z.string().optional(),
+    flightNumber: z.string().optional(),
     tripType: z.enum(["oneWay", "roundTrip"]),
     returnDate: z.string().optional(),
     returnTime: z.string().optional(),
