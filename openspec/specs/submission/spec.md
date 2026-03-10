@@ -36,31 +36,21 @@ export interface CreateReservationPayload {
 The application **SHALL** include `src/components/organisms/booking/BookingSubmission.tsx` to handle UI interactions, validation, and redirection.
 
 #### Scenario: User Clicks Submit with Digital Payment
-Given the user has selected "Stripe" or "PayPal"
+Given the user has selected "card" or "paypal"
 When they click "Book Your Trip Now"
-Then the component MUST generate dynamic `success_url` and `cancel_url`
-AND it MUST call `createReservation` with the mapped uppercase payment method
-AND it MUST NOT include the `pay_at_arrival` field in the active payload (keep it commented).
-AND it MUST redirect to `payment_link` if returned by the API.
+Then the component MUST call `createReservation` with the mapped payment method
+AND it MUST extract the PayPal ID from either `response.paypal_id` or `response.payment_data.url`
+AND it MUST call `renderPayPalButtons` with the extracted ID.
 
 ```typescript
 // src/components/organisms/booking/BookingSubmission.tsx
 
-const payload = {
-  service_token: selectedVehicle!.token,
-  first_name: firstName,
-  last_name: lastName,
-  email_address: email,
-  phone: phone,
-  flight_number: flightNumber,
-  comments: notes,
-  // pay_at_arrival: paymentMethod === "stripe" || paymentMethod === "paypal" ? 0 : 1, // Commented out
-  arrival_date: `${departureDate} ${departureTime}`,
-  payment_method: paymentMethod.toUpperCase(),
-  success_url,
-  cancel_url,
-  language: lang,
-};
+const paypalId = response.paypal_id || response.payment_data?.url;
+
+if (paypalId) {
+  setPaypalId(paypalId);
+  renderPayPalButtons(paypalId, paymentMethod);
+}
 ```
 
 ### Requirement: Register Page

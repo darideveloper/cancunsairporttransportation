@@ -86,6 +86,9 @@ export interface ReservationResponse {
   paypal_id?: string;
   uuid?: string;
   payment_link?: string;
+  payment_data?: {
+    url: string;
+  };
   status?: string;
   total?: number;
   currency?: string;

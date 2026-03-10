@@ -203,9 +203,11 @@ export default function BookingSubmission({ lang }: Props) {
         return;
       }
 
-      if (response.paypal_id) {
-        setPaypalId(response.paypal_id);
-        renderPayPalButtons(response.paypal_id, paymentMethod);
+      const paypalId = response.paypal_id || response.payment_data?.url;
+
+      if (paypalId) {
+        setPaypalId(paypalId);
+        renderPayPalButtons(paypalId, paymentMethod);
       } else if (response.payment_link) {
         // Fallback for legacy redirect flow if backend returns payment_link
         window.location.href = response.payment_link;
