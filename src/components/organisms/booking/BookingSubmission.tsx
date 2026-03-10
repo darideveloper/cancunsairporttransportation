@@ -35,11 +35,50 @@ export default function BookingSubmission({ lang }: Props) {
     tripType,
     returnDate,
     returnTime,
+    currency,
     setErrors,
   } = useSearchFormStore();
 
   const [isLoading, setIsLoading] = useState(false);
   const [paypalId, setPaypalId] = useState<string | null>(null);
+  const [isSdkLoaded, setIsSdkLoaded] = useState(false);
+
+  // Dynamically load PayPal SDK based on currency
+  useEffect(() => {
+    setIsSdkLoaded(false);
+    const scriptId = "paypal-sdk-script";
+    const existingScript = document.getElementById(scriptId);
+
+    if (existingScript) {
+      existingScript.remove();
+      // Important: PayPal SDK adds objects to window that can conflict if not cleared
+      // but usually replacing the script and letting it re-init is enough for smart buttons
+      if (window.paypal) {
+        // Some internal cleanup might be needed if PayPal doesn't handle re-init well
+        // but for smart buttons, loading a new script with new currency is the standard way.
+      }
+    }
+
+    const script = document.createElement("script");
+    script.id = scriptId;
+    script.src = `https://www.paypal.com/sdk/js?client-id=${import.meta.env.PUBLIC_PAYPAL_CLIENT_ID}&currency=${currency}&components=buttons&disable-funding=paylater,venmo`;
+    script.async = true;
+    script.onload = () => {
+      setIsSdkLoaded(true);
+    };
+    script.onerror = () => {
+      console.error("Failed to load PayPal SDK");
+    };
+
+    document.head.appendChild(script);
+
+    return () => {
+      const scriptToRemove = document.getElementById(scriptId);
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
+    };
+  }, [currency]);
 
   // Clear PayPal buttons if payment method changes
   useEffect(() => {
@@ -52,7 +91,11 @@ export default function BookingSubmission({ lang }: Props) {
 
   // Handle PayPal Button rendering after state update and DOM render
   useEffect(() => {
-    if (paypalId && (paymentMethod === "paypal" || paymentMethod === "card")) {
+    if (
+      paypalId &&
+      isSdkLoaded &&
+      (paymentMethod === "paypal" || paymentMethod === "card")
+    ) {
       const container = document.getElementById("paypal-button-container");
       if (container) {
         // Clear previous buttons before rendering new ones
@@ -60,7 +103,7 @@ export default function BookingSubmission({ lang }: Props) {
         renderPayPalButtons(paypalId, paymentMethod);
       }
     }
-  }, [paypalId, paymentMethod]);
+  }, [paypalId, paymentMethod, isSdkLoaded]);
 
   // Validation Logic
   const formData = useMemo(

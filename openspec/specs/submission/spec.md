@@ -35,31 +35,38 @@ export interface CreateReservationPayload {
 
 The application **SHALL** include `src/components/organisms/booking/BookingSubmission.tsx` to handle UI interactions, validation, and redirection.
 
-#### Scenario: User Clicks Submit with Digital Payment (Corrected Flow)
+#### Scenario: User Selects Currency and Payment Method
+Given the user selects a currency (`USD` or `MXN`)
+When the component mounts or the currency changes
+Then the component MUST dynamically load the PayPal SDK with the matching `currency` parameter.
+AND it MUST clear any previously loaded PayPal SDK instances to avoid currency conflicts.
+
+#### Scenario: User Clicks Submit with Digital Payment (Currency Sync)
 Given the user has selected "card" or "paypal"
 When they click "Book Your Trip Now"
-Then the component MUST call `createReservation` with the mapped payment method
-AND it MUST extract the PayPal ID from either `response.paypal_id` or `response.payment_data.url`
-AND it MUST NOT call `renderPayPalButtons` directly in the `handleSubmit` function.
-AND it MUST call `renderPayPalButtons` only after React has updated the DOM with the `#paypal-button-container` element.
+Then the component MUST call `createReservation`
+AND it MUST wait for BOTH the `paypalId` state to be set AND the PayPal SDK to be fully loaded.
+AND it MUST then call `renderPayPalButtons` to display the payment UI.
 
 ```typescript
 // src/components/organisms/booking/BookingSubmission.tsx
 
-// 1. setPaypalId triggered after API call
-if (paypalId) {
-  setPaypalId(paypalId);
-}
-
-// 2. renderPayPalButtons called via useEffect ONLY after paypalId is set and DOM is updated
+// Dynamic SDK Loading Logic
 useEffect(() => {
-  if (paypalId && paymentMethod) {
-    const container = document.getElementById("paypal-button-container");
-    if (container) {
-      renderPayPalButtons(paypalId, paymentMethod);
-    }
+  const loadSdk = () => {
+    // 1. Remove old script if exists
+    // 2. Inject new script with current currency
+    // 3. setSucceeded(true) on script.onload
+  };
+  loadSdk();
+}, [currency]);
+
+// Render Logic with SDK Guard
+useEffect(() => {
+  if (paypalId && isSdkLoaded && (paymentMethod === "paypal" || paymentMethod === "card")) {
+    renderPayPalButtons(paypalId, paymentMethod);
   }
-}, [paypalId, paymentMethod]);
+}, [paypalId, isSdkLoaded, paymentMethod]);
 ```
 
 ### Requirement: Register Page
