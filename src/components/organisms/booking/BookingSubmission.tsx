@@ -329,6 +329,8 @@ export default function BookingSubmission({ lang }: Props) {
               </svg>
               {t("pages.register.submitting")}
             </div>
+          ) : paymentMethod === "paypal" || paymentMethod === "card" ? (
+            t("pages.register.continue")
           ) : (
             t("pages.register.submit")
           )}

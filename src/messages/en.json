@@ -665,12 +665,13 @@
         "card": "Credit / Debit Card",
         "cash": "Pay in Cash",
         "stripeExtraInfo": "By selecting this method, you will be redirected to a secure Stripe portal.",
-        "termsInfo": "By clicking on Submit, you accept the",
+        "termsInfo": "By clicking on the button, you accept the",
         "paypalInfo": "We accept payments with **PayPal**, one of the most trusted platforms worldwide.\n\n* ✅ Guaranteed security\n* ✅ Pay with PayPal account\n* ✅ Hassle-free\n\n---\n\n**Important!** Please make sure the PayPal account holder is present and brings a valid ID when starting the transfer.",
         "cardInfo": "We accept payments with **PayPal**, one of the most trusted platforms worldwide.\n\n* ✅ Guaranteed security\n* ✅ Pay with card\n* ✅ Hassle-free\n\n---\n\n**Important!** You have to present the debit or credit card with which you made the payment when starting your shuttle.",
         "cashInfo": "Tax service **$5.00 USD**, you can save this fee prepaying online."
       },
       "submit": "BOOK YOUR TRIP NOW!",
+      "continue": "CONTINUE",
       "submitting": "Processing...",
       "errors": {
         "title": "Oops!",
