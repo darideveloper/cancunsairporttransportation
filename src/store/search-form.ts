@@ -1,5 +1,44 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
+import { z } from "zod";
+
+export const bookingRegistrationSchema = z
+  .object({
+    firstName: z
+      .string()
+      .min(2, "pages.register.errors.firstNameTooShort"),
+    lastName: z
+      .string()
+      .min(2, "pages.register.errors.lastNameTooShort"),
+    email: z.string().email("pages.register.errors.invalidEmail"),
+    phone: z.string().min(8, "pages.register.errors.phoneTooShort"),
+    departureDate: z
+      .string()
+      .min(1, "pages.register.errors.departureDateRequired"),
+    departureTime: z
+      .string()
+      .min(1, "pages.register.errors.departureTimeRequired"),
+    tripType: z.enum(["oneWay", "roundTrip"]),
+    returnDate: z.string().optional(),
+    returnTime: z.string().optional(),
+  })
+  .refine(
+    (data) => {
+      if (data.tripType === "roundTrip") {
+        return (
+          data.returnDate &&
+          data.returnDate.length > 0 &&
+          data.returnTime &&
+          data.returnTime.length > 0
+        );
+      }
+      return true;
+    },
+    {
+      message: "pages.register.errors.returnDetailsRequired",
+      path: ["returnDate"],
+    },
+  );
 
 export interface LocationData {
   name: string;
@@ -40,6 +79,7 @@ interface SearchFormState {
   phone: string;
   notes: string;
   paymentMethod: "paypal" | "card" | "cash";
+  errors: Record<string, string | undefined>;
   setTripType: (tripType: "oneWay" | "roundTrip") => void;
   setCurrency: (currency: "USD" | "MXN") => void;
   setLocationFrom: (location: string | LocationData) => void;
@@ -58,11 +98,14 @@ interface SearchFormState {
   setPhone: (phone: string) => void;
   setNotes: (notes: string) => void;
   setPaymentMethod: (method: "paypal" | "card" | "cash") => void;
+  setErrors: (errors: Record<string, string | undefined>) => void;
+  setError: (field: string, message: string | undefined) => void;
+  validateField: (field: string, value: any) => void;
 }
 
 export const useSearchFormStore = create<SearchFormState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       tripType: "roundTrip",
       currency: "MXN",
       locationFrom: "",
@@ -83,7 +126,12 @@ export const useSearchFormStore = create<SearchFormState>()(
       phone: "",
       notes: "",
       paymentMethod: "card",
-      setTripType: (tripType) => set({ tripType }),
+      errors: {},
+      setTripType: (tripType) =>
+        set((state) => ({
+          tripType,
+          errors: { ...state.errors, returnDate: undefined, returnTime: undefined },
+        })),
       setCurrency: (currency) => set({ currency }),
       setLocationFrom: (location) => {
         if (typeof location === "string") {
@@ -99,21 +147,74 @@ export const useSearchFormStore = create<SearchFormState>()(
           set({ locationTo: location.name, locationToData: location });
         }
       },
-      setDepartureDate: (departureDate) => set({ departureDate }),
-      setDepartureTime: (departureTime) => set({ departureTime }),
-      setReturnDate: (returnDate) => set({ returnDate }),
-      setReturnTime: (returnTime) => set({ returnTime }),
+      setDepartureDate: (departureDate) =>
+        set((state) => ({
+          departureDate,
+          errors: { ...state.errors, departureDate: undefined },
+        })),
+      setDepartureTime: (departureTime) =>
+        set((state) => ({
+          departureTime,
+          errors: { ...state.errors, departureTime: undefined },
+        })),
+      setReturnDate: (returnDate) =>
+        set((state) => ({
+          returnDate,
+          errors: { ...state.errors, returnDate: undefined },
+        })),
+      setReturnTime: (returnTime) =>
+        set((state) => ({
+          returnTime,
+          errors: { ...state.errors, returnTime: undefined },
+        })),
       setPassengers: (passengers) => set({ passengers }),
       setSelectedVehicle: (selectedVehicle) => set({ selectedVehicle }),
       setAirline: (airline) => set({ airline }),
       setFlightNumber: (flightNumber) => set({ flightNumber }),
-      setFirstName: (firstName) => set({ firstName }),
-      setLastName: (lastName) => set({ lastName }),
-      setEmail: (email) => set({ email }),
-      setPhone: (phone) => set({ phone }),
+      setFirstName: (firstName) =>
+        set((state) => ({
+          firstName,
+          errors: { ...state.errors, firstName: undefined },
+        })),
+      setLastName: (lastName) =>
+        set((state) => ({
+          lastName,
+          errors: { ...state.errors, lastName: undefined },
+        })),
+      setEmail: (email) =>
+        set((state) => ({
+          email,
+          errors: { ...state.errors, email: undefined },
+        })),
+      setPhone: (phone) =>
+        set((state) => ({
+          phone,
+          errors: { ...state.errors, phone: undefined },
+        })),
       setNotes: (notes) => set({ notes }),
       setPaymentMethod: (paymentMethod) => set({ paymentMethod }),
+      setErrors: (errors) => set({ errors }),
+      setError: (field, message) =>
+        set((state) => ({
+          errors: { ...state.errors, [field]: message },
+        })),
+      validateField: (field, value) => {
+        const schema =
+          (bookingRegistrationSchema as any)._def.schema ||
+          bookingRegistrationSchema;
+        const fieldSchema = (schema as any).shape?.[field];
+
+        if (fieldSchema) {
+          const result = fieldSchema.safeParse(value);
+          if (!result.success) {
+            get().setError(field, result.error.errors[0].message);
+          } else {
+            get().setError(field, undefined);
+          }
+        }
+      },
     }),
+
     {
       name: "search-form-storage",
       storage: createJSONStorage(() => {

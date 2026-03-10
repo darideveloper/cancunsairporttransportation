@@ -675,7 +675,14 @@
       "errors": {
         "title": "Oops!",
         "missingFields": "Please fill in all required fields to proceed with your booking.",
-        "generic": "Something went wrong while processing your reservation. Please try again or contact us."
+        "generic": "Something went wrong while processing your reservation. Please try again or contact us.",
+        "firstNameTooShort": "First name must be at least 2 characters",
+        "lastNameTooShort": "Last name must be at least 2 characters",
+        "invalidEmail": "Invalid email address",
+        "phoneTooShort": "Phone number must be at least 8 characters",
+        "departureDateRequired": "Departure date is required",
+        "departureTimeRequired": "Departure time is required",
+        "returnDetailsRequired": "Return date and time are required for round trips"
       },
       "success": {
         "title": "Reservation Sent!",

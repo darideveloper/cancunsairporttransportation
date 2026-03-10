@@ -675,7 +675,14 @@
       "errors": {
         "title": "¡Oops!",
         "missingFields": "Por favor, complete todos los campos obligatorios para continuar con su reserva.",
-        "generic": "Algo salió mal al procesar su reservación. Por favor, inténtelo de nuevo o contáctenos."
+        "generic": "Algo salió mal al procesar su reservación. Por favor, inténtelo de nuevo o contáctenos.",
+        "firstNameTooShort": "El nombre debe tener al menos 2 caracteres",
+        "lastNameTooShort": "El apellido debe tener al menos 2 caracteres",
+        "invalidEmail": "Correo electrónico inválido",
+        "phoneTooShort": "El número de teléfono debe tener al menos 8 caracteres",
+        "departureDateRequired": "La fecha de salida es obligatoria",
+        "departureTimeRequired": "La hora de salida es obligatoria",
+        "returnDetailsRequired": "La fecha y hora de regreso son obligatorias para viajes redondos"
       },
       "success": {
         "title": "¡Reservación Enviada!",

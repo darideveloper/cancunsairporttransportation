@@ -9,7 +9,7 @@ export interface ReturnInformationProps {
 }
 
 export default function ReturnInformation({ lang }: ReturnInformationProps) {
-  const { returnDate, returnTime, tripType } = useSearchFormStore();
+  const { returnDate, returnTime, tripType, errors } = useSearchFormStore();
 
   const t = getTranslations(lang);
 
@@ -29,6 +29,7 @@ export default function ReturnInformation({ lang }: ReturnInformationProps) {
             value: returnDate,
             readOnly: true,
             icon: FaCalendarAlt,
+            error: errors.returnDate ? t(errors.returnDate) : undefined,
           },
           {
             label: t("pages.register.returnInformation.returnTime"),
@@ -36,6 +37,7 @@ export default function ReturnInformation({ lang }: ReturnInformationProps) {
             value: returnTime,
             readOnly: true,
             icon: FaClock,
+            error: errors.returnTime ? t(errors.returnTime) : undefined,
           },
         ].map((field) => (
           <Input

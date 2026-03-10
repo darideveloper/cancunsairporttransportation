@@ -127,11 +127,6 @@ select {
   height: 3rem !important;
 }
 
-input[type="date"],
-input[type="time"] {
-  @apply flex items-center;
-}
-
 label {
   @apply my-1 block text-sm font-semibold;
 }

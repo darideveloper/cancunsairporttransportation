@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useSearchFormStore } from "../../../store/search-form";
+import { useState, useEffect, useMemo } from "react";
+import { useSearchFormStore, bookingRegistrationSchema } from "../../../store/search-form";
 import {
   createReservation,
   capturePayment,
@@ -32,6 +32,10 @@ export default function BookingSubmission({ lang }: Props) {
     departureDate,
     departureTime,
     paymentMethod,
+    tripType,
+    returnDate,
+    returnTime,
+    setErrors,
   } = useSearchFormStore();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -47,12 +51,37 @@ export default function BookingSubmission({ lang }: Props) {
   }, [paymentMethod]);
 
   // Validation Logic
-  const isValid =
-    !!selectedVehicle?.token &&
-    !!firstName?.trim() &&
-    !!lastName?.trim() &&
-    !!email?.trim() &&
-    !!phone?.trim();
+  const formData = useMemo(
+    () => ({
+      firstName,
+      lastName,
+      email,
+      phone,
+      departureDate,
+      departureTime,
+      tripType,
+      returnDate,
+      returnTime,
+    }),
+    [
+      firstName,
+      lastName,
+      email,
+      phone,
+      departureDate,
+      departureTime,
+      tripType,
+      returnDate,
+      returnTime,
+    ],
+  );
+
+  const validationResult = useMemo(
+    () => bookingRegistrationSchema.safeParse(formData),
+    [formData],
+  );
+
+  const isValid = !!selectedVehicle?.token;
 
   const origin = typeof window !== "undefined" ? window.location.origin : "";
   const success_url = `${origin}/${lang === "es" ? "es/gracias" : "thank-you"}`;
@@ -114,7 +143,19 @@ export default function BookingSubmission({ lang }: Props) {
   const handleSubmit = async () => {
     setIsLoading(true);
 
-    if (!isValid) {
+    const result = bookingRegistrationSchema.safeParse(formData);
+
+    if (!result.success || !selectedVehicle?.token) {
+      if (!result.success) {
+        const fieldErrors: Record<string, string> = {};
+        result.error.errors.forEach((err) => {
+          if (err.path[0]) {
+            fieldErrors[err.path[0] as string] = err.message;
+          }
+        });
+        setErrors(fieldErrors);
+      }
+
       Swal.fire({
         icon: "error",
         title: t("pages.register.errors.title"),
