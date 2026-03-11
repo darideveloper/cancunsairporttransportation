@@ -8,11 +8,13 @@ import H2 from "../../atoms/H2";
 export interface SelectedVehicleCardProps {
   lang: "en" | "es";
   className?: string;
+  variant?: "horizontal" | "sidebar";
 }
 
 export default function SelectedVehicleCard({
   lang,
   className,
+  variant = "horizontal",
 }: SelectedVehicleCardProps) {
   const { selectedVehicle, locationFrom, locationTo, passengers, tripType } =
     useSearchFormStore();
@@ -23,6 +25,8 @@ export default function SelectedVehicleCard({
   if (!selectedVehicle || !locationFrom || !locationTo || passengers < 1) {
     return null;
   }
+
+  const isSidebar = variant === "sidebar";
 
   const tripTypeLabel =
     tripType === "oneWay"
@@ -57,7 +61,8 @@ export default function SelectedVehicleCard({
   return (
     <div
       className={clsx(
-        "bg-gray/10 flex flex-col items-center gap-4 rounded-xl p-4 shadow-sm md:flex-row",
+        "bg-gray/10 flex flex-col items-center gap-4 rounded-xl p-4 shadow-sm",
+        !isSidebar && "md:flex-row",
         className,
       )}
     >
@@ -66,17 +71,22 @@ export default function SelectedVehicleCard({
         <img
           src={selectedVehicle.image}
           alt={selectedVehicle.name}
-          className="h-auto w-52 object-contain"
+          className={clsx("h-auto object-contain", isSidebar ? "w-40" : "w-52")}
         />
       </div>
 
       {/* Content */}
       <div className="flex flex-1 flex-col gap-2">
-        <H2 className="text-center font-normal md:text-right">
+        <H2
+          className={clsx(
+            "font-normal",
+            isSidebar ? "text-lg text-center" : "text-center md:text-left",
+          )}
+        >
           <span className="font-bold">
             {t("global.booking.summary.privateTransportation")}
           </span>
-          <span className="ml-2">
+          <span className={clsx(isSidebar ? "block" : "ml-2")}>
             {t("global.booking.summary.capacity", {
               maxPassengers: selectedVehicle.maxPassengers.toString(),
             })}
@@ -84,7 +94,12 @@ export default function SelectedVehicleCard({
         </H2>
 
         {/* Details Row */}
-        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-500 md:justify-end">
+        <ul
+          className={clsx(
+            "flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500",
+            isSidebar ? "flex-col items-center" : "justify-center md:justify-start",
+          )}
+        >
           {details.map((item, index) => (
             <CheckListItem
               key={index}

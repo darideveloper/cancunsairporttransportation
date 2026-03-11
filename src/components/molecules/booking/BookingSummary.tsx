@@ -36,16 +36,16 @@ export default function BookingSummary({
   return (
     <div
       className={clsx(
-        "flex items-center justify-between rounded-lg bg-black p-4 text-white shadow-md",
+        "flex items-center justify-between rounded-lg bg-black px-4 py-3 text-white shadow-md",
       )}
     >
-      <div className="flex w-full flex-col items-center justify-center gap-1">
-        <span className="text-yellow text-xl font-bold">
+      <div className="flex w-full flex-col items-center justify-center gap-0.5">
+        <span className="text-yellow text-lg font-bold">
           {formattedPrice} {currency}
         </span>
-        <div className="flex items-center gap-2 text-sm text-white">
-          <FaCar />
-          <span>
+        <div className="flex items-center gap-2 text-xs text-white opacity-90">
+          <FaCar className="shrink-0" />
+          <span className="text-center">
             {t("global.booking.summary.vehicleDescription", {
               count: String(passengers),
               vehicleName: selectedVehicle.name,
