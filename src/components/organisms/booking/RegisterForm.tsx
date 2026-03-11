@@ -20,35 +20,42 @@ export default function RegisterForm({ lang }: RegisterFormProps) {
     useSearchFormStore();
 
   const summaryRef = useRef<HTMLDivElement>(null);
+  const paymentMethodsRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (paypalId && paymentMethod === "card") {
-      summaryRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      paymentMethodsRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   }, [paypalId, paymentMethod]);
 
   return (
-    <>
-      <div ref={summaryRef}>
-        <SelectedVehicleCard lang={lang} />
-      </div>
-      <div className="flex flex-col gap-4 lg:flex-row">
-        <div className="left flex w-full flex-col gap-8">
-          <ArrivalInformation lang={lang} />
-          <ReturnInformation lang={lang} />
-          <PassengerInformation lang={lang} />
-        </div>
-        <div className="right flex w-full flex-col gap-4 lg:max-w-sm">
+    <div className="flex flex-col gap-4 lg:flex-row">
+      <div className="left flex w-full flex-col gap-8">
+        <div ref={summaryRef} className="flex flex-col gap-4">
+          <SelectedVehicleCard lang={lang} />
           <BookingSummary
             lang={lang}
             selectedVehicle={selectedVehicle}
             currency={currency}
             passengers={passengers}
           />
-          <PaymentMethods lang={lang} />
-          <BookingSubmission lang={lang} />
+        </div>
+        <ArrivalInformation lang={lang} />
+        <ReturnInformation lang={lang} />
+        <PassengerInformation lang={lang} />
+      </div>
+
+      <div className="right relative w-full lg:max-w-sm">
+        <div className="lg:sticky lg:top-4 lg:flex lg:flex-col lg:gap-4 lg:h-fit">
+          <div className="flex flex-col gap-4 lg:mt-0">
+            <PaymentMethods lang={lang} ref={paymentMethodsRef} />
+            <BookingSubmission lang={lang} />
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
