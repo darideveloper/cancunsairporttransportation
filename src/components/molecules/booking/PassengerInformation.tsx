@@ -1,6 +1,6 @@
 // src/components/molecules/booking/PassengerInformation.tsx
 import type { ChangeEvent } from "react";
-import { useSearchFormStore } from "../../../store/search-form";
+import { useSearchFormStore, bookingRegistrationSchema } from "../../../store/search-form";
 import { getTranslations } from "../../../lib/i18n/utils";
 import Input from "../../atoms/form/Input";
 import PhoneInput from "../../atoms/form/PhoneInput";
@@ -20,14 +20,20 @@ export default function PassengerInformation({
     email,
     phone,
     notes,
+    errors,
     setFirstName,
     setLastName,
     setEmail,
     setPhone,
     setNotes,
+    validateField,
   } = useSearchFormStore();
 
   const t = getTranslations(lang);
+
+  const handleBlur = (name: string, value: string) => {
+    validateField(name, value);
+  };
 
   return (
     <div className="space-y-6 rounded-2xl bg-white px-4 py-6 shadow-xl">
@@ -41,6 +47,10 @@ export default function PassengerInformation({
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setFirstName(e.target.value)
           }
+          onBlur={(e: ChangeEvent<HTMLInputElement>) =>
+            handleBlur("firstName", e.target.value)
+          }
+          error={errors.firstName ? t(errors.firstName) : undefined}
           placeholder={t(
             "pages.register.passengerInformation.firstNamePlaceholder",
           )}
@@ -53,6 +63,10 @@ export default function PassengerInformation({
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setLastName(e.target.value)
           }
+          onBlur={(e: ChangeEvent<HTMLInputElement>) =>
+            handleBlur("lastName", e.target.value)
+          }
+          error={errors.lastName ? t(errors.lastName) : undefined}
           placeholder={t(
             "pages.register.passengerInformation.lastNamePlaceholder",
           )}
@@ -66,6 +80,10 @@ export default function PassengerInformation({
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setEmail(e.target.value)
           }
+          onBlur={(e: ChangeEvent<HTMLInputElement>) =>
+            handleBlur("email", e.target.value)
+          }
+          error={errors.email ? t(errors.email) : undefined}
           placeholder={t(
             "pages.register.passengerInformation.emailPlaceholder",
           )}
@@ -76,6 +94,8 @@ export default function PassengerInformation({
           name="phone"
           value={phone}
           onChange={(value) => setPhone(value || "")}
+          onBlur={() => handleBlur("phone", phone)}
+          error={errors.phone ? t(errors.phone) : undefined}
           placeholder={t(
             "pages.register.passengerInformation.phonePlaceholder",
           )}
@@ -92,6 +112,7 @@ export default function PassengerInformation({
             placeholder={t(
               "pages.register.passengerInformation.notesPlaceholder",
             )}
+            className="h-24"
           />
         </div>
       </div>

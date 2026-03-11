@@ -8,8 +8,41 @@ import type {
   CreateReservationPayload,
   ReservationResponse,
   GetReservationResponse,
+  CapturePaymentPayload,
+  CapturePaymentResponse,
 } from "./legacy-api.types";
 import { useSearchFormStore } from "../../store/search-form";
+
+export async function capturePayment(
+  payload: CapturePaymentPayload,
+): Promise<CapturePaymentResponse> {
+  try {
+    const response = await fetch(
+      `${import.meta.env.PUBLIC_API_BASE}/legacy/capture/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      },
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      const errorMessage =
+        typeof errorData.error === "string"
+          ? errorData.error
+          : errorData.error?.message || response.statusText;
+      throw new Error(errorMessage);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("Failed to capture payment:", error);
+    throw error;
+  }
+}
 import { vehicleFeatures } from "../../data/vehicle-features";
 
 export async function getVehicles(

@@ -8,6 +8,7 @@ import confirmationImage from '../../../assets/images/general/confirmation.webp'
 const { pageKey } = Astro.props
 const lang = getLangFromUrl(Astro.url)
 const t = getTranslations(lang)
+const code = Astro.url.searchParams.get('code')
 ---
 
 <Layout pageKey={pageKey}>
@@ -20,5 +21,6 @@ const t = getTranslations(lang)
     image={confirmationImage}
     title={t(`pages.${pageKey}.heading`)}
     message={t(`pages.${pageKey}.message`)}
+    reservationId={code || undefined}
   />
 </Layout>

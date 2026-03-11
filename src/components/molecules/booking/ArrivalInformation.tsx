@@ -1,4 +1,4 @@
-// src/components/molecules/ArrivalInformation.tsx
+// src/components/molecules/booking/ArrivalInformation.tsx
 import type { ChangeEvent } from "react";
 import { useSearchFormStore } from "../../../store/search-form";
 import { getTranslations } from "../../../lib/i18n/utils";
@@ -16,11 +16,17 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
     departureTime,
     airline,
     flightNumber,
+    errors,
     setAirline,
     setFlightNumber,
+    validateField,
   } = useSearchFormStore();
 
   const t = getTranslations(lang);
+
+  const handleBlur = (name: string, value: string) => {
+    validateField(name, value);
+  };
 
   return (
     <div className="space-y-6 rounded-2xl bg-white px-4 py-6 shadow-xl">
@@ -34,6 +40,7 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
             value: departureDate,
             readOnly: true,
             icon: FaCalendarAlt,
+            error: errors.departureDate ? t(errors.departureDate) : undefined,
           },
           {
             label: t("pages.register.arrivalInformation.pickupTime"),
@@ -41,6 +48,7 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
             value: departureTime,
             readOnly: true,
             icon: FaClock,
+            error: errors.departureTime ? t(errors.departureTime) : undefined,
           },
           {
             label: t("pages.register.arrivalInformation.airline"),
@@ -48,11 +56,14 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
             value: airline,
             onChange: (e: ChangeEvent<HTMLInputElement>) =>
               setAirline(e.target.value),
+            onBlur: (e: ChangeEvent<HTMLInputElement>) =>
+              handleBlur("airline", e.target.value),
             placeholder: t(
               "pages.register.arrivalInformation.airlinePlaceholder",
             ),
             icon: FaPlane,
             required: false,
+            error: errors.airline ? t(errors.airline) : undefined,
           },
           {
             label: t("pages.register.arrivalInformation.flightNumber"),
@@ -60,13 +71,16 @@ export default function ArrivalInformation({ lang }: ArrivalInformationProps) {
             value: flightNumber,
             onChange: (e: ChangeEvent<HTMLInputElement>) =>
               setFlightNumber(e.target.value),
+            onBlur: (e: ChangeEvent<HTMLInputElement>) =>
+              handleBlur("flightNumber", e.target.value),
             placeholder: t(
               "pages.register.arrivalInformation.flightNumberPlaceholder",
             ),
             icon: FaPlane,
             required: false,
+            error: errors.flightNumber ? t(errors.flightNumber) : undefined,
           },
-        ].map((field) => (
+        ].map((field: any) => (
           <Input
             key={field.name}
             {...field}

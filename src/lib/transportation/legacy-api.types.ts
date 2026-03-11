@@ -70,6 +70,7 @@ export interface CreateReservationPayload {
   last_name: string;
   email_address: string;
   phone: string;
+  airline?: string;
   flight_number?: string;
   arrival_date?: string;
   comments?: string;
@@ -82,8 +83,14 @@ export interface CreateReservationPayload {
 }
 
 export interface ReservationResponse {
-  reservation_id?: string;
+  reservation_id: string;
+  paypal_id: string;
+  uuid: string;
   payment_link?: string;
+  payment_data?: {
+    url: string;
+    paypal_id?: string;
+  };
   status?: string;
   total?: number;
   currency?: string;
@@ -97,6 +104,22 @@ export interface ReservationResponse {
         message: string;
       }
     | string;
+}
+
+export interface CapturePaymentPayload {
+  id: string;
+}
+
+export interface CapturePaymentResponse {
+  status: boolean;
+  data: {
+    id: string;
+    status: string;
+    details?: Array<{
+      issue: string;
+      description: string;
+    }>;
+  };
 }
 
 export interface ReservationItem {

@@ -35,32 +35,38 @@ export interface CreateReservationPayload {
 
 The application **SHALL** include `src/components/organisms/booking/BookingSubmission.tsx` to handle UI interactions, validation, and redirection.
 
-#### Scenario: User Clicks Submit with Digital Payment
-Given the user has selected "Stripe" or "PayPal"
+#### Scenario: User Selects Currency and Payment Method
+Given the user selects a currency (`USD` or `MXN`)
+When the component mounts or the currency changes
+Then the component MUST dynamically load the PayPal SDK with the matching `currency` parameter.
+AND it MUST clear any previously loaded PayPal SDK instances to avoid currency conflicts.
+
+#### Scenario: User Clicks Submit with Digital Payment (Currency Sync)
+Given the user has selected "card" or "paypal"
 When they click "Book Your Trip Now"
-Then the component MUST generate dynamic `success_url` and `cancel_url`
-AND it MUST call `createReservation` with the mapped uppercase payment method
-AND it MUST NOT include the `pay_at_arrival` field in the active payload (keep it commented).
-AND it MUST redirect to `payment_link` if returned by the API.
+Then the component MUST call `createReservation`
+AND it MUST wait for BOTH the `paypalId` state to be set AND the PayPal SDK to be fully loaded.
+AND it MUST then call `renderPayPalButtons` to display the payment UI.
 
 ```typescript
 // src/components/organisms/booking/BookingSubmission.tsx
 
-const payload = {
-  service_token: selectedVehicle!.token,
-  first_name: firstName,
-  last_name: lastName,
-  email_address: email,
-  phone: phone,
-  flight_number: flightNumber,
-  comments: notes,
-  // pay_at_arrival: paymentMethod === "stripe" || paymentMethod === "paypal" ? 0 : 1, // Commented out
-  arrival_date: `${departureDate} ${departureTime}`,
-  payment_method: paymentMethod.toUpperCase(),
-  success_url,
-  cancel_url,
-  language: lang,
-};
+// Dynamic SDK Loading Logic
+useEffect(() => {
+  const loadSdk = () => {
+    // 1. Remove old script if exists
+    // 2. Inject new script with current currency
+    // 3. setSucceeded(true) on script.onload
+  };
+  loadSdk();
+}, [currency]);
+
+// Render Logic with SDK Guard
+useEffect(() => {
+  if (paypalId && isSdkLoaded && (paymentMethod === "paypal" || paymentMethod === "card")) {
+    renderPayPalButtons(paypalId, paymentMethod);
+  }
+}, [paypalId, isSdkLoaded, paymentMethod]);
 ```
 
 ### Requirement: Register Page
