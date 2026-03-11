@@ -111,11 +111,15 @@ export interface CapturePaymentPayload {
 }
 
 export interface CapturePaymentResponse {
-  status: string;
-  details?: Array<{
-    issue: string;
-    description: string;
-  }>;
+  status: boolean;
+  data: {
+    id: string;
+    status: string;
+    details?: Array<{
+      issue: string;
+      description: string;
+    }>;
+  };
 }
 
 export interface ReservationItem {

@@ -170,32 +170,24 @@ export default function BookingSubmission({ lang }: Props) {
             : window.paypal.FUNDING.PAYPAL,
 
         createOrder: () => id,
-
         onApprove: async (data: any, actions: any) => {
           setIsLoading(true);
           try {
             const captureData = await capturePayment({ id: data.orderID });
 
-            if (captureData.status === "COMPLETED") {
+            if (captureData.data.status === "COMPLETED") {
               window.location.href = finalSuccessUrl;
-            } else if (captureData.details?.[0]?.issue === "INSTRUMENT_DECLINED") {
+            } else if (captureData.data.details?.[0]?.issue === "INSTRUMENT_DECLINED") {
               setIsLoading(false);
               return actions.restart();
             } else {
               throw new Error("Payment failed to capture");
             }
-          } catch (err: any) {
-            console.error(err);
-            Swal.fire({
-              icon: "error",
-              title: t("pages.register.errors.title"),
-              text: err.message || t("pages.register.errors.generic"),
-              confirmButtonColor: "#00A651",
-            });
+          } catch (error) {
+            console.error(error);
             setIsLoading(false);
           }
         },
-
         onError: (err: any) => {
           console.error("PayPal Error:", err);
           Swal.fire({
