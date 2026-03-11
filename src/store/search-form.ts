@@ -81,6 +81,8 @@ interface SearchFormState {
   phone: string;
   notes: string;
   paymentMethod: "paypal" | "card" | "cash";
+  reservationId: string;
+  uuid: string;
   errors: Record<string, string | undefined>;
   setTripType: (tripType: "oneWay" | "roundTrip") => void;
   setCurrency: (currency: "USD" | "MXN") => void;
@@ -100,6 +102,8 @@ interface SearchFormState {
   setPhone: (phone: string) => void;
   setNotes: (notes: string) => void;
   setPaymentMethod: (method: "paypal" | "card" | "cash") => void;
+  setReservationId: (id: string) => void;
+  setUuid: (uuid: string) => void;
   setErrors: (errors: Record<string, string | undefined>) => void;
   setError: (field: string, message: string | undefined) => void;
   validateField: (field: string, value: any) => void;
@@ -128,6 +132,8 @@ export const useSearchFormStore = create<SearchFormState>()(
       phone: "",
       notes: "",
       paymentMethod: "card",
+      reservationId: "",
+      uuid: "",
       errors: {},
       setTripType: (tripType) =>
         set((state) => ({
@@ -195,6 +201,8 @@ export const useSearchFormStore = create<SearchFormState>()(
         })),
       setNotes: (notes) => set({ notes }),
       setPaymentMethod: (paymentMethod) => set({ paymentMethod }),
+      setReservationId: (reservationId) => set({ reservationId }),
+      setUuid: (uuid) => set({ uuid }),
       setErrors: (errors) => set({ errors }),
       setError: (field, message) =>
         set((state) => ({
@@ -250,6 +258,8 @@ export const useSearchFormStore = create<SearchFormState>()(
         phone: state.phone,
         notes: state.notes,
         paymentMethod: state.paymentMethod,
+        reservationId: state.reservationId,
+        uuid: state.uuid,
       }),
     },
   ),

@@ -83,12 +83,13 @@ export interface CreateReservationPayload {
 }
 
 export interface ReservationResponse {
-  reservation_id?: string;
-  paypal_id?: string;
-  uuid?: string;
+  reservation_id: string;
+  paypal_id: string;
+  uuid: string;
   payment_link?: string;
   payment_data?: {
     url: string;
+    paypal_id?: string;
   };
   status?: string;
   total?: number;

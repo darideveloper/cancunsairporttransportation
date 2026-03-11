@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { useSearchFormStore, bookingRegistrationSchema } from "../../../store/search-form";
+import { useReservationStore } from "../../../store/reservation";
 import {
   createReservation,
   capturePayment,
@@ -38,7 +39,12 @@ export default function BookingSubmission({ lang }: Props) {
     returnTime,
     currency,
     setErrors,
+    reservationId,
+    setReservationId,
+    setUuid,
   } = useSearchFormStore();
+
+  const { setCode, setEmail: setReservationEmail } = useReservationStore();
 
   const [isLoading, setIsLoading] = useState(false);
   const [paypalId, setPaypalId] = useState<string | null>(null);
@@ -95,16 +101,17 @@ export default function BookingSubmission({ lang }: Props) {
     if (
       paypalId &&
       isSdkLoaded &&
+      reservationId &&
       (paymentMethod === "paypal" || paymentMethod === "card")
     ) {
       const container = document.getElementById("paypal-button-container");
       if (container) {
         // Clear previous buttons before rendering new ones
         container.innerHTML = "";
-        renderPayPalButtons(paypalId, paymentMethod);
+        renderPayPalButtons(paypalId, paymentMethod, reservationId);
       }
     }
-  }, [paypalId, paymentMethod, isSdkLoaded]);
+  }, [paypalId, paymentMethod, isSdkLoaded, reservationId]);
 
   // Validation Logic
   const formData = useMemo(
@@ -147,11 +154,13 @@ export default function BookingSubmission({ lang }: Props) {
   const success_url = `${origin}/${lang === "es" ? "es/gracias" : "thank-you"}`;
   const cancel_url = `${origin}/${lang === "es" ? "es/cancelar" : "cancel"}`;
 
-  const renderPayPalButtons = (id: string, method: string) => {
+  const renderPayPalButtons = (id: string, method: string, resId: string) => {
     if (!window.paypal) {
       console.error("PayPal SDK not loaded");
       return;
     }
+
+    const finalSuccessUrl = `${success_url}${success_url.includes("?") ? "&" : "?"}code=${resId}`;
 
     window.paypal
       .Buttons({
@@ -168,7 +177,7 @@ export default function BookingSubmission({ lang }: Props) {
             const captureData = await capturePayment({ id: data.orderID });
 
             if (captureData.status === "COMPLETED") {
-              window.location.href = success_url;
+              window.location.href = finalSuccessUrl;
             } else if (captureData.details?.[0]?.issue === "INSTRUMENT_DECLINED") {
               setIsLoading(false);
               return actions.restart();
@@ -253,6 +262,20 @@ export default function BookingSubmission({ lang }: Props) {
         throw new Error(errorMessage);
       }
 
+      // Standardized response consumption
+      const resId = response.reservation_id;
+      const resUuid = response.uuid;
+      const resPaypalId = response.paypal_id;
+
+      // Update Stores
+      setReservationId(resId);
+      setUuid(resUuid);
+      setCode(resId);
+      setReservationEmail(email);
+
+      // Construct absolute success URL with code parameter
+      const finalSuccessUrl = `${success_url}${success_url.includes("?") ? "&" : "?"}code=${resId}`;
+
       if (paymentMethod === "cash") {
         await Swal.fire({
           icon: "success",
@@ -260,14 +283,12 @@ export default function BookingSubmission({ lang }: Props) {
           text: t("pages.register.success.message"),
           confirmButtonColor: "#00A651",
         });
-        window.location.href = success_url;
+        window.location.href = finalSuccessUrl;
         return;
       }
 
-      const paypalId = response.paypal_id || response.payment_data?.url;
-
-      if (paypalId) {
-        setPaypalId(paypalId);
+      if (resPaypalId) {
+        setPaypalId(resPaypalId);
       } else if (response.payment_link) {
         // Fallback for legacy redirect flow if backend returns payment_link
         window.location.href = response.payment_link;
