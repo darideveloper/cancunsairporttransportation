@@ -81,6 +81,7 @@ interface SearchFormState {
   phone: string;
   notes: string;
   paymentMethod: "paypal" | "card" | "cash";
+  paypalId: string | null;
   reservationId: string;
   uuid: string;
   errors: Record<string, string | undefined>;
@@ -102,6 +103,7 @@ interface SearchFormState {
   setPhone: (phone: string) => void;
   setNotes: (notes: string) => void;
   setPaymentMethod: (method: "paypal" | "card" | "cash") => void;
+  setPaypalId: (id: string | null) => void;
   setReservationId: (id: string) => void;
   setUuid: (uuid: string) => void;
   setErrors: (errors: Record<string, string | undefined>) => void;
@@ -132,6 +134,7 @@ export const useSearchFormStore = create<SearchFormState>()(
       phone: "",
       notes: "",
       paymentMethod: "card",
+      paypalId: null,
       reservationId: "",
       uuid: "",
       errors: {},
@@ -201,6 +204,7 @@ export const useSearchFormStore = create<SearchFormState>()(
         })),
       setNotes: (notes) => set({ notes }),
       setPaymentMethod: (paymentMethod) => set({ paymentMethod }),
+      setPaypalId: (paypalId) => set({ paypalId }),
       setReservationId: (reservationId) => set({ reservationId }),
       setUuid: (uuid) => set({ uuid }),
       setErrors: (errors) => set({ errors }),
@@ -258,6 +262,7 @@ export const useSearchFormStore = create<SearchFormState>()(
         phone: state.phone,
         notes: state.notes,
         paymentMethod: state.paymentMethod,
+        paypalId: state.paypalId,
         reservationId: state.reservationId,
         uuid: state.uuid,
       }),

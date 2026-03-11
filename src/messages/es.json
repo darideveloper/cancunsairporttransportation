@@ -669,6 +669,7 @@
         "paypalInfo": "Aceptamos pagos con **PayPal**, una de las plataformas más confiables a nivel mundial.\n\n* ✅ Seguridad garantizada\n* ✅ Paga con cuenta PayPal\n* ✅ Sin complicaciones\n\n---\n\n**¡Importante!** Por favor, asegúrese de que el titular de la cuenta de PayPal esté presente y lleve una identificación válida al iniciar la transferencia.",
         "cardInfo": "Aceptamos pagos con **PayPal**, una de las plataformas más confiables a nivel mundial.\n\n* ✅ Seguridad garantizada\n* ✅ Paga con tarjeta\n* ✅ Sin complicaciones\n\n---\n\n**¡Importante!** Debe presentar la tarjeta de débito o crédito con la que realizó el pago al iniciar su transportación.",
         "cashInfo": "Tarifa de servicio por **$5.00 USD**, usted puede ahorrar esta cuota pagando en línea.",
+        "back": "Volver a métodos de pago",
         "processing": "Procesando pago..."
       },
       "submit": "¡RESERVA TU VIAJE AHORA!",

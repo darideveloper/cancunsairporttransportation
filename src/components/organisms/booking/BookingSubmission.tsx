@@ -39,6 +39,8 @@ export default function BookingSubmission({ lang }: Props) {
     returnTime,
     currency,
     setErrors,
+    paypalId,
+    setPaypalId,
     reservationId,
     setReservationId,
     setUuid,
@@ -47,7 +49,6 @@ export default function BookingSubmission({ lang }: Props) {
   const { setCode, setEmail: setReservationEmail } = useReservationStore();
 
   const [isLoading, setIsLoading] = useState(false);
-  const [paypalId, setPaypalId] = useState<string | null>(null);
   const [isSdkLoaded, setIsSdkLoaded] = useState(false);
 
   // Dynamically load PayPal SDK based on currency
