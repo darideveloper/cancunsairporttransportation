@@ -1,6 +1,6 @@
 # Specification: UI Improvements for Card Payment
 
-## MODIFIED Requirements
+## ADDED Requirements
 
 ### Requirement: Shared Store-Managed `paypalId`
 The `SearchFormStore` SHALL manage the `paypalId` state to synchronize the visibility of the payment selection list and the card payment form.
