@@ -5,7 +5,6 @@ import {
   createReservation,
   capturePayment,
 } from "../../../lib/transportation/api";
-import ButtonCta from "../../atoms/ButtonCta";
 import { getTranslations } from "../../../lib/i18n/utils";
 import clsx from "clsx";
 import Swal from "sweetalert2";
@@ -314,14 +313,13 @@ export default function BookingSubmission({ lang }: Props) {
       </p>
 
       {!paypalId ? (
-        <ButtonCta
+        <button
           onClick={handleSubmit}
           disabled={isLoading || !isValid}
-          variant="green"
           className={clsx(
-            "w-full! py-4 text-xl font-bold uppercase",
+            "flex items-center w-full justify-center gap-2 p-4 rounded font-bold text-white cursor-pointer transition-all duration-200 border border-[#b53149] bg-gradient-to-b from-[#e85a73] to-[#d63e5c]",
             isLoading || !isValid
-              ? "cursor-not-allowed! opacity-50 hover:scale-100!"
+              ? "cursor-not-allowed! opacity-50"
               : "",
           )}
         >
@@ -349,12 +347,17 @@ export default function BookingSubmission({ lang }: Props) {
               </svg>
               {t("pages.register.submitting")}
             </div>
-          ) : paymentMethod === "paypal" || paymentMethod === "card" ? (
+          ) : (
+            lang === "es" ? "COMPLETA TU RESERVA" : "COMPLETE BOOKING"
+          )}
+          {/*
+           paymentMethod === "paypal" || paymentMethod === "card" ? (
             t("pages.register.continue")
           ) : (
             t("pages.register.submit")
-          )}
-        </ButtonCta>
+          )
+          */}
+        </button>
       ) : (
         <div id="paypal-button-container" className="w-full min-h-[150px]"></div>
       )}
