@@ -1,0 +1,4 @@
+- [x] Update `src/components/organisms/booking/BookingSubmission.tsx` to replace `<ButtonCta>` with a native HTML `<button>` tag for the submit button.
+- [x] Apply the specified Tailwind utility classes to the new `<button>` tag to match the requested design: `flex items-center w-full justify-center gap-2 p-4 rounded font-bold text-white cursor-pointer transition-all duration-200 border border-[#b53149] bg-gradient-to-b from-[#e85a73] to-[#d63e5c]`.
+- [x] Retain the existing `clsx` logic for disabled and loading states on the new button.
+- [x] Remove the unused `ButtonCta` import from `src/components/organisms/booking/BookingSubmission.tsx`.
