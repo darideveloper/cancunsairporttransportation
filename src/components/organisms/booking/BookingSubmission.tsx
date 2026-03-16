@@ -317,7 +317,7 @@ export default function BookingSubmission({ lang }: Props) {
           onClick={handleSubmit}
           disabled={isLoading || !isValid}
           className={clsx(
-            "flex items-center w-full justify-center gap-2 p-4 rounded font-bold text-white cursor-pointer transition-all duration-200 border border-[#b53149] bg-gradient-to-b from-[#e85a73] to-[#d63e5c]",
+            "flex items-center w-full justify-center gap-2 p-4 rounded font-bold text-white cursor-pointer transition-all duration-300 ease-in-out border border-[#b53149] bg-gradient-to-b from-[#e85a73] to-[#d63e5c] hover:from-[#f06e85] hover:to-[#e85a73] hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] disabled:hover:from-[#e85a73] disabled:hover:to-[#d63e5c] disabled:hover:shadow-none disabled:hover:scale-100",
             isLoading || !isValid
               ? "cursor-not-allowed! opacity-50"
               : "",

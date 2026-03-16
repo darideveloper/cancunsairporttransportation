@@ -24,3 +24,89 @@ const code = Astro.url.searchParams.get('code')
     reservationId={code || undefined}
   />
 </Layout>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    console.log('GA Debug: ThankYou page loaded')
+
+    const urlParams = new URLSearchParams(window.location.search)
+    const urlCode = urlParams.get('code')
+
+    if (!urlCode) {
+      console.warn('GA Debug: No code found in URL')
+      return
+    }
+
+    // Access Zustand store
+    const storageKey = 'search-form-storage'
+    const storedData = localStorage.getItem(storageKey)
+    
+    // We remove default values here to ensure we only track real data
+    let conversionValue = null
+    let conversionCurrency = null
+    let transactionId = null
+
+    if (storedData) {
+      try {
+        const { state } = JSON.parse(storedData)
+        console.log('GA Debug: Store found', state)
+
+        // Fix: Use String() to handle cases where reservationId is a number
+        if (String(state.reservationId) === urlCode) {
+          conversionValue = parseFloat(state.selectedVehicle?.price)
+          conversionCurrency = state.currency
+          transactionId = String(state.reservationId)
+          console.log('GA Debug: Store matches URL code')
+        } else {
+          console.error('GA Debug: Store ID mismatch. Tracking aborted to prevent inaccurate data.', {
+            storeId: state.reservationId,
+            urlCode,
+          })
+          return // Abort if IDs don't match
+        }
+      } catch (e) {
+        console.error('GA Debug: Error parsing store', e)
+        return
+      }
+    } else {
+      console.error('GA Debug: No store data found. Tracking aborted.')
+      return
+    }
+
+    // Ensure we have all required data before firing
+    if (!conversionValue || !conversionCurrency || !transactionId) {
+      console.error('GA Debug: Missing required tracking data', {
+        value: conversionValue,
+        currency: conversionCurrency,
+        transactionId: transactionId
+      })
+      return
+    }
+
+    // Deduplication
+    const sessionTrackingKey = `ga_conversion_fired_${urlCode}`
+    if (sessionStorage.getItem(sessionTrackingKey)) {
+      console.log('GA Debug: Already fired for this session')
+      return
+    }
+
+    if (typeof window.gtag === 'function') {
+      console.log('GA Debug: Firing event', {
+        value: conversionValue,
+        currency: conversionCurrency,
+        transaction_id: transactionId,
+      })
+
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-18013613191/6zn0CPCz6occEIfZx41D',
+        value: conversionValue,
+        currency: conversionCurrency,
+        transaction_id: transactionId,
+      })
+
+      sessionStorage.setItem(sessionTrackingKey, 'true')
+    } else {
+      console.error('GA Debug: window.gtag is not a function')
+    }
+  })
+</script>
