@@ -16,7 +16,7 @@ All content pages that define a `page` variable MUST utilize it for constructing
 - **When** the page fetches translations for page-specific content (e.g., banner title)
 - **Then** it should use `t(\`pages.${page}.[key]\`)`.
 
-#### Scenario: The `transportation-from-cancun-airport-to-playa-del-carmen.astro` page renders text
+#### Scenario: The Playa del Carmen page renders text
 - **Given** the `page` variable is set to `"playaDelCarmen"`
 - **When** the page fetches translations
 - **Then** it should use `t(\`pages.${page}.[key]\`)`.

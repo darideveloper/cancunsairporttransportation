@@ -7,7 +7,7 @@ TBD - created by archiving change update-pdc-faqs. Update Purpose after archive.
 The Playa del Carmen page MUST display a detailed set of FAQs covering cost, safety, benefits, travel time, and local information.
 
 #### Scenario: Displaying all 9 FAQs in English
-- **Given** I am on the Playa del Carmen page in English (`/transportation-from-cancun-airport-to-playa-del-carmen`)
+- **Given** I am on the Playa del Carmen page in English (`/shuttle-from-cancun-to-playa-del-carmen`)
 - **When** I scroll to the FAQ section
 - **Then** I must see 9 FAQ items with the following questions:
     1. How much is Transportation from Cancun to Playa del Carmen?
