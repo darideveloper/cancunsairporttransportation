@@ -19,17 +19,14 @@ const stats = [
   {
     key: 'clients',
     image: happyClientsImg,
-    counter: '21k+',
   },
   {
     key: 'transportation',
     image: officeImg,
-    counter: '21,517',
   },
   {
     key: 'destinations',
     image: mapPointImg,
-    counter: '10,622',
   },
 ]
 ---
@@ -66,7 +63,7 @@ const stats = [
               )}
               class='h-12 w-12'
             />
-            <span class='text-2xl font-bold'>{stat.counter}</span>
+            <span class='text-2xl font-bold'>{t(`global.sections.bannerStats.stats.${stat.key}.imageTitle`)}</span>
             <span class='text-gray text-sm'>
               {t(`global.sections.bannerStats.stats.${stat.key}.text`)}
             </span>
