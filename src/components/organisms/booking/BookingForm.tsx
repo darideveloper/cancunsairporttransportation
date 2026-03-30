@@ -113,6 +113,7 @@ export default function BookingForm({
             <LocationAutocomplete
               id="location-from"
               label={`${translations.labels.leavingFrom} *`}
+              placeholder={translations.placeholders?.leavingFrom}
               value={locationFrom}
               onChange={setLocationFrom}
               required={true}
@@ -122,6 +123,7 @@ export default function BookingForm({
             <LocationAutocomplete
               id="location-to"
               label={translations.labels.goingTo}
+              placeholder={translations.placeholders?.goingTo}
               value={locationTo}
               onChange={setLocationTo}
             />
@@ -160,6 +162,7 @@ export default function BookingForm({
                 <LocationAutocomplete
                   id="return-location-from"
                   label={translations.labels.leavingFrom}
+                  placeholder={translations.placeholders?.leavingFrom}
                   value={locationTo} // Swapped for return
                   disabled={true}
                 />
@@ -168,6 +171,7 @@ export default function BookingForm({
                 <LocationAutocomplete
                   id="return-location-to"
                   label={translations.labels.goingTo}
+                  placeholder={translations.placeholders?.goingTo}
                   value={locationFrom} // Swapped for return
                   disabled={true}
                 />

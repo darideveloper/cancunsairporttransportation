@@ -78,9 +78,9 @@ export const BUSINESS_HOURS = {
 // =============================================================================
 
 export const BUSINESS_DATA = {
-    name: "Cancun Airport Transportation",
-    legalName: "Cancun Airport Transportation by Go Transfers",
-    url: "https://cancunsairporttransportation.com",
+    name: "Cancun Airport Shuttle",
+    legalName: "Cancun Airport Shuttle by Go Transfers",
+    url: "https://cunairportshuttle.com",
     logo: "/assets/img/logo.png",
     ogImage: "/og-image.jpg",
     contact: {

@@ -2,12 +2,18 @@
 // Read props
 interface Props {
   currentPage: string; // Current page
+  title?: string;
+  description?: string;
+  useTagLine?: boolean;
   extraJson?: Record<string, any>;
   jsonType?: string; // Schema type: LocalBusiness, TouristDestination, Service
   ogImage?: string; // Custom social image URL
 }
 const {
   currentPage,
+  title,
+  description,
+  useTagLine,
   extraJson = {},
   jsonType = "LocalBusiness",
   ogImage,
@@ -19,6 +25,9 @@ import BaseSEO from "./base/BaseSEO.astro";
 
 <BaseSEO
   currentPage={currentPage}
+  title={title}
+  description={description}
+  useTagLine={useTagLine}
   jsonType={jsonType}
   extraJson={extraJson}
   ogImage={ogImage}
