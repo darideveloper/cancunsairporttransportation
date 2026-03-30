@@ -92,11 +92,13 @@ const destinations = [
                 slot="image"
                 src={dest.image}
                 alt={t(
-                  `pages.${contentKey}.destinations.cards.${dest.id}.title`,
-                )}
+                  `pages.${contentKey}.destinations.cards.${dest.id}.imageAlt`,
+                ) ||
+                  t(`pages.${contentKey}.destinations.cards.${dest.id}.title`)}
                 title={t(
-                  `pages.${contentKey}.destinations.cards.${dest.id}.title`,
-                )}
+                  `pages.${contentKey}.destinations.cards.${dest.id}.imageTitle`,
+                ) ||
+                  t(`pages.${contentKey}.destinations.cards.${dest.id}.title`)}
                 widths={[300, 600, dest.image.width]}
                 quality={60}
                 format="avif"

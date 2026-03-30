@@ -1640,8 +1640,8 @@
       "description": "Tulum is situated approximately 130 km (80 mi) south of Cancun Airport, a journey that typically takes around 2 hours. Renowned for its stunning Mayan ruins, Tulum attracts those seeking an extraordinary vacation far from bustling city life. For your transfer from Cancun Airport to Tulum, consider our service.",
       "keywords": "cancun to tulum shuttle, tulum transportation, shuttle tulum, tulum airport transfer",
       "destinations": {
-        "title": "Cancun to Tulum Shuttle",
-        "text": "We offer the most complete transportation service to any hotel or destination in Tulum or vice versa, from any destination in the Riviera Maya or Airport. We provide a full service ready to take you to your hotel or favorite attraction in Tulum.",
+        "title": "The most efficient shuttle from Cancun to Tulum and other destinations",
+        "text": "We offer the most comprehensive transportation service to any hotel or destination in Tulum and beyond. Whether you're traveling from any location in the Riviera Maya or the airport, our full-service transportation is ready to take you to your hotel or favorite attraction in Tulum..",
         "viewMore": "View more destinations",
         "viewMoreLink": "/destinations",
         "cards": {
@@ -1649,19 +1649,25 @@
             "title": "Transportation to Tulum",
             "description": "Enjoy a safe, fast, and reliable transfer service to Tulum. The estimated transfer time from Cancun to Tulum is 1 hour and 40 minutes.",
             "ctaText": "Book now",
-            "link": "/cancun-to-tulum-shuttle"
+            "link": "/cancun-to-tulum-shuttle",
+            "imageAlt": "Cancun Airport Transportation to Tulum",
+            "imageTitle": "Cancun Airport Transportation to Tulum"
           },
           "playa": {
             "title": "Transportation to Playa del Carmen",
             "description": "Experience a safe, fast, and reliable transfer service to Playa del Carmen. The estimated transfer time from Cancun is 55 minutes.",
             "ctaText": "Book now",
-            "link": "/shuttle-from-cancun-to-playa-del-carmen"
+            "link": "/shuttle-from-cancun-to-playa-del-carmen",
+            "imageAlt": "website.home.destination",
+            "imageTitle": "website.home.destination"
           },
           "cancun": {
             "title": "Transportation to Cancun",
             "description": "Benefit from a safe, fast, and reliable transfer service to the Hotel Zone. The estimated transfer time from the airport to the Hotel Zone is 30 minutes.",
             "ctaText": "Book now",
-            "link": "/"
+            "link": "/",
+            "imageAlt": "website.home.destination",
+            "imageTitle": "website.home.destination"
           }
         }
       },
