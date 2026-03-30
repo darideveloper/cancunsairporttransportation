@@ -11,9 +11,11 @@ interface Props {
   title: string;
   subtitle: string;
   images: ImageMetadata[];
+  imageAlt?: string;
+  imageTitle?: string;
 }
 
-const { title, subtitle, images } = Astro.props;
+const { title, subtitle, images, imageAlt, imageTitle } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = getTranslations(lang);
@@ -31,12 +33,18 @@ const t = getTranslations(lang);
           <div class="overflow-hidden rounded-lg">
             <Image
               src={image}
-              alt={t("global.sections.clientGallery.imageAlt", {
-                index: String(index + 1),
-              })}
-              title={t("global.sections.clientGallery.imageTitle", {
-                index: String(index + 1),
-              })}
+              alt={
+                imageAlt ||
+                t("global.sections.clientGallery.imageAlt", {
+                  index: String(index + 1),
+                })
+              }
+              title={
+                imageTitle ||
+                t("global.sections.clientGallery.imageTitle", {
+                  index: String(index + 1),
+                })
+              }
               class="h-64 w-full object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
