@@ -13,9 +13,9 @@ export const PHONES = {
         href: 'tel:+529983870435',
     },
     usa: {
-        raw: '+19299991258',
-        formatted: '+1 (929) 999-1258',
-        href: 'tel:+19299991258',
+        raw: '+13237635379',
+        formatted: '+1 (323) 763-5379',
+        href: 'tel:+13237635379',
     },
 } as const;
 

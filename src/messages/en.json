@@ -532,7 +532,7 @@
       },
       "form": {
         "name": {
-          "label": "Name",
+          "label": "Name ",
           "placeholder": "Write your full name"
         },
         "email": {
@@ -565,7 +565,7 @@
       "cards": {
         "usa": {
           "title": "From USA / Canada",
-          "text": "+1 (929) 999-1258"
+          "text": "+1 (323) 763-5379"
         },
         "mexico": {
           "title": "México & Rest of the world",
