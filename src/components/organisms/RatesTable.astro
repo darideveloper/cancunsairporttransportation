@@ -18,9 +18,13 @@ interface Props {
    * If not provided, all destinations will be shown.
    */
   destinations?: string[];
+  /**
+   * Optional: Custom title for the section.
+   */
+  title?: string;
 }
 
-const { destinations: destinationFilter } = Astro.props;
+const { destinations: destinationFilter, title } = Astro.props;
 
 // Get headers translation object
 const headers = t("global.ratesTable.headers") as Record<string, string>;
@@ -110,7 +114,7 @@ const visibleServiceTiers = SERVICE_TIERS.map((tier) => {
 >
   <SectionHeading
     id="rates-table-heading"
-    title={t("global.ratesTable.title")}
+    title={title || t("global.ratesTable.title")}
     class="mb-8 text-center"
   >
     <p>{t("global.ratesTable.description")}</p>
