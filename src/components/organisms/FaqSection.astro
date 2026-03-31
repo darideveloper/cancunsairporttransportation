@@ -15,7 +15,7 @@ const { contentKey } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = getTranslations(lang);
 const title = t(`pages.${contentKey}.faq.title`);
-const description = t("global.sections.faq.description");
+const description = t(`pages.${contentKey}.faq.description`) || t("global.sections.faq.description");
 
 const faqItems = t(`pages.${contentKey}.faq.items`) as any;
 const faqKeys = Object.keys(faqItems);
