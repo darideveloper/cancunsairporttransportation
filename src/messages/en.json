@@ -1742,7 +1742,7 @@
         "description": "We help you to clear your doubts about our transportation services",
         "items": {
           "safe": {
-            "question": "Is the Cancun to Tulum Shuttle safe?",
+            "question": "Is the Cancun to Tulum Shuttle safe? ",
             "answer": "Yes, the shuttle service from Cancun to Tulum is generally considered safe. Providers often prioritize safety, with experienced drivers and well-maintained vehicles."
           },
           "include": {
@@ -1750,7 +1750,7 @@
             "answer": "Transportation from Cancun Airport to Tulum typically includes a direct transfer by car, van, or bus, depending on the service you choose. It often includes amenities like air conditioning, professional drivers, and sometimes Wi-Fi and water."
           },
           "visit": {
-            "question": "What can I visit when I book the shuttle in Tulum?",
+            "question": "What can I visit when I book the shuttle in Tulum? ",
             "answer": "When in Tulum, you can visit the Tulum Ruins, beautiful beaches like Playa Paraíso, cenotes such as Gran Cenote, and the Sian Ka'an Biosphere Reserve."
           },
           "duration": {
