@@ -201,13 +201,13 @@
       }
     },
     "ratesTable": {
-      "title": "Shuttle from cancun to playa del carmen zone rates",
-      "description": "Taxi Service Prices by Destination",
+      "title": "Cancun Shuttle Rates",
+      "description": "Transportation Service Prices by Destinations",
       "headers": {
         "destination": "Destination",
-        "private": "Private Taxi",
-        "luxury": "Luxury Taxi",
-        "group": "Taxi for Groups",
+        "private": "Private Shuttle",
+        "luxury": "Luxury Shuttle",
+        "group": "Shuttle for Groups",
         "oneWay": "One Way",
         "roundTrip": "Round Trip",
         "pax1to8": "1-8 passengers",
