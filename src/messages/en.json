@@ -817,35 +817,35 @@
         }
       },
       "faq": {
-        "title": "Cancun Airport Shuttle Faqs",
+        "title": "Cancun Shuttle Airport Faqs",
         "items": {
           "whyBook": {
-            "question": "Why book with Cancun Airport Shuttle by Go?",
-            "answer": "Cancun Airport Shuttle by Go Transfers offers convenient and reliable transfers between Cancun International Airport (CUN) and various destinations in the surrounding area, including hotels, resorts, and tourist attractions."
+            "question": "Why book with Cancun Airport Shuttle?",
+            "answer": "Cancun Airport Shuttle is a transportation service that provides convenient and reliable transfers between Cancun International Airport (CUN) and various destinations in the surrounding area, such as hotels, resorts, and tourist attractions."
           },
           "howToBook": {
             "question": "How do I book a Cancun Airport Shuttle?",
-            "answer": "Booking with Cancun Airport Shuttle by Go is typically done online through their website. Alternatively, you can call us directly to make a reservation."
+            "answer": "Booking with Cancun Airport Shuttle is typically done online through its website. Also, you can book a call to our phone number."
           },
           "vehicleTypes": {
-            "question": "What types of vehicles are available for Cancun Airport Shuttle?",
-            "answer": "The types of vehicles available for Cancun Airport Shuttle can vary depending on the shuttle service. Common options include private vans, luxury vehicles, and even mini buses for group service."
+            "question": "What types of vehicles are available for Cancun Airport Shuttle transfers?",
+            "answer": "The types of vehicles available for Cancun Airport Shuttle transfers can vary depending on the shuttle service. Common options include private vans, luxury vehicles, and even crafters for group service."
           },
           "cost": {
             "question": "How much does a Cancun Airport Shuttle cost?",
-            "answer": "The cost of Cancun Airport Shuttle can vary based on factors such as the distance of the transfer, the type of vehicle selected, and the number of passengers."
+            "answer": "The cost of a Cancun Airport Shuttle can vary depending on factors such as the distance of the transfer, the type of vehicle chosen, and number of passengers."
           },
           "safe": {
             "question": "Are Cancun Airport Shuttles safe?",
-            "answer": "Yes, reputable Cancun Airport Shuttle services prioritize passenger safety and maintain their vehicles to the highest standards."
+            "answer": "Yes, reputable Cancun Airport Shuttle services prioritize passenger safety and maintain their vehicles to high standards. "
           },
           "changes": {
             "question": "Can I make changes to my Cancun Airport Shuttle reservation?",
-            "answer": "Yes, you can. You can modify your reservation by contacting our customer service team in advance."
+            "answer": "Yes, you can. You can make changes to your reservation by contacting our customer service team in advance."
           },
           "flightDelay": {
             "question": "What should I do if my flight is delayed or canceled?",
-            "answer": "If your flight is delayed or canceled, it’s crucial to inform us as soon as possible to reschedule your transfer. We can adjust the service, but we ask that you contact us promptly."
+            "answer": "If your flight is delayed or canceled, it's crucial to inform us as soon as possible to reschedule your transfer. We can reschedule the service however we will ask you to contact us as soon as possible."
           }
         }
       },
