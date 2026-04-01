@@ -745,26 +745,26 @@
         }
       },
       "testimonials": {
-        "title": "Comments from our customers",
-        "description": "Discover why our customers choose Cancun Airport Shuttle by Go",
+        "title": "Comments from our Customers",
+        "description": "Find out why our customers choose us.",
         "items": {
           "item1": {
             "name": "Juan P.",
-            "text": "I hired the transportation service to go from Cancun to Tulum and was impressed with the punctuality and professionalism of the driver. The vehicle was in excellent condition and the trip was very comfortable. I will recommend this service to my friends and family.",
+            "text": "Few companies offer a customized service, so we contracted with them for a service from the hotel to the airport, the pick up was 5 minutes before and they waited for us at the hotel exit for the return to the hotel. The service was excellent and the driver was very attentive.",
             "imageAlt": "Comment from our customer Juan P.",
             "imageTitle": "Comment from our customer Juan P.",
             "stars": "5"
           },
           "item2": {
             "name": "Ana G.",
-            "text": "Our transfer from Cancun airport to our hotel in Playa del Carmen was perfect. The driver was amiable and gave us excellent recommendations on places to visit. Also, the price was very reasonable. Excellent service!",
+            "text": "Very good service from the Cancun Airport Shuttle. Friendly and punctual staff. Thanks to Manuel for making our trip to the airport very enjoyable. We will repeat.",
             "imageAlt": "Comment from our customer Ana G.",
             "imageTitle": "Comment from our customer Ana G.",
             "stars": "5"
           },
           "item3": {
             "name": "Carlos R.",
-            "text": "I used this service for a day trip to Chichen Itza and everything was wonderful. The driver was on time, the vehicle was very comfortable and clean, and the ride was safe. We loved the experience and will use this service again in the future.",
+            "text": "I have used the Cancun Airport Shuttle twice this year for transportation to and from the Cancun airport. Their service has been excellent both times. They are on time, very cost-effective, and very easy to communicate with.",
             "imageAlt": "Comment from our customer Carlos R.",
             "imageTitle": "Comment from our customer Carlos R.",
             "stars": "5"
