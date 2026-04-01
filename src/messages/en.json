@@ -2015,9 +2015,9 @@
     },
     "destinations": {
       "tagline": "Reach any corner of the Riviera Maya",
-      "title": "Transportation with Cancun Airport Transportation to the most popular destinations in Riviera Maya",
+      "title": "Cancun Airport Transportation - Rates for Popular destinations",
       "keywords": "riviera maya destinations, cancun destinations, cancun airport transfers, mexico transportation",
-      "description": "Discover our competitive transportation rates to the most popular destinations in the Riviera Maya, including Cancun, Playa del Carmen, Tulum, Cozumel, Isla Mujeres, and throughout the Riviera Maya",
+      "description": "With years of experience in the tourist transportation industry, we guarantee an exceptional trip. Our professional drivers know every corner of the Riviera Maya, assuring you not only efficient transportation but also a smooth and hassle-free experience.",
       "destinations": {
         "title": "Cancun Airport Transportation - Rates for Popular destinations",
         "text": "With years of experience in the tourist transportation industry, we guarantee an exceptional trip. Our professional drivers know every corner of the Riviera Maya, assuring you not only efficient transportation but also a smooth and hassle-free experience.",
@@ -2026,19 +2026,19 @@
         "cards": {
           "tulum": {
             "title": "Cancun Airport Transportation to Tulum",
-            "description": "Tulum, a city located within the Riviera Maya, is approximately a 2-hour drive from Cancun. Renowned for its breathtaking beaches, historic archaeological sites, and amazing jungle hotels, Tulum is a must-visit destination.",
+            "description": "",
             "ctaText": "Book now",
             "link": "/cancun-to-tulum-shuttle"
           },
           "playa": {
             "title": "Cancun Airport Transportation to Playa del Carmen",
-            "description": "Our transportation and taxi services will bring you to any hotel, vacation home, or Airbnb in Playa del Carmen, the vibrant heart of the Riviera Maya. With us, your adventure is just around the corner!",
+            "description": "",
             "ctaText": "Book now",
             "link": "/shuttle-from-cancun-to-playa-del-carmen"
           },
           "cancun": {
             "title": "Cancun Airport Transportation to Cancun Hotel Zone",
-            "description": "Cancun’s hotel zone is the city’s top destination, featuring 4 and 5-star hotels that offer the best views of the Caribbean Sea and the most unforgettable vacation experience you can imagine.",
+            "description": "",
             "ctaText": "Book now",
             "link": "/"
           }
@@ -2065,20 +2065,20 @@
       },
       "serviceCards": {
         "confidence": {
-          "title": "Travel with Confidence",
-          "text": "Travel with confidence, security and the comfort that only we can offer you.",
+          "title": "Travel with confidence, security and the comfort that only we can offer you.",
+          "text": "",
           "imageAlt": "Pyramid icon representing confidence and security",
           "imageTitle": "Confidence and Security"
         },
         "transportation": {
-          "title": "Transportation Service",
-          "text": "Transportation to your hotel or destination",
+          "title": "Transportation to your hotel or destination",
+          "text": "",
           "imageAlt": "Excursion icon representing transportation service",
           "imageTitle": "Transportation Service"
         },
         "comfort": {
-          "title": "Complete Comfort",
-          "text": "Comfort from the beginning to the end of your trip",
+          "title": "Comfort from the beginning to the end of your trip",
+          "text": "",
           "imageAlt": "Car seat icon representing comfort",
           "imageTitle": "Comfort Throughout Your Journey"
         }

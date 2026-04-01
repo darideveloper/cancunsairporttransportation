@@ -222,7 +222,11 @@ const destinations = [
           title: t(`pages.${contentKey}.serviceCards.confidence.imageTitle`),
         }}
       >
-        <p>{t(`pages.${contentKey}.serviceCards.confidence.text`)}</p>
+        {
+          t(`pages.${contentKey}.serviceCards.confidence.text`) && (
+            <p>{t(`pages.${contentKey}.serviceCards.confidence.text`)}</p>
+          )
+        }
       </BasicImageCard>
 
       <ul class='grid grid-cols-2 gap-4 sm:gap-1'>
@@ -246,7 +250,11 @@ const destinations = [
           ),
         }}
       >
-        <p>{t(`pages.${contentKey}.serviceCards.transportation.text`)}</p>
+        {
+          t(`pages.${contentKey}.serviceCards.transportation.text`) && (
+            <p>{t(`pages.${contentKey}.serviceCards.transportation.text`)}</p>
+          )
+        }
       </BasicImageCard>
 
       <BasicImageCard
@@ -257,7 +265,11 @@ const destinations = [
           title: t(`pages.${contentKey}.serviceCards.comfort.imageTitle`),
         }}
       >
-        <p>{t(`pages.${contentKey}.serviceCards.comfort.text`)}</p>
+        {
+          t(`pages.${contentKey}.serviceCards.comfort.text`) && (
+            <p>{t(`pages.${contentKey}.serviceCards.comfort.text`)}</p>
+          )
+        }
       </BasicImageCard>
     </aside>
   </section>
