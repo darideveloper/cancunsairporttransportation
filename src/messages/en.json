@@ -719,26 +719,26 @@
       "bannerImageTitle": "Super Offer | Pay on Arrival + 30% Discount",
       "welcome": "Hello world",
       "destinations": {
-        "title": "Cancun Airport Shuttle to Hotel Zone and more destinations",
-        "text": "The Riviera Maya spans more than 250 kilometers of stunning coastline, encompassing not only the famous city of Cancun but also vibrant destinations such as Playa del Carmen, Isla Mujeres, Cozumel, Tulum, and several other enchanting locations.",
+        "title": "Cancun Shuttle Service from Cancun Airport and more destinations",
+        "text": "The Riviera Maya is a coastal extension that covers more than 250 km in length and among them is the popular city of Cancun, but not only this city: We can also find the city of Playa del Carmen, Isla Mujeres, Cozumel, Tulum, and several others.",
         "viewMore": "View more destinations",
         "viewMoreLink": "/destinations",
         "cards": {
           "tulum": {
-            "title": "Cancun Airport Shuttle to Tulum",
-            "description": "Tulum, a city located within the Riviera Maya, is approximately a 2-hour drive from Cancun. Renowned for its breathtaking beaches, historic archaeological sites, and amazing jungle hotels, Tulum is a must-visit destination.",
+            "title": "Shuttle from Cancun Airport to Tulum",
+            "description": "Tulum is one of the cities that are part of the Riviera Maya and is almost 2 hours drive from Cancun. A city that stands out for its beaches, archaeological sites, and incredible jungle hotels.",
             "ctaText": "Book now",
             "link": "/cancun-to-tulum-shuttle"
           },
           "playa": {
-            "title": "Cancun Airport Shuttle to Playa del Carmen",
-            "description": "Our transportation and taxi services will bring you to any hotel, vacation home, or Airbnb in Playa del Carmen, the vibrant heart of the Riviera Maya. With us, your adventure is just around the corner!",
+            "title": "Shuttle from Cancun Airport to Playa del Carmen",
+            "description": "Our shuttle service and cab service can take you to any hotel, vacation home, or Airbnb in Playa del Carmen, which is considered the heart of the Riviera Maya. The fun will be just around the corner!",
             "ctaText": "Book now",
             "link": "/shuttle-from-cancun-to-playa-del-carmen"
           },
           "cancun": {
-            "title": "Cancun Airport Shuttle to Cancun Hotel Zone",
-            "description": "Cancun’s hotel zone is the city’s top destination, featuring 4 and 5-star hotels that offer the best views of the Caribbean Sea and the most unforgettable vacation experience you can imagine.",
+            "title": "Shuttle from Cancun Airport to Cancun Hotel Zone",
+            "description": "Cancun's hotel zone is the most popular destination in the city and its 4 and 5-star hotels will give you the best view of the Caribbean Sea and the best vacation experience you can imagine.",
             "ctaText": "Book now",
             "link": "/"
           }
