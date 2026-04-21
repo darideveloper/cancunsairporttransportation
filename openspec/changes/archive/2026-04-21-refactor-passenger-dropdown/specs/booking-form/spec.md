@@ -1,8 +1,8 @@
-# booking-form Specification
+# Spec Delta: Passenger Input Dropdown
+`MODIFIES booking-form`
 
-## Purpose
-TBD - created by archiving change create-booking-form-structure. Update Purpose after archive.
-## Requirements
+## MODIFIED Requirements
+
 ### Requirement: Modular Field Components
 The system MUST provide distinct React components for Location, Date, Time, and Passenger inputs, each encapsulating its own HTML structure and label.
 
@@ -21,22 +21,3 @@ THEN it MUST use `rounded-lg`, `border-gray-300`, and `focus:ring-2` Tailwind cl
 AND it MUST have `pl-3` and `pr-10` padding
 AND it MUST include a visual indicator (e.g., a chevron arrow) to identify it as a dropdown
 AND when `disabled` it MUST have `opacity-50` and `cursor-not-allowed`.
-
-### Requirement: Control Components
-The system MUST provide separate components for Trip Type and Currency selection.
-
-#### Scenario: Trip Type Selection
-GIVEN the `TripTypeControls` component
-WHEN rendered
-THEN it shows buttons for "One Way" and "Round Trip" sourced from translations.
-
-### Requirement: Form Container
-The system MUST provide a `BookingForm` container that aggregates all fields and controls.
-
-#### Scenario: Form Structure
-GIVEN the `BookingForm`
-WHEN rendered
-THEN it displays the Control components at the top
-AND the Field components below them
-AND a Submit button at the end.
-
