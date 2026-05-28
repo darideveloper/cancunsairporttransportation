@@ -4,7 +4,7 @@
 TBD - created by archiving change add-client-info-to-store. Update Purpose after archive.
 ## Requirements
 ### Requirement: Store Interface Updates
-The `SearchFormState` interface MUST include fields for first name, last name, email, phone, and notes.
+The `SearchFormState` interface MUST include fields for first name, last name, email, phone, notes, and a constrained `paymentMethod`.
 
 #### Scenario: Interface contains required fields
    - **Given** a developer inspects `SearchFormState`
@@ -13,6 +13,8 @@ The `SearchFormState` interface MUST include fields for first name, last name, e
    - **And** `email` is present as a string
    - **And** `phone` is present as a string
    - **And** `notes` is present as a string
+   - **And** `paymentMethod` is present and restricted to `"paypal" | "card"` (excluding `"cash"`)
+   - **And** the `bookingRegistrationSchema` Zod validation schema MUST explicitly enforce `paymentMethod` is one of `["paypal", "card"]`.
 
 ### Requirement: Store Actions
 The store MUST provide setter actions for each new field.

@@ -4,11 +4,11 @@
 TBD - created by archiving change refactor-payment-method-ui-v2. Update Purpose after archive.
 ## Requirements
 ### Requirement: Separate Payment Method State
-The `SearchFormStore` SHALL handle three distinct payment method states: `paypal`, `card`, and `cash`.
+The `SearchFormStore` SHALL handle two distinct payment method states: `paypal` and `card`.
 
 #### Scenario: Selection Update
 - **Given**: A user selects a payment method in the UI.
-- **Then**: The `paymentMethod` state in the Zustand store SHALL be updated with the corresponding value (`paypal`, `card`, or `cash`).
+- **Then**: The `paymentMethod` state in the Zustand store SHALL be updated with the corresponding value (`paypal` or `card`).
 
 ### Requirement: Dynamic UI Elements per Payment Method
 Each payment method SHALL have its own set of dedicated UI assets, labels, and informational text.
@@ -24,12 +24,6 @@ Each payment method SHALL have its own set of dedicated UI assets, labels, and i
 - **Then**: It SHALL use the Credit Card logo (`credit-card.webp`).
 - **And**: It SHALL display the translated Card label.
 - **And**: When selected, it SHALL show the translated `cardInfo` markdown.
-
-#### Scenario: Cash Configuration
-- **Given**: The "Cash" option is rendered.
-- **Then**: It SHALL use the Cash logo (`cash.png`).
-- **And**: It SHALL display the translated Cash label.
-- **And**: When selected, it SHALL show the translated `cashInfo` markdown.
 
 ### Requirement: Custom Check Mark Visual Feedback
 The `PaymentMethod` atom SHALL display a custom SVG check mark representing its selected or unselected state.
@@ -58,5 +52,5 @@ The `BookingSubmission` molecule SHALL map the internal payment method values to
 
 #### Scenario: Submission Mapping
 - **Given**: The user submits a booking.
-- **Then**: The `payment_method` sent to the API SHALL be `PAYPAL`, `CARD`, or `CASH`.
+- **Then**: The `payment_method` sent to the API SHALL be `PAYPAL` or `CARD` (represented as `credit_card` in active payload).
 

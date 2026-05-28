@@ -23,6 +23,7 @@ export const bookingRegistrationSchema = z
     tripType: z.enum(["oneWay", "roundTrip"]),
     returnDate: z.string().optional(),
     returnTime: z.string().optional(),
+    paymentMethod: z.enum(["paypal", "card"]),
   })
   .refine(
     (data) => {
@@ -80,7 +81,7 @@ interface SearchFormState {
   email: string;
   phone: string;
   notes: string;
-  paymentMethod: "paypal" | "card" | "cash";
+  paymentMethod: "paypal" | "card";
   paypalId: string | null;
   reservationId: string;
   uuid: string;
@@ -102,7 +103,7 @@ interface SearchFormState {
   setEmail: (email: string) => void;
   setPhone: (phone: string) => void;
   setNotes: (notes: string) => void;
-  setPaymentMethod: (method: "paypal" | "card" | "cash") => void;
+  setPaymentMethod: (method: "paypal" | "card") => void;
   setPaypalId: (id: string | null) => void;
   setReservationId: (id: string) => void;
   setUuid: (uuid: string) => void;

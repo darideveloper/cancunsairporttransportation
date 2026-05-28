@@ -127,6 +127,7 @@ export default function BookingSubmission({ lang }: Props) {
       returnTime,
       airline,
       flightNumber,
+      paymentMethod,
     }),
     [
       firstName,
@@ -140,6 +141,7 @@ export default function BookingSubmission({ lang }: Props) {
       returnTime,
       airline,
       flightNumber,
+      paymentMethod,
     ],
   );
 
@@ -265,19 +267,7 @@ export default function BookingSubmission({ lang }: Props) {
       setCode(resId);
       setReservationEmail(email);
 
-      // Construct absolute success URL with code parameter
-      const finalSuccessUrl = `${success_url}${success_url.includes("?") ? "&" : "?"}code=${resId}`;
 
-      if (paymentMethod === "cash") {
-        await Swal.fire({
-          icon: "success",
-          title: t("pages.register.success.title"),
-          text: t("pages.register.success.message"),
-          confirmButtonColor: "#00A651",
-        });
-        window.location.href = finalSuccessUrl;
-        return;
-      }
 
       if (resPaypalId) {
         setPaypalId(resPaypalId);

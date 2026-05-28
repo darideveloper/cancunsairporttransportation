@@ -26,7 +26,7 @@ All redirection callback URLs (`success_url`, `cancel_url`) MUST be absolute URL
 - **Then** they SHALL include the full origin (e.g., `https://domain.com/thank-you`).
 
 ### Requirement: Standardized Response Consumption
-The system MUST handle the standardized backend response including the "hoisted" `paypal_id` and mandatory reservation IDs.
+The system MUST handle the standardized backend response including the "hoisted" `paypal_id` and mandatory reservation IDs. There is no offline payment (cash) bypass; every checkout flow MUST initialize online payment (PayPal/Credit Card) credentials or links.
 
 #### Scenario: Processing API response
 - **Given** a successful `POST` to `/api/legacy/create/`
@@ -36,6 +36,7 @@ The system MUST handle the standardized backend response including the "hoisted"
   - `reservation_id`
   - `uuid`
 - **And** the `reservation_id` and `uuid` SHALL be stored in the persistent Zustand store.
+- **And** the system SHALL proceed to initialize the online payment gateway (PayPal Smart Buttons or Stripe payment link redirect).
 
 ### Requirement: Persistent Reservation Tracking
 The `useSearchFormStore` MUST persist the `reservation_id` and `uuid` to allow summary fetching on the `/thank-you` page or after payment completion.
