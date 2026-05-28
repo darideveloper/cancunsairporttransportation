@@ -3,7 +3,7 @@ import { getTranslations } from "../../../lib/i18n/utils";
 import H2 from "../../atoms/H2";
 import { FaShieldAlt, FaArrowLeft } from "react-icons/fa";
 import { marked } from "marked";
-import { forwardRef } from "react";
+import { forwardRef, useEffect } from "react";
 
 // Child Component
 import PaymentMethod from "../../atoms/booking/PaymentMethod";
@@ -11,7 +11,6 @@ import PaymentMethod from "../../atoms/booking/PaymentMethod";
 // Image Imports
 import paypalIcon from "../../../assets/images/checkout/payment/paypal.png";
 import creditCardIcon from "../../../assets/images/checkout/payment/credit-card.webp";
-import cashIcon from "../../../assets/images/checkout/payment/cash.png";
 
 const PaymentMethods = forwardRef<HTMLButtonElement, { lang: "en" | "es" }>(
   ({ lang }, ref) => {
@@ -34,14 +33,13 @@ const PaymentMethods = forwardRef<HTMLButtonElement, { lang: "en" | "es" }>(
         label: t("pages.register.paymentMethod.card"),
         infoKey: "cardInfo",
       },
-      {
-        value: "cash",
-        imageSrc: cashIcon.src,
-        imageAlt: "Cash",
-        label: t("pages.register.paymentMethod.cash"),
-        infoKey: "cashInfo",
-      },
     ] as const;
+
+    useEffect(() => {
+      if (paymentMethod !== "paypal" && paymentMethod !== "card") {
+        setPaymentMethod("card");
+      }
+    }, [paymentMethod, setPaymentMethod]);
 
     const isCardFormActive = paypalId && paymentMethod === "card";
 

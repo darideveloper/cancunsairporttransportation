@@ -1,8 +1,5 @@
-# payment-ui-v2 Specification
+## MODIFIED Requirements
 
-## Purpose
-TBD - created by archiving change refactor-payment-method-ui-v2. Update Purpose after archive.
-## Requirements
 ### Requirement: Separate Payment Method State
 The `SearchFormStore` SHALL handle two distinct payment method states: `paypal` and `card`.
 
@@ -25,32 +22,9 @@ Each payment method SHALL have its own set of dedicated UI assets, labels, and i
 - **And**: It SHALL display the translated Card label.
 - **And**: When selected, it SHALL show the translated `cardInfo` markdown.
 
-### Requirement: Custom Check Mark Visual Feedback
-The `PaymentMethod` atom SHALL display a custom SVG check mark representing its selected or unselected state.
-
-#### Scenario: Selected Check Mark
-- **Given**: A `PaymentMethod` atom with `isSelected={true}`.
-- **Then**: It SHALL render `checked-on.svg`.
-
-#### Scenario: Unselected Check Mark
-- **Given**: A `PaymentMethod` atom with `isSelected={false}`.
-- **Then**: It SHALL render `checked-off.svg`.
-
-### Requirement: Dynamic Gradient Background
-The `PaymentMethod` atom SHALL have a gradient background using the brand orange color (`#ff8400`) at specific opacities.
-
-#### Scenario: Default Gradient (10% Opacity)
-- **Given**: A `PaymentMethod` atom with `isSelected={false}`.
-- **Then**: It SHALL display a gradient from `#ff84001a` (10%) to transparent (left to right).
-
-#### Scenario: Selected Gradient (20% Opacity)
-- **Given**: A `PaymentMethod` atom with `isSelected={true}`.
-- **Then**: It SHALL display a gradient from `#ff840033` (20%) to transparent (left to right).
-
 ### Requirement: API Mapping for Payment Methods
 The `BookingSubmission` molecule SHALL map the internal payment method values to uppercase strings for the legacy API.
 
 #### Scenario: Submission Mapping
 - **Given**: The user submits a booking.
 - **Then**: The `payment_method` sent to the API SHALL be `PAYPAL` or `CARD` (represented as `credit_card` in active payload).
-
