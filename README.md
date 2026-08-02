@@ -1,62 +1,89 @@
-# Astro Starter Kit: Blog
+# Cancun Airport Transportation — Bilingual Booking Landing Page
+
+Bilingual (English/Spanish) landing page and booking platform for Cancun Airport Transportation, rebuilt in Astro to exceed 90% SEO score. Connected to the Django dashboard that serves the blog and proxies the legacy booking backend.
+
+## Tech Stack
+
+- **Astro 5** — static site generation, one dynamic router for 19 page types × 2 languages
+- **React 19** — islands: booking widget, search, checkout
+- **Tailwind CSS v4** — styling
+- **TypeScript** — strict mode
+- **Zustand** — client state persisted to `localStorage` (search form, reservation, contact form)
+- **Google Maps API** — location autocomplete, route map, embeds
+- **PayPal Smart Buttons** — online payments (PayPal + card)
+- **marked + Zod + react-phone-number-input + sweetalert2** — Markdown rendering, form validation, phone inputs, dialogs
+
+## Features
+
+- Booking widget: one-way/round-trip, USD/MXN, Google Maps autocomplete, 1–25 passengers
+- Search results with live quotes and route map
+- Checkout: arrival/passenger info, PayPal + card payment, payment capture
+- Reservation lookup and detail pages
+- Contact form (Zod-validated, submits to legacy API)
+- Blog (EN + ES) consuming the Django API, with RSS and search index
+- SEO: JSON-LD, hreflang, canonical, sitemap, robots.txt, optimized images (AVIF/WebP)
+
+## Setup
 
 ```sh
-npm create astro@latest -- --template blog
+npm install
+npm run dev       # dev server at localhost:4321
+npm run build     # validate-i18n + astro build → ./dist/
+npm run preview   # preview production build
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-Features:
+## Contact
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+Developed by [Dari Developer](https://darideveloper.com)
 
-## 🚀 Project Structure
+- 🌐 [darideveloper.com](https://darideveloper.com)
+- 💬 [WhatsApp](https://api.whatsapp.com/send?phone=5214493402622)
+- 📂 [View project in portfolio](https://darideveloper.com/portafolio/cancunsairporttransportation)
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+# Cancun Airport Transportation — Landing Page de Reservas Bilingüe
+
+Página de aterrizaje y plataforma de reservas bilingüe (inglés/español) para Cancun Airport Transportation, reconstruida en Astro para superar un 90% de SEO. Conectada al panel Django que sirve el blog y actúa como intermediario del sistema de reservas heredado.
+
+## Tech Stack
+
+- **Astro 5** — generación de sitio estático, un router dinámico para 19 tipos de página × 2 idiomas
+- **React 19** — islas: buscador de reservas, búsqueda, checkout
+- **Tailwind CSS v4** — estilos
+- **TypeScript** — modo estricto
+- **Zustand** — estado del cliente persistido en `localStorage` (buscador, reserva, contacto)
+- **Google Maps API** — autocompletado de ubicaciones, mapa de ruta, embeds
+- **PayPal Smart Buttons** — pagos en línea (PayPal + tarjeta)
+- **marked + Zod + react-phone-number-input + sweetalert2** — renderizado Markdown, validación de formularios, teléfonos, diálogos
+
+## Features
+
+- Buscador de reservas: ida/ida y vuelta, USD/MXN, autocompletado por Google Maps, 1–25 pasajeros
+- Resultados de búsqueda con cotización en vivo y mapa de ruta
+- Checkout: información de llegada/pasajero, pago con PayPal + tarjeta, captura de pago
+- Consulta y detalle de reservas
+- Formulario de contacto (validado con Zod, enviado a la API heredada)
+- Blog (EN + ES) que consume la API de Django, con RSS e índice de búsqueda
+- SEO: JSON-LD, hreflang, canonical, sitemap, robots.txt, imágenes optimizadas (AVIF/WebP)
+
+## Setup
+
+```sh
+npm install
+npm run dev       # servidor de desarrollo en localhost:4321
+npm run build     # validate-i18n + astro build → ./dist/
+npm run preview   # previsualizar la build de producción
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Contacto
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Desarrollado por [Dari Developer](https://darideveloper.com)
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+- 🌐 [darideveloper.com](https://darideveloper.com)
+- 💬 [WhatsApp](https://api.whatsapp.com/send?phone=5214493402622)
+- 📂 [Ver proyecto en el portafolio](https://darideveloper.com/portafolio/cancunsairporttransportation)
